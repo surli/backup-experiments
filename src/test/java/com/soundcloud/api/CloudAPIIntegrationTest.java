@@ -22,7 +22,11 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestRule;
+import org.junit.runner.Description;
+import org.junit.runners.model.Statement;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -61,6 +65,9 @@ public class CloudAPIIntegrationTest implements Params.Track, Endpoints {
     -Dorg.apache.commons.logging.simplelog.log.org.apache.http.wire=ERROR
     */
 
+    @Rule
+    public Retry retryRule = new Retry(3);
+
     @Before
     public void setUp() throws Exception {
         api = new ApiWrapper(
@@ -85,8 +92,8 @@ public class CloudAPIIntegrationTest implements Params.Track, Endpoints {
     public void shouldUploadASimpleAudioFile() throws Exception {
         login();
         HttpResponse resp = api.post(Request.to(TRACKS).with(
-                  TITLE, "Hello Android",
-                  POST_TO_EMPTY, "")
+                TITLE, "Hello Android",
+                POST_TO_EMPTY, "")
                 .withFile(ASSET_DATA, new File(getClass().getResource("hello.aiff").getFile())));
 
         int status = resp.getStatusLine().getStatusCode();
@@ -477,5 +484,41 @@ public class CloudAPIIntegrationTest implements Params.Track, Endpoints {
             tracks.put(track);
         }
         return json;
+    }
+
+    // We had trouble with some tests randomly failing, perhaps due to replication lag
+    // see http://stackoverflow.com/questions/8295100/how-to-re-run-failed-junit-tests-immediately
+    public static class Retry implements TestRule {
+        private int retryCount;
+
+        public Retry(int retryCount) {
+            this.retryCount = retryCount;
+        }
+
+        public Statement apply(Statement base, Description description) {
+            return statement(base, description);
+        }
+
+        private Statement statement(final Statement base, final Description description) {
+            return new Statement() {
+                @Override
+                public void evaluate() throws Throwable {
+                    Throwable caughtThrowable = null;
+
+                    // implement retry logic here
+                    for (int i = 0; i < retryCount; i++) {
+                        try {
+                            base.evaluate();
+                            return;
+                        } catch (Throwable t) {
+                            caughtThrowable = t;
+                            System.err.println(description.getDisplayName() + ": run " + (i+1) + " failed");
+                        }
+                    }
+                    System.err.println(description.getDisplayName() + ": giving up after " + retryCount + " failures");
+                    throw caughtThrowable;
+                }
+            };
+        }
     }
 }
