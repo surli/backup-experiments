@@ -24,6 +24,8 @@ public interface CloudAPI {
     String CODE             = "code";
     String RESPONSE_TYPE    = "response_type";
     String SCOPE            = "scope";
+    String DISPLAY          = "display";
+    String STATE            = "state";
 
     // standard oauth2 grant types
     String PASSWORD           = "password";
@@ -41,6 +43,7 @@ public interface CloudAPI {
     String OAUTH_SCHEME       = "oauth";
     String VERSION            = "1.3.1";
     String USER_AGENT         = "SoundCloud Java Wrapper ("+VERSION+")";
+    String POPUP              = "popup";
 
     /**
      * Request a token using <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-10#section-4.1.2">
@@ -211,7 +214,7 @@ public interface CloudAPI {
      * <li><code>error</code> in case of failure, this contains an error code (most likely
      * <code>access_denied</code>).
      * </ul>
-     * @param  options auth endpoint to use (leave out for default), requested scope (leave out for default)
+     * @param  options auth endpoint to use (leave out for default), requested scope (leave out for default), display ('popup' for mobile optimized screen) and state.
      * @return the URI to open in a browser/WebView etc.
      * @see CloudAPI#authorizationCode(String, String...)
      */
