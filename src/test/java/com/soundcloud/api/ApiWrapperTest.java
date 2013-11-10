@@ -362,6 +362,26 @@ public class ApiWrapperTest {
     }
 
     @Test
+    public void shouldIncludeDisplayInAuthorizationUrl() throws Exception {
+        assertThat(
+            api.authorizationCodeUrl(Endpoints.CONNECT, Token.SCOPE_NON_EXPIRING, CloudAPI.POPUP).toString(),
+                equalTo("https://soundcloud.com/connect"+
+                        "?redirect_uri=redirect%3A%2F%2Fme&client_id=" + TEST_CLIENT_ID + "&response_type=code&scope=non-expiring"+
+                		"&display=popup")
+        );
+    }
+
+    @Test
+    public void shouldIncludeStateInAuthorizationUrl() throws Exception {
+        assertThat(
+            api.authorizationCodeUrl(Endpoints.CONNECT, Token.SCOPE_DEFAULT, CloudAPI.POPUP, "stateValue").toString(),
+                equalTo("https://soundcloud.com/connect"+
+                        "?redirect_uri=redirect%3A%2F%2Fme&client_id=" + TEST_CLIENT_ID + "&response_type=code&scope=*"+
+                		"&display=popup&state=stateValue")
+        );
+    }
+
+    @Test
     public void shouldCallTokenStateListenerWhenTokenIsInvalidated() throws Exception {
         CloudAPI.TokenListener listener = mock(CloudAPI.TokenListener.class);
         api.setTokenListener(listener);
