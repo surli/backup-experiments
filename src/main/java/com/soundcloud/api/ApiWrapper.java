@@ -226,7 +226,9 @@ public class ApiWrapper implements CloudAPI, Serializable {
                 REDIRECT_URI, mRedirectUri,
                 CLIENT_ID, mClientId,
                 RESPONSE_TYPE, CODE);
-        if (options.length == 2) req.add(SCOPE, options[1]);
+        if (options.length > 1) req.add(SCOPE, options[1]);
+        if (options.length > 2) req.add(DISPLAY, options[2]);
+        if (options.length > 3) req.add(STATE, options[3]);
         return getURI(req, false, true);
     }
 
