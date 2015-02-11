@@ -17,7 +17,7 @@ import org.json.JSONObject;
 
 public class History {
 
-    private List<HistoryEntry> list = new ArrayList<HistoryEntry>();
+    private final List<HistoryEntry> list;
     private static final String[] COLUMNS = new String[] {
         "URL",
         "created",
@@ -25,6 +25,10 @@ public class History {
         "#",
         ""
     };
+
+    public History() {
+        this.list = new ArrayList<HistoryEntry>();
+    }
 
     public void add(HistoryEntry entry) {
         list.add(entry);
@@ -128,6 +132,10 @@ public class History {
         return list;
     }
     
+    public boolean isEmpty(){
+        return list.isEmpty();
+    }
+
     public void toFile(String filename) throws IOException {
         OutputStream os = new FileOutputStream(filename);
         try {
