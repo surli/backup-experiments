@@ -1,0 +1,43 @@
+language: java
+
+jdk:
+  - openjdk6
+  - openjdk7
+  - oraclejdk7
+  - oraclejdk8
+
+env:
+  global:
+    - SONATYPE_USERNAME=ingwar
+    - secure: "Lqi30fOkp2QgSTxLDWlPW1ArSva/mWHW5yjTalw1Pk/v7LTEHA4LfcOEMKJ/RfH3gKvpq0UP90Nb8t4cAooM1AkHKLb/5lOv8eys4Qj3XyeJcmDLJz8Znre0r6SWA8/DFMzugjPu++4ul+CQOFB8/DkCeA3hDVRuI4yHYKVwArM="
+  matrix:
+    - PROFILE=test-jboss-managed
+    - PROFILE=test-jboss-managed-domain
+    - PROFILE=test-wildfly-managed
+    - PROFILE=test-wildfly-managed-domain
+#    - PROFILE=test-glassfish-embeded
+
+matrix:
+    allow_failures:
+        - env: "PROFILE=test-glassfish-embeded"
+    exclude:
+# Skip wildfly on java 6, not working
+        - jdk: openjdk6
+          env: "PROFILE=test-wildfly-managed"
+        - jdk: openjdk6
+          env: "PROFILE=test-wildfly-managed-domain"
+# Skip jbooss on java 8, not working
+        - jdk: oraclejdk8
+          env: "PROFILE=test-jboss-managed"
+        - jdk: oraclejdk8
+          env: "PROFILE=test-jboss-managed-domain"
+    include:
+        - jdk: oraclejdk7
+          env: "PROFILE=test-jboss-managed,coveralls-coverage SONATYPE_SNAPSHOT=true"
+
+install: travis/travis.py --fetch
+
+script: travis/travis.py --test
+
+after_success: travis/travis.py --deploy
+
