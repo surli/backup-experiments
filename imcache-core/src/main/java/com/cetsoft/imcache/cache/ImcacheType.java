@@ -18,6 +18,8 @@
  */
 package com.cetsoft.imcache.cache;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * The Class ImcacheType is a class to specify cache types.
  *
@@ -27,7 +29,7 @@ package com.cetsoft.imcache.cache;
 public class ImcacheType<K, V> implements CacheType<K, V> {
 
     /** The ordinal counter. */
-    protected static volatile int ordinalCounter = 0;
+    private static final AtomicInteger ordinalCounter = new AtomicInteger();
 
     /** The ordinal. */
     private final int ordinal;
@@ -36,7 +38,7 @@ public class ImcacheType<K, V> implements CacheType<K, V> {
      * Instantiates a new imcache type.
      */
     public ImcacheType() {
-        ordinal = ordinalCounter++;
+        ordinal = ordinalCounter.getAndIncrement();
     }
 
     /*
@@ -44,6 +46,7 @@ public class ImcacheType<K, V> implements CacheType<K, V> {
      *
      * @see com.cetsoft.imcache.cache.CacheType#getType()
      */
+    @Override
     public int getType() {
         return ordinal;
     }
