@@ -46,7 +46,6 @@ public class OrcReader
 
     private static final Logger log = Logger.get(OrcReader.class);
 
-    private static final Slice MAGIC = Slices.utf8Slice("ORC");
     private static final int CURRENT_MAJOR_VERSION = 0;
     private static final int CURRENT_MINOR_VERSION = 12;
     private static final int EXPECTED_FOOTER_SIZE = 16 * 1024;
@@ -230,18 +229,18 @@ public class OrcReader
             byte[] buffer)
             throws IOException
     {
-        int magicLength = MAGIC.length();
+        int magicLength = PostScript.MAGIC.length();
         if (postScriptSize < magicLength + 1) {
             throw new OrcCorruptionException("Malformed ORC file %s. Invalid postscript length %s", source, postScriptSize);
         }
 
-        if (!MAGIC.equals(Slices.wrappedBuffer(buffer, buffer.length - 1 - magicLength, magicLength))) {
+        if (!PostScript.MAGIC.equals(Slices.wrappedBuffer(buffer, buffer.length - 1 - magicLength, magicLength))) {
             // Old versions of ORC (0.11) wrote the magic to the head of the file
             byte[] headerMagic = new byte[magicLength];
             source.readFully(0, headerMagic);
 
             // if it isn't there, this isn't an ORC file
-            if  (!MAGIC.equals(Slices.wrappedBuffer(headerMagic))) {
+            if  (!PostScript.MAGIC.equals(Slices.wrappedBuffer(headerMagic))) {
                 throw new OrcCorruptionException("Malformed ORC file %s. Invalid postscript.", source);
             }
         }

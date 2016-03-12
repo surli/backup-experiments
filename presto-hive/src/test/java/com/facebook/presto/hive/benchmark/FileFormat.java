@@ -32,6 +32,7 @@ import com.facebook.presto.hive.orc.OrcPageSourceFactory;
 import com.facebook.presto.hive.parquet.ParquetPageSourceFactory;
 import com.facebook.presto.hive.parquet.ParquetRecordCursorProvider;
 import com.facebook.presto.hive.rcfile.RcFilePageSourceFactory;
+import com.facebook.presto.orc.OrcWriter;
 import com.facebook.presto.rcfile.AircompressorCodecFactory;
 import com.facebook.presto.rcfile.HadoopCodecFactory;
 import com.facebook.presto.rcfile.RcFileEncoding;
@@ -67,6 +68,8 @@ import static com.facebook.presto.hive.HdfsConfigurationUpdater.configureCompres
 import static com.facebook.presto.hive.HiveColumnHandle.ColumnType.REGULAR;
 import static com.facebook.presto.hive.HiveType.toHiveType;
 import static com.facebook.presto.hive.metastore.StorageFormat.fromHiveStorageFormat;
+import static com.facebook.presto.orc.OrcWriter.createDwrfWriter;
+import static com.facebook.presto.orc.OrcWriter.createOrcWriter;
 import static java.util.stream.Collectors.joining;
 import static org.apache.hadoop.hive.metastore.api.hive_metastoreConstants.FILE_INPUT_FORMAT;
 import static org.apache.hadoop.hive.metastore.api.hive_metastoreConstants.META_TABLE_COLUMNS;
@@ -142,7 +145,12 @@ public enum FileFormat
                 HiveCompressionCodec compressionCodec)
                 throws IOException
         {
-            return new RecordFormatWriter(targetFile, columnNames, columnTypes, compressionCodec, HiveStorageFormat.ORC);
+            return new PrestoOrcFormatWriter(
+                    targetFile,
+                    columnNames,
+                    columnTypes,
+                    DateTimeZone.forID(session.getTimeZoneKey().getId()),
+                    compressionCodec);
         }
     },
 
@@ -163,7 +171,12 @@ public enum FileFormat
                 HiveCompressionCodec compressionCodec)
                 throws IOException
         {
-            return new RecordFormatWriter(targetFile, columnNames, columnTypes, compressionCodec, HiveStorageFormat.DWRF);
+            return new PrestoDwrfFormatWriter(
+                    targetFile,
+                    columnNames,
+                    columnTypes,
+                    DateTimeZone.forID(session.getTimeZoneKey().getId()),
+                    compressionCodec);
         }
 
         @Override
@@ -473,6 +486,80 @@ public enum FileFormat
                     new AircompressorCodecFactory(new HadoopCodecFactory(getClass().getClassLoader())),
                     ImmutableMap.of(),
                     true);
+        }
+
+        @Override
+        public void writePage(Page page)
+                throws IOException
+        {
+            writer.write(page);
+        }
+
+        @Override
+        public void close()
+                throws IOException
+        {
+            writer.close();
+        }
+    }
+
+    private static class PrestoOrcFormatWriter
+            implements FormatWriter
+    {
+        private final OrcWriter writer;
+
+        public PrestoOrcFormatWriter(File targetFile, List<String> columnNames, List<Type> types, DateTimeZone hiveStorageTimeZone, HiveCompressionCodec compressionCodec)
+                throws IOException
+        {
+            writer = createOrcWriter(
+                    new OutputStreamSliceOutput(new FileOutputStream(targetFile)),
+                    columnNames,
+                    types,
+                    compressionCodec.getOrcCompressionKind(),
+                    OrcWriter.DEFAULT_STRIPE_MAX_SIZE,
+                    OrcWriter.DEFAULT_STRIPE_MIN_ROW_COUNT,
+                    OrcWriter.DEFAULT_STRIPE_MAX_ROW_COUNT,
+                    OrcWriter.DEFAULT_ROW_GROUP_MAX_ROW_COUNT,
+                    OrcWriter.DEFAULT_DICTIONARY_MEMORY_MAX_SIZE,
+                    ImmutableMap.of(),
+                    hiveStorageTimeZone);
+        }
+
+        @Override
+        public void writePage(Page page)
+                throws IOException
+        {
+            writer.write(page);
+        }
+
+        @Override
+        public void close()
+                throws IOException
+        {
+            writer.close();
+        }
+    }
+
+    private static class PrestoDwrfFormatWriter
+            implements FormatWriter
+    {
+        private final OrcWriter writer;
+
+        public PrestoDwrfFormatWriter(File targetFile, List<String> columnNames, List<Type> types, DateTimeZone hiveStorageTimeZone, HiveCompressionCodec compressionCodec)
+                throws IOException
+        {
+            writer = createDwrfWriter(
+                    new OutputStreamSliceOutput(new FileOutputStream(targetFile)),
+                    columnNames,
+                    types,
+                    compressionCodec.getOrcCompressionKind(),
+                    OrcWriter.DEFAULT_STRIPE_MAX_SIZE,
+                    OrcWriter.DEFAULT_STRIPE_MIN_ROW_COUNT,
+                    OrcWriter.DEFAULT_STRIPE_MAX_ROW_COUNT,
+                    OrcWriter.DEFAULT_ROW_GROUP_MAX_ROW_COUNT,
+                    OrcWriter.DEFAULT_DICTIONARY_MEMORY_MAX_SIZE,
+                    ImmutableMap.of(),
+                    hiveStorageTimeZone);
         }
 
         @Override

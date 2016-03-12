@@ -13,7 +13,12 @@
  */
 package com.facebook.presto.orc.checkpoint;
 
+import com.facebook.presto.orc.metadata.CompressionKind;
+
+import java.util.List;
+
 public interface LongStreamCheckpoint
         extends StreamCheckpoint
 {
+    List<Integer> toPositionList(CompressionKind compressionKind);
 }

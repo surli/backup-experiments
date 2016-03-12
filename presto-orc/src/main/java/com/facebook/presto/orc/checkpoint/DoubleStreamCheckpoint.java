@@ -16,7 +16,10 @@ package com.facebook.presto.orc.checkpoint;
 import com.facebook.presto.orc.checkpoint.Checkpoints.ColumnPositionsList;
 import com.facebook.presto.orc.metadata.CompressionKind;
 
+import java.util.List;
+
 import static com.facebook.presto.orc.checkpoint.InputStreamCheckpoint.createInputStreamCheckpoint;
+import static com.facebook.presto.orc.checkpoint.InputStreamCheckpoint.createInputStreamPositionList;
 import static com.facebook.presto.orc.checkpoint.InputStreamCheckpoint.inputStreamCheckpointToString;
 import static com.google.common.base.MoreObjects.toStringHelper;
 
@@ -38,6 +41,11 @@ public final class DoubleStreamCheckpoint
     public long getInputStreamCheckpoint()
     {
         return inputStreamCheckpoint;
+    }
+
+    public List<Integer> toPositionList(CompressionKind compressionKind)
+    {
+        return createInputStreamPositionList(compressionKind, inputStreamCheckpoint);
     }
 
     @Override

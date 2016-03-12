@@ -53,6 +53,11 @@ public final class IntBigArray
         allocateNewSegment();
     }
 
+    public int[][] getSegments()
+    {
+        return array;
+    }
+
     /**
      * Returns the size of this big array in bytes.
      */
@@ -114,6 +119,16 @@ public final class IntBigArray
         }
 
         grow(length);
+    }
+
+    public void fill(int value)
+    {
+        for (int[] ints : array) {
+            if (ints == null) {
+                return;
+            }
+            Arrays.fill(ints, value);
+        }
     }
 
     private void grow(long length)

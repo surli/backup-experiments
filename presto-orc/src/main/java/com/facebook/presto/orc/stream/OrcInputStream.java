@@ -31,8 +31,8 @@ import java.util.zip.Inflater;
 import static com.facebook.presto.orc.checkpoint.InputStreamCheckpoint.createInputStreamCheckpoint;
 import static com.facebook.presto.orc.checkpoint.InputStreamCheckpoint.decodeCompressedBlockOffset;
 import static com.facebook.presto.orc.checkpoint.InputStreamCheckpoint.decodeDecompressedOffset;
+import static com.facebook.presto.orc.metadata.CompressionKind.NONE;
 import static com.facebook.presto.orc.metadata.CompressionKind.SNAPPY;
-import static com.facebook.presto.orc.metadata.CompressionKind.UNCOMPRESSED;
 import static com.facebook.presto.orc.metadata.CompressionKind.ZLIB;
 import static com.google.common.base.MoreObjects.toStringHelper;
 import static com.google.common.base.Preconditions.checkArgument;
@@ -77,7 +77,7 @@ public final class OrcInputStream
         this.fixedMemoryUsage = systemMemoryContext.newLocalMemoryContext();
         this.fixedMemoryUsage.setBytes(sliceInput.length());
 
-        if (compressionKind == UNCOMPRESSED) {
+        if (compressionKind == NONE) {
             this.current = sliceInput;
             this.compressedSliceInput = EMPTY_SLICE.getInput();
         }
@@ -167,7 +167,7 @@ public final class OrcInputStream
         int decompressedOffset = decodeDecompressedOffset(checkpoint);
         boolean discardedBuffer;
         if (compressedBlockOffset != currentCompressedBlockOffset) {
-            if (compressionKind == UNCOMPRESSED) {
+            if (compressionKind == NONE) {
                 throw new OrcCorruptionException("Reset stream has a compressed block offset but stream is not compressed");
             }
             compressedSliceInput.setPosition(compressedBlockOffset);
