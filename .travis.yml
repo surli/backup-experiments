@@ -1,0 +1,18 @@
+sudo: false
+language: 
+  - java
+jdk:
+  - oraclejdk8
+install:
+  - mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script:
+  - mvn test jacoco:report
+after_success:
+  - mvn coveralls:report
+notifications:
+  email: false
+
+# whitelist
+branches:
+  only:
+    - master
