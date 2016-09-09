@@ -1,0 +1,14 @@
+(function() { var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};templates['todoItem'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var stack1, helper, options, buffer = 
+  "<div class=\"display row-fluid span5\">Fluid\n  <input type=\"checkbox\" class=\"check\" ";
+  stack1 = ((helper = (helper = helpers.done || (depth0 != null ? depth0.done : depth0)) != null ? helper : helpers.helperMissing),(options={"name":"done","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data}),(typeof helper === "function" ? helper.call(depth0,options) : helper));
+  if (!helpers.done) { stack1 = helpers.blockHelperMissing.call(depth0,stack1,options)}
+  if (stack1 != null) { buffer += stack1; }
+  return buffer + " />\n  <label class=\"todo-content span3\">"
+    + this.escapeExpression(((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"content","hash":{},"data":data}) : helper)))
+    + "</label>\n  <i class=\"icon-remove-sign remove\" title=\"Remove\"></i>\n</div>\n<div class=\"edit row-fluid\">\n  <input type=\"text\" class=\"todo-edit span4\" value=\""
+    + this.escapeExpression(((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"content","hash":{},"data":data}) : helper)))
+    + "\" />\n</div>";
+},"1":function(depth0,helpers,partials,data) {
+    return "checked=\"checked\"";
+},"useData":true} ); })();
