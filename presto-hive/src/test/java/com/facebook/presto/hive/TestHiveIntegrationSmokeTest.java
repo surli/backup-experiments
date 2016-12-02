@@ -1872,6 +1872,12 @@ public class TestHiveIntegrationSmokeTest
             formats.add(new TestingHiveStorageFormat(session, hiveStorageFormat));
         }
         formats.add(new TestingHiveStorageFormat(
+                Session.builder(session).setCatalogSessionProperty(session.getCatalog().get(), "orc_optimized_writer_enabled", "true").build(),
+                HiveStorageFormat.ORC));
+        formats.add(new TestingHiveStorageFormat(
+                Session.builder(session).setCatalogSessionProperty(session.getCatalog().get(), "orc_optimized_writer_enabled", "true").build(),
+                HiveStorageFormat.DWRF));
+        formats.add(new TestingHiveStorageFormat(
                 Session.builder(session).setCatalogSessionProperty(session.getCatalog().get(), "rcfile_optimized_reader_enabled", "true").build(),
                 HiveStorageFormat.RCBINARY));
         formats.add(new TestingHiveStorageFormat(

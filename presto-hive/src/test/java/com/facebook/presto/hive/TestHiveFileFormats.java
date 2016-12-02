@@ -288,6 +288,22 @@ public class TestHiveFileFormats
     }
 
     @Test(dataProvider = "rowCount")
+    public void testOrcOptimizedWriter(int rowCount)
+            throws Exception
+    {
+        TestingConnectorSession session = new TestingConnectorSession(
+                new HiveSessionProperties(new HiveClientConfig().setOrcOptimizedWriterEnabled(true)).getSessionProperties());
+
+        assertThatFileFormat(ORC)
+                .withColumns(TEST_COLUMNS)
+                .withRowsCount(rowCount)
+                .withSession(session)
+                .withFileWriterFactory(new OrcFileWriterFactory(HDFS_ENVIRONMENT, TYPE_MANAGER, new NodeVersion("test"), HIVE_STORAGE_TIME_ZONE))
+                .isReadableByRecordCursor(new GenericHiveRecordCursorProvider(HDFS_ENVIRONMENT))
+                .isReadableByPageSource(new OrcPageSourceFactory(TYPE_MANAGER, false, HDFS_ENVIRONMENT));
+    }
+
+    @Test(dataProvider = "rowCount")
     public void testOrcUseColumnNames(int rowCount)
             throws Exception
     {
@@ -501,6 +517,26 @@ public class TestHiveFileFormats
         assertThatFileFormat(DWRF)
                 .withColumns(testColumns)
                 .withRowsCount(rowCount)
+                .isReadableByPageSource(new DwrfPageSourceFactory(TYPE_MANAGER, HDFS_ENVIRONMENT));
+    }
+
+    @Test(dataProvider = "rowCount")
+    public void testDwrfOptimizedWriter(int rowCount)
+            throws Exception
+    {
+        TestingConnectorSession session = new TestingConnectorSession(
+                new HiveSessionProperties(new HiveClientConfig().setOrcOptimizedWriterEnabled(true)).getSessionProperties());
+
+        List<TestColumn> testColumns = TEST_COLUMNS.stream()
+                .filter(testColumn -> !hasType(testColumn.getObjectInspector(), PrimitiveCategory.DATE, PrimitiveCategory.VARCHAR, PrimitiveCategory.CHAR, PrimitiveCategory.DECIMAL))
+                .collect(toList());
+
+        assertThatFileFormat(DWRF)
+                .withColumns(testColumns)
+                .withRowsCount(rowCount)
+                .withSession(session)
+                .withFileWriterFactory(new DwrfFileWriterFactory(HDFS_ENVIRONMENT, TYPE_MANAGER, new NodeVersion("test"), HIVE_STORAGE_TIME_ZONE))
+                .isReadableByRecordCursor(new GenericHiveRecordCursorProvider(HDFS_ENVIRONMENT))
                 .isReadableByPageSource(new DwrfPageSourceFactory(TYPE_MANAGER, HDFS_ENVIRONMENT));
     }
 

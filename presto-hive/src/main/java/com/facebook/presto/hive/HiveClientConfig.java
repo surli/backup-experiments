@@ -96,6 +96,7 @@ public class HiveClientConfig
     private DataSize orcMaxMergeDistance = new DataSize(1, MEGABYTE);
     private DataSize orcMaxBufferSize = new DataSize(8, MEGABYTE);
     private DataSize orcStreamBufferSize = new DataSize(8, MEGABYTE);
+    private boolean orcOptimizedWriterEnabled = false;
 
     private boolean rcfileOptimizedReaderEnabled = true;
     private boolean rcfileOptimizedWriterEnabled = true;
@@ -663,6 +664,20 @@ public class HiveClientConfig
     public HiveClientConfig setOrcBloomFiltersEnabled(boolean orcBloomFiltersEnabled)
     {
         this.orcBloomFiltersEnabled = orcBloomFiltersEnabled;
+        return this;
+    }
+
+    @Deprecated
+    public boolean isOrcOptimizedWriterEnabled()
+    {
+        return orcOptimizedWriterEnabled;
+    }
+
+    @Deprecated
+    @Config("hive.orc.optimized-writer.enabled")
+    public HiveClientConfig setOrcOptimizedWriterEnabled(boolean orcOptimizedWriterEnabled)
+    {
+        this.orcOptimizedWriterEnabled = orcOptimizedWriterEnabled;
         return this;
     }
 
