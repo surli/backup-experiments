@@ -14,12 +14,15 @@
 package com.facebook.presto.hive;
 
 import com.facebook.presto.hive.metastore.StorageFormat;
+import com.facebook.presto.hive.orc.HdfsOrcDataSource;
+import com.facebook.presto.orc.OrcDataSource;
 import com.facebook.presto.orc.metadata.CompressionKind;
 import com.facebook.presto.spi.ConnectorSession;
 import com.facebook.presto.spi.PrestoException;
 import com.facebook.presto.spi.type.Type;
 import com.facebook.presto.spi.type.TypeManager;
 import com.google.common.base.Splitter;
+import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableMap;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -35,9 +38,13 @@ import java.io.OutputStream;
 import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
+import java.util.function.Supplier;
 
 import static com.facebook.presto.hive.HiveErrorCode.HIVE_UNSUPPORTED_FORMAT;
 import static com.facebook.presto.hive.HiveErrorCode.HIVE_WRITER_OPEN_ERROR;
+import static com.facebook.presto.hive.HiveSessionProperties.getOrcMaxBufferSize;
+import static com.facebook.presto.hive.HiveSessionProperties.getOrcMaxMergeDistance;
+import static com.facebook.presto.hive.HiveSessionProperties.getOrcStreamBufferSize;
 import static com.facebook.presto.hive.HiveType.toHiveTypes;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.toList;
@@ -114,6 +121,24 @@ public class OrcFileWriterFactory
             FileSystem fileSystem = hdfsEnvironment.getFileSystem(session.getUser(), path, configuration);
             OutputStream outputStream = fileSystem.create(path);
 
+            Optional<Supplier<OrcDataSource>> validationInputFactory = Optional.empty();
+            if (HiveSessionProperties.isOrcOptimizedWriterValidate(session)) {
+                validationInputFactory = Optional.of(() -> {
+                    try {
+                        return new HdfsOrcDataSource(
+                                path.toString(),
+                                fileSystem.getFileStatus(path).getLen(),
+                                getOrcMaxMergeDistance(session),
+                                getOrcMaxBufferSize(session),
+                                getOrcStreamBufferSize(session),
+                                fileSystem.open(path));
+                    }
+                    catch (IOException e) {
+                        throw Throwables.propagate(e);
+                    }
+                });
+            }
+
             return Optional.of(new OrcFileWriter(
                     outputStream,
                     fileColumnNames,
@@ -124,7 +149,8 @@ public class OrcFileWriterFactory
                             .put(HiveMetadata.PRESTO_VERSION_NAME, nodeVersion.toString())
                             .put(HiveMetadata.PRESTO_QUERY_ID_NAME, session.getQueryId())
                             .build(),
-                    hiveStorageTimeZone));
+                    hiveStorageTimeZone,
+                    validationInputFactory));
         }
         catch (IOException e) {
             throw new PrestoException(HIVE_WRITER_OPEN_ERROR, "Error creating DWRF file", e);

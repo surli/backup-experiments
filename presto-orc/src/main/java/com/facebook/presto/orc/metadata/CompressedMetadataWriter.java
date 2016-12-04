@@ -32,6 +32,12 @@ public class CompressedMetadataWriter
     }
 
     @Override
+    public List<Integer> getOrcMetadataVersion()
+    {
+        return metadataWriter.getOrcMetadataVersion();
+    }
+
+    @Override
     public int writePostscript(SliceOutput output, PostScript postScript)
             throws IOException
     {
@@ -73,5 +79,11 @@ public class CompressedMetadataWriter
         buffer.reset();
         metadataWriter.writeRowIndexes(buffer, rowGroupIndexes);
         return buffer.writeDataTo(output);
+    }
+
+    @Override
+    public MetadataReader getMetadataReader()
+    {
+        return metadataWriter.getMetadataReader();
     }
 }

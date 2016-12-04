@@ -25,6 +25,7 @@ import com.facebook.presto.orc.proto.OrcProto.Type.Builder;
 import com.facebook.presto.orc.proto.OrcProto.UserMetadataItem;
 import com.facebook.presto.orc.protobuf.ByteString;
 import com.facebook.presto.orc.protobuf.MessageLite;
+import com.google.common.collect.ImmutableList;
 import com.google.common.io.CountingOutputStream;
 import io.airlift.slice.Slice;
 import io.airlift.slice.SliceOutput;
@@ -40,6 +41,14 @@ import static java.util.stream.Collectors.toList;
 public class OrcMetadataWriter
         implements MetadataWriter
 {
+    private static final List<Integer> ORC_METADATA_VERSION = ImmutableList.of(0, 12);
+
+    @Override
+    public List<Integer> getOrcMetadataVersion()
+    {
+        return ORC_METADATA_VERSION;
+    }
+
     @Override
     public int writePostscript(SliceOutput output, PostScript postScript)
             throws IOException
@@ -204,7 +213,6 @@ public class OrcMetadataWriter
         }
 
         if (columnStatistics.getStringStatistics() != null) {
-            // todo this will need to be corrected for UTF8 -> UTF16 problems
             builder.setStringStatistics(OrcProto.StringStatistics.newBuilder()
                 .setMinimum(columnStatistics.getStringStatistics().getMin().toStringUtf8())
                 .setMaximum(columnStatistics.getStringStatistics().getMax().toStringUtf8())
@@ -315,6 +323,12 @@ public class OrcMetadataWriter
                         .collect(toList()))
                 .build();
         return writeProtobufObject(output, rowIndexProtobuf);
+    }
+
+    @Override
+    public MetadataReader getMetadataReader()
+    {
+        return new OrcMetadataReader();
     }
 
     private static RowIndexEntry toRowGroupIndex(RowGroupIndex rowGroupIndex)

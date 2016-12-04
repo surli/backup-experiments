@@ -122,13 +122,15 @@ public class SliceDirectColumnWriter
     }
 
     @Override
-    public void finishRowGroup()
+    public Map<Integer, ColumnStatistics> finishRowGroup()
     {
         checkState(inRowGroup);
         checkState(!closed);
         inRowGroup = false;
-        rowGroupColumnStatistics.add(statisticsBuilder.buildColumnStatistics());
+        ColumnStatistics statistics = statisticsBuilder.buildColumnStatistics();
+        rowGroupColumnStatistics.add(statistics);
         statisticsBuilder = statisticsBuilderSupplier.get();
+        return ImmutableMap.of(column, statistics);
     }
 
     @Override

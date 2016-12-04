@@ -42,6 +42,7 @@ import static com.facebook.presto.orc.metadata.CompressionKind.SNAPPY;
 import static com.facebook.presto.orc.metadata.CompressionKind.ZLIB;
 import static com.facebook.presto.orc.metadata.OrcMetadataReader.getMaxSlice;
 import static com.facebook.presto.orc.metadata.OrcMetadataReader.getMinSlice;
+import static com.facebook.presto.orc.metadata.PostScript.HiveWriterVersion.ORC_HIVE_8732;
 import static com.facebook.presto.orc.metadata.PostScript.HiveWriterVersion.ORIGINAL;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
@@ -63,7 +64,7 @@ public class DwrfMetadataReader
                 0,
                 toCompression(postScript.getCompression()),
                 postScript.getCompressionBlockSize(),
-                ORIGINAL); // DWRF doesn't have the equivalent of Hive writer version, and it is not clear if HIVE-8732 has been fixed
+                ORC_HIVE_8732); // DWRF doesn't have the equivalent of Hive writer version, and it is not clear if HIVE-8732 has been fixed
     }
 
     @Override

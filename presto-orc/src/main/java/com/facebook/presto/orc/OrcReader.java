@@ -24,6 +24,8 @@ import com.facebook.presto.orc.metadata.PostScript.HiveWriterVersion;
 import com.facebook.presto.orc.stream.OrcInputStream;
 import com.facebook.presto.spi.type.Type;
 import com.google.common.base.Joiner;
+import com.google.common.base.Predicate;
+import com.google.common.collect.ImmutableMap;
 import io.airlift.log.Logger;
 import io.airlift.slice.Slice;
 import io.airlift.slice.Slices;
@@ -34,8 +36,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static io.airlift.slice.SizeOf.SIZE_OF_BYTE;
+import static io.airlift.units.DataSize.Unit.MEGABYTE;
 import static java.lang.Math.min;
 import static java.lang.Math.toIntExact;
 import static java.util.Objects.requireNonNull;
@@ -60,8 +64,16 @@ public class OrcReader
     private final Footer footer;
     private final Metadata metadata;
 
+    private final Optional<OrcWriteValidation> writeValidation;
+
     // This is based on the Apache Hive ORC code
     public OrcReader(OrcDataSource orcDataSource, MetadataReader metadataReader, DataSize maxMergeDistance, DataSize maxReadSize)
+            throws IOException
+    {
+        this(orcDataSource, metadataReader, maxMergeDistance, maxReadSize, Optional.empty());
+    }
+
+    OrcReader(OrcDataSource orcDataSource, MetadataReader metadataReader, DataSize maxMergeDistance, DataSize maxReadSize, Optional<OrcWriteValidation> writeValidation)
             throws IOException
     {
         orcDataSource = wrapWithCacheIfTiny(requireNonNull(orcDataSource, "orcDataSource is null"), maxMergeDistance);
@@ -69,6 +81,8 @@ public class OrcReader
         this.metadataReader = requireNonNull(metadataReader, "metadataReader is null");
         this.maxMergeDistance = requireNonNull(maxMergeDistance, "maxMergeDistance is null");
         this.maxReadSize = requireNonNull(maxReadSize, "maxReadSize is null");
+
+        this.writeValidation = requireNonNull(writeValidation, "writeValidation is null");
 
         //
         // Read the file tail:
@@ -101,9 +115,11 @@ public class OrcReader
 
         // verify this is a supported version
         checkOrcVersion(orcDataSource, postScript.getVersion());
+        validateWrite(validation -> validation.getVersion().equals(postScript.getVersion()), "Unexpected version");
 
         // check compression codec is supported
         this.compressionKind = postScript.getCompression();
+        validateWrite(validation -> validation.getCompression().equals(compressionKind), "Unexpected compression");
 
         this.hiveWriterVersion = postScript.getHiveWriterVersion();
         this.bufferSize = toIntExact(postScript.getCompressionBlockSize());
@@ -140,6 +156,14 @@ public class OrcReader
         Slice footerSlice = completeFooterSlice.slice(metadataSize, footerSize);
         try (InputStream footerInputStream = new OrcInputStream(orcDataSource.toString(), footerSlice.getInput(), compressionKind, bufferSize, new AggregatedMemoryContext())) {
             this.footer = metadataReader.readFooter(hiveWriterVersion, footerInputStream);
+        }
+
+        validateWrite(validation -> validation.getMetadata().equals(footer.getUserMetadata()), "Unexpected metadata");
+        validateWrite(validation -> validation.getColumnNames().equals(getColumnNames()), "Unexpected column names");
+        validateWrite(validation -> validation.getRowGroupMaxRowCount() == footer.getRowsInRowGroup(), "Unexpected rows in group");
+        if (writeValidation.isPresent()) {
+            writeValidation.get().validateFileStatistics(footer.getFileStats());
+            writeValidation.get().validateStripeStatistics(footer.getStripes(), metadata.getStripeStatsList());
         }
     }
 
@@ -203,7 +227,8 @@ public class OrcReader
                 maxMergeDistance,
                 maxReadSize,
                 footer.getUserMetadata(),
-                systemMemoryUsage);
+                systemMemoryUsage,
+                writeValidation);
     }
 
     private static OrcDataSource wrapWithCacheIfTiny(OrcDataSource dataSource, DataSize maxCacheSize)
@@ -267,6 +292,39 @@ public class OrcReader
                         CURRENT_MAJOR_VERSION,
                         CURRENT_MINOR_VERSION);
             }
+        }
+    }
+
+    private void validateWrite(Predicate<OrcWriteValidation> test, String messageFormat, Object... args)
+            throws OrcCorruptionException
+    {
+        if (writeValidation.isPresent() && !test.apply(writeValidation.get())) {
+            throw new OrcCorruptionException("Write validation failed: " + messageFormat, args);
+        }
+    }
+
+    static void validateFile(
+            OrcWriteValidation writeValidation,
+            OrcDataSource input,
+            List<Type> types,
+            DateTimeZone hiveStorageTimeZone,
+            MetadataReader metadataReader)
+            throws OrcCorruptionException
+    {
+        ImmutableMap.Builder<Integer, Type> readTypes = ImmutableMap.builder();
+        for (int columnIndex = 0; columnIndex < types.size(); columnIndex++) {
+            readTypes.put(columnIndex, types.get(columnIndex));
+        }
+        try {
+            OrcReader orcReader = new OrcReader(input, metadataReader, new DataSize(1, MEGABYTE), new DataSize(8, MEGABYTE), Optional.of(writeValidation));
+            try (OrcRecordReader orcRecordReader = orcReader.createRecordReader(readTypes.build(), OrcPredicate.TRUE, hiveStorageTimeZone, new AggregatedMemoryContext())) {
+                while (orcRecordReader.nextBatch() >= 0) {
+                    // ignored
+                }
+            }
+        }
+        catch (IOException e) {
+            throw new OrcCorruptionException(e, "Validation failed");
         }
     }
 }

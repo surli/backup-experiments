@@ -13,6 +13,7 @@
  */
 package com.facebook.presto.hive;
 
+import com.facebook.presto.orc.OrcDataSource;
 import com.facebook.presto.orc.OrcWriter;
 import com.facebook.presto.orc.metadata.CompressionKind;
 import com.facebook.presto.spi.Page;
@@ -27,12 +28,16 @@ import io.airlift.slice.OutputStreamSliceOutput;
 import io.airlift.slice.SliceOutput;
 import org.joda.time.DateTimeZone;
 
+import java.io.IOException;
 import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.function.Supplier;
 
 import static com.facebook.presto.hive.HiveErrorCode.HIVE_WRITER_CLOSE_ERROR;
 import static com.facebook.presto.hive.HiveErrorCode.HIVE_WRITER_DATA_ERROR;
+import static com.facebook.presto.hive.HiveErrorCode.HIVE_WRITE_VALIDATION_FAILED;
 import static com.facebook.presto.orc.OrcWriter.createOrcWriter;
 import static com.google.common.base.MoreObjects.toStringHelper;
 import static java.util.Objects.requireNonNull;
@@ -43,6 +48,7 @@ public class OrcFileWriter
     private final OrcWriter orcWriter;
     private final int[] fileInputColumnIndexes;
     private final List<Block> nullBlocks;
+    private final Optional<Supplier<OrcDataSource>> validationInputFactory;
 
     public OrcFileWriter(
             OutputStream outputStream,
@@ -51,7 +57,8 @@ public class OrcFileWriter
             CompressionKind compression,
             int[] fileInputColumnIndexes,
             Map<String, String> metadata,
-            DateTimeZone hiveStorageTimeZone)
+            DateTimeZone hiveStorageTimeZone,
+            Optional<Supplier<OrcDataSource>> validationInputFactory)
     {
         orcWriter = createOrcWriter(
                 outputStream instanceof SliceOutput ? ((SliceOutput) outputStream) : new OutputStreamSliceOutput(outputStream),
@@ -64,7 +71,8 @@ public class OrcFileWriter
                 OrcWriter.DEFAULT_ROW_GROUP_MAX_ROW_COUNT,
                 OrcWriter.DEFAULT_DICTIONARY_MEMORY_MAX_SIZE,
                 metadata,
-                hiveStorageTimeZone);
+                hiveStorageTimeZone,
+                validationInputFactory.isPresent());
 
         this.fileInputColumnIndexes = requireNonNull(fileInputColumnIndexes, "outputColumnInputIndexes is null");
 
@@ -75,6 +83,7 @@ public class OrcFileWriter
             nullBlocks.add(blockBuilder.build());
         }
         this.nullBlocks = nullBlocks.build();
+        this.validationInputFactory = validationInputFactory;
     }
 
     @Override
@@ -115,6 +124,17 @@ public class OrcFileWriter
         catch (Exception e) {
             // todo delete file
             throw new PrestoException(HIVE_WRITER_CLOSE_ERROR, "Error committing write to Hive", e);
+        }
+
+        if (validationInputFactory.isPresent()) {
+            try {
+                try (OrcDataSource input = validationInputFactory.get().get()) {
+                    orcWriter.validate(input);
+                }
+            }
+            catch (IOException e) {
+                throw new PrestoException(HIVE_WRITE_VALIDATION_FAILED, e);
+            }
         }
     }
 

@@ -522,7 +522,8 @@ public enum FileFormat
                     OrcWriter.DEFAULT_ROW_GROUP_MAX_ROW_COUNT,
                     OrcWriter.DEFAULT_DICTIONARY_MEMORY_MAX_SIZE,
                     ImmutableMap.of(),
-                    hiveStorageTimeZone);
+                    hiveStorageTimeZone,
+                    false);
         }
 
         @Override
@@ -559,7 +560,8 @@ public enum FileFormat
                     OrcWriter.DEFAULT_ROW_GROUP_MAX_ROW_COUNT,
                     OrcWriter.DEFAULT_DICTIONARY_MEMORY_MAX_SIZE,
                     ImmutableMap.of(),
-                    hiveStorageTimeZone);
+                    hiveStorageTimeZone,
+                    false);
         }
 
         @Override

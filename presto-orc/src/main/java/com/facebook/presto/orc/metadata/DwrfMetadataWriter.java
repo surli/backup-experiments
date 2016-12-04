@@ -24,6 +24,7 @@ import com.facebook.presto.orc.proto.DwrfProto.Type.Builder;
 import com.facebook.presto.orc.proto.DwrfProto.UserMetadataItem;
 import com.facebook.presto.orc.protobuf.ByteString;
 import com.facebook.presto.orc.protobuf.MessageLite;
+import com.google.common.collect.ImmutableList;
 import com.google.common.io.CountingOutputStream;
 import io.airlift.slice.Slice;
 import io.airlift.slice.SliceOutput;
@@ -39,6 +40,13 @@ import static java.util.stream.Collectors.toList;
 public class DwrfMetadataWriter
         implements MetadataWriter
 {
+    @Override
+    public List<Integer> getOrcMetadataVersion()
+    {
+        // DWRF does not have a version field
+        return ImmutableList.of();
+    }
+
     @Override
     public int writePostscript(SliceOutput output, PostScript postScript)
             throws IOException
@@ -262,6 +270,12 @@ public class DwrfMetadataWriter
                         .collect(toList()))
                 .build();
         return writeProtobufObject(output, rowIndexProtobuf);
+    }
+
+    @Override
+    public MetadataReader getMetadataReader()
+    {
+        return new DwrfMetadataReader();
     }
 
     private static RowIndexEntry toRowGroupIndex(RowGroupIndex rowGroupIndex)

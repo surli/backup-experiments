@@ -52,6 +52,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.Set;
 
 import static com.facebook.presto.orc.checkpoint.Checkpoints.getDictionaryStreamCheckpoint;
@@ -79,6 +80,7 @@ public class StripeReader
     private final int rowsInRowGroup;
     private final OrcPredicate predicate;
     private final MetadataReader metadataReader;
+    private final Optional<OrcWriteValidation> writeValidation;
 
     public StripeReader(OrcDataSource orcDataSource,
             CompressionKind compressionKind,
@@ -88,7 +90,8 @@ public class StripeReader
             int rowsInRowGroup,
             OrcPredicate predicate,
             HiveWriterVersion hiveWriterVersion,
-            MetadataReader metadataReader)
+            MetadataReader metadataReader,
+            Optional<OrcWriteValidation> writeValidation)
     {
         this.orcDataSource = requireNonNull(orcDataSource, "orcDataSource is null");
         this.compressionKind = requireNonNull(compressionKind, "compressionKind is null");
@@ -99,6 +102,7 @@ public class StripeReader
         this.predicate = requireNonNull(predicate, "predicate is null");
         this.hiveWriterVersion = requireNonNull(hiveWriterVersion, "hiveWriterVersion is null");
         this.metadataReader = requireNonNull(metadataReader, "metadataReader is null");
+        this.writeValidation = requireNonNull(writeValidation, "writeValidation is null");
     }
 
     public Stripe readStripe(StripeInformation stripe, AggregatedMemoryContext systemMemoryUsage)
@@ -136,6 +140,9 @@ public class StripeReader
 
             // read the row index for each column
             Map<Integer, List<RowGroupIndex>> columnIndexes = readColumnIndexes(streams, streamsData, bloomFilterIndexes);
+            if (writeValidation.isPresent()) {
+                writeValidation.get().validateRowGroupStatistics(stripe.getOffset(), columnIndexes);
+            }
 
             // select the row groups matching the tuple domain
             Set<Integer> selectedRowGroups = selectRowGroups(stripe, columnIndexes);
