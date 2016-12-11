@@ -83,7 +83,7 @@ public class TestDecimalStream
         writeBigInteger(baos, BigInteger.valueOf(Long.MIN_VALUE));
 
         OrcInputStream inputStream = orcInputStreamFor("skip test", baos.toByteArray());
-        DecimalStream stream = new DecimalStream(inputStream);
+        DecimalInputStream stream = new DecimalInputStream(inputStream);
         stream.skip(1);
         assertEquals(stream.nextLong(), Long.MIN_VALUE);
     }
@@ -91,14 +91,14 @@ public class TestDecimalStream
     private static void assertReadsShortValue(long value)
             throws IOException
     {
-        DecimalStream stream = new DecimalStream(decimalInputStream(BigInteger.valueOf(value)));
+        DecimalInputStream stream = new DecimalInputStream(decimalInputStream(BigInteger.valueOf(value)));
         assertEquals(stream.nextLong(), value);
     }
 
     private static void assertReadsLongValue(BigInteger value)
             throws IOException
     {
-        DecimalStream stream = new DecimalStream(decimalInputStream(value));
+        DecimalInputStream stream = new DecimalInputStream(decimalInputStream(value));
         assertEquals(stream.nextBigInteger(), value);
     }
 
@@ -106,7 +106,7 @@ public class TestDecimalStream
             throws IOException
     {
         assertThrows(OrcCorruptionException.class, () -> {
-            DecimalStream stream = new DecimalStream(decimalInputStream(value));
+            DecimalInputStream stream = new DecimalInputStream(decimalInputStream(value));
             stream.nextLong();
         });
     }
@@ -115,7 +115,7 @@ public class TestDecimalStream
             throws IOException
     {
         assertThrows(OrcCorruptionException.class, () -> {
-            DecimalStream stream = new DecimalStream(decimalInputStream(value));
+            DecimalInputStream stream = new DecimalInputStream(decimalInputStream(value));
             stream.nextBigInteger();
         });
     }

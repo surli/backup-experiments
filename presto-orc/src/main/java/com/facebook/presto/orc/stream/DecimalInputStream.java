@@ -21,12 +21,12 @@ import java.math.BigInteger;
 
 import static java.lang.Long.MAX_VALUE;
 
-public class DecimalStream
-        implements ValueStream<DecimalStreamCheckpoint>
+public class DecimalInputStream
+        implements ValueInputStream<DecimalStreamCheckpoint>
 {
     private final OrcInputStream input;
 
-    public DecimalStream(OrcInputStream input)
+    public DecimalInputStream(OrcInputStream input)
     {
         this.input = input;
     }
