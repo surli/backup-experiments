@@ -1,0 +1,237 @@
+package info.archinnov.achilles.generated;
+
+import com.datastax.driver.core.ConsistencyLevel;
+import com.datastax.driver.core.DataType;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
+import com.google.common.reflect.TypeToken;
+import info.archinnov.achilles.generated.function.Long_Type;
+import info.archinnov.achilles.generated.function.String_Type;
+import info.archinnov.achilles.generated.meta.entity.TestEntityWithStaticAnnotations_AchillesMeta.ColumnsForFunctions;
+import info.archinnov.achilles.internals.apt.annotations.AchillesMeta;
+import info.archinnov.achilles.internals.codec.FallThroughCodec;
+import info.archinnov.achilles.internals.metamodel.AbstractEntityProperty;
+import info.archinnov.achilles.internals.metamodel.AbstractProperty;
+import info.archinnov.achilles.internals.metamodel.SimpleProperty;
+import info.archinnov.achilles.internals.metamodel.columns.ColumnInfo;
+import info.archinnov.achilles.internals.metamodel.columns.ColumnType;
+import info.archinnov.achilles.internals.metamodel.columns.FieldInfo;
+import info.archinnov.achilles.internals.metamodel.columns.PartitionKeyInfo;
+import info.archinnov.achilles.internals.metamodel.index.IndexInfo;
+import info.archinnov.achilles.internals.sample_classes.parser.entity.TestEntityWithStaticAnnotations;
+import info.archinnov.achilles.internals.strategy.naming.InternalNamingStrategy;
+import info.archinnov.achilles.type.strategy.InsertStrategy;
+import java.lang.Class;
+import java.lang.Integer;
+import java.lang.Long;
+import java.lang.Override;
+import java.lang.String;
+import java.lang.SuppressWarnings;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * Meta class of all entities of type TestEntityWithStaticAnnotations<br/>
+ * The meta class is responsible for<br/>
+ * <ul>
+ *    <li>determining runtime consistency levels (read/write,serial)<li/>
+ *    <li>determining runtime insert strategy<li/>
+ *    <li>trigger event interceptors (if any)<li/>
+ *    <li>map a com.datastax.driver.core.Row back to an instance of TestEntityWithStaticAnnotations<li/>
+ *    <li>determine runtime keyspace name using static annotations and runtime SchemaNameProvider (if any)<li/>
+ *    <li>determine runtime table name using static annotations and runtime SchemaNameProvider (if any)<li/>
+ *    <li>generate schema during bootstrap<li/>
+ *    <li>validate schema during bootstrap<li/>
+ *    <li>expose all property meta classes for encoding/decoding purpose on unitary columns<li/>
+ * <ul/>
+ */
+@AchillesMeta
+public final class TestEntityWithStaticAnnotations_AchillesMeta extends AbstractEntityProperty<TestEntityWithStaticAnnotations> {
+  /**
+   * Meta class for 'partitionKey' property <br/>
+   * The meta class exposes some useful methods: <ul>
+   *    <li>encodeFromJava: encode a property from raw Java to CQL java compatible type </li>
+   *    <li>encodeField: extract the current property value from the given TestEntityWithStaticAnnotations instance and encode to CQL java compatible type </li>
+   *    <li>decodeFromGettable: decode from a {@link com.datastax.driver.core.GettableData} instance (Row, UDTValue, TupleValue) the current property</li>
+   * </ul>
+   */
+  @SuppressWarnings({"serial", "unchecked"})
+  public static final SimpleProperty<TestEntityWithStaticAnnotations, Long, Long> partitionKey = new SimpleProperty<TestEntityWithStaticAnnotations, Long, Long>(new FieldInfo<>((TestEntityWithStaticAnnotations entity$) -> entity$.getPartitionKey(), (TestEntityWithStaticAnnotations entity$, Long value$) -> entity$.setPartitionKey(value$), "partitionKey", "partition_key", ColumnType.PARTITION, new PartitionKeyInfo(1, false), IndexInfo.noIndex()), DataType.bigint(), gettableData$ -> gettableData$.get("partition_key", java.lang.Long.class), (settableData$, value$) -> settableData$.set("partition_key", value$, java.lang.Long.class), new TypeToken<Long>(){}, new TypeToken<Long>(){}, new FallThroughCodec<>(Long.class));
+
+  /**
+   * Meta class for 'stringValue' property <br/>
+   * The meta class exposes some useful methods: <ul>
+   *    <li>encodeFromJava: encode a property from raw Java to CQL java compatible type </li>
+   *    <li>encodeField: extract the current property value from the given TestEntityWithStaticAnnotations instance and encode to CQL java compatible type </li>
+   *    <li>decodeFromGettable: decode from a {@link com.datastax.driver.core.GettableData} instance (Row, UDTValue, TupleValue) the current property</li>
+   * </ul>
+   */
+  @SuppressWarnings({"serial", "unchecked"})
+  public static final SimpleProperty<TestEntityWithStaticAnnotations, String, String> stringValue = new SimpleProperty<TestEntityWithStaticAnnotations, String, String>(new FieldInfo<>((TestEntityWithStaticAnnotations entity$) -> entity$.getStringValue(), (TestEntityWithStaticAnnotations entity$, String value$) -> entity$.setStringValue(value$), "stringValue", "string_value", ColumnType.NORMAL, new ColumnInfo(false), IndexInfo.noIndex()), DataType.text(), gettableData$ -> gettableData$.get("string_value", java.lang.String.class), (settableData$, value$) -> settableData$.set("string_value", value$, java.lang.String.class), new TypeToken<String>(){}, new TypeToken<String>(){}, new FallThroughCodec<>(String.class));
+
+  /**
+   * Meta class for 'overridenName' property <br/>
+   * The meta class exposes some useful methods: <ul>
+   *    <li>encodeFromJava: encode a property from raw Java to CQL java compatible type </li>
+   *    <li>encodeField: extract the current property value from the given TestEntityWithStaticAnnotations instance and encode to CQL java compatible type </li>
+   *    <li>decodeFromGettable: decode from a {@link com.datastax.driver.core.GettableData} instance (Row, UDTValue, TupleValue) the current property</li>
+   * </ul>
+   */
+  @SuppressWarnings({"serial", "unchecked"})
+  public static final SimpleProperty<TestEntityWithStaticAnnotations, String, String> overridenName = new SimpleProperty<TestEntityWithStaticAnnotations, String, String>(new FieldInfo<>((TestEntityWithStaticAnnotations entity$) -> entity$.getOverridenName(), (TestEntityWithStaticAnnotations entity$, String value$) -> entity$.setOverridenName(value$), "overridenName", "overriden", ColumnType.NORMAL, new ColumnInfo(false), IndexInfo.noIndex()), DataType.text(), gettableData$ -> gettableData$.get("overriden", java.lang.String.class), (settableData$, value$) -> settableData$.set("overriden", value$, java.lang.String.class), new TypeToken<String>(){}, new TypeToken<String>(){}, new FallThroughCodec<>(String.class));
+
+  /**
+   * Static class to expose "TestEntityWithStaticAnnotations_AchillesMeta" fields for <strong>type-safe</strong> function calls */
+  public static final TestEntityWithStaticAnnotations_AchillesMeta.ColumnsForFunctions COLUMNS = new TestEntityWithStaticAnnotations_AchillesMeta.ColumnsForFunctions();
+  ;
+
+  @Override
+  protected Class<TestEntityWithStaticAnnotations> getEntityClass() {
+    return TestEntityWithStaticAnnotations.class;
+  }
+
+  @Override
+  protected String getDerivedTableOrViewName() {
+    return "test_entity_with_static_annotations";
+  }
+
+  @Override
+  protected BiMap<String, String> fieldNameToCqlColumn() {
+    BiMap<String,String> map = HashBiMap.create(3);
+    map.put("partitionKey", "partition_key");
+    map.put("stringValue", "string_value");
+    map.put("overridenName", "overriden");
+    return map;
+  }
+
+  @Override
+  protected Optional<ConsistencyLevel> getStaticReadConsistency() {
+    return Optional.of(ConsistencyLevel.LOCAL_ONE);
+  }
+
+  @Override
+  protected Optional<InternalNamingStrategy> getStaticNamingStrategy() {
+    return Optional.of(new info.archinnov.achilles.internals.strategy.naming.SnakeCaseNaming());
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithStaticAnnotations, ?, ?>> getPartitionKeys() {
+    return Arrays.asList(partitionKey);
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithStaticAnnotations, ?, ?>> getClusteringColumns() {
+    return Arrays.asList();
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithStaticAnnotations, ?, ?>> getNormalColumns() {
+    return Arrays.asList(overridenName,stringValue);
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithStaticAnnotations, ?, ?>> getComputedColumns() {
+    return Arrays.asList();
+  }
+
+  @Override
+  protected boolean isCounterTable() {
+    return false;
+  }
+
+  @Override
+  protected Optional<String> getStaticKeyspace() {
+    return Optional.of("my_ks");
+  }
+
+  @Override
+  protected Optional<String> getStaticTableOrViewName() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<ConsistencyLevel> getStaticWriteConsistency() {
+    return Optional.of(ConsistencyLevel.LOCAL_ONE);
+  }
+
+  @Override
+  protected Optional<ConsistencyLevel> getStaticSerialConsistency() {
+    return Optional.of(ConsistencyLevel.LOCAL_SERIAL);
+  }
+
+  @Override
+  protected Optional<Integer> getStaticTTL() {
+    return Optional.of(123456);
+  }
+
+  @Override
+  protected Optional<InsertStrategy> getStaticInsertStrategy() {
+    return Optional.of(InsertStrategy.NOT_NULL_FIELDS);
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithStaticAnnotations, ?, ?>> getStaticColumns() {
+    return Arrays.asList();
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithStaticAnnotations, ?, ?>> getCounterColumns() {
+    return Arrays.asList();
+  }
+
+  /**
+   * Utility class to expose all fields with their CQL type for function call */
+  public static final class ColumnsForFunctions {
+    /**
+     * <br/>
+     * Field to be used for <em>manager.dsl().select().function(...)</em> call
+     * <br/>
+     * This is an alias for the field <strong>"partitionKey"</strong> */
+    public final Long_Type PARTITION_KEY = new Long_Type(Optional.empty()){
+      @Override
+      protected String cqlColumn() {
+          return "partition_key";
+    }
+      @Override
+      public boolean isFunctionCall() {
+          return false;
+    }
+      }
+    ;
+
+    /**
+     * <br/>
+     * Field to be used for <em>manager.dsl().select().function(...)</em> call
+     * <br/>
+     * This is an alias for the field <strong>"stringValue"</strong> */
+    public final String_Type STRING_VALUE = new String_Type(Optional.empty()){
+      @Override
+      protected String cqlColumn() {
+          return "string_value";
+    }
+      @Override
+      public boolean isFunctionCall() {
+          return false;
+    }
+      }
+    ;
+
+    /**
+     * <br/>
+     * Field to be used for <em>manager.dsl().select().function(...)</em> call
+     * <br/>
+     * This is an alias for the field <strong>"overridenName"</strong> */
+    public final String_Type OVERRIDEN_NAME = new String_Type(Optional.empty()){
+      @Override
+      protected String cqlColumn() {
+          return "overriden";
+    }
+      @Override
+      public boolean isFunctionCall() {
+          return false;
+    }
+      }
+    ;
+  }
+}

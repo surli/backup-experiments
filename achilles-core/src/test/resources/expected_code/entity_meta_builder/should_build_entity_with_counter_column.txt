@@ -1,0 +1,207 @@
+package info.archinnov.achilles.generated;
+
+import com.datastax.driver.core.ConsistencyLevel;
+import com.datastax.driver.core.DataType;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
+import com.google.common.reflect.TypeToken;
+import info.archinnov.achilles.generated.function.Long_Type;
+import info.archinnov.achilles.generated.meta.entity.TestEntityWithCounterColumn_AchillesMeta.ColumnsForFunctions;
+import info.archinnov.achilles.internals.apt.annotations.AchillesMeta;
+import info.archinnov.achilles.internals.codec.FallThroughCodec;
+import info.archinnov.achilles.internals.metamodel.AbstractEntityProperty;
+import info.archinnov.achilles.internals.metamodel.AbstractProperty;
+import info.archinnov.achilles.internals.metamodel.SimpleProperty;
+import info.archinnov.achilles.internals.metamodel.columns.ColumnInfo;
+import info.archinnov.achilles.internals.metamodel.columns.ColumnType;
+import info.archinnov.achilles.internals.metamodel.columns.FieldInfo;
+import info.archinnov.achilles.internals.metamodel.columns.PartitionKeyInfo;
+import info.archinnov.achilles.internals.metamodel.index.IndexInfo;
+import info.archinnov.achilles.internals.sample_classes.parser.entity.TestEntityWithCounterColumn;
+import info.archinnov.achilles.internals.strategy.naming.InternalNamingStrategy;
+import info.archinnov.achilles.type.strategy.InsertStrategy;
+import java.lang.Class;
+import java.lang.Integer;
+import java.lang.Long;
+import java.lang.Override;
+import java.lang.String;
+import java.lang.SuppressWarnings;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * Meta class of all entities of type TestEntityWithCounterColumn<br/>
+ * The meta class is responsible for<br/>
+ * <ul>
+ *    <li>determining runtime consistency levels (read/write,serial)<li/>
+ *    <li>determining runtime insert strategy<li/>
+ *    <li>trigger event interceptors (if any)<li/>
+ *    <li>map a com.datastax.driver.core.Row back to an instance of TestEntityWithCounterColumn<li/>
+ *    <li>determine runtime keyspace name using static annotations and runtime SchemaNameProvider (if any)<li/>
+ *    <li>determine runtime table name using static annotations and runtime SchemaNameProvider (if any)<li/>
+ *    <li>generate schema during bootstrap<li/>
+ *    <li>validate schema during bootstrap<li/>
+ *    <li>expose all property meta classes for encoding/decoding purpose on unitary columns<li/>
+ * <ul/>
+ */
+@AchillesMeta
+public final class TestEntityWithCounterColumn_AchillesMeta extends AbstractEntityProperty<TestEntityWithCounterColumn> {
+  /**
+   * Meta class for 'id' property <br/>
+   * The meta class exposes some useful methods: <ul>
+   *    <li>encodeFromJava: encode a property from raw Java to CQL java compatible type </li>
+   *    <li>encodeField: extract the current property value from the given TestEntityWithCounterColumn instance and encode to CQL java compatible type </li>
+   *    <li>decodeFromGettable: decode from a {@link com.datastax.driver.core.GettableData} instance (Row, UDTValue, TupleValue) the current property</li>
+   * </ul>
+   */
+  @SuppressWarnings({"serial", "unchecked"})
+  public static final SimpleProperty<TestEntityWithCounterColumn, Long, Long> id = new SimpleProperty<TestEntityWithCounterColumn, Long, Long>(new FieldInfo<>((TestEntityWithCounterColumn entity$) -> entity$.getId(), (TestEntityWithCounterColumn entity$, Long value$) -> entity$.setId(value$), "id", "id", ColumnType.PARTITION, new PartitionKeyInfo(1, false), IndexInfo.noIndex()), DataType.bigint(), gettableData$ -> gettableData$.get("id", java.lang.Long.class), (settableData$, value$) -> settableData$.set("id", value$, java.lang.Long.class), new TypeToken<Long>(){}, new TypeToken<Long>(){}, new FallThroughCodec<>(Long.class));
+
+  /**
+   * Meta class for 'count' property <br/>
+   * The meta class exposes some useful methods: <ul>
+   *    <li>encodeFromJava: encode a property from raw Java to CQL java compatible type </li>
+   *    <li>encodeField: extract the current property value from the given TestEntityWithCounterColumn instance and encode to CQL java compatible type </li>
+   *    <li>decodeFromGettable: decode from a {@link com.datastax.driver.core.GettableData} instance (Row, UDTValue, TupleValue) the current property</li>
+   * </ul>
+   */
+  @SuppressWarnings({"serial", "unchecked"})
+  public static final SimpleProperty<TestEntityWithCounterColumn, Long, Long> count = new SimpleProperty<TestEntityWithCounterColumn, Long, Long>(new FieldInfo<>((TestEntityWithCounterColumn entity$) -> entity$.getCount(), (TestEntityWithCounterColumn entity$, Long value$) -> entity$.setCount(value$), "count", "count", ColumnType.COUNTER, new ColumnInfo(false), IndexInfo.noIndex()), DataType.counter(), gettableData$ -> gettableData$.get("count", java.lang.Long.class), (settableData$, value$) -> settableData$.set("count", value$, java.lang.Long.class), new TypeToken<Long>(){}, new TypeToken<Long>(){}, new FallThroughCodec<>(Long.class));
+
+  /**
+   * Static class to expose "TestEntityWithCounterColumn_AchillesMeta" fields for <strong>type-safe</strong> function calls */
+  public static final TestEntityWithCounterColumn_AchillesMeta.ColumnsForFunctions COLUMNS = new TestEntityWithCounterColumn_AchillesMeta.ColumnsForFunctions();
+  ;
+
+  @Override
+  protected Class<TestEntityWithCounterColumn> getEntityClass() {
+    return TestEntityWithCounterColumn.class;
+  }
+
+  @Override
+  protected String getDerivedTableOrViewName() {
+    return "testentitywithcountercolumn";
+  }
+
+  @Override
+  protected BiMap<String, String> fieldNameToCqlColumn() {
+    BiMap<String,String> map = HashBiMap.create(2);
+    map.put("id", "id");
+    map.put("count", "count");
+    return map;
+  }
+
+  @Override
+  protected Optional<ConsistencyLevel> getStaticReadConsistency() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<InternalNamingStrategy> getStaticNamingStrategy() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithCounterColumn, ?, ?>> getPartitionKeys() {
+    return Arrays.asList(id);
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithCounterColumn, ?, ?>> getClusteringColumns() {
+    return Arrays.asList();
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithCounterColumn, ?, ?>> getNormalColumns() {
+    return Arrays.asList();
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithCounterColumn, ?, ?>> getComputedColumns() {
+    return Arrays.asList();
+  }
+
+  @Override
+  protected boolean isCounterTable() {
+    return true;
+  }
+
+  @Override
+  protected Optional<String> getStaticKeyspace() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<String> getStaticTableOrViewName() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<ConsistencyLevel> getStaticWriteConsistency() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<ConsistencyLevel> getStaticSerialConsistency() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<Integer> getStaticTTL() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<InsertStrategy> getStaticInsertStrategy() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithCounterColumn, ?, ?>> getStaticColumns() {
+    return Arrays.asList();
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithCounterColumn, ?, ?>> getCounterColumns() {
+    return Arrays.asList(count);
+  }
+
+  /**
+   * Utility class to expose all fields with their CQL type for function call */
+  public static final class ColumnsForFunctions {
+    /**
+     * <br/>
+     * Field to be used for <em>manager.dsl().select().function(...)</em> call
+     * <br/>
+     * This is an alias for the field <strong>"id"</strong> */
+    public final Long_Type ID = new Long_Type(Optional.empty()){
+      @Override
+      protected String cqlColumn() {
+          return "id";
+    }
+      @Override
+      public boolean isFunctionCall() {
+          return false;
+    }
+      }
+    ;
+
+    /**
+     * <br/>
+     * Field to be used for <em>manager.dsl().select().function(...)</em> call
+     * <br/>
+     * This is an alias for the field <strong>"count"</strong> */
+    public final Long_Type COUNT = new Long_Type(Optional.empty()){
+      @Override
+      protected String cqlColumn() {
+          return "count";
+    }
+      @Override
+      public boolean isFunctionCall() {
+          return false;
+    }
+      }
+    ;
+  }
+}
