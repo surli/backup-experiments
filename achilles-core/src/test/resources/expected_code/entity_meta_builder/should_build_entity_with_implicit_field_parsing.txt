@@ -1,0 +1,273 @@
+package info.archinnov.achilles.generated;
+
+import com.datastax.driver.core.ClusteringOrder;
+import com.datastax.driver.core.ConsistencyLevel;
+import com.datastax.driver.core.DataType;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
+import com.google.common.reflect.TypeToken;
+import info.archinnov.achilles.generated.function.Long_Type;
+import info.archinnov.achilles.generated.function.String_Type;
+import info.archinnov.achilles.generated.function.TestUDTImplicitFieldParsing_Type;
+import info.archinnov.achilles.generated.function.UUID_Type;
+import info.archinnov.achilles.generated.meta.entity.TestEntityWithImplicitFieldParsing_AchillesMeta.ColumnsForFunctions;
+import info.archinnov.achilles.generated.meta.udt.TestUDTImplicitFieldParsing_AchillesMeta;
+import info.archinnov.achilles.internals.apt.annotations.AchillesMeta;
+import info.archinnov.achilles.internals.codec.FallThroughCodec;
+import info.archinnov.achilles.internals.metamodel.AbstractEntityProperty;
+import info.archinnov.achilles.internals.metamodel.AbstractProperty;
+import info.archinnov.achilles.internals.metamodel.SimpleProperty;
+import info.archinnov.achilles.internals.metamodel.UDTProperty;
+import info.archinnov.achilles.internals.metamodel.columns.ClusteringColumnInfo;
+import info.archinnov.achilles.internals.metamodel.columns.ColumnInfo;
+import info.archinnov.achilles.internals.metamodel.columns.ColumnType;
+import info.archinnov.achilles.internals.metamodel.columns.FieldInfo;
+import info.archinnov.achilles.internals.metamodel.columns.PartitionKeyInfo;
+import info.archinnov.achilles.internals.metamodel.index.IndexInfo;
+import info.archinnov.achilles.internals.sample_classes.parser.entity.TestEntityWithImplicitFieldParsing;
+import info.archinnov.achilles.internals.sample_classes.parser.entity.TestUDTImplicitFieldParsing;
+import info.archinnov.achilles.internals.strategy.naming.InternalNamingStrategy;
+import info.archinnov.achilles.type.strategy.InsertStrategy;
+import java.lang.Class;
+import java.lang.Integer;
+import java.lang.Long;
+import java.lang.Override;
+import java.lang.String;
+import java.lang.SuppressWarnings;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+/**
+ * Meta class of all entities of type TestEntityWithImplicitFieldParsing<br/>
+ * The meta class is responsible for<br/>
+ * <ul>
+ *    <li>determining runtime consistency levels (read/write,serial)<li/>
+ *    <li>determining runtime insert strategy<li/>
+ *    <li>trigger event interceptors (if any)<li/>
+ *    <li>map a com.datastax.driver.core.Row back to an instance of TestEntityWithImplicitFieldParsing<li/>
+ *    <li>determine runtime keyspace name using static annotations and runtime SchemaNameProvider (if any)<li/>
+ *    <li>determine runtime table name using static annotations and runtime SchemaNameProvider (if any)<li/>
+ *    <li>generate schema during bootstrap<li/>
+ *    <li>validate schema during bootstrap<li/>
+ *    <li>expose all property meta classes for encoding/decoding purpose on unitary columns<li/>
+ * <ul/>
+ */
+@AchillesMeta
+public final class TestEntityWithImplicitFieldParsing_AchillesMeta extends AbstractEntityProperty<TestEntityWithImplicitFieldParsing> {
+  /**
+   * Meta class for 'id' property <br/>
+   * The meta class exposes some useful methods: <ul>
+   *    <li>encodeFromJava: encode a property from raw Java to CQL java compatible type </li>
+   *    <li>encodeField: extract the current property value from the given TestEntityWithImplicitFieldParsing instance and encode to CQL java compatible type </li>
+   *    <li>decodeFromGettable: decode from a {@link com.datastax.driver.core.GettableData} instance (Row, UDTValue, TupleValue) the current property</li>
+   * </ul>
+   */
+  @SuppressWarnings({"serial", "unchecked"})
+  public static final SimpleProperty<TestEntityWithImplicitFieldParsing, Long, Long> id = new SimpleProperty<TestEntityWithImplicitFieldParsing, Long, Long>(new FieldInfo<>((TestEntityWithImplicitFieldParsing entity$) -> entity$.getId(), (TestEntityWithImplicitFieldParsing entity$, Long value$) -> entity$.setId(value$), "id", "id", ColumnType.PARTITION, new PartitionKeyInfo(1, false), IndexInfo.noIndex()), DataType.bigint(), gettableData$ -> gettableData$.get("id", java.lang.Long.class), (settableData$, value$) -> settableData$.set("id", value$, java.lang.Long.class), new TypeToken<Long>(){}, new TypeToken<Long>(){}, new FallThroughCodec<>(Long.class));
+
+  /**
+   * Meta class for 'uuid' property <br/>
+   * The meta class exposes some useful methods: <ul>
+   *    <li>encodeFromJava: encode a property from raw Java to CQL java compatible type </li>
+   *    <li>encodeField: extract the current property value from the given TestEntityWithImplicitFieldParsing instance and encode to CQL java compatible type </li>
+   *    <li>decodeFromGettable: decode from a {@link com.datastax.driver.core.GettableData} instance (Row, UDTValue, TupleValue) the current property</li>
+   * </ul>
+   */
+  @SuppressWarnings({"serial", "unchecked"})
+  public static final SimpleProperty<TestEntityWithImplicitFieldParsing, UUID, UUID> uuid = new SimpleProperty<TestEntityWithImplicitFieldParsing, UUID, UUID>(new FieldInfo<>((TestEntityWithImplicitFieldParsing entity$) -> entity$.getUuid(), (TestEntityWithImplicitFieldParsing entity$, UUID value$) -> entity$.setUuid(value$), "uuid", "uuid", ColumnType.CLUSTERING, new ClusteringColumnInfo(1, false, ClusteringOrder.ASC), IndexInfo.noIndex()), DataType.uuid(), gettableData$ -> gettableData$.get("uuid", java.util.UUID.class), (settableData$, value$) -> settableData$.set("uuid", value$, java.util.UUID.class), new TypeToken<UUID>(){}, new TypeToken<UUID>(){}, new FallThroughCodec<>(UUID.class));
+
+  /**
+   * Meta class for 'value' property <br/>
+   * The meta class exposes some useful methods: <ul>
+   *    <li>encodeFromJava: encode a property from raw Java to CQL java compatible type </li>
+   *    <li>encodeField: extract the current property value from the given TestEntityWithImplicitFieldParsing instance and encode to CQL java compatible type </li>
+   *    <li>decodeFromGettable: decode from a {@link com.datastax.driver.core.GettableData} instance (Row, UDTValue, TupleValue) the current property</li>
+   * </ul>
+   */
+  @SuppressWarnings({"serial", "unchecked"})
+  public static final SimpleProperty<TestEntityWithImplicitFieldParsing, String, String> value = new SimpleProperty<TestEntityWithImplicitFieldParsing, String, String>(new FieldInfo<>((TestEntityWithImplicitFieldParsing entity$) -> entity$.getValue(), (TestEntityWithImplicitFieldParsing entity$, String value$) -> entity$.setValue(value$), "value", "value", ColumnType.NORMAL, new ColumnInfo(false), IndexInfo.noIndex()), DataType.text(), gettableData$ -> gettableData$.get("value", java.lang.String.class), (settableData$, value$) -> settableData$.set("value", value$, java.lang.String.class), new TypeToken<String>(){}, new TypeToken<String>(){}, new FallThroughCodec<>(String.class));
+
+  /**
+   * Meta class for 'udt' property <br/>
+   * The meta class exposes some useful methods: <ul>
+   *    <li>encodeFromJava: encode a property from raw Java to CQL java compatible type </li>
+   *    <li>encodeField: extract the current property value from the given TestEntityWithImplicitFieldParsing instance and encode to CQL java compatible type </li>
+   *    <li>decodeFromGettable: decode from a {@link com.datastax.driver.core.GettableData} instance (Row, UDTValue, TupleValue) the current property</li>
+   * </ul>
+   */
+  public static final UDTProperty<TestEntityWithImplicitFieldParsing, TestUDTImplicitFieldParsing_AchillesMeta, TestUDTImplicitFieldParsing> udt = new UDTProperty<TestEntityWithImplicitFieldParsing, TestUDTImplicitFieldParsing_AchillesMeta, TestUDTImplicitFieldParsing>(new FieldInfo<>((TestEntityWithImplicitFieldParsing entity$) -> entity$.getUdt(), (TestEntityWithImplicitFieldParsing entity$, TestUDTImplicitFieldParsing value$) -> entity$.setUdt(value$), "udt", "udt", ColumnType.NORMAL, new ColumnInfo(true), IndexInfo.noIndex()), TestUDTImplicitFieldParsing.class, TestUDTImplicitFieldParsing_AchillesMeta.INSTANCE);
+
+  /**
+   * Static class to expose "TestEntityWithImplicitFieldParsing_AchillesMeta" fields for <strong>type-safe</strong> function calls */
+  public static final TestEntityWithImplicitFieldParsing_AchillesMeta.ColumnsForFunctions COLUMNS = new TestEntityWithImplicitFieldParsing_AchillesMeta.ColumnsForFunctions();
+  ;
+
+  @Override
+  protected Class<TestEntityWithImplicitFieldParsing> getEntityClass() {
+    return TestEntityWithImplicitFieldParsing.class;
+  }
+
+  @Override
+  protected String getDerivedTableOrViewName() {
+    return "test_entity_with_implicit_field_parsing";
+  }
+
+  @Override
+  protected BiMap<String, String> fieldNameToCqlColumn() {
+    BiMap<String,String> map = HashBiMap.create(4);
+    map.put("id", "id");
+    map.put("uuid", "uuid");
+    map.put("value", "value");
+    map.put("udt", "udt");
+    return map;
+  }
+
+  @Override
+  protected Optional<ConsistencyLevel> getStaticReadConsistency() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<InternalNamingStrategy> getStaticNamingStrategy() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithImplicitFieldParsing, ?, ?>> getPartitionKeys() {
+    return Arrays.asList(id);
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithImplicitFieldParsing, ?, ?>> getClusteringColumns() {
+    return Arrays.asList(uuid);
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithImplicitFieldParsing, ?, ?>> getNormalColumns() {
+    return Arrays.asList(udt,value);
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithImplicitFieldParsing, ?, ?>> getComputedColumns() {
+    return Arrays.asList();
+  }
+
+  @Override
+  protected boolean isCounterTable() {
+    return false;
+  }
+
+  @Override
+  protected Optional<String> getStaticKeyspace() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<String> getStaticTableOrViewName() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<ConsistencyLevel> getStaticWriteConsistency() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<ConsistencyLevel> getStaticSerialConsistency() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<Integer> getStaticTTL() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected Optional<InsertStrategy> getStaticInsertStrategy() {
+    return Optional.empty();
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithImplicitFieldParsing, ?, ?>> getStaticColumns() {
+    return Arrays.asList();
+  }
+
+  @Override
+  protected List<AbstractProperty<TestEntityWithImplicitFieldParsing, ?, ?>> getCounterColumns() {
+    return Arrays.asList();
+  }
+
+  /**
+   * Utility class to expose all fields with their CQL type for function call */
+  public static final class ColumnsForFunctions {
+    /**
+     * <br/>
+     * Field to be used for <em>manager.dsl().select().function(...)</em> call
+     * <br/>
+     * This is an alias for the field <strong>"id"</strong> */
+    public final Long_Type ID = new Long_Type(Optional.empty()){
+      @Override
+      protected String cqlColumn() {
+          return "id";
+    }
+      @Override
+      public boolean isFunctionCall() {
+          return false;
+    }
+      }
+    ;
+
+    /**
+     * <br/>
+     * Field to be used for <em>manager.dsl().select().function(...)</em> call
+     * <br/>
+     * This is an alias for the field <strong>"uuid"</strong> */
+    public final UUID_Type UUID = new UUID_Type(Optional.empty()){
+      @Override
+      protected String cqlColumn() {
+          return "uuid";
+    }
+      @Override
+      public boolean isFunctionCall() {
+          return false;
+    }
+      }
+    ;
+
+    /**
+     * <br/>
+     * Field to be used for <em>manager.dsl().select().function(...)</em> call
+     * <br/>
+     * This is an alias for the field <strong>"value"</strong> */
+    public final String_Type VALUE = new String_Type(Optional.empty()){
+      @Override
+      protected String cqlColumn() {
+          return "value";
+    }
+      @Override
+      public boolean isFunctionCall() {
+          return false;
+    }
+      }
+    ;
+
+    /**
+     * <br/>
+     * Field to be used for <em>manager.dsl().select().function(...)</em> call
+     * <br/>
+     * This is an alias for the field <strong>"udt"</strong> */
+    public final TestUDTImplicitFieldParsing_Type UDT = new TestUDTImplicitFieldParsing_Type(Optional.empty()){
+      @Override
+      protected String cqlColumn() {
+          return "udt";
+    }
+      @Override
+      public boolean isFunctionCall() {
+          return false;
+    }
+      }
+    ;
+  }
+}
