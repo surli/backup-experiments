@@ -23,8 +23,9 @@ public class SendGrid {
      * @param apiKey is your SendGrid API Key: https://app.sendgrid.com/settings/api_keys
      */
     public SendGrid(String apiKey) {
+        this.apiKey = apiKey;
         this.client = new Client();
-        initializeSendGrid(apiKey);
+        initializeSendGrid();
     }
 
     /**
@@ -32,8 +33,19 @@ public class SendGrid {
      * @param test   is true if you are unit testing
      */
     public SendGrid(String apiKey, Boolean test) {
+        this.apiKey = apiKey;
         this.client = new Client(test);
-        initializeSendGrid(apiKey);
+        initializeSendGrid();
+    }
+
+    /**
+     * @param apiKey is your SendGrid API Key: https://app.sendgrid.com/settings/api_keys
+     * @param client the Client to use (allows to customize its configuration)
+     */
+    public SendGrid(String apiKey, Client client) {
+        this.apiKey = apiKey;
+        this.client = client;
+        initializeSendGrid();
     }
 
     /**
@@ -58,16 +70,16 @@ public class SendGrid {
      *                            </pre>
      */
     public SendGrid(String apiKey, CloseableHttpClient closeableHttpClient) {
+        this.apiKey = apiKey;
         this.client = new Client(closeableHttpClient);
-        initializeSendGrid(apiKey);
+        initializeSendGrid();
     }
 
-    public void initializeSendGrid(String apiKey) {
-        this.apiKey = apiKey;
+    public void initializeSendGrid() {
         this.host = "api.sendgrid.com";
         this.version = "v3";
         this.requestHeaders = new HashMap<String, String>();
-        this.requestHeaders.put("Authorization", "Bearer " + apiKey);
+        this.requestHeaders.put("Authorization", "Bearer " + this.apiKey);
         this.requestHeaders.put("User-agent", USER_AGENT);
         this.requestHeaders.put("Accept", "application/json");
     }
@@ -127,4 +139,5 @@ public class SendGrid {
 
         return makeCall(req);
     }
+
 }
