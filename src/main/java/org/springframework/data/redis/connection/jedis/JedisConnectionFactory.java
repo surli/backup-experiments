@@ -21,6 +21,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.function.Consumer;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -34,6 +35,7 @@ import org.springframework.data.redis.ExceptionTranslationStrategy;
 import org.springframework.data.redis.PassThroughExceptionTranslationStrategy;
 import org.springframework.data.redis.RedisConnectionFailureException;
 import org.springframework.data.redis.connection.*;
+import org.springframework.data.redis.connection.jedis.JedisConfigurator.JedisConfiguratorEntryPoint;
 import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ReflectionUtils;
@@ -107,6 +109,12 @@ public class JedisConnectionFactory implements InitializingBean, DisposableBean,
 	 * shard information).
 	 */
 	public JedisConnectionFactory() {}
+
+	/**
+	 * Constructs a new {@link JedisConnectionFactory} given a {@link Consumer} of configurator. The consumer is called to
+	 * configure this instance.
+	 */
+	public JedisConnectionFactory(Consumer<JedisConfiguratorEntryPoint> configurator) {}
 
 	/**
 	 * Constructs a new <code>JedisConnectionFactory</code> instance. Will override the other connection parameters passed
