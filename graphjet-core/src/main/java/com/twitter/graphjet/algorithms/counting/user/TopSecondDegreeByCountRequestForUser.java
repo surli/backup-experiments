@@ -22,7 +22,10 @@ import com.twitter.graphjet.algorithms.counting.TopSecondDegreeByCountRequest;
 import it.unimi.dsi.fastutil.longs.Long2DoubleMap;
 import it.unimi.dsi.fastutil.longs.LongSet;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Request data structure for calculating user recommendations.
@@ -74,4 +77,5 @@ public class TopSecondDegreeByCountRequestForUser extends TopSecondDegreeByCount
   public long getMaxEdgeEngagementAgeInMillis() { return maxEdgeEngagementAgeInMillis; }
 
   public RecommendationType getRecommendationType() { return recommendationType; }
+
 }

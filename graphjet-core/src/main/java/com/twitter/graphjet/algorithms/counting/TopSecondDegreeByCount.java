@@ -74,14 +74,12 @@ public abstract class TopSecondDegreeByCount<Request extends TopSecondDegreeByCo
   }
 
   /**
-   * Return whether the edge is within the age limit which is specified in the request.
-   * It is used to filter information of unwanted edges from being aggregated.
-   * @param request       is the request given by the requester
-   * @param edgeIterator  is the iterator being used to iterate node's edges.
-   *                      It carries information such as the engagement time of the current edge
-   * @return true if this edge is within the max age limit, false otherwise.
+   * Return whether we should proceed with updating an edge's info based on the criteria specified in the request
+   * @param request the request object containing the criteria
+   * @param edgeIterator contains current edge's info, such as max time-to-live and edge type
+   * @return true if the edge's information should be collected, false if it should be skipped
    */
-  protected abstract boolean isEdgeEngagementWithinAgeLimit(Request request, EdgeIterator edgeIterator);
+  protected abstract boolean isEdgeUpdateValid(Request request, EdgeIterator edgeIterator);
 
   /**
    * Update node information gathered about each RHS node, such as metadata and weights.
@@ -153,17 +151,15 @@ public abstract class TopSecondDegreeByCount<Request extends TopSecondDegreeByCo
         boolean hasSeenRightNodeFromEdge =
           seenEdgesPerNode.containsKey(rightNode) && seenEdgesPerNode.get(rightNode) == edgeType;
 
-        if (!hasSeenRightNodeFromEdge) {
+        if (!hasSeenRightNodeFromEdge && isEdgeUpdateValid(request, edgeIterator)) {
           seenEdgesPerNode.put(rightNode, edgeType);
-          if (isEdgeEngagementWithinAgeLimit(request, edgeIterator)) {
-            updateNodeInfo(
-              leftNode,
-              rightNode,
-              edgeType,
-              weight,
-              edgeIterator,
-              request.getMaxSocialProofTypeSize());
-          }
+          updateNodeInfo(
+            leftNode,
+            rightNode,
+            edgeType,
+            weight,
+            edgeIterator,
+            request.getMaxSocialProofTypeSize());
         }
       }
     }
