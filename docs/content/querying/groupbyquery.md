@@ -214,3 +214,4 @@ When using the "v2" strategy, the following query context parameters apply:
 |`maxMergingDictionarySize`|Can be used to lower the value of `druid.query.groupBy.maxMergingDictionarySize` for this query.|
 |`maxOnDiskStorage`|Can be used to lower the value of `druid.query.groupBy.maxOnDiskStorage` for this query.|
 |`sortByDimsFirst`|Sort the results first by dimension values and then by timestamp.|
+|`pushDownLimit`|When a limit spec is present, enables an optimization that applies the limit at the merge buffer level, reducing the number of results that need to be processed at the broker level. Note that when the sorting order uses fields that are not in the grouping key, this can result in approximate results.|

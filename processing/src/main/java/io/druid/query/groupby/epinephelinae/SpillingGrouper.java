@@ -58,10 +58,12 @@ public class SpillingGrouper<KeyType> implements Grouper<KeyType>
   private final LimitedTemporaryStorage temporaryStorage;
   private final ObjectMapper spillMapper;
   private final AggregatorFactory[] aggregatorFactories;
-  private final Comparator<KeyType> keyObjComparator;
+  private final Comparator<Grouper.Entry<KeyType>> keyObjComparator;
+  private final Comparator<Grouper.Entry<KeyType>> defaultOrderKeyObjComparator;
 
   private final List<File> files = Lists.newArrayList();
   private final List<Closeable> closeables = Lists.newArrayList();
+  private final boolean sortHasAggs;
 
   private boolean spillingAllowed = false;
 
@@ -75,11 +77,14 @@ public class SpillingGrouper<KeyType> implements Grouper<KeyType>
       final int bufferGrouperInitialBuckets,
       final LimitedTemporaryStorage temporaryStorage,
       final ObjectMapper spillMapper,
-      final boolean spillingAllowed
+      final boolean spillingAllowed,
+      final int limit,
+      final boolean sortHasAggs
   )
   {
     this.keySerde = keySerdeFactory.factorize();
-    this.keyObjComparator = keySerdeFactory.objectComparator();
+    this.keyObjComparator = keySerdeFactory.objectComparator(false);
+    this.defaultOrderKeyObjComparator = keySerdeFactory.objectComparator(true);
     this.grouper = new BufferGrouper<>(
         buffer,
         keySerde,
@@ -87,12 +92,15 @@ public class SpillingGrouper<KeyType> implements Grouper<KeyType>
         aggregatorFactories,
         bufferGrouperMaxSize,
         bufferGrouperMaxLoadFactor,
-        bufferGrouperInitialBuckets
+        bufferGrouperInitialBuckets,
+        limit,
+        sortHasAggs
     );
     this.aggregatorFactories = aggregatorFactories;
     this.temporaryStorage = temporaryStorage;
     this.spillMapper = spillMapper;
     this.spillingAllowed = spillingAllowed;
+    this.sortHasAggs = sortHasAggs;
   }
 
   @Override
@@ -175,7 +183,11 @@ public class SpillingGrouper<KeyType> implements Grouper<KeyType>
       closeables.add(fileIterator);
     }
 
-    return Groupers.mergeIterators(iterators, sorted ? keyObjComparator : null);
+    if (sortHasAggs) {
+      return Groupers.mergeIterators(iterators, defaultOrderKeyObjComparator);
+    } else {
+      return Groupers.mergeIterators(iterators, sorted ? keyObjComparator : null);
+    }
   }
 
   private void spill() throws IOException

@@ -54,11 +54,14 @@ import io.druid.query.groupby.orderby.DefaultLimitSpec;
 import io.druid.query.groupby.orderby.LimitSpec;
 import io.druid.query.groupby.orderby.NoopLimitSpec;
 import io.druid.query.groupby.orderby.OrderByColumnSpec;
+import io.druid.query.groupby.strategy.GroupByStrategyV2;
 import io.druid.query.spec.LegacySegmentSpec;
 import io.druid.query.spec.QuerySegmentSpec;
 import org.joda.time.Interval;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -132,8 +135,15 @@ public class GroupByQuery extends BaseQuery<Row>
     // We're not counting __time, even though that name is problematic. See: https://github.com/druid-io/druid/pull/3684
     verifyOutputNames(this.dimensions, this.aggregatorSpecs, this.postAggregatorSpecs);
 
-    Function<Sequence<Row>, Sequence<Row>> postProcFn =
-        this.limitSpec.build(this.dimensions, this.aggregatorSpecs, this.postAggregatorSpecs);
+    // On an inner query, we may sometimes get a LimitSpec so that row orderings can be determined for limit push down
+    // However, it's not necessary to build the real limitFn from it at this stage.
+    // Building a no-op function also allows us to avoid passing in postAggregators needed by limitSpec.build()
+    Function<Sequence<Row>, Sequence<Row>> postProcFn;
+    if (getContextBoolean(GroupByStrategyV2.CTX_KEY_OUTERMOST, true)) {
+      postProcFn = this.limitSpec.build(this.dimensions, this.aggregatorSpecs, this.postAggregatorSpecs);
+    } else {
+      postProcFn = new NoopLimitSpec().build(this.dimensions, this.aggregatorSpecs, this.postAggregatorSpecs);
+    }
 
     if (havingSpec != null) {
       postProcFn = Functions.compose(
@@ -281,10 +291,100 @@ public class GroupByQuery extends BaseQuery<Row>
     );
   }
 
-  public Ordering<Row> getRowOrdering(final boolean granular)
+  public Ordering<Row> getRowOrderingForPushDown(
+      final boolean granular,
+      final DefaultLimitSpec limitSpec,
+      final List<AggregatorFactory> aggregatorSpecs
+  )
   {
     final boolean sortByDimsFirst = getContextSortByDimsFirst();
 
+    final List<String> orderedFieldNames = new ArrayList<>();
+    final Set<Integer> dimsInOrderBy = new HashSet<>();
+    final List<Integer> directions = new ArrayList<>();
+
+    for (OrderByColumnSpec orderSpec : limitSpec.getColumns()) {
+      int direction = orderSpec.getDirection() == OrderByColumnSpec.Direction.ASCENDING ? 1 : -1;
+      int dimIndex = OrderByColumnSpec.getDimIndexForOrderBy(orderSpec, dimensions);
+      if (dimIndex >= 0) {
+        DimensionSpec dim = dimensions.get(dimIndex);
+        orderedFieldNames.add(dim.getOutputName());
+        dimsInOrderBy.add(dimIndex);
+        directions.add(direction);
+      } else {
+        int aggIndex = OrderByColumnSpec.getAggIndexForOrderBy(orderSpec, aggregatorSpecs);
+        if (aggIndex >= 0) {
+          AggregatorFactory agg = aggregatorSpecs.get(aggIndex);
+          orderedFieldNames.add(agg.getName());
+          directions.add(direction);
+        }
+      }
+    }
+
+    for (int i = 0; i < dimensions.size(); i++) {
+      if (!dimsInOrderBy.contains(i)) {
+        orderedFieldNames.add(dimensions.get(i).getOutputName());
+        directions.add(1);
+      }
+    }
+
+    final Comparator<Row> timeComparator = getTimeComparator(granular);
+
+    if (timeComparator == null) {
+      return Ordering.from(
+          new Comparator<Row>()
+          {
+            @Override
+            public int compare(Row lhs, Row rhs)
+            {
+              return compareDimsAndAggs(orderedFieldNames, directions, lhs, rhs);
+            }
+          }
+      );
+    } else if (sortByDimsFirst) {
+      return Ordering.from(
+          new Comparator<Row>()
+          {
+            @Override
+            public int compare(Row lhs, Row rhs)
+            {
+              final int cmp = compareDimsAndAggs(orderedFieldNames, directions, lhs, rhs);
+              if (cmp != 0) {
+                return cmp;
+              }
+
+              return timeComparator.compare(lhs, rhs);
+            }
+          }
+      );
+    } else {
+      return Ordering.from(
+          new Comparator<Row>()
+          {
+            @Override
+            public int compare(Row lhs, Row rhs)
+            {
+              final int timeCompare = timeComparator.compare(lhs, rhs);
+
+              if (timeCompare != 0) {
+                return timeCompare;
+              }
+
+              return compareDimsAndAggs(orderedFieldNames, directions, lhs, rhs);
+            }
+          }
+      );
+    }
+  };
+
+  public Ordering<Row> getRowOrdering(final boolean granular)
+  {
+    final boolean pushDownSort = getContextBoolean(GroupByQueryConfig.CTX_KEY_PUSH_DOWN_LIMIT, false);
+    if (pushDownSort && !DefaultLimitSpec.sortingOrderHasAggs(limitSpec, aggregatorSpecs)) {
+      return getRowOrderingForPushDown(granular, (DefaultLimitSpec) limitSpec, aggregatorSpecs);
+    }
+
+    final boolean sortByDimsFirst = getContextSortByDimsFirst();
     final Comparator<Row> timeComparator = getTimeComparator(granular);
 
     if (timeComparator == null) {
@@ -367,6 +467,21 @@ public class GroupByQuery extends BaseQuery<Row>
       }
     }
 
+    return 0;
+  }
+
+  private static int compareDimsAndAggs(List<String> fields, List<Integer> directions, Row lhs, Row rhs)
+  {
+    for (int i = 0; i < fields.size(); i++) {
+      final String fieldName = fields.get(i);
+      final int dimCompare = NATURAL_NULLS_FIRST.compare(
+          lhs.getRaw(fieldName),
+          rhs.getRaw(fieldName)
+      );
+      if (dimCompare != 0) {
+        return dimCompare * directions.get(i);
+      }
+    }
     return 0;
   }
 

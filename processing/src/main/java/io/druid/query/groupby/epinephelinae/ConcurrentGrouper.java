@@ -48,7 +48,9 @@ public class ConcurrentGrouper<KeyType> implements Grouper<KeyType>
   private final AtomicInteger threadNumber = new AtomicInteger();
   private volatile boolean spilling = false;
   private volatile boolean closed = false;
-  private final Comparator<KeyType> keyObjComparator;
+  private final Comparator<Grouper.Entry<KeyType>> keyObjComparator;
+  private final Comparator<Grouper.Entry<KeyType>> defaultOrderKeyObjComparator;
+  private final boolean sortHasAggs;
 
   public ConcurrentGrouper(
       final ByteBuffer buffer,
@@ -60,7 +62,9 @@ public class ConcurrentGrouper<KeyType> implements Grouper<KeyType>
       final int bufferGrouperInitialBuckets,
       final LimitedTemporaryStorage temporaryStorage,
       final ObjectMapper spillMapper,
-      final int concurrencyHint
+      final int concurrencyHint,
+      final int limit,
+      final boolean sortHasAggs
   )
   {
     Preconditions.checkArgument(concurrencyHint > 0, "concurrencyHint > 0");
@@ -92,12 +96,16 @@ public class ConcurrentGrouper<KeyType> implements Grouper<KeyType>
               bufferGrouperInitialBuckets,
               temporaryStorage,
               spillMapper,
-              false
+              false,
+              limit,
+              sortHasAggs
           )
       );
     }
 
-    this.keyObjComparator = keySerdeFactory.objectComparator();
+    this.keyObjComparator = keySerdeFactory.objectComparator(false);
+    this.defaultOrderKeyObjComparator = keySerdeFactory.objectComparator(true);
+    this.sortHasAggs = sortHasAggs;
   }
 
   @Override
@@ -165,7 +173,11 @@ public class ConcurrentGrouper<KeyType> implements Grouper<KeyType>
       }
     }
 
-    return Groupers.mergeIterators(iterators, sorted ? keyObjComparator : null);
+    if (sortHasAggs) {
+      return Groupers.mergeIterators(iterators, defaultOrderKeyObjComparator);
+    } else {
+      return Groupers.mergeIterators(iterators, sorted ? keyObjComparator : null);
+    }
   }
 
   @Override

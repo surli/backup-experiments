@@ -408,7 +408,9 @@ public class GroupByQueryEngineV2
                .toArray(new AggregatorFactory[query.getAggregatorSpecs().size()]),
           querySpecificConfig.getBufferGrouperMaxSize(),
           querySpecificConfig.getBufferGrouperMaxLoadFactor(),
-          querySpecificConfig.getBufferGrouperInitialBuckets()
+          querySpecificConfig.getBufferGrouperInitialBuckets(),
+          -1,
+          false
       );
 
 outer:
@@ -585,6 +587,15 @@ outer:
     public Grouper.KeyComparator bufferComparator()
     {
       // No sorting, let mergeRunners handle that
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public Grouper.KeyComparator bufferComparatorWithAggregators(
+        AggregatorFactory[] aggregatorFactories, int[] aggregatorOffsets
+    )
+    {
+      // not called on this
       throw new UnsupportedOperationException();
     }
 

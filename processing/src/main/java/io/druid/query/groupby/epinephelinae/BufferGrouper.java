@@ -57,6 +57,35 @@ import java.util.List;
  */
 public class BufferGrouper<KeyType> implements Grouper<KeyType>
 {
+  public class BufferGrouperOffsetHeapIndexUpdater
+  {
+    private ByteBuffer hashTableBuffer;
+    private final int indexPosition;
+
+    public BufferGrouperOffsetHeapIndexUpdater(
+        ByteBuffer hashTableBuffer,
+        int indexPosition
+    )
+    {
+      this.hashTableBuffer = hashTableBuffer;
+      this.indexPosition = indexPosition;
+    }
+
+    public void setHashTableBuffer(ByteBuffer newTableBuffer) {
+      hashTableBuffer = newTableBuffer;
+    }
+
+    public void updateHeapIndexForOffset(int bucketOffset, int newHeapIndex)
+    {
+      hashTableBuffer.putInt(bucketOffset + indexPosition, newHeapIndex);
+    }
+
+    public int getHeapIndexForOffset(int bucketOffset)
+    {
+      return hashTableBuffer.getInt(bucketOffset + indexPosition);
+    }
+  }
+
   private static final Logger log = new Logger(BufferGrouper.class);
 
   private static final int MIN_INITIAL_BUCKETS = 4;
@@ -67,6 +96,7 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
   private final ByteBuffer buffer;
   private final KeySerde<KeyType> keySerde;
   private final int keySize;
+  private final AggregatorFactory[] aggregatorFactories;
   private final BufferAggregator[] aggregators;
   private final int[] aggregatorOffsets;
   private final int initialBuckets;
@@ -90,6 +120,30 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
   // Maximum number of elements in the table before it must be resized
   private int maxSize;
 
+  // Limit to apply to results.
+  // If limit > 0, track hash table entries in a binary heap with size of limit.
+  // If -1, no limit is applied, hash table entry offsets are tracked with an unordered list with no limit.
+  private int limit;
+
+  // Indicates if the sorting order has aggregators, used when pushing down limit/sorting.
+  // When the sorting order has aggs, grouping key comparisons need to also compare on aggregators.
+  // Additionally, results must be resorted by grouping key to allow results to merge correctly.
+  private boolean sortHasAggs;
+
+  // Min-max heap, used for storing offsets when applying limits/sorting in the BufferGrouper
+  private ByteBufferMinMaxOffsetHeap offsetHeap;
+
+  // ByteBuffer slice used by the min-max offset heap
+  private ByteBuffer offsetHeapBuffer;
+
+  // Updates the heap index field for buckets, created passed to the heap when
+  // pushing down limit and the sort order includes aggregators
+  private final BufferGrouperOffsetHeapIndexUpdater heapIndexUpdater;
+
+  // How many times this BufferGrouper has expanded (through growIfPossible())
+  // When using limit push down, this instead tracks how many times the table buffer has flipped (through swapPushDownBuffers())
+  private int growthCount;
+
   public BufferGrouper(
       final ByteBuffer buffer,
       final KeySerde<KeyType> keySerde,
@@ -97,7 +151,9 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
       final AggregatorFactory[] aggregatorFactories,
       final int bufferGrouperMaxSize,
       final float maxLoadFactor,
-      final int initialBuckets
+      final int initialBuckets,
+      final int limit,
+      final boolean sortHasAggs
   )
   {
     this.buffer = buffer;
@@ -108,20 +164,40 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
     this.bufferGrouperMaxSize = bufferGrouperMaxSize;
     this.maxLoadFactor = maxLoadFactor > 0 ? maxLoadFactor : DEFAULT_MAX_LOAD_FACTOR;
     this.initialBuckets = initialBuckets > 0 ? Math.max(MIN_INITIAL_BUCKETS, initialBuckets) : DEFAULT_INITIAL_BUCKETS;
+    this.growthCount = 0;
+    this.sortHasAggs = sortHasAggs;
 
     if (this.maxLoadFactor >= 1.0f) {
       throw new IAE("Invalid maxLoadFactor[%f], must be < 1.0", maxLoadFactor);
     }
 
     int offset = HASH_SIZE + keySize;
+    this.aggregatorFactories = aggregatorFactories;
     for (int i = 0; i < aggregatorFactories.length; i++) {
       aggregators[i] = aggregatorFactories[i].factorizeBuffered(columnSelectorFactory);
       aggregatorOffsets[i] = offset;
       offset += aggregatorFactories[i].getMaxIntermediateSize();
     }
 
+    // For each bucket, store an extra field indicating the bucket's current index within the heap when
+    // pushing down limits
+    if (limit > -1) {
+      this.heapIndexUpdater = new BufferGrouperOffsetHeapIndexUpdater(buffer, offset);
+      offset += Ints.BYTES;
+    } else {
+      this.heapIndexUpdater = null;
+    }
+
     this.bucketSize = offset;
-    this.tableArenaSize = (buffer.capacity() / (bucketSize + Ints.BYTES)) * bucketSize;
+
+    this.limit = limit;
+    if (limit > -1) {
+      //only store offsets up to `limit` + 1 instead of up to # of buckets, we only keep the top results
+      int heapByteSize = (limit + 1) * Ints.BYTES;
+      this.tableArenaSize = ((buffer.capacity() - heapByteSize) / bucketSize) * bucketSize;
+    } else {
+      this.tableArenaSize = (buffer.capacity() / (bucketSize + Ints.BYTES)) * bucketSize;
+    }
 
     reset();
   }
@@ -154,7 +230,11 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
 
     if (bucket < 0) {
       if (size < bufferGrouperMaxSize) {
-        growIfPossible();
+        if (limit > -1) {
+          swapPushDownBuffers();
+        } else {
+          growIfPossible();
+        }
         bucket = findBucket(tableBuffer, buckets, bucketSize, size < maxSize, keyBuffer, keySize, keyHash);
       }
 
@@ -175,13 +255,30 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
         aggregators[i].init(tableBuffer, offset + aggregatorOffsets[i]);
       }
 
-      buffer.putInt(tableArenaSize + size * Ints.BYTES, offset);
+      if (limit < 0) {
+        buffer.putInt(tableArenaSize + size * Ints.BYTES, offset);
+      } else {
+        heapIndexUpdater.updateHeapIndexForOffset(offset, -1);
+      }
       size++;
     }
 
     // Aggregate the current row.
     for (int i = 0; i < aggregators.length; i++) {
       aggregators[i].aggregate(tableBuffer, offset + aggregatorOffsets[i]);
+    }
+
+    if (limit > -1) {
+      int heapIndex = heapIndexUpdater.getHeapIndexForOffset(offset);
+      if (heapIndex < 0) {
+        // not in the heap, add it
+        offsetHeap.addOffset(offset);
+      } else if (sortHasAggs) {
+        // Since the sorting columns contain at least one aggregator, we need to remove and reinsert
+        // the entries after aggregating to maintain proper ordering
+        offsetHeap.deleteAt(heapIndex);
+        offsetHeap.addOffset(offset);
+      }
     }
 
     return true;
@@ -196,6 +293,11 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
   @Override
   public void reset()
   {
+    if (limit > -1) {
+      resetForPushDown();
+      return;
+    }
+
     size = 0;
     buckets = Math.min(tableArenaSize / bucketSize, initialBuckets);
     maxSize = maxSizeForBuckets(buckets);
@@ -241,100 +343,19 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
   @Override
   public Iterator<Entry<KeyType>> iterator(final boolean sorted)
   {
-    if (sorted) {
-      final List<Integer> wrappedOffsets = new AbstractList<Integer>()
-      {
-        @Override
-        public Integer get(int index)
-        {
-          return buffer.getInt(tableArenaSize + index * Ints.BYTES);
-        }
-
-        @Override
-        public Integer set(int index, Integer element)
-        {
-          final Integer oldValue = get(index);
-          buffer.putInt(tableArenaSize + index * Ints.BYTES, element);
-          return oldValue;
-        }
-
-        @Override
-        public int size()
-        {
-          return size;
-        }
-      };
-
-      final KeyComparator comparator = keySerde.bufferComparator();
-
-      // Sort offsets in-place.
-      Collections.sort(
-          wrappedOffsets,
-          new Comparator<Integer>()
-          {
-            @Override
-            public int compare(Integer lhs, Integer rhs)
-            {
-              return comparator.compare(
-                  tableBuffer,
-                  tableBuffer,
-                  lhs + HASH_SIZE,
-                  rhs + HASH_SIZE
-              );
-            }
-          }
-      );
-
-      return new Iterator<Entry<KeyType>>()
-      {
-        int curr = 0;
-
-        @Override
-        public boolean hasNext()
-        {
-          return curr < size;
-        }
-
-        @Override
-        public Entry<KeyType> next()
-        {
-          return bucketEntryForOffset(wrappedOffsets.get(curr++));
-        }
-
-        @Override
-        public void remove()
-        {
-          throw new UnsupportedOperationException();
-        }
-      };
+    if (limit > -1) {
+      if (sortHasAggs) {
+        // re-sort the heap in place, it's also an array of offsets in the buffer
+        return makeSortedIterator(offsetHeap.getHeapSize());
+      } else {
+        return makeHeapIterator();
+      }
     } else {
-      // Unsorted iterator
-      return new Iterator<Entry<KeyType>>()
-      {
-        int curr = 0;
-
-        @Override
-        public boolean hasNext()
-        {
-          return curr < size;
-        }
-
-        @Override
-        public Entry<KeyType> next()
-        {
-          final int offset = buffer.getInt(tableArenaSize + curr * Ints.BYTES);
-          final Entry<KeyType> entry = bucketEntryForOffset(offset);
-          curr++;
-
-          return entry;
-        }
-
-        @Override
-        public void remove()
-        {
-          throw new UnsupportedOperationException();
-        }
-      };
+      if (sorted) {
+        return makeSortedIterator(size);
+      } else {
+        return makeUnsortedIterator();
+      }
     }
   }
 
@@ -351,9 +372,234 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
     }
   }
 
+  public int getGrowthCount()
+  {
+    return growthCount;
+  }
+
+  public int getSize()
+  {
+    return size;
+  }
+
+  public int getBuckets()
+  {
+    return buckets;
+  }
+
+  public int getLimit()
+  {
+    return limit;
+  }
+
+  public int getMaxSize()
+  {
+    return maxSize;
+  }
+
+  // just split the table arena buffer into two halves, swapping to the other half when the current half is full
+  private void resetForPushDown()
+  {
+    size = 0;
+    buckets = (tableArenaSize / 2) / bucketSize;
+    if (buckets < (limit + 1)) {
+      throw new IAE(
+          "Buffer capacity [%d] is too small, minimum bytes needed: [%d]",
+          buffer.capacity(),
+          (limit + 1) * (Ints.BYTES + bucketSize * 2)
+      );
+    }
+    maxSize = buckets; // just use all the buckets in each half, ignoring load factor
+
+    // start at the first half
+    tableStart = 0;
+
+    final ByteBuffer bufferDup = buffer.duplicate();
+    bufferDup.position(tableStart);
+    bufferDup.limit(tableStart + buckets * bucketSize);
+    tableBuffer = bufferDup.slice();
+
+    // Clear used bits of new table
+    for (int i = 0; i < buckets; i++) {
+      tableBuffer.put(i * bucketSize, (byte) 0);
+    }
+
+    if (heapIndexUpdater != null) {
+      heapIndexUpdater.setHashTableBuffer(tableBuffer);
+    }
+
+    keySerde.reset();
+
+    offsetHeapBuffer = initOffsetHeap();
+  }
+
+  private Iterator<Entry<KeyType>> makeSortedIterator(final int size)
+  {
+    final List<Integer> wrappedOffsets = new AbstractList<Integer>()
+    {
+      @Override
+      public Integer get(int index)
+      {
+        return buffer.getInt(tableArenaSize + index * Ints.BYTES);
+      }
+
+      @Override
+      public Integer set(int index, Integer element)
+      {
+        final Integer oldValue = get(index);
+        buffer.putInt(tableArenaSize + index * Ints.BYTES, element);
+        return oldValue;
+      }
+
+      @Override
+      public int size()
+      {
+        return size;
+      }
+    };
+
+    final KeyComparator comparator = keySerde.bufferComparator();
+
+    // Sort offsets in-place.
+    Collections.sort(
+        wrappedOffsets,
+        new Comparator<Integer>()
+        {
+          @Override
+          public int compare(Integer lhs, Integer rhs)
+          {
+            return comparator.compare(
+                tableBuffer,
+                tableBuffer,
+                lhs + HASH_SIZE,
+                rhs + HASH_SIZE
+            );
+          }
+        }
+    );
+
+    return new Iterator<Entry<KeyType>>()
+    {
+      int curr = 0;
+
+      @Override
+      public boolean hasNext()
+      {
+        return curr < size;
+      }
+
+      @Override
+      public Entry<KeyType> next()
+      {
+        return bucketEntryForOffset(wrappedOffsets.get(curr++));
+      }
+
+      @Override
+      public void remove()
+      {
+        throw new UnsupportedOperationException();
+      }
+    };
+  }
+
+  private Iterator<Entry<KeyType>> makeUnsortedIterator()
+  {
+    return new Iterator<Entry<KeyType>>()
+    {
+      int curr = 0;
+
+      @Override
+      public boolean hasNext()
+      {
+        return curr < size;
+      }
+
+      @Override
+      public Entry<KeyType> next()
+      {
+        final int offset = buffer.getInt(tableArenaSize + curr * Ints.BYTES);
+        final Entry<KeyType> entry = bucketEntryForOffset(offset);
+        curr++;
+
+        return entry;
+      }
+
+      @Override
+      public void remove()
+      {
+        throw new UnsupportedOperationException();
+      }
+    };
+  }
+
+
+  private Iterator<Entry<KeyType>> makeHeapIterator()
+  {
+    final int initialHeapSize = offsetHeap.getHeapSize();
+    return new Iterator<Entry<KeyType>>()
+    {
+      int curr = 0;
+
+      @Override
+      public boolean hasNext()
+      {
+        return curr < initialHeapSize;
+      }
+
+      @Override
+      public Entry<KeyType> next()
+      {
+        if (curr >= initialHeapSize) {
+          throw new ISE("WTF");
+        }
+        final int offset = offsetHeap.removeMin();
+        final Entry<KeyType> entry = bucketEntryForOffset(offset);
+        curr++;
+
+        return entry;
+      }
+
+      @Override
+      public void remove()
+      {
+        throw new UnsupportedOperationException();
+      }
+    };
+  }
+
+  private ByteBuffer initOffsetHeap()
+  {
+    ByteBuffer heapBuffer = buffer.duplicate();
+    heapBuffer.position(tableArenaSize);
+    heapBuffer = heapBuffer.slice();
+    int heapSize = (limit + 1) * Ints.BYTES;
+    heapBuffer.limit(heapSize);
+
+    Comparator<Integer> comparator = new Comparator<Integer>()
+    {
+      final KeyComparator keyComparator = keySerde.bufferComparatorWithAggregators(
+          aggregatorFactories,
+          aggregatorOffsets
+      );
+      @Override
+      public int compare(Integer o1, Integer o2)
+      {
+        return keyComparator.compare(tableBuffer, tableBuffer, o1 + HASH_SIZE, o2 + HASH_SIZE);
+      }
+    };
+
+    this.offsetHeap = new ByteBufferMinMaxOffsetHeap(heapBuffer, limit, comparator, heapIndexUpdater);
+    return heapBuffer;
+  }
+
   private boolean isUsed(final int bucket)
   {
     return (tableBuffer.get(bucket * bucketSize) & 0x80) == 0x80;
+  }
+
+  private boolean isOffsetUsed(final int bucketOffset)
+  {
+    return (tableBuffer.get(bucketOffset) & 0x80) == 0x80;
   }
 
   private Entry<KeyType> bucketEntryForOffset(final int bucketOffset)
@@ -409,6 +655,92 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
     final ByteBuffer entryBuffer = tableBuffer.duplicate();
     final ByteBuffer keyBuffer = tableBuffer.duplicate();
 
+    // copy old buckets
+    int numCopied = copyBucketsAndOffsetList(newBuckets, entryBuffer, keyBuffer, newTableBuffer);
+    newSize += numCopied;
+
+    buckets = newBuckets;
+    maxSize = newMaxSize;
+    tableBuffer = newTableBuffer;
+    tableStart = newTableStart;
+
+    if (size != newSize) {
+      throw new ISE("WTF?! size[%,d] != newSize[%,d] after resizing?!", size, newSize);
+    }
+
+    growthCount++;
+  }
+
+  // We don't delete keys in the buffers because it's a linear probing hash table, so when it fills,
+  // swap to the other buffer and copy the valid keys (in the heap) over
+  private void swapPushDownBuffers()
+  {
+    if (growthCount % 2 == 0) {
+      tableStart = tableArenaSize / 2;
+    } else {
+      tableStart = 0;
+    }
+
+    ByteBuffer newTableBuffer = buffer.duplicate();
+    newTableBuffer.position(tableStart);
+    newTableBuffer.limit(tableStart + buckets * bucketSize);
+    newTableBuffer = newTableBuffer.slice();
+
+    // Clear used bits of new table
+    for (int i = 0; i < buckets; i++) {
+      newTableBuffer.put(i * bucketSize, (byte) 0);
+    }
+
+    // Loop over old buckets and copy to new table
+    final ByteBuffer entryBuffer = tableBuffer.duplicate();
+    final ByteBuffer keyBuffer = tableBuffer.duplicate();
+
+    // copy old buckets
+    int numCopied = copyBucketsAndOffsetHeap(buckets, entryBuffer, keyBuffer, newTableBuffer);
+
+    // when using the heap, only copy buckets that are still in the heap, drop the rest
+    // (they would be excluded by the limit)
+    size = numCopied;
+    tableBuffer = newTableBuffer;
+    if (heapIndexUpdater != null) {
+      heapIndexUpdater.setHashTableBuffer(tableBuffer);
+    }
+    growthCount++;
+  }
+
+  // Iterate through the heap, copy buckets to the new table buffer, and update the bucket offsets within the heap
+  private int copyBucketsAndOffsetHeap(int numNewBuckets, ByteBuffer entryBuffer, ByteBuffer keyBuffer, ByteBuffer newTableBuffer)
+  {
+    int numCopied = 0;
+    for (int i = 0; i < offsetHeap.getHeapSize(); i++) {
+      final int oldBucketOffset = offsetHeapBuffer.getInt(i * Ints.BYTES);
+      if (isOffsetUsed(oldBucketOffset)) {
+        entryBuffer.limit(oldBucketOffset + bucketSize);
+        entryBuffer.position(oldBucketOffset);
+        keyBuffer.limit(entryBuffer.position() + HASH_SIZE + keySize);
+        keyBuffer.position(entryBuffer.position() + HASH_SIZE);
+
+        final int keyHash = entryBuffer.getInt(entryBuffer.position()) & 0x7fffffff;
+        final int newBucket = findBucket(newTableBuffer, numNewBuckets, bucketSize, true, keyBuffer, keySize, keyHash);
+
+        if (newBucket < 0) {
+          throw new ISE("WTF?! Couldn't find a bucket while resizing?!");
+        }
+
+        final int newOffset = newBucket * bucketSize;
+        newTableBuffer.position(newOffset);
+        newTableBuffer.put(entryBuffer);
+
+        offsetHeapBuffer.putInt(i * Ints.BYTES, newOffset);
+        numCopied++;
+      }
+    }
+    return numCopied;
+  }
+
+  private int copyBucketsAndOffsetList(int numNewBuckets, ByteBuffer entryBuffer, ByteBuffer keyBuffer, ByteBuffer newTableBuffer)
+  {
+    int numCopied = 0;
     for (int oldBucket = 0; oldBucket < buckets; oldBucket++) {
       if (isUsed(oldBucket)) {
         entryBuffer.limit((oldBucket + 1) * bucketSize);
@@ -417,7 +749,7 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
         keyBuffer.position(entryBuffer.position() + HASH_SIZE);
 
         final int keyHash = entryBuffer.getInt(entryBuffer.position()) & 0x7fffffff;
-        final int newBucket = findBucket(newTableBuffer, newBuckets, bucketSize, true, keyBuffer, keySize, keyHash);
+        final int newBucket = findBucket(newTableBuffer, numNewBuckets, bucketSize, true, keyBuffer, keySize, keyHash);
 
         if (newBucket < 0) {
           throw new ISE("WTF?! Couldn't find a bucket while resizing?!");
@@ -426,20 +758,13 @@ public class BufferGrouper<KeyType> implements Grouper<KeyType>
         newTableBuffer.position(newBucket * bucketSize);
         newTableBuffer.put(entryBuffer);
 
-        buffer.putInt(tableArenaSize + newSize * Ints.BYTES, newBucket * bucketSize);
-        newSize++;
+        buffer.putInt(tableArenaSize + numCopied * Ints.BYTES, newBucket * bucketSize);
+        numCopied++;
       }
     }
-
-    buckets = newBuckets;
-    maxSize = newMaxSize;
-    tableBuffer = newTableBuffer;
-    tableStart = newTableStart;
-
-    if (size != newSize) {
-      throw new ISE("WTF?! size[%,d] != newSize[%,d] after resizing?!", size, maxSize);
-    }
+    return numCopied;
   }
+
 
   private int maxSizeForBuckets(int buckets)
   {
