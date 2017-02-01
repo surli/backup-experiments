@@ -509,7 +509,8 @@ public class MainTest {
 
         // we just reference there all violations
         final String[][] outputValues = {
-                {"InputComplexityOverflow", "1", "172"},
+                {"InputNPathComplexity", "1", "178"},
+                {"InputComplexityOverflow", "1", "256"},
         };
 
         final int allowedLength = 170;
