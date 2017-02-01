@@ -53,7 +53,7 @@ public class SpillingGrouper<KeyType> implements Grouper<KeyType>
 {
   private static final Logger log = new Logger(SpillingGrouper.class);
 
-  private final BufferGrouper<KeyType> grouper;
+  private final Grouper<KeyType> grouper;
   private final KeySerde<KeyType> keySerde;
   private final LimitedTemporaryStorage temporaryStorage;
   private final ObjectMapper spillMapper;
@@ -85,17 +85,29 @@ public class SpillingGrouper<KeyType> implements Grouper<KeyType>
     this.keySerde = keySerdeFactory.factorize();
     this.keyObjComparator = keySerdeFactory.objectComparator(false);
     this.defaultOrderKeyObjComparator = keySerdeFactory.objectComparator(true);
-    this.grouper = new BufferGrouper<>(
-        buffer,
-        keySerde,
-        columnSelectorFactory,
-        aggregatorFactories,
-        bufferGrouperMaxSize,
-        bufferGrouperMaxLoadFactor,
-        bufferGrouperInitialBuckets,
-        limit,
-        sortHasAggs
-    );
+    if (limit > -1) {
+      this.grouper = new LimitedBufferGrouper<>(
+          buffer,
+          keySerde,
+          columnSelectorFactory,
+          aggregatorFactories,
+          bufferGrouperMaxSize,
+          bufferGrouperMaxLoadFactor,
+          bufferGrouperInitialBuckets,
+          limit,
+          sortHasAggs
+      );
+    } else {
+      this.grouper = new BufferGrouper<>(
+          buffer,
+          keySerde,
+          columnSelectorFactory,
+          aggregatorFactories,
+          bufferGrouperMaxSize,
+          bufferGrouperMaxLoadFactor,
+          bufferGrouperInitialBuckets
+      );
+    }
     this.aggregatorFactories = aggregatorFactories;
     this.temporaryStorage = temporaryStorage;
     this.spillMapper = spillMapper;

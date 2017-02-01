@@ -92,7 +92,33 @@ public class RowBasedGrouperHelper
     } else {
       limit = -1;
     }
-    final boolean pushDownLimit = query.getContextBoolean(GroupByQueryConfig.CTX_KEY_PUSH_DOWN_LIMIT, false);
+    boolean pushDownLimit = query.getContextBoolean(GroupByQueryConfig.CTX_KEY_PUSH_DOWN_LIMIT, false);
+    if (pushDownLimit && limit < 0) {
+      throw new IAE("If enabling limit push down, a limit spec must be provided.");
+    }
+
+    final ThreadLocal<Row> columnSelectorRow = new ThreadLocal<>();
+    final ColumnSelectorFactory columnSelectorFactory = RowBasedColumnSelectorFactory.create(
+        columnSelectorRow,
+        GroupByQueryHelper.rowSignatureFor(query)
+    );
+
+    // If there's a limit spec, check if the sorting order contains any aggregators
+    boolean sortHasAggs = false;
+    if (limit > -1) {
+      sortHasAggs = DefaultLimitSpec.sortingOrderHasAggs(limitSpec, Arrays.asList(aggregatorFactories));
+      // If the sorting order only uses columns in the grouping key, we can always push the limit down
+      // to the buffer grouper without affecting result accuracy
+      if (!sortHasAggs) {
+        pushDownLimit = true;
+      }
+    }
+
+    // If only applying an orderby without a limit, don't try to push down
+    if (limit == Integer.MAX_VALUE) {
+      pushDownLimit = false;
+    }
+
     final Grouper.KeySerdeFactory<RowBasedKey> keySerdeFactory = new RowBasedKeySerdeFactory(
         includeTimestamp,
         query.getContextSortByDimsFirst(),
@@ -101,17 +127,6 @@ public class RowBasedGrouperHelper
         aggregatorFactories,
         pushDownLimit ? limitSpec : null
     );
-    final ThreadLocal<Row> columnSelectorRow = new ThreadLocal<>();
-    final ColumnSelectorFactory columnSelectorFactory = RowBasedColumnSelectorFactory.create(
-        columnSelectorRow,
-        GroupByQueryHelper.rowSignatureFor(query)
-    );
-
-    // If pushing down, check if the sorting order contains any aggregators
-    boolean sortHasAggs = false;
-    if (pushDownLimit) {
-      sortHasAggs = DefaultLimitSpec.sortingOrderHasAggs(limitSpec, Arrays.asList(aggregatorFactories));
-    }
 
     final Grouper<RowBasedKey> grouper;
     if (concurrencyHint == -1) {
@@ -962,12 +977,48 @@ public class RowBasedGrouperHelper
 
     private interface RowBasedKeySerdeHelper
     {
+      /**
+       * @return The size in bytes for a value of the column handled by this SerdeHelper.
+       */
       int getKeyBufferValueSize();
 
-      boolean putToByteBuffer(RowBasedKey key, int idx);
+      /**
+       * Read a value from RowBasedKey at `idx` and put the value at the current position of RowBasedKeySerde's keyBuffer.
+       * advancing the position by the size returned by getKeyBufferValueSize().
+       *
+       * If an internal resource limit has been reached and the value could not be added to the keyBuffer,
+       * (e.g., maximum dictionary size exceeded for Strings), this method returns false.
+       *
+       * @param key RowBasedKey containing the grouping key values for a row.
+       * @param idx Index of the grouping key column within that this SerdeHelper handles
+       * @return true if the value was added to the key, false otherwise
+       */
+      boolean putToKeyBuffer(RowBasedKey key, int idx);
 
+      /**
+       * Read a value from a ByteBuffer containing a grouping key in the same format as RowBasedKeySerde's keyBuffer and
+       * put the value in `dimValues` at `dimValIdx`.
+       *
+       * The value to be read resides in the buffer at position (`initialOffset` + the SerdeHelper's keyBufferPosition).
+       *
+       * @param buffer ByteBuffer containing an array of grouping keys for a row
+       * @param initialOffset Offset where non-timestamp grouping key columns start, needed because timestamp is not
+       *                      always included in the buffer.
+       * @param dimValIdx Index within dimValues to store the value read from the buffer
+       * @param dimValues Output array containing grouping key values for a row
+       */
       void getFromByteBuffer(ByteBuffer buffer, int initialOffset, int dimValIdx, Comparable[] dimValues);
 
+      /**
+       * Compare the values at lhsBuffer[lhsPosition] and rhsBuffer[rhsPosition] using the natural ordering
+       * for this SerdeHelper's value type.
+       *
+       * @param lhsBuffer ByteBuffer containing an array of grouping keys for a row
+       * @param rhsBuffer ByteBuffer containing an array of grouping keys for a row
+       * @param lhsPosition Position of value within lhsBuffer
+       * @param rhsPosition Position of value within rhsBuffer
+       * @return Negative number if lhs < rhs, positive if lhs > rhs, 0 if lhs == rhs
+       */
       int compare(ByteBuffer lhsBuffer, ByteBuffer rhsBuffer, int lhsPosition, int rhsPosition);
     }
 
@@ -987,7 +1038,7 @@ public class RowBasedGrouperHelper
       }
 
       @Override
-      public boolean putToByteBuffer(RowBasedKey key, int idx)
+      public boolean putToKeyBuffer(RowBasedKey key, int idx)
       {
         final int id = addToDictionary((String) key.getKey()[idx]);
         if (id < 0) {
@@ -1035,7 +1086,7 @@ public class RowBasedGrouperHelper
       }
 
       @Override
-      public boolean putToByteBuffer(RowBasedKey key, int idx)
+      public boolean putToKeyBuffer(RowBasedKey key, int idx)
       {
         keyBuffer.putLong((Long) key.getKey()[idx]);
         return true;
@@ -1073,7 +1124,7 @@ public class RowBasedGrouperHelper
       }
 
       @Override
-      public boolean putToByteBuffer(RowBasedKey key, int idx)
+      public boolean putToKeyBuffer(RowBasedKey key, int idx)
       {
         keyBuffer.putFloat((Float) key.getKey()[idx]);
         return true;
@@ -1111,7 +1162,7 @@ public class RowBasedGrouperHelper
       }
 
       @Override
-      public boolean putToByteBuffer(RowBasedKey key, int idx)
+      public boolean putToKeyBuffer(RowBasedKey key, int idx)
       {
         keyBuffer.putDouble((Double) key.getKey()[idx]);
         return true;

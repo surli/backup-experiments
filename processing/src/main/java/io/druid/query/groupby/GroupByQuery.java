@@ -291,7 +291,7 @@ public class GroupByQuery extends BaseQuery<Row>
     );
   }
 
-  public Ordering<Row> getRowOrderingForPushDown(
+  private Ordering<Row> getRowOrderingForPushDown(
       final boolean granular,
       final DefaultLimitSpec limitSpec,
       final List<AggregatorFactory> aggregatorSpecs
@@ -311,13 +311,6 @@ public class GroupByQuery extends BaseQuery<Row>
         orderedFieldNames.add(dim.getOutputName());
         dimsInOrderBy.add(dimIndex);
         directions.add(direction);
-      } else {
-        int aggIndex = OrderByColumnSpec.getAggIndexForOrderBy(orderSpec, aggregatorSpecs);
-        if (aggIndex >= 0) {
-          AggregatorFactory agg = aggregatorSpecs.get(aggIndex);
-          orderedFieldNames.add(agg.getName());
-          directions.add(direction);
-        }
       }
     }
 
@@ -375,7 +368,7 @@ public class GroupByQuery extends BaseQuery<Row>
           }
       );
     }
-  };
+  }
 
   public Ordering<Row> getRowOrdering(final boolean granular)
   {
