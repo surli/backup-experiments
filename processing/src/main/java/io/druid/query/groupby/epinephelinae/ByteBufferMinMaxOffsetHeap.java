@@ -40,7 +40,7 @@ public class ByteBufferMinMaxOffsetHeap
   private final Comparator maxComparator;
   private final ByteBuffer buf;
   private final int limit;
-  private final BufferGrouper.BufferGrouperOffsetHeapIndexUpdater heapIndexUpdater;
+  private final LimitedBufferGrouper.BufferGrouperOffsetHeapIndexUpdater heapIndexUpdater;
 
   private int heapSize;
 
@@ -48,7 +48,7 @@ public class ByteBufferMinMaxOffsetHeap
       ByteBuffer buf,
       int limit,
       Comparator<Integer> minComparator,
-      BufferGrouper.BufferGrouperOffsetHeapIndexUpdater heapIndexUpdater
+      LimitedBufferGrouper.BufferGrouperOffsetHeapIndexUpdater heapIndexUpdater
   )
   {
     this.buf = buf;
@@ -122,7 +122,7 @@ public class ByteBufferMinMaxOffsetHeap
     // index of max must be 1, just remove it and shrink the heap
     if (heapSize == 2) {
       heapSize--;
-      maxOffset = buf.getInt(1);
+      maxOffset = buf.getInt(Ints.BYTES);
       if (heapIndexUpdater != null) {
         heapIndexUpdater.updateHeapIndexForOffset(maxOffset, -1);
       }
@@ -298,16 +298,6 @@ public class ByteBufferMinMaxOffsetHeap
         break;
       }
     }
-  }
-
-  private void printHeap()
-  {
-    System.out.printf("[");
-    for (int i = 0; i < heapSize; i++) {
-      int x = buf.getInt(i * Ints.BYTES);
-      System.out.printf(x + ", ");
-    }
-    System.out.println("]");
   }
 
   private boolean isEvenLevel(int index) {
