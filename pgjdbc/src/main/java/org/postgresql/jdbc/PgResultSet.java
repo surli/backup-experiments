@@ -1945,8 +1945,12 @@ public class PgResultSet implements ResultSet, org.postgresql.PGRefCursorResultS
       return false; // SQL NULL
     }
 
+    int col = columnIndex - 1;
+    if (Oid.BOOL == fields[col].getOID()) {
+      return 't' == (char) (this_row[col][0] & 0xFF);
+    }
+
     if (isBinary(columnIndex)) {
-      int col = columnIndex - 1;
       return BooleanTypeUtil.castToBoolean(readDoubleValue(this_row[col], fields[col].getOID(), "boolean"));
     }
 
