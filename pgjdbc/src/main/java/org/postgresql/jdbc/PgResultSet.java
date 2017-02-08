@@ -1947,7 +1947,8 @@ public class PgResultSet implements ResultSet, org.postgresql.PGRefCursorResultS
 
     int col = columnIndex - 1;
     if (Oid.BOOL == fields[col].getOID()) {
-      return 't' == (char) (this_row[col][0] & 0xFF);
+      final byte[] value = this_row[col];
+      return (value.length == 1) && ('t' == (char) (value[0] & 0xFF));
     }
 
     if (isBinary(columnIndex)) {
