@@ -116,7 +116,7 @@ public class DruidCoordinator
   private final ZkPathsConfig zkPaths;
   private final JacksonConfigManager configManager;
   private final MetadataSegmentManager metadataSegmentManager;
-  private final ServerInventoryView<Object> serverInventoryView;
+  private final ServerInventoryView serverInventoryView;
   private final MetadataRuleManager metadataRuleManager;
   private final CuratorFramework curator;
   private final ServiceEmitter emitter;
@@ -356,9 +356,9 @@ public class DruidCoordinator
   }
 
   public void moveSegment(
-      ImmutableDruidServer fromServer,
-      ImmutableDruidServer toServer,
-      String segmentName,
+      final ImmutableDruidServer fromServer,
+      final ImmutableDruidServer toServer,
+      final String segmentName,
       final LoadPeonCallback callback
   )
   {
@@ -399,10 +399,6 @@ public class DruidCoordinator
               toServer.getName()
           ), segmentName
       );
-      final String toServedSegPath = ZKPaths.makePath(
-          ZKPaths.makePath(serverInventoryView.getInventoryManagerConfig().getInventoryPath(), toServer.getName()),
-          segmentName
-      );
 
       loadPeon.loadSegment(
           segment,
@@ -412,7 +408,7 @@ public class DruidCoordinator
             public void execute()
             {
               try {
-                if (curator.checkExists().forPath(toServedSegPath) != null &&
+                if (serverInventoryView.isSegmentLoadedByServer(toServer.getName(), segment) &&
                     curator.checkExists().forPath(toLoadQueueSegPath) == null &&
                     !dropPeon.getSegmentsToDrop().contains(segment)) {
                   dropPeon.dropSegment(segment, callback);
