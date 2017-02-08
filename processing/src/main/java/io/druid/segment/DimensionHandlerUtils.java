@@ -191,10 +191,10 @@ public final class DimensionHandlerUtils
       capabilities = DEFAULT_STRING_CAPABILITIES;
     }
 
-    // Filtered dimension specs are not supported on numerics, the numeric column
-    // will be treated as a null String column in that case
+    // DimensionSpec's decorate only operates on DimensionSelectors, so if a spec mustDecorate(),
+    // we need to wrap selectors on numeric columns with a string casting DimensionSelector.
     if (capabilities.getType() == ValueType.LONG || capabilities.getType() == ValueType.FLOAT) {
-      if (dimSpec instanceof BaseFilteredDimensionSpec) {
+      if (dimSpec.mustDecorate()) {
         capabilities = DEFAULT_STRING_CAPABILITIES;
       }
     }
