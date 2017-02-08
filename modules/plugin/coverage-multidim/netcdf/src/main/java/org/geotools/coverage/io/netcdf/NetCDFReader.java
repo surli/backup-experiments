@@ -90,6 +90,7 @@ import org.geotools.referencing.operation.transform.ProjectiveTransform;
 import org.geotools.resources.coverage.CoverageUtilities;
 import org.geotools.util.DateRange;
 import org.geotools.util.NumberRange;
+import org.geotools.util.Range;
 import org.geotools.util.SoftValueHashMap;
 import org.geotools.util.logging.Logging;
 import org.opengis.coverage.Coverage;
@@ -418,11 +419,11 @@ public class NetCDFReader extends AbstractGridCoverage2DReader implements Struct
             } else {
                 // min or max requests
                 Set<Object> elements = additionalDomain.getElements(true, null);
-                NumberRange<Double> range = (NumberRange<Double>) elements.iterator().next();
+                Range<?> range = (Range<?>) elements.iterator().next();
                 if (name.endsWith("maximum")) {
-                    return Double.toString(range.getMaximum());
+                    return ConvertersHack.convert(range.getMaxValue(), String.class);
                 } else if (name.endsWith("minimum")) {
-                    return Double.toString(range.getMinimum());
+                    return ConvertersHack.convert(range.getMinValue(), String.class);
                 } else {
                     throw new IllegalArgumentException("Unsupported metadata name");
                 }
@@ -474,8 +475,8 @@ public class NetCDFReader extends AbstractGridCoverage2DReader implements Struct
         LinkedHashSet<String> ranges = new LinkedHashSet<String>();
 
         while (iterator.hasNext()) {
-            Number value = (Number) iterator.next();
-            ranges.add(value.toString());
+            Object value = (Object) iterator.next();
+            ranges.add(ConvertersHack.convert(value, String.class));
         }
         return buildResultsString(ranges);
     }
