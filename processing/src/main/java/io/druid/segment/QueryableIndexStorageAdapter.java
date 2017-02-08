@@ -456,17 +456,10 @@ public class QueryableIndexStorageAdapter implements StorageAdapter
                       }
 
                       if (columnDesc.getCapabilities().getType() == ValueType.LONG) {
-                        // Filtered dimension specs are not supported on numerics
-                        if (dimensionSpec instanceof BaseFilteredDimensionSpec) {
-                          return NullDimensionSelector.instance();
-                        }
                         return new LongWrappingDimensionSelector(makeLongColumnSelector(dimension), extractionFn);
                       }
 
                       if (columnDesc.getCapabilities().getType() == ValueType.FLOAT) {
-                        if (dimensionSpec instanceof BaseFilteredDimensionSpec) {
-                          return NullDimensionSelector.instance();
-                        }
                         return new FloatWrappingDimensionSelector(makeFloatColumnSelector(dimension), extractionFn);
                       }
 
