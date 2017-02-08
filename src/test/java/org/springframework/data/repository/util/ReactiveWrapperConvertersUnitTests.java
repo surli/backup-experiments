@@ -176,11 +176,19 @@ public class ReactiveWrapperConvertersUnitTests {
 	}
 
 	@Test // DATACMNS-988
-	public void toWrapperShouldConvertPublusherToRxJava2Observable() {
+	public void toWrapperShouldConvertPublisherToRxJava2Observable() {
 
 		Flux<String> foo = Flux.just("foo");
 		assertThat(ReactiveWrapperConverters.toWrapper(foo, io.reactivex.Observable.class))
 				.isInstanceOf(io.reactivex.Observable.class);
+	}
+
+	@Test // DATACMNS-988
+	public void toWrapperShouldConvertPublisherToRxJava2Flowable() {
+
+		Flux<String> foo = Flux.just("foo");
+		assertThat(ReactiveWrapperConverters.toWrapper(foo, io.reactivex.Flowable.class))
+				.isInstanceOf(io.reactivex.Flowable.class);
 	}
 
 	@Test // DATACMNS-836
