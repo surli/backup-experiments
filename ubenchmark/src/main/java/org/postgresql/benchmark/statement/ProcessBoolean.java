@@ -21,6 +21,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.annotations.Threads;
 import org.openjdk.jmh.annotations.Warmup;
+import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -34,7 +35,6 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-
 /**
  * Benchmark to test performance of ResultSet.getBoolean() method.
  *
@@ -42,7 +42,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Fork(value = 1, jvmArgsPrepend = "-Xmx128m")
 @Measurement(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
-@Warmup(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
+@Warmup(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
 @State(Scope.Thread)
 @Threads(1)
 @BenchmarkMode(Mode.AverageTime)
@@ -56,19 +56,17 @@ public class ProcessBoolean {
   @Param({"5", "10", "50", "100", "10000"})
   public int rowsize;
 
+  @Param({"0", "10", "50", "100"})
+  private int tokens;
+
   @Setup(Level.Trial)
   public void setUp() throws SQLException {
     Properties props = ConnectionUtil.getProperties();
 
     connection = DriverManager.getConnection(ConnectionUtil.getURL(), props);
-    connection.createStatement().execute("create temp table booltab (a boolean)");
-    ps = connection.prepareStatement("insert into booltab values(random() > 0.5)");
-    for (int i = 0; i < rowsize; i++) {
-      ps.executeUpdate();
-    }
-    ps.close();
-
-    ps = connection.prepareStatement("select a from booltab", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+    ps = connection.prepareStatement("select (random() > 0.5) from generate_series(1, ?)",
+        ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+    ps.setInt(1, rowsize);
     rs = ps.executeQuery();
   }
 
@@ -80,10 +78,11 @@ public class ProcessBoolean {
   }
 
   @Benchmark
-  public void getBoolean() throws SQLException {
+  public void getBoolean(Blackhole b) throws SQLException {
+    Blackhole.consumeCPU(tokens);
     rs.first();
     while (rs.next()) {
-      rs.getBoolean(1);
+      b.consume(rs.getBoolean(1));
     }
   }
 
