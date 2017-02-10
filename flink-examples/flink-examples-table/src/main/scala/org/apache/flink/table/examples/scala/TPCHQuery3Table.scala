@@ -121,11 +121,11 @@ object TPCHQuery3Table {
     // execute program
     env.execute("Scala TPCH Query 3 (Table API Expression) Example")
   }
-  
+
   // *************************************************************************
   //     USER DATA TYPES
   // *************************************************************************
-  
+
   case class Lineitem(id: Long, extdPrice: Double, discount: Double, shipDate: String)
   case class Customer(id: Long, mktSegment: String)
   case class Order(orderId: Long, custId: Long, orderDate: String, shipPrio: Long)
@@ -133,7 +133,7 @@ object TPCHQuery3Table {
   // *************************************************************************
   //     UTIL METHODS
   // *************************************************************************
-  
+
   private var lineitemPath: String = _
   private var customerPath: String = _
   private var ordersPath: String = _
@@ -176,5 +176,5 @@ object TPCHQuery3Table {
         fieldDelimiter = "|",
         includedFields = Array(0, 1, 4, 7) )
   }
-  
+
 }
