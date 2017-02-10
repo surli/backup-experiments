@@ -16,307 +16,298 @@
 package org.springframework.data.redis.connection.jedis;
 
 import redis.clients.jedis.JedisPoolConfig;
-import redis.clients.jedis.JedisShardInfo;
+import redis.clients.jedis.Protocol;
 
+import java.net.SocketAddress;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
-import org.springframework.data.redis.connection.RedisClientConfiguration;
-import org.springframework.data.redis.connection.RedisClientConfigurationSupport.RedisClientConfigurationBuilder;
-import org.springframework.data.redis.connection.RedisClientConfigurationSupport.RedisSentinelClientConfigurationBuilder;
-import org.springframework.data.redis.connection.RedisClientConfigurationSupport.RedisStandaloneClientConfigurationBuilder;
-import org.springframework.data.redis.connection.RedisClusterConfiguration;
-import org.springframework.data.redis.connection.RedisSentinelConfiguration;
-import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLParameters;
+import javax.net.ssl.SSLSocketFactory;
+
+import org.springframework.data.redis.connection.Timeout;
+import org.springframework.util.Assert;
 
 /**
- * {@link RedisClientConfiguration} for jedis. This configuration provides optional configuration elements such as
- * {@link JedisShardInfo} and {@link JedisPoolConfig}. Providing optional elements allows a more specific configuration
- * of the client.
+ * Redis client configuration for jedis. This configuration provides optional configuration elements such as
+ * {@link SSLSocketFactory} and {@link JedisPoolConfig} specific to jedis client features.
+ * <p>
+ * Providing optional elements allows a more specific configuration of the client:
+ * <ul>
+ * <li>Whether to use SSL</li>
+ * <li>Optional {@link SSLSocketFactory}</li>
+ * <li>Optional {@link SSLParameters}</li>
+ * <li>Optional {@link HostnameVerifier}</li>
+ * <li>Whether to use connection-pooling</li>
+ * <li>Optional {@link JedisPoolConfig}</li>
+ * <li>Connect {@link Timeout}</li>
+ * <li>Read {@link Timeout}</li>
+ * </ul>
  *
  * @author Mark Paluch
  * @since 2.0
- * @see RedisClientConfiguration
  * @see redis.clients.jedis.Jedis
+ * @see org.springframework.data.redis.connection.RedisStandaloneConfiguration
+ * @see org.springframework.data.redis.connection.RedisSentinelConfiguration
+ * @see org.springframework.data.redis.connection.RedisClusterConfiguration
  */
-public interface JedisClientConfiguration extends RedisClientConfiguration {
+public interface JedisClientConfiguration {
 
 	/**
-	 * @return the optional {@link JedisShardInfo}.
+	 * @return {@literal true} to use SSL.
 	 */
-	default Optional<JedisShardInfo> getShardInfo() {
-		return Optional.empty();
-	}
+	boolean useSsl();
+
+	/**
+	 * @return the optional {@link SSLSocketFactory}.
+	 */
+	Optional<SSLSocketFactory> getSslSocketFactory();
+
+	/**
+	 * @return the optional {@link SSLParameters}.
+	 */
+	Optional<SSLParameters> getSslParameters();
+
+	/**
+	 * @return the optional {@link HostnameVerifier}.
+	 */
+	Optional<HostnameVerifier> getHostnameVerifier();
+
+	/**
+	 * @return {@literal true} to use connection-pooling.
+	 */
+	boolean usePooling();
 
 	/**
 	 * @return the optional {@link JedisPoolConfig}.
 	 */
-	default Optional<JedisPoolConfig> getPoolConfig() {
-		return Optional.empty();
-	}
+	Optional<JedisPoolConfig> getPoolConfig();
+
+	/**
+	 * @return the optional client name to be set with {@code CLIENT SETNAME}.
+	 */
+	Optional<String> getClientName();
+
+	/**
+	 * @return the connection timeout.
+	 * @see java.net.Socket#connect(SocketAddress, int)
+	 */
+	Timeout getConnectTimeout();
+
+	/**
+	 * @return the read timeout.
+	 * @see java.net.Socket#setSoTimeout(int)
+	 */
+	Timeout getReadTimeout();
 
 	/**
 	 * Creates a new {@link JedisClientConfigurationBuilder} to build {@link JedisClientConfiguration} to be used with the
 	 * jedis client.
 	 * 
 	 * @return a new {@link JedisClientConfigurationBuilder} to build {@link JedisClientConfiguration}.
-	 * @see RedisClientConfiguration#builder()
 	 */
 	static JedisClientConfigurationBuilder builder() {
-		return DefaultJedisClientConfigurationBuilder.INSTANCE;
+		return new DefaultJedisClientConfigurationBuilder();
 	}
 
 	/**
-	 * Jedis-specific {@link RedisClientConfigurationBuilder}.
+	 * Builder for {@link JedisClientConfiguration}.
 	 */
-	interface JedisClientConfigurationBuilder extends RedisClientConfigurationBuilder {
+	interface JedisClientConfigurationBuilder {
 
 		/**
-		 * Prepare a standalone builder initialized from {@link JedisShardInfo}.
+		 * Enable SSL connections.
 		 * 
-		 * @param jedisShardInfo must not be {@literal null}.
-		 * @return the {@link JedisStandaloneClientConfigurationBuilder}.
+		 * @return {@literal this} builder.
 		 */
-		JedisStandaloneClientConfigurationBuilder standalone(JedisShardInfo jedisShardInfo);
+		JedisClientConfigurationBuilder useSsl();
 
-		JedisStandaloneClientConfigurationBuilder standalone(RedisStandaloneConfiguration standaloneConfiguration);
+		/**
+		 * @param sslEnabled {@literal true} to use SSL connections, {@literal false} otherwise.
+		 * @return {@literal this} builder.
+		 */
+		JedisClientConfigurationBuilder useSsl(boolean sslEnabled);
 
-		JedisSentinelClientConfigurationBuilder sentinel(RedisSentinelConfiguration sentinelConfiguration);
+		/**
+		 * @param sslSocketFactory must not be {@literal null}.
+		 * @return {@literal this} builder.
+		 */
+		JedisClientConfigurationBuilder sslSocketFactory(SSLSocketFactory sslSocketFactory);
+
+		/**
+		 * @param sslParameters must not be {@literal null}.
+		 * @return {@literal this} builder.
+		 */
+		JedisClientConfigurationBuilder sslParameters(SSLParameters sslParameters);
+
+		/**
+		 * @param hostnameVerifier must not be {@literal null}.
+		 * @return {@literal this} builder.
+		 */
+		JedisClientConfigurationBuilder hostnameVerifier(HostnameVerifier hostnameVerifier);
+
+		/**
+		 * Enable connection-pooling.
+		 *
+		 * @return {@literal this} builder.
+		 */
+		JedisClientConfigurationBuilder usePooling();
+
+		/**
+		 * @param poolingEnabled {@literal true} to use connection-pooling, {@literal false} to create and close
+		 *          {@link redis.clients.jedis.Jedis} connections instead of reusing those.
+		 * @return {@literal this} builder.
+		 */
+		JedisClientConfigurationBuilder usePooling(boolean poolingEnabled);
+
+		/**
+		 * @param poolConfig must not be {@literal null}.
+		 * @return {@literal this} builder.
+		 */
+		JedisClientConfigurationBuilder poolConfig(JedisPoolConfig poolConfig);
+
+		/**
+		 * Configure a {@code clientName} to be set with {@code CLIENT SETNAME}.
+		 * 
+		 * @param clientName must not be {@literal null}.
+		 * @return {@literal this} builder.
+		 */
+		JedisClientConfigurationBuilder clientName(String clientName);
+
+		/**
+		 * Configure a read timeout.
+		 *
+		 * @param readTimeout must not be {@literal null}.
+		 * @return {@literal this} builder.
+		 */
+		JedisClientConfigurationBuilder readTimeout(Timeout readTimeout);
+
+		/**
+		 * Configure a connection timeout.
+		 *
+		 * @param connectTimeout must not be {@literal null}.
+		 * @return {@literal this} builder.
+		 */
+		JedisClientConfigurationBuilder connectTimeout(Timeout connectTimeout);
+
+		/**
+		 * Build the {@link JedisClientConfiguration} with the configuration applied from this builder.
+		 *
+		 * @return a new {@link JedisClientConfiguration} object.
+		 */
+		JedisClientConfiguration build();
 	}
 
 	/**
 	 * Entry point for {@link JedisClientConfigurationBuilder}.
 	 */
-	enum DefaultJedisClientConfigurationBuilder implements JedisClientConfigurationBuilder {
+	class DefaultJedisClientConfigurationBuilder implements JedisClientConfigurationBuilder {
 
-		INSTANCE;
+		private boolean useSsl;
+		private SSLSocketFactory sslSocketFactory;
+		private SSLParameters sslParameters;
+		private HostnameVerifier hostnameVerifier;
+		private boolean usePooling;
+		private JedisPoolConfig poolConfig = new JedisPoolConfig();
+		private String clientName;
+		private Timeout readTimeout = Timeout.create(Protocol.DEFAULT_TIMEOUT, TimeUnit.MILLISECONDS);
+		private Timeout connectTimeout = Timeout.create(Protocol.DEFAULT_TIMEOUT, TimeUnit.MILLISECONDS);
 
-		public JedisStandaloneClientConfigurationBuilder standalone(JedisShardInfo jedisShardInfo) {
-			return new JedisStandaloneClientConfigurationBuilder(jedisShardInfo);
+		private DefaultJedisClientConfigurationBuilder() {}
+
+		@Override
+		public JedisClientConfigurationBuilder useSsl() {
+			return useSsl(true);
 		}
 
 		@Override
-		public JedisStandaloneClientConfigurationBuilder standalone(RedisStandaloneConfiguration standaloneConfiguration) {
-			return new JedisStandaloneClientConfigurationBuilder(standaloneConfiguration);
-		}
+		public JedisClientConfigurationBuilder useSsl(boolean sslEnabled) {
 
-		@Override
-		public JedisSentinelClientConfigurationBuilder sentinel(RedisSentinelConfiguration sentinelConfiguration) {
-			return new JedisSentinelClientConfigurationBuilder(sentinelConfiguration);
-		}
-
-	}
-
-	/**
-	 * Builder for Redis Standalone use with jedis.
-	 */
-	class JedisStandaloneClientConfigurationBuilder extends RedisStandaloneClientConfigurationBuilder {
-
-		private Optional<JedisShardInfo> jedisShardInfo = Optional.empty();
-		private Optional<JedisPoolConfig> jedisPoolConfig = Optional.empty();
-
-		/**
-		 * @param jedisShardInfo must not be {@literal null}.
-		 */
-		protected JedisStandaloneClientConfigurationBuilder(JedisShardInfo jedisShardInfo) {
-
-			super(new RedisStandaloneConfiguration(jedisShardInfo.getHost(), jedisShardInfo.getPort()));
-
-			this.jedisShardInfo = Optional.of(jedisShardInfo);
-			this.useSsl = jedisShardInfo.getSsl();
-			this.dbIndex(jedisShardInfo.getDb());
-		}
-
-		protected JedisStandaloneClientConfigurationBuilder(RedisStandaloneConfiguration standaloneConfiguration) {
-			super(standaloneConfiguration);
-		}
-
-		@Override
-		public JedisStandaloneClientConfigurationBuilder password(String password) {
-
-			super.password(password);
+			this.useSsl = sslEnabled;
 			return this;
 		}
 
 		@Override
-		public JedisStandaloneClientConfigurationBuilder withoutPassword() {
+		public JedisClientConfigurationBuilder sslSocketFactory(SSLSocketFactory sslSocketFactory) {
 
-			super.withoutPassword();
+			Assert.notNull(sslSocketFactory, "SSLSocketFactory must not be null!");
+
+			this.sslSocketFactory = sslSocketFactory;
 			return this;
 		}
 
 		@Override
-		public JedisStandaloneClientConfigurationBuilder withSsl() {
+		public JedisClientConfigurationBuilder sslParameters(SSLParameters sslParameters) {
 
-			super.withSsl();
+			Assert.notNull(sslParameters, "SSLParameters must not be null!");
+
+			this.sslParameters = sslParameters;
 			return this;
 		}
 
 		@Override
-		public JedisStandaloneClientConfigurationBuilder clientName(String clientName) {
+		public JedisClientConfigurationBuilder hostnameVerifier(HostnameVerifier hostnameVerifier) {
 
-			super.clientName(clientName);
+			Assert.notNull(hostnameVerifier, "HostnameVerifier must not be null!");
+
+			this.hostnameVerifier = hostnameVerifier;
 			return this;
 		}
 
 		@Override
-		public JedisStandaloneClientConfigurationBuilder withoutClientName() {
+		public JedisClientConfigurationBuilder usePooling() {
+			return usePooling(true);
+		}
 
-			super.withoutClientName();
+		@Override
+		public JedisClientConfigurationBuilder usePooling(boolean poolingEnabled) {
+
+			this.usePooling = poolingEnabled;
 			return this;
 		}
 
 		@Override
-		public JedisStandaloneClientConfigurationBuilder dbIndex(int dbIndex) {
+		public JedisClientConfigurationBuilder poolConfig(JedisPoolConfig poolConfig) {
 
-			super.dbIndex(dbIndex);
+			Assert.notNull(poolConfig, "JedisPoolConfig must not be null!");
+
+			this.poolConfig = poolConfig;
 			return this;
 		}
 
 		@Override
-		public JedisClientConfiguration build() {
-			return new JedisStandaloneClientConfiguration(super.build(), jedisShardInfo, jedisPoolConfig);
-		}
+		public JedisClientConfigurationBuilder clientName(String clientName) {
 
-		static class JedisStandaloneClientConfiguration extends JedisClientConfigurationSupport
-				implements JedisClientConfiguration {
+			Assert.hasText(clientName, "Client name must not be null or empty!");
 
-			private final Optional<JedisShardInfo> jedisShardInfo;
-			private final Optional<JedisPoolConfig> jedisPoolConfig;
-
-			JedisStandaloneClientConfiguration(RedisClientConfiguration redisClientConfiguration,
-					Optional<JedisShardInfo> jedisShardInfo, Optional<JedisPoolConfig> jedisPoolConfig) {
-
-				super(redisClientConfiguration);
-
-				this.jedisShardInfo = jedisShardInfo;
-				this.jedisPoolConfig = jedisPoolConfig;
-			}
-
-			@Override
-			public Optional<JedisShardInfo> getShardInfo() {
-				return jedisShardInfo;
-			}
-
-			@Override
-			public Optional<JedisPoolConfig> getPoolConfig() {
-				return jedisPoolConfig;
-			}
-		}
-	}
-
-	class JedisSentinelClientConfigurationBuilder extends RedisSentinelClientConfigurationBuilder {
-
-		private Optional<JedisPoolConfig> jedisPoolConfig = Optional.empty();
-
-		protected JedisSentinelClientConfigurationBuilder(RedisSentinelConfiguration standaloneConfiguration) {
-			super(standaloneConfiguration);
-		}
-
-		@Override
-		public JedisSentinelClientConfigurationBuilder password(String password) {
-
-			super.password(password);
+			this.clientName = clientName;
 			return this;
 		}
 
 		@Override
-		public JedisSentinelClientConfigurationBuilder withoutPassword() {
+		public JedisClientConfigurationBuilder readTimeout(Timeout readTimeout) {
 
-			super.withoutPassword();
+			Assert.notNull(readTimeout, "Timeout must not be null!");
+
+			this.readTimeout = readTimeout;
 			return this;
 		}
 
 		@Override
-		public JedisSentinelClientConfigurationBuilder withSsl() {
+		public JedisClientConfigurationBuilder connectTimeout(Timeout connectTimeout) {
 
-			super.withSsl();
-			return this;
-		}
+			Assert.notNull(connectTimeout, "Timeout must not be null!");
 
-		@Override
-		public JedisSentinelClientConfigurationBuilder clientName(String clientName) {
-
-			super.clientName(clientName);
-			return this;
-		}
-
-		@Override
-		public JedisSentinelClientConfigurationBuilder withoutClientName() {
-
-			super.withoutClientName();
+			this.connectTimeout = connectTimeout;
 			return this;
 		}
 
 		@Override
 		public JedisClientConfiguration build() {
-			return new JedisSentinelClientConfiguration(super.build(), jedisPoolConfig);
-		}
 
-		static class JedisSentinelClientConfiguration extends JedisClientConfigurationSupport
-				implements JedisClientConfiguration {
-
-			private final Optional<JedisPoolConfig> jedisPoolConfig;
-
-			JedisSentinelClientConfiguration(RedisClientConfiguration redisClientConfiguration,
-					Optional<JedisPoolConfig> jedisPoolConfig) {
-
-				super(redisClientConfiguration);
-
-				this.jedisPoolConfig = jedisPoolConfig;
-			}
-
-			@Override
-			public Optional<JedisPoolConfig> getPoolConfig() {
-				return jedisPoolConfig;
-			}
-		}
-	}
-
-	static abstract class JedisClientConfigurationSupport implements JedisClientConfiguration {
-		private final RedisClientConfiguration redisClientConfiguration;
-
-		public JedisClientConfigurationSupport(RedisClientConfiguration redisClientConfiguration) {
-			this.redisClientConfiguration = redisClientConfiguration;
-		}
-
-		@Override
-		public Optional<RedisStandaloneConfiguration> getStandaloneConfiguration() {
-			return redisClientConfiguration.getStandaloneConfiguration();
-		}
-
-		@Override
-		public Optional<RedisSentinelConfiguration> getSentinelConfiguration() {
-			return redisClientConfiguration.getSentinelConfiguration();
-		}
-
-		@Override
-		public Optional<RedisClusterConfiguration> getClusterConfiguration() {
-			return redisClientConfiguration.getClusterConfiguration();
-		}
-
-		@Override
-		public int getTimeout() {
-			return redisClientConfiguration.getTimeout();
-		}
-
-		@Override
-		public Optional<String> getPassword() {
-			return redisClientConfiguration.getPassword();
-		}
-
-		@Override
-		public boolean useSsl() {
-			return redisClientConfiguration.useSsl();
-		}
-
-		@Override
-		public Optional<Integer> getDbIndex() {
-			return redisClientConfiguration.getDbIndex();
-		}
-
-		@Override
-		public Optional<String> getClientName() {
-			return redisClientConfiguration.getClientName();
+			return new DefaultJedisClientConfiguration(useSsl, sslSocketFactory, sslParameters, hostnameVerifier, usePooling,
+					poolConfig, clientName, readTimeout, connectTimeout);
 		}
 	}
 
