@@ -63,6 +63,8 @@ public final class FlowableTest {
 
     RecordingSubscriber<String> subscriber = subscriberRule.create();
     service.body().subscribe(subscriber);
+    subscriber.assertError(retrofit2.HttpException.class, "HTTP 404 Client Error");
+    // Required for backwards compatibility.
     subscriber.assertError(HttpException.class, "HTTP 404 Client Error");
   }
 
