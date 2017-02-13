@@ -65,6 +65,8 @@ public final class ObservableTest {
 
     RecordingSubscriber<String> subscriber = subscriberRule.create();
     service.body().unsafeSubscribe(subscriber);
+    subscriber.assertError(retrofit2.HttpException.class, "HTTP 404 Client Error");
+    // Required for backwards compatibility.
     subscriber.assertError(HttpException.class, "HTTP 404 Client Error");
   }
 
