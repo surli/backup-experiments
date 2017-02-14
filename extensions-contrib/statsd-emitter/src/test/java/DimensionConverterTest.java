@@ -35,21 +35,22 @@ public class DimensionConverterTest
   public void testConvert() throws Exception
   {
     DimensionConverter dimensionConverter = new DimensionConverter(new ObjectMapper(), null);
-    ServiceMetricEvent event = new ServiceMetricEvent.Builder().setDimension("dataSource", "data-source")
-                                                               .setDimension("type", "groupBy")
-                                                               .setDimension("interval", "2013/2015")
-                                                               .setDimension("some_random_dim1", "random_dim_value1")
-                                                               .setDimension("some_random_dim2", "random_dim_value2")
-                                                               .setDimension("hasFilters", "no")
-                                                               .setDimension("duration", "P1D")
-                                                               .setDimension("remoteAddress", "194.0.90.2")
-                                                               .setDimension("id", "ID")
-                                                               .setDimension("context", "{context}")
-                                                               .build(new DateTime(), "query/time", 10)
-                                                               .build("broker", "brokerHost1");
+    ServiceMetricEvent event = new ServiceMetricEvent.Builder()
+        .setDimension("dataSource", "data-source")
+        .setDimension("type", "groupBy")
+        .setDimension("interval", "2013/2015")
+        .setDimension("some_random_dim1", "random_dim_value1")
+        .setDimension("some_random_dim2", "random_dim_value2")
+        .setDimension("hasFilters", "no")
+        .setDimension("duration", "P1D")
+        .setDimension("remoteAddress", "194.0.90.2")
+        .setDimension("id", "ID")
+        .setDimension("context", "{context}")
+        .build(new DateTime(), "query/time", 10)
+        .build("broker", "brokerHost1");
 
     ImmutableList.Builder<String> actual = new ImmutableList.Builder<>();
-    StatsDMetric.Type type = dimensionConverter.addFilteredUserDims(
+    StatsDMetric type = dimensionConverter.addFilteredUserDims(
         event.getService(),
         event.getMetric(),
         event.getUserDims(),
