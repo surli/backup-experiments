@@ -270,6 +270,8 @@ public class ServerMainModule
         configBinder(binder).bindConfig(TaskManagerConfig.class);
         binder.bind(IndexJoinLookupStats.class).in(Scopes.SINGLETON);
         newExporter(binder).export(IndexJoinLookupStats.class).withGeneratedName();
+        binder.bind(StatementHttpExecutionMBean.class).in(Scopes.SINGLETON);
+        newExporter(binder).export(StatementHttpExecutionMBean.class).withGeneratedName();
         binder.bind(AsyncHttpExecutionMBean.class).in(Scopes.SINGLETON);
         newExporter(binder).export(AsyncHttpExecutionMBean.class).withGeneratedName();
         binder.bind(JoinFilterFunctionCompiler.class).in(Scopes.SINGLETON);
@@ -450,10 +452,34 @@ public class ServerMainModule
 
     @Provides
     @Singleton
-    @ForAsyncHttp
+    @ForStatementResource
     public static ScheduledExecutorService createAsyncHttpTimeoutExecutor(TaskManagerConfig config)
     {
         return newScheduledThreadPool(config.getHttpTimeoutThreads(), daemonThreadsNamed("async-http-timeout-%s"));
+    }
+
+    @Provides
+    @Singleton
+    @ForStatementResource
+    public static ExecutorService createStatementResponseCoreExecutor()
+    {
+        return newCachedThreadPool(daemonThreadsNamed("statement-response-%s"));
+    }
+
+    @Provides
+    @Singleton
+    @ForStatementResource
+    public static BoundedExecutor createStatementResponseExecutor(@ForStatementResource ExecutorService coreExecutor, TaskManagerConfig config)
+    {
+        return new BoundedExecutor(coreExecutor, config.getHttpResponseThreads());
+    }
+
+    @Provides
+    @Singleton
+    @ForAsyncHttp
+    public static ScheduledExecutorService createStatementTimeoutExecutor(TaskManagerConfig config)
+    {
+        return newScheduledThreadPool(config.getHttpTimeoutThreads(), daemonThreadsNamed("statement-timeout-%s"));
     }
 
     @Provides

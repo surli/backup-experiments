@@ -13,16 +13,25 @@
  */
 package com.facebook.presto.execution;
 
+import com.facebook.presto.OutputBuffers.OutputBufferId;
 import com.facebook.presto.Session;
 import com.facebook.presto.execution.StateMachine.StateChangeListener;
 import com.facebook.presto.memory.VersionedMemoryPoolId;
 import com.facebook.presto.spi.QueryId;
+import com.facebook.presto.spi.type.Type;
 import com.facebook.presto.sql.tree.Expression;
 import com.facebook.presto.sql.tree.Statement;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSetMultimap;
+import com.google.common.collect.SetMultimap;
+import com.google.common.util.concurrent.ListenableFuture;
 import io.airlift.units.Duration;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
+
+import static java.util.Objects.requireNonNull;
 
 public interface QueryExecution
 {
@@ -32,8 +41,9 @@ public interface QueryExecution
 
     QueryState getState();
 
-    Duration waitForStateChange(QueryState currentState, Duration maxWait)
-            throws InterruptedException;
+    ListenableFuture<QueryOutputInfo> getOutputInfo();
+
+    ListenableFuture<QueryState> getStateChange(QueryState currentState);
 
     VersionedMemoryPoolId getMemoryPool();
 
@@ -65,5 +75,34 @@ public interface QueryExecution
     interface QueryExecutionFactory<T extends QueryExecution>
     {
         T createQueryExecution(QueryId queryId, String query, Session session, Statement statement, List<Expression> parameters);
+    }
+
+    class QueryOutputInfo
+    {
+        private final List<String> columnNames;
+        private final List<Type> columnTypes;
+        private final SetMultimap<OutputBufferId, URI> bufferLocations;
+
+        public QueryOutputInfo(List<String> columnNames, List<Type> columnTypes, SetMultimap<OutputBufferId, URI> bufferLocations)
+        {
+            this.columnNames = ImmutableList.copyOf(requireNonNull(columnNames, "columnNames is null"));
+            this.columnTypes = ImmutableList.copyOf(requireNonNull(columnTypes, "columnTypes is null"));
+            this.bufferLocations = ImmutableSetMultimap.copyOf(requireNonNull(bufferLocations, "bufferLocations is null"));
+        }
+
+        public List<String> getColumnNames()
+        {
+            return columnNames;
+        }
+
+        public List<Type> getColumnTypes()
+        {
+            return columnTypes;
+        }
+
+        public SetMultimap<OutputBufferId, URI> getBufferLocations()
+        {
+            return bufferLocations;
+        }
     }
 }

@@ -17,6 +17,7 @@ import com.facebook.presto.Session;
 import com.facebook.presto.SystemSessionProperties;
 import com.facebook.presto.event.query.QueryMonitor;
 import com.facebook.presto.execution.QueryExecution.QueryExecutionFactory;
+import com.facebook.presto.execution.QueryExecution.QueryOutputInfo;
 import com.facebook.presto.execution.SqlQueryExecution.SqlQueryExecutionFactory;
 import com.facebook.presto.memory.ClusterMemoryManager;
 import com.facebook.presto.metadata.Metadata;
@@ -33,6 +34,7 @@ import com.facebook.presto.sql.tree.Explain;
 import com.facebook.presto.sql.tree.Expression;
 import com.facebook.presto.sql.tree.Statement;
 import com.facebook.presto.transaction.TransactionManager;
+import com.google.common.util.concurrent.ListenableFuture;
 import io.airlift.concurrent.ThreadPoolExecutorMBean;
 import io.airlift.log.Logger;
 import io.airlift.units.Duration;
@@ -73,6 +75,7 @@ import static com.facebook.presto.sql.analyzer.SemanticErrorCode.INVALID_PARAMET
 import static com.facebook.presto.sql.planner.ExpressionInterpreter.verifyExpressionIsConstant;
 import static com.facebook.presto.util.ImmutableCollectors.toImmutableList;
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.util.concurrent.Futures.immediateFailedFuture;
 import static io.airlift.concurrent.Threads.threadsNamed;
 import static java.lang.String.format;
 import static java.util.Collections.emptyList;
@@ -251,18 +254,29 @@ public class SqlQueryManager
     }
 
     @Override
-    public Duration waitForStateChange(QueryId queryId, QueryState currentState, Duration maxWait)
-            throws InterruptedException
+    public ListenableFuture<QueryOutputInfo> getOutputInfo(QueryId queryId)
     {
         requireNonNull(queryId, "queryId is null");
-        requireNonNull(maxWait, "maxWait is null");
 
         QueryExecution query = queries.get(queryId);
         if (query == null) {
-            return maxWait;
+            return immediateFailedFuture(new NoSuchElementException());
         }
 
-        return query.waitForStateChange(currentState, maxWait);
+        return query.getOutputInfo();
+    }
+
+    @Override
+    public ListenableFuture<QueryState> getStateChange(QueryId queryId, QueryState currentState)
+    {
+        requireNonNull(queryId, "queryId is null");
+
+        QueryExecution query = queries.get(queryId);
+        if (query == null) {
+            return immediateFailedFuture(new NoSuchElementException());
+        }
+
+        return query.getStateChange(currentState);
     }
 
     @Override

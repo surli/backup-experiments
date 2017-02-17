@@ -13,9 +13,10 @@
  */
 package com.facebook.presto.execution;
 
+import com.facebook.presto.execution.QueryExecution.QueryOutputInfo;
 import com.facebook.presto.server.SessionSupplier;
 import com.facebook.presto.spi.QueryId;
-import io.airlift.units.Duration;
+import com.google.common.util.concurrent.ListenableFuture;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,8 +25,9 @@ public interface QueryManager
 {
     List<QueryInfo> getAllQueryInfo();
 
-    Duration waitForStateChange(QueryId queryId, QueryState currentState, Duration maxWait)
-            throws InterruptedException;
+    ListenableFuture<QueryOutputInfo> getOutputInfo(QueryId queryId);
+
+    ListenableFuture<QueryState> getStateChange(QueryId queryId, QueryState currentState);
 
     QueryInfo getQueryInfo(QueryId queryId);
 
