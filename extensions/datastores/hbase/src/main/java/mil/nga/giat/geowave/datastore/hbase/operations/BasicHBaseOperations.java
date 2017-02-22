@@ -1,8 +1,12 @@
 package mil.nga.giat.geowave.datastore.hbase.operations;
 
+import static org.apache.hadoop.hbase.security.visibility.VisibilityConstants.LABELS_TABLE_FAMILY;
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.NavigableMap;
 import java.util.Set;
 
 import org.apache.hadoop.conf.Configuration;
@@ -14,10 +18,14 @@ import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Admin;
 import org.apache.hadoop.hbase.client.Connection;
 import org.apache.hadoop.hbase.client.RegionLocator;
+import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.ResultScanner;
 import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.client.Table;
 import org.apache.hadoop.hbase.security.visibility.Authorizations;
+import org.apache.hadoop.hbase.security.visibility.VisibilityClient;
+import org.apache.hadoop.hbase.util.Bytes;
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.apache.log4j.Logger;
 
 import mil.nga.giat.geowave.core.index.ByteArrayId;
@@ -246,7 +254,7 @@ public class BasicHBaseOperations implements
 			final String tableName,
 			final String... authorizations )
 			throws IOException {
-		if (authorizations != null) {
+		if (authorizations != null && authorizations.length > 0) {
 			scanner.setAuthorizations(new Authorizations(
 					authorizations));
 		}
@@ -365,4 +373,26 @@ public class BasicHBaseOperations implements
 					e);
 		}
 	}
+
+	public List<String> extractAuths(
+			ResultScanner resultScanner ) {
+		List<String> auths = new ArrayList<String>();
+
+		Iterator<Result> it = resultScanner.iterator();
+
+		while (it.hasNext()) {
+			Result result = it.next();
+
+			NavigableMap<byte[], byte[]> familyMap = result.getFamilyMap(LABELS_TABLE_FAMILY);
+			for (byte[] q : familyMap.keySet()) {
+				auths.add(Bytes.toString(
+						q,
+						0,
+						q.length));
+			}
+		}
+
+		return auths;
+	}
+
 }

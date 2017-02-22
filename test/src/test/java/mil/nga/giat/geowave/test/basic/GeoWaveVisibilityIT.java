@@ -42,12 +42,9 @@ public class GeoWaveVisibilityIT
 {
 	@GeoWaveTestStore({
 		GeoWaveStoreType.ACCUMULO,
-		GeoWaveStoreType.BIGTABLE,
 		GeoWaveStoreType.HBASE
 	})
 	protected DataStorePluginOptions dataStore;
-	// because there are 8 we want to make
-	// sure it is properly truncated
 	private static final int TOTAL_FEATURES = 800;
 
 	@Test
@@ -79,64 +76,7 @@ public class GeoWaveVisibilityIT
 								0)));
 				writer.write(
 						bldr.buildFeature(Integer.toString(i)),
-						new VisibilityWriter<SimpleFeature>() {
-
-							@Override
-							public FieldVisibilityHandler<SimpleFeature, Object> getFieldVisibilityHandler(
-									final ByteArrayId fieldId ) {
-								return new FieldVisibilityHandler<SimpleFeature, Object>() {
-
-									@Override
-									public byte[] getVisibility(
-											final SimpleFeature rowValue,
-											final ByteArrayId fieldId,
-											final Object fieldValue ) {
-
-										final boolean isGeom = fieldId
-												.equals(GeometryAdapter.DEFAULT_GEOMETRY_FIELD_ID);
-										final int fieldValueInt;
-										if (isGeom) {
-											fieldValueInt = Integer.parseInt(rowValue.getID());
-										}
-										else {
-											fieldValueInt = Integer.parseInt(fieldValue.toString());
-										}
-										// just make half of them varied and
-										// half of them the same
-										if ((fieldValueInt % 2) == 0) {
-											if (isGeom) {
-												return new byte[] {};
-											}
-											return fieldId.getBytes();
-										}
-										else {
-											// of the ones that are the same,
-											// make some no bytes, some a, some
-											// b, and some c
-											final int switchValue = (fieldValueInt / 2) % 4;
-											switch (switchValue) {
-												case 0:
-													return new ByteArrayId(
-															"a").getBytes();
-
-												case 1:
-													return new ByteArrayId(
-															"b").getBytes();
-
-												case 2:
-													return new ByteArrayId(
-															"c").getBytes();
-
-												case 3:
-												default:
-													return new byte[] {};
-											}
-										}
-									}
-								};
-
-							}
-						});
+						getVisWriter());
 			}
 		}
 		final DifferingFieldVisibilityEntryCount differingVisibilities = (DifferingFieldVisibilityEntryCount) dataStore
@@ -148,15 +88,73 @@ public class GeoWaveVisibilityIT
 				"Exactly half the entries should have differing visibility",
 				TOTAL_FEATURES / 2,
 				differingVisibilities.getEntriesWithDifferingFieldVisibilities());
-		testQuery(
+		testQueryMixed(
 				store,
 				false);
-		testQuery(
+		testQueryMixed(
 				store,
 				true);
 	}
 
-	private static void testQuery(
+	private VisibilityWriter<SimpleFeature> getVisWriter() {
+		return new VisibilityWriter<SimpleFeature>() {
+			@Override
+			public FieldVisibilityHandler<SimpleFeature, Object> getFieldVisibilityHandler(
+					final ByteArrayId fieldId ) {
+				return new FieldVisibilityHandler<SimpleFeature, Object>() {
+
+					@Override
+					public byte[] getVisibility(
+							final SimpleFeature rowValue,
+							final ByteArrayId fieldId,
+							final Object fieldValue ) {
+
+						final boolean isGeom = fieldId.equals(GeometryAdapter.DEFAULT_GEOMETRY_FIELD_ID);
+						final int fieldValueInt;
+						if (isGeom) {
+							fieldValueInt = Integer.parseInt(rowValue.getID());
+						}
+						else {
+							fieldValueInt = Integer.parseInt(fieldValue.toString());
+						}
+						// just make half of them varied and
+						// half of them the same
+						if ((fieldValueInt % 2) == 0) {
+							if (isGeom) {
+								return new byte[] {};
+							}
+							return fieldId.getBytes();
+						}
+						else {
+							// of the ones that are the same,
+							// make some no bytes, some a, some
+							// b, and some c
+							final int switchValue = (fieldValueInt / 2) % 4;
+							switch (switchValue) {
+								case 0:
+									return new ByteArrayId(
+											"a").getBytes();
+
+								case 1:
+									return new ByteArrayId(
+											"b").getBytes();
+
+								case 2:
+									return new ByteArrayId(
+											"c").getBytes();
+
+								case 3:
+								default:
+									return new byte[] {};
+							}
+						}
+					}
+				};
+			}
+		};
+	}
+
+	private static void testQueryMixed(
 			final DataStore store,
 			boolean spatial )
 			throws IOException {
@@ -170,6 +168,7 @@ public class GeoWaveVisibilityIT
 				spatial,
 				(5 * TOTAL_FEATURES) / 8,
 				((TOTAL_FEATURES / 8) * 4) + (TOTAL_FEATURES / 2));
+
 		for (String auth : new String[] {
 			"a",
 			"b",
@@ -184,6 +183,7 @@ public class GeoWaveVisibilityIT
 					(6 * TOTAL_FEATURES) / 8,
 					((2 * TOTAL_FEATURES / 8) * 4) + (2 * TOTAL_FEATURES / 2));
 		}
+
 		// order shouldn't matter, but let's make sure here
 		for (String[] auths : new String[][] {
 			new String[] {

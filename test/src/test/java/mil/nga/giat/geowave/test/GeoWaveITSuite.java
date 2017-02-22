@@ -9,6 +9,7 @@ import mil.nga.giat.geowave.test.basic.GeoWaveBasicRasterIT;
 import mil.nga.giat.geowave.test.basic.GeoWaveBasicSpatialTemporalVectorIT;
 import mil.nga.giat.geowave.test.basic.GeoWaveBasicSpatialVectorIT;
 import mil.nga.giat.geowave.test.basic.GeoWaveVectorSerializationIT;
+import mil.nga.giat.geowave.test.basic.GeoWaveVisibilityIT;
 import mil.nga.giat.geowave.test.config.ConfigCacheIT;
 import mil.nga.giat.geowave.test.kafka.BasicKafkaIT;
 import mil.nga.giat.geowave.test.landsat.LandsatIT;
@@ -34,6 +35,7 @@ import mil.nga.giat.geowave.test.store.DataStatisticsStoreIT;
 	BasicKafkaIT.class,
 	BasicMapReduceIT.class,
 	GeoWaveBasicRasterIT.class,
+	GeoWaveVisibilityIT.class,
 	LandsatIT.class,
 	BulkIngestInputGenerationIT.class,
 	KDERasterResizeIT.class,
