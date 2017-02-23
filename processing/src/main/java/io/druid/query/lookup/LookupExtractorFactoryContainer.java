@@ -22,13 +22,16 @@ package io.druid.query.lookup;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.Ordering;
 
 /**
  */
 public class LookupExtractorFactoryContainer
 {
-  private String version;
-  private LookupExtractorFactory lookupExtractorFactory;
+  private final static Ordering VERSION_COMPARATOR =  Ordering.natural().nullsFirst();
+
+  private final String version;
+  private final LookupExtractorFactory lookupExtractorFactory;
 
   @JsonCreator
   public LookupExtractorFactoryContainer(
@@ -57,15 +60,7 @@ public class LookupExtractorFactoryContainer
       return !this.lookupExtractorFactory.replaces(other.getLookupExtractorFactory());
     }
 
-    if (version == null && other.getVersion() != null) {
-      return false;
-    }
-
-    if (version != null && other.getVersion() == null) {
-      return true;
-    }
-
-    return version.compareTo(other.getVersion()) > 0;
+    return VERSION_COMPARATOR.compare(version, other.getVersion()) > 0;
   }
 
   @Override

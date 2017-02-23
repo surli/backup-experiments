@@ -30,9 +30,9 @@ import java.util.Set;
  */
 public class LookupsState
 {
-  private Map<String, LookupExtractorFactoryContainer> current;
-  private Map<String, LookupExtractorFactoryContainer> toLoad;
-  private Set<String> toDrop;
+  private final Map<String, LookupExtractorFactoryContainer> current;
+  private final Map<String, LookupExtractorFactoryContainer> toLoad;
+  private final Set<String> toDrop;
 
   @JsonCreator
   public LookupsState(
