@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.enioka.jqm</groupId>
+	<artifactId>jqm-all</artifactId>
+	<version>1.4.2-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>jqm-all</name>
+	<url>http://jqm.readthedocs.org</url>
+	<description>JQM is an asynchronous batch job manager in Java</description>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>Enioka</name>
+		<url>http://www.enioka.com</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>mag</id>
+			<name>Marc-Antoine Gouillart</name>
+			<email>mag@enioka.com</email>
+			<url>http://www.oxymores.org</url>
+			<organization>Enioka</organization>
+			<roles>
+				<role>architect</role>
+				<role>maintainer</role>
+			</roles>
+			<timezone>Europe/Paris</timezone>
+			<properties>
+			</properties>
+		</developer>
+		<developer>
+			<id>pco</id>
+			<name>Pierre Coppée</name>
+			<email>pco@enioka.com</email>
+			<organization>Enioka</organization>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>Europe/Paris</timezone>
+			<properties>
+			</properties>
+		</developer>
+		<developer>
+			<id>sre</id>
+			<name>Sébastien Renard</name>
+			<email>sre@enioka.com</email>
+			<organization>Enioka</organization>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>Europe/Paris</timezone>
+			<properties>
+			</properties>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<hibernate.version>4.2.21.Final</hibernate.version>
+		<junit.version>4.12</junit.version>
+		<hsqldb.version>2.3.3</hsqldb.version>
+		<jersey-version>2.6</jersey-version>
+		<jetty.version>8.1.19.v20160209</jetty.version>
+		<slf4j.version>1.7.19</slf4j.version>
+		<shiro.version>1.3.2</shiro.version>
+		<surefire.version>2.19.1</surefire.version>
+		<javadoc.version>2.10.3</javadoc.version>
+		<httpclient.version>4.5.2</httpclient.version>
+		<pool.version>7.0.68</pool.version>
+		<bc.version>1.54</bc.version>
+		<mail.version>1.5.2</mail.version>
+
+		<sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</sonatypeOssDistMgmtSnapshotsUrl>
+
+		<!-- Sonar coverage -->
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+	</properties>
+
+	<modules>
+		<module>jqm-doc</module>
+		<module>jqm-tests</module>
+		<module>jqm-model</module>
+		<module>jqm-api</module>
+		<module>jqm-ws</module>
+		<module>jqm-client</module>
+		<module>jqm-test-helpers</module>
+		<module>jqm-engine</module>
+		<module>jqm-jsfsample</module>
+		<module>jqm-providers</module>
+		<module>jqm-pki</module>
+		<module>jqm-tst</module>
+	</modules>
+
+	<scm>
+		<developerConnection>scm:git:ssh://git@github.com:enioka/jqm.git</developerConnection>
+		<connection>scm:git:https://github.com/enioka/jqm.git</connection>
+		<url>https://github.com/enioka/jqm/</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<profiles>
+		<profile>
+			<id>release</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.4</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>${javadoc.version}</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<show>private</show>
+							<additionalparam>${javadoc.opts}</additionalparam>
+						</configuration>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<!-- Disabled by default. Runs Selenium tests on the admin GUI. -->
+			<id>selenium</id>
+			<activation>
+				<!-- Activate if Travis-like variables are set. Or force it inside settings.xml 
+					for development environments if needed. -->
+				<property>
+					<name>env.SAUCE_ACCESS_KEYDISABLED</name>
+				</property>
+			</activation>
+			<modules>
+				<module>jqm-wstst</module>
+			</modules>
+			<properties>
+				<!-- These are default values. They should always be overridden either 
+					in settings.xml or in environment variables -->
+				<SAUCE_USERNAME>${env.SAUCE_USERNAME}</SAUCE_USERNAME>
+				<SAUCE_ACCESS_KEY>${env.SAUCE_ACCESS_KEY}</SAUCE_ACCESS_KEY>
+				<SAUCE_URL>localhost:4445/wd/hub</SAUCE_URL>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>${surefire.version}</version>
+						<configuration>
+							<systemPropertyVariables>
+								<SAUCE_URL>${SAUCE_URL}</SAUCE_URL>
+								<SAUCE_ACCESS_KEY>${SAUCE_ACCESS_KEY}</SAUCE_ACCESS_KEY>
+								<SAUCE_USERNAME>${SAUCE_USERNAME}</SAUCE_USERNAME>
+							</systemPropertyVariables>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- This will disable DocLint on Java >=8. -->
+		<profile>
+			<id>disable-doclint</id>
+			<activation>
+				<jdk>[1.8,)</jdk>
+			</activation>
+			<properties>
+				<javadoc.opts>-Xdoclint:none</javadoc.opts>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version><!--$NO-MVN-MAN-VER$ -->
+				<configuration>
+					<!-- Only use local Git repository, push will be manual -->
+					<localCheckout>true</localCheckout>
+					<pushChanges>false</pushChanges>
+
+					<!-- One version to rule them all -->
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+
+					<!-- Use custom release profile -->
+					<useReleaseProfile>false</useReleaseProfile>
+					<releaseProfiles>release</releaseProfiles>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.6.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>ext</directory>
+						</fileset>
+						<fileset>
+							<directory>webapp</directory>
+						</fileset>
+						<fileset>
+							<directory>logs</directory>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.6.201602180812</version>
+				<configuration>
+					<destFile>${sonar.jacoco.reportPath}</destFile>
+					<append>true</append>
+				</configuration>
+				<executions>
+					<execution>
+						<id>agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!-- Stupid M2E stuff, no influence on build -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-enforcer-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>enforce</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-dependency-plugin
+										</artifactId>
+										<versionRange>
+											[2.8,)
+										</versionRange>
+										<goals>
+											<goal>copy</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<dependencies>
+	</dependencies>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/enioka/jqm/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>Travis</system>
+		<url>https://travis-ci.org/enioka/jqm</url>
+	</ciManagement>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>${sonatypeOssDistMgmtSnapshotsUrl}</url>
+		</snapshotRepository>
+		<repository>
+			<id>sonatype-nexus-staging</id>
+			<name>Nexus Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+</project>
