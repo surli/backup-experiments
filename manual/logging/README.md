@@ -152,7 +152,7 @@ then set the `com.datastax.driver.core.QueryLogger.SLOW` logger to DEBUG, e.g. w
 The `EnhancedQueryLogger` would then print messages such as this for every slow query:
 
 ```
-DEBUG [cluster1] [/127.0.0.1:9042] Query too slow, took 329 ms: BoundStatement@2a929abf [idempotent=<UNSET>, CL=<UNSET>, 1 bound values]: SELECT * FROM users WHERE user_id=?;
+DEBUG [cluster1] [/127.0.0.1:9042] Query too slow, took 329 ms: BoundStatement@2a929abf [IDP=<?>, CL=<?>, 1 values]: SELECT * FROM users WHERE user_id=?;
 ```
 
 As you can see, the query string is logged but actual bound values are not; if you want them to be logged as well, 
@@ -168,7 +168,7 @@ At this level, the `EnhancedQueryLogger` prints statements with maximum verbosit
 it would then print messages such as this for every slow query:
 
 ```
-TRACE [cluster1] [/127.0.0.1:9042] Query too slow, took 329 ms: BoundStatement@34d2ff60 [idempotent=<UNSET>, CL=<UNSET>, SCL=<UNSET>, defaultTimestamp=<UNSET>, readTimeoutMillis=<UNSET>, 1 bound values]: SELECT * FROM users WHERE user_id=? { user_id : 42 }
+TRACE [cluster1] [/127.0.0.1:9042] Query too slow, took 329 ms: BoundStatement@34d2ff60 [IDP=<?>, CL=<?>, SCL=<?>, DTS=<?>, RTM=<?>, 1 bound values]: SELECT * FROM users WHERE user_id=? { user_id : 42 }
 
 ```
 
@@ -183,6 +183,78 @@ which in turn determines which elements to include in the formatted string
 
 `StatementFormatter` also provides safeguards to prevent overwhelming your logs with large query strings, 
 queries with considerable amounts of parameters, batch queries with several inner statements, etc. 
+
+With default settings, the `StatementFormatter` formats statements using a
+common formatting pattern comprised of the following sections:
+
+1. The actual statement class and the statement's hash code;
+2. If verbosity is EXTENDED, a summary consisting of some of the statement's characteristics such as: 
+    1. Idempotence flag ("IDP"). 
+    2. Consistency level ("CL").
+    3. Serial consistency level ("SCL").
+    4. Default timestamp ("DTS").
+    5. Read timeout millis ("RTM").
+    6. The number of bound values, if known.
+    7. The number of inner statements, if known (only applicable for batch statements).
+2. The statement's query string, if available and the verbosity is NORMAL or higher.
+3. The statement's bound values, if available and the verbosity is EXTENDED.
+4. The statement's outgoing payload, if available and the verbosity is EXTENDED.
+
+Here is an example of how the same statements would be printed in different verbosity levels:
+
+```java
+Session session = ...;
+StatementFormatter formatter = StatementFormatter.DEFAULT_INSTANCE;
+
+// 1) regular statements
+Statement stmt1 = new SimpleStatement("SELECT * FROM t WHERE c1 = ? AND c2 = ?", "foo", 42)
+        .setIdempotent(true)
+        .setConsistencyLevel(ConsistencyLevel.LOCAL_ONE)
+        .setSerialConsistencyLevel(ConsistencyLevel.LOCAL_SERIAL)
+        .setDefaultTimestamp(new Date().getTime())
+        .setReadTimeoutMillis(20000);
+
+// 2) query builder statements
+Statement stmt2 = select().from("t").where(eq("c1", "foo")).and(eq("c2", 42)).and(eq("c3", false));
+
+// 3) bound statements
+Statement stmt3 = session.prepare("SELECT * FROM t WHERE c1 = ? AND c2 = ? AND c3 = ?").bind("foo", null);
+
+// 4) batch statements
+BatchStatement stmt4 = new BatchStatement(BatchStatement.Type.UNLOGGED)
+        .add(stmt1)
+        .add(stmt2)
+        .add(stmt3);
+
+for (Statement stmt : Arrays.asList(stmt1, stmt2, stmt3, stmt4)) {
+    System.out.println(formatter.format(stmt, ABRIDGED, version, codecRegistry));
+    System.out.println(formatter.format(stmt, NORMAL, version, codecRegistry));
+    System.out.println(formatter.format(stmt, EXTENDED, version, codecRegistry));
+    System.out.println();
+}
+```
+
+The above would produce an output similar to the one below:
+
+```
+SimpleStatement@3c153a1 [2 values]
+SimpleStatement@3c153a1 [2 values]: SELECT * FROM t WHERE c1 = ? AND c2 = ?
+SimpleStatement@3c153a1 [2 values, IDP : true, CL : LOCAL_ONE, SCL : LOCAL_SERIAL, DTS : 1487864051786, RTM : 20000]: SELECT * FROM t WHERE c1 = ? AND c2 = ? { 0 : 'foo', 1 : 42 }
+
+BuiltStatement@14d3bc22 [2 values]
+BuiltStatement@14d3bc22 [2 values]: SELECT * FROM t WHERE c1=? AND c2=42 AND c3=?;
+BuiltStatement@14d3bc22 [2 values, IDP : true]: SELECT * FROM t WHERE c1=? AND c2=42 AND c3=?; { 0 : 'foo', 1 : false }
+
+BoundStatement@12d4bf7e [3 values]
+BoundStatement@12d4bf7e [3 values]: SELECT * FROM t WHERE c1 = ? AND c2 = ? AND c3 = ?
+BoundStatement@12d4bf7e [3 values, IDP : false]: SELECT * FROM t WHERE c1 = ? AND c2 = ? AND c3 = ? { c1 : 'foo', c2 : <NULL>, c3 : <?> }
+
+BatchStatement@4c1d9d4b [UNLOGGED, 3 stmts]
+BatchStatement@4c1d9d4b [UNLOGGED, 3 stmts] 1 : SimpleStatement@3c153a1 [2 values]: SELECT * FROM t WHERE c1 = ? AND c2 = ?, 2 : BuiltStatement@14d3bc22 [2 values]: SELECT * FROM t WHERE c1=? AND c2=42 AND c3=?;, 3 : BoundStatement@12d4bf7e [3 values]: SELECT * FROM t WHERE c1 = ? AND c2 = ? AND c3 = ?
+BatchStatement@4c1d9d4b [UNLOGGED, 3 stmts, 7 values] 1 : SimpleStatement@3c153a1 [2 values, IDP : true, CL : LOCAL_ONE, SCL : LOCAL_SERIAL, DTS : 1487864051786, RTM : 20000]: SELECT * FROM t WHERE c1 = ? AND c2 = ? { 0 : 'foo', 1 : 42 }, 2 : BuiltStatement@14d3bc22 [2 values, IDP : true]: SELECT * FROM t WHERE c1=? AND c2=42 AND c3=?; { 0 : 'foo', 1 : false }, 3 : BoundStatement@12d4bf7e [3 values, IDP : false]: SELECT * FROM t WHERE c1 = ? AND c2 = ? AND c3 = ? { c1 : 'foo', c2 : <NULL>, c3 : <?> }
+```
+
+Note that null values are printed as `<NULL>` and unset values are printed as `<?>`.
 
 And finally, `StatementFormatter` also allows you to implement your own formatting rules, should you need full control
 over what needs to be formatted and how.
