@@ -12,70 +12,95 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.Writer;
+import java.nio.charset.Charset;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Representation of a particular character encoding.
  */
 public class Encoding {
-  private static final Encoding DEFAULT_ENCODING = new Encoding(null);
+
+  private static final Logger LOGGER = Logger.getLogger(Encoding.class.getName());
+
+  private static final Encoding DEFAULT_ENCODING = new Encoding();
+  private static final Encoding UTF8_ENCODING = new Encoding("UTF-8");
 
   /*
    * Preferred JVM encodings for backend encodings.
    */
-  private static final HashMap<String, String[]> encodings = new HashMap<String, String[]>();
+  private static final HashMap<String, String[]> ENCODINGS = new HashMap<String, String[]>();
 
   static {
     //Note: this list should match the set of supported server
     // encodings found in backend/util/mb/encnames.c
-    encodings.put("SQL_ASCII", new String[]{"ASCII", "us-ascii"});
-    encodings.put("UNICODE", new String[]{"UTF-8", "UTF8"});
-    encodings.put("UTF8",
-        new String[]{"UTF-8", "UTF8"}); // 8.1's canonical name for UNICODE changed.
-    encodings.put("LATIN1", new String[]{"ISO8859_1"});
-    encodings.put("LATIN2", new String[]{"ISO8859_2"});
-    encodings.put("LATIN3", new String[]{"ISO8859_3"});
-    encodings.put("LATIN4", new String[]{"ISO8859_4"});
-    encodings.put("ISO_8859_5", new String[]{"ISO8859_5"});
-    encodings.put("ISO_8859_6", new String[]{"ISO8859_6"});
-    encodings.put("ISO_8859_7", new String[]{"ISO8859_7"});
-    encodings.put("ISO_8859_8", new String[]{"ISO8859_8"});
-    encodings.put("LATIN5", new String[]{"ISO8859_9"});
-    encodings.put("LATIN7", new String[]{"ISO8859_13"});
-    encodings.put("LATIN9", new String[]{"ISO8859_15_FDIS"});
-    encodings.put("EUC_JP", new String[]{"EUC_JP"});
-    encodings.put("EUC_CN", new String[]{"EUC_CN"});
-    encodings.put("EUC_KR", new String[]{"EUC_KR"});
-    encodings.put("JOHAB", new String[]{"Johab"});
-    encodings.put("EUC_TW", new String[]{"EUC_TW"});
-    encodings.put("SJIS", new String[]{"MS932", "SJIS"});
-    encodings.put("BIG5", new String[]{"Big5", "MS950", "Cp950"});
-    encodings.put("GBK", new String[]{"GBK", "MS936"});
-    encodings.put("UHC", new String[]{"MS949", "Cp949", "Cp949C"});
-    encodings.put("TCVN", new String[]{"Cp1258"});
-    encodings.put("WIN1256", new String[]{"Cp1256"});
-    encodings.put("WIN1250", new String[]{"Cp1250"});
-    encodings.put("WIN874", new String[]{"MS874", "Cp874"});
-    encodings.put("WIN", new String[]{"Cp1251"});
-    encodings.put("ALT", new String[]{"Cp866"});
+    ENCODINGS.put("SQL_ASCII", new String[]{"ASCII", "US-ASCII"});
+    ENCODINGS.put("UNICODE", new String[]{"UTF-8", "UTF8"});
+    ENCODINGS.put("UTF8", new String[]{"UTF-8", "UTF8"});
+    ENCODINGS.put("LATIN1", new String[]{"ISO8859_1"});
+    ENCODINGS.put("LATIN2", new String[]{"ISO8859_2"});
+    ENCODINGS.put("LATIN3", new String[]{"ISO8859_3"});
+    ENCODINGS.put("LATIN4", new String[]{"ISO8859_4"});
+    ENCODINGS.put("ISO_8859_5", new String[]{"ISO8859_5"});
+    ENCODINGS.put("ISO_8859_6", new String[]{"ISO8859_6"});
+    ENCODINGS.put("ISO_8859_7", new String[]{"ISO8859_7"});
+    ENCODINGS.put("ISO_8859_8", new String[]{"ISO8859_8"});
+    ENCODINGS.put("LATIN5", new String[]{"ISO8859_9"});
+    ENCODINGS.put("LATIN7", new String[]{"ISO8859_13"});
+    ENCODINGS.put("LATIN9", new String[]{"ISO8859_15_FDIS"});
+    ENCODINGS.put("EUC_JP", new String[]{"EUC_JP"});
+    ENCODINGS.put("EUC_CN", new String[]{"EUC_CN"});
+    ENCODINGS.put("EUC_KR", new String[]{"EUC_KR"});
+    ENCODINGS.put("JOHAB", new String[]{"Johab"});
+    ENCODINGS.put("EUC_TW", new String[]{"EUC_TW"});
+    ENCODINGS.put("SJIS", new String[]{"MS932", "SJIS"});
+    ENCODINGS.put("BIG5", new String[]{"Big5", "MS950", "Cp950"});
+    ENCODINGS.put("GBK", new String[]{"GBK", "MS936"});
+    ENCODINGS.put("UHC", new String[]{"MS949", "Cp949", "Cp949C"});
+    ENCODINGS.put("TCVN", new String[]{"Cp1258"});
+    ENCODINGS.put("WIN1256", new String[]{"Cp1256"});
+    ENCODINGS.put("WIN1250", new String[]{"Cp1250"});
+    ENCODINGS.put("WIN874", new String[]{"MS874", "Cp874"});
+    ENCODINGS.put("WIN", new String[]{"Cp1251"});
+    ENCODINGS.put("ALT", new String[]{"Cp866"});
     // We prefer KOI8-U, since it is a superset of KOI8-R.
-    encodings.put("KOI8", new String[]{"KOI8_U", "KOI8_R"});
+    ENCODINGS.put("KOI8", new String[]{"KOI8_U", "KOI8_R"});
     // If the database isn't encoding-aware then we can't have
     // any preferred encodings.
-    encodings.put("UNKNOWN", new String[0]);
+    ENCODINGS.put("UNKNOWN", new String[0]);
     // The following encodings do not have a java equivalent
-    encodings.put("MULE_INTERNAL", new String[0]);
-    encodings.put("LATIN6", new String[0]);
-    encodings.put("LATIN8", new String[0]);
-    encodings.put("LATIN10", new String[0]);
+    ENCODINGS.put("MULE_INTERNAL", new String[0]);
+    ENCODINGS.put("LATIN6", new String[0]);
+    ENCODINGS.put("LATIN8", new String[0]);
+    ENCODINGS.put("LATIN10", new String[0]);
   }
 
   private final String encoding;
   private final boolean fastASCIINumbers;
 
+  /**
+   * Uses the default charset of the JVM.
+   */
+  private Encoding() {
+    this(Charset.defaultCharset().name());
+  }
+
+  /**
+   * Use the charset passed as parameter.
+   *
+   * @param encoding charset name to use
+   */
   protected Encoding(String encoding) {
+    if (encoding == null) {
+      throw new NullPointerException("Null encoding charset not supported");
+    }
     this.encoding = encoding;
     fastASCIINumbers = testAsciiNumbers();
+    if (LOGGER.isLoggable(Level.FINEST)) {
+      LOGGER.log(Level.FINEST, "Creating new Encoding {0} with fastASCIINumbers {1}",
+          new Object[]{encoding, fastASCIINumbers});
+    }
   }
 
   /**
@@ -96,14 +121,13 @@ public class Encoding {
    * default JVM encoding if the specified encoding is unavailable.
    */
   public static Encoding getJVMEncoding(String jvmEncoding) {
-    if (isAvailable(jvmEncoding)) {
-      if (jvmEncoding.equals("UTF-8") || jvmEncoding.equals("UTF8")) {
-        return new UTF8Encoding(jvmEncoding);
-      } else {
-        return new Encoding(jvmEncoding);
-      }
+    if ("UTF-8".equals(jvmEncoding)) {
+      return new UTF8Encoding(jvmEncoding);
+    }
+    if (Charset.isSupported(jvmEncoding)) {
+      return new Encoding(jvmEncoding);
     } else {
-      return defaultEncoding();
+      return DEFAULT_ENCODING;
     }
   }
 
@@ -115,14 +139,17 @@ public class Encoding {
    * default JVM encoding if the specified encoding is unavailable.
    */
   public static Encoding getDatabaseEncoding(String databaseEncoding) {
+    if ("UTF8".equals(databaseEncoding)) {
+      return UTF8_ENCODING;
+    }
     // If the backend encoding is known and there is a suitable
     // encoding in the JVM we use that. Otherwise we fall back
     // to the default encoding of the JVM.
-
-    String[] candidates = encodings.get(databaseEncoding);
+    String[] candidates = ENCODINGS.get(databaseEncoding);
     if (candidates != null) {
       for (String candidate : candidates) {
-        if (isAvailable(candidate)) {
+        LOGGER.log(Level.FINEST, "Search encoding candidate {0}", candidate);
+        if (Charset.isSupported(candidate)) {
           return new Encoding(candidate);
         }
       }
@@ -130,12 +157,13 @@ public class Encoding {
 
     // Try the encoding name directly -- maybe the charset has been
     // provided by the user.
-    if (isAvailable(databaseEncoding)) {
+    if (Charset.isSupported(databaseEncoding)) {
       return new Encoding(databaseEncoding);
     }
 
     // Fall back to default JVM encoding.
-    return defaultEncoding();
+    LOGGER.log(Level.FINEST, "{0} encoding not found, returning default encoding", databaseEncoding);
+    return DEFAULT_ENCODING;
   }
 
   /**
@@ -144,7 +172,7 @@ public class Encoding {
    * @return the JVM encoding name used by this instance.
    */
   public String name() {
-    return encoding;
+    return Charset.isSupported(encoding) ? Charset.forName(encoding).name() : encoding;
   }
 
   /**
@@ -157,10 +185,6 @@ public class Encoding {
   public byte[] encode(String s) throws IOException {
     if (s == null) {
       return null;
-    }
-
-    if (encoding == null) {
-      return s.getBytes();
     }
 
     return s.getBytes(encoding);
@@ -177,10 +201,6 @@ public class Encoding {
    * @throws IOException if something goes wrong
    */
   public String decode(byte[] encodedString, int offset, int length) throws IOException {
-    if (encoding == null) {
-      return new String(encodedString, offset, length);
-    }
-
     return new String(encodedString, offset, length, encoding);
   }
 
@@ -203,10 +223,6 @@ public class Encoding {
    * @throws IOException if something goes wrong
    */
   public Reader getDecodingReader(InputStream in) throws IOException {
-    if (encoding == null) {
-      return new InputStreamReader(in);
-    }
-
     return new InputStreamReader(in, encoding);
   }
 
@@ -218,10 +234,6 @@ public class Encoding {
    * @throws IOException if something goes wrong
    */
   public Writer getEncodingWriter(OutputStream out) throws IOException {
-    if (encoding == null) {
-      return new OutputStreamWriter(out);
-    }
-
     return new OutputStreamWriter(out, encoding);
   }
 
@@ -234,23 +246,8 @@ public class Encoding {
     return DEFAULT_ENCODING;
   }
 
-  /**
-   * Test if an encoding is available in the JVM.
-   *
-   * @param encodingName the JVM encoding name to test
-   * @return true iff the encoding is supported
-   */
-  private static boolean isAvailable(String encodingName) {
-    try {
-      "DUMMY".getBytes(encodingName); //NOSONAR
-      return true;
-    } catch (java.io.UnsupportedEncodingException e) {
-      return false;
-    }
-  }
-
   public String toString() {
-    return (encoding == null ? "<default JVM encoding>" : encoding);
+    return encoding;
   }
 
   /**
