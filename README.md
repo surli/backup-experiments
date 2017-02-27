@@ -1,7 +1,7 @@
 # Important notice
 Unfortunately, we decided to discontinue support for this project; SoundCloud will no longer accept pull requests or make public releases of java-api-wrapper. If you're using java-api-wrapper in one of your projects, we suggest you fork the project in order to perform any necessary maintenance.
 
-# java-api-wrapper [![Build Status](https://secure.travis-ci.org/soundcloud/java-api-wrapper.png?branch=master)](http://travis-ci.org/soundcloud/java-api-wrapper)
+# java-api-wrapper [![Build Status](https://secure.travis-ci.org/soundcloud/java-api-wrapper.png?branch=master)](http://travis-ci.org/soundcloud/java-api-wrapper) [![API Testing](https://img.shields.io/badge/API%20Test-RapidAPI-blue.svg)](https://rapidapi.com/package/Soundcloud/functions?utm_source=SoundcloudGithub&utm_medium=button&utm_content=Vender_GitHub)
 
 OAuth2 SoundCloud API wrapper written in Java ([javadoc][]).
 
