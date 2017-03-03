@@ -1,0 +1,81 @@
+= Redis Data Set =
+
+<span class=''>[/?search=jpgc-redis <i class='fa fa-download'></i> Download]</span>
+
+== Description ==
+
+Redis Data Set requires JMeter 2.10 or superior.
+Redis Data Set lets you extract data from a Redis source in 2 modes:
+  * RANDOM_REMOVE uses a Redis List, once a value is retrieved it is removed from List, this is useful if you must ensure unique data is used accross test servers 
+  * RANDOM_KEEP uses a Redis Set, retrieved value stays in Set, this is useful if you accept to have duplicate data accross test servers 
+
+To use a Redis Data Set you must at least configure:
+  * Redis Key : The list or set name
+  * Variable Names : The names of variables exported by Data Set to Test elements
+  * Delimiter : Separator used within row stored in Redis List or Set
+  * Get Mode : RANDOM_REMOVE or RANDOM_KEEP
+  * Redis Server Host
+  * Redis Server Port
+  * Data Base name
+
+[/img/wiki/redis/RedisDataSet.png]
+
+To use RANDOM_REMOVE mode you need to first insert data this way.
+
+Inserting in a Redis List:
+{{{
+        JedisPoolConfig config = new JedisPoolConfig();
+        // Replace by your redis host
+        JedisPool pool = new JedisPool(config, "localhost");
+        Jedis jedis = null;
+        try {
+            jedis = pool.getResource();
+            for (int i = 0; i < 500; i++) {
+                // ccList will be used in Redis Data Set
+                jedis.lpush("ccList", ""+i);            
+            }
+        }finally {  
+            if(jedis != null) {
+                pool.returnResource(jedis);
+            }
+        }
+}}}
+
+You can then set Redis key to ccList.
+
+In the below example, we declare a Redis Data Set which exports cardNumber variable from a ccList and then use it in a Debug Sampler:
+
+[/img/wiki/redis/TestPlanWithRedisList.png]
+
+To use RANDOM_GET mode you need to first insert data this way.
+
+Inserting in a Redis Set:
+{{{
+        JedisPoolConfig config = new JedisPoolConfig();
+        // Replace by your redis host
+
+        JedisPool pool = new JedisPool(config, "localhost");
+        Jedis jedis = null;
+        try {
+            jedis = pool.getResource();
+            for (int i = 0; i < 500; i++) {
+                // ccSet will be used in Redis Data Set
+                jedis.sadd("ccSet", ""+i);            
+            }
+        }finally {  
+            if(jedis != null) {
+                pool.returnResource(jedis);
+            }
+        }
+}}}
+
+You can then set Redis key to ccSet
+In the below example, we declare a Redis Data Set which exports cardNumber variable from a ccSet and then use it in a Debug Sampler:
+
+[/img/wiki/redis/TestPlanWithRedisSet.png]
+
+
+== Examples ==
+[/img/examples/RedisDataSet-RandomKeep.jmx Example Redis Data Set using RANDOM_GET]
+
+[/img/examples/RedisDataSet-RandomRemove.jmx Example Redis Data Set using RANDOM_REMOVE]

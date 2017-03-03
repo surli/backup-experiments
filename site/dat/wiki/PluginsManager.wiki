@@ -1,0 +1,128 @@
+= JMeter Plugins Manager =
+
+The idea of JMeter Plugins Manager is simple: instead of installing various plugins manually, it will do it for you through nice UI.
+No need to mess with JARs anymore. Install Plugins Manager once and it will do it all for you: installing, upgrading, uninstalling.
+
+The plugins it manages include usual plugins from JMeter-Plugins.org, various third-party plugins and even core JMeter plugins.
+This is important, because removing rarely used features like JDBC and LDAP will tidy up huge popup menus from unused items. As a bonus you will get the increased JMeter startup time.
+
+You can observe the catalogue of plugins [/ here]. As the first experiment, try to uninstall all the plugins and see how bare JMeter looks like. Then install something. Then install something more. Have fun!
+
+== Installation and Usage ==
+
+Download the Plugins Manager [/get/ JAR file] and put it into JMeter's {{{lib/ext}}} directory. Then start JMeter and go to "Options" menu to access the Plugins Manager.
+
+[/img/wiki/pmgr/pmgr_menu_item.png]
+
+The label on the menu item will say "has upgrades" in case any of your installed plugins have upgrades for it.
+
+Clicking on menu item will bring up the plugins manager dialog:
+
+[/img/wiki/pmgr/pmgr_dialog.png]
+
+The dialog has three tabs, "Review Changes" area and "Apply" button. Removing ticks from plugins on "Installed" tab will uninstall them. Setting ticks on "Available" tab will install the plugin. 
+
+The plugins that have upgrades will show in the list with _italic font_. Choose the new version you want to install for them from "Version" drop-down. By default, all upgradable plugins are selected for upgrade and listed on "Upgrades" tab.
+
+The "Review Changes" pane is important, it lists all the changes that supposed to be done after you click "Apply" button.
+Sometimes plugins have dependencies from each other, so there might be additional plugins uninstalled. There is no hurry for important business, so review the changes prior to applying it.
+
+Right mouse click over checkbox lists opens "Toggle All" option, which takes some time to toggle all items in the list.
+
+<div class="alert alert-warning">If you see empty dialog, this means that most likely you have proxy requirement for Internet connection. Please see below for instructions.</div>
+
+== Using Behind the Proxy ==
+
+Plugins Manager respects JMeter's [http://jmeter.apache.org/usermanual/get-started.html#proxy_server proxy settings]. However, to avoid editing the properties files, we recommend to launch JMeter with additional parameters to pass it the proxy settings:
+
+{{{
+JVM_ARGS="-Dhttps.proxyHost=myproxy.com -Dhttps.proxyPort=8080" jmeter\bin\jmeter.bat
+}}}
+
+If you need proxy username/password, specify them with two additional properties {{{http.proxyUser}}} and {{{http.proxyPass}}} like this:
+
+{{{
+JVM_ARGS="-Dhttps.proxyHost=myproxy.com -Dhttps.proxyPort=8080 -Dhttp.proxyUser=john -Dhttp.proxyPass=***" jmeter\bin\jmeter.bat
+}}}
+
+
+== Add Your Plugin ==
+
+Now there is an opportunity for anyone who creates the JMeter plugins to quickly make them available for wide audience of JMeter-Plugins.org.
+You don't need to contribute your source code into our repository, you can just create your project and maintain it, just using JPGC as distribution infrastructure.
+If you are interested, please raise the topic on our [/support/ community forum] to get more detailed instructions.
+
+As a related note: there is a intention to split existing plugin sets from JPGC into smaller pieces that would fit users better.
+Main goal is not to ship undesired plugins into popup menus to not distract JMeter users from their main job.
+
+== Usage Statistics Collected ==
+
+By default, Plugins Manager sends some anonymous information to JMeter-Plugins.org, including: full version of JMeter used,
+list of installed plugins with their versions, unique ID for the installation.
+We analyze that information to learn more about which plugins deserve more development according to their popularity. Also, we share the statistics derived from usage reports on [/stats/ statistics page].
+The information is completely anonymous, you can validate that through our source code. You are free to disable these reporting by setting {{{jpgc.repo.sendstats=false}}} in JMeter properties.
+
+
+== Plugins Manager from Command-Line ==
+
+If you want to use the Plugins Manager in an automated fashion, you will need to make some preparations first:
+ 
+  # make sure {{{cmdrunner-2.0.jar}}} is present in {{{jmeter/lib}}} directory. If not, take it from here: http://search.maven.org/remotecontent?filepath=kg/apc/cmdrunner/2.0/cmdrunner-2.0.jar
+  # make sure {{{PluginsManagerCMD.sh}}} or {{{PluginsManagerCMD.bat}}} is present in {{{jmeter/bin}}} directory. If not, run {{{java -cp jmeter/lib/ext/jmeter-plugins-manager-0.9.jar org.jmeterplugins.repository.PluginManagerCMDInstaller}}} to have the files created
+    
+Now, you can use {{{PluginsManagerCMD}}} to get the status of plugins, install or uninstall them. The command-line is simple:
+
+{{{
+PluginsManagerCMD &lt;command&gt; [&lt;params&gt;]
+}}}
+
+Where {{{command}}} is one of "status", "install", "uninstall".
+{{{params}}} is a string with plugin IDs, comma-separated, like this: {{{jpgc-cmd,jpgc-json,jpgc-casutg}}}. No spaces allowed currently. If you want to specify exact versions for plugins, do it like this: {{{jpgc-json=2.2,jpgc-casutg=2.0}}} 
+
+Example usages:
+
+{{{
+PluginsManagerCMD status
+PluginsManagerCMD install jpgc-fifo,jpgc-json=2.2
+PluginsManagerCMD uninstall jmeter-tcp,jmeter-ftp,jmeter-jdbc
+}}}
+
+
+To use proxy with command line, please use {{{JVM_ARGS}}} environment variable to set proxy properties, like this:
+
+{{{
+JVM_ARGS="-Dhttps.proxyHost=myproxy.com -Dhttps.proxyPort=8080" PluginsManagerCMD status
+}}}
+
+If you need username/proxy for proxy, pass them like this:
+{{{
+JVM_ARGS="-Dhttps.proxyHost=myproxy.com -Dhttps.proxyPort=8080 -Dhttp.proxyUser=john -Dhttp.proxyPass=***" PluginsManagerCMD status
+}}}
+
+== Using from BeanShell or JSR223 ==
+
+If you need to access the plugins versions information from scriptable components like BeanShell sampler, please use these two methods:
+
+=== Single Plugin Info ===
+
+Request for single plugin version, returns version string if plugin is installed, or null if plugin is not installed:
+
+{{{
+org.jmeterplugins.repository.PluginManager.getPluginStatus("jpgc-graphs-basic")
+}}}
+
+Example result of this function call is string like {{{1.3.0}}}.
+
+=== All Plugins Info ===
+
+Returns a string containing plugin IDs with corresponding versions. Only the installed plugins are listed.
+
+{{{
+org.jmeterplugins.repository.PluginManager.getAllPluginsStatus()
+}}}
+
+Example result of this function call is string like {{{[jpgc-graphs-basic=1.3.1, jpgc-sense=1.3.1, jpgc-cmd=1.3.1, jpgc-graphs-composite=1.3.1, jmeter-core=2.13, jmeter-components=2.13]}}}.
+
+== Network Timeout ==
+
+If you experiencing "Connection Timed Out" errors, try setting property in user.properties file: {{{jpgc.repo.timeout=60000}}}.
