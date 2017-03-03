@@ -157,7 +157,8 @@ public class RSQLFilterDialect implements SubqueryFilterDialect, JoinFilterDiale
 
                 try {
                     Node ast = parser.parse(expressionText);
-                    RSQL2ExpressionFilterVisitor visitor = new RSQL2ExpressionFilterVisitor(false);
+                    // this is not guarded against to-many joins
+                    RSQL2ExpressionFilterVisitor visitor = new RSQL2ExpressionFilterVisitor(true);
                     FilterExpression filterExpression = ast.accept(visitor, entityType);
                     expressionByType.put(typeName, filterExpression);
                 } catch (RSQLParserException e) {
