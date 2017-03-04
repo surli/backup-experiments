@@ -32,6 +32,8 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.Sets;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.metamx.emitter.core.NoopEmitter;
+import com.metamx.emitter.service.ServiceEmitter;
 import io.druid.collections.BlockingPool;
 import io.druid.collections.StupidPool;
 import io.druid.data.input.Row;
@@ -51,6 +53,7 @@ import io.druid.query.BySegmentResultValueClass;
 import io.druid.query.DruidProcessingConfig;
 import io.druid.query.Druids;
 import io.druid.query.FinalizeResultsQueryRunner;
+import io.druid.query.IntervalChunkingQueryRunnerDecorator;
 import io.druid.query.Query;
 import io.druid.query.QueryDataSource;
 import io.druid.query.QueryRunner;
@@ -189,15 +192,21 @@ public class GroupByQueryRunnerTest
 
   public static List<GroupByQueryConfig> testConfigs()
   {
-    final GroupByQueryConfig defaultConfig = new GroupByQueryConfig()
+    final GroupByQueryConfig v1Config = new GroupByQueryConfig()
     {
       @Override
       public String toString()
       {
-        return "default";
+        return "v1";
+      }
+
+      @Override
+      public String getDefaultStrategy()
+      {
+        return GroupByStrategySelector.STRATEGY_V1;
       }
     };
-    final GroupByQueryConfig singleThreadedConfig = new GroupByQueryConfig()
+    final GroupByQueryConfig v1SingleThreadedConfig = new GroupByQueryConfig()
     {
       @Override
       public boolean isSingleThreaded()
@@ -206,9 +215,15 @@ public class GroupByQueryRunnerTest
       }
 
       @Override
+      public String getDefaultStrategy()
+      {
+        return GroupByStrategySelector.STRATEGY_V1;
+      }
+
+      @Override
       public String toString()
       {
-        return "singleThreaded";
+        return "v1SingleThreaded";
       }
     };
     final GroupByQueryConfig v2Config = new GroupByQueryConfig()
@@ -278,12 +293,12 @@ public class GroupByQueryRunnerTest
       }
     };
 
-    defaultConfig.setMaxIntermediateRows(10000);
-    singleThreadedConfig.setMaxIntermediateRows(10000);
+    v1Config.setMaxIntermediateRows(10000);
+    v1SingleThreadedConfig.setMaxIntermediateRows(10000);
 
     return ImmutableList.of(
-        defaultConfig,
-        singleThreadedConfig,
+        v1Config,
+        v1SingleThreadedConfig,
         v2Config,
         v2SmallBufferConfig,
         v2SmallDictionaryConfig
@@ -353,7 +368,11 @@ public class GroupByQueryRunnerTest
     );
     final GroupByQueryQueryToolChest toolChest = new GroupByQueryQueryToolChest(
         strategySelector,
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        new IntervalChunkingQueryRunnerDecorator(
+            MoreExecutors.sameThreadExecutor(),
+            QueryRunnerTestHelper.NOOP_QUERYWATCHER,
+            new ServiceEmitter("dummy", "dummy", new NoopEmitter())
+        )
     );
     return new GroupByQueryRunnerFactory(
         strategySelector,
@@ -542,6 +561,40 @@ public class GroupByQueryRunnerTest
 
         GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-01", "alias", "travel", "rows", 1L, "idx", 119L),
         GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-02", "alias", "travel", "rows", 1L, "idx", 126L)
+    );
+
+    Iterable<Row> results = GroupByQueryRunnerTestHelper.runQuery(factory, runner, query);
+    TestHelper.assertExpectedObjects(expectedResults, results, "");
+  }
+
+  @Test
+  public void testGroupByWithChunkPeriod()
+  {
+    GroupByQuery query = GroupByQuery
+        .builder()
+        .setDataSource(QueryRunnerTestHelper.dataSource)
+        .setQuerySegmentSpec(QueryRunnerTestHelper.firstToThird)
+        .setDimensions(Lists.<DimensionSpec>newArrayList(new DefaultDimensionSpec("quality", "alias")))
+        .setAggregatorSpecs(
+            Arrays.asList(
+                QueryRunnerTestHelper.rowsCount,
+                new LongSumAggregatorFactory("idx", "index")
+            )
+        )
+        .setGranularity(QueryRunnerTestHelper.allGran)
+        .setContext(ImmutableMap.<String, Object>of("chunkPeriod", "P1D"))
+        .build();
+
+    List<Row> expectedResults = Arrays.asList(
+        GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-01", "alias", "automotive", "rows", 2L, "idx", 282L),
+        GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-01", "alias", "business", "rows", 2L, "idx", 230L),
+        GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-01", "alias", "entertainment", "rows", 2L, "idx", 324L),
+        GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-01", "alias", "health", "rows", 2L, "idx", 233L),
+        GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-01", "alias", "mezzanine", "rows", 6L, "idx", 5317L),
+        GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-01", "alias", "news", "rows", 2L, "idx", 235L),
+        GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-01", "alias", "premium", "rows", 6L, "idx", 5405L),
+        GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-01", "alias", "technology", "rows", 2L, "idx", 175L),
+        GroupByQueryRunnerTestHelper.createExpectedRow("2011-04-01", "alias", "travel", "rows", 2L, "idx", 245L)
     );
 
     Iterable<Row> results = GroupByQueryRunnerTestHelper.runQuery(factory, runner, query);

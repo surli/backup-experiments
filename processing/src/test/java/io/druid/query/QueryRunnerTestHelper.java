@@ -25,6 +25,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.metamx.emitter.core.NoopEmitter;
+import com.metamx.emitter.service.ServiceEmitter;
 import io.druid.java.util.common.UOE;
 import io.druid.java.util.common.granularity.Granularities;
 import io.druid.java.util.common.granularity.Granularity;
@@ -552,26 +555,13 @@ public class QueryRunnerTestHelper
         .applyPostMergeDecoration();
   }
 
-  public static IntervalChunkingQueryRunnerDecorator NoopIntervalChunkingQueryRunnerDecorator()
+  public static IntervalChunkingQueryRunnerDecorator simpleIntervalChunkingQueryRunnerDecorator()
   {
-    return new IntervalChunkingQueryRunnerDecorator(null, null, null)
-    {
-      @Override
-      public <T> QueryRunner<T> decorate(
-          final QueryRunner<T> delegate,
-          QueryToolChest<T, ? extends Query<T>> toolChest
-      )
-      {
-        return new QueryRunner<T>()
-        {
-          @Override
-          public Sequence<T> run(Query<T> query, Map<String, Object> responseContext)
-          {
-            return delegate.run(query, responseContext);
-          }
-        };
-      }
-    };
+    return new IntervalChunkingQueryRunnerDecorator(
+        MoreExecutors.sameThreadExecutor(),
+        QueryRunnerTestHelper.NOOP_QUERYWATCHER,
+        new ServiceEmitter("dummy", "dummy", new NoopEmitter())
+    );
   }
 
   public static Map<String, Object> of(Object... keyvalues)
@@ -595,7 +585,7 @@ public class QueryRunnerTestHelper
   public static TimeseriesQueryRunnerFactory newTimeseriesQueryRunnerFactory()
   {
     return new TimeseriesQueryRunnerFactory(
-        new TimeseriesQueryQueryToolChest(NoopIntervalChunkingQueryRunnerDecorator()),
+        new TimeseriesQueryQueryToolChest(simpleIntervalChunkingQueryRunnerDecorator()),
         new TimeseriesQueryEngine(),
         QueryRunnerTestHelper.NOOP_QUERYWATCHER
     );

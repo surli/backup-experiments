@@ -71,7 +71,7 @@ public class MultiSegmentSelectQueryTest
 
   private static final SelectQueryQueryToolChest toolChest = new SelectQueryQueryToolChest(
       new DefaultObjectMapper(),
-      QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator(),
+      QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator(),
       configSupplier
   );
 

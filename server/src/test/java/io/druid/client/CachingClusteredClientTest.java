@@ -258,26 +258,26 @@ public class CachingClusteredClientTest
                   .put(
                       TimeseriesQuery.class,
                       new TimeseriesQueryQueryToolChest(
-                          QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+                          QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
                       )
                   )
                   .put(
                       TopNQuery.class, new TopNQueryQueryToolChest(
                           new TopNQueryConfig(),
-                          QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+                          QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
                       )
                   )
                   .put(
                       SearchQuery.class, new SearchQueryQueryToolChest(
                           new SearchQueryConfig(),
-                          QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+                          QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
                       )
                   )
                   .put(
                       SelectQuery.class,
                       new SelectQueryQueryToolChest(
                           jsonMapper,
-                          QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator(),
+                          QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator(),
                           selectConfigSupplier
                       )
                   )
@@ -453,7 +453,7 @@ public class CachingClusteredClientTest
 
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new TimeseriesQueryQueryToolChest(
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
 
@@ -492,7 +492,7 @@ public class CachingClusteredClientTest
 
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new TimeseriesQueryQueryToolChest(
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
 
@@ -621,7 +621,7 @@ public class CachingClusteredClientTest
 
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new TimeseriesQueryQueryToolChest(
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
 
@@ -684,7 +684,7 @@ public class CachingClusteredClientTest
 
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new TimeseriesQueryQueryToolChest(
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
 
@@ -730,7 +730,7 @@ public class CachingClusteredClientTest
                                                         .context(CONTEXT);
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new TimeseriesQueryQueryToolChest(
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
     testQueryCaching(
@@ -807,7 +807,7 @@ public class CachingClusteredClientTest
         client,
         new TopNQueryQueryToolChest(
             new TopNQueryConfig(),
-            QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+            QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
         )
     );
 
@@ -884,7 +884,7 @@ public class CachingClusteredClientTest
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new TopNQueryQueryToolChest(
         new TopNQueryConfig(),
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
 
@@ -985,7 +985,7 @@ public class CachingClusteredClientTest
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new TopNQueryQueryToolChest(
         new TopNQueryConfig(),
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
     testQueryCaching(
@@ -1059,7 +1059,7 @@ public class CachingClusteredClientTest
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new TopNQueryQueryToolChest(
         new TopNQueryConfig(),
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
     testQueryCaching(
@@ -1161,7 +1161,7 @@ public class CachingClusteredClientTest
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new SearchQueryQueryToolChest(
         new SearchQueryConfig(),
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
     HashMap<String, Object> context = new HashMap<String, Object>();
@@ -1235,7 +1235,7 @@ public class CachingClusteredClientTest
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new SearchQueryQueryToolChest(
         new SearchQueryConfig(),
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
     HashMap<String, Object> context = new HashMap<String, Object>();
@@ -1335,7 +1335,7 @@ public class CachingClusteredClientTest
         client,
         new SelectQueryQueryToolChest(
             jsonMapper,
-            QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator(),
+            QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator(),
             selectConfigSupplier
         )
     );
@@ -1412,7 +1412,7 @@ public class CachingClusteredClientTest
         client,
         new SelectQueryQueryToolChest(
             jsonMapper,
-            QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator(),
+            QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator(),
             selectConfigSupplier
         )
     );
@@ -1676,7 +1676,7 @@ public class CachingClusteredClientTest
 
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new TimeseriesQueryQueryToolChest(
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
 
@@ -1762,7 +1762,7 @@ public class CachingClusteredClientTest
 
     QueryRunner runner = new FinalizeResultsQueryRunner(
         client, new TimeseriesQueryQueryToolChest(
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     )
     );
 

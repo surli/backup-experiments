@@ -26,9 +26,11 @@ import com.metamx.emitter.service.ServiceEmitter;
 import com.metamx.emitter.service.ServiceMetricEvent;
 import io.druid.java.util.common.granularity.PeriodGranularity;
 import io.druid.java.util.common.guava.FunctionalIterable;
+import io.druid.java.util.common.guava.MergeSequence;
 import io.druid.java.util.common.guava.Sequence;
 import io.druid.java.util.common.guava.Sequences;
 import io.druid.query.spec.MultipleIntervalSegmentSpec;
+import org.joda.time.DateTime;
 import org.joda.time.Interval;
 import org.joda.time.Period;
 
@@ -42,6 +44,8 @@ import java.util.concurrent.ExecutorService;
  */
 public class IntervalChunkingQueryRunner<T> implements QueryRunner<T>
 {
+  private static final DateTime EPOCH = new DateTime(0L);
+
   private final QueryRunner<T> baseRunner;
 
   private final QueryToolChest<T, Query<T>> toolChest;
@@ -65,7 +69,9 @@ public class IntervalChunkingQueryRunner<T> implements QueryRunner<T>
   public Sequence<T> run(final Query<T> query, final Map<String, Object> responseContext)
   {
     final Period chunkPeriod = getChunkPeriod(query);
-    if (chunkPeriod.toStandardDuration().getMillis() == 0) {
+
+    // Avoid toStandardDuration as this will fail on chunkPeriods like "P1M".
+    if (EPOCH.plus(chunkPeriod).getMillis() == EPOCH.getMillis()) {
       return baseRunner.run(query, responseContext);
     }
 
@@ -88,40 +94,44 @@ public class IntervalChunkingQueryRunner<T> implements QueryRunner<T>
       return baseRunner.run(query, responseContext);
     }
 
-    return Sequences.concat(
-        Lists.newArrayList(
-            FunctionalIterable.create(chunkIntervals).transform(
-                new Function<Interval, Sequence<T>>()
-                {
-                  @Override
-                  public Sequence<T> apply(Interval singleInterval)
-                  {
-                    return new AsyncQueryRunner<T>(
-                        //Note: it is assumed that toolChest.mergeResults(..) gives a query runner that is
-                        //not lazy i.e. it does most of its work on call to run() method
-                        toolChest.mergeResults(
-                            new MetricsEmittingQueryRunner<T>(
-                                emitter,
-                                new Function<Query<T>, ServiceMetricEvent.Builder>()
-                                {
-                                  @Override
-                                  public ServiceMetricEvent.Builder apply(Query<T> input)
-                                  {
-                                    return toolChest.makeMetricBuilder(input);
-                                  }
-                                },
-                                baseRunner,
-                                "query/intervalChunk/time",
-                                ImmutableMap.of("chunkInterval", singleInterval.toString())
-                            ).withWaitMeasuredFromNow()
-                        ),
-                        executor, queryWatcher
-                    ).run(
-                        query.withQuerySegmentSpec(new MultipleIntervalSegmentSpec(Arrays.asList(singleInterval))),
-                        responseContext
-                    );
-                  }
-                }
+    return new MergeSequence<>(
+        query.getResultOrdering(),
+        Sequences.simple(
+            // Materialize all sub-sequences immediately so work starts.
+            Lists.newArrayList(
+                FunctionalIterable.create(chunkIntervals).transform(
+                    new Function<Interval, Sequence<T>>()
+                    {
+                      @Override
+                      public Sequence<T> apply(Interval singleInterval)
+                      {
+                        return new AsyncQueryRunner<T>(
+                            // Note: for this to be useful, toolChest.mergeResults(..) must give a query runner that is
+                            // not lazy i.e. it does most of its work on call to run() method.
+                            toolChest.mergeResults(
+                                new MetricsEmittingQueryRunner<T>(
+                                    emitter,
+                                    new Function<Query<T>, ServiceMetricEvent.Builder>()
+                                    {
+                                      @Override
+                                      public ServiceMetricEvent.Builder apply(Query<T> input)
+                                      {
+                                        return toolChest.makeMetricBuilder(input);
+                                      }
+                                    },
+                                    baseRunner,
+                                    "query/intervalChunk/time",
+                                    ImmutableMap.of("chunkInterval", singleInterval.toString())
+                                ).withWaitMeasuredFromNow()
+                            ),
+                            executor, queryWatcher
+                        ).run(
+                            query.withQuerySegmentSpec(new MultipleIntervalSegmentSpec(Arrays.asList(singleInterval))),
+                            responseContext
+                        );
+                      }
+                    }
+                )
             )
         )
     );

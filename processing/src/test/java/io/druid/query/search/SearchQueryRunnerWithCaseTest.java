@@ -53,7 +53,7 @@ import java.util.Map;
 import java.util.Set;
 
 import static io.druid.query.QueryRunnerTestHelper.NOOP_QUERYWATCHER;
-import static io.druid.query.QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator;
+import static io.druid.query.QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator;
 import static io.druid.query.QueryRunnerTestHelper.allGran;
 import static io.druid.query.QueryRunnerTestHelper.dataSource;
 import static io.druid.query.QueryRunnerTestHelper.fullOnInterval;
@@ -132,7 +132,7 @@ public class SearchQueryRunnerWithCaseTest
         new SearchStrategySelector(Suppliers.ofInstance(config)),
         new SearchQueryQueryToolChest(
             config,
-            NoopIntervalChunkingQueryRunnerDecorator()
+            simpleIntervalChunkingQueryRunnerDecorator()
         ),
         NOOP_QUERYWATCHER
     );

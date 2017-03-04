@@ -189,7 +189,7 @@ public class TopNQueryQueryToolChestTest
     TopNQueryConfig config = new TopNQueryConfig();
     final TopNQueryQueryToolChest chest = new TopNQueryQueryToolChest(
         config,
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     );
     QueryRunnerFactory factory = new TopNQueryRunnerFactory(
         TestQueryRunners.getPool(),

@@ -85,7 +85,7 @@ public class RetryQueryRunnerTest
           }
         },
         (QueryToolChest) new TimeseriesQueryQueryToolChest(
-            QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+            QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
         ),
         new RetryQueryRunnerConfig()
         {
@@ -158,7 +158,7 @@ public class RetryQueryRunnerTest
           }
         },
         (QueryToolChest) new TimeseriesQueryQueryToolChest(
-            QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+            QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
         ),
         new RetryQueryRunnerConfig()
         {
@@ -225,7 +225,7 @@ public class RetryQueryRunnerTest
           }
         },
         (QueryToolChest) new TimeseriesQueryQueryToolChest(
-            QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+            QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
         ),
         new RetryQueryRunnerConfig()
         {
@@ -277,7 +277,7 @@ public class RetryQueryRunnerTest
           }
         },
         (QueryToolChest) new TimeseriesQueryQueryToolChest(
-            QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+            QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
         ),
         new RetryQueryRunnerConfig()
         {
@@ -388,7 +388,7 @@ public class RetryQueryRunnerTest
           }
         },
         (QueryToolChest) new TimeseriesQueryQueryToolChest(
-            QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+            QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
         ),
         new RetryQueryRunnerConfig()
         {
