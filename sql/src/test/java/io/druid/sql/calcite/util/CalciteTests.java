@@ -108,7 +108,7 @@ public class CalciteTests
               new SelectQueryRunnerFactory(
                   new SelectQueryQueryToolChest(
                       TestHelper.getObjectMapper(),
-                      QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator(),
+                      QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator(),
                       selectConfigSupplier
                   ),
                   new SelectQueryEngine(selectConfigSupplier),
@@ -119,7 +119,7 @@ public class CalciteTests
               TimeseriesQuery.class,
               new TimeseriesQueryRunnerFactory(
                   new TimeseriesQueryQueryToolChest(
-                      QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+                      QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
                   ),
                   new TimeseriesQueryEngine(),
                   QueryRunnerTestHelper.NOOP_QUERYWATCHER
@@ -141,7 +141,7 @@ public class CalciteTests
                   ),
                   new TopNQueryQueryToolChest(
                       new TopNQueryConfig(),
-                      QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+                      QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
                   ),
                   QueryRunnerTestHelper.NOOP_QUERYWATCHER
               )

@@ -84,7 +84,7 @@ public class TimeseriesQueryRunnerTest
         QueryRunnerTestHelper.makeQueryRunners(
             new TimeseriesQueryRunnerFactory(
                 new TimeseriesQueryQueryToolChest(
-                    QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+                    QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
                 ),
                 new TimeseriesQueryEngine(),
                 QueryRunnerTestHelper.NOOP_QUERYWATCHER
@@ -2554,7 +2554,7 @@ public class TimeseriesQueryRunnerTest
     TestHelper.assertExpectedResults(expectedResults, results);
 
     TimeseriesQueryQueryToolChest toolChest = new TimeseriesQueryQueryToolChest(
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     );
     QueryRunner<Result<TimeseriesResultValue>> optimizedRunner = toolChest.postMergeQueryDecoration(
         toolChest.mergeResults(toolChest.preMergeQueryDecoration(runner)));

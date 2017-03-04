@@ -178,14 +178,14 @@ public class AggregationTestHelper
 
     SelectQueryQueryToolChest toolchest = new SelectQueryQueryToolChest(
         new DefaultObjectMapper(),
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator(),
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator(),
         configSupplier
     );
 
     SelectQueryRunnerFactory factory = new SelectQueryRunnerFactory(
         new SelectQueryQueryToolChest(
             new DefaultObjectMapper(),
-            QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator(),
+            QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator(),
             configSupplier
         ),
         new SelectQueryEngine(
@@ -225,7 +225,7 @@ public class AggregationTestHelper
     ObjectMapper mapper = new DefaultObjectMapper();
 
     TimeseriesQueryQueryToolChest toolchest = new TimeseriesQueryQueryToolChest(
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     );
 
     TimeseriesQueryRunnerFactory factory = new TimeseriesQueryRunnerFactory(
@@ -266,7 +266,7 @@ public class AggregationTestHelper
 
     TopNQueryQueryToolChest toolchest = new TopNQueryQueryToolChest(
         new TopNQueryConfig(),
-        QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()
+        QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()
     );
 
     TopNQueryRunnerFactory factory = new TopNQueryRunnerFactory(

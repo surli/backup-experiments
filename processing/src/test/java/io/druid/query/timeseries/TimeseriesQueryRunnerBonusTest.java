@@ -110,7 +110,7 @@ public class TimeseriesQueryRunnerBonusTest
   {
     final QueryRunnerFactory factory = new TimeseriesQueryRunnerFactory(
         new TimeseriesQueryQueryToolChest(
-            QueryRunnerTestHelper.NoopIntervalChunkingQueryRunnerDecorator()),
+            QueryRunnerTestHelper.simpleIntervalChunkingQueryRunnerDecorator()),
         new TimeseriesQueryEngine(),
         QueryRunnerTestHelper.NOOP_QUERYWATCHER
     );
