@@ -1,0 +1,351 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.yahoo.elide:dropwizard-elide:jar:3.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-dependency-plugin @ com.yahoo.elide:dropwizard-elide:[unknown-version], /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-contrib/dropwizard-elide/pom.xml, line 101, column 21
+[WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin com.jcabi:jcabi-mysql-maven-plugin @ com.yahoo.elide:dropwizard-elide:[unknown-version], /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-contrib/dropwizard-elide/pom.xml, line 147, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Elide: Parent Pom
+[INFO] Elide: Annotations
+[INFO] Elide: Core
+[INFO] Elide Data Store: Parent Pom
+[INFO] Elide Data Store: Hibernate Common
+[INFO] Elide: Integration Test Library
+[INFO] Elide Data Store: Hibernate 5
+[INFO] Elide Data Store: Hibernate 3
+[INFO] Elide Data Store: In-Memory
+[INFO] Elide Data Store: Multiplex Library
+[INFO] Elide Data Store: No-Operation Library
+[INFO] Elide Example: Parent Pom
+[INFO] Elide Example: Hibernate 3 API with MySQL
+[INFO] Elide Example: Persistence API with Security
+[INFO] Elide Contrib: Parent Pom
+[INFO] Dropwizard Elide
+[INFO] Elide Example: Elide with Dropwizard
+[INFO] Elide Swagger
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Elide: Parent Pom 3.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.7.201606060606:prepare-agent (prepare-agent) @ elide-parent-pom ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/.m2/org/jacoco/org.jacoco.agent/0.7.7.201606060606/org.jacoco.agent-0.7.7.201606060606-runtime.jar=destfile=/home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/target/jacoco.exec
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Elide: Annotations 3.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ elide-annotations ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.7.201606060606:prepare-agent (prepare-agent) @ elide-annotations ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/.m2/org/jacoco/org.jacoco.agent/0.7.7.201606060606/org.jacoco.agent-0.7.7.201606060606-runtime.jar=destfile=/home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-annotations/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ elide-annotations ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-annotations/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ elide-annotations ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ elide-annotations ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-annotations/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ elide-annotations ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ elide-annotations ---
+[INFO] No tests to run.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Elide: Core 3.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ elide-core ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.7.201606060606:prepare-agent (prepare-agent) @ elide-core ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/.m2/org/jacoco/org.jacoco.agent/0.7.7.201606060606/org.jacoco.agent-0.7.7.201606060606-runtime.jar=destfile=/home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/target/jacoco.exec
+[INFO] 
+[INFO] --- antlr4-maven-plugin:4.6:antlr4 (antlr4) @ elide-core ---
+[INFO] No grammars to process
+[INFO] ANTLR 4: Processing source directory /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/main/antlr4
+[INFO] 
+[INFO] --- gmaven-plugin:1.5:generateStubs (default) @ elide-core ---
+[INFO] No sources found for Java stub generation
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ elide-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ elide-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- gmaven-plugin:1.5:compile (default) @ elide-core ---
+[INFO] No sources found to compile
+[INFO] 
+[INFO] --- gmaven-plugin:1.5:generateTestStubs (default) @ elide-core ---
+[INFO] Generated 1 Java stub
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ elide-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ elide-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 58 source files to /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/target/test-classes
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[8,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[9,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[10,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[8,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[9,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[10,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[8,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[9,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[10,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[8,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[9,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[10,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[8,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[9,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[10,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[8,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[9,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[10,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[8,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[9,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[10,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[8,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[9,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/LifeCycleTest.java:[10,26] org.mockito.Matchers in org.mockito has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[163,67] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[163,80] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[164,68] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[164,81] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[182,67] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[182,80] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[183,69] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[183,82] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[184,69] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[184,82] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[201,67] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[201,80] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[202,68] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[202,81] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[217,67] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[217,80] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[218,69] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[218,82] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[235,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[235,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[235,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[237,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[237,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[237,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[256,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[256,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[256,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[258,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[258,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[258,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[278,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[278,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[278,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[280,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[280,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[280,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[282,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[282,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[282,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[305,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[305,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[305,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[307,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[307,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[307,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[309,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[309,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[309,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[311,17] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[311,30] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[311,43] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[616,53] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[616,66] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[674,53] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[674,66] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[675,53] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[675,66] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[676,54] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[676,67] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[677,54] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[677,67] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[678,53] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[678,66] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1505,46] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1505,59] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1505,72] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1530,53] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1530,66] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1543,54] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1543,67] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1556,60] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1556,73] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1752,61] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1752,74] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1777,61] <T>anyObject() in org.mockito.Matchers has been deprecated
+[WARNING] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java:[1777,74] <T>anyObject() in org.mockito.Matchers has been deprecated
+[INFO] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java: Some input files additionally use or override a deprecated API.
+[INFO] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/src/test/java/com/yahoo/elide/core/PersistentResourceTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- gmaven-plugin:1.5:testCompile (default) @ elide-core ---
+[INFO] Compiled 1 Groovy class
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ elide-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.19.1/surefire-testng-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.19.1/surefire-testng-2.19.1.pom (3 KB at 4.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 108.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.pom (3 KB at 130.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.19.1/surefire-testng-utils-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.19.1/surefire-testng-utils-2.19.1.pom (3 KB at 114.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.pom (3 KB at 98.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.19.1/surefire-testng-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.19.1/surefire-testng-utils-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.19.1/surefire-testng-utils-2.19.1.jar (27 KB at 381.3 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.jar (38 KB at 480.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.jar (44 KB at 545.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.19.1/surefire-testng-2.19.1.jar (42 KB at 487.7 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Tests run: 311, Failures: 10, Errors: 0, Skipped: 0, Time elapsed: 16.183 sec <<< FAILURE! - in TestSuite
+testIntegerFieldType(com.yahoo.elide.core.filter.FilterPredicateTest)  Time elapsed: 0.217 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.yahoo.elide.core.filter.FilterPredicateTest.parse(FilterPredicateTest.groovy:48)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.this$2$parse(FilterPredicateTest.groovy)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.testIntegerFieldType(FilterPredicateTest.groovy:201)
+
+testMultipleFieldMultipleValues(com.yahoo.elide.core.filter.FilterPredicateTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.yahoo.elide.core.filter.FilterPredicateTest.parse(FilterPredicateTest.groovy:48)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.this$2$parse(FilterPredicateTest.groovy)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.testMultipleFieldMultipleValues(FilterPredicateTest.groovy:99)
+
+testMultipleIntegerFieldType(com.yahoo.elide.core.filter.FilterPredicateTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.yahoo.elide.core.filter.FilterPredicateTest.parse(FilterPredicateTest.groovy:48)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.this$2$parse(FilterPredicateTest.groovy)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.testMultipleIntegerFieldType(FilterPredicateTest.groovy:215)
+
+testSingleFieldMultipleValues(com.yahoo.elide.core.filter.FilterPredicateTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.yahoo.elide.core.filter.FilterPredicateTest.parse(FilterPredicateTest.groovy:48)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.this$2$parse(FilterPredicateTest.groovy)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.testSingleFieldMultipleValues(FilterPredicateTest.groovy:84)
+
+testSingleFieldSingleValue(com.yahoo.elide.core.filter.FilterPredicateTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.yahoo.elide.core.filter.FilterPredicateTest.parse(FilterPredicateTest.groovy:48)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.this$2$parse(FilterPredicateTest.groovy)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.testSingleFieldSingleValue(FilterPredicateTest.groovy:70)
+
+testSingleFieldWithInOperator(com.yahoo.elide.core.filter.FilterPredicateTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.yahoo.elide.core.filter.FilterPredicateTest.parse(FilterPredicateTest.groovy:48)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.this$2$parse(FilterPredicateTest.groovy)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.testSingleFieldWithInOperator(FilterPredicateTest.groovy:123)
+
+testSingleFieldWithInfixOperator(com.yahoo.elide.core.filter.FilterPredicateTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.yahoo.elide.core.filter.FilterPredicateTest.parse(FilterPredicateTest.groovy:48)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.this$2$parse(FilterPredicateTest.groovy)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.testSingleFieldWithInfixOperator(FilterPredicateTest.groovy:179)
+
+testSingleFieldWithNotOperator(com.yahoo.elide.core.filter.FilterPredicateTest)  Time elapsed: 0.004 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.yahoo.elide.core.filter.FilterPredicateTest.parse(FilterPredicateTest.groovy:48)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.this$2$parse(FilterPredicateTest.groovy)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.testSingleFieldWithNotOperator(FilterPredicateTest.groovy:137)
+
+testSingleFieldWithPostfixOperator(com.yahoo.elide.core.filter.FilterPredicateTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.yahoo.elide.core.filter.FilterPredicateTest.parse(FilterPredicateTest.groovy:48)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.this$2$parse(FilterPredicateTest.groovy)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.testSingleFieldWithPostfixOperator(FilterPredicateTest.groovy:165)
+
+testSingleFieldWithPrefixOperator(com.yahoo.elide.core.filter.FilterPredicateTest)  Time elapsed: 0.021 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.yahoo.elide.core.filter.FilterPredicateTest.parse(FilterPredicateTest.groovy:48)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.this$2$parse(FilterPredicateTest.groovy)
+	at com.yahoo.elide.core.filter.FilterPredicateTest.testSingleFieldWithPrefixOperator(FilterPredicateTest.groovy:151)
+
+
+Results :
+
+Failed tests: 
+  FilterPredicateTest.testIntegerFieldType:201->this$2$parse:-1->parse:48 » NullPointer
+  FilterPredicateTest.testMultipleFieldMultipleValues:99->this$2$parse:-1->parse:48 » NullPointer
+  FilterPredicateTest.testMultipleIntegerFieldType:215->this$2$parse:-1->parse:48 » NullPointer
+  FilterPredicateTest.testSingleFieldMultipleValues:84->this$2$parse:-1->parse:48 » NullPointer
+  FilterPredicateTest.testSingleFieldSingleValue:70->this$2$parse:-1->parse:48 » NullPointer
+  FilterPredicateTest.testSingleFieldWithInOperator:123->this$2$parse:-1->parse:48 » NullPointer
+  FilterPredicateTest.testSingleFieldWithInfixOperator:179->this$2$parse:-1->parse:48 » NullPointer
+  FilterPredicateTest.testSingleFieldWithNotOperator:137->this$2$parse:-1->parse:48 » NullPointer
+  FilterPredicateTest.testSingleFieldWithPostfixOperator:165->this$2$parse:-1->parse:48 » NullPointer
+  FilterPredicateTest.testSingleFieldWithPrefixOperator:151->this$2$parse:-1->parse:48 » NullPointer
+
+Tests run: 311, Failures: 10, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Elide: Parent Pom .................................. SUCCESS [  2.334 s]
+[INFO] Elide: Annotations ................................. SUCCESS [ 11.254 s]
+[INFO] Elide: Core ........................................ FAILURE [ 35.226 s]
+[INFO] Elide Data Store: Parent Pom ....................... SKIPPED
+[INFO] Elide Data Store: Hibernate Common ................. SKIPPED
+[INFO] Elide: Integration Test Library .................... SKIPPED
+[INFO] Elide Data Store: Hibernate 5 ...................... SKIPPED
+[INFO] Elide Data Store: Hibernate 3 ...................... SKIPPED
+[INFO] Elide Data Store: In-Memory ........................ SKIPPED
+[INFO] Elide Data Store: Multiplex Library ................ SKIPPED
+[INFO] Elide Data Store: No-Operation Library ............. SKIPPED
+[INFO] Elide Example: Parent Pom .......................... SKIPPED
+[INFO] Elide Example: Hibernate 3 API with MySQL .......... SKIPPED
+[INFO] Elide Example: Persistence API with Security ....... SKIPPED
+[INFO] Elide Contrib: Parent Pom .......................... SKIPPED
+[INFO] Dropwizard Elide ................................... SKIPPED
+[INFO] Elide Example: Elide with Dropwizard ............... SKIPPED
+[INFO] Elide Swagger ...................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 50.028 s
+[INFO] Finished at: 2017-03-05T04:54:55+01:00
+[INFO] Final Memory: 42M/390M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project elide-core: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/repairnator/workspace/20170305_042600/yahoo/elide/207799580/elide-core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :elide-core
