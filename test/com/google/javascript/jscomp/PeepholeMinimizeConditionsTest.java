@@ -337,6 +337,8 @@ public final class PeepholeMinimizeConditionsTest extends CompilerTestCase {
   }
 
   public void testMinimizeHook() {
+    fold("x ? x : y",
+	 "x || y");  
     fold("!x ? foo() : bar()",
          "x ? bar() : foo()");
     fold("while(!(x ? y : z)) foo();",

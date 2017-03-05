@@ -1148,6 +1148,7 @@ class PeepholeMinimizeConditions
    *   x && true        --> x
    *   x ? false : true --> !x
    *   x ? true : y     --> x || y
+   *   x ? x : y        --> x || y
    *
    *   Returns the replacement for n, or the original if no change was made
    */
@@ -1222,11 +1223,12 @@ class PeepholeMinimizeConditions
         trueNode = performConditionSubstitutions(trueNode);
         falseNode = performConditionSubstitutions(falseNode);
 
-        // Handle four cases:
+        // Handle five cases:
         //   x ? true : false --> x
         //   x ? false : true --> !x
         //   x ? true : y     --> x || y
         //   x ? y : false    --> x && y
+        //   x ? x : y        --> x || y
         Node replacement = null;
         TernaryValue trueNodeVal = NodeUtil.getPureBooleanValue(trueNode);
         TernaryValue falseNodeVal = NodeUtil.getPureBooleanValue(falseNode);
@@ -1248,6 +1250,10 @@ class PeepholeMinimizeConditions
           // Remove useless false case
           n.detachChildren();
           replacement = IR.and(condition, trueNode);
+        } else if (condition.isEquivalentTo(trueNode)) {
+          // Remove redundant condition  
+          n.detachChildren();
+          replacement = IR.or(trueNode, falseNode);
         }
 
         if (replacement != null) {
