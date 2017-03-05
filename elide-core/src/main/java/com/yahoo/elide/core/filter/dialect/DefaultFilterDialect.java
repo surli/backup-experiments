@@ -17,7 +17,6 @@ import javax.ws.rs.core.MultivaluedMap;
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -129,11 +128,11 @@ public class DefaultFilterDialect implements JoinFilterDialect, SubqueryFilterDi
         List<FilterPredicate> filterPredicates = extractPredicates(filterParams);
 
         for (FilterPredicate filterPredicate : filterPredicates) {
-            if (containsToManyRelationship(filterPredicate)) {
+            if (FilterPredicate.toManyInPath(dictionary, filterPredicate.getPath())) {
                 throw new ParseException("Invalid toMany join: " + filterPredicate);
             }
 
-            String entityType = filterPredicate.getEntityType();
+            String entityType = filterPredicate.getRootEntityType();
             if (expressionMap.containsKey(entityType)) {
                 FilterExpression filterExpression = expressionMap.get(entityType);
                 expressionMap.put(entityType, new AndFilterExpression(filterExpression, filterPredicate));
@@ -143,12 +142,6 @@ public class DefaultFilterDialect implements JoinFilterDialect, SubqueryFilterDi
         }
 
         return expressionMap;
-    }
-
-    private boolean containsToManyRelationship(FilterPredicate filterPredicate) {
-        return filterPredicate.getPath().stream()
-                .map(element -> dictionary.getType(element.getType(), element.getFieldName()))
-                .anyMatch(Collection.class::isAssignableFrom);
     }
 
     /**

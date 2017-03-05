@@ -1545,6 +1545,7 @@ class FilterIT extends AbstractIntegrationTestInitializer {
 
     @Test
     void testFilterAuthorBookByPublisher() {
+        /* Test default */
         def result = mapper.readTree(RestAssured.get("/author/$hemingwayId/books?filter[book.publisher.name]=Default publisher").asString())
         JsonNode data = result.get("data")
         Assert.assertEquals(data.size(), 1)
@@ -1553,6 +1554,7 @@ class FilterIT extends AbstractIntegrationTestInitializer {
             Assert.assertTrue(name == "The Old Man and the Sea")
         }
 
+        /* Test RSQL */
         result = mapper.readTree(RestAssured.get("/author/$hemingwayId/books?filter[book]=publisher.name=='Default publisher'").asString())
         data = result.get("data")
         Assert.assertEquals(data.size(), 1)
@@ -1564,12 +1566,13 @@ class FilterIT extends AbstractIntegrationTestInitializer {
 
     @Test
     void testFailFilterAuthorBookByChapter() {
+        /* Test default */
         def result = mapper.readTree(RestAssured.get("/author/$hemingwayId/books?filter[book.chapters.title]=doesn't matter").asString())
         Assert.assertNotNull(result.get("errors"))
 
-        // This causes hibernate errors
-//        result = mapper.readTree(RestAssured.get("/author/$hemingwayId/books?filter[book]=chapters.title=='Borked'").asString())
-//        Assert.assertNotNull(result.get("errors"))
+        /* Test RSQL */
+        result = mapper.readTree(RestAssured.get("/author/$hemingwayId/books?filter[book]=chapters.title=='Borked'").asString())
+        Assert.assertNotNull(result.get("errors"))
     }
 
     @Test
