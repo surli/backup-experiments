@@ -3371,11 +3371,8 @@ public class ZeissCZIReader extends FormatReader {
     // -- SubBlock API methods --
 
     public byte[] readPixelData() throws FormatException, IOException {
-      RandomAccessInputStream s = new RandomAccessInputStream(filename, (int) dataSize);
-      try {
+      try (RandomAccessInputStream s = new RandomAccessInputStream(filename, (int) dataSize)) {
         return readPixelData(s);
-      } finally {
-        s.close();
       }
     }
 
