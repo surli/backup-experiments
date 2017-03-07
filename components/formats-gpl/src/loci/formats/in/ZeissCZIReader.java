@@ -439,6 +439,9 @@ public class ZeissCZIReader extends FormatReader {
                 s.close();
               }
             }
+            else {
+              emptyTile = false;
+            }
             break;
           }
         }
@@ -3387,9 +3390,14 @@ public class ZeissCZIReader extends FormatReader {
       int bpp = FormatTools.getBytesPerPixel(getPixelType());
       if (directoryEntry.compression == UNCOMPRESSED) {
         if (buf == null) {
-          buf = new byte[tile.width * tile.height * bpp * getRGBChannelCount()];
+          buf = new byte[(int) dataSize];
         }
-        readPlane(s, tile.x, tile.y, tile.width, tile.height, buf);
+        if (tile != null) {
+          readPlane(s, tile.x, tile.y, tile.width, tile.height, buf);
+        }
+        else {
+          s.readFully(buf);
+        }
         return buf;
       }
 
@@ -3434,6 +3442,10 @@ public class ZeissCZIReader extends FormatReader {
         case 504: // camera-specific packed pixels
           data = decode12BitCamera(data, options.maxBytes);
           break;
+      }
+      if (buf != null && buf.length >= data.length) {
+        System.arraycopy(data, 0, buf, 0, data.length);
+        return buf;
       }
       return data;
     }
