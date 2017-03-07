@@ -221,8 +221,82 @@ public interface ReactiveGeoOperations<K, M> {
 	 */
 	Mono<Long> geoRemove(K key, M... members);
 
+	GeoLocations<K, M> justGeoLocations(GeoLocation<M>... geoLocations);
+
+	GeoLocations<K, M> justGeoLocation(Point point, M name);
+
+	GeoLocations<K, M> geoLocationsFromArray(GeoLocation<M>[] geoLocations);
+
+	GeoLocations<K, M> geoLocationsFromIterable(Iterable<? extends GeoLocation<M>> geoLocations);
+
+	// TODO
+	Members<K, M> justMembers(M... members);
+
+	Members<K, M> membersFromArray(M[] members);
+
+	Members<K, M> membersFromIterable(Iterable<? extends M> members);
+
 	/**
 	 * @return
 	 */
 	ReactiveRedisOperations<K, M> getOperations();
+
+	// TODO
+	interface GeoLocations<K, M> {
+
+		GeoLocations<K, M> add(Point point, M name);
+
+		GeoLocations<K, M> add(GeoLocation<M>... geoLocations);
+
+		GeoLocations<K, M> addAll(GeoLocation<M>[] geoLocations);
+
+		GeoLocations<K, M> addAll(Iterable<? extends GeoLocation<M>> geoLocations);
+
+		GeoLocations<K, M> addAll(Map<M, Point> nameCoordinateMap);
+
+		/**
+		 * Add geo locations to {@literal key}.
+		 *
+		 * @param key must not be {@literal null}.
+		 * @return Number of elements added.
+		 * @see <a href="http://redis.io/commands/geoadd">Redis Documentation: GEOADD</a>
+		 */
+		Mono<Long> geoAdd(K key);
+	}
+
+	interface Members<K, M> {
+
+		Members<K, M> add(M... members);
+
+		Members<K, M> addAll(M[] members);
+
+		Members<K, M> addAll(Iterable<? extends M> members);
+
+		/**
+		 * Remove the {@literal member}s.
+		 *
+		 * @param key must not be {@literal null}.
+		 * @return Number of elements removed.
+		 */
+		Mono<Long> geoRemove(K key);
+
+		/**
+		 * Get Geohash representation of the position for one or more {@literal member}s.
+		 *
+		 * @param key must not be {@literal null}.
+		 * @return never {@literal null}.
+		 * @see <a href="http://redis.io/commands/geohash">Redis Documentation: GEOHASH</a>
+		 */
+		Mono<List<String>> geoHash(K key);
+
+		/**
+		 * Get the {@link Point} representation of positions for one or more {@literal member}s.
+		 *
+		 * @param key must not be {@literal null}.
+		 * @return never {@literal null}.
+		 * @see <a href="http://redis.io/commands/geopos">Redis Documentation: GEOPOS</a>
+		 */
+		Mono<List<Point>> geoPos(K key);
+	}
+
 }

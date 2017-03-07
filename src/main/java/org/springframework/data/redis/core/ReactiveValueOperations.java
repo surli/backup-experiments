@@ -164,8 +164,30 @@ public interface ReactiveValueOperations<K, V> {
 	 */
 	Mono<Boolean> getBit(K key, long offset);
 
+	Keys<K, V> forKeysFromArray(K[] keys);
+
+	Keys<K, V> forKeysFromIterable(Iterable<? extends K> keys);
+
+	Keys<K, V> forJustKeys(K... keys);
+
 	/**
 	 * @return
 	 */
 	ReactiveRedisOperations<K, V> getOperations();
+
+	interface Keys<K, V> {
+
+		Keys<K, V> add(K... keys);
+
+		Keys<K, V> addAll(K[] keys);
+
+		Keys<K, V> addAll(Iterable<? extends K> keys);
+
+		/**
+		 * Get multiple {@code keys}. Values are returned in the order of the requested keys.
+		 *
+		 * @see <a href="http://redis.io/commands/mget">Redis Documentation: MGET</a>
+		 */
+		Mono<List<V>> multiGet();
+	}
 }

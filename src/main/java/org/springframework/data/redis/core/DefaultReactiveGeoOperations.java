@@ -19,7 +19,10 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -36,6 +39,7 @@ import org.springframework.data.redis.connection.ReactiveGeoCommands;
 import org.springframework.data.redis.connection.RedisGeoCommands.GeoLocation;
 import org.springframework.data.redis.connection.RedisGeoCommands.GeoRadiusCommandArgs;
 import org.springframework.data.redis.serializer.ReactiveSerializationContext;
+import org.springframework.data.redis.util.IterableUtils;
 import org.springframework.util.Assert;
 
 /**
@@ -347,7 +351,44 @@ public class DefaultReactiveGeoOperations<K, V> implements ReactiveGeoOperations
 					.collectList() //
 					.flatMap(serialized -> connection.zSetCommands().zRem(rawKey(key), serialized));
 		});
+	}
 
+	@Override
+	public GeoLocations<K, V> justGeoLocations(GeoLocation<V>[] geoLocations) {
+		return geoLocationsFromArray(geoLocations);
+	}
+
+	@Override
+	public GeoLocations<K, V> justGeoLocation(Point point, V name) {
+		return new GeoLocationsHolder(Collections.singleton(new GeoLocation<V>(name, point)));
+	}
+
+	@Override
+	public GeoLocations<K, V> geoLocationsFromArray(GeoLocation<V>[] geoLocations) {
+		return geoLocationsFromIterable(Arrays.asList(geoLocations));
+	}
+
+	@Override
+	public GeoLocations<K, V> geoLocationsFromIterable(Iterable<? extends GeoLocation<V>> geoLocations) {
+		return new GeoLocationsHolder(IterableUtils.toCollection(geoLocations));
+	}
+
+	// TODO
+	@Override
+	public Members<K, V> justMembers(V[] members) {
+		return null;
+	}
+
+	// TODO
+	@Override
+	public Members<K, V> membersFromArray(V[] members) {
+		return null;
+	}
+
+	// TODO
+	@Override
+	public Members<K, V> membersFromIterable(Iterable<? extends V> members) {
+		return null;
 	}
 
 	/* (non-Javadoc)
@@ -386,5 +427,48 @@ public class DefaultReactiveGeoOperations<K, V> implements ReactiveGeoOperations
 
 	private ReactiveSerializationContext<K, V> serialization() {
 		return template.serialization();
+	}
+
+	class GeoLocationsHolder implements GeoLocations<K, V> {
+
+		private final List<GeoLocation<V>> geoLocations;
+
+		public GeoLocationsHolder(Collection<GeoLocation<V>> geoLocations) {
+			this.geoLocations = new ArrayList<>(geoLocations);
+		}
+
+		@Override
+		public GeoLocations<K, V> add(Point point, V name) {
+			this.geoLocations.add(new GeoLocation<>(name, point));
+			return this;
+		}
+
+		@Override
+		public GeoLocations<K, V> add(GeoLocation<V>[] geoLocations) {
+			return addAll(geoLocations);
+		}
+
+		@Override
+		public GeoLocations<K, V> addAll(GeoLocation<V>[] geoLocations) {
+			return addAll(Arrays.asList(geoLocations));
+		}
+
+		@Override
+		public GeoLocations<K, V> addAll(Iterable<? extends GeoLocation<V>> geoLocations) {
+			this.geoLocations.addAll(IterableUtils.toCollection(geoLocations));
+			return this;
+		}
+
+		@Override
+		public GeoLocations<K, V> addAll(Map<V, Point> memberCoordinateMap) {
+
+			memberCoordinateMap.forEach((m, point) -> add(point, m));
+			return this;
+		}
+
+		@Override
+		public Mono<Long> geoAdd(K key) {
+			return DefaultReactiveGeoOperations.this.geoAdd(key, new ArrayList<>(geoLocations));
+		}
 	}
 }
