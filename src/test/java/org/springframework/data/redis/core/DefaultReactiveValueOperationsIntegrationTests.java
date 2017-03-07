@@ -38,6 +38,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.springframework.data.redis.ConnectionFactoryTracker;
 import org.springframework.data.redis.ObjectFactory;
 import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
@@ -85,7 +86,8 @@ public class DefaultReactiveValueOperationsIntegrationTests<K, V> {
 	@Before
 	public void before() {
 
-		RedisConnection connection = redisTemplate.getConnectionFactory().getConnection();
+		RedisConnectionFactory connectionFactory = (RedisConnectionFactory) redisTemplate.getConnectionFactory();
+		RedisConnection connection = connectionFactory.getConnection();
 		connection.flushAll();
 		connection.close();
 	}
