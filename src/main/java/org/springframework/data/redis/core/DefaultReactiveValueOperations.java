@@ -21,6 +21,7 @@ import reactor.core.publisher.Mono;
 import java.nio.ByteBuffer;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +33,7 @@ import org.springframework.data.redis.connection.RedisStringCommands.SetOption;
 import org.springframework.data.redis.core.types.Expiration;
 import org.springframework.data.redis.serializer.ReactiveSerializationContext;
 import org.springframework.data.redis.serializer.ReactiveSerializationContext.SerializationTuple;
+import org.springframework.data.redis.util.IterableUtils;
 import org.springframework.util.Assert;
 
 /**
@@ -247,6 +249,28 @@ public class DefaultReactiveValueOperations<K, V> implements ReactiveValueOperat
 		return createMono(connection -> connection.getBit(rawKey(key), offset));
 	}
 
+	@Override
+	public Keys<K, V> forKeysFromArray(K[] keys) {
+
+		Assert.notNull(keys, "Keys must not be null!");
+		Assert.noNullElements(keys, "Keys must not contain null elements!");
+
+		return new KeyHolder(Arrays.asList(keys));
+	}
+
+	@Override
+	public Keys<K, V> forKeysFromIterable(Iterable<? extends K> keys) {
+
+		Assert.notNull(keys, "Keys must not be null!");
+
+		return new KeyHolder(IterableUtils.toCollection(keys));
+	}
+
+	@Override
+	public Keys<K, V> forJustKeys(K... keys) {
+		return forKeysFromArray(keys);
+	}
+
 	/* (non-Javadoc)
 	 * @see org.springframework.data.redis.core.ReactiveValueOperations#getOperations()
 	 */
@@ -288,5 +312,43 @@ public class DefaultReactiveValueOperations<K, V> implements ReactiveValueOperat
 
 	private ReactiveSerializationContext<K, V> serialization() {
 		return template.serialization();
+	}
+
+	class KeyHolder implements Keys<K, V> {
+
+		private final List<K> keys;
+
+		public KeyHolder(Collection<K> keys) {
+			this.keys = new ArrayList<>(keys);
+		}
+
+		@Override
+		public Keys<K, V> add(K[] keys) {
+			return addAll(keys);
+		}
+
+		@Override
+		public Keys<K, V> addAll(K[] keys) {
+
+			Assert.notNull(keys, "Keys must not be null!");
+			Assert.noNullElements(keys, "Keys must not contain null elements!");
+
+			this.keys.addAll(Arrays.asList(keys));
+			return this;
+		}
+
+		@Override
+		public Keys<K, V> addAll(Iterable<? extends K> keys) {
+
+			Assert.notNull(keys, "Keys must not be null!");
+
+			this.keys.addAll(IterableUtils.toCollection(keys));
+			return this;
+		}
+
+		@Override
+		public Mono<List<V>> multiGet() {
+			return DefaultReactiveValueOperations.this.multiGet(new ArrayList<>(keys));
+		}
 	}
 }

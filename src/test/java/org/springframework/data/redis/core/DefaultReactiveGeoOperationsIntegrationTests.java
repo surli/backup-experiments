@@ -20,6 +20,7 @@ import static org.springframework.data.redis.connection.RedisGeoCommands.Distanc
 import static org.springframework.data.redis.connection.RedisGeoCommands.GeoRadiusCommandArgs.*;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import java.util.Arrays;
@@ -136,6 +137,21 @@ public class DefaultReactiveGeoOperationsIntegrationTests<K, V> {
 		memberCoordinateMap.put(valueFactory.instance(), POINT_CATANIA);
 
 		StepVerifier.create(geoOperations.geoAdd(key, memberCoordinateMap)).expectNext(2L).expectComplete().verify();
+	}
+
+	@Test // DATAREDIS-602
+	public void geoAddWithGeoLocations() {
+
+		K key = keyFactory.instance();
+
+		Map<V, Point> memberCoordinateMap = new HashMap<>();
+		memberCoordinateMap.put(valueFactory.instance(), POINT_PALERMO);
+		memberCoordinateMap.put(valueFactory.instance(), POINT_CATANIA);
+
+		Mono<Long> longMono = geoOperations.justGeoLocation(POINT_PALERMO, valueFactory.instance())
+				.addAll(memberCoordinateMap).add(POINT_PALERMO, valueFactory.instance()).geoAdd(key);
+
+		StepVerifier.create(longMono).expectNext(4L).expectComplete().verify();
 	}
 
 	@Test // DATAREDIS-602

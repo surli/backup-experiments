@@ -18,6 +18,7 @@ package org.springframework.data.redis.core;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.Assume.*;
 
+import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import java.nio.ByteBuffer;
@@ -25,6 +26,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.AfterClass;
@@ -233,6 +235,34 @@ public class DefaultReactiveValueOperationsIntegrationTests<K, V> {
 
 		StepVerifier.create(valueOperations.multiGet(Arrays.asList(key2, key1, absent)))
 				.expectNext(Arrays.asList(value2, value1, absentValue)).expectComplete().verify();
+	}
+
+	@Test // DATAREDIS-602
+	public void multiGetWithKeyConstruction() {
+
+		K key1 = keyFactory.instance();
+		K key2 = keyFactory.instance();
+		K absent = keyFactory.instance();
+		V value1 = valueFactory.instance();
+		V value2 = valueFactory.instance();
+		V absentValue = null;
+
+		if (redisTemplate.getValueSerializer() instanceof StringRedisSerializer) {
+			absentValue = (V) "";
+		}
+		if (value1 instanceof ByteBuffer) {
+			absentValue = (V) ByteBuffer.wrap(new byte[0]);
+		}
+
+		Map<K, V> map = new LinkedHashMap<K, V>();
+		map.put(key1, value1);
+		map.put(key2, value2);
+
+		StepVerifier.create(valueOperations.multiSet(map)).expectNext(true).expectComplete().verify();
+
+		Mono<List<V>> listMono = valueOperations.forJustKeys(key2, key1).add(absent).multiGet();
+
+		StepVerifier.create(listMono).expectNext(Arrays.asList(value2, value1, absentValue)).expectComplete().verify();
 	}
 
 	@Test // DATAREDIS-602
