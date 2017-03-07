@@ -43,6 +43,7 @@ import org.springframework.data.geo.Point;
 import org.springframework.data.redis.ConnectionFactoryTracker;
 import org.springframework.data.redis.ObjectFactory;
 import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisGeoCommands.GeoLocation;
 import org.springframework.data.redis.test.util.MinimumRedisVersionRule;
 import org.springframework.test.annotation.IfProfileValue;
@@ -101,7 +102,8 @@ public class DefaultReactiveGeoOperationsIntegrationTests<K, V> {
 	@Before
 	public void before() {
 
-		RedisConnection connection = redisTemplate.getConnectionFactory().getConnection();
+		RedisConnectionFactory connectionFactory = (RedisConnectionFactory) redisTemplate.getConnectionFactory();
+		RedisConnection connection = connectionFactory.getConnection();
 		connection.flushAll();
 		connection.close();
 	}
