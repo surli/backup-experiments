@@ -7,7 +7,6 @@ import java.security.PrivilegedExceptionAction;
 import java.util.List;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.hbase.HConstants;
 import org.apache.hadoop.hbase.client.Connection;
 import org.apache.hadoop.hbase.client.security.SecurityCapability;
 import org.apache.hadoop.hbase.protobuf.generated.VisibilityLabelsProtos.VisibilityLabelsResponse;
@@ -105,6 +104,7 @@ public class HBaseStoreTestEnvironment extends
 				conf.set(
 						"hbase.online.schema.update.enable",
 						"true");
+				
 				conf.set(
 						"hbase.superuser",
 						"admin");
@@ -118,18 +118,17 @@ public class HBaseStoreTestEnvironment extends
 						true);
 
 				// setup vis IT configuration
-				conf.setBoolean(
-						HConstants.DISTRIBUTED_LOG_REPLAY_KEY,
-						false);
 				conf.setClass(
 						VisibilityUtils.VISIBILITY_LABEL_GENERATOR_CLASS,
 						SimpleScanLabelGenerator.class,
 						ScanLabelGenerator.class);
+				
 				conf.setClass(
 						VisibilityLabelServiceManager.VISIBILITY_LABEL_SERVICE_CLASS,
 						// DefaultVisibilityLabelServiceImpl.class,
 						HBaseTestVisibilityLabelServiceImpl.class,
 						VisibilityLabelService.class);
+				
 				// Install the VisibilityController as a system processor
 				VisibilityTestUtil.enableVisiblityLabels(conf);
 
