@@ -1,0 +1,192 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Nutz 1.r.61-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ nutz ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ nutz ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1068 source files to /home/repairnator/workspace/20170308_163757/nutzam/nutz/208974979/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ nutz ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 77 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ nutz ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 449 source files to /home/repairnator/workspace/20170308_163757/nutzam/nutz/208974979/target/test-classes
+[INFO] /home/repairnator/workspace/20170308_163757/nutzam/nutz/208974979/test/org/nutz/mock/servlet/MockHttpSession.java: Some input files use or override a deprecated API.
+[INFO] /home/repairnator/workspace/20170308_163757/nutzam/nutz/208974979/test/org/nutz/mock/servlet/MockHttpSession.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ nutz ---
+[INFO] Surefire report directory: /home/repairnator/workspace/20170308_163757/nutzam/nutz/208974979/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.pom (3 KB at 0.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.18.1/surefire-providers-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.18.1/surefire-providers-2.18.1.pom (3 KB at 0.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.jar (67 KB at 34.3 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.nutz.http.HttpTest
+302
+
+302
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 36.632 sec <<< FAILURE! - in org.nutz.http.HttpTest
+testPost(org.nutz.http.HttpTest)  Time elapsed: 19.659 sec  <<< ERROR!
+org.nutz.http.HttpException: url=http://nutztest.herokuapp.com/
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:704)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:647)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1569)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at org.nutz.http.Sender.getResponseHeader(Sender.java:143)
+	at org.nutz.http.sender.PostSender.send(PostSender.java:41)
+	at org.nutz.http.Http.post(Http.java:177)
+	at org.nutz.http.HttpTest.testPost(HttpTest.java:32)
+
+Running org.nutz.resource.NutConfigTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 34.146 sec - in org.nutz.resource.NutConfigTest
+Running org.nutz.resource.ScansTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.045 sec - in org.nutz.resource.ScansTest
+Running org.nutz.mapl.MaplTest
+[{name=jk, age=12}, {name=nutz, age=5}]
+[{name=[user[].姓名, people[].name], age=[user[].年龄, people[].age]}]
+{user=[{姓名=jk, 年龄=12}], people=[{name=jk, age=12}]}
+{
+   "s1": ["test"],
+   "s2": {
+      "s2": ["test"]
+   }
+}
+{draw=1, columns[0][data]=userId, columns[0][name]=, columns[0][searchable]=true, columns[0][orderable]=true, columns[0][search][value]=, columns[0][search][regex]=false, columns[1][data]=loginname, columns[1][name]=, columns[1][searchable]=true, columns[1][orderable]=true, columns[1][search][value]=, columns[1][search][regex]=false, columns[2][data]=nickname, columns[2][name]=, columns[2][searchable]=true, columns[2][orderable]=true, columns[2][search][value]=, columns[2][search][regex]=false, order[0][column]=0, order[0][dir]=asc, start=0, length=10, search[value]=, search[regex]=false}
+[{
+   "search": {
+      "regex": "false",
+      "value": ""
+   },
+   "data": "userId",
+   "orderable": "true",
+   "name": "",
+   "searchable": "true"
+}, {
+   "search": {
+      "regex": "false",
+      "value": ""
+   },
+   "data": "loginname",
+   "orderable": "true",
+   "name": "",
+   "searchable": "true"
+}, {
+   "search": {
+      "regex": "false",
+      "value": ""
+   },
+   "data": "nickname",
+   "orderable": "true",
+   "name": "",
+   "searchable": "true"
+}]
+[{
+   "data": "userId",
+   "name": "",
+   "searchable": true,
+   "orderable": true
+}, {
+   "data": "loginname",
+   "name": "",
+   "searchable": true,
+   "orderable": true
+}, {
+   "data": "nickname",
+   "name": "",
+   "searchable": true,
+   "orderable": true
+}]
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.902 sec - in org.nutz.mapl.MaplTest
+Running org.nutz.el.issue125.Issue125Test
+a1
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.718 sec - in org.nutz.el.issue125.Issue125Test
+Running org.nutz.el.RPNTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.119 sec - in org.nutz.el.RPNTest
+Running org.nutz.el.speed.SimpleSpeedTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.025 sec - in org.nutz.el.speed.SimpleSpeedTest
+Running org.nutz.el.El2Test
+class org.nutz.lang.Maths
+Tests run: 42, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.517 sec - in org.nutz.el.El2Test
+Running org.nutz.test.PeanutTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.789 sec - in org.nutz.test.PeanutTest
+Running org.nutz.plugin.PlugsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec - in org.nutz.plugin.PlugsTest
+Running org.nutz.mvc.upload.unit.UploadingUnitTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.52 sec - in org.nutz.mvc.upload.unit.UploadingUnitTest
+Running org.nutz.mvc.upload.util.RemountBytesTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.nutz.mvc.upload.util.RemountBytesTest
+Running org.nutz.mvc.upload.util.BufferRingTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.nutz.mvc.upload.util.BufferRingTest
+Running org.nutz.mvc.init.RestModuleTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.539 sec - in org.nutz.mvc.init.RestModuleTest
+Running org.nutz.mvc.init.MvcModuleInitTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.nutz.mvc.init.MvcModuleInitTest
+Running org.nutz.mvc.init.MvcErrorCatchTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 sec - in org.nutz.mvc.init.MvcErrorCatchTest
+Running org.nutz.mvc.init.AtMapInitTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 sec - in org.nutz.mvc.init.AtMapInitTest
+Running org.nutz.mvc.init.MvcBaseTest
+I am Here
+I am Here
+java
+I am Here
+{"detailMessage":"Fail to cast 'Nutz' to <java.lang.Long>","cause":{"detailMessage":"For input string: \"Nutz\"","stackTrace":[{"declaringClass":"java.lang.NumberFormatException","methodName":"forInputString","fileName":"NumberFormatException.java","lineNumber":65}, {"declaringClass":"java.lang.Long","methodName":"parseLong","fileName":"Long.java","lineNumber":589}, {"declaringClass":"java.lang.Long","methodName":"valueOf","fileName":"Long.java","lineNumber":776}, {"declaringClass":"org.nutz.castor.castor.String2Long","methodName":"valueOf","fileName":"String2Long.java","lineNumber":15}, {"declaringClass":"org.nutz.castor.castor.String2Long","methodName":"valueOf","fileName":"String2Long.java","lineNumber":5}, {"declaringClass":"org.nutz.castor.castor.String2Number","methodName":"cast","fileName":"String2Number.java","lineNumber":39}, {"declaringClass":"org.nutz.castor.castor.String2Number","methodName":"cast","fileName":"String2Number.java","lineNumber":19}, {"declaringClass":"org.nutz.castor.Castors","methodName":"cast","fileName":"Castors.java","lineNumber":252}, {"declaringClass":"org.nutz.castor.Castors","methodName":"castTo","fileName":"Castors.java","lineNumber":318}, {"declaringClass":"org.nutz.castor.castor.Array2Object","methodName":"cast","fileName":"Array2Object.java","lineNumber":21}, {"declaringClass":"org.nutz.castor.Castors","methodName":"cast","fileName":"Castors.java","lineNumber":252}, {"declaringClass":"org.nutz.castor.Castors","methodName":"castTo","fileName":"Castors.java","lineNumber":318}, {"declaringClass":"org.nutz.mvc.adaptor.injector.NameInjector","methodName":"fromReqParam","fileName":"NameInjector.java","lineNumber":117}, {"declaringClass":"org.nutz.mvc.adaptor.injector.NameInjector","methodName":"get","fileName":"NameInjector.java","lineNumber":102}, {"declaringClass":"org.nutz.mvc.adaptor.AbstractAdaptor","methodName":"adapt","fileName":"AbstractAdaptor.java","lineNumber":257}, {"declaringClass":"org.nutz.mvc.impl.processor.AdaptorProcessor","methodName":"process","fileName":"AdaptorProcessor.java","lineNumber":28}, {"declaringClass":"org.nutz.mvc.impl.processor.AbstractProcessor","methodName":"doNext","fileName":"AbstractProcessor.java","lineNumber":44}, {"declaringClass":"org.nutz.mvc.impl.processor.ActionFiltersProcessor","methodName":"process","fileName":"ActionFiltersProcessor.java","lineNumber":58}, {"declaringClass":"org.nutz.mvc.impl.processor.AbstractProcessor","methodName":"doNext","fileName":"AbstractProcessor.java","lineNumber":44}, {"declaringClass":"org.nutz.mvc.impl.processor.ModuleProcessor","methodName":"process","fileName":"ModuleProcessor.java","lineNumber":123}, {"declaringClass":"org.nutz.mvc.impl.processor.AbstractProcessor","methodName":"doNext","fileName":"AbstractProcessor.java","lineNumber":44}, {"declaringClass":"org.nutz.mvc.impl.processor.EncodingProcessor","methodName":"process","fileName":"EncodingProcessor.java","lineNumber":27}, {"declaringClass":"org.nutz.mvc.impl.processor.AbstractProcessor","methodName":"doNext","fileName":"AbstractProcessor.java","lineNumber":44}, {"declaringClass":"org.nutz.mvc.impl.processor.UpdateRequestAttributesProcessor","methodName":"process","fileName":"UpdateRequestAttributesProcessor.java","lineNumber":15}, {"declaringClass":"org.nutz.mvc.impl.NutActionChain","methodName":"doChain","fileName":"NutActionChain.java","lineNumber":44}, {"declaringClass":"org.nutz.mvc.impl.ActionInvoker","methodName":"invoke","fileName":"ActionInvoker.java","lineNumber":67}, {"declaringClass":"org.nutz.mvc.ActionHandler","methodName":"handle","fileName":"ActionHandler.java","lineNumber":31}, {"declaringClass":"org.nutz.mvc.NutServlet","methodName":"service","fileName":"NutServlet.java","lineNumber":75}, {"declaringClass":"javax.servlet.http.HttpServlet","methodName":"service","fileName":"HttpServlet.java","lineNumber":790}, {"declaringClass":"org.nutz.mvc.init.MvcBaseTest","methodName":"testRequestParms_error","fileName":"MvcBaseTest.java","lineNumber":67}, {"declaringClass":"sun.reflect.NativeMethodAccessorImpl","methodName":"invoke0","fileName":"NativeMethodAccessorImpl.java","lineNumber":-2}, {"declaringClass":"sun.reflect.NativeMethodAccessorImpl","methodName":"invoke","fileName":"NativeMethodAccessorImpl.java","lineNumber":62}, {"declaringClass":"sun.reflect.DelegatingMethodAccessorImpl","methodName":"invoke","fileName":"DelegatingMethodAccessorImpl.java","lineNumber":43}, {"declaringClass":"java.lang.reflect.Method","methodName":"invoke","fileName":"Method.java","lineNumber":498}, {"declaringClass":"org.junit.runners.model.FrameworkMethod$1","methodName":"runReflectiveCall","fileName":"FrameworkMethod.java","lineNumber":44}, {"declaringClass":"org.junit.internal.runners.model.ReflectiveCallable","methodName":"run","fileName":"ReflectiveCallable.java","lineNumber":15}, {"declaringClass":"org.junit.runners.model.FrameworkMethod","methodName":"invokeExplosively","fileName":"FrameworkMethod.java","lineNumber":41}, {"declaringClass":"org.junit.internal.runners.statements.InvokeMethod","methodName":"evaluate","fileName":"InvokeMethod.java","lineNumber":20}, {"declaringClass":"org.junit.internal.runners.statements.RunBefores","methodName":"evaluate","fileName":"RunBefores.java","lineNumber":28}, {"declaringClass":"org.junit.internal.runners.statements.RunAfters","methodName":"evaluate","fileName":"RunAfters.java","lineNumber":31}, {"declaringClass":"org.junit.runners.BlockJUnit4ClassRunner","methodName":"runNotIgnored","fileName":"BlockJUnit4ClassRunner.java","lineNumber":79}, {"declaringClass":"org.junit.runners.BlockJUnit4ClassRunner","methodName":"runChild","fileName":"BlockJUnit4ClassRunner.java","lineNumber":71}, {"declaringClass":"org.junit.runners.BlockJUnit4ClassRunner","methodName":"runChild","fileName":"BlockJUnit4ClassRunner.java","lineNumber":49}, {"declaringClass":"org.junit.runners.ParentRunner$3","methodName":"run","fileName":"ParentRunner.java","lineNumber":193}, {"declaringClass":"org.junit.runners.ParentRunner$1","methodName":"schedule","fileName":"ParentRunner.java","lineNumber":52}, {"declaringClass":"org.junit.runners.ParentRunner","methodName":"runChildren","fileName":"ParentRunner.java","lineNumber":191}, {"declaringClass":"org.junit.runners.ParentRunner","methodName":"access$000","fileName":"ParentRunner.java","lineNumber":42}, {"declaringClass":"org.junit.runners.ParentRunner$2","methodName":"evaluate","fileName":"ParentRunner.java","lineNumber":184}, {"declaringClass":"org.junit.runners.ParentRunner","methodName":"run","fileName":"ParentRunner.java","lineNumber":236}, {"declaringClass":"org.apache.maven.surefire.junit4.JUnit4Provider","methodName":"execute","fileName":"JUnit4Provider.java","lineNumber":283}, {"declaringClass":"org.apache.maven.surefire.junit4.JUnit4Provider","methodName":"executeWithRerun","fileName":"JUnit4Provider.java","lineNumber":173}, {"declaringClass":"org.apache.maven.surefire.junit4.JUnit4Provider","methodName":"executeTestSet","fileName":"JUnit4Provider.java","lineNumber":153}, {"declaringClass":"org.apache.maven.surefire.junit4.JUnit4Provider","methodName":"invoke","fileName":"JUnit4Provider.java","lineNumber":128}, {"declaringClass":"org.apache.maven.surefire.booter.ForkedBooter","methodName":"invokeProviderInSameClassLoader","fileName":"ForkedBooter.java","lineNumber":203}, {"declaringClass":"org.apache.maven.surefire.booter.ForkedBooter","methodName":"runSuitesInProcess","fileName":"ForkedBooter.java","lineNumber":155}, {"declaringClass":"org.apache.maven.surefire.booter.ForkedBooter","methodName":"main","fileName":"ForkedBooter.java","lineNumber":103}],"suppressedExceptions":[]},"stackTrace":[{"declaringClass":"org.nutz.castor.castor.String2Number","methodName":"cast","fileName":"String2Number.java","lineNumber":45}, {"declaringClass":"org.nutz.castor.castor.String2Number","methodName":"cast","fileName":"String2Number.java","lineNumber":19}, {"declaringClass":"org.nutz.castor.Castors","methodName":"cast","fileName":"Castors.java","lineNumber":252}, {"declaringClass":"org.nutz.castor.Castors","methodName":"castTo","fileName":"Castors.java","lineNumber":318}, {"declaringClass":"org.nutz.castor.castor.Array2Object","methodName":"cast","fileName":"Array2Object.java","lineNumber":21}, {"declaringClass":"org.nutz.castor.Castors","methodName":"cast","fileName":"Castors.java","lineNumber":252}, {"declaringClass":"org.nutz.castor.Castors","methodName":"castTo","fileName":"Castors.java","lineNumber":318}, {"declaringClass":"org.nutz.mvc.adaptor.injector.NameInjector","methodName":"fromReqParam","fileName":"NameInjector.java","lineNumber":117}, {"declaringClass":"org.nutz.mvc.adaptor.injector.NameInjector","methodName":"get","fileName":"NameInjector.java","lineNumber":102}, {"declaringClass":"org.nutz.mvc.adaptor.AbstractAdaptor","methodName":"adapt","fileName":"AbstractAdaptor.java","lineNumber":257}, {"declaringClass":"org.nutz.mvc.impl.processor.AdaptorProcessor","methodName":"process","fileName":"AdaptorProcessor.java","lineNumber":28}, {"declaringClass":"org.nutz.mvc.impl.processor.AbstractProcessor","methodName":"doNext","fileName":"AbstractProcessor.java","lineNumber":44}, {"declaringClass":"org.nutz.mvc.impl.processor.ActionFiltersProcessor","methodName":"process","fileName":"ActionFiltersProcessor.java","lineNumber":58}, {"declaringClass":"org.nutz.mvc.impl.processor.AbstractProcessor","methodName":"doNext","fileName":"AbstractProcessor.java","lineNumber":44}, {"declaringClass":"org.nutz.mvc.impl.processor.ModuleProcessor","methodName":"process","fileName":"ModuleProcessor.java","lineNumber":123}, {"declaringClass":"org.nutz.mvc.impl.processor.AbstractProcessor","methodName":"doNext","fileName":"AbstractProcessor.java","lineNumber":44}, {"declaringClass":"org.nutz.mvc.impl.processor.EncodingProcessor","methodName":"process","fileName":"EncodingProcessor.java","lineNumber":27}, {"declaringClass":"org.nutz.mvc.impl.processor.AbstractProcessor","methodName":"doNext","fileName":"AbstractProcessor.java","lineNumber":44}, {"declaringClass":"org.nutz.mvc.impl.processor.UpdateRequestAttributesProcessor","methodName":"process","fileName":"UpdateRequestAttributesProcessor.java","lineNumber":15}, {"declaringClass":"org.nutz.mvc.impl.NutActionChain","methodName":"doChain","fileName":"NutActionChain.java","lineNumber":44}, {"declaringClass":"org.nutz.mvc.impl.ActionInvoker","methodName":"invoke","fileName":"ActionInvoker.java","lineNumber":67}, {"declaringClass":"org.nutz.mvc.ActionHandler","methodName":"handle","fileName":"ActionHandler.java","lineNumber":31}, {"declaringClass":"org.nutz.mvc.NutServlet","methodName":"service","fileName":"NutServlet.java","lineNumber":75}, {"declaringClass":"javax.servlet.http.HttpServlet","methodName":"service","fileName":"HttpServlet.java","lineNumber":790}, {"declaringClass":"org.nutz.mvc.init.MvcBaseTest","methodName":"testRequestParms_error","fileName":"MvcBaseTest.java","lineNumber":67}, {"declaringClass":"sun.reflect.NativeMethodAccessorImpl","methodName":"invoke0","fileName":"NativeMethodAccessorImpl.java","lineNumber":-2}, {"declaringClass":"sun.reflect.NativeMethodAccessorImpl","methodName":"invoke","fileName":"NativeMethodAccessorImpl.java","lineNumber":62}, {"declaringClass":"sun.reflect.DelegatingMethodAccessorImpl","methodName":"invoke","fileName":"DelegatingMethodAccessorImpl.java","lineNumber":43}, {"declaringClass":"java.lang.reflect.Method","methodName":"invoke","fileName":"Method.java","lineNumber":498}, {"declaringClass":"org.junit.runners.model.FrameworkMethod$1","methodName":"runReflectiveCall","fileName":"FrameworkMethod.java","lineNumber":44}, {"declaringClass":"org.junit.internal.runners.model.ReflectiveCallable","methodName":"run","fileName":"ReflectiveCallable.java","lineNumber":15}, {"declaringClass":"org.junit.runners.model.FrameworkMethod","methodName":"invokeExplosively","fileName":"FrameworkMethod.java","lineNumber":41}, {"declaringClass":"org.junit.internal.runners.statements.InvokeMethod","methodName":"evaluate","fileName":"InvokeMethod.java","lineNumber":20}, {"declaringClass":"org.junit.internal.runners.statements.RunBefores","methodName":"evaluate","fileName":"RunBefores.java","lineNumber":28}, {"declaringClass":"org.junit.internal.runners.statements.RunAfters","methodName":"evaluate","fileName":"RunAfters.java","lineNumber":31}, {"declaringClass":"org.junit.runners.BlockJUnit4ClassRunner","methodName":"runNotIgnored","fileName":"BlockJUnit4ClassRunner.java","lineNumber":79}, {"declaringClass":"org.junit.runners.BlockJUnit4ClassRunner","methodName":"runChild","fileName":"BlockJUnit4ClassRunner.java","lineNumber":71}, {"declaringClass":"org.junit.runners.BlockJUnit4ClassRunner","methodName":"runChild","fileName":"BlockJUnit4ClassRunner.java","lineNumber":49}, {"declaringClass":"org.junit.runners.ParentRunner$3","methodName":"run","fileName":"ParentRunner.java","lineNumber":193}, {"declaringClass":"org.junit.runners.ParentRunner$1","methodName":"schedule","fileName":"ParentRunner.java","lineNumber":52}, {"declaringClass":"org.junit.runners.ParentRunner","methodName":"runChildren","fileName":"ParentRunner.java","lineNumber":191}, {"declaringClass":"org.junit.runners.ParentRunner","methodName":"access$000","fileName":"ParentRunner.java","lineNumber":42}, {"declaringClass":"org.junit.runners.ParentRunner$2","methodName":"evaluate","fileName":"ParentRunner.java","lineNumber":184}, {"declaringClass":"org.junit.runners.ParentRunner","methodName":"run","fileName":"ParentRunner.java","lineNumber":236}, {"declaringClass":"org.apache.maven.surefire.junit4.JUnit4Provider","methodName":"execute","fileName":"JUnit4Provider.java","lineNumber":283}, {"declaringClass":"org.apache.maven.surefire.junit4.JUnit4Provider","methodName":"executeWithRerun","fileName":"JUnit4Provider.java","lineNumber":173}, {"declaringClass":"org.apache.maven.surefire.junit4.JUnit4Provider","methodName":"executeTestSet","fileName":"JUnit4Provider.java","lineNumber":153}, {"declaringClass":"org.apache.maven.surefire.junit4.JUnit4Provider","methodName":"invoke","fileName":"JUnit4Provider.java","lineNumber":128}, {"declaringClass":"org.apache.maven.surefire.booter.ForkedBooter","methodName":"invokeProviderInSameClassLoader","fileName":"ForkedBooter.java","lineNumber":203}, {"declaringClass":"org.apache.maven.surefire.booter.ForkedBooter","methodName":"runSuitesInProcess","fileName":"ForkedBooter.java","lineNumber":155}, {"declaringClass":"org.apache.maven.surefire.booter.ForkedBooter","methodName":"main","fileName":"ForkedBooter.java","lineNumber":103}],"suppressedExceptions":[]}
+I am Here
+I am Here
+I am Here
+I am Here
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.843 sec - in org.nutz.mvc.init.MvcBaseTest
+Running org.nutz.mvc.testapp.upload.UploadTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.494 sec - in org.nutz.mvc.testapp.upload.UploadTest
+Running org.nutz.mvc.testapp.views.ServerRedirectViewTest
+SUREFIRE-859: Java HotSpot(TM) 64-Bit Server VM warning: INFO: os::commit_memory(0x000000077d200000, 269484032, 0) failed; error='Ne peut allouer de la mémoire' (errno=12)
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 269484032 bytes for committing reserved memory.
+# An error report file with more information is saved as:
+# /home/repairnator/workspace/20170308_163757/nutzam/nutz/208974979/hs_err_pid22197.log
+
+Results :
+
+Tests in error: 
+  HttpTest.testPost:32 » Http url=http://nutztest.herokuapp.com/
+
+Tests run: 150, Failures: 0, Errors: 1, Skipped: 1
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 06:29 min
+[INFO] Finished at: 2017-03-08T20:34:32+01:00
+[INFO] Final Memory: 28M/339M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.18.1:test (default-test) on project nutz: Execution default-test of goal org.apache.maven.plugins:maven-surefire-plugin:2.18.1:test failed: The forked VM terminated without properly saying goodbye. VM crash or System.exit called?
+[ERROR] Command was /bin/sh -c cd /home/repairnator/workspace/20170308_163757/nutzam/nutz/208974979 && /usr/lib/jvm/java-8-oracle/jre/bin/java org.apache.maven.surefire.booter.ForkedBooter /home/repairnator/workspace/20170308_163757/nutzam/nutz/208974979/target/surefire/surefire6960866743160977019tmp /home/repairnator/workspace/20170308_163757/nutzam/nutz/208974979/target/surefire/surefire_06313711245845691029tmp
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
