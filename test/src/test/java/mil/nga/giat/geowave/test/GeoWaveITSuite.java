@@ -35,7 +35,7 @@ import mil.nga.giat.geowave.test.store.DataStatisticsStoreIT;
 	BasicKafkaIT.class,
 	BasicMapReduceIT.class,
 	GeoWaveBasicRasterIT.class,
-	// GeoWaveVisibilityIT.class,
+	GeoWaveVisibilityIT.class,
 	LandsatIT.class,
 	BulkIngestInputGenerationIT.class,
 	KDERasterResizeIT.class,
