@@ -95,6 +95,7 @@ public class GeoWaveBasicRasterIT
 				eastLon,
 				southLat,
 				northLat);
+		TestUtils.deleteAll(dataStoreOptions);
 	}
 
 	@Test
@@ -166,6 +167,7 @@ public class GeoWaveBasicRasterIT
 				sumAndAveragingNumBands,
 				sumAndAveragingNumRasters,
 				new SumAndAveragingExpectedValue());
+		TestUtils.deleteAll(dataStoreOptions);
 	}
 
 	private void ingestAndQueryNoDataMergeStrategy(

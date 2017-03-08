@@ -3,6 +3,7 @@ package mil.nga.giat.geowave.test;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.apache.commons.exec.CommandLine;
@@ -20,10 +21,11 @@ import com.jcraft.jsch.Logger;
 
 public class DynamoDBLocal
 {
-	private final static org.slf4j.Logger LOGGER = LoggerFactory.getLogger(DynamoDBLocal.class);
+	private final static org.slf4j.Logger LOGGER = LoggerFactory.getLogger(
+			DynamoDBLocal.class);
 
 	// these need to move to config
-	private final static String DYNDB_URL = "http://dynamodb-local.s3-website-us-west-2.amazonaws.com/";
+	private final static String DYNDB_URL = "https://s3-us-west-2.amazonaws.com/dynamodb-local/";
 	private final static String DYNDB_TAR = "dynamodb_local_latest.tar.gz";
 	private static final String HOST_PORT = "8000";
 
@@ -34,7 +36,8 @@ public class DynamoDBLocal
 
 	public DynamoDBLocal(
 			String localDir ) {
-		if (TestUtils.isSet(localDir)) {
+		if (TestUtils.isSet(
+				localDir)) {
 			this.dynLocalDir = new File(
 					localDir);
 		}
@@ -45,7 +48,8 @@ public class DynamoDBLocal
 		}
 
 		if (!this.dynLocalDir.exists() && !this.dynLocalDir.mkdirs()) {
-			LOGGER.warn("unable to create directory " + this.dynLocalDir.getAbsolutePath());
+			LOGGER.warn(
+					"unable to create directory " + this.dynLocalDir.getAbsolutePath());
 		}
 	}
 
@@ -57,7 +61,8 @@ public class DynamoDBLocal
 				}
 			}
 			catch (IOException e) {
-				LOGGER.error(e.getMessage());
+				LOGGER.error(
+						e.getMessage());
 				return false;
 			}
 		}
@@ -66,7 +71,8 @@ public class DynamoDBLocal
 			startDynamoLocal();
 		}
 		catch (IOException | InterruptedException e) {
-			LOGGER.error(e.getMessage());
+			LOGGER.error(
+					e.getMessage());
 			return false;
 		}
 
@@ -92,6 +98,8 @@ public class DynamoDBLocal
 
 	protected boolean install()
 			throws IOException {
+		HttpURLConnection.setFollowRedirects(
+				true);
 		URL url = new URL(
 				DYNDB_URL + DYNDB_TAR);
 
@@ -109,20 +117,25 @@ public class DynamoDBLocal
 		}
 
 		final TarGZipUnArchiver unarchiver = new TarGZipUnArchiver();
-		unarchiver.enableLogging(new ConsoleLogger(
-				Logger.WARN,
-				"DynamoDB Local Unarchive"));
-		unarchiver.setSourceFile(downloadFile);
-		unarchiver.setDestDirectory(dynLocalDir);
+		unarchiver.enableLogging(
+				new ConsoleLogger(
+						Logger.WARN,
+						"DynamoDB Local Unarchive"));
+		unarchiver.setSourceFile(
+				downloadFile);
+		unarchiver.setDestDirectory(
+				dynLocalDir);
 		unarchiver.extract();
 
 		if (!downloadFile.delete()) {
-			LOGGER.warn("cannot delete " + downloadFile.getAbsolutePath());
+			LOGGER.warn(
+					"cannot delete " + downloadFile.getAbsolutePath());
 		}
 
 		// Check the install
 		if (!isInstalled()) {
-			LOGGER.error("DynamoDB Local install failed");
+			LOGGER.error(
+					"DynamoDB Local install failed");
 			return false;
 		}
 
@@ -147,13 +160,20 @@ public class DynamoDBLocal
 		CommandLine cmdLine = new CommandLine(
 				"java");
 
-		cmdLine.addArgument("-Djava.library.path=" + dynLocalDir + "/DynamoDBLocal_lib");
-		cmdLine.addArgument("-jar");
-		cmdLine.addArgument(dynLocalDir + "/DynamoDBLocal.jar");
-		cmdLine.addArgument("-sharedDb");
-		cmdLine.addArgument("-inMemory");
-		cmdLine.addArgument("-port");
-		cmdLine.addArgument(HOST_PORT);
+		cmdLine.addArgument(
+				"-Djava.library.path=" + dynLocalDir + "/DynamoDBLocal_lib");
+		cmdLine.addArgument(
+				"-jar");
+		cmdLine.addArgument(
+				dynLocalDir + "/DynamoDBLocal.jar");
+		cmdLine.addArgument(
+				"-sharedDb");
+		cmdLine.addArgument(
+				"-inMemory");
+		cmdLine.addArgument(
+				"-port");
+		cmdLine.addArgument(
+				HOST_PORT);
 		System.setProperty(
 				"aws.accessKeyId",
 				"dummy");
@@ -168,13 +188,15 @@ public class DynamoDBLocal
 		watchdog = new ExecuteWatchdog(
 				ExecuteWatchdog.INFINITE_TIMEOUT);
 		Executor executor = new DefaultExecutor();
-		executor.setWatchdog(watchdog);
+		executor.setWatchdog(
+				watchdog);
 		executor.execute(
 				cmdLine,
 				resultHandler);
 
 		// we need to wait here for a bit, in case the emulator needs to update
 		// itself
-		Thread.sleep(EMULATOR_SPINUP_DELAY_MS);
+		Thread.sleep(
+				EMULATOR_SPINUP_DELAY_MS);
 	}
 }
