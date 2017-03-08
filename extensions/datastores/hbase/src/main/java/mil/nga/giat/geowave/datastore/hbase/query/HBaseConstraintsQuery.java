@@ -232,7 +232,7 @@ public class HBaseConstraintsQuery extends
 				adapterStore,
 				limit);
 	}
-
+	private static boolean isVerifid = false;
 	private CloseableIterator<Object> aggregateWithCoprocessor(
 			final BasicHBaseOperations operations,
 			final AdapterStore adapterStore,
@@ -242,11 +242,12 @@ public class HBaseConstraintsQuery extends
 
 		try {
 			// Use the row count coprocessor
-			if (options.isVerifyCoprocessors()) {
+			if (options.isVerifyCoprocessors() && !isVerifid) {
 				operations.verifyCoprocessor(
 						tableName,
 						AggregationEndpoint.class.getName(),
 						options.getCoprocessorJar());
+				isVerifid = true;
 			}
 
 			final Aggregation aggregation = base.aggregation.getRight();

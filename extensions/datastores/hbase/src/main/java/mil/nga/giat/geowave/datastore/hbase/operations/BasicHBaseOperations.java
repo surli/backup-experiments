@@ -23,9 +23,7 @@ import org.apache.hadoop.hbase.client.ResultScanner;
 import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.client.Table;
 import org.apache.hadoop.hbase.security.visibility.Authorizations;
-import org.apache.hadoop.hbase.security.visibility.VisibilityClient;
 import org.apache.hadoop.hbase.util.Bytes;
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.apache.log4j.Logger;
 
 import mil.nga.giat.geowave.core.index.ByteArrayId;
