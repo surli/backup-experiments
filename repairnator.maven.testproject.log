@@ -1,0 +1,998 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] swagger-project
+[INFO] swagger-annotations
+[INFO] swagger-models
+[INFO] swagger-core
+[INFO] swagger-jaxrs
+[INFO] swagger-jersey-jaxrs
+[INFO] swagger-mule
+[INFO] swagger-jersey2-jaxrs (Jersey 2.x support)
+[INFO] swagger-hibernate-validations
+[INFO] swagger-servlet
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger-project 1.5.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven) @ swagger-project ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-versions) @ swagger-project ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (default-prepare-agent) @ swagger-project ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/.m2/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/target/jacoco.exec,excludes=**/io/swagger/config/FilterFactory.*:**/io/swagger/model/ApiInfo.*:**/io/swagger/util/Yaml.*:**/io/swagger/jackson/*:**/io/swagger/converter/ModelConverters.*:**/io/swagger/jaxrs/json/JacksonJsonProvider.*:**/io/swagger/jaxrs/listing/ApiListingResource.*:**/io/swagger/jaxrs/listing/SwaggerSerializers.*:**/io/swagger/jaxrs/config/WebXMLReader.*:**/io/swagger/jaxrs/config/DefaultJaxrsScanner.*:**/io/swagger/jaxrs/config/DefaultJaxrsConfig.*:**/io/swagger/servlet/config/WebXMLReader.*:**/io/swagger/servlet/config/ServletScanner.*:**/io/swagger/servlet/config/DefaultServletConfig.*:**/io/swagger/servlet/listing/ApiDeclarationServlet.*
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger-annotations 1.5.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven) @ swagger-annotations ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-versions) @ swagger-annotations ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (default-prepare-agent) @ swagger-annotations ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/.m2/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-annotations/target/jacoco.exec,excludes=**/io/swagger/config/FilterFactory.*:**/io/swagger/model/ApiInfo.*:**/io/swagger/util/Yaml.*:**/io/swagger/jackson/*:**/io/swagger/converter/ModelConverters.*:**/io/swagger/jaxrs/json/JacksonJsonProvider.*:**/io/swagger/jaxrs/listing/ApiListingResource.*:**/io/swagger/jaxrs/listing/SwaggerSerializers.*:**/io/swagger/jaxrs/config/WebXMLReader.*:**/io/swagger/jaxrs/config/DefaultJaxrsScanner.*:**/io/swagger/jaxrs/config/DefaultJaxrsConfig.*:**/io/swagger/servlet/config/WebXMLReader.*:**/io/swagger/servlet/config/ServletScanner.*:**/io/swagger/servlet/config/DefaultServletConfig.*:**/io/swagger/servlet/listing/ApiDeclarationServlet.*
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ swagger-annotations ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-annotations/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ swagger-annotations ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 27 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-annotations/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ swagger-annotations ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-annotations/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ swagger-annotations ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ swagger-annotations ---
+[INFO] No tests to run.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger-models 1.5.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven) @ swagger-models ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-versions) @ swagger-models ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (default-prepare-agent) @ swagger-models ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/.m2/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/target/jacoco.exec,excludes=**/io/swagger/config/FilterFactory.*:**/io/swagger/model/ApiInfo.*:**/io/swagger/util/Yaml.*:**/io/swagger/jackson/*:**/io/swagger/converter/ModelConverters.*:**/io/swagger/jaxrs/json/JacksonJsonProvider.*:**/io/swagger/jaxrs/listing/ApiListingResource.*:**/io/swagger/jaxrs/listing/SwaggerSerializers.*:**/io/swagger/jaxrs/config/WebXMLReader.*:**/io/swagger/jaxrs/config/DefaultJaxrsScanner.*:**/io/swagger/jaxrs/config/DefaultJaxrsConfig.*:**/io/swagger/servlet/config/WebXMLReader.*:**/io/swagger/servlet/config/ServletScanner.*:**/io/swagger/servlet/config/DefaultServletConfig.*:**/io/swagger/servlet/listing/ApiDeclarationServlet.*
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ swagger-models ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ swagger-models ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 67 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/target/classes
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/src/main/java/io/swagger/models/properties/AbstractProperty.java: Some input files use or override a deprecated API.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/src/main/java/io/swagger/models/properties/AbstractProperty.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ swagger-models ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ swagger-models ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 57 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/target/test-classes
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/src/test/java/io/swagger/models/SecurityRequirementTest.java: Some input files use or override a deprecated API.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/src/test/java/io/swagger/models/SecurityRequirementTest.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/src/test/java/io/swagger/TestUtils.java: /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/src/test/java/io/swagger/TestUtils.java uses unchecked or unsafe operations.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-models/src/test/java/io/swagger/TestUtils.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ swagger-models ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.19.1/surefire-testng-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.19.1/surefire-testng-2.19.1.pom (3 KB at 3.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 80.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.pom (3 KB at 67.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.19.1/surefire-testng-utils-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.19.1/surefire-testng-utils-2.19.1.pom (3 KB at 149.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.pom (3 KB at 54.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.19.1/surefire-testng-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.19.1/surefire-testng-utils-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.19.1/surefire-testng-utils-2.19.1.jar (27 KB at 526.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.jar (44 KB at 606.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.19.1/surefire-testng-2.19.1.jar (42 KB at 499.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.jar (38 KB at 386.3 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+testing common method: public io.swagger.models.ModelImpl io.swagger.models.ModelImpl._enum(java.util.List)
+testing common method: public io.swagger.models.ModelImpl io.swagger.models.ModelImpl._enum(java.lang.String)
+testing common method: public void io.swagger.models.ModelImpl.setEnum(java.util.List)
+testing common method: public io.swagger.models.ModelImpl io.swagger.models.ModelImpl.example(java.lang.Object)
+testing common method: public io.swagger.models.Response io.swagger.models.Response.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.Response io.swagger.models.Response.example(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.Swagger io.swagger.models.Swagger.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.Response io.swagger.models.Response.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.Response io.swagger.models.Response.example(java.lang.String,java.lang.Object)
+testing common method: public void io.swagger.models.parameters.AbstractSerializableParameter.setEnum(java.util.List)
+testing common method: public io.swagger.models.parameters.AbstractSerializableParameter io.swagger.models.parameters.AbstractSerializableParameter.example(java.lang.String)
+testing common method: public io.swagger.models.parameters.AbstractSerializableParameter io.swagger.models.parameters.AbstractSerializableParameter._enum(java.util.List)
+testing common method: public void io.swagger.models.parameters.AbstractSerializableParameter.setEnum(java.util.List)
+testing common method: public io.swagger.models.parameters.AbstractSerializableParameter io.swagger.models.parameters.AbstractSerializableParameter.example(java.lang.String)
+testing common method: public io.swagger.models.parameters.AbstractSerializableParameter io.swagger.models.parameters.AbstractSerializableParameter._enum(java.util.List)
+testing common method: public void io.swagger.models.parameters.AbstractSerializableParameter.setEnum(java.util.List)
+testing common method: public io.swagger.models.parameters.AbstractSerializableParameter io.swagger.models.parameters.AbstractSerializableParameter.example(java.lang.String)
+testing common method: public io.swagger.models.parameters.AbstractSerializableParameter io.swagger.models.parameters.AbstractSerializableParameter._enum(java.util.List)
+testing common method: public io.swagger.models.parameters.BodyParameter io.swagger.models.parameters.BodyParameter.example(java.lang.String,java.lang.String)
+testing common method: public void io.swagger.models.parameters.AbstractSerializableParameter.setEnum(java.util.List)
+testing common method: public io.swagger.models.parameters.AbstractSerializableParameter io.swagger.models.parameters.AbstractSerializableParameter.example(java.lang.String)
+testing common method: public io.swagger.models.parameters.AbstractSerializableParameter io.swagger.models.parameters.AbstractSerializableParameter._enum(java.util.List)
+testing common method: public void io.swagger.models.parameters.AbstractSerializableParameter.setEnum(java.util.List)
+testing common method: public io.swagger.models.parameters.AbstractSerializableParameter io.swagger.models.parameters.AbstractSerializableParameter.example(java.lang.String)
+testing common method: public io.swagger.models.parameters.AbstractSerializableParameter io.swagger.models.parameters.AbstractSerializableParameter._enum(java.util.List)
+testing common method: public void io.swagger.models.properties.BinaryProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.BinaryProperty io.swagger.models.properties.BinaryProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.BinaryProperty io.swagger.models.properties.BinaryProperty._default(java.lang.String)
+testing common method: public io.swagger.models.properties.DateTimeProperty io.swagger.models.properties.DateTimeProperty.example(java.lang.String)
+testing common method: public void io.swagger.models.properties.DateTimeProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.DateTimeProperty io.swagger.models.properties.DateTimeProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.DateTimeProperty io.swagger.models.properties.DateTimeProperty._enum(java.lang.String)
+testing common method: public io.swagger.models.properties.DateTimeProperty io.swagger.models.properties.DateTimeProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.LongProperty io.swagger.models.properties.LongProperty._enum(java.lang.Long)
+testing common method: public io.swagger.models.properties.LongProperty io.swagger.models.properties.LongProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.LongProperty io.swagger.models.properties.LongProperty._default(java.lang.String)
+testing common method: public io.swagger.models.properties.LongProperty io.swagger.models.properties.LongProperty._default(java.lang.Long)
+testing common method: public void io.swagger.models.properties.LongProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.LongProperty io.swagger.models.properties.LongProperty.example(java.lang.Long)
+testing common method: public io.swagger.models.properties.LongProperty io.swagger.models.properties.LongProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.ObjectProperty io.swagger.models.properties.ObjectProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.ObjectProperty io.swagger.models.properties.ObjectProperty.example(java.lang.String)
+testing common method: public io.swagger.models.properties.ObjectProperty io.swagger.models.properties.ObjectProperty._default(java.lang.String)
+testing common method: public void io.swagger.models.properties.PasswordProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.PasswordProperty io.swagger.models.properties.PasswordProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.PasswordProperty io.swagger.models.properties.PasswordProperty._enum(java.lang.String)
+testing common method: public io.swagger.models.properties.PasswordProperty io.swagger.models.properties.PasswordProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.PasswordProperty io.swagger.models.properties.PasswordProperty._default(java.lang.String)
+testing common method: public io.swagger.models.properties.BooleanProperty io.swagger.models.properties.BooleanProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.BooleanProperty io.swagger.models.properties.BooleanProperty.example(java.lang.Boolean)
+testing common method: public void io.swagger.models.properties.BooleanProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.BooleanProperty io.swagger.models.properties.BooleanProperty._default(java.lang.String)
+testing common method: public io.swagger.models.properties.BooleanProperty io.swagger.models.properties.BooleanProperty._default(boolean)
+testing common method: public io.swagger.models.properties.BooleanProperty io.swagger.models.properties.BooleanProperty._enum(java.lang.Boolean)
+testing common method: public io.swagger.models.properties.UUIDProperty io.swagger.models.properties.UUIDProperty._default(java.lang.String)
+testing common method: public io.swagger.models.properties.UUIDProperty io.swagger.models.properties.UUIDProperty._enum(java.lang.String)
+testing common method: public io.swagger.models.properties.UUIDProperty io.swagger.models.properties.UUIDProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.UUIDProperty io.swagger.models.properties.UUIDProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public void io.swagger.models.properties.UUIDProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.DoubleProperty io.swagger.models.properties.DoubleProperty._default(java.lang.Double)
+testing common method: public io.swagger.models.properties.DoubleProperty io.swagger.models.properties.DoubleProperty._default(java.lang.String)
+testing common method: public io.swagger.models.properties.DoubleProperty io.swagger.models.properties.DoubleProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.DoubleProperty io.swagger.models.properties.DoubleProperty._enum(java.lang.Double)
+testing common method: public io.swagger.models.properties.DoubleProperty io.swagger.models.properties.DoubleProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.DecimalProperty io.swagger.models.properties.DoubleProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.DecimalProperty io.swagger.models.properties.DecimalProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public void io.swagger.models.properties.DoubleProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.DecimalProperty io.swagger.models.properties.DecimalProperty.example(java.lang.String)
+testing common method: public io.swagger.models.properties.DoubleProperty io.swagger.models.properties.DoubleProperty.example(java.lang.Double)
+testing common method: public io.swagger.models.properties.DecimalProperty io.swagger.models.properties.DecimalProperty.example(java.lang.String)
+testing common method: public io.swagger.models.properties.DecimalProperty io.swagger.models.properties.DecimalProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.DateProperty io.swagger.models.properties.DateProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public void io.swagger.models.properties.DateProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.DateProperty io.swagger.models.properties.DateProperty.example(java.lang.String)
+testing common method: public io.swagger.models.properties.DateProperty io.swagger.models.properties.DateProperty._enum(java.lang.String)
+testing common method: public io.swagger.models.properties.DateProperty io.swagger.models.properties.DateProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.FloatProperty io.swagger.models.properties.FloatProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.DecimalProperty io.swagger.models.properties.FloatProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public void io.swagger.models.properties.FloatProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.FloatProperty io.swagger.models.properties.FloatProperty._default(java.lang.String)
+testing common method: public io.swagger.models.properties.FloatProperty io.swagger.models.properties.FloatProperty._default(java.lang.Float)
+testing common method: public io.swagger.models.properties.DecimalProperty io.swagger.models.properties.DecimalProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.FloatProperty io.swagger.models.properties.FloatProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.FloatProperty io.swagger.models.properties.FloatProperty._enum(java.lang.Float)
+testing common method: public io.swagger.models.properties.FloatProperty io.swagger.models.properties.FloatProperty.example(java.lang.Float)
+testing common method: public io.swagger.models.properties.DecimalProperty io.swagger.models.properties.DecimalProperty.example(java.lang.String)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.StringProperty._enum(java.lang.String)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.StringProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.StringProperty._default(java.lang.String)
+testing common method: public void io.swagger.models.properties.StringProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.StringProperty.example(java.lang.String)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.StringProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.EmailProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.EmailProperty io.swagger.models.properties.EmailProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.StringProperty.example(java.lang.String)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.EmailProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.EmailProperty._enum(java.lang.String)
+testing common method: public io.swagger.models.properties.EmailProperty io.swagger.models.properties.EmailProperty._enum(java.lang.String)
+testing common method: public io.swagger.models.properties.EmailProperty io.swagger.models.properties.EmailProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.StringProperty._enum(java.lang.String)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.StringProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.StringProperty._default(java.lang.String)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.EmailProperty.example(java.lang.String)
+testing common method: public io.swagger.models.properties.EmailProperty io.swagger.models.properties.EmailProperty.example(java.lang.String)
+testing common method: public void io.swagger.models.properties.StringProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.StringProperty io.swagger.models.properties.StringProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.MapProperty io.swagger.models.properties.MapProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.IntegerProperty io.swagger.models.properties.IntegerProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.IntegerProperty io.swagger.models.properties.IntegerProperty.example(java.lang.Integer)
+testing common method: public void io.swagger.models.properties.IntegerProperty.setEnum(java.util.List)
+testing common method: public io.swagger.models.properties.IntegerProperty io.swagger.models.properties.IntegerProperty._default(java.lang.String)
+testing common method: public io.swagger.models.properties.IntegerProperty io.swagger.models.properties.IntegerProperty._default(java.lang.Integer)
+testing common method: public io.swagger.models.properties.IntegerProperty io.swagger.models.properties.IntegerProperty._enum(java.lang.Integer)
+testing common method: public io.swagger.models.properties.IntegerProperty io.swagger.models.properties.IntegerProperty._enum(java.util.List)
+testing common method: public io.swagger.models.properties.ArrayProperty io.swagger.models.properties.ArrayProperty.example(java.lang.Object)
+testing common method: public io.swagger.models.properties.ArrayProperty io.swagger.models.properties.ArrayProperty.vendorExtension(java.lang.String,java.lang.Object)
+testing common method: public io.swagger.models.properties.ByteArrayProperty io.swagger.models.properties.ByteArrayProperty.example(java.lang.String)
+testing common method: public io.swagger.models.properties.ByteArrayProperty io.swagger.models.properties.ByteArrayProperty.vendorExtension(java.lang.String,java.lang.Object)
+Tests run: 245, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.497 sec - in TestSuite
+
+Results :
+
+Tests run: 245, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger-core 1.5.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven) @ swagger-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-versions) @ swagger-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (default-prepare-agent) @ swagger-core ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/.m2/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/target/jacoco.exec,excludes=**/io/swagger/config/FilterFactory.*:**/io/swagger/model/ApiInfo.*:**/io/swagger/util/Yaml.*:**/io/swagger/jackson/*:**/io/swagger/converter/ModelConverters.*:**/io/swagger/jaxrs/json/JacksonJsonProvider.*:**/io/swagger/jaxrs/listing/ApiListingResource.*:**/io/swagger/jaxrs/listing/SwaggerSerializers.*:**/io/swagger/jaxrs/config/WebXMLReader.*:**/io/swagger/jaxrs/config/DefaultJaxrsScanner.*:**/io/swagger/jaxrs/config/DefaultJaxrsConfig.*:**/io/swagger/servlet/config/WebXMLReader.*:**/io/swagger/servlet/config/ServletScanner.*:**/io/swagger/servlet/config/DefaultServletConfig.*:**/io/swagger/servlet/listing/ApiDeclarationServlet.*
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ swagger-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ swagger-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 40 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/target/classes
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/src/main/java/io/swagger/core/filter/SwaggerSpecFilter.java: Some input files use or override a deprecated API.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/src/main/java/io/swagger/core/filter/SwaggerSpecFilter.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/src/main/java/io/swagger/util/ParameterProcessor.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/src/main/java/io/swagger/util/ParameterProcessor.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ swagger-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 31 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ swagger-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 130 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/target/test-classes
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/src/test/java/io/swagger/filter/NoGetOperationsFilter.java: Some input files use or override a deprecated API.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/src/test/java/io/swagger/filter/NoGetOperationsFilter.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/src/test/java/io/swagger/ModelConverterTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/src/test/java/io/swagger/ModelConverterTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ swagger-core ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+18:13:46,355 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+18:13:46,355 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback-test.xml] at [file:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/target/test-classes/logback-test.xml]
+18:13:46,867 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+18:13:46,868 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+18:13:46,886 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+18:13:47,116 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+18:13:47,116 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+18:13:47,116 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+18:13:47,117 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [io.swagger] to ERROR
+18:13:47,117 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to ERROR
+18:13:47,117 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+18:13:47,118 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+18:13:47,132 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@89c10b7 - Registering current configuration as safe fallback point
+
+18:13:54.285 [main] ERROR io.swagger.util.ReflectionUtils - Failed to resolve 'FakeType' into class
+java.lang.ClassNotFoundException: FakeType
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_121]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_121]
+	at io.swagger.util.ReflectionUtils.loadClassByName(ReflectionUtils.java:49) ~[classes/:na]
+	at io.swagger.util.ReflectionUtils.typeFromString(ReflectionUtils.java:31) ~[classes/:na]
+	at io.swagger.ReflectionUtilsTest.typeFromStringTest(ReflectionUtilsTest.java:25) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177) [testng-6.10.jar:na]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129) [testng-6.10.jar:na]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112) [testng-6.10.jar:na]
+	at org.testng.TestRunner.privateRun(TestRunner.java:756) [testng-6.10.jar:na]
+	at org.testng.TestRunner.run(TestRunner.java:610) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289) [testng-6.10.jar:na]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-6.10.jar:na]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuites(TestNG.java:1133) [testng-6.10.jar:na]
+	at org.testng.TestNG.run(TestNG.java:1104) [testng-6.10.jar:na]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:132) [surefire-testng-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193) [surefire-testng-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94) [surefire-testng-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:147) [surefire-testng-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290) [surefire-booter-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242) [surefire-booter-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121) [surefire-booter-2.19.1.jar:2.19.1]
+18:13:54.301 [main] ERROR io.swagger.util.ReflectionUtils - Failed to resolve 'null' into class
+java.lang.NullPointerException: null
+	at java.lang.Class.forName0(Native Method) ~[na:1.8.0_121]
+	at java.lang.Class.forName(Class.java:264) ~[na:1.8.0_121]
+	at io.swagger.util.ReflectionUtils.loadClassByName(ReflectionUtils.java:47) ~[classes/:na]
+	at io.swagger.util.ReflectionUtils.typeFromString(ReflectionUtils.java:31) ~[classes/:na]
+	at io.swagger.ReflectionUtilsTest.typeFromStringTest(ReflectionUtilsTest.java:26) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177) [testng-6.10.jar:na]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129) [testng-6.10.jar:na]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112) [testng-6.10.jar:na]
+	at org.testng.TestRunner.privateRun(TestRunner.java:756) [testng-6.10.jar:na]
+	at org.testng.TestRunner.run(TestRunner.java:610) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289) [testng-6.10.jar:na]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-6.10.jar:na]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuites(TestNG.java:1133) [testng-6.10.jar:na]
+	at org.testng.TestNG.run(TestNG.java:1104) [testng-6.10.jar:na]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:132) [surefire-testng-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193) [surefire-testng-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94) [surefire-testng-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:147) [surefire-testng-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290) [surefire-booter-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242) [surefire-booter-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121) [surefire-booter-2.19.1.jar:2.19.1]
+Tests run: 288, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.597 sec - in TestSuite
+
+Results :
+
+Tests run: 288, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger-jaxrs 1.5.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven) @ swagger-jaxrs ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-versions) @ swagger-jaxrs ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (default-prepare-agent) @ swagger-jaxrs ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/.m2/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/target/jacoco.exec,excludes=**/io/swagger/config/FilterFactory.*:**/io/swagger/model/ApiInfo.*:**/io/swagger/util/Yaml.*:**/io/swagger/jackson/*:**/io/swagger/converter/ModelConverters.*:**/io/swagger/jaxrs/json/JacksonJsonProvider.*:**/io/swagger/jaxrs/listing/ApiListingResource.*:**/io/swagger/jaxrs/listing/SwaggerSerializers.*:**/io/swagger/jaxrs/config/WebXMLReader.*:**/io/swagger/jaxrs/config/DefaultJaxrsScanner.*:**/io/swagger/jaxrs/config/DefaultJaxrsConfig.*:**/io/swagger/servlet/config/WebXMLReader.*:**/io/swagger/servlet/config/ServletScanner.*:**/io/swagger/servlet/config/DefaultServletConfig.*:**/io/swagger/servlet/listing/ApiDeclarationServlet.*
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ swagger-jaxrs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ swagger-jaxrs ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 25 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/target/classes
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java: /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java uses or overrides a deprecated API.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ swagger-jaxrs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ swagger-jaxrs ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 150 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/target/test-classes
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/src/test/java/io/swagger/resources/DescendantResource.java: /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/src/test/java/io/swagger/resources/DescendantResource.java uses or overrides a deprecated API.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/src/test/java/io/swagger/resources/DescendantResource.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/src/test/java/io/swagger/ConfigAndExtensionScannerTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/src/test/java/io/swagger/ConfigAndExtensionScannerTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ swagger-jaxrs ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+18:14:10,996 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+18:14:10,996 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback-test.xml] at [file:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/target/test-classes/logback-test.xml]
+18:14:11,001 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback-test.xml] occurs multiple times on the classpath.
+18:14:11,001 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback-test.xml] occurs at [file:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jaxrs/target/test-classes/logback-test.xml]
+18:14:11,001 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback-test.xml] occurs at [file:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-core/target/test-classes/logback-test.xml]
+18:14:11,331 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+18:14:11,332 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+18:14:11,360 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+18:14:11,724 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+18:14:11,724 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+18:14:11,724 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+18:14:11,725 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [io.swagger] to ERROR
+18:14:11,725 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to ERROR
+18:14:11,725 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+18:14:11,776 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+18:14:11,800 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@13d73f29 - Registering current configuration as safe fallback point
+
+Tests run: 134, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.323 sec - in TestSuite
+
+Results :
+
+Tests run: 134, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger-jersey-jaxrs 1.5.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven) @ swagger-jersey-jaxrs ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-versions) @ swagger-jersey-jaxrs ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (default-prepare-agent) @ swagger-jersey-jaxrs ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/.m2/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jersey-jaxrs/target/jacoco.exec,excludes=**/io/swagger/config/FilterFactory.*:**/io/swagger/model/ApiInfo.*:**/io/swagger/util/Yaml.*:**/io/swagger/jackson/*:**/io/swagger/converter/ModelConverters.*:**/io/swagger/jaxrs/json/JacksonJsonProvider.*:**/io/swagger/jaxrs/listing/ApiListingResource.*:**/io/swagger/jaxrs/listing/SwaggerSerializers.*:**/io/swagger/jaxrs/config/WebXMLReader.*:**/io/swagger/jaxrs/config/DefaultJaxrsScanner.*:**/io/swagger/jaxrs/config/DefaultJaxrsConfig.*:**/io/swagger/servlet/config/WebXMLReader.*:**/io/swagger/servlet/config/ServletScanner.*:**/io/swagger/servlet/config/DefaultServletConfig.*:**/io/swagger/servlet/listing/ApiDeclarationServlet.*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ swagger-jersey-jaxrs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ swagger-jersey-jaxrs ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jersey-jaxrs/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ swagger-jersey-jaxrs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jersey-jaxrs/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ swagger-jersey-jaxrs ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jersey-jaxrs/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ swagger-jersey-jaxrs ---
+[INFO] Surefire report directory: /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jersey-jaxrs/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.12.4/surefire-testng-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.12.4/surefire-testng-2.12.4.pom (4 KB at 47.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (3 KB at 114.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.12.4/surefire-testng-utils-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.12.4/surefire-testng-utils-2.12.4.pom (3 KB at 84.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.12.4/surefire-grouper-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.12.4/surefire-grouper-2.12.4.pom (3 KB at 77.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/testng/testng/5.7/testng-5.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/testng/testng/5.7/testng-5.7.pom (12 KB at 316.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.12.4/surefire-testng-2.12.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.12.4/surefire-grouper-2.12.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.12.4/surefire-testng-utils-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.12.4/surefire-testng-utils-2.12.4.jar (23 KB at 489.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.12.4/surefire-testng-2.12.4.jar (33 KB at 565.6 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar (77 KB at 1602.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.12.4/surefire-grouper-2.12.4.jar (37 KB at 625.8 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.swagger.FormDataBodyPartTest
+Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@1ed4004b
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.818 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger-mule 1.5.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven) @ swagger-mule ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-versions) @ swagger-mule ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (default-prepare-agent) @ swagger-mule ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/.m2/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-mule/target/jacoco.exec,excludes=**/io/swagger/config/FilterFactory.*:**/io/swagger/model/ApiInfo.*:**/io/swagger/util/Yaml.*:**/io/swagger/jackson/*:**/io/swagger/converter/ModelConverters.*:**/io/swagger/jaxrs/json/JacksonJsonProvider.*:**/io/swagger/jaxrs/listing/ApiListingResource.*:**/io/swagger/jaxrs/listing/SwaggerSerializers.*:**/io/swagger/jaxrs/config/WebXMLReader.*:**/io/swagger/jaxrs/config/DefaultJaxrsScanner.*:**/io/swagger/jaxrs/config/DefaultJaxrsConfig.*:**/io/swagger/servlet/config/WebXMLReader.*:**/io/swagger/servlet/config/ServletScanner.*:**/io/swagger/servlet/config/DefaultServletConfig.*:**/io/swagger/servlet/listing/ApiDeclarationServlet.*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ swagger-mule ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-mule/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ swagger-mule ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-mule/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ swagger-mule ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ swagger-mule ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-mule/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ swagger-mule ---
+[INFO] Surefire report directory: /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-mule/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.swagger.mule.ApiListingJSONTest
+Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@29ca901e
+18:14:50,334 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+18:14:50,334 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback-test.xml] at [file:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-mule/target/test-classes/logback-test.xml]
+18:14:50,447 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+18:14:50,448 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+18:14:50,456 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+18:14:50,615 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+18:14:50,615 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+18:14:50,615 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+18:14:50,616 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [io.swagger] to ERROR
+18:14:50,616 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to ERROR
+18:14:50,616 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+18:14:50,629 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+18:14:50,631 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@5c80cf32 - Registering current configuration as safe fallback point
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.989 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger-jersey2-jaxrs (Jersey 2.x support) 1.5.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven) @ swagger-jersey2-jaxrs ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-versions) @ swagger-jersey2-jaxrs ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (default-prepare-agent) @ swagger-jersey2-jaxrs ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/.m2/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jersey2-jaxrs/target/jacoco.exec,excludes=**/io/swagger/config/FilterFactory.*:**/io/swagger/model/ApiInfo.*:**/io/swagger/util/Yaml.*:**/io/swagger/jackson/*:**/io/swagger/converter/ModelConverters.*:**/io/swagger/jaxrs/json/JacksonJsonProvider.*:**/io/swagger/jaxrs/listing/ApiListingResource.*:**/io/swagger/jaxrs/listing/SwaggerSerializers.*:**/io/swagger/jaxrs/config/WebXMLReader.*:**/io/swagger/jaxrs/config/DefaultJaxrsScanner.*:**/io/swagger/jaxrs/config/DefaultJaxrsConfig.*:**/io/swagger/servlet/config/WebXMLReader.*:**/io/swagger/servlet/config/ServletScanner.*:**/io/swagger/servlet/config/DefaultServletConfig.*:**/io/swagger/servlet/listing/ApiDeclarationServlet.*
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ swagger-jersey2-jaxrs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ swagger-jersey2-jaxrs ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jersey2-jaxrs/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ swagger-jersey2-jaxrs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jersey2-jaxrs/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ swagger-jersey2-jaxrs ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 19 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-jersey2-jaxrs/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ swagger-jersey2-jaxrs ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.002 sec - in TestSuite
+
+Results :
+
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger-hibernate-validations 1.5.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven) @ swagger-hibernate-validations ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-versions) @ swagger-hibernate-validations ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (default-prepare-agent) @ swagger-hibernate-validations ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/.m2/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-hibernate-validations/target/jacoco.exec,excludes=**/io/swagger/config/FilterFactory.*:**/io/swagger/model/ApiInfo.*:**/io/swagger/util/Yaml.*:**/io/swagger/jackson/*:**/io/swagger/converter/ModelConverters.*:**/io/swagger/jaxrs/json/JacksonJsonProvider.*:**/io/swagger/jaxrs/listing/ApiListingResource.*:**/io/swagger/jaxrs/listing/SwaggerSerializers.*:**/io/swagger/jaxrs/config/WebXMLReader.*:**/io/swagger/jaxrs/config/DefaultJaxrsScanner.*:**/io/swagger/jaxrs/config/DefaultJaxrsConfig.*:**/io/swagger/servlet/config/WebXMLReader.*:**/io/swagger/servlet/config/ServletScanner.*:**/io/swagger/servlet/config/DefaultServletConfig.*:**/io/swagger/servlet/listing/ApiDeclarationServlet.*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ swagger-hibernate-validations ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ swagger-hibernate-validations ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-hibernate-validations/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ swagger-hibernate-validations ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-hibernate-validations/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ swagger-hibernate-validations ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-hibernate-validations/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ swagger-hibernate-validations ---
+[INFO] Surefire report directory: /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-hibernate-validations/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.swagger.HibernateBeanValidationsTest
+Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@1ed4004b
+18:15:10.212 [main] DEBUG io.swagger.converter.ModelConverters - adding ModelConverter: io.swagger.validator.BeanValidator@57ac5227
+18:15:10.272 [main] DEBUG io.swagger.converter.ModelConverters - ModelConverters readAll from class io.swagger.models.HibernateBeanValidationsModel
+18:15:10.281 [main] DEBUG i.s.c.ModelConverterContextImpl - resolve class io.swagger.models.HibernateBeanValidationsModel
+18:15:10.281 [main] DEBUG i.s.c.ModelConverterContextImpl - trying extension io.swagger.validator.BeanValidator@57ac5227
+18:15:10.355 [main] DEBUG i.s.c.ModelConverterContextImpl - defineModel HibernateBeanValidationsModel io.swagger.models.ModelImpl@1f73f52f
+18:15:10.532 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.Long]
+18:15:10.533 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.Long], java.lang.Long
+18:15:10.533 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.Long]
+18:15:10.554 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.Integer]
+18:15:10.558 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.Integer], java.lang.Integer
+18:15:10.558 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.Integer]
+18:15:10.563 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.567 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.568 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.572 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.579 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.579 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.580 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.580 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.580 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.581 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.581 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.581 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.592 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.Double]
+18:15:10.593 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.Double], java.lang.Double
+18:15:10.593 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.Double]
+18:15:10.610 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.Double]
+18:15:10.611 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.Double], java.lang.Double
+18:15:10.611 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.Double]
+18:15:10.612 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.Integer]
+18:15:10.615 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.Integer], java.lang.Integer
+18:15:10.615 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.Integer]
+18:15:10.616 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.616 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.616 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.651 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [collection type; class java.util.List, contains [simple type, class java.lang.String]]
+18:15:10.652 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [collection type; class java.util.List, contains [simple type, class java.lang.String]], java.util.List
+18:15:10.653 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [collection type; class java.util.List, contains [simple type, class java.lang.String]]
+18:15:10.653 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.653 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.654 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.675 [main] DEBUG i.s.c.ModelConverterContextImpl - defineModel HibernateBeanValidationsModel io.swagger.models.ModelImpl@2ed48f21
+18:15:10.700 [main] DEBUG io.swagger.converter.ModelConverters - ModelConverters readAll from class io.swagger.models.HibernateBeanValidationsModel
+18:15:10.701 [main] DEBUG i.s.c.ModelConverterContextImpl - resolve class io.swagger.models.HibernateBeanValidationsModel
+18:15:10.701 [main] DEBUG i.s.c.ModelConverterContextImpl - trying extension io.swagger.validator.BeanValidator@57ac5227
+18:15:10.701 [main] DEBUG i.s.c.ModelConverterContextImpl - defineModel HibernateBeanValidationsModel io.swagger.models.ModelImpl@1f73f52f
+18:15:10.702 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.Long]
+18:15:10.702 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.Long], java.lang.Long
+18:15:10.703 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.Long]
+18:15:10.706 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.Integer]
+18:15:10.720 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.Integer], java.lang.Integer
+18:15:10.720 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.Integer]
+18:15:10.720 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.721 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.721 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.721 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.721 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.722 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.722 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.722 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.722 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.723 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.725 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.725 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.726 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.Double]
+18:15:10.726 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.Double], java.lang.Double
+18:15:10.727 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.Double]
+18:15:10.727 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.Double]
+18:15:10.735 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.Double], java.lang.Double
+18:15:10.736 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.Double]
+18:15:10.736 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.Integer]
+18:15:10.736 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.Integer], java.lang.Integer
+18:15:10.737 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.Integer]
+18:15:10.737 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.737 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.738 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.740 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [collection type; class java.util.List, contains [simple type, class java.lang.String]]
+18:15:10.742 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [collection type; class java.util.List, contains [simple type, class java.lang.String]], java.util.List
+18:15:10.742 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [collection type; class java.util.List, contains [simple type, class java.lang.String]]
+18:15:10.743 [main] DEBUG i.s.c.ModelConverterContextImpl - resolveProperty [simple type, class java.lang.String]
+18:15:10.743 [main] DEBUG io.swagger.jackson.ModelResolver - Can't check class [simple type, class java.lang.String], java.lang.String
+18:15:10.743 [main] DEBUG io.swagger.jackson.ModelResolver - resolveProperty [simple type, class java.lang.String]
+18:15:10.743 [main] DEBUG i.s.c.ModelConverterContextImpl - defineModel HibernateBeanValidationsModel io.swagger.models.ModelImpl@2ed48f21
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.283 sec
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building swagger-servlet 1.5.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven) @ swagger-servlet ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-versions) @ swagger-servlet ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (default-prepare-agent) @ swagger-servlet ---
+[INFO] argLine set to -javaagent:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/.m2/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-servlet/target/jacoco.exec,excludes=**/io/swagger/config/FilterFactory.*:**/io/swagger/model/ApiInfo.*:**/io/swagger/util/Yaml.*:**/io/swagger/jackson/*:**/io/swagger/converter/ModelConverters.*:**/io/swagger/jaxrs/json/JacksonJsonProvider.*:**/io/swagger/jaxrs/listing/ApiListingResource.*:**/io/swagger/jaxrs/listing/SwaggerSerializers.*:**/io/swagger/jaxrs/config/WebXMLReader.*:**/io/swagger/jaxrs/config/DefaultJaxrsScanner.*:**/io/swagger/jaxrs/config/DefaultJaxrsConfig.*:**/io/swagger/servlet/config/WebXMLReader.*:**/io/swagger/servlet/config/ServletScanner.*:**/io/swagger/servlet/config/DefaultServletConfig.*:**/io/swagger/servlet/listing/ApiDeclarationServlet.*
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ swagger-servlet ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ swagger-servlet ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-servlet/target/classes
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-servlet/src/main/java/io/swagger/servlet/Reader.java: Some input files use or override a deprecated API.
+[WARNING] /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-servlet/src/main/java/io/swagger/servlet/Reader.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ swagger-servlet ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:testCompile (default-testCompile) @ swagger-servlet ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 22 source files to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-servlet/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ swagger-servlet ---
+[INFO] Surefire report directory: /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-servlet/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@5bc79255
+18:15:39,209 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+18:15:39,209 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback-test.xml] at [file:/home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-servlet/target/classes/logback-test.xml]
+18:15:43,664 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+18:15:43,665 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+18:15:43,671 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+18:15:44,081 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+18:15:44,081 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+18:15:44,081 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+18:15:44,082 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [io.swagger] to ERROR
+18:15:44,082 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to ERROR
+18:15:44,082 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+18:15:44,084 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+18:15:44,086 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@5d534f5d - Registering current configuration as safe fallback point
+
+18:16:00.219 [main] ERROR io.swagger.util.ReflectionUtils - Failed to resolve 'fakeType' into class
+java.lang.ClassNotFoundException: fakeType
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_121]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_121]
+	at io.swagger.util.ReflectionUtils.loadClassByName(ReflectionUtils.java:49) ~[classes/:na]
+	at io.swagger.util.ReflectionUtils.typeFromString(ReflectionUtils.java:31) ~[classes/:na]
+	at io.swagger.servlet.extensions.ServletReaderExtension.readImplicitParam(ServletReaderExtension.java:419) [classes/:na]
+	at io.swagger.servlet.extensions.ServletReaderExtension.applyImplicitParameters(ServletReaderExtension.java:398) [classes/:na]
+	at io.swagger.servlet.Reader.read(Reader.java:100) [classes/:na]
+	at io.swagger.servlet.Reader.read(Reader.java:58) [classes/:na]
+	at io.swagger.servlet.ReaderTest.readerTest1(ReaderTest.java:23) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177) [testng-6.10.jar:na]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129) [testng-6.10.jar:na]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112) [testng-6.10.jar:na]
+	at org.testng.TestRunner.privateRun(TestRunner.java:756) [testng-6.10.jar:na]
+	at org.testng.TestRunner.run(TestRunner.java:610) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289) [testng-6.10.jar:na]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-6.10.jar:na]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuites(TestNG.java:1133) [testng-6.10.jar:na]
+	at org.testng.TestNG.run(TestNG.java:1104) [testng-6.10.jar:na]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77) [surefire-testng-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159) [surefire-testng-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99) [surefire-testng-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106) [surefire-testng-2.12.4.jar:2.12.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189) [surefire-api-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75) [surefire-booter-2.12.4.jar:2.12.4]
+18:16:00.298 [main] ERROR io.swagger.util.ReflectionUtils - Failed to resolve 'fakeType' into class
+java.lang.ClassNotFoundException: fakeType
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_121]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_121]
+	at io.swagger.util.ReflectionUtils.loadClassByName(ReflectionUtils.java:49) ~[classes/:na]
+	at io.swagger.util.ReflectionUtils.typeFromString(ReflectionUtils.java:31) ~[classes/:na]
+	at io.swagger.servlet.extensions.ServletReaderExtension.readImplicitParam(ServletReaderExtension.java:419) [classes/:na]
+	at io.swagger.servlet.extensions.ServletReaderExtension.applyImplicitParameters(ServletReaderExtension.java:398) [classes/:na]
+	at io.swagger.servlet.extensions.ImplicitParametersTest.applyImplicitParametersTest(ImplicitParametersTest.java:31) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177) [testng-6.10.jar:na]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129) [testng-6.10.jar:na]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112) [testng-6.10.jar:na]
+	at org.testng.TestRunner.privateRun(TestRunner.java:756) [testng-6.10.jar:na]
+	at org.testng.TestRunner.run(TestRunner.java:610) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289) [testng-6.10.jar:na]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-6.10.jar:na]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuites(TestNG.java:1133) [testng-6.10.jar:na]
+	at org.testng.TestNG.run(TestNG.java:1104) [testng-6.10.jar:na]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77) [surefire-testng-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159) [surefire-testng-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99) [surefire-testng-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106) [surefire-testng-2.12.4.jar:2.12.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189) [surefire-api-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75) [surefire-booter-2.12.4.jar:2.12.4]
+18:16:00.301 [main] ERROR io.swagger.util.ReflectionUtils - Failed to resolve 'fakeType' into class
+java.lang.ClassNotFoundException: fakeType
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_121]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) ~[na:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_121]
+	at io.swagger.util.ReflectionUtils.loadClassByName(ReflectionUtils.java:49) ~[classes/:na]
+	at io.swagger.util.ReflectionUtils.typeFromString(ReflectionUtils.java:31) ~[classes/:na]
+	at io.swagger.servlet.extensions.ServletReaderExtension.readImplicitParam(ServletReaderExtension.java:419) [classes/:na]
+	at io.swagger.servlet.extensions.ServletReaderExtension.applyImplicitParameters(ServletReaderExtension.java:398) [classes/:na]
+	at io.swagger.servlet.extensions.ImplicitParametersTest.detailedTest(ImplicitParametersTest.java:40) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851) [testng-6.10.jar:na]
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177) [testng-6.10.jar:na]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129) [testng-6.10.jar:na]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112) [testng-6.10.jar:na]
+	at org.testng.TestRunner.privateRun(TestRunner.java:756) [testng-6.10.jar:na]
+	at org.testng.TestRunner.run(TestRunner.java:610) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340) [testng-6.10.jar:na]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289) [testng-6.10.jar:na]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-6.10.jar:na]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218) [testng-6.10.jar:na]
+	at org.testng.TestNG.runSuites(TestNG.java:1133) [testng-6.10.jar:na]
+	at org.testng.TestNG.run(TestNG.java:1104) [testng-6.10.jar:na]
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77) [surefire-testng-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159) [surefire-testng-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99) [surefire-testng-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106) [surefire-testng-2.12.4.jar:2.12.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189) [surefire-api-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75) [surefire-booter-2.12.4.jar:2.12.4]
+Tests run: 78, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 24.067 sec <<< FAILURE!
+readerTest1(io.swagger.servlet.ReaderTest)  Time elapsed: 16.367 sec  <<< FAILURE!
+java.lang.AssertionError: expected object to not be null
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.assertNotNull(Assert.java:423)
+	at org.testng.Assert.assertNotNull(Assert.java:408)
+	at io.swagger.servlet.ReaderTest.readerTest1(ReaderTest.java:46)
+
+getPathTest(io.swagger.servlet.extensions.PathGetterTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: expected [/tests/resources/testMethod3] but found [/tests/resources/users]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at io.swagger.servlet.extensions.PathGetterTest.getPathTest(PathGetterTest.java:36)
+
+getPathWithoutApiTest(io.swagger.servlet.extensions.PathGetterTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: expected [/tests/testMethod3] but found [/tests/users]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:190)
+	at org.testng.Assert.assertEquals(Assert.java:200)
+	at io.swagger.servlet.extensions.PathGetterTest.getPathWithoutApiTest(PathGetterTest.java:44)
+
+
+Results :
+
+Failed tests:   readerTest1(io.swagger.servlet.ReaderTest): expected object to not be null
+  getPathTest(io.swagger.servlet.extensions.PathGetterTest): expected [/tests/resources/testMethod3] but found [/tests/resources/users]
+  getPathWithoutApiTest(io.swagger.servlet.extensions.PathGetterTest): expected [/tests/testMethod3] but found [/tests/users]
+
+Tests run: 78, Failures: 3, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] swagger-project .................................... SUCCESS [  8.266 s]
+[INFO] swagger-annotations ................................ SUCCESS [ 10.652 s]
+[INFO] swagger-models ..................................... SUCCESS [ 43.719 s]
+[INFO] swagger-core ....................................... SUCCESS [ 35.766 s]
+[INFO] swagger-jaxrs ...................................... SUCCESS [ 19.352 s]
+[INFO] swagger-jersey-jaxrs ............................... SUCCESS [ 20.810 s]
+[INFO] swagger-mule ....................................... SUCCESS [  9.517 s]
+[INFO] swagger-jersey2-jaxrs (Jersey 2.x support) ......... SUCCESS [  8.805 s]
+[INFO] swagger-hibernate-validations ...................... SUCCESS [ 21.827 s]
+[INFO] swagger-servlet .................................... FAILURE [ 39.976 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 03:47 min
+[INFO] Finished at: 2017-03-08T18:16:04+01:00
+[INFO] Final Memory: 45M/401M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project swagger-servlet: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/repairnator/workspace/20170308_123638/swagger-api/swagger-core/208924265/modules/swagger-servlet/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :swagger-servlet
