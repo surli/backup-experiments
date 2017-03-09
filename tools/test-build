@@ -1,0 +1,57 @@
+#!/bin/sh
+# This script is used for testing the build, primarily for use
+# with travis, but may be used by hand as well.
+
+set -e
+set -x
+
+# Clean up
+clean()
+{
+    mvn clean
+}
+
+# Test maven build
+maven()
+{
+    mvn
+}
+
+# Test Ant build targets
+antbuild()
+{
+    (
+      ant clean compile
+      ant clean compile-autogen
+      ant clean compile-formats-api
+      ant clean compile-jai
+      ant clean compile-bio-formats-plugins
+      ant clean compile-formats-bsd
+      ant clean compile-formats-gpl
+      ant clean compile-bio-formats-tools
+      ant clean compile-tests
+      ant clean compile-turbojpeg
+      ant clean utils
+      ant -Dsphinx.warnopts=$SPHINXOPTS clean-docs-sphinx docs-sphinx
+    )
+}
+
+for arg in "$@"
+do
+    case $arg in
+        clean)
+            clean ;;
+        maven)
+            maven ;;
+        ant)
+            antbuild ;;
+        all)
+            clean && maven && antbuild;;
+        *)
+            echo "Invalid argument: \"$arg\"" >&2
+            exit 1
+            ;;
+    esac
+done
+
+exit 0
