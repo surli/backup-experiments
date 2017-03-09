@@ -1,0 +1,166 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] dropwizard-consul
+[INFO] Dropwizard Consul Bundle
+[INFO] Dropwizard Consul Load Balancer
+[INFO] Dropwizard Consul Example
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building dropwizard-consul 1.0.6-2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ dropwizard-consul ---
+[INFO] Skipping Rule Enforcement.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Dropwizard Consul Bundle 1.0.6-2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ consul-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ consul-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170309_003605/smoketurner/dropwizard-consul/209105212/consul-core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ consul-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ consul-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/repairnator/workspace/20170309_003605/smoketurner/dropwizard-consul/209105212/consul-core/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ consul-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ consul-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 4.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 83.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 1269.9 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.smoketurner.dropwizard.consul.core.ConsulAdvertiserTest
+03:51:46.552 [main] DEBUG org.eclipse.jetty.util.log - Logging to Logger[org.eclipse.jetty.util.log] via org.eclipse.jetty.util.log.Slf4jLog
+03:51:46.639 [main] INFO org.eclipse.jetty.util.log - Logging initialized @4320ms to org.eclipse.jetty.util.log.Slf4jLog
+03:51:46.900 [main] INFO com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - Deregistering service ID "test"
+03:51:46.952 [main] INFO com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - Using "8888" as servicePort from configuration file
+03:51:46.952 [main] INFO com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - Using "127.0.0.1" as serviceAddress from configuration file
+03:51:46.953 [main] INFO com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - Registering service (test) [test] on port 8888 (admin port 8081) with a health check of 1s
+03:51:47.504 [main] INFO com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - Service (test) [test] already registered
+03:51:47.506 [main] INFO com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - Registering service (test) [test] on port 8080 (admin port 8081) with a health check of 1s
+03:51:47.513 [main] INFO com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - Deregistering service ID "test"
+03:51:47.519 [main] ERROR com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - Failed to deregister service from Consul
+com.orbitz.consul.ConsulException: error
+	at com.smoketurner.dropwizard.consul.core.ConsulAdvertiser.deregister(ConsulAdvertiser.java:184)
+	at com.smoketurner.dropwizard.consul.core.ConsulAdvertiserTest.testDeregisterException(ConsulAdvertiserTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+03:51:47.693 [main] INFO com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - Using "[test, second-test]" as tags from the configuration file
+03:51:47.694 [main] INFO com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - Registering service (test) [test] on port 8080 (admin port 8081) with a health check of 1s
+03:51:47.702 [main] INFO com.smoketurner.dropwizard.consul.core.ConsulAdvertiser - No service registered with ID "test"
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.467 sec - in com.smoketurner.dropwizard.consul.core.ConsulAdvertiserTest
+Running com.smoketurner.dropwizard.consul.health.ConsulHealthCheckTest
+03:51:47.715 [main] WARN com.smoketurner.dropwizard.consul.health.ConsulHealthCheck - Unable to ping consul
+com.orbitz.consul.ConsulException: error
+	at com.smoketurner.dropwizard.consul.health.ConsulHealthCheck.check(ConsulHealthCheck.java:45)
+	at com.smoketurner.dropwizard.consul.health.ConsulHealthCheckTest.testCheckUnhealthy(ConsulHealthCheckTest.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec <<< FAILURE! - in com.smoketurner.dropwizard.consul.health.ConsulHealthCheckTest
+testCheckUnhealthy(com.smoketurner.dropwizard.consul.health.ConsulHealthCheckTest)  Time elapsed: 0.031 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...17-03-09T03:51:47.71[8]+01:00}> but was:<...17-03-09T03:51:47.71[6]+01:00}>
+	at com.smoketurner.dropwizard.consul.health.ConsulHealthCheckTest.testCheckUnhealthy(ConsulHealthCheckTest.java:53)
+
+Running com.smoketurner.dropwizard.consul.ConsulBundleTest
+03:51:48.444 [main] WARN com.smoketurner.dropwizard.consul.ConsulBundle - Consul bundle disabled.
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.643 sec - in com.smoketurner.dropwizard.consul.ConsulBundleTest
+Running com.smoketurner.dropwizard.consul.managed.ConsulAdvertiserManagerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 sec - in com.smoketurner.dropwizard.consul.managed.ConsulAdvertiserManagerTest
+
+Results :
+
+Failed tests: 
+  ConsulHealthCheckTest.testCheckUnhealthy:53 expected:<...17-03-09T03:51:47.71[8]+01:00}> but was:<...17-03-09T03:51:47.71[6]+01:00}>
+
+Tests run: 14, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] dropwizard-consul .................................. SUCCESS [  1.324 s]
+[INFO] Dropwizard Consul Bundle ........................... FAILURE [ 11.013 s]
+[INFO] Dropwizard Consul Load Balancer .................... SKIPPED
+[INFO] Dropwizard Consul Example .......................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 13.300 s
+[INFO] Finished at: 2017-03-09T03:51:48+01:00
+[INFO] Final Memory: 26M/318M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project consul-core: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/repairnator/workspace/20170309_003605/smoketurner/dropwizard-consul/209105212/consul-core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :consul-core
