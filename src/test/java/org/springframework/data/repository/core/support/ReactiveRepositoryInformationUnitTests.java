@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 the original author or authors.
+ * Copyright 2016-2017 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package org.springframework.data.repository.core.support;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
+import io.reactivex.Flowable;
 import rx.Observable;
 
 import java.io.Serializable;
@@ -28,16 +29,18 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.reactivestreams.Publisher;
-import org.springframework.data.repository.core.RepositoryMetadata;
+import org.springframework.data.repository.core.RepositoryInformation;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.data.repository.reactive.ReactiveSortingRepository;
 import org.springframework.data.repository.reactive.RxJava1CrudRepository;
+import org.springframework.data.repository.reactive.RxJava2CrudRepository;
 
 /**
  * Unit tests for {@link ReactiveRepositoryInformation}.
  *
  * @author Mark Paluch
  * @author Oliver Gierke
+ * @author Christoph Strobl
  */
 @RunWith(MockitoJUnitRunner.class)
 public class ReactiveRepositoryInformationUnitTests {
@@ -45,26 +48,38 @@ public class ReactiveRepositoryInformationUnitTests {
 	static final Class<ReactiveJavaInterfaceWithGenerics> REPOSITORY = ReactiveJavaInterfaceWithGenerics.class;
 
 	@Test // DATACMNS-836
-	public void discoversMethodWithoutComparingReturnType() throws Exception {
+	public void discoversRxJava1MethodWithoutComparingReturnType() throws Exception {
 
-		Method method = RxJava1InterfaceWithGenerics.class.getMethod("deleteAll");
-		RepositoryMetadata metadata = new DefaultRepositoryMetadata(RxJava1InterfaceWithGenerics.class);
-		DefaultRepositoryInformation information = new DefaultRepositoryInformation(metadata, REPOSITORY, Optional.empty());
+		Method reference = extractTargetMethodFromRepository(RxJava1InterfaceWithGenerics.class, "deleteAll");
 
-		Method reference = information.getTargetClassMethod(method);
 		assertEquals(ReactiveCrudRepository.class, reference.getDeclaringClass());
 		assertThat(reference.getName(), is("deleteAll"));
 	}
 
 	@Test // DATACMNS-836
-	public void discoversMethodWithConvertibleArguments() throws Exception {
+	public void discoversRxJava1MethodWithConvertibleArguments() throws Exception {
 
-		Method method = RxJava1InterfaceWithGenerics.class.getMethod("save", Observable.class);
-		RepositoryMetadata metadata = new DefaultRepositoryMetadata(RxJava1InterfaceWithGenerics.class);
-		DefaultRepositoryInformation information = new ReactiveRepositoryInformation(metadata, REPOSITORY,
-				Optional.empty());
+		Method reference = extractTargetMethodFromRepository(RxJava1InterfaceWithGenerics.class, "save", Observable.class);
 
-		Method reference = information.getTargetClassMethod(method);
+		assertEquals(ReactiveCrudRepository.class, reference.getDeclaringClass());
+		assertThat(reference.getName(), is("save"));
+		assertThat(reference.getParameterTypes()[0], is(equalTo(Publisher.class)));
+	}
+
+	@Test // DATACMNS-988
+	public void discoversRxJava2MethodWithoutComparingReturnType() throws Exception {
+
+		Method reference = extractTargetMethodFromRepository(RxJava2InterfaceWithGenerics.class, "deleteAll");
+
+		assertEquals(ReactiveCrudRepository.class, reference.getDeclaringClass());
+		assertThat(reference.getName(), is("deleteAll"));
+	}
+
+	@Test // DATACMNS-988
+	public void discoversRxJava2MethodWithConvertibleArguments() throws Exception {
+
+		Method reference = extractTargetMethodFromRepository(RxJava2InterfaceWithGenerics.class, "save", Flowable.class);
+
 		assertEquals(ReactiveCrudRepository.class, reference.getDeclaringClass());
 		assertThat(reference.getName(), is("save"));
 		assertThat(reference.getParameterTypes()[0], is(equalTo(Publisher.class)));
@@ -73,12 +88,8 @@ public class ReactiveRepositoryInformationUnitTests {
 	@Test // DATACMNS-836
 	public void discoversMethodAssignableArguments() throws Exception {
 
-		Method method = ReactiveSortingRepository.class.getMethod("save", Publisher.class);
-		RepositoryMetadata metadata = new DefaultRepositoryMetadata(ReactiveJavaInterfaceWithGenerics.class);
-		DefaultRepositoryInformation information = new ReactiveRepositoryInformation(metadata, REPOSITORY,
-				Optional.empty());
+		Method reference = extractTargetMethodFromRepository(ReactiveSortingRepository.class, "save", Publisher.class);
 
-		Method reference = information.getTargetClassMethod(method);
 		assertEquals(ReactiveCrudRepository.class, reference.getDeclaringClass());
 		assertThat(reference.getName(), is("save"));
 		assertThat(reference.getParameterTypes()[0], is(equalTo(Publisher.class)));
@@ -87,12 +98,9 @@ public class ReactiveRepositoryInformationUnitTests {
 	@Test // DATACMNS-836
 	public void discoversMethodExactIterableArguments() throws Exception {
 
-		Method method = ReactiveJavaInterfaceWithGenerics.class.getMethod("save", Iterable.class);
-		RepositoryMetadata metadata = new DefaultRepositoryMetadata(ReactiveJavaInterfaceWithGenerics.class);
-		DefaultRepositoryInformation information = new ReactiveRepositoryInformation(metadata, REPOSITORY,
-				Optional.empty());
+		Method reference = extractTargetMethodFromRepository(ReactiveJavaInterfaceWithGenerics.class, "save",
+				Iterable.class);
 
-		Method reference = information.getTargetClassMethod(method);
 		assertEquals(ReactiveCrudRepository.class, reference.getDeclaringClass());
 		assertThat(reference.getName(), is("save"));
 		assertThat(reference.getParameterTypes()[0], is(equalTo(Iterable.class)));
@@ -101,18 +109,24 @@ public class ReactiveRepositoryInformationUnitTests {
 	@Test // DATACMNS-836
 	public void discoversMethodExactObjectArguments() throws Exception {
 
-		Method method = ReactiveJavaInterfaceWithGenerics.class.getMethod("save", Object.class);
-		RepositoryMetadata metadata = new DefaultRepositoryMetadata(ReactiveJavaInterfaceWithGenerics.class);
-		DefaultRepositoryInformation information = new ReactiveRepositoryInformation(metadata, REPOSITORY,
-				Optional.empty());
+		Method reference = extractTargetMethodFromRepository(ReactiveJavaInterfaceWithGenerics.class, "save", Object.class);
 
-		Method reference = information.getTargetClassMethod(method);
 		assertEquals(ReactiveCrudRepository.class, reference.getDeclaringClass());
 		assertThat(reference.getName(), is("save"));
 		assertThat(reference.getParameterTypes()[0], is(equalTo(Object.class)));
 	}
 
+	private Method extractTargetMethodFromRepository(Class<?> repositoryType, String methodName, Class... args)
+			throws NoSuchMethodException {
+
+		RepositoryInformation information = new ReactiveRepositoryInformation(new DefaultRepositoryMetadata(repositoryType),
+				REPOSITORY, Optional.empty());
+		return information.getTargetClassMethod(repositoryType.getMethod(methodName, args));
+	}
+
 	interface RxJava1InterfaceWithGenerics extends RxJava1CrudRepository<User, String> {}
+
+	interface RxJava2InterfaceWithGenerics extends RxJava2CrudRepository<User, String> {}
 
 	interface ReactiveJavaInterfaceWithGenerics extends ReactiveCrudRepository<User, String> {}
 
