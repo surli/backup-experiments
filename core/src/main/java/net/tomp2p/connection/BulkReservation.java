@@ -45,13 +45,13 @@ import net.tomp2p.p2p.RoutingConfiguration;
 
 /**
  * Reserves a block of connections.
- * 
+ *
  * @author Thomas Bocek
- * 
+ *
  */
-public class Reservation {
-	
-	private static final Logger LOG = LoggerFactory.getLogger(Reservation.class);
+public class BulkReservation {
+
+	private static final Logger LOG = LoggerFactory.getLogger(BulkReservation.class);
 
 	private final int maxPermitsUDP;
 	private final int maxPermitsTCP;
@@ -80,7 +80,7 @@ public class Reservation {
 
 	/**
 	 * Creates a new reservation class with the 3 permits contained in the provided configuration.
-	 * 
+	 *
 	 * @param workerGroup
 	 *            The worker group for both UDP and TCP channels. This will not
 	 *            be shutdown in this class, you need to shutdown it outside.
@@ -90,7 +90,8 @@ public class Reservation {
 	 *            TCP connections, maxPermitsPermanentTCP: the number of maximum
 	 *            permanent TCP connections
 	 */
-	public Reservation(final EventLoopGroup workerGroup, final ChannelClientConfiguration channelClientConfiguration, final PeerBean peerBean) {
+	public BulkReservation(final EventLoopGroup workerGroup,
+                final ChannelClientConfiguration channelClientConfiguration, final PeerBean peerBean) {
 		this.workerGroup = workerGroup;
 		this.maxPermitsUDP = channelClientConfiguration.maxPermitsUDP();
 		this.maxPermitsTCP = channelClientConfiguration.maxPermitsTCP();
@@ -99,11 +100,11 @@ public class Reservation {
 		this.channelClientConfiguration = channelClientConfiguration;
 		this.peerBean = peerBean;
 	}
-        
+
         public int availablePermitsUDP() {
             return semaphoreUPD.availablePermits();
         }
-        
+
         public int availablePermitsTCP() {
             return semaphoreTCP.availablePermits();
         }
@@ -118,7 +119,7 @@ public class Reservation {
 
 	/**
 	 * Calculates the number of required connections for routing and request messages.
-	 * 
+	 *
 	 * @param routingConfiguration
 	 *            Contains the number of routing requests in parallel
 	 * @param requestP2PConfiguration
@@ -153,11 +154,11 @@ public class Reservation {
 		LOG.debug("Reservation UDP={}, TCP={}", nrConnectionsUDP, nrConnectionsTCP);
 		return create(nrConnectionsUDP, nrConnectionsTCP);
 	}
-        
+
         public FutureChannelCreator createTCP(final int permitsTCP) {
             return create(0, permitsTCP);
         }
-        
+
         public FutureChannelCreator createUDP(final int permitsUDP) {
             return create(permitsUDP, 0);
         }
@@ -167,7 +168,7 @@ public class Reservation {
 	 * {@link ChannelCreator#shutdown()} to release all resources. This needs to
 	 * be done in any case, whether FutureChannelCreator returns failed or
 	 * success!
-	 * 
+	 *
 	 * @param permitsUDP
 	 *            The number of short-lived UDP connections
 	 * @param permitsTCP
@@ -178,7 +179,7 @@ public class Reservation {
             //adjust values
             //for each TCP connection we need 1 udp for possible RCON, and 3 for HOLEPUNCHING
             final int permitsUDP = permitsUDPUnadjusted + (permitsTCP * 3);
-            
+
 		if (permitsUDP > maxPermitsUDP) {
 			throw new IllegalArgumentException(String.format("Cannot acquire more UDP connections (%s) than maximally allowed (%s).", permitsUDP, maxPermitsUDP));
 		}
@@ -192,8 +193,8 @@ public class Reservation {
 				return futureChannelCreator.failed("Shutting down.");
 			}
 
-			FutureDone<Void> futureChannelCreationDone = new FutureDone<Void>();
-			futureChannelCreationDone.addListener(new BaseFutureAdapter<FutureDone<Void>>() {
+			FutureDone<Void> futureChannelCreationShutdown = new FutureDone<Void>();
+			futureChannelCreationShutdown.addListener(new BaseFutureAdapter<FutureDone<Void>>() {
 				@Override
 				public void operationComplete(final FutureDone<Void> future) throws Exception {
 					// release the permits in all cases
@@ -202,7 +203,7 @@ public class Reservation {
 					semaphoreTCP.release(permitsTCP);
 				}
 			});
-			executor.execute(new WaitReservation(futureChannelCreator, futureChannelCreationDone, permitsUDP,
+			executor.execute(new WaitReservation(futureChannelCreator, futureChannelCreationShutdown, permitsUDP,
 			        permitsTCP));
 			return futureChannelCreator;
 
@@ -213,7 +214,7 @@ public class Reservation {
 
 	/**
 	 * Shuts down all the channel creators.
-	 * 
+	 *
 	 * @return The future when the shutdown is complete
 	 */
 	public FutureDone<Void> shutdown() {
@@ -233,14 +234,14 @@ public class Reservation {
 
 		for (Runnable r : executor.shutdownNow()) {
                     WaitReservation wr = (WaitReservation) r;
-                    wr.futureChannelCreator().failed("Shutting down.");	
+                    wr.futureChannelCreator().failed("Shutting down.");
 		}
-		
+
 		final Collection<ChannelCreator> copyChannelCreators;
 		synchronized (channelCreators) {
 			copyChannelCreators = new ArrayList<ChannelCreator>(channelCreators);
 		}
-		
+
 
 		// the channelCreator does not change anymore from here on
 		final int size = copyChannelCreators.size();
@@ -275,7 +276,7 @@ public class Reservation {
 
 	/**
 	 * Adds a channel creator to the set and also adds it to the shutdown listener.
-	 * 
+	 *
 	 * @param channelCreator
 	 *            The channel creator
 	 */
@@ -293,9 +294,9 @@ public class Reservation {
 	 * Tries to reserve a channel creator. If too many channels already created,
 	 * wait until channels are closed. This waiter is for the short-lived
 	 * connections.
-	 * 
+	 *
 	 * @author Thomas Bocek
-	 * 
+	 *
 	 */
 	private class WaitReservation implements Runnable {
 		private final FutureChannelCreator futureChannelCreator;
@@ -306,7 +307,7 @@ public class Reservation {
 		/**
 		 * Creates a reservation that returns a {@link ChannelCreator} in a
 		 * future once we have the semaphore.
-		 * 
+		 *
 		 * @param futureChannelCreator
 		 *            The status of the creating
 		 * @param futureChannelCreationShutdown
@@ -348,9 +349,9 @@ public class Reservation {
 					futureChannelCreator.failed(e);
 					return;
 				}
-				
+
 				final InetAddress fromAddress;
-				
+
 				if(channelClientConfiguration.fromAddress() != null) {
 					fromAddress = channelClientConfiguration.fromAddress();
 				} else if(peerBean.serverPeerAddress() == null) {
@@ -360,7 +361,7 @@ public class Reservation {
 				} else {
 					fromAddress = peerBean.serverPeerAddress().ipv4Socket().ipv4().toInetAddress();
 				}
-				
+
 				LOG.debug("channel from {}", fromAddress);
 
 				channelCreator = new ChannelCreator(workerGroup, futureChannelCreationShutdown, permitsUDP, permitsTCP,
