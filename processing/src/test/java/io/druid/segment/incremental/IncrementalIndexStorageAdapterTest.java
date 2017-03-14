@@ -424,7 +424,6 @@ public class IncrementalIndexStorageAdapterTest
                         "billy"
                     )
                 );
-                int cardinality = dimSelector.getValueCardinality();
 
                 //index gets more rows at this point, while other thread is iterating over the cursor
                 try {
@@ -442,14 +441,16 @@ public class IncrementalIndexStorageAdapterTest
                   throw new RuntimeException(ex);
                 }
 
+                int totalCount = 0;
                 // and then, cursoring continues in the other thread
                 while (!cursor.isDone()) {
+                  totalCount++;
                   IndexedInts row = dimSelector.getRow();
-                  for (int i : row) {
-                    Assert.assertTrue(i < cardinality);
-                  }
+                  Assert.assertEquals(1, row.size());
                   cursor.advance();
                 }
+                // cursor can retrieve the latest added row
+                Assert.assertEquals(3, totalCount);
 
                 return null;
               }
