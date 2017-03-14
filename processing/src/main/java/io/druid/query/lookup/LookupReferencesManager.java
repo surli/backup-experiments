@@ -65,7 +65,8 @@ public class LookupReferencesManager
   @VisibleForTesting
   final BlockingQueue<Notice> queue = new LinkedBlockingDeque<>(10000);
 
-  private final LookupSnapshotTaker lookupSnapshotTaker;
+  @VisibleForTesting
+  final LookupSnapshotTaker lookupSnapshotTaker;
 
   @VisibleForTesting
   final LifecycleLock lifecycleLock = new LifecycleLock();

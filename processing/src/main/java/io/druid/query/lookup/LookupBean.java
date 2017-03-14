@@ -43,7 +43,7 @@ class LookupBean
       @JsonProperty("container") LookupExtractorFactoryContainer container
   )
   {
-    Preconditions.checkArgument(factory == null ^ container == null, "only one of factory or container should exist");
+    Preconditions.checkArgument(factory != null || container != null, "either one of factory or container must exist");
 
     this.name = name;
     this.container = container != null ? container : new LookupExtractorFactoryContainer(null, factory);
