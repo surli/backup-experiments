@@ -29,8 +29,6 @@ public final class MapParametricType
 {
     public static final MapParametricType MAP = new MapParametricType();
 
-    public TypeManager typeManager;
-
     private MapParametricType()
     {
     }
