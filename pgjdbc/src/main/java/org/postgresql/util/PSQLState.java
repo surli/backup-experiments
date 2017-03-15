@@ -37,6 +37,14 @@ public class PSQLState implements java.io.Serializable {
     return state != null ? state.hashCode() : 0;
   }
 
+  public static boolean isConnectionError(String psqlState) {
+      return PSQLState.CONNECTION_UNABLE_TO_CONNECT.getState().equals(psqlState) ||
+             PSQLState.CONNECTION_DOES_NOT_EXIST.getState().equals(psqlState) ||
+             PSQLState.CONNECTION_REJECTED.getState().equals(psqlState) ||
+             PSQLState.CONNECTION_FAILURE.getState().equals(psqlState) ||
+             PSQLState.CONNECTION_FAILURE_DURING_TRANSACTION.getState().equals(psqlState);
+  }
+
   // begin constant state codes
   public final static PSQLState UNKNOWN_STATE = new PSQLState("");
 
