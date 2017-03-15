@@ -4171,7 +4171,7 @@ public class DefaultDockerClientTest {
     assertThat(info.hostConfig().storageOpt().get("size"), is("20G"));
   }
 
-  @Test(expected = ContainerNotFoundException.class)
+  @Test
   public void testAutoRemoveWhenSetToTrue() throws Exception {
     requireDockerApiVersionAtLeast("1.25", "AutoRemove");
 
@@ -4187,16 +4187,14 @@ public class DefaultDockerClientTest {
         .build();
 
     final ContainerCreation container = sut.createContainer(config, randomName());
-
-    sut.startContainer(container.id());
-
     final ContainerInfo info = sut.inspectContainer(container.id());
     assertThat(info.hostConfig().autoRemove(), is(true));
-    assertThat(info.state().running(), equalTo(true));
 
+    sut.startContainer(container.id());
     sut.stopContainer(container.id(), 5);
 
     // A ContainerNotFoundException should be thrown since the container is removed when it stops
+    exception.expect(ContainerNotFoundException.class);
     sut.inspectContainer(container.id());
   }
 
