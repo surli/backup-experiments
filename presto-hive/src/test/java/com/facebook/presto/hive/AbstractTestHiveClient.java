@@ -72,7 +72,6 @@ import com.facebook.presto.spi.type.SqlTimestamp;
 import com.facebook.presto.spi.type.SqlVarbinary;
 import com.facebook.presto.spi.type.StandardTypes;
 import com.facebook.presto.spi.type.Type;
-import com.facebook.presto.spi.type.TypeManager;
 import com.facebook.presto.spi.type.TypeSignatureParameter;
 import com.facebook.presto.sql.gen.JoinCompiler;
 import com.facebook.presto.testing.MaterializedResult;
@@ -80,7 +79,6 @@ import com.facebook.presto.testing.MaterializedRow;
 import com.facebook.presto.testing.TestingConnectorSession;
 import com.facebook.presto.type.ArrayType;
 import com.facebook.presto.type.MapType;
-import com.facebook.presto.type.TypeRegistry;
 import com.facebook.presto.util.ImmutableCollectors;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -540,7 +538,6 @@ public abstract class AbstractTestHiveClient
         HdfsConfiguration hdfsConfiguration = new HiveHdfsConfiguration(new HdfsConfigurationUpdater(hiveClientConfig, new HiveS3Config()));
         hdfsEnvironment = new HdfsEnvironment(hdfsConfiguration, hiveClientConfig, new NoHdfsAuthentication());
         locationService = new HiveLocationService(hdfsEnvironment);
-        TypeManager typeManager = new TypeRegistry();
         JsonCodec<PartitionUpdate> partitionUpdateCodec = JsonCodec.jsonCodec(PartitionUpdate.class);
         metadataFactory = new HiveMetadataFactory(
                 connectorId,
@@ -555,7 +552,7 @@ public abstract class AbstractTestHiveClient
                 true,
                 HiveStorageFormat.RCBINARY,
                 1000,
-                typeManager,
+                TYPE_MANAGER,
                 locationService,
                 new TableParameterCodec(),
                 partitionUpdateCodec,
@@ -570,7 +567,7 @@ public abstract class AbstractTestHiveClient
                 hdfsEnvironment,
                 new HadoopDirectoryLister(),
                 newDirectExecutorService(),
-                new HiveCoercionPolicy(typeManager),
+                new HiveCoercionPolicy(TYPE_MANAGER),
                 100,
                 hiveClientConfig.getMinPartitionBatchSize(),
                 hiveClientConfig.getMaxPartitionBatchSize(),
@@ -582,7 +579,7 @@ public abstract class AbstractTestHiveClient
                 hdfsEnvironment,
                 metastoreClient,
                 new GroupByHashPageIndexerFactory(JOIN_COMPILER),
-                typeManager,
+                TYPE_MANAGER,
                 new HiveClientConfig(),
                 locationService,
                 partitionUpdateCodec);

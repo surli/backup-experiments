@@ -51,6 +51,6 @@ public final class MapParametricType
                 firstParameter.getKind() == ParameterKind.TYPE && secondParameter.getKind() == ParameterKind.TYPE,
                 "Expected key and type to be types, got %s",
                 parameters);
-        return new MapType(firstParameter.getType(), secondParameter.getType());
+        return new MapType(firstParameter.getType(), secondParameter.getType(), typeManager);
     }
 }
