@@ -16,10 +16,8 @@ package com.facebook.presto.operator.scalar;
 
 import com.facebook.presto.Session;
 import com.facebook.presto.type.ArrayType;
-import com.facebook.presto.type.MapType;
 import com.facebook.presto.type.RowType;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import org.testng.annotations.Test;
 
 import java.util.Optional;
@@ -35,6 +33,8 @@ import static com.facebook.presto.spi.type.VarcharType.VARCHAR;
 import static com.facebook.presto.spi.type.VarcharType.createUnboundedVarcharType;
 import static com.facebook.presto.spi.type.VarcharType.createVarcharType;
 import static com.facebook.presto.testing.TestingSession.testSessionBuilder;
+import static com.facebook.presto.util.StructuralTestUtil.mapType;
+import static com.google.common.collect.ImmutableMap.of;
 
 public class TestApplyFunction
         extends AbstractTestFunctions
@@ -129,7 +129,7 @@ public class TestApplyFunction
         assertFunction("apply(25.6, x -> x + 1.0)", DOUBLE, 26.6);
         assertFunction("apply(25.6, x -> x = 25.6)", BOOLEAN, true);
         assertFunction("apply(25.6, x -> CAST(x AS VARCHAR))", createUnboundedVarcharType(), "25.6");
-        assertFunction("apply(25.6, x -> MAP(ARRAY[x + 1], ARRAY[true]))", new MapType(DOUBLE, BOOLEAN), ImmutableMap.of(26.6, true));
+        assertFunction("apply(25.6, x -> MAP(ARRAY[x + 1], ARRAY[true]))", mapType(DOUBLE, BOOLEAN), of(26.6, true));
 
         assertFunction("apply(true, x -> if(x, 25, 26))", INTEGER, 25);
         assertFunction("apply(false, x -> if(x, 25.6, 28.9))", DOUBLE, 28.9);

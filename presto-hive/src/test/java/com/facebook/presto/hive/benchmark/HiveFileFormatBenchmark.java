@@ -61,6 +61,7 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+import static com.facebook.presto.hive.HiveTestUtils.TYPE_MANAGER;
 import static com.facebook.presto.hive.HiveTestUtils.createTestHdfsEnvironment;
 import static com.facebook.presto.spi.type.BigintType.BIGINT;
 import static com.facebook.presto.spi.type.DateType.DATE;
@@ -282,7 +283,7 @@ public class HiveFileFormatBenchmark
             @Override
             public TestData createTestData(FileFormat format)
             {
-                Type type = new MapType(createUnboundedVarcharType(), DOUBLE);
+                Type type = new MapType(createUnboundedVarcharType(), DOUBLE, TYPE_MANAGER);
                 Random random = new Random(1234);
 
                 PageBuilder pageBuilder = new PageBuilder(ImmutableList.of(type));
@@ -321,7 +322,7 @@ public class HiveFileFormatBenchmark
             @Override
             public TestData createTestData(FileFormat format)
             {
-                Type type = new MapType(createUnboundedVarcharType(), DOUBLE);
+                Type type = new MapType(createUnboundedVarcharType(), DOUBLE, TYPE_MANAGER);
                 Random random = new Random(1234);
 
                 PageBuilder pageBuilder = new PageBuilder(ImmutableList.of(type));
@@ -356,7 +357,7 @@ public class HiveFileFormatBenchmark
             @Override
             public TestData createTestData(FileFormat format)
             {
-                Type type = new MapType(INTEGER, DOUBLE);
+                Type type = new MapType(INTEGER, DOUBLE, TYPE_MANAGER);
                 Random random = new Random(1234);
 
                 PageBuilder pageBuilder = new PageBuilder(ImmutableList.of(type));
@@ -395,7 +396,7 @@ public class HiveFileFormatBenchmark
             @Override
             public TestData createTestData(FileFormat format)
             {
-                Type type = new MapType(INTEGER, DOUBLE);
+                Type type = new MapType(INTEGER, DOUBLE, TYPE_MANAGER);
                 Random random = new Random(1234);
 
                 PageBuilder pageBuilder = new PageBuilder(ImmutableList.of(type));
