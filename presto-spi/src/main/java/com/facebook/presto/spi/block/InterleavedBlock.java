@@ -67,6 +67,11 @@ public class InterleavedBlock
         this.sizeInBytes = new AtomicInteger(-1);
     }
 
+    public int getOffset()
+    {
+        return start;
+    }
+
     @Override
     public Block getRegion(int position, int length)
     {
