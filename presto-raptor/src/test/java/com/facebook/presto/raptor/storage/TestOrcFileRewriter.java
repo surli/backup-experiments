@@ -13,15 +13,20 @@
  */
 package com.facebook.presto.raptor.storage;
 
+import com.facebook.presto.block.BlockEncodingManager;
+import com.facebook.presto.metadata.FunctionRegistry;
 import com.facebook.presto.orc.OrcDataSource;
 import com.facebook.presto.orc.OrcRecordReader;
 import com.facebook.presto.raptor.storage.OrcFileRewriter.OrcFileInfo;
 import com.facebook.presto.spi.Page;
 import com.facebook.presto.spi.block.Block;
 import com.facebook.presto.spi.type.Type;
+import com.facebook.presto.spi.type.TypeManager;
 import com.facebook.presto.spi.type.TypeSignature;
+import com.facebook.presto.sql.analyzer.FeaturesConfig;
 import com.facebook.presto.type.ArrayType;
 import com.facebook.presto.type.MapType;
+import com.facebook.presto.type.TypeRegistry;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import io.airlift.json.JsonCodec;
@@ -80,9 +85,13 @@ public class TestOrcFileRewriter
     public void testRewrite()
             throws Exception
     {
+        TypeManager typeManager = new TypeRegistry();
+        // associate typeManager with a function registry
+        new FunctionRegistry(typeManager, new BlockEncodingManager(typeManager), new FeaturesConfig());
+
         ArrayType arrayType = new ArrayType(BIGINT);
         ArrayType arrayOfArrayType = new ArrayType(arrayType);
-        MapType mapType = new MapType(createVarcharType(5), BOOLEAN);
+        MapType mapType = new MapType(createVarcharType(5), BOOLEAN, typeManager);
         List<Long> columnIds = ImmutableList.of(3L, 7L, 9L, 10L, 11L);
         List<Type> columnTypes = ImmutableList.of(BIGINT, createVarcharType(20), arrayType, mapType, arrayOfArrayType);
 

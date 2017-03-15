@@ -33,7 +33,9 @@ import static com.facebook.presto.spi.type.DoubleType.DOUBLE;
 import static com.facebook.presto.spi.type.VarcharType.VARCHAR;
 import static com.facebook.presto.util.StructuralTestUtil.arrayBlockOf;
 import static com.facebook.presto.util.StructuralTestUtil.mapBlockOf;
+import static com.facebook.presto.util.StructuralTestUtil.mapType;
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.collect.ImmutableMap.of;
 
 public class TestMapUnionAggregation
 {
@@ -43,7 +45,7 @@ public class TestMapUnionAggregation
     public void testSimpleWithDuplicates()
             throws Exception
     {
-        MapType mapType = new MapType(DOUBLE, VARCHAR);
+        MapType mapType = mapType(DOUBLE, VARCHAR);
         InternalAggregationFunction aggFunc = metadata.getFunctionRegistry().getAggregateFunctionImplementation(
                 new Signature(NAME, AGGREGATE, mapType.getTypeSignature(), mapType.getTypeSignature()));
         assertAggregation(
@@ -54,7 +56,7 @@ public class TestMapUnionAggregation
                         mapBlockOf(DOUBLE, VARCHAR, ImmutableMap.of(23.0, "aaa", 33.0, "bbb", 53.0, "ddd")),
                         mapBlockOf(DOUBLE, VARCHAR, ImmutableMap.of(43.0, "ccc", 53.0, "ddd", 13.0, "eee"))));
 
-        mapType = new MapType(DOUBLE, BIGINT);
+        mapType = mapType(DOUBLE, BIGINT);
         aggFunc = metadata.getFunctionRegistry().getAggregateFunctionImplementation(
                 new Signature(NAME, AGGREGATE, mapType.getTypeSignature(), mapType.getTypeSignature()));
         assertAggregation(
@@ -65,7 +67,7 @@ public class TestMapUnionAggregation
                         mapBlockOf(DOUBLE, BIGINT, ImmutableMap.of(1.0, 99L, 2.0, 99L, 3.0, 99L)),
                         mapBlockOf(DOUBLE, BIGINT, ImmutableMap.of(1.0, 44L, 2.0, 44L, 4.0, 44L))));
 
-        mapType = new MapType(BOOLEAN, BIGINT);
+        mapType = mapType(BOOLEAN, BIGINT);
         aggFunc = metadata.getFunctionRegistry().getAggregateFunctionImplementation(
                 new Signature(NAME, AGGREGATE, mapType.getTypeSignature(), mapType.getTypeSignature()));
         assertAggregation(
@@ -81,7 +83,7 @@ public class TestMapUnionAggregation
     public void testSimpleWithNulls()
             throws Exception
     {
-        MapType mapType = new MapType(DOUBLE, VARCHAR);
+        MapType mapType = mapType(DOUBLE, VARCHAR);
         InternalAggregationFunction aggFunc = metadata.getFunctionRegistry().getAggregateFunctionImplementation(
                 new Signature(NAME, AGGREGATE, mapType.getTypeSignature(), mapType.getTypeSignature()));
 
@@ -101,7 +103,7 @@ public class TestMapUnionAggregation
     public void testStructural()
             throws Exception
     {
-        MapType mapType = new MapType(DOUBLE, new ArrayType(VARCHAR));
+        MapType mapType = mapType(DOUBLE, new ArrayType(VARCHAR));
         InternalAggregationFunction aggFunc = metadata.getFunctionRegistry().getAggregateFunctionImplementation(
                 new Signature(NAME, AGGREGATE, mapType.getTypeSignature(), mapType.getTypeSignature()));
         assertAggregation(
@@ -134,7 +136,7 @@ public class TestMapUnionAggregation
                                         3.0,
                                         ImmutableList.of("w", "z")))));
 
-        mapType = new MapType(DOUBLE, new MapType(VARCHAR, VARCHAR));
+        mapType = mapType(DOUBLE, mapType(VARCHAR, VARCHAR));
         aggFunc = metadata.getFunctionRegistry().getAggregateFunctionImplementation(
                 new Signature(NAME, AGGREGATE, mapType.getTypeSignature(), mapType.getTypeSignature()));
         assertAggregation(
@@ -147,20 +149,20 @@ public class TestMapUnionAggregation
                         mapType,
                         mapBlockOf(
                                 DOUBLE,
-                                new MapType(VARCHAR, VARCHAR),
-                                ImmutableMap.of(
+                                mapType(VARCHAR, VARCHAR),
+                                of(
                                         1.0,
-                                        ImmutableMap.of("a", "b"),
+                                        of("a", "b"),
                                         2.0,
-                                        ImmutableMap.of("c", "d"))),
+                                        of("c", "d"))),
                         mapBlockOf(
                                 DOUBLE,
-                                new MapType(VARCHAR, VARCHAR),
-                                ImmutableMap.of(
+                                mapType(VARCHAR, VARCHAR),
+                                of(
                                         3.0,
-                                        ImmutableMap.of("e", "f")))));
+                                        of("e", "f")))));
 
-        mapType = new MapType(new ArrayType(VARCHAR), DOUBLE);
+        mapType = mapType(new ArrayType(VARCHAR), DOUBLE);
         aggFunc = metadata.getFunctionRegistry().getAggregateFunctionImplementation(
                 new Signature(NAME, AGGREGATE, mapType.getTypeSignature(), mapType.getTypeSignature()));
         assertAggregation(

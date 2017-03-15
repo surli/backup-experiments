@@ -22,6 +22,7 @@ import com.facebook.presto.spi.block.InterleavedBlockBuilder;
 import com.facebook.presto.spi.type.AbstractType;
 import com.facebook.presto.spi.type.StandardTypes;
 import com.facebook.presto.spi.type.Type;
+import com.facebook.presto.spi.type.TypeManager;
 import com.facebook.presto.spi.type.TypeSignature;
 import com.facebook.presto.spi.type.TypeSignatureParameter;
 import com.google.common.collect.ImmutableList;
@@ -43,7 +44,7 @@ public class MapType
     private static final String MAP_NULL_ELEMENT_MSG = "MAP comparison not supported for null value elements";
     private static final int EXPECTED_BYTES_PER_ENTRY = 32;
 
-    public MapType(Type keyType, Type valueType)
+    public MapType(Type keyType, Type valueType, TypeManager typeManager)
     {
         super(new TypeSignature(StandardTypes.MAP,
                 TypeSignatureParameter.of(keyType.getTypeSignature()),
