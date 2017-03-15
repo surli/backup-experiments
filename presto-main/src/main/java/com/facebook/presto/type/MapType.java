@@ -14,11 +14,11 @@
 package com.facebook.presto.type;
 
 import com.facebook.presto.spi.ConnectorSession;
-import com.facebook.presto.spi.block.ArrayBlockBuilder;
 import com.facebook.presto.spi.block.Block;
 import com.facebook.presto.spi.block.BlockBuilder;
 import com.facebook.presto.spi.block.BlockBuilderStatus;
-import com.facebook.presto.spi.block.InterleavedBlockBuilder;
+import com.facebook.presto.spi.block.MapBlockBuilder;
+import com.facebook.presto.spi.function.OperatorType;
 import com.facebook.presto.spi.type.AbstractType;
 import com.facebook.presto.spi.type.StandardTypes;
 import com.facebook.presto.spi.type.Type;
@@ -27,11 +27,14 @@ import com.facebook.presto.spi.type.TypeSignature;
 import com.facebook.presto.spi.type.TypeSignatureParameter;
 import com.google.common.collect.ImmutableList;
 
+import java.lang.invoke.MethodHandle;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.facebook.presto.spi.block.MethodHandleUtil.compose;
+import static com.facebook.presto.spi.block.MethodHandleUtil.nativeValueGetter;
 import static com.facebook.presto.type.TypeUtils.checkElementNotNull;
 import static com.facebook.presto.type.TypeUtils.hashPosition;
 import static com.google.common.base.Preconditions.checkArgument;
@@ -44,6 +47,10 @@ public class MapType
     private static final String MAP_NULL_ELEMENT_MSG = "MAP comparison not supported for null value elements";
     private static final int EXPECTED_BYTES_PER_ENTRY = 32;
 
+    private final MethodHandle keyNativeHashCode;
+    private final MethodHandle keyBlockHashCode;
+    private final MethodHandle keyBlockNativeEquals;
+
     public MapType(Type keyType, Type valueType, TypeManager typeManager)
     {
         super(new TypeSignature(StandardTypes.MAP,
@@ -53,15 +60,17 @@ public class MapType
         checkArgument(keyType.isComparable(), "key type must be comparable");
         this.keyType = keyType;
         this.valueType = valueType;
+
+        this.keyNativeHashCode = typeManager.resolveOperator(OperatorType.HASH_CODE, ImmutableList.of(keyType));
+        MethodHandle keyNativeEquals = typeManager.resolveOperator(OperatorType.EQUAL, ImmutableList.of(keyType, keyType));
+        this.keyBlockHashCode = compose(this.keyNativeHashCode, nativeValueGetter(keyType));
+        this.keyBlockNativeEquals = compose(keyNativeEquals, nativeValueGetter(keyType));
     }
 
     @Override
     public BlockBuilder createBlockBuilder(BlockBuilderStatus blockBuilderStatus, int expectedEntries, int expectedBytesPerEntry)
     {
-        return new ArrayBlockBuilder(
-                new InterleavedBlockBuilder(getTypeParameters(), blockBuilderStatus, expectedEntries * 2, expectedBytesPerEntry),
-                blockBuilderStatus,
-                expectedEntries);
+        return new MapBlockBuilder(keyType, valueType, keyNativeHashCode, keyBlockHashCode, keyBlockNativeEquals, blockBuilderStatus, expectedEntries);
     }
 
     @Override
