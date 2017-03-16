@@ -1,0 +1,432 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 3.16
+[INFO] os.detected.version.major: 3
+[INFO] os.detected.version.minor: 16
+[INFO] os.detected.release: debian
+[INFO] os.detected.release.version: 8
+[INFO] os.detected.release.like.debian: true
+[INFO] os.detected.classifier: linux-x86_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Brave (parent)
+[INFO] brave
+[INFO] brave-core
+[INFO] brave-http
+[INFO] Brave benchmarks
+[INFO] brave-http-tests
+[INFO] brave-core-spring
+[INFO] brave-resteasy-spring
+[INFO] brave-jaxrs2
+[INFO] brave-resteasy3-spring
+[INFO] brave-spancollector-http
+[INFO] brave-spancollector-scribe
+[INFO] brave-spancollector-kafka
+[INFO] brave-spancollector-local
+[INFO] brave-sampler-zookeeper
+[INFO] brave-web-servlet-filter
+[INFO] brave-jersey
+[INFO] brave-jersey2
+[INFO] brave-grpc
+[INFO] brave-apache-http-interceptors
+[INFO] brave-spring-web-servlet-interceptor
+[INFO] brave-spring-resttemplate-interceptors
+[INFO] brave-mysql
+[INFO] brave-okhttp
+[INFO] brave-p6spy
+[INFO] brave-cxf3
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Brave (parent) 4.0.7-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ brave-parent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.2.0:manifest (default) @ brave-parent ---
+[WARNING] Ignoring project type pom - supportedProjectTypes = [jar, bundle]
+[INFO] 
+[INFO] --- retrolambda-maven-plugin:2.3.0:process-main (default) @ brave-parent ---
+[INFO] Processing classes with Retrolambda
+Bytecode version: 51 (Java 7)
+Default methods:  false
+Input directory:  /root/workspace/openzipkin/brave/211547189/target/classes
+Output directory: /root/workspace/openzipkin/brave/211547189/target/classes
+Classpath:        [/root/workspace/openzipkin/brave/211547189/target/classes]
+Included files:   all
+Agent enabled:    false
+Nothing to do; not a directory: /root/workspace/openzipkin/brave/211547189/target/classes
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (default) @ brave-parent ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building brave 4.0.7-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ brave ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/openzipkin/brave/211547189/brave/src/main/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ brave ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.2.0:manifest (default) @ brave ---
+[INFO] 
+[INFO] --- retrolambda-maven-plugin:2.3.0:process-main (default) @ brave ---
+[INFO] Processing classes with Retrolambda
+Bytecode version: 50 (Java 6)
+Default methods:  false
+Input directory:  /root/workspace/openzipkin/brave/211547189/brave/target/classes
+Output directory: /root/workspace/openzipkin/brave/211547189/brave/target/classes
+Classpath:        [/root/workspace/openzipkin/brave/211547189/brave/target/classes, /root/./workspace/openzipkin/brave/211547189/.m2/io/zipkin/java/zipkin/1.19.2/zipkin-1.19.2.jar, /root/./workspace/openzipkin/brave/211547189/.m2/io/zipkin/reporter/zipkin-reporter/0.6.12/zipkin-reporter-0.6.12.jar, /root/./workspace/openzipkin/brave/211547189/.m2/org/jvnet/animal-sniffer-annotation/1.0/animal-sniffer-annotation-1.0.jar, /root/./workspace/openzipkin/brave/211547189/.m2/com/google/auto/value/auto-value/1.4-rc2/auto-value-1.4-rc2.jar]
+Included files:   all
+Agent enabled:    false
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (default) @ brave ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ brave ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ brave ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 26 source files to /root/workspace/openzipkin/brave/211547189/brave/target/test-classes
+[INFO] /root/workspace/openzipkin/brave/211547189/brave/src/test/java/brave/features/opentracing/BraveSpan.java: /root/workspace/openzipkin/brave/211547189/brave/src/test/java/brave/features/opentracing/BraveSpan.java uses or overrides a deprecated API.
+[INFO] /root/workspace/openzipkin/brave/211547189/brave/src/test/java/brave/features/opentracing/BraveSpan.java: Recompile with -Xlint:deprecation for details.
+[INFO] /root/workspace/openzipkin/brave/211547189/brave/src/test/java/brave/internal/recorder/MutableSpanMapTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /root/workspace/openzipkin/brave/211547189/brave/src/test/java/brave/internal/recorder/MutableSpanMapTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ brave ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 9.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 119.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 1339.1 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running brave.TracerTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.508 sec - in brave.TracerTest
+Running brave.internal.InternalTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in brave.internal.InternalTest
+Running brave.internal.HexCodecTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in brave.internal.HexCodecTest
+Running brave.internal.recorder.MutableSpanTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in brave.internal.recorder.MutableSpanTest
+Running brave.internal.recorder.MutableSpanMapTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.466 sec - in brave.internal.recorder.MutableSpanMapTest
+Running brave.internal.PlatformTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.165 sec - in brave.internal.PlatformTest
+Running brave.features.async.OneWaySpanTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.407 sec - in brave.features.async.OneWaySpanTest
+Running brave.features.opentracing.OpenTracingAdapterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in brave.features.opentracing.OpenTracingAdapterTest
+Running brave.features.propagation.NonStringPropagationKeysTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in brave.features.propagation.NonStringPropagationKeysTest
+Running brave.RealSpanTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in brave.RealSpanTest
+Running brave.propagation.TraceContextTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in brave.propagation.TraceContextTest
+Running brave.propagation.TraceContextOrSamplingFlagsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in brave.propagation.TraceContextOrSamplingFlagsTest
+Running brave.propagation.SamplingFlagsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in brave.propagation.SamplingFlagsTest
+Running brave.propagation.B3PropagationTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in brave.propagation.B3PropagationTest
+Running brave.sampler.BoundarySamplerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.107 sec - in brave.sampler.BoundarySamplerTest
+Running brave.sampler.CountingSamplerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec - in brave.sampler.CountingSamplerTest
+Running brave.NoopSpanTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in brave.NoopSpanTest
+
+Results :
+
+Tests run: 126, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building brave-core 4.0.7-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ brave-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ brave-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-bundle-plugin:3.2.0:manifest (default) @ brave-core ---
+[INFO] 
+[INFO] --- retrolambda-maven-plugin:2.3.0:process-main (default) @ brave-core ---
+[INFO] Processing classes with Retrolambda
+Bytecode version: 50 (Java 6)
+Default methods:  false
+Input directory:  /root/workspace/openzipkin/brave/211547189/brave-core/target/classes
+Output directory: /root/workspace/openzipkin/brave/211547189/brave-core/target/classes
+Classpath:        [/root/workspace/openzipkin/brave/211547189/brave-core/target/classes, /root/./workspace/openzipkin/brave/211547189/.m2/io/zipkin/java/zipkin/1.19.2/zipkin-1.19.2.jar, /root/./workspace/openzipkin/brave/211547189/.m2/io/zipkin/reporter/zipkin-reporter/0.6.12/zipkin-reporter-0.6.12.jar, /root/./workspace/openzipkin/brave/211547189/.m2/com/google/auto/value/auto-value/1.4-rc2/auto-value-1.4-rc2.jar, /root/workspace/openzipkin/brave/211547189/brave/target/classes]
+Included files:   all
+Agent enabled:    false
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (default) @ brave-core ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ brave-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ brave-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 49 source files to /root/workspace/openzipkin/brave/211547189/brave-core/target/test-classes
+[WARNING] /root/workspace/openzipkin/brave/211547189/brave-core/src/test/java/com/github/kristofa/brave/internal/DefaultSpanCodecTest.java:[21,25] sun.net.util.IPAddressUtil is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/openzipkin/brave/211547189/brave-core/src/test/java/com/twitter/zipkin/gen/EndpointTest.java:[44,27] sun.net.util.IPAddressUtil is internal proprietary API and may be removed in a future release
+[INFO] /root/workspace/openzipkin/brave/211547189/brave-core/src/test/java/com/twitter/zipkin/gen/SpanTest.java: Some input files use or override a deprecated API.
+[INFO] /root/workspace/openzipkin/brave/211547189/brave-core/src/test/java/com/twitter/zipkin/gen/SpanTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /root/workspace/openzipkin/brave/211547189/brave-core/src/test/java/com/github/kristofa/brave/ClientResponseInterceptorTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /root/workspace/openzipkin/brave/211547189/brave-core/src/test/java/com/github/kristofa/brave/ClientResponseInterceptorTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ brave-core ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running brave.interop.TracerAdapterTest
+Tests run: 8, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.599 sec <<< FAILURE! - in brave.interop.TracerAdapterTest
+startWithLocalTracerAndFinishWithTracer(brave.interop.TracerAdapterTest)  Time elapsed: 0.02 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<"[encode]"> but was:<"[]">
+	at brave.interop.TracerAdapterTest.lambda$checkLocalSpanReportedToZipkin$4(TracerAdapterTest.java:129)
+	at brave.interop.TracerAdapterTest.checkLocalSpanReportedToZipkin(TracerAdapterTest.java:128)
+	at brave.interop.TracerAdapterTest.startWithLocalTracerAndFinishWithTracer(TracerAdapterTest.java:37)
+
+Running com.github.kristofa.brave.ClientSpanThreadBinderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 sec - in com.github.kristofa.brave.ClientSpanThreadBinderTest
+Running com.github.kristofa.brave.Brave4ServerRequestInterceptorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in com.github.kristofa.brave.Brave4ServerRequestInterceptorTest
+Running com.github.kristofa.brave.ServerTracerTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in com.github.kristofa.brave.ServerTracerTest
+Running com.github.kristofa.brave.ClientTracerTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.github.kristofa.brave.ClientTracerTest
+Running com.github.kristofa.brave.LocalSpanThreadBinderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.github.kristofa.brave.LocalSpanThreadBinderTest
+Running com.github.kristofa.brave.TraceDataTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.github.kristofa.brave.TraceDataTest
+Running com.github.kristofa.brave.ServerSpanTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.github.kristofa.brave.ServerSpanTest
+Running com.github.kristofa.brave.internal.InternalTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.github.kristofa.brave.internal.InternalTest
+Running com.github.kristofa.brave.internal.InternalSpanTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.github.kristofa.brave.internal.InternalSpanTest
+Running com.github.kristofa.brave.internal.MaybeAddClientAddressTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in com.github.kristofa.brave.internal.MaybeAddClientAddressTest
+Running com.github.kristofa.brave.internal.DefaultSpanCodecTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.github.kristofa.brave.internal.DefaultSpanCodecTest
+Running com.github.kristofa.brave.internal.Brave4MaybeAddClientAddressTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.github.kristofa.brave.internal.Brave4MaybeAddClientAddressTest
+Running com.github.kristofa.brave.ServerResponseInterceptorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in com.github.kristofa.brave.ServerResponseInterceptorTest
+Running com.github.kristofa.brave.ClientResponseInterceptorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in com.github.kristofa.brave.ClientResponseInterceptorTest
+Running com.github.kristofa.brave.Brave4Test
+02:06:54,426 WARN  [main] brave.Brave$Builder (Brave.java:85) - Unable to get Inet address
+java.net.UnknownHostException: Failed to determine LAN address: java.net.SocketException
+	at com.github.kristofa.brave.InetAddressUtilities.getLocalHostLANAddress(InetAddressUtilities.java:80) ~[classes/:?]
+	at com.github.kristofa.brave.Brave$Builder.<init>(Brave.java:83) [classes/:?]
+	at com.github.kristofa.brave.Brave$Builder.<init>(Brave.java:67) [classes/:?]
+	at com.github.kristofa.brave.BraveTest.implicitLocalEndpoint_exceptionReadingNics(BraveTest.java:147) [test-classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_121]
+	at org.junit.internal.runners.TestMethod.invoke(TestMethod.java:68) [junit-4.12.jar:4.12]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:316) [powermock-module-junit4-1.6.6.jar:?]
+	at org.junit.internal.runners.MethodRoadie$2.run(MethodRoadie.java:89) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.MethodRoadie.runBeforesThenTestThenAfters(MethodRoadie.java:97) [junit-4.12.jar:4.12]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.executeTest(PowerMockJUnit44RunnerDelegateImpl.java:300) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTestInSuper(PowerMockJUnit47RunnerDelegateImpl.java:131) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.access$100(PowerMockJUnit47RunnerDelegateImpl.java:59) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner$TestExecutorStatement.evaluate(PowerMockJUnit47RunnerDelegateImpl.java:147) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.evaluateStatement(PowerMockJUnit47RunnerDelegateImpl.java:107) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTest(PowerMockJUnit47RunnerDelegateImpl.java:82) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runBeforesThenTestThenAfters(PowerMockJUnit44RunnerDelegateImpl.java:288) [powermock-module-junit4-1.6.6.jar:?]
+	at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie.java:87) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.java:50) [junit-4.12.jar:4.12]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:208) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:147) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:121) [powermock-module-junit4-1.6.6.jar:?]
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44) [junit-4.12.jar:4.12]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:123) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:121) [powermock-module-junit4-common-1.6.6.jar:?]
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:53) [powermock-module-junit4-common-1.6.6.jar:?]
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59) [powermock-module-junit4-1.6.6.jar:?]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367) [surefire-junit4-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274) [surefire-junit4-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161) [surefire-junit4-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290) [surefire-booter-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242) [surefire-booter-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121) [surefire-booter-2.19.1.jar:2.19.1]
+Caused by: java.net.SocketException
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.931 sec - in com.github.kristofa.brave.Brave4Test
+Running com.github.kristofa.brave.ClientRequestInterceptorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec - in com.github.kristofa.brave.ClientRequestInterceptorTest
+Running com.github.kristofa.brave.ThreadLocalServerClientAndLocalSpanStateTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.github.kristofa.brave.ThreadLocalServerClientAndLocalSpanStateTest
+Running com.github.kristofa.brave.FixedSampleRateTraceFilterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.github.kristofa.brave.FixedSampleRateTraceFilterTest
+Running com.github.kristofa.brave.InetAddressResolverTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.github.kristofa.brave.InetAddressResolverTest
+Running com.github.kristofa.brave.BoundarySamplerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 sec - in com.github.kristofa.brave.BoundarySamplerTest
+Running com.github.kristofa.brave.ServerSpanThreadBinderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.github.kristofa.brave.ServerSpanThreadBinderTest
+Running com.github.kristofa.brave.Brave4ServerTracerTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.github.kristofa.brave.Brave4ServerTracerTest
+Running com.github.kristofa.brave.CountingSamplerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec - in com.github.kristofa.brave.CountingSamplerTest
+Running com.github.kristofa.brave.LocalTracingInheritanceTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.323 sec - in com.github.kristofa.brave.LocalTracingInheritanceTest
+Running com.github.kristofa.brave.BraveExecutorServiceTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.047 sec - in com.github.kristofa.brave.BraveExecutorServiceTest
+Running com.github.kristofa.brave.BraveRunnableTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.github.kristofa.brave.BraveRunnableTest
+Running com.github.kristofa.brave.LoggingSpanCollectorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.github.kristofa.brave.LoggingSpanCollectorTest
+Running com.github.kristofa.brave.ServerRequestInterceptorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.github.kristofa.brave.ServerRequestInterceptorTest
+Running com.github.kristofa.brave.Brave4ClientTracerTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.github.kristofa.brave.Brave4ClientTracerTest
+Running com.github.kristofa.brave.Brave4LocalTracerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.github.kristofa.brave.Brave4LocalTracerTest
+Running com.github.kristofa.brave.AnnotationSubmitterTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.86 sec - in com.github.kristofa.brave.AnnotationSubmitterTest
+Running com.github.kristofa.brave.BraveCallableTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in com.github.kristofa.brave.BraveCallableTest
+Running com.github.kristofa.brave.IdConversionTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.github.kristofa.brave.IdConversionTest
+Running com.github.kristofa.brave.SpanIdTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.481 sec - in com.github.kristofa.brave.SpanIdTest
+Running com.github.kristofa.brave.BraveTest
+02:07:02,327 WARN  [main] brave.Brave$Builder (Brave.java:85) - Unable to get Inet address
+java.net.UnknownHostException: Failed to determine LAN address: java.net.SocketException
+	at com.github.kristofa.brave.InetAddressUtilities.getLocalHostLANAddress(InetAddressUtilities.java:80) ~[classes/:?]
+	at com.github.kristofa.brave.Brave$Builder.<init>(Brave.java:83) [classes/:?]
+	at com.github.kristofa.brave.Brave$Builder.<init>(Brave.java:67) [classes/:?]
+	at com.github.kristofa.brave.BraveTest.implicitLocalEndpoint_exceptionReadingNics(BraveTest.java:147) [test-classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_121]
+	at org.junit.internal.runners.TestMethod.invoke(TestMethod.java:68) [junit-4.12.jar:4.12]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:316) [powermock-module-junit4-1.6.6.jar:?]
+	at org.junit.internal.runners.MethodRoadie$2.run(MethodRoadie.java:89) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.MethodRoadie.runBeforesThenTestThenAfters(MethodRoadie.java:97) [junit-4.12.jar:4.12]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.executeTest(PowerMockJUnit44RunnerDelegateImpl.java:300) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTestInSuper(PowerMockJUnit47RunnerDelegateImpl.java:131) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.access$100(PowerMockJUnit47RunnerDelegateImpl.java:59) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner$TestExecutorStatement.evaluate(PowerMockJUnit47RunnerDelegateImpl.java:147) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.evaluateStatement(PowerMockJUnit47RunnerDelegateImpl.java:107) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTest(PowerMockJUnit47RunnerDelegateImpl.java:82) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runBeforesThenTestThenAfters(PowerMockJUnit44RunnerDelegateImpl.java:288) [powermock-module-junit4-1.6.6.jar:?]
+	at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie.java:87) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.java:50) [junit-4.12.jar:4.12]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:208) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:147) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:121) [powermock-module-junit4-1.6.6.jar:?]
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44) [junit-4.12.jar:4.12]
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:123) [powermock-module-junit4-1.6.6.jar:?]
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:121) [powermock-module-junit4-common-1.6.6.jar:?]
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:53) [powermock-module-junit4-common-1.6.6.jar:?]
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59) [powermock-module-junit4-1.6.6.jar:?]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367) [surefire-junit4-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274) [surefire-junit4-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161) [surefire-junit4-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290) [surefire-booter-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242) [surefire-booter-2.19.1.jar:2.19.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121) [surefire-booter-2.19.1.jar:2.19.1]
+Caused by: java.net.SocketException
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.828 sec - in com.github.kristofa.brave.BraveTest
+Running com.github.kristofa.brave.LocalTracerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.github.kristofa.brave.LocalTracerTest
+Running com.github.kristofa.brave.EmptySpanCollectorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.github.kristofa.brave.EmptySpanCollectorTest
+Running com.github.kristofa.brave.InheritableServerClientAndLocalSpanStateTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.github.kristofa.brave.InheritableServerClientAndLocalSpanStateTest
+Running com.twitter.zipkin.gen.BinaryAnnotationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.twitter.zipkin.gen.BinaryAnnotationTest
+Running com.twitter.zipkin.gen.SpanTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.twitter.zipkin.gen.SpanTest
+Running com.twitter.zipkin.gen.EndpointTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in com.twitter.zipkin.gen.EndpointTest
+
+Results :
+
+Failed tests: 
+  TracerAdapterTest.startWithLocalTracerAndFinishWithTracer:37->checkLocalSpanReportedToZipkin:128->lambda$checkLocalSpanReportedToZipkin$4:129 expected:<"[encode]"> but was:<"[]">
+
+Tests run: 310, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Brave (parent) ..................................... SUCCESS [  1.941 s]
+[INFO] brave .............................................. SUCCESS [  8.469 s]
+[INFO] brave-core ......................................... FAILURE [ 12.824 s]
+[INFO] brave-http ......................................... SKIPPED
+[INFO] Brave benchmarks ................................... SKIPPED
+[INFO] brave-http-tests ................................... SKIPPED
+[INFO] brave-core-spring .................................. SKIPPED
+[INFO] brave-resteasy-spring .............................. SKIPPED
+[INFO] brave-jaxrs2 ....................................... SKIPPED
+[INFO] brave-resteasy3-spring ............................. SKIPPED
+[INFO] brave-spancollector-http ........................... SKIPPED
+[INFO] brave-spancollector-scribe ......................... SKIPPED
+[INFO] brave-spancollector-kafka .......................... SKIPPED
+[INFO] brave-spancollector-local .......................... SKIPPED
+[INFO] brave-sampler-zookeeper ............................ SKIPPED
+[INFO] brave-web-servlet-filter ........................... SKIPPED
+[INFO] brave-jersey ....................................... SKIPPED
+[INFO] brave-jersey2 ...................................... SKIPPED
+[INFO] brave-grpc ......................................... SKIPPED
+[INFO] brave-apache-http-interceptors ..................... SKIPPED
+[INFO] brave-spring-web-servlet-interceptor ............... SKIPPED
+[INFO] brave-spring-resttemplate-interceptors ............. SKIPPED
+[INFO] brave-mysql ........................................ SKIPPED
+[INFO] brave-okhttp ....................................... SKIPPED
+[INFO] brave-p6spy ........................................ SKIPPED
+[INFO] brave-cxf3 ......................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 23.787 s
+[INFO] Finished at: 2017-03-16T02:07:02+01:00
+[INFO] Final Memory: 39M/726M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project brave-core: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/openzipkin/brave/211547189/brave-core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :brave-core
