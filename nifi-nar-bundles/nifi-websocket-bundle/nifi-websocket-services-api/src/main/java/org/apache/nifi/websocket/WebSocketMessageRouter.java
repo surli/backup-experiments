@@ -111,4 +111,8 @@ public class WebSocketMessageRouter {
         sessions.remove(sessionId);
     }
 
+    public boolean containsSession(final String sessionId) {
+        return sessions.containsKey(sessionId);
+    }
+
 }
