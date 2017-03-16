@@ -171,7 +171,7 @@ public final class VersionUtils {
         int i = pathEntries.length;
         while (!foundJar && (--i >= 0)) {
             String pathEntry = pathEntries[i];
-            if (pathEntry.contains("gateway.server.test") || (pathEntry.contains("gateway.server"))) {
+            if (pathEntry.contains("gateway.server")) {
                 try {
                     JarFile jar = new JarFile(pathEntry);
                     Manifest mf = jar.getManifest();
