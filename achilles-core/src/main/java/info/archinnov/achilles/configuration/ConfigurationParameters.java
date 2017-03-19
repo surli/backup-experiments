@@ -283,7 +283,9 @@ public enum ConfigurationParameters {
     DEFAULT_EXECUTOR_SERVICE_MAX_THREAD("achilles.executor.service.default.thread.max"),
     DEFAULT_EXECUTOR_SERVICE_THREAD_KEEPALIVE("achilles.executor.service.default.thread.keepalive"),
     DEFAULT_EXECUTOR_SERVICE_QUEUE_SIZE("achilles.executor.service.default.queue.size"),
-    DEFAULT_EXECUTOR_SERVICE_THREAD_FACTORY("achilles.executor.service.thread.factory");
+    DEFAULT_EXECUTOR_SERVICE_THREAD_FACTORY("achilles.executor.service.thread.factory"),
+
+    DML_RESULTS_DISPLAY_SIZE("achilles.dml.results_display.size");
 
 
     private String label;
