@@ -49,30 +49,30 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
  *
  * <p>The following graph of {@code StreamTransformations}:
  * <pre>{@code
- *   Source              Source        
- *      +                   +           
- *      |                   |           
- *      v                   v           
- *  Rebalance          HashPartition    
- *      +                   +           
- *      |                   |           
- *      |                   |           
- *      +------>Union<------+           
- *                +                     
- *                |                     
- *                v                     
- *              Split                   
- *                +                     
- *                |                     
- *                v                     
- *              Select                  
- *                +                     
- *                v                     
- *               Map                    
- *                +                     
- *                |                     
- *                v                     
- *              Sink 
+ *   Source              Source
+ *      +                   +
+ *      |                   |
+ *      v                   v
+ *  Rebalance          HashPartition
+ *      +                   +
+ *      |                   |
+ *      |                   |
+ *      +------>Union<------+
+ *                +
+ *                |
+ *                v
+ *              Split
+ *                +
+ *                |
+ *                v
+ *              Select
+ *                +
+ *                v
+ *               Map
+ *                +
+ *                |
+ *                v
+ *              Sink
  * }</pre>
  *
  * <p>Would result in this graph of operations at runtime:

@@ -41,7 +41,7 @@ public class FieldsFromArray<OUT> implements Extractor<Object, OUT[]> {
 	/**
 	 * Extracts multiple fields from an array and puts them in the given order
 	 * into a new array of the specified type.
-	 * 
+	 *
 	 * @param clazz
 	 *            the Class object representing the component type of the new
 	 *            array
