@@ -44,11 +44,11 @@ import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
 import org.apache.nifi.processor.io.OutputStreamCallback;
 import org.apache.nifi.processor.util.StandardValidators;
-import org.apache.nifi.stream.io.ByteArrayOutputStream;
 import org.apache.nifi.stream.io.NullOutputStream;
 import org.apache.nifi.stream.io.StreamUtils;
 
 import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -311,8 +311,7 @@ public class TailFile extends AbstractProcessor {
     @OnScheduled
     public void recoverState(final ProcessContext context) throws IOException {
         // set isMultiChanging
-        isMultiChanging.set(context.getProperty(MODE).getValue().equals(MODE_MULTIFILE.getValue())
-                && context.getProperty(ROLLING_STRATEGY).getValue().equals(CHANGING_NAME.getValue()));
+        isMultiChanging.set(context.getProperty(MODE).getValue().equals(MODE_MULTIFILE.getValue()));
 
         // set last lookup to now
         lastLookup.set(new Date().getTime());

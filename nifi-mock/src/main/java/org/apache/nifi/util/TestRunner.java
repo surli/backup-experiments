@@ -949,4 +949,12 @@ public interface TestRunner {
      * @param predicate conditions
      */
     void assertAllConditionsMet(final Relationship relationship, Predicate<MockFlowFile> predicate);
+
+    /**
+     * Set the Run Schedule parameter (in milliseconds). If set, this will be the duration
+     * between two calls of the onTrigger method.
+     *
+     * @param runSchedule Run schedule duration in milliseconds.
+     */
+    public void setRunSchedule(long runSchedule);
 }
