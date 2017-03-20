@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+        http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.psddev</groupId>
+    <artifactId>dari-grandparent</artifactId>
+    <version>3.3-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Dari: Grandparent POM</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <filesets>
+
+                        <!-- Clean up after war:inplace goal. -->
+                        <fileset>
+                            <directory>src/main/webapp/WEB-INF</directory>
+                            <includes>
+                                <include>classes/**</include>
+                                <include>lib/**</include>
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Dari-ClassFinder-Include>true</Dari-ClassFinder-Include>
+                            <Dari-SourceFilter-JavaSources>${project.build.sourceDirectory}</Dari-SourceFilter-JavaSources>
+                            <Dari-SourceFilter-WebappSources>${basedir}/src/main/webapp</Dari-SourceFilter-WebappSources>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <argLine>-Xms1024m -Xmx1024m</argLine>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Dari-ClassFinder-Include>true</Dari-ClassFinder-Include>
+                            <Dari-SourceFilter-JavaSources>${project.build.sourceDirectory}</Dari-SourceFilter-JavaSources>
+                            <Dari-SourceFilter-WebappSources>${basedir}/src/main/webapp</Dari-SourceFilter-WebappSources>
+                        </manifestEntries>
+                    </archive>
+
+                    <!--
+                    Remove version number when copying the JARs to the WAR
+                    to reduce possible conflicts during development.
+                    -->
+                    <outputFileNameMapping>@{artifactId}@@{dashClassifier?}@.@{extension}@</outputFileNameMapping>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.groovy.maven</groupId>
+                <artifactId>gmaven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>create-build-properties</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source><![CDATA[
+import java.io.*
+import java.util.*
+import java.util.regex.*
+
+def packaging = project.packaging
+if (!(packaging == 'jar' || packaging == 'war')) {
+    return
+}
+
+def buildFile = 'build.properties'
+def env = System.getenv()
+try {
+    def map = new HashMap<String, String>()
+    log.info("Generating ${buildFile} file.")
+
+    map['name'] = project.name
+    map['version'] = project.version
+    map['buildDate'] = '' + new Date()
+
+    def im = project.issueManagement
+    if (im) {
+        map['issueManagementSystem'] = im.system
+        map['issueManagementUrl'] = im.url
+    }
+
+    def scm = project.scm
+    if (scm) {
+        def suffix = '\\.git/.*$'
+        map['scmConnection'] = scm.connection?.replaceFirst(suffix, '.git')
+        map['scmDeveloperConnection'] = scm.developerConnection?.replaceFirst(suffix, '.git')
+        map['scmUrl'] = scm.url?.replaceFirst(suffix, '.git')
+    }
+
+    map['classFinder.include'] = 'true'
+    map['javaSourceDirectory'] = project.build.sourceDirectory
+    map['javaGeneratedSourcesDirectory'] = new File(project.build.directory, ['generated-sources'].join(File.separator)).getPath()
+    map['resourceDirectory'] = new File(pom.basedir, [ 'src', 'main', 'resources' ].join(File.separator)).getPath()
+    map['webappSourceDirectory'] = new File(pom.basedir, [ 'src', 'main', 'webapp' ].join(File.separator)).getPath()
+
+    map['sourceFilter.javaSources'] = project.build.sourceDirectory
+    map['sourceFilter.javaGeneratedSources'] = new File(project.build.directory, ['generated-sources'].join(File.separator)).getPath()
+    map['sourceFilter.webappSources'] = new File(pom.basedir, [ 'src', 'main', 'webapp' ].join(File.separator)).getPath()
+
+    def properties = new Properties()
+    map.each { key, value ->
+        if (value) {
+            properties[key] = value
+            log.info("Property: ${key}=${value}")
+        }
+    }
+
+    def buildNumber = env.BUILD_NUMBER
+
+    if (!buildNumber) {
+        buildNumber = env.TRAVIS_BUILD_NUMBER
+    }
+
+    if (buildNumber) {
+        properties['buildNumber'] = buildNumber
+
+        try {
+            def git = 'git'
+            if (env['OS'] =~ /^Windows/) {
+                git = "cmd /c ${git}"
+            }
+            properties['gitCommits'] = [ git, 'log', '-n 500', '--format=%H~|~%an~|~%at~|~%d~|~%s~|~%b~-~' ].execute().in.text
+        } catch (Exception ex) {
+            log.warn('Git not available!', ex)
+        }
+    }
+
+    def outputDirectory = new File(project.build.outputDirectory)
+    outputDirectory.mkdirs()
+    new File(outputDirectory, buildFile).withOutputStream { output ->
+        properties.store(output, null)
+    }
+
+} catch (Exception ex) {
+    log.warn("Failed to generate ${buildFile} file!", ex)
+}
+                            ]]></source>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jspc-maven-plugin</artifactId>
+                <version>1.4.6</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>1.0</version>
+                <configuration>
+                    <url>${tomcat.url}</url>
+                    <path>${tomcat.path}</path>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>prepare-release</id>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.groovy.maven</groupId>
+                        <artifactId>gmaven-plugin</artifactId>
+                        <version>1.0</version>
+                        <executions>
+                            <execution>
+                                <id>generate-release-version</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>execute</goal>
+                                </goals>
+                                <configuration>
+                                    <source><![CDATA[
+import java.util.*
+
+try {
+    def git = 'git'
+
+    if (System.getenv()['OS'] =~ /^Windows/) {
+        git = "cmd /c ${git}"
+    }
+
+    def newVersion = project.version.toString().replace('-SNAPSHOT', '') +
+            '.' + ([ git, 'rev-list', '--count', 'HEAD' ].execute().in.text.trim()) +
+            '-' + ([ git, 'rev-parse', 'HEAD' ].execute().in.text.trim().substring(0, 6))
+
+    project.properties['newVersion'] = newVersion
+    project.properties['generateBackupPoms'] = 'false'
+
+    new File('newVersion').withWriter('UTF-8') {
+        it.write(newVersion);
+    }
+
+    log.info("Set newVersion to ${newVersion}.")
+
+} catch (Exception error) {
+    log.warn('Git not available!', error)
+}
+                                    ]]></source>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>versions-maven-plugin</artifactId>
+                        <version>2.3</version>
+                        <executions>
+                            <execution>
+                                <id>set-release-version</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>set</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>run-grunt</id>
+
+            <activation>
+                <file>
+                    <exists>Gruntfile.js</exists>
+                </file>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <version>0.0.26</version>
+
+                        <executions>
+                            <execution>
+                                <id>install-node-and-npm</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>install-node-and-npm</goal>
+                                </goals>
+                                <configuration>
+                                    <nodeVersion>v4.2.1</nodeVersion>
+                                    <npmVersion>2.14.7</npmVersion>
+                                </configuration>
+                            </execution>
+
+                            <execution>
+                                <id>npm</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                            </execution>
+
+                            <execution>
+                                <id>grunt</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>grunt</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>
+                                        --bsp-maven-build-finalName=${project.build.finalName}
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>library</id>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>2.12</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.puppycrawl.tools</groupId>
+                                <artifactId>checkstyle</artifactId>
+                                <version>5.9</version>
+                            </dependency>
+                        </dependencies>
+                        <executions>
+                            <execution>
+                                <id>verify-style</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                                <configuration>
+                                    <checkstyleRules>
+                                        <module name="Checker">
+                                            <module name="FileTabCharacter"/>
+                                            <module name="NewlineAtEndOfFile"/>
+
+                                            <module name="RegexpSingleline">
+                                               <property name="format" value="\s+$"/>
+                                               <property name="maximum" value="0"/>
+                                               <property name="message" value="Line has trailing spaces."/>
+                                               <property name="minimum" value="0"/>
+                                            </module>
+
+                                            <module name="RegexpMultiline">
+                                                <property name="format" value="[^\n]+\n{3,}" />
+                                                <property name="message" value="Two or more consecutive empty lines." />
+                                            </module>
+
+                                            <module name="SuppressionCommentFilter"/>
+
+                                            <module name="TreeWalker">
+                                                <module name="ArrayTypeStyle"/>
+                                                <module name="AvoidStarImport"/>
+                                                <module name="ConstantName"/>
+
+                                                <module name="EmptyBlock">
+                                                    <property name="option" value="text"/>
+                                                </module>
+
+                                                <module name="EmptyForIteratorPad"/>
+                                                <module name="EmptyStatement"/>
+                                                <module name="EqualsHashCode"/>
+                                                <module name="FileContentsHolder"/>
+                                                <module name="FinalClass"/>
+                                                <module name="GenericWhitespace"/>
+                                                <module name="IllegalImport"/>
+                                                <module name="IllegalInstantiation"/>
+                                                <module name="LeftCurly"/>
+                                                <module name="LocalFinalVariableName"/>
+                                                <module name="LocalVariableName"/>
+                                                <module name="MemberName"/>
+                                                <module name="MethodName"/>
+                                                <module name="MethodParamPad"/>
+                                                <module name="MissingSwitchDefault"/>
+                                                <module name="ModifierOrder"/>
+                                                <module name="NeedBraces"/>
+
+                                                <module name="NoWhitespaceAfter">
+                                                    <property name="tokens" value="BNOT, DOT, LNOT, UNARY_MINUS, UNARY_PLUS"/>
+                                                </module>
+
+                                                <module name="NoWhitespaceBefore">
+                                                    <property name="tokens" value="SEMI"/>
+                                                </module>
+
+                                                <module name="OperatorWrap">
+                                                    <property name="option" value="NL"/>
+                                                </module>
+
+                                                <module name="PackageName"/>
+                                                <module name="ParameterName"/>
+                                                <module name="ParenPad"/>
+                                                <module name="RedundantImport"/>
+
+                                                <module name="RedundantThrows">
+                                                    <property name="suppressLoadErrors" value="true"/>
+                                                </module>
+
+                                                <module name="RightCurly"/>
+
+                                                <module name="SeparatorWrap">
+                                                    <property name="option" value="NL"/>
+                                                    <property name="tokens" value="DOT"/>
+                                                </module>
+
+                                                <module name="SeparatorWrap">
+                                                    <property name="option" value="EOL"/>
+                                                    <property name="tokens" value="COMMA"/>
+                                                </module>
+
+                                                <module name="SimplifyBooleanExpression"/>
+                                                <module name="SimplifyBooleanReturn"/>
+                                                <module name="StaticVariableName"/>
+                                                <module name="TypecastParenPad"/>
+                                                <module name="TypeName"/>
+                                                <module name="UnusedImports"/>
+                                                <module name="UpperEll"/>
+                                                <module name="WhitespaceAfter"/>
+
+                                                <module name="WhitespaceAround">
+                                                    <property name="ignoreEnhancedForColon" value="false"/>
+                                                </module>
+                                            </module>
+                                        </module>
+                                    </checkstyleRules>
+
+                                    <consoleOutput>true</consoleOutput>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>clirr-maven-plugin</artifactId>
+                        <version>2.6.1</version>
+                        <executions>
+                            <execution>
+                                <id>verify-api</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>check-no-fork</goal>
+                                </goals>
+                                <configuration>
+                                    <ignoredDifferencesFile>etc/clirr-ignored.xml</ignoredDifferencesFile>
+                                    <logResults>true</logResults>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.google.code.findbugs</groupId>
+                                <artifactId>bcel-findbugs</artifactId>
+                                <version>6.0</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>deploy</id>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <executions>
+                            <execution>
+                                <id>deploy-javadoc-package</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>aggregate-jar</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.4</version>
+                        <executions>
+                            <execution>
+                                <id>deploy-source-package</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>aggregate</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.18.1</version>
+                        <configuration>
+                            <argLine>-Xms1024m -Xmx1024m</argLine>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>psddev-releases</id>
+            <url>https://artifactory.psdops.com/psddev-releases</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>psddev-snapshots</id>
+            <url>https://artifactory.psdops.com/psddev-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>public.psddev</id>
+            <url>https://artifactory.psdops.com/public</url>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public.psddev</id>
+            <url>https://artifactory.psdops.com/public</url>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>
