@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.apache.flink.runtime.highavailability.leaderelection;
+package org.apache.flink.runtime.highavailability.nonha.leaderelection;
 
 import org.apache.flink.runtime.concurrent.Executors;
 import org.apache.flink.runtime.leaderelection.LeaderContender;
@@ -165,7 +165,7 @@ public class SingleLeaderElectionServiceTest {
 		service.shutdown();
 
 		final LeaderContender contender = mock(LeaderContender.class);
-		
+
 		// should not be possible to start
 		try {
 			service.start(contender);

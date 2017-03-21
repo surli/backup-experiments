@@ -23,8 +23,7 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.configuration.IllegalConfigurationException;
 import org.apache.flink.core.fs.FileSystem;
 import org.apache.flink.core.fs.Path;
-import org.apache.flink.runtime.leaderelection.LeaderContender;
-import org.apache.flink.runtime.leaderelection.LeaderElectionService;
+import org.apache.flink.runtime.highavailability.HighAvailabilityServicesUtils;
 import org.apache.flink.util.TestLogger;
 import org.apache.flink.yarn.configuration.YarnConfigOptions;
 
@@ -44,9 +43,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-
-import static org.mockito.Mockito.*;
-
 
 public class YarnPreConfiguredMasterHaServicesTest extends TestLogger {
 
@@ -100,8 +96,14 @@ public class YarnPreConfiguredMasterHaServicesTest extends TestLogger {
 		flinkConfig.setString(YarnConfigOptions.APP_MASTER_RPC_ADDRESS, "localhost");
 		flinkConfig.setInteger(YarnConfigOptions.APP_MASTER_RPC_PORT, 1427);
 
-		YarnHighAvailabilityServices services1 = new YarnPreConfiguredMasterNonHaServices(flinkConfig, hadoopConfig);
-		YarnHighAvailabilityServices services2 = new YarnPreConfiguredMasterNonHaServices(flinkConfig, hadoopConfig);
+		YarnHighAvailabilityServices services1 = new YarnPreConfiguredMasterNonHaServices(
+			flinkConfig,
+			hadoopConfig,
+			HighAvailabilityServicesUtils.AddressResolution.NO_ADDRESS_RESOLUTION);
+		YarnHighAvailabilityServices services2 = new YarnPreConfiguredMasterNonHaServices(
+			flinkConfig,
+			hadoopConfig,
+			HighAvailabilityServicesUtils.AddressResolution.NO_ADDRESS_RESOLUTION);
 
 		try {
 			String rmName1 = services1.getResourceManagerEndpointName();
@@ -123,7 +125,10 @@ public class YarnPreConfiguredMasterHaServicesTest extends TestLogger {
 
 		// missing resource manager address
 		try {
-			new YarnPreConfiguredMasterNonHaServices(flinkConfig, hadoopConfig);
+			new YarnPreConfiguredMasterNonHaServices(
+				flinkConfig,
+				hadoopConfig,
+				HighAvailabilityServicesUtils.AddressResolution.NO_ADDRESS_RESOLUTION);
 			fail();
 		} catch (IllegalConfigurationException e) {
 			// expected
@@ -133,7 +138,10 @@ public class YarnPreConfiguredMasterHaServicesTest extends TestLogger {
 
 		// missing resource manager port
 		try {
-			new YarnPreConfiguredMasterNonHaServices(flinkConfig, hadoopConfig);
+			new YarnPreConfiguredMasterNonHaServices(
+				flinkConfig,
+				hadoopConfig,
+				HighAvailabilityServicesUtils.AddressResolution.NO_ADDRESS_RESOLUTION);
 			fail();
 		} catch (IllegalConfigurationException e) {
 			// expected
@@ -142,7 +150,10 @@ public class YarnPreConfiguredMasterHaServicesTest extends TestLogger {
 		flinkConfig.setInteger(YarnConfigOptions.APP_MASTER_RPC_PORT, 1427);
 
 		// now everything is good ;-)
-		new YarnPreConfiguredMasterNonHaServices(flinkConfig, hadoopConfig).closeAndCleanupAllData();
+		new YarnPreConfiguredMasterNonHaServices(
+			flinkConfig,
+			hadoopConfig,
+			HighAvailabilityServicesUtils.AddressResolution.NO_ADDRESS_RESOLUTION).closeAndCleanupAllData();
 	}
 
 	@Test
@@ -152,7 +163,10 @@ public class YarnPreConfiguredMasterHaServicesTest extends TestLogger {
 		flinkConfig.setInteger(YarnConfigOptions.APP_MASTER_RPC_PORT, 1427);
 
 		// create the services
-		YarnHighAvailabilityServices services = new YarnPreConfiguredMasterNonHaServices(flinkConfig, hadoopConfig);
+		YarnHighAvailabilityServices services = new YarnPreConfiguredMasterNonHaServices(
+			flinkConfig,
+			hadoopConfig,
+			HighAvailabilityServicesUtils.AddressResolution.NO_ADDRESS_RESOLUTION);
 		services.closeAndCleanupAllData();
 
 		final FileSystem fileSystem = HDFS_ROOT_PATH.getFileSystem();
@@ -183,7 +197,10 @@ public class YarnPreConfiguredMasterHaServicesTest extends TestLogger {
 		flinkConfig.setString(YarnConfigOptions.APP_MASTER_RPC_ADDRESS, "localhost");
 		flinkConfig.setInteger(YarnConfigOptions.APP_MASTER_RPC_PORT, 1427);
 
-		YarnHighAvailabilityServices services = new YarnPreConfiguredMasterNonHaServices(flinkConfig, hadoopConfig);
+		YarnHighAvailabilityServices services = new YarnPreConfiguredMasterNonHaServices(
+			flinkConfig,
+			hadoopConfig,
+			HighAvailabilityServicesUtils.AddressResolution.NO_ADDRESS_RESOLUTION);
 
 		// this method is not supported
 		try {

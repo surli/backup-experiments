@@ -109,6 +109,8 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
  */
 public class TaskExecutor extends RpcEndpoint<TaskExecutorGateway> {
 
+	public static final String TASK_MANAGER_NAME = "taskmanager";
+
 	/** The connection information of this task manager */
 	private final TaskManagerLocation taskManagerLocation;
 

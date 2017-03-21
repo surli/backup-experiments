@@ -125,6 +125,10 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
  */
 public class JobMaster extends RpcEndpoint<JobMasterGateway> {
 
+	/** Default names for Flink's distributed components */
+	public static final String JOB_MANAGER_NAME = "jobmanager";
+	public static final String ARCHIVE_NAME = "archive";
+
 	private static final AtomicReferenceFieldUpdater<JobMaster, UUID> LEADER_ID_UPDATER =
 			AtomicReferenceFieldUpdater.newUpdater(JobMaster.class, UUID.class, "leaderSessionID");
 

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.apache.flink.runtime.highavailability.nonha;
+package org.apache.flink.runtime.highavailability.nonha.embedded;
 
 import org.apache.flink.runtime.leaderelection.LeaderContender;
 import org.apache.flink.runtime.leaderelection.LeaderElectionService;
@@ -32,14 +32,13 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
 
 import static org.apache.flink.util.Preconditions.checkNotNull;
 import static org.apache.flink.util.Preconditions.checkState;
 
 /**
  * A simple leader election service, which selects a leader among contenders and notifies listeners.
- * 
+ *
  * <p>An election service for contenders can be created via {@link #createLeaderElectionService()},
  * a listener service for leader observers can be created via {@link #createLeaderRetrievalService()}.
  */
@@ -72,7 +71,7 @@ public class EmbeddedLeaderService {
 
 	// ------------------------------------------------------------------------
 
-	public EmbeddedLeaderService(ExecutorService notificationsDispatcher) {
+	public EmbeddedLeaderService(Executor notificationsDispatcher) {
 		this.notificationExecutor = checkNotNull(notificationsDispatcher);
 		this.allLeaderContenders = new HashSet<>();
 		this.listeners = new HashSet<>();
@@ -84,7 +83,7 @@ public class EmbeddedLeaderService {
 
 	/**
 	 * Shuts down this leader election service.
-	 * 
+	 *
 	 * <p>This method does not perform a clean revocation of the leader status and
 	 * no notification to any leader listeners. It simply notifies all contenders
 	 * and listeners that the service is no longer available.
@@ -222,7 +221,7 @@ public class EmbeddedLeaderService {
 			}
 
 			try {
-				// check if the confirmation is for the same grant, or whether it is a stale grant 
+				// check if the confirmation is for the same grant, or whether it is a stale grant
 				if (service == currentLeaderProposed && currentLeaderSessionId.equals(leaderSessionId)) {
 					final String address = service.contender.getAddress();
 					LOG.info("Received confirmation of leadership for leader {} , session={}", address, leaderSessionId);
@@ -328,7 +327,7 @@ public class EmbeddedLeaderService {
 	}
 
 	// ------------------------------------------------------------------------
-	//  election and retrieval service implementations 
+	//  election and retrieval service implementations
 	// ------------------------------------------------------------------------
 
 	private class EmbeddedLeaderElectionService implements LeaderElectionService {

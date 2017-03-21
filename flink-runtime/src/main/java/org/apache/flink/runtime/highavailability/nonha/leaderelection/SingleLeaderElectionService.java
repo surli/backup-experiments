@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.apache.flink.runtime.highavailability.leaderelection;
+package org.apache.flink.runtime.highavailability.nonha.leaderelection;
 
 import org.apache.flink.runtime.leaderelection.LeaderContender;
 import org.apache.flink.runtime.leaderelection.LeaderElectionService;
@@ -39,10 +39,10 @@ import static org.apache.flink.util.Preconditions.checkState;
 /**
  * An implementation of the {@link LeaderElectionService} interface that handles a single
  * leader contender. When started, this service immediately grants the contender the leadership.
- * 
+ *
  * <p>The implementation accepts a single static leader session ID and is hence compatible with
  * pre-configured single leader (no leader failover) setups.
- * 
+ *
  * <p>This implementation supports a series of leader listeners that receive notifications about
  * the leader contender.
  */
@@ -85,7 +85,7 @@ public class SingleLeaderElectionService implements LeaderElectionService {
 	/**
 	 * Creates a new leader election service. The service assigns the given leader ID
 	 * to the leader contender.
-	 * 
+	 *
 	 * @param leaderId The constant leader ID assigned to the leader.
 	 */
 	public SingleLeaderElectionService(Executor notificationsDispatcher, UUID leaderId) {
@@ -171,7 +171,7 @@ public class SingleLeaderElectionService implements LeaderElectionService {
 	void errorOnGrantLeadership(LeaderContender contender, Throwable error) {
 		LOG.warn("Error notifying leader listener about new leader", error);
 		contender.handleError(error instanceof Exception ? (Exception) error : new Exception(error));
-		
+
 		synchronized (lock) {
 			if (proposedLeader == contender) {
 				proposedLeader = null;
