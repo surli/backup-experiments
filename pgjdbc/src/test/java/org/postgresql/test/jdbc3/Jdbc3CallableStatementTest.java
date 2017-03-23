@@ -45,6 +45,8 @@ public class Jdbc3CallableStatementTest extends BaseTest4 {
         "CREATE OR REPLACE FUNCTION myiofunc(a INOUT int, b OUT int) AS 'BEGIN b := a; a := 1; END;' LANGUAGE plpgsql");
     stmt.execute(
         "CREATE OR REPLACE FUNCTION myif(a INOUT int, b IN int) AS 'BEGIN a := b; END;' LANGUAGE plpgsql");
+    stmt.execute(
+            "CREATE OR REPLACE FUNCTION mynoparams() returns int AS 'BEGIN return 0; END;' LANGUAGE plpgsql");
 
     stmt.execute("create or replace function "
         + "Numeric_Proc( OUT IMAX NUMERIC(30,15), OUT IMIN NUMERIC(30,15), OUT INUL NUMERIC(30,15))  as "
@@ -100,6 +102,7 @@ public class Jdbc3CallableStatementTest extends BaseTest4 {
     stmt.execute("drop function mysum(a int, b int)");
     stmt.execute("drop function myiofunc(a INOUT int, b OUT int) ");
     stmt.execute("drop function myif(a INOUT int, b IN int)");
+    stmt.execute("drop function mynoparams()");
     stmt.close();
     super.tearDown();
   }
@@ -1006,6 +1009,24 @@ public class Jdbc3CallableStatementTest extends BaseTest4 {
     cs.setInt(3, 3);
     cs.execute();
     assertEquals("2+3 should be 5 when executed via {?= call mysum(?, ?)}", 5, cs.getInt(1));
+  }
+
+  @Test
+  public void testNoParametersWithParentheses() throws SQLException {
+    assumeCallableStatementsSupported();
+    CallableStatement cs = con.prepareCall("{?= call mynoparams()}");
+    cs.registerOutParameter(1, Types.INTEGER);
+    cs.execute();
+    assertEquals("{?= call mynoparam()} should return zero, but did not.", 0, cs.getInt(1));
+  }
+
+  @Test
+  public void testNoParametersWithoutParentheses() throws SQLException {
+    assumeCallableStatementsSupported();
+    CallableStatement cs = con.prepareCall("{?= call mynoparams}");
+    cs.registerOutParameter(1, Types.INTEGER);
+    cs.execute();
+    assertEquals("{?= call mynoparam()} should return zero, but did not.", 0, cs.getInt(1));
   }
 
 }
