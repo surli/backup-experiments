@@ -927,19 +927,27 @@ public class Parser {
       boolean needComma = false;
 
       // have to use String.indexOf for java 2
-      int opening = s.indexOf('(') + 1;
-      int closing = s.indexOf(')');
-      for (int j = opening; j < closing; j++) {
-        if (!Character.isWhitespace(sb.charAt(j))) {
-          needComma = true;
-          break;
+      int opening = s.indexOf('(');
+
+      if (opening >= 0) {
+        opening = opening + 1;
+        int closing = s.indexOf(')');
+        for (int j = opening; j < closing; j++) {
+          if (!Character.isWhitespace(sb.charAt(j))) {
+            needComma = true;
+            break;
+          }
         }
-      }
-      if (needComma) {
-        sb.insert(opening, "?,");
+        if (needComma) {
+          sb.insert(opening, "?,");
+        } else {
+          sb.insert(opening, "?");
+        }
       } else {
-        sb.insert(opening, "?");
+        sb.append("(?)");
       }
+    } else if (sb.indexOf("(") < 0) {
+      sb.append("()");
     }
     sql = "select * from " + sb.toString() + " as result";
     return new JdbcCallParseInfo(sql, isFunction, outParmBeforeFunc);
