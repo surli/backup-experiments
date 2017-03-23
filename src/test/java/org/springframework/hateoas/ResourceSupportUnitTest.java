@@ -22,6 +22,8 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
+import org.springframework.hateoas.support.Author;
+
 /**
  * Unit tests for {@link ResourceSupport}.
  * 
@@ -155,5 +157,27 @@ public class ResourceSupportUnitTest {
 
 		assertThat(support.hasLink("self"), is(true));
 		assertThat(support.hasLink("another"), is(true));
+	}
+
+	@Test
+	public void addEmbeddedResource() {
+
+		ResourceSupport support = new ResourceSupport();
+
+		Author author = new Author("Alan Watts", "January 6, 1915", "November 16, 1973");
+		author.add(new Link("/people/alan-watts").withSelfRel());
+
+		support.addEmbeddedResource("author", author);
+		support.add(new Link("/blog-post").withSelfRel(), new Link("/people/alan-watts").withRel("author"));
+
+		assertThat(support.hasLink("self"), is(true));
+		assertThat(support.hasLink("author"), is(true));
+
+		assertThat(support.hasEmbeddedResources(), is(true));
+		assertThat(support.getEmbeddedResource("author").hasLink("self"), is(true));
+		assertThat(support.getEmbeddedResource("author").getLinks(), contains(new Link("/people/alan-watts", "self")));
+		assertThat(((Author) support.getEmbeddedResource("author")).getName(), is("Alan Watts"));
+		assertThat(((Author) support.getEmbeddedResource("author")).getBorn(), is("January 6, 1915"));
+		assertThat(((Author) support.getEmbeddedResource("author")).getDied(), is("November 16, 1973"));
 	}
 }

@@ -17,7 +17,9 @@ package org.springframework.hateoas;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -34,9 +36,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ResourceSupport implements Identifiable<Link> {
 
 	private final List<Link> links;
+	private final Map<String, ResourceSupport> embeddedResources;
 
 	public ResourceSupport() {
 		this.links = new ArrayList<Link>();
+		this.embeddedResources = new HashMap<String, ResourceSupport>();
 	}
 
 	/**
@@ -133,6 +137,22 @@ public class ResourceSupport implements Identifiable<Link> {
 		return null;
 	}
 
+	public void addEmbeddedResource(String rel, ResourceSupport embeddableResource) {
+		this.embeddedResources.put(rel, embeddableResource);
+	}
+
+	public boolean hasEmbeddedResources() {
+		return !this.embeddedResources.isEmpty();
+	}
+
+	public Map<String, ResourceSupport> getEmbeddedResources() {
+		return this.embeddedResources;
+	}
+
+	public ResourceSupport getEmbeddedResource(String rel) {
+		return this.embeddedResources.get(rel);
+	}
+
 	/* 
 	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -170,4 +190,5 @@ public class ResourceSupport implements Identifiable<Link> {
 	public int hashCode() {
 		return this.links.hashCode();
 	}
+
 }

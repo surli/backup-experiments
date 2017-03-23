@@ -16,18 +16,21 @@
 package org.springframework.hateoas.hal;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.bind.annotation.XmlElement;
 
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.ResourceSupport;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonIgnoreProperties
 abstract class ResourceSupportMixin extends ResourceSupport {
 
 	@Override
@@ -37,4 +40,11 @@ abstract class ResourceSupportMixin extends ResourceSupport {
 	@JsonSerialize(using = Jackson2HalModule.HalLinkListSerializer.class)
 	@JsonDeserialize(using = Jackson2HalModule.HalLinkListDeserializer.class)
 	public abstract List<Link> getLinks();
+
+	@Override
+	@XmlElement(name = "embedded")
+	@JsonProperty("_embedded")
+	@JsonInclude(Include.NON_EMPTY)
+	public abstract Map<String, ResourceSupport> getEmbeddedResources();
+
 }

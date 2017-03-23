@@ -38,11 +38,13 @@ import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.PagedResources.PageMetadata;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.ResourceSupport;
+import org.springframework.hateoas.ResourceSupportUnitTest;
 import org.springframework.hateoas.Resources;
 import org.springframework.hateoas.UriTemplate;
 import org.springframework.hateoas.core.AnnotationRelProvider;
 import org.springframework.hateoas.core.EmbeddedWrappers;
 import org.springframework.hateoas.hal.Jackson2HalModule.HalHandlerInstantiator;
+import org.springframework.hateoas.support.Author;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -94,6 +96,20 @@ public class Jackson2HalIntegrationTest extends AbstractJackson2MarshallingInteg
 		resourceSupport.add(new Link("localhost"));
 
 		assertThat(write(resourceSupport), is(SINGLE_LINK_REFERENCE));
+	}
+
+	@Test
+	public void rendersEmbeddedResourceSupportAsEmbedded() throws Exception {
+
+		ResourceSupport resourceSupport = new ResourceSupport();
+
+		Author author = new Author("Alan Watts", "January 6, 1915", "November 16, 1973");
+		author.add(new Link("/people/alan-watts").withSelfRel());
+
+		resourceSupport.addEmbeddedResource("author", author);
+		resourceSupport.add(new Link("/blog-post").withSelfRel(), new Link("/people/alan-watts").withRel("author"));
+
+		assertThat(write(resourceSupport), is("{\"_links\":{\"self\":{\"href\":\"/blog-post\"},\"author\":{\"href\":\"/people/alan-watts\"}},\"_embedded\":{\"author\":{\"name\":\"Alan Watts\",\"born\":\"January 6, 1915\",\"died\":\"November 16, 1973\",\"_links\":{\"self\":{\"href\":\"/people/alan-watts\"}}}}}"));
 	}
 
 	@Test
