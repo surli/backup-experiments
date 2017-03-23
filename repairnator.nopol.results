@@ -1,0 +1,112 @@
+nopolinfo #0
+location: FailureLocation{className='org.springframework.hateoas.hal.Jackson2HalIntegrationTest', failingMethods=[org.springframework.hateoas.hal.Jackson2HalIntegrationTest#rendersMultipleResourceResourcesAsEmbedded, org.springframework.hateoas.hal.Jackson2HalIntegrationTest#rendersSingleResourceResourcesAsEmbedded, org.springframework.hateoas.hal.Jackson2HalIntegrationTest#serializesAnnotatedResourceResourcesAsEmbedded, org.springframework.hateoas.hal.Jackson2HalIntegrationTest#serializesPagedResource, org.springframework.hateoas.hal.Jackson2HalIntegrationTest#rendersSimpleResourcesAsEmbedded], erroringMethods=[], failures=[FailureType{failureName='java.lang.AssertionError', failureDetail=' Expected: is "{\"_embedded\":{\"pojos\":[{\"text\":\"test1\",\"number\":1,\"_links\":{\"self\":{\"href\":\"localhost\"}}}]},\"_links\":{\"self\":{\"href\":\"localhost\"}}}"      but: was "{\"_links\":{\"self\":{\"href\":\"localhost\"}},\"_embedded\":{\"pojos\":[{\"text\":\"test1\",\"number\":1,\"_links\":{\"self\":{\"href\":\"localhost\"}}}]}}"', isError=false}, FailureType{failureName='java.lang.AssertionError', failureDetail=' Expected: is "{\"_embedded\":{\"pojos\":[{\"text\":\"test1\",\"number\":1,\"_links\":{\"self\":{\"href\":\"localhost\"}}},{\"text\":\"test2\",\"number\":2,\"_links\":{\"self\":{\"href\":\"localhost\"}}}]},\"_links\":{\"next\":{\"href\":\"foo\"},\"prev\":{\"href\":\"bar\"}},\"page\":{\"size\":2,\"totalElements\":4,\"totalPages\":2,\"number\":0}}"      but: was "{\"_links\":{\"next\":{\"href\":\"foo\"},\"prev\":{\"href\":\"bar\"}},\"_embedded\":{\"pojos\":[{\"text\":\"test1\",\"number\":1,\"_links\":{\"self\":{\"href\":\"localhost\"}}},{\"text\":\"test2\",\"number\":2,\"_links\":{\"self\":{\"href\":\"localhost\"}}}]},\"page\":{\"size\":2,\"totalElements\":4,\"totalPages\":2,\"number\":0}}"', isError=false}, FailureType{failureName='java.lang.AssertionError', failureDetail=' Expected: is "{\"_embedded\":{\"content\":[{\"text\":\"test1\",\"number\":1,\"_links\":{\"self\":{\"href\":\"localhost\"}}}]},\"_links\":{\"self\":{\"href\":\"localhost\"}}}"      but: was "{\"_links\":{\"self\":{\"href\":\"localhost\"}},\"_embedded\":{\"content\":[{\"text\":\"test1\",\"number\":1,\"_links\":{\"self\":{\"href\":\"localhost\"}}}]}}"', isError=false}, FailureType{failureName='java.lang.AssertionError', failureDetail=' Expected: is "{\"_embedded\":{\"content\":[{\"text\":\"test1\",\"number\":1,\"_links\":{\"self\":{\"href\":\"localhost\"}}},{\"text\":\"test2\",\"number\":2,\"_links\":{\"self\":{\"href\":\"localhost\"}}}]},\"_links\":{\"self\":{\"href\":\"localhost\"}}}"      but: was "{\"_links\":{\"self\":{\"href\":\"localhost\"}},\"_embedded\":{\"content\":[{\"text\":\"test1\",\"number\":1,\"_links\":{\"self\":{\"href\":\"localhost\"}}},{\"text\":\"test2\",\"number\":2,\"_links\":{\"self\":{\"href\":\"localhost\"}}}]}}"', isError=false}, FailureType{failureName='java.lang.AssertionError', failureDetail=' Expected: is "{\"_embedded\":{\"content\":[\"first\",\"second\"]},\"_links\":{\"self\":{\"href\":\"localhost\"}}}"      but: was "{\"_links\":{\"self\":{\"href\":\"localhost\"}},\"_embedded\":{\"content\":[\"first\",\"second\"]}}"', isError=false}], nbFailures=5, nbErrors=0}
+status: NOPATCH
+dateEnd: Thu Mar 23 23:40:52 CET 2017
+allocatedtime: 120minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/spring-projects/spring-hateoas/214294878/src/main/java], projectClasspath='[Ljava.net.URL;@5e8ac0e1', projectTests=[org.springframework.hateoas.hal.Jackson2HalIntegrationTest], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 38
+nbAngelicValues: 20
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #1
+location: FailureLocation{className='org.springframework.hateoas.Jackson2ResourceSupportIntegrationTest', failingMethods=[org.springframework.hateoas.Jackson2ResourceSupportIntegrationTest#doesNotRenderId], erroringMethods=[], failures=[FailureType{failureName='java.lang.AssertionError', failureDetail=' Expected: is "{\"links\":[{\"rel\":\"self\",\"href\":\"localhost\"}]}"      but: was "{\"embeddedResources\":{},\"links\":[{\"rel\":\"self\",\"href\":\"localhost\"}]}"', isError=false}], nbFailures=1, nbErrors=0}
+status: NOPATCH
+dateEnd: Thu Mar 23 23:41:25 CET 2017
+allocatedtime: 120minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/spring-projects/spring-hateoas/214294878/src/main/java], projectClasspath='[Ljava.net.URL;@431f1eaf', projectTests=[org.springframework.hateoas.Jackson2ResourceSupportIntegrationTest], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 38
+nbAngelicValues: 18
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #2
+location: FailureLocation{className='org.springframework.hateoas.Jackson2ResourceIntegrationTest', failingMethods=[org.springframework.hateoas.Jackson2ResourceIntegrationTest#inlinesContent], erroringMethods=[], failures=[FailureType{failureName='java.lang.AssertionError', failureDetail=' Expected: is "{\"firstname\":\"Dave\",\"lastname\":\"Matthews\",\"links\":[{\"rel\":\"self\",\"href\":\"localhost\"}]}"      but: was "{\"embeddedResources\":{},\"firstname\":\"Dave\",\"lastname\":\"Matthews\",\"links\":[{\"rel\":\"self\",\"href\":\"localhost\"}]}"', isError=false}], nbFailures=1, nbErrors=0}
+status: NOPATCH
+dateEnd: Thu Mar 23 23:41:59 CET 2017
+allocatedtime: 120minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/spring-projects/spring-hateoas/214294878/src/main/java], projectClasspath='[Ljava.net.URL;@37854b34', projectTests=[org.springframework.hateoas.Jackson2ResourceIntegrationTest], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 46
+nbAngelicValues: 22
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #3
+location: FailureLocation{className='org.springframework.hateoas.Jackson2PagedResourcesIntegrationTest', failingMethods=[org.springframework.hateoas.Jackson2PagedResourcesIntegrationTest#serializesPagedResourcesCorrectly], erroringMethods=[], failures=[FailureType{failureName='java.lang.AssertionError', failureDetail=' Expected: is "{\"links\":[],\"content\":[{\"firstname\":\"Dave\",\"lastname\":\"Matthews\"}],\"page\":{\"size\":1,\"totalElements\":2,\"totalPages\":2,\"number\":0}}"      but: was "{\"embeddedResources\":{},\"links\":[],\"content\":[{\"firstname\":\"Dave\",\"lastname\":\"Matthews\"}],\"page\":{\"size\":1,\"totalElements\":2,\"totalPages\":2,\"number\":0}}"', isError=false}], nbFailures=1, nbErrors=0}
+status: NOPATCH
+dateEnd: Thu Mar 23 23:42:28 CET 2017
+allocatedtime: 120minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/spring-projects/spring-hateoas/214294878/src/main/java], projectClasspath='[Ljava.net.URL;@6a950a3b', projectTests=[org.springframework.hateoas.Jackson2PagedResourcesIntegrationTest], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 29
+nbAngelicValues: 14
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #4
+location: FailureLocation{className='org.springframework.hateoas.ResourceIntegrationTest', failingMethods=[org.springframework.hateoas.ResourceIntegrationTest#inlinesContent], erroringMethods=[], failures=[FailureType{failureName='java.lang.AssertionError', failureDetail=' Expected: is "{\"firstname\":\"Dave\",\"lastname\":\"Matthews\",\"links\":[{\"rel\":\"self\",\"href\":\"localhost\"}]}"      but: was "{\"embeddedResources\":{},\"firstname\":\"Dave\",\"lastname\":\"Matthews\",\"links\":[{\"rel\":\"self\",\"href\":\"localhost\"}]}"', isError=false}], nbFailures=1, nbErrors=0}
+status: NOPATCH
+dateEnd: Thu Mar 23 23:43:04 CET 2017
+allocatedtime: 120minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/spring-projects/spring-hateoas/214294878/src/main/java], projectClasspath='[Ljava.net.URL;@8077c97', projectTests=[org.springframework.hateoas.ResourceIntegrationTest], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 46
+nbAngelicValues: 22
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #5
+location: FailureLocation{className='org.springframework.hateoas.ResourceSupportIntegrationTest', failingMethods=[org.springframework.hateoas.ResourceSupportIntegrationTest#doesNotRenderId], erroringMethods=[], failures=[FailureType{failureName='java.lang.AssertionError', failureDetail=' Expected: is "{\"links\":[{\"rel\":\"self\",\"href\":\"localhost\"}]}"      but: was "{\"embeddedResources\":{},\"links\":[{\"rel\":\"self\",\"href\":\"localhost\"}]}"', isError=false}], nbFailures=1, nbErrors=0}
+status: NOPATCH
+dateEnd: Thu Mar 23 23:43:33 CET 2017
+allocatedtime: 120minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/spring-projects/spring-hateoas/214294878/src/main/java], projectClasspath='[Ljava.net.URL;@25f7cc38', projectTests=[org.springframework.hateoas.ResourceSupportIntegrationTest], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 38
+nbAngelicValues: 18
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #6
+location: FailureLocation{className='org.springframework.hateoas.client.TraversonTest', failingMethods=[], erroringMethods=[org.springframework.hateoas.client.TraversonTest#doesNotDoubleEncodeURI], failures=[FailureType{failureName='org.springframework.http.converter.HttpMessageNotReadableException', failureDetail='Could not read document: Can not deserialize instance of org.springframework.hateoas.ResourceSupport out of START_ARRAY token  at [Source: java.io.PushbackInputStream@558bdf1f; line: 9, column: 15] (through reference chain: org.springframework.hateoas.Resource["_embedded"]->java.util.LinkedHashMap["items"]); nested exception is com.fasterxml.jackson.databind.JsonMappingException: Can not deserialize instance of org.springframework.hateoas.ResourceSupport out of START_ARRAY token  at [Source: java.io.PushbackInputStream@558bdf1f; line: 9, column: 15] (through reference chain: org.springframework.hateoas.Resource["_embedded"]->java.util.LinkedHashMap["items"])', isError=true}], nbFailures=0, nbErrors=1}
+status: NOPATCH
+dateEnd: Thu Mar 23 23:44:18 CET 2017
+allocatedtime: 120minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/spring-projects/spring-hateoas/214294878/src/main/java], projectClasspath='[Ljava.net.URL;@36330be8', projectTests=[org.springframework.hateoas.client.TraversonTest], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 36
+nbAngelicValues: 20
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
