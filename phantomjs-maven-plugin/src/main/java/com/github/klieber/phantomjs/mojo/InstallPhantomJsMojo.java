@@ -25,6 +25,7 @@
  */
 package com.github.klieber.phantomjs.mojo;
 
+import com.github.klieber.phantomjs.download.DownloaderFactory;
 import com.github.klieber.phantomjs.locate.Locator;
 import com.github.klieber.phantomjs.locate.PhantomJsLocator;
 import com.github.klieber.phantomjs.locate.PhantomJsLocatorOptions;
@@ -181,7 +182,8 @@ public class InstallPhantomJsMojo extends AbstractPhantomJsMojo implements Phant
     repositoryDetails.setRepositorySystemSession(this.repositorySystemSession);
     repositoryDetails.setRemoteRepositories(this.remoteRepositories);
 
-    Locator locator = new PhantomJsLocator(this, repositoryDetails);
+    DownloaderFactory downloaderFactory = new DownloaderFactory(this, repositoryDetails);
+    Locator locator = new PhantomJsLocator(this, downloaderFactory);
     String location = locator.locate();
 
     if (location == null) {

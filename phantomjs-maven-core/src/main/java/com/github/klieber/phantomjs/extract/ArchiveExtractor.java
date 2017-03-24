@@ -25,7 +25,6 @@
  */
 package com.github.klieber.phantomjs.extract;
 
-import com.github.klieber.phantomjs.archive.PhantomJSArchive;
 import de.schlichtherle.truezip.file.TFile;
 import de.schlichtherle.truezip.file.TVFS;
 import de.schlichtherle.truezip.fs.FsSyncException;
@@ -35,29 +34,20 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 
-public class PhantomJsExtractor implements Extractor {
+public class ArchiveExtractor {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(PhantomJsExtractor.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(ArchiveExtractor.class);
 
-  private static final String UNABLE_TO_EXTRACT = "Unable to extract phantomjs binary from %s";
+  private static final String UNABLE_TO_EXTRACT = "Unable to extract member from %s";
   private static final String UNABLE_TO_UNMOUNT = "Unable to unmount file system after extracting";
   private static final String EXTRACTING = "Extracting {} to {}";
 
-
-  private final PhantomJSArchive phantomJSArchive;
-
-  public PhantomJsExtractor(PhantomJSArchive phantomJSArchive) {
-    this.phantomJSArchive = phantomJSArchive;
-  }
-
-  @Override
-  public void extract(File archive,File extractTo) throws ExtractionException {
+  public void extract(File archive, String member, File extractTo) throws ExtractionException {
     try {
-      TFile tfile = new TFile(archive, phantomJSArchive.getPathToExecutable());
+      TFile tfile = new TFile(archive, member);
       LOGGER.info(EXTRACTING, tfile.getAbsolutePath(), extractTo.getAbsolutePath());
       if (extractTo.getParentFile().exists() || extractTo.getParentFile().mkdirs()) {
         tfile.cp(extractTo);
-        extractTo.setExecutable(true);
       }
     } catch (IOException e) {
       throw new ExtractionException(String.format(UNABLE_TO_EXTRACT, archive), e);

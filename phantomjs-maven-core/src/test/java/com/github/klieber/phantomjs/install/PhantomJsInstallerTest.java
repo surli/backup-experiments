@@ -29,7 +29,7 @@ import com.github.klieber.phantomjs.archive.PhantomJSArchive;
 import com.github.klieber.phantomjs.download.DownloadException;
 import com.github.klieber.phantomjs.download.Downloader;
 import com.github.klieber.phantomjs.extract.ExtractionException;
-import com.github.klieber.phantomjs.extract.Extractor;
+import com.github.klieber.phantomjs.extract.ArchiveExtractor;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -45,6 +45,7 @@ import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.same;
@@ -71,7 +72,7 @@ public class PhantomJsInstallerTest {
   private Downloader downloader;
 
   @Mock
-  private Extractor extractor;
+  private ArchiveExtractor extractor;
 
   @Captor
   private ArgumentCaptor<File> extractToFile;
@@ -96,7 +97,7 @@ public class PhantomJsInstallerTest {
 
     assertThat(phantomJsInstaller.install(phantomJSArchive)).isEqualTo(phantomJsBinary.getAbsolutePath());
 
-    verify(extractor).extract(same(archive), extractToFile.capture());
+    verify(extractor).extract(same(archive), eq(EXTRACT_TO_PATH), extractToFile.capture());
 
     assertThat(extractToFile.getValue()).isEqualTo(phantomJsBinary);
   }
@@ -130,7 +131,7 @@ public class PhantomJsInstallerTest {
     when(downloader.download(phantomJSArchive)).thenReturn(archive);
 
     ExtractionException exception = new ExtractionException("error", new RuntimeException());
-    doThrow(exception).when(extractor).extract(same(archive), any(File.class));
+    doThrow(exception).when(extractor).extract(same(archive), eq(EXTRACT_TO_PATH), any(File.class));
 
     assertThatThrownBy(() -> phantomJsInstaller.install(phantomJSArchive))
       .isInstanceOf(InstallationException.class);
