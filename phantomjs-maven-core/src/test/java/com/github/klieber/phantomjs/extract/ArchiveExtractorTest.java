@@ -25,7 +25,6 @@
  */
 package com.github.klieber.phantomjs.extract;
 
-import com.github.klieber.phantomjs.archive.PhantomJSArchive;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,16 +42,13 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class PhantomJsExtractorTest {
+public class ArchiveExtractorTest {
 
   private static final String PROJECT_ROOT = System.getProperty("user.dir");
 
   private static final String PATH_TO_EXECUTABLE = "bin/phantomjs";
   private static final String ARCHIVE_PATH = PROJECT_ROOT + "/src/test/config/test-archive.tar.gz";
   private static final String EXTRACT_TO_PATH = PROJECT_ROOT + "/target/temp/phantomjs";
-
-  @Mock
-  private PhantomJSArchive phantomJsArchive;
 
   private File archive;
 
@@ -61,11 +57,11 @@ public class PhantomJsExtractorTest {
   @Mock
   private File extractToParent;
 
-  private PhantomJsExtractor extractor;
+  private ArchiveExtractor extractor;
 
   @Before
   public void before() {
-    extractor = new PhantomJsExtractor(phantomJsArchive);
+    extractor = new ArchiveExtractor();
     archive = new File(ARCHIVE_PATH);
     extractTo = new File(EXTRACT_TO_PATH);
   }
@@ -79,8 +75,7 @@ public class PhantomJsExtractorTest {
 
   @Test
   public void shouldExtract() throws Exception {
-    when(phantomJsArchive.getPathToExecutable()).thenReturn(PATH_TO_EXECUTABLE);
-    extractor.extract(archive, extractTo);
+    extractor.extract(archive, PATH_TO_EXECUTABLE, extractTo);
     assertThat(extractTo.exists()).isTrue();
   }
 
@@ -88,21 +83,19 @@ public class PhantomJsExtractorTest {
   public void shouldNotExtract() throws Exception {
     extractTo = mock(File.class);
 
-    when(phantomJsArchive.getPathToExecutable()).thenReturn(PATH_TO_EXECUTABLE);
     when(extractTo.getParentFile()).thenReturn(extractToParent);
     when(extractTo.getAbsolutePath()).thenReturn(EXTRACT_TO_PATH);
     when(extractToParent.mkdirs()).thenReturn(false);
 
-    extractor.extract(archive, extractTo);
+    extractor.extract(archive, PATH_TO_EXECUTABLE, extractTo);
 
     verify(extractTo, never()).setExecutable(true);
   }
 
   @Test
   public void shouldFailToExtract() throws Exception {
-    when(phantomJsArchive.getPathToExecutable()).thenReturn(PATH_TO_EXECUTABLE);
     File invalidFile = new File(PROJECT_ROOT + "/target/doesnotexist");
-    assertThatThrownBy(() -> extractor.extract(invalidFile, extractTo))
+    assertThatThrownBy(() -> extractor.extract(invalidFile, PATH_TO_EXECUTABLE, extractTo))
       .isInstanceOf(ExtractionException.class);
   }
 }

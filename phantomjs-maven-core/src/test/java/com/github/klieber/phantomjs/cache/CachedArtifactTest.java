@@ -34,6 +34,7 @@ import org.eclipse.aether.repository.LocalRepositoryManager;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -65,23 +66,24 @@ public class CachedArtifactTest {
 
   private File basedir;
 
-  private CachedArtifact cachedArtifact;
+  @InjectMocks
+  private CachedFileFactory cachedFileFactory;
 
   @Before
   public void before() {
-    cachedArtifact = new CachedArtifact(phantomJSArchive,artifactBuilder,repositorySystemSession);
     basedir = new File(REPOSITORY_PATH);
   }
 
   @Test
-  public void testGetFile() throws Exception {
+  public void testCreate() throws Exception {
     when(artifactBuilder.createArtifact(phantomJSArchive)).thenReturn(artifact);
 
     when(repositorySystemSession.getLocalRepositoryManager()).thenReturn(localRepositoryManager);
     when(localRepositoryManager.getRepository()).thenReturn(new LocalRepository(basedir));
     when(localRepositoryManager.getPathForLocalArtifact(artifact)).thenReturn(ARTIFACT_PATH);
 
-    assertThat(cachedArtifact.getFile().getAbsolutePath())
-      .isEqualTo(new File(REPOSITORY_PATH, ARTIFACT_PATH).getPath());
+    File cachedFile = cachedFileFactory.create(phantomJSArchive, repositorySystemSession);
+
+    assertThat(cachedFile.getAbsolutePath()).isEqualTo(new File(REPOSITORY_PATH, ARTIFACT_PATH).getPath());
   }
 }
