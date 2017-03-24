@@ -1,0 +1,145 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 3 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 3 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] PhantomJS Maven
+[INFO] PhantomJS Maven Core
+[INFO] PhantomJS Maven Plugin
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building PhantomJS Maven 0.8-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-java) @ phantomjs-maven ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (default) @ phantomjs-maven ---
+[INFO] argLine set to -javaagent:/root/./workspace/klieber/phantomjs-maven-plugin/214775267/.m2/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/root/workspace/klieber/phantomjs-maven-plugin/214775267/target/jacoco.exec,excludes=com/github/klieber/phantomjs/mojo/HelpMojo*
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building PhantomJS Maven Core 0.8-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-java) @ phantomjs-maven-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (default) @ phantomjs-maven-core ---
+[INFO] argLine set to -javaagent:/root/./workspace/klieber/phantomjs-maven-plugin/214775267/.m2/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/root/workspace/klieber/phantomjs-maven-plugin/214775267/phantomjs-maven-core/target/jacoco.exec,excludes=com/github/klieber/phantomjs/mojo/HelpMojo*
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ phantomjs-maven-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ phantomjs-maven-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ phantomjs-maven-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ phantomjs-maven-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ phantomjs-maven-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 6.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 69.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 856.4 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.github.klieber.phantomjs.exec.PhantomJsProcessBuilderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.997 sec - in com.github.klieber.phantomjs.exec.PhantomJsProcessBuilderTest
+Running com.github.klieber.phantomjs.exec.PhantomJsExecutorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.641 sec - in com.github.klieber.phantomjs.exec.PhantomJsExecutorTest
+Running com.github.klieber.phantomjs.os.LinuxPropertiesTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec - in com.github.klieber.phantomjs.os.LinuxPropertiesTest
+Running com.github.klieber.phantomjs.os.OperatingSystemFactoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.165 sec - in com.github.klieber.phantomjs.os.OperatingSystemFactoryTest
+Running com.github.klieber.phantomjs.os.SystemPropertiesTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in com.github.klieber.phantomjs.os.SystemPropertiesTest
+Running com.github.klieber.phantomjs.archive.PhantomJSArchiveImplTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.183 sec - in com.github.klieber.phantomjs.archive.PhantomJSArchiveImplTest
+Running com.github.klieber.phantomjs.archive.PhantomJSArchiveBuilderTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.096 sec - in com.github.klieber.phantomjs.archive.PhantomJSArchiveBuilderTest
+Running com.github.klieber.phantomjs.download.DownloaderFactoryTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.034 sec <<< FAILURE! - in com.github.klieber.phantomjs.download.DownloaderFactoryTest
+initializationError(com.github.klieber.phantomjs.download.DownloaderFactoryTest)  Time elapsed: 0.018 sec  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+
+No tests found in DownloaderFactoryTest
+Is the method annotated with @Test?
+Is the method public?
+
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: org.junit.runners.model.InitializationError
+
+Running com.github.klieber.phantomjs.download.RepositoryDownloaderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.184 sec - in com.github.klieber.phantomjs.download.RepositoryDownloaderTest
+Running com.github.klieber.phantomjs.download.WebDownloaderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec - in com.github.klieber.phantomjs.download.WebDownloaderTest
+Running com.github.klieber.phantomjs.download.RuleBasedDownloaderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 sec - in com.github.klieber.phantomjs.download.RuleBasedDownloaderTest
+Running com.github.klieber.phantomjs.extract.ArchiveExtractorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.574 sec - in com.github.klieber.phantomjs.extract.ArchiveExtractorTest
+Running com.github.klieber.phantomjs.cache.CachedArtifactTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec - in com.github.klieber.phantomjs.cache.CachedArtifactTest
+Running com.github.klieber.phantomjs.util.ArtifactBuilderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in com.github.klieber.phantomjs.util.ArtifactBuilderTest
+Running com.github.klieber.phantomjs.util.PredicatesTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in com.github.klieber.phantomjs.util.PredicatesTest
+Running com.github.klieber.phantomjs.locate.CompositeLocatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in com.github.klieber.phantomjs.locate.CompositeLocatorTest
+Running com.github.klieber.phantomjs.locate.PathLocatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec - in com.github.klieber.phantomjs.locate.PathLocatorTest
+Running com.github.klieber.phantomjs.locate.ArchiveLocatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec - in com.github.klieber.phantomjs.locate.ArchiveLocatorTest
+Running com.github.klieber.phantomjs.locate.RepositoryDetailsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.github.klieber.phantomjs.locate.RepositoryDetailsTest
+Running com.github.klieber.phantomjs.install.PhantomJsInstallerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 sec - in com.github.klieber.phantomjs.install.PhantomJsInstallerTest
+Running com.github.klieber.phantomjs.resolve.PhantomJsBinaryResolverTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec - in com.github.klieber.phantomjs.resolve.PhantomJsBinaryResolverTest
+
+Results :
+
+Tests in error: 
+  DownloaderFactoryTest.initializationError » Mockito 
+
+No tests found in Downlo...
+
+Tests run: 64, Failures: 0, Errors: 1, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] PhantomJS Maven .................................... SUCCESS [  2.399 s]
+[INFO] PhantomJS Maven Core ............................... FAILURE [ 17.437 s]
+[INFO] PhantomJS Maven Plugin ............................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 22.113 s
+[INFO] Finished at: 2017-03-25T00:57:31+01:00
+[INFO] Final Memory: 24M/380M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project phantomjs-maven-core: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/klieber/phantomjs-maven-plugin/214775267/phantomjs-maven-core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :phantomjs-maven-core
