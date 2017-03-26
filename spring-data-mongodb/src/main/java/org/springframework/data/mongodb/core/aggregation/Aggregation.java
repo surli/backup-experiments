@@ -51,6 +51,7 @@ import org.springframework.util.Assert;
  * @author Alessio Fachechi
  * @author Christoph Strobl
  * @author Nikolay Bogdanov
+ * @author Gustavo de Geus
  * @since 1.3
  */
 public class Aggregation {
@@ -380,6 +381,16 @@ public class Aggregation {
 	 */
 	public static LimitOperation limit(long maxElements) {
 		return new LimitOperation(maxElements);
+	}
+
+	/**
+	 * Creates a new {@link SampleOperation} to selects the specified number of documents from its input randomly.
+	 *
+	 * @param sampleSize must not be less than zero.
+	 * @return
+	 */
+	public static SampleOperation sample(long sampleSize) {
+		return new SampleOperation(sampleSize);
 	}
 
 	/**
