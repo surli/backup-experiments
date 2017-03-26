@@ -1,0 +1,1660 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building P6Spy 3.0.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ p6spy ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-java) @ p6spy ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.7.201606060606:prepare-agent (prepare-agent) @ p6spy ---
+[INFO] argLine set to -javaagent:/root/./workspace/p6spy/p6spy/215098301/.m2/org/jacoco/org.jacoco.agent/0.7.7.201606060606/org.jacoco.agent-0.7.7.201606060606-runtime.jar=destfile=/root/workspace/p6spy/p6spy/215098301/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ p6spy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- license-maven-plugin:1.5:update-file-header (update licenses) @ p6spy ---
+[INFO] Will search files to update from root /root/workspace/p6spy/p6spy/215098301/src/main/assembly
+[INFO] Will search files to update from root /root/workspace/p6spy/p6spy/215098301/src/main/java
+[INFO] Will search files to update from root /root/workspace/p6spy/p6spy/215098301/src/main/resources
+[INFO] Will search files to update from root /root/workspace/p6spy/p6spy/215098301/src/test/java
+[INFO] Will search files to update from root /root/workspace/p6spy/p6spy/215098301/src/test/resources
+[INFO] Scan 142 files header done in 755.286ms.
+[INFO] All files are up-to-date.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ p6spy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ p6spy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 32 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ p6spy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ p6spy ---
+[INFO] Surefire report directory: /root/workspace/p6spy/p6spy/215098301/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.17/surefire-junit4-2.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.17/surefire-junit4-2.17.pom (3 KB at 3.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.17/surefire-providers-2.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.17/surefire-providers-2.17.pom (3 KB at 72.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.17/surefire-junit4-2.17.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.17/surefire-junit4-2.17.jar (63 KB at 738.9 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.p6spy.engine.event.EventListenerServiceLoaderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.34 sec - in com.p6spy.engine.event.EventListenerServiceLoaderTest
+Running com.p6spy.engine.test.ResultSetInformationTest
+04:43:58,405 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:43:58,758 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testResultSetInformation[0: H2](com.p6spy.engine.test.ResultSetInformationTest)
+
+*****************************************************************************************
+04:44:00,109 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+04:44:09,353 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testResultSetInformation[0: H2](com.p6spy.engine.test.ResultSetInformationTest)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.402 sec - in com.p6spy.engine.test.ResultSetInformationTest
+Running com.p6spy.engine.common.P6UtilTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in com.p6spy.engine.common.P6UtilTest
+Running com.p6spy.engine.common.P6WrapperIsWrapperDelegateTest
+04:44:09,390 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testCastableFromUnderlying(com.p6spy.engine.common.P6WrapperIsWrapperDelegateTest)
+
+*****************************************************************************************
+04:44:09,393 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testCastableFromUnderlying(com.p6spy.engine.common.P6WrapperIsWrapperDelegateTest)
+04:44:09,394 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testCastableFromProxy(com.p6spy.engine.common.P6WrapperIsWrapperDelegateTest)
+
+*****************************************************************************************
+04:44:09,397 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testCastableFromProxy(com.p6spy.engine.common.P6WrapperIsWrapperDelegateTest)
+04:44:09,397 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testProxyOfWrappedConnection(com.p6spy.engine.common.P6WrapperIsWrapperDelegateTest)
+
+*****************************************************************************************
+04:44:09,411 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testProxyOfWrappedConnection(com.p6spy.engine.common.P6WrapperIsWrapperDelegateTest)
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec - in com.p6spy.engine.common.P6WrapperIsWrapperDelegateTest
+Running com.p6spy.engine.common.P6WrapperUnwrapDelegateTest
+04:44:09,462 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testCastableFromUnderlying(com.p6spy.engine.common.P6WrapperUnwrapDelegateTest)
+
+*****************************************************************************************
+04:44:09,462 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testCastableFromUnderlying(com.p6spy.engine.common.P6WrapperUnwrapDelegateTest)
+04:44:09,462 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testCastableFromProxy(com.p6spy.engine.common.P6WrapperUnwrapDelegateTest)
+
+*****************************************************************************************
+04:44:09,462 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testCastableFromProxy(com.p6spy.engine.common.P6WrapperUnwrapDelegateTest)
+04:44:09,463 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testProxyOfWrappedConnection(com.p6spy.engine.common.P6WrapperUnwrapDelegateTest)
+
+*****************************************************************************************
+04:44:09,463 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testProxyOfWrappedConnection(com.p6spy.engine.common.P6WrapperUnwrapDelegateTest)
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in com.p6spy.engine.common.P6WrapperUnwrapDelegateTest
+Running com.p6spy.engine.common.CustomHashedHashSetTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.p6spy.engine.common.CustomHashedHashSetTest
+Running com.p6spy.engine.wrapper.ConnectionWrapperTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec - in com.p6spy.engine.wrapper.ConnectionWrapperTest
+Running com.p6spy.engine.spy.P6TestPreparedStatement
+04:44:09,536 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:09,547 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExecuteUpdate[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+
+*****************************************************************************************
+04:44:09,551 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496250239|0|statement|connection 9|drop table prepstmt_test|drop table prepstmt_test
+1490496250254|0|statement|connection 9|drop table prepstmt_test2|drop table prepstmt_test2
+1490496250254|0|statement|connection 9|drop table prepstmt_test3|drop table prepstmt_test3
+1490496250256|1|statement|connection 9|create table prepstmt_test (col1 varchar(255), col2 integer)|create table prepstmt_test (col1 varchar(255), col2 integer)
+1490496250261|2|statement|connection 9|create table prepstmt_test2 (col1 varchar(255), col2 integer)|create table prepstmt_test2 (col1 varchar(255), col2 integer)
+1490496250264|2|statement|connection 9|create table prepstmt_test3  (col1 timestamp)|create table prepstmt_test3  (col1 timestamp)
+1490496250280|0|statement|connection 9|insert into prepstmt_test values (?, ?)|insert into prepstmt_test values ('miller', 1)
+1490496250294|0|batch|connection 9|insert into prepstmt_test values (?,?)|insert into prepstmt_test values ('danny',2)
+1490496250295|0|batch|connection 9|insert into prepstmt_test values (?,?)|insert into prepstmt_test values ('denver',3)
+1490496250295|0|batch|connection 9|insert into prepstmt_test values (?,?)|insert into prepstmt_test values ('aspen',4)
+1490496250300|4|batch|connection 9|insert into prepstmt_test values (?,?)|insert into prepstmt_test values ('aspen',4)
+1490496250318|17|statement|connection 9|select count(*) from prepstmt_test|select count(*) from prepstmt_test
+1490496250319|0|resultset|connection -1|select count(*) from prepstmt_test|1 = 4
+1490496250321|1|statement|connection 9|drop table prepstmt_test|drop table prepstmt_test
+1490496250322|1|statement|connection 9|drop table prepstmt_test2|drop table prepstmt_test2
+1490496250326|3|statement|connection 9|drop table prepstmt_test3|drop table prepstmt_test3
+04:44:10,327 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExecuteUpdate[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+04:44:10,328 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:10,341 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test binaryExcludedFalse[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+
+*****************************************************************************************
+04:44:10,345 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496251406|0|statement|connection 10|drop table prepstmt_test|drop table prepstmt_test
+1490496251408|0|statement|connection 10|drop table prepstmt_test2|drop table prepstmt_test2
+1490496251410|0|statement|connection 10|drop table prepstmt_test3|drop table prepstmt_test3
+1490496251425|14|statement|connection 10|create table prepstmt_test (col1 varchar(255), col2 integer)|create table prepstmt_test (col1 varchar(255), col2 integer)
+1490496251427|1|statement|connection 10|create table prepstmt_test2 (col1 varchar(255), col2 integer)|create table prepstmt_test2 (col1 varchar(255), col2 integer)
+1490496251430|2|statement|connection 10|create table prepstmt_test3  (col1 timestamp)|create table prepstmt_test3  (col1 timestamp)
+1490496251451|1|statement|connection 10|insert into img values (?, ?, ?)|insert into img values (1, '666F6F', 'blob0: CAST(REPEAT(''00'', 3) AS BINARY /* table: -2 id: 1 */)')
+1490496251462|10|statement|connection 10|drop table prepstmt_test|drop table prepstmt_test
+1490496251465|2|statement|connection 10|drop table prepstmt_test2|drop table prepstmt_test2
+1490496251466|0|statement|connection 10|drop table prepstmt_test3|drop table prepstmt_test3
+04:44:11,466 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test binaryExcludedFalse[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+04:44:11,468 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:11,480 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSameColumnNameInMultipleTables[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+
+*****************************************************************************************
+04:44:11,486 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496252029|0|statement|connection 11|drop table prepstmt_test|drop table prepstmt_test
+1490496252029|0|statement|connection 11|drop table prepstmt_test2|drop table prepstmt_test2
+1490496252030|0|statement|connection 11|drop table prepstmt_test3|drop table prepstmt_test3
+1490496252031|0|statement|connection 11|create table prepstmt_test (col1 varchar(255), col2 integer)|create table prepstmt_test (col1 varchar(255), col2 integer)
+1490496252031|0|statement|connection 11|create table prepstmt_test2 (col1 varchar(255), col2 integer)|create table prepstmt_test2 (col1 varchar(255), col2 integer)
+1490496252041|0|statement|connection 11|create table prepstmt_test3  (col1 timestamp)|create table prepstmt_test3  (col1 timestamp)
+1490496252042|0|statement|connection 11|insert into prepstmt_test values (?, ?)|insert into prepstmt_test values ('prepstmt_test_col1', 1)
+1490496252044|0|statement|connection 11|insert into prepstmt_test2 values (?, ?)|insert into prepstmt_test2 values ('prepstmt_test_col2', 1)
+1490496252048|0|statement|connection 11|select prepstmt_test.col1, prepstmt_test2.col1, prepstmt_test.col2, prepstmt_test2.col2 from prepstmt_test, prepstmt_test2 where prepstmt_test.col2 = prepstmt_test2.col2 and prepstmt_test.col1 = ? and prepstmt_test2.col1 = ?|select prepstmt_test.col1, prepstmt_test2.col1, prepstmt_test.col2, prepstmt_test2.col2 from prepstmt_test, prepstmt_test2 where prepstmt_test.col2 = prepstmt_test2.col2 and prepstmt_test.col1 = 'prepstmt_test_col1' and prepstmt_test2.col1 = 'prepstmt_test_col2'
+1490496252053|0|result|connection 11|select prepstmt_test.col1, prepstmt_test2.col1, prepstmt_test.col2, prepstmt_test2.col2 from prepstmt_test, prepstmt_test2 where prepstmt_test.col2 = prepstmt_test2.col2 and prepstmt_test.col1 = ? and prepstmt_test2.col1 = ?|
+1490496252054|0|resultset|connection -1|select prepstmt_test.col1, prepstmt_test2.col1, prepstmt_test.col2, prepstmt_test2.col2 from prepstmt_test, prepstmt_test2 where prepstmt_test.col2 = prepstmt_test2.col2 and prepstmt_test.col1 = ? and prepstmt_test2.col1 = ?|1 = 'prepstmt_test_col1', 2 = 'prepstmt_test_col2', 3 = 1, 4 = 1
+1490496252065|10|statement|connection 11|drop table prepstmt_test|drop table prepstmt_test
+1490496252066|0|statement|connection 11|drop table prepstmt_test2|drop table prepstmt_test2
+1490496252066|0|statement|connection 11|drop table prepstmt_test3|drop table prepstmt_test3
+04:44:12,066 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSameColumnNameInMultipleTables[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+04:44:12,071 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+1490496252073|0|debug|connection -1||Registered factory: com.p6spy.engine.spy.P6SpyFactory with options: com.p6spy.engine.spy.P6SpyOptions
+1490496252085|0|debug|connection -1||Registered factory: com.p6spy.engine.logging.P6LogFactory with options: com.p6spy.engine.logging.P6LogOptions
+1490496252085|0|debug|connection -1||Registered factory: com.p6spy.engine.test.P6TestFactory with options: com.p6spy.engine.test.P6TestOptions
+1490496252086|0|debug|connection -1||com.p6spy.engine.spy.P6ModuleManager re/initiating modules done
+04:44:12,086 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExecuteQuery[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+
+*****************************************************************************************
+04:44:12,090 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496252532|0|statement|connection 12|drop table prepstmt_test|drop table prepstmt_test
+1490496252534|0|statement|connection 12|drop table prepstmt_test2|drop table prepstmt_test2
+1490496252534|0|statement|connection 12|drop table prepstmt_test3|drop table prepstmt_test3
+1490496252535|0|statement|connection 12|create table prepstmt_test (col1 varchar(255), col2 integer)|create table prepstmt_test (col1 varchar(255), col2 integer)
+1490496252555|6|statement|connection 12|create table prepstmt_test2 (col1 varchar(255), col2 integer)|create table prepstmt_test2 (col1 varchar(255), col2 integer)
+1490496252556|0|statement|connection 12|create table prepstmt_test3  (col1 timestamp)|create table prepstmt_test3  (col1 timestamp)
+1490496252556|0|statement|connection 12|insert into prepstmt_test values (?, ?)|insert into prepstmt_test values ('execQueryTest', 1)
+1490496252557|0|statement|connection 12|insert into prepstmt_test values (?, ?)|insert into prepstmt_test values ('execQueryTest', 2)
+1490496252558|0|statement|connection 12|select * from prepstmt_test where col1 = ?|select * from prepstmt_test where col1 = 'execQueryTest'
+1490496252558|0|statement|connection 12|drop table prepstmt_test|drop table prepstmt_test
+1490496252559|0|statement|connection 12|drop table prepstmt_test2|drop table prepstmt_test2
+1490496252559|0|statement|connection 12|drop table prepstmt_test3|drop table prepstmt_test3
+04:44:12,559 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExecuteQuery[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+04:44:12,577 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:12,583 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testCallingSetMethodsOnStatementInterface[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+
+*****************************************************************************************
+04:44:12,594 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496253099|0|statement|connection 13|drop table prepstmt_test|drop table prepstmt_test
+1490496253100|0|statement|connection 13|drop table prepstmt_test2|drop table prepstmt_test2
+1490496253100|0|statement|connection 13|drop table prepstmt_test3|drop table prepstmt_test3
+1490496253107|6|statement|connection 13|create table prepstmt_test (col1 varchar(255), col2 integer)|create table prepstmt_test (col1 varchar(255), col2 integer)
+1490496253108|0|statement|connection 13|create table prepstmt_test2 (col1 varchar(255), col2 integer)|create table prepstmt_test2 (col1 varchar(255), col2 integer)
+1490496253108|0|statement|connection 13|create table prepstmt_test3  (col1 timestamp)|create table prepstmt_test3  (col1 timestamp)
+1490496253110|0|statement|connection 13|drop table prepstmt_test|drop table prepstmt_test
+1490496253111|0|statement|connection 13|drop table prepstmt_test2|drop table prepstmt_test2
+1490496253121|0|statement|connection 13|drop table prepstmt_test3|drop table prepstmt_test3
+04:44:13,122 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testCallingSetMethodsOnStatementInterface[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+04:44:13,123 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:13,134 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testAddToDate[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+
+*****************************************************************************************
+04:44:13,136 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496253565|0|statement|connection 14|drop table prepstmt_test|drop table prepstmt_test
+1490496253566|0|statement|connection 14|drop table prepstmt_test2|drop table prepstmt_test2
+1490496253566|0|statement|connection 14|drop table prepstmt_test3|drop table prepstmt_test3
+1490496253567|0|statement|connection 14|create table prepstmt_test (col1 varchar(255), col2 integer)|create table prepstmt_test (col1 varchar(255), col2 integer)
+1490496253568|0|statement|connection 14|create table prepstmt_test2 (col1 varchar(255), col2 integer)|create table prepstmt_test2 (col1 varchar(255), col2 integer)
+1490496253571|2|statement|connection 14|create table prepstmt_test3  (col1 timestamp)|create table prepstmt_test3  (col1 timestamp)
+1490496253575|3|statement|connection 14|drop table prepstmt_test|drop table prepstmt_test
+1490496253579|2|statement|connection 14|drop table prepstmt_test2|drop table prepstmt_test2
+1490496253580|0|statement|connection 14|drop table prepstmt_test3|drop table prepstmt_test3
+04:44:13,589 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testAddToDate[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+04:44:13,591 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:13,597 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test binaryExcludedTrue[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+
+*****************************************************************************************
+04:44:13,600 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496254023|0|statement|connection 15|drop table prepstmt_test|drop table prepstmt_test
+1490496254024|0|statement|connection 15|drop table prepstmt_test2|drop table prepstmt_test2
+1490496254024|0|statement|connection 15|drop table prepstmt_test3|drop table prepstmt_test3
+1490496254031|0|statement|connection 15|create table prepstmt_test (col1 varchar(255), col2 integer)|create table prepstmt_test (col1 varchar(255), col2 integer)
+1490496254033|0|statement|connection 15|create table prepstmt_test2 (col1 varchar(255), col2 integer)|create table prepstmt_test2 (col1 varchar(255), col2 integer)
+1490496254034|0|statement|connection 15|create table prepstmt_test3  (col1 timestamp)|create table prepstmt_test3  (col1 timestamp)
+1490496254035|0|statement|connection 15|insert into img values (?, ?, ?)|insert into img values (1, '[binary]', 'blob1: CAST(REPEAT(''00'', 3) AS BINARY /* table: -2 id: 1 */)')
+1490496254046|1|statement|connection 15|drop table prepstmt_test|drop table prepstmt_test
+1490496254049|2|statement|connection 15|drop table prepstmt_test2|drop table prepstmt_test2
+1490496254057|7|statement|connection 15|drop table prepstmt_test3|drop table prepstmt_test3
+04:44:14,058 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test binaryExcludedTrue[0: H2](com.p6spy.engine.spy.P6TestPreparedStatement)
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.528 sec - in com.p6spy.engine.spy.P6TestPreparedStatement
+Running com.p6spy.engine.spy.P6TestMBean
+04:44:14,067 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_mbean.properties
+04:44:14,262 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testPropertyExposalViaJMX(com.p6spy.engine.spy.P6TestMBean)
+
+*****************************************************************************************
+04:44:14,287 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testPropertyExposalViaJMX(com.p6spy.engine.spy.P6TestMBean)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.224 sec - in com.p6spy.engine.spy.P6TestMBean
+Running com.p6spy.engine.spy.P6TestCommon
+04:44:14,317 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:14,334 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSqlExpressionPattern[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:14,337 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496254814|0|statement|connection 16|select 'y' from customers|select 'y' from customers
+1490496254823|0|statement|connection 16|select *  from customers|select *  from customers
+1490496254824|0|statement|connection 16|select 'y' from customers|select 'y' from customers
+04:44:14,825 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSqlExpressionPattern[0: H2](com.p6spy.engine.spy.P6TestCommon)
+04:44:14,825 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:14,837 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testDisableLogModule[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:14,838 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496255193|8|statement|connection 17|select 'x' from customers|select 'x' from customers
+1490496255193|0|statement|connection 17|select 'x' from customers|select 'x' from customers
+04:44:15,205 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testDisableLogModule[0: H2](com.p6spy.engine.spy.P6TestCommon)
+04:44:15,206 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:15,209 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testAppenderReconfigurationTakesPlaceImediatelly[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:15,213 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496255566|0|statement|connection 18|select count(*) from customers|select count(*) from customers
+1490496255581|0|statement|connection 18|select count(*) from customers|select count(*) from customers
+04:44:15,581 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testAppenderReconfigurationTakesPlaceImediatelly[0: H2](com.p6spy.engine.spy.P6TestCommon)
+04:44:15,582 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:15,593 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testIncludeExcludeRegexp[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:15,594 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496255923|0|statement|connection 19|select 'y' from customers|select 'y' from customers
+1490496255924|0|statement|connection 19|select 'y' from customers|select 'y' from customers
+04:44:15,925 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testIncludeExcludeRegexp[0: H2](com.p6spy.engine.spy.P6TestCommon)
+04:44:15,925 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:15,941 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testMessageFormatStrategies[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:15,942 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496256273|0|statement|connection 20|select count(*) from customers|select count(*) from customers
+#1490496256274 | took 0ms | statement | connection 20|select count(*) from customers
+select count(*) from customers;
+04:44:16,275 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testMessageFormatStrategies[0: H2](com.p6spy.engine.spy.P6TestCommon)
+04:44:16,275 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:16,282 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExcludeThisTableShouldLogResultSet[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:16,286 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+04:44:16,615 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExcludeThisTableShouldLogResultSet[0: H2](com.p6spy.engine.spy.P6TestCommon)
+04:44:16,625 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:16,630 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testIncludeExcludeWithSqlExpressionPattern[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:16,633 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496256952|0|statement|connection 22|select 'x' from customers|select 'x' from customers
+1490496256952|0|statement|connection 22|select 'x' from customers|select 'x' from customers
+1490496256953|0|statement|connection 22|select 'x' from customers|select 'x' from customers
+1490496256953|0|statement|connection 22|select 'x' from customers|select 'x' from customers
+04:44:16,954 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testIncludeExcludeWithSqlExpressionPattern[0: H2](com.p6spy.engine.spy.P6TestCommon)
+04:44:16,961 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:16,965 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testCategories[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:16,969 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496257256|0|statement|connection 23|select 'y' from customers|select 'y' from customers
+1490496257256|0|rollback|connection 23||
+1490496257256|0|statement|connection 23|select 'y' from customers|select 'y' from customers
+1490496257261|0|commit|connection 23||
+1490496257261|0|debug|connection -1||P6Spy intentionally did not log category: statement, statement: select 'y' from customers  Reason: logger=com.p6spy.engine.spy.appender.P6TestLogger@5c2a52dc, isLoggable=false, isCategoryOk=true, meetsTreshold=true
+1490496257263|1|statement|connection 23|select id, name from customers where id in (1,2)|select id, name from customers where id in (1,2)
+1490496257273|0|result|connection 23|select id, name from customers where id in (1,2)|
+1490496257274|0|resultset|connection -1|select id, name from customers where id in (1,2)|name = 'david'
+1490496257274|0|result|connection 23|select id, name from customers where id in (1,2)|
+1490496257274|0|resultset|connection -1|select id, name from customers where id in (1,2)|name = 'mary'
+1490496257275|0|statement|connection 23|select id, name from customers where id in (1,2)|select id, name from customers where id in (1,2)
+1490496257275|0|result|connection 23|select id, name from customers where id in (1,2)|
+1490496257275|0|result|connection 23|select id, name from customers where id in (1,2)|
+1490496257275|0|statement|connection 23|select id, name from customers where id in (1,2)|select id, name from customers where id in (1,2)
+1490496257276|0|resultset|connection -1|select id, name from customers where id in (1,2)|name = 'david'
+1490496257276|0|resultset|connection -1|select id, name from customers where id in (1,2)|name = 'mary'
+1490496257276|0|statement|connection 23|select id, name from customers where id in (1,2)|select id, name from customers where id in (1,2)
+04:44:17,277 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testCategories[0: H2](com.p6spy.engine.spy.P6TestCommon)
+04:44:17,285 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:17,289 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testIncludeOtherTableShouldLogResultSet[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:17,292 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+04:44:17,530 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testIncludeOtherTableShouldLogResultSet[0: H2](com.p6spy.engine.spy.P6TestCommon)
+04:44:17,535 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:17,554 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testIncludeExclude[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:17,556 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496257797|0|statement|connection 25|select 'x' from customers|select 'x' from customers
+1490496257801|0|statement|connection 25|select 'x' from customers|select 'x' from customers
+1490496257801|0|statement|connection 25|select 'x' from customers|select 'x' from customers
+1490496257802|0|statement|connection 25|select 'x' from customers|select 'x' from customers
+1490496257803|0|statement|connection 25|select *  from customers|select *  from customers
+04:44:17,804 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testIncludeExclude[0: H2](com.p6spy.engine.spy.P6TestCommon)
+04:44:17,807 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:17,812 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testStacktrace[0: H2](com.p6spy.engine.spy.P6TestCommon)
+
+*****************************************************************************************
+04:44:17,814 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496258057|0|statement|connection 26|select 'y' from customers|select 'y' from customers
+java.lang.Exception
+	at com.p6spy.engine.common.P6LogQuery.doLog(P6LogQuery.java:127)
+	at com.p6spy.engine.common.P6LogQuery.doLogElapsed(P6LogQuery.java:93)
+	at com.p6spy.engine.common.P6LogQuery.logElapsed(P6LogQuery.java:202)
+	at com.p6spy.engine.logging.LoggingEventListener.logElapsed(LoggingEventListener.java:109)
+	at com.p6spy.engine.logging.LoggingEventListener.onAfterAnyExecute(LoggingEventListener.java:46)
+	at com.p6spy.engine.event.SimpleJdbcEventListener.onAfterExecuteQuery(SimpleJdbcEventListener.java:138)
+	at com.p6spy.engine.event.CompoundJdbcEventListener.onAfterExecuteQuery(CompoundJdbcEventListener.java:186)
+	at com.p6spy.engine.wrapper.StatementWrapper.executeQuery(StatementWrapper.java:87)
+	at com.p6spy.engine.spy.P6TestCommon.testStacktrace(P6TestCommon.java:480)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+1490496258079|0|statement|connection 26|select 'a' from customers|select 'a' from customers
+1490496258081|1|statement|connection 26|select 'b' from customers|select 'b' from customers
+java.lang.Exception
+	at com.p6spy.engine.common.P6LogQuery.doLog(P6LogQuery.java:127)
+	at com.p6spy.engine.common.P6LogQuery.doLogElapsed(P6LogQuery.java:93)
+	at com.p6spy.engine.common.P6LogQuery.logElapsed(P6LogQuery.java:202)
+	at com.p6spy.engine.logging.LoggingEventListener.logElapsed(LoggingEventListener.java:109)
+	at com.p6spy.engine.logging.LoggingEventListener.onAfterAnyExecute(LoggingEventListener.java:46)
+	at com.p6spy.engine.event.SimpleJdbcEventListener.onAfterExecuteQuery(SimpleJdbcEventListener.java:138)
+	at com.p6spy.engine.event.CompoundJdbcEventListener.onAfterExecuteQuery(CompoundJdbcEventListener.java:186)
+	at com.p6spy.engine.wrapper.StatementWrapper.executeQuery(StatementWrapper.java:87)
+	at com.p6spy.engine.spy.P6TestCommon.testStacktrace(P6TestCommon.java:496)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+04:44:18,096 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testStacktrace[0: H2](com.p6spy.engine.spy.P6TestCommon)
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.794 sec - in com.p6spy.engine.spy.P6TestCommon
+Running com.p6spy.engine.spy.P6MBeanRegistryTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec - in com.p6spy.engine.spy.P6MBeanRegistryTest
+Running com.p6spy.engine.spy.P6TestResultSet
+04:44:18,189 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:18,198 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSkipLoggingBeforeFirstRowOnClose[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+
+*****************************************************************************************
+04:44:18,200 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496258581|16|statement|connection 27|select id from customers where id in (1,2,3,4) order by id|select id from customers where id in (1,2,3,4) order by id
+04:44:18,581 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSkipLoggingBeforeFirstRowOnClose[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+04:44:18,587 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:18,591 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testLogMessageCountWhenLessThanAllRowsAreRead[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+
+*****************************************************************************************
+04:44:18,595 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496258814|0|statement|connection 28|select id from customers where id in (1,2,3,4) order by id|select id from customers where id in (1,2,3,4) order by id
+1490496258841|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 1
+04:44:18,842 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testLogMessageCountWhenLessThanAllRowsAreRead[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+04:44:18,842 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:18,845 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testLoggingOnNext[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+
+*****************************************************************************************
+04:44:18,847 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496259117|0|statement|connection 29|select id from customers where id in (1,2,3,4) order by id|select id from customers where id in (1,2,3,4) order by id
+1490496259119|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 1
+04:44:19,119 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testLoggingOnNext[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+04:44:19,119 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:19,128 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testNoLoggingOnEmptyResultSetOnClose[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+
+*****************************************************************************************
+04:44:19,130 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496259374|0|statement|connection 30|select id from customers where id in (1,2,3,4) order by id|select id from customers where id in (1,2,3,4) order by id
+1490496259382|0|statement|connection 30|select id from customers where 1=0|select id from customers where 1=0
+04:44:19,382 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testNoLoggingOnEmptyResultSetOnClose[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+04:44:19,383 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:19,393 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testLoggingOnCloseAfterEndOfResultSet[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+
+*****************************************************************************************
+04:44:19,396 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496259675|0|statement|connection 31|select id from customers where id in (1,2,3,4) order by id|select id from customers where id in (1,2,3,4) order by id
+1490496259676|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 1
+1490496259679|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 2
+1490496259680|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 3
+1490496259680|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 4
+04:44:19,680 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testLoggingOnCloseAfterEndOfResultSet[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+04:44:19,681 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:19,698 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testLoggingOnNextWithNoColumnsAccessed[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+
+*****************************************************************************************
+04:44:19,709 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496259953|0|statement|connection 32|select id from customers where id in (1,2,3,4) order by id|select id from customers where id in (1,2,3,4) order by id
+1490496259961|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|
+04:44:19,961 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testLoggingOnNextWithNoColumnsAccessed[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+04:44:19,967 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:19,971 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testLoggingOnCloseBeforeEndOfResultSet[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+
+*****************************************************************************************
+04:44:19,975 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496260228|0|statement|connection 33|select id from customers where id in (1,2,3,4) order by id|select id from customers where id in (1,2,3,4) order by id
+1490496260237|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 1
+04:44:20,238 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testLoggingOnCloseBeforeEndOfResultSet[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+04:44:20,239 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:20,242 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testResultLogging[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+
+*****************************************************************************************
+04:44:20,247 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496260482|0|statement|connection 34|select id from customers where id in (1,2,3,4) order by id|select id from customers where id in (1,2,3,4) order by id
+1490496260491|0|result|connection 34|select id from customers where id in (1,2,3,4) order by id|
+1490496260491|0|result|connection 34|select id from customers where id in (1,2,3,4) order by id|
+1490496260491|0|result|connection 34|select id from customers where id in (1,2,3,4) order by id|
+1490496260491|0|result|connection 34|select id from customers where id in (1,2,3,4) order by id|
+04:44:20,492 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testResultLogging[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+04:44:20,506 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:20,509 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSkipLoggingBeforeFirstRowOnNext[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+
+*****************************************************************************************
+04:44:20,511 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496260719|0|statement|connection 35|select id from customers where id in (1,2,3,4) order by id|select id from customers where id in (1,2,3,4) order by id
+04:44:20,733 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSkipLoggingBeforeFirstRowOnNext[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+04:44:20,734 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:20,742 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testLogMessageCountWhenAllRowsRead[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+
+*****************************************************************************************
+04:44:20,744 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496260967|0|statement|connection 36|select id from customers where id in (1,2,3,4) order by id|select id from customers where id in (1,2,3,4) order by id
+1490496260967|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 1
+1490496260967|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 2
+1490496260967|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 3
+1490496260968|0|resultset|connection -1|select id from customers where id in (1,2,3,4) order by id|id = 4
+04:44:20,968 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testLogMessageCountWhenAllRowsRead[0: H2](com.p6spy.engine.spy.P6TestResultSet)
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.781 sec - in com.p6spy.engine.spy.P6TestResultSet
+Running com.p6spy.engine.spy.P6TestResultSetWithBinary
+04:44:20,973 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:20,981 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test binaryExcludedFalse[0: H2](com.p6spy.engine.spy.P6TestResultSetWithBinary)
+
+*****************************************************************************************
+04:44:20,983 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496261211|0|statement|connection 37|insert into img values (?, ?, ?)|insert into img values (1000, '[binary]', 'blob2: CAST(REPEAT(''00'', 3) AS BINARY /* table: -2 id: 1 */)')
+1490496261217|0|statement|connection 37|select val from img where id=1000|select val from img where id=1000
+1490496261218|0|resultset|connection -1|select val from img where id=1000|val = '666F6F'
+04:44:21,220 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test binaryExcludedFalse[0: H2](com.p6spy.engine.spy.P6TestResultSetWithBinary)
+04:44:21,229 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:21,234 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test binaryExcludedTrue[0: H2](com.p6spy.engine.spy.P6TestResultSetWithBinary)
+
+*****************************************************************************************
+04:44:21,236 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496261401|0|statement|connection 38|insert into img values (?, ?, ?)|insert into img values (1000, '[binary]', 'blob3: CAST(REPEAT(''00'', 3) AS BINARY /* table: -2 id: 1 */)')
+1490496261401|0|statement|connection 38|select val from img where id=1000|select val from img where id=1000
+1490496261401|0|resultset|connection -1|select val from img where id=1000|val = '[binary]'
+04:44:21,402 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test binaryExcludedTrue[0: H2](com.p6spy.engine.spy.P6TestResultSetWithBinary)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.432 sec - in com.p6spy.engine.spy.P6TestResultSetWithBinary
+Running com.p6spy.engine.spy.P6TestDriver
+04:44:21,417 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:21,426 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testVersion[0: H2](com.p6spy.engine.spy.P6TestDriver)
+
+*****************************************************************************************
+04:44:21,429 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+04:44:21,670 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testVersion[0: H2](com.p6spy.engine.spy.P6TestDriver)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.271 sec - in com.p6spy.engine.spy.P6TestDriver
+Running com.p6spy.engine.spy.XADataSourceTest
+04:44:21,690 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:21,701 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test twoPhaseCommitDataNotPersistedOnRollback[0: H2](com.p6spy.engine.spy.XADataSourceTest)
+
+*****************************************************************************************
+04:44:21,702 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+04:44:21,901 INFO  [bitronix.tm.BitronixTransactionManager.logVersion] Bitronix Transaction Manager version 2.1.4
+04:44:21,905 WARN  [bitronix.tm.Configuration.buildServerIdArray] cannot get this JVM unique ID. Make sure it is configured and you only use ASCII characters. Will use IP address instead (unsafe for production usage!).
+04:44:21,910 INFO  [bitronix.tm.Configuration.buildServerIdArray] JVM unique ID: <172.17.0.6>
+04:44:22,115 INFO  [bitronix.tm.recovery.Recoverer.run] recovery committed 0 dangling transaction(s) and rolled back 0 aborted transaction(s) on 0 resource(s) [] (restricted to serverId '172.17.0.6')
+04:44:22,452 INFO  [bitronix.tm.BitronixTransactionManager.shutdown] shutting down Bitronix Transaction Manager
+04:44:22,699 ERROR [com.p6spy.engine.test.BaseTestCase.failed] Failed test twoPhaseCommitDataNotPersistedOnRollback[0: H2](com.p6spy.engine.spy.XADataSourceTest)
+bitronix.tm.resource.ResourceConfigurationException: cannot create JDBC datasource named jdbc/inTestDs
+	at bitronix.tm.resource.jdbc.PoolingDataSource.init(PoolingDataSource.java:92)
+	at com.p6spy.engine.spy.XADataSourceTest.setUpXADataSourceTest(XADataSourceTest.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: bitronix.tm.recovery.RecoveryException: cannot start recovery on a PoolingDataSource containing an XAPool of resource jdbc/inTestDs with 0 connection(s) (0 still available)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.startRecovery(PoolingDataSource.java:288)
+	at bitronix.tm.recovery.IncrementalRecoverer.recover(IncrementalRecoverer.java:61)
+	at bitronix.tm.resource.ResourceRegistrar.register(ResourceRegistrar.java:87)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.buildXAPool(PoolingDataSource.java:104)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.init(PoolingDataSource.java:88)
+	... 35 more
+Caused by: org.h2.jdbc.JdbcSQLException: A file path that is implicitly relative to the current working directory is not allowed in the database URL "jdbc:h2:mem". Use an absolute path, ~/name, ./name, or the baseDir setting instead. [90011-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.engine.ConnectionInfo.getName(ConnectionInfo.java:400)
+	at org.h2.engine.Engine.openSession(Engine.java:49)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.jdbcx.JdbcDataSource.getJdbcConnection(JdbcDataSource.java:188)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:351)
+	at com.p6spy.engine.spy.P6DataSource.getXAConnection(P6DataSource.java:329)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.createPooledConnection(PoolingDataSource.java:341)
+	at bitronix.tm.resource.common.XAPool.createPooledObject(XAPool.java:283)
+	at bitronix.tm.resource.common.XAPool.grow(XAPool.java:391)
+	at bitronix.tm.resource.common.XAPool.getInPool(XAPool.java:371)
+	at bitronix.tm.resource.common.XAPool.getConnectionHandle(XAPool.java:123)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.startRecovery(PoolingDataSource.java:284)
+	... 39 more
+04:44:22,730 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test twoPhaseCommitDataNotPersistedOnRollback[0: H2](com.p6spy.engine.spy.XADataSourceTest)
+04:44:22,785 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:22,794 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test twoPhaseCommitDataPersistedOnCommit[0: H2](com.p6spy.engine.spy.XADataSourceTest)
+
+*****************************************************************************************
+04:44:22,795 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+04:44:23,041 INFO  [bitronix.tm.BitronixTransactionManager.logVersion] Bitronix Transaction Manager version 2.1.4
+04:44:23,044 WARN  [bitronix.tm.Configuration.buildServerIdArray] cannot get this JVM unique ID. Make sure it is configured and you only use ASCII characters. Will use IP address instead (unsafe for production usage!).
+04:44:23,044 INFO  [bitronix.tm.Configuration.buildServerIdArray] JVM unique ID: <172.17.0.6>
+04:44:23,076 INFO  [bitronix.tm.recovery.Recoverer.run] recovery committed 0 dangling transaction(s) and rolled back 0 aborted transaction(s) on 0 resource(s) [] (restricted to serverId '172.17.0.6')
+04:44:23,079 INFO  [bitronix.tm.BitronixTransactionManager.shutdown] shutting down Bitronix Transaction Manager
+04:44:23,108 ERROR [com.p6spy.engine.test.BaseTestCase.failed] Failed test twoPhaseCommitDataPersistedOnCommit[0: H2](com.p6spy.engine.spy.XADataSourceTest)
+bitronix.tm.resource.ResourceConfigurationException: cannot create JDBC datasource named jdbc/inTestDs
+	at bitronix.tm.resource.jdbc.PoolingDataSource.init(PoolingDataSource.java:92)
+	at com.p6spy.engine.spy.XADataSourceTest.setUpXADataSourceTest(XADataSourceTest.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: bitronix.tm.recovery.RecoveryException: cannot start recovery on a PoolingDataSource containing an XAPool of resource jdbc/inTestDs with 0 connection(s) (0 still available)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.startRecovery(PoolingDataSource.java:288)
+	at bitronix.tm.recovery.IncrementalRecoverer.recover(IncrementalRecoverer.java:61)
+	at bitronix.tm.resource.ResourceRegistrar.register(ResourceRegistrar.java:87)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.buildXAPool(PoolingDataSource.java:104)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.init(PoolingDataSource.java:88)
+	... 35 more
+Caused by: org.h2.jdbc.JdbcSQLException: A file path that is implicitly relative to the current working directory is not allowed in the database URL "jdbc:h2:mem". Use an absolute path, ~/name, ./name, or the baseDir setting instead. [90011-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.engine.ConnectionInfo.getName(ConnectionInfo.java:400)
+	at org.h2.engine.Engine.openSession(Engine.java:49)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.jdbcx.JdbcDataSource.getJdbcConnection(JdbcDataSource.java:188)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:351)
+	at com.p6spy.engine.spy.P6DataSource.getXAConnection(P6DataSource.java:329)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.createPooledConnection(PoolingDataSource.java:341)
+	at bitronix.tm.resource.common.XAPool.createPooledObject(XAPool.java:283)
+	at bitronix.tm.resource.common.XAPool.grow(XAPool.java:391)
+	at bitronix.tm.resource.common.XAPool.getInPool(XAPool.java:371)
+	at bitronix.tm.resource.common.XAPool.getConnectionHandle(XAPool.java:123)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.startRecovery(PoolingDataSource.java:284)
+	... 39 more
+04:44:23,109 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test twoPhaseCommitDataPersistedOnCommit[0: H2](com.p6spy.engine.spy.XADataSourceTest)
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 1.431 sec <<< FAILURE! - in com.p6spy.engine.spy.XADataSourceTest
+twoPhaseCommitDataNotPersistedOnRollback[0: H2](com.p6spy.engine.spy.XADataSourceTest)  Time elapsed: 1.094 sec  <<< ERROR!
+bitronix.tm.resource.ResourceConfigurationException: cannot create JDBC datasource named jdbc/inTestDs
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.engine.ConnectionInfo.getName(ConnectionInfo.java:400)
+	at org.h2.engine.Engine.openSession(Engine.java:49)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.jdbcx.JdbcDataSource.getJdbcConnection(JdbcDataSource.java:188)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:351)
+	at com.p6spy.engine.spy.P6DataSource.getXAConnection(P6DataSource.java:329)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.createPooledConnection(PoolingDataSource.java:341)
+	at bitronix.tm.resource.common.XAPool.createPooledObject(XAPool.java:283)
+	at bitronix.tm.resource.common.XAPool.grow(XAPool.java:391)
+	at bitronix.tm.resource.common.XAPool.getInPool(XAPool.java:371)
+	at bitronix.tm.resource.common.XAPool.getConnectionHandle(XAPool.java:123)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.startRecovery(PoolingDataSource.java:284)
+	at bitronix.tm.recovery.IncrementalRecoverer.recover(IncrementalRecoverer.java:61)
+	at bitronix.tm.resource.ResourceRegistrar.register(ResourceRegistrar.java:87)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.buildXAPool(PoolingDataSource.java:104)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.init(PoolingDataSource.java:88)
+	at com.p6spy.engine.spy.XADataSourceTest.setUpXADataSourceTest(XADataSourceTest.java:116)
+
+twoPhaseCommitDataPersistedOnCommit[0: H2](com.p6spy.engine.spy.XADataSourceTest)  Time elapsed: 0.323 sec  <<< ERROR!
+bitronix.tm.resource.ResourceConfigurationException: cannot create JDBC datasource named jdbc/inTestDs
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.engine.ConnectionInfo.getName(ConnectionInfo.java:400)
+	at org.h2.engine.Engine.openSession(Engine.java:49)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.jdbcx.JdbcDataSource.getJdbcConnection(JdbcDataSource.java:188)
+	at org.h2.jdbcx.JdbcDataSource.getXAConnection(JdbcDataSource.java:351)
+	at com.p6spy.engine.spy.P6DataSource.getXAConnection(P6DataSource.java:329)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.createPooledConnection(PoolingDataSource.java:341)
+	at bitronix.tm.resource.common.XAPool.createPooledObject(XAPool.java:283)
+	at bitronix.tm.resource.common.XAPool.grow(XAPool.java:391)
+	at bitronix.tm.resource.common.XAPool.getInPool(XAPool.java:371)
+	at bitronix.tm.resource.common.XAPool.getConnectionHandle(XAPool.java:123)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.startRecovery(PoolingDataSource.java:284)
+	at bitronix.tm.recovery.IncrementalRecoverer.recover(IncrementalRecoverer.java:61)
+	at bitronix.tm.resource.ResourceRegistrar.register(ResourceRegistrar.java:87)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.buildXAPool(PoolingDataSource.java:104)
+	at bitronix.tm.resource.jdbc.PoolingDataSource.init(PoolingDataSource.java:88)
+	at com.p6spy.engine.spy.XADataSourceTest.setUpXADataSourceTest(XADataSourceTest.java:116)
+
+Running com.p6spy.engine.spy.P6TestCallableStatement
+04:44:23,111 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_HSQLDB.properties
+04:44:23,134 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test binaryExcludedFalse[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+
+*****************************************************************************************
+04:44:24,810 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496265486|23|statement|connection 42|{call TEST_PROC_BINARY(?,?,?)}|{call TEST_PROC_BINARY(?,?,?)} @p1:'666F6F', @p2:2000
+04:44:25,487 ERROR [com.p6spy.engine.test.BaseTestCase.failed] Failed test binaryExcludedFalse[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at com.p6spy.engine.spy.P6TestCallableStatement.binaryExcludedFalse(P6TestCallableStatement.java:254)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+04:44:25,488 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test binaryExcludedFalse[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+04:44:25,488 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_HSQLDB.properties
+04:44:25,492 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testStoredProcedureNoResultSet[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+
+*****************************************************************************************
+04:44:25,493 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496266059|0|statement|connection 43|{call test_proc(?,?,?)}|{call test_proc(1,'hi',NULL)}
+04:44:26,059 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testStoredProcedureNoResultSet[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+04:44:26,060 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_HSQLDB.properties
+04:44:26,075 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testStoredProcedureResultSet[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+
+*****************************************************************************************
+04:44:26,076 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496266555|19|statement|connection 44|{call test_proc_rs(?)}|{call test_proc_rs('a')}
+1490496266556|0|resultset|connection 44|{call test_proc_rs(?)}|{call test_proc_rs('a')}
+1490496266556|0|resultset|connection 44|{call test_proc_rs(?)}|{call test_proc_rs('a')}
+1490496266556|0|resultset|connection -1|{call test_proc_rs(?)}|name = 'david', id = 1
+1490496266556|0|resultset|connection -1|{call test_proc_rs(?)}|name = 'mary', id = 2
+1490496266556|0|resultset|connection -1|{call test_proc_rs(?)}|name = 'sam', id = 3
+1490496266556|0|resultset|connection -1|{call test_proc_rs(?)}|name = 'tina', id = 4
+04:44:26,556 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testStoredProcedureResultSet[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+04:44:26,557 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_HSQLDB.properties
+04:44:26,562 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test binaryExcludedTrue[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+
+*****************************************************************************************
+04:44:26,563 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496266913|2|statement|connection 45|{call TEST_PROC_BINARY(?,?,?)}|{call TEST_PROC_BINARY(?,?,?)} @p1:'[binary]', @p2:2000
+04:44:26,932 ERROR [com.p6spy.engine.test.BaseTestCase.failed] Failed test binaryExcludedTrue[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at com.p6spy.engine.spy.P6TestCallableStatement.binaryExcludedTrue(P6TestCallableStatement.java:215)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+04:44:26,946 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test binaryExcludedTrue[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+04:44:26,947 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_HSQLDB.properties
+04:44:26,950 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testStoredProcedureWithNullInputParameter[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+
+*****************************************************************************************
+04:44:26,951 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496267324|0|statement|connection 46|{call test_proc(?,?,?)}|{call test_proc(1,NULL,NULL)}
+04:44:27,324 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testStoredProcedureWithNullInputParameter[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+04:44:27,328 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_HSQLDB.properties
+04:44:27,339 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testNamedParameters[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+
+*****************************************************************************************
+04:44:27,340 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496267730|0|statement|connection 47|{call test_proc(?,?,?)}|{call test_proc(?,?,?)} @p1:1, @p2:'hi'
+04:44:27,731 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testNamedParameters[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 4.514 sec <<< FAILURE! - in com.p6spy.engine.spy.P6TestCallableStatement
+binaryExcludedFalse[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)  Time elapsed: 2.269 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at com.p6spy.engine.spy.P6TestCallableStatement.binaryExcludedFalse(P6TestCallableStatement.java:254)
+
+binaryExcludedTrue[0: HSQLDB](com.p6spy.engine.spy.P6TestCallableStatement)  Time elapsed: 0.385 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at com.p6spy.engine.spy.P6TestCallableStatement.binaryExcludedTrue(P6TestCallableStatement.java:215)
+
+Running com.p6spy.engine.spy.LoggedSQLValidTest
+04:44:27,758 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:27,773 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testPreparedStatementExecQueryWithNulls[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+
+*****************************************************************************************
+04:44:27,780 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496268018|1|statement|connection 48|drop table valid_sql_logged|drop table valid_sql_logged
+1490496268020|0|statement|connection 48|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)
+1490496268025|0|statement|connection 48|select * from valid_sql_logged where col_varchar = ? and col_integer = ? and col_decimal = ?  and col_date = ?  and col_timestamp = ?  and col_smallint = ?  and col_boolean = ?|select * from valid_sql_logged where col_varchar = NULL and col_integer = NULL and col_decimal = NULL  and col_date = NULL  and col_timestamp = NULL  and col_smallint = NULL  and col_boolean = NULL
+1490496268026|0|statement|connection 48|select * from valid_sql_logged where col_varchar = NULL and col_integer = NULL and col_decimal = NULL  and col_date = NULL  and col_timestamp = NULL  and col_smallint = NULL  and col_boolean = NULL|select * from valid_sql_logged where col_varchar = NULL and col_integer = NULL and col_decimal = NULL  and col_date = NULL  and col_timestamp = NULL  and col_smallint = NULL  and col_boolean = NULL
+04:44:28,026 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testPreparedStatementExecQueryWithNulls[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+04:44:28,029 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:28,035 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSingleQuotePresentInValueOneTimeEscaped[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+
+*****************************************************************************************
+04:44:28,038 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496268556|0|statement|connection 49|drop table valid_sql_logged|drop table valid_sql_logged
+1490496268557|0|statement|connection 49|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)
+1490496268558|0|statement|connection 49|select * from valid_sql_logged where col_varchar = ?|select * from valid_sql_logged where col_varchar = 'foo''value'
+1490496268558|0|statement|connection 49|select * from valid_sql_logged where col_varchar = 'foo''value'|select * from valid_sql_logged where col_varchar = 'foo''value'
+04:44:28,559 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSingleQuotePresentInValueOneTimeEscaped[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+04:44:28,560 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:28,565 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSingleQuotePresentInValueMultipleTimesEscaped[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+
+*****************************************************************************************
+04:44:28,570 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496268841|0|statement|connection 50|drop table valid_sql_logged|drop table valid_sql_logged
+1490496268841|0|statement|connection 50|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)
+1490496268841|0|statement|connection 50|select * from valid_sql_logged where col_varchar = ?|select * from valid_sql_logged where col_varchar = 'foo''''value'''
+1490496268841|0|statement|connection 50|select * from valid_sql_logged where col_varchar = 'foo''''value'''|select * from valid_sql_logged where col_varchar = 'foo''''value'''
+04:44:28,841 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSingleQuotePresentInValueMultipleTimesEscaped[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+04:44:28,842 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:28,856 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testPreparedStatementExecUpdateWithNulls[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+
+*****************************************************************************************
+04:44:28,859 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496269070|0|statement|connection 51|drop table valid_sql_logged|drop table valid_sql_logged
+1490496269070|0|statement|connection 51|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)
+1490496269071|0|statement|connection 51|insert into valid_sql_logged (col_varchar, col_integer, col_decimal, col_date, col_timestamp, col_smallint, col_boolean) values (?,?,?,?,?,?,?)|insert into valid_sql_logged (col_varchar, col_integer, col_decimal, col_date, col_timestamp, col_smallint, col_boolean) values (NULL,NULL,NULL,NULL,NULL,NULL,NULL)
+1490496269071|0|statement|connection 51|insert into valid_sql_logged (col_varchar, col_integer, col_decimal, col_date, col_timestamp, col_smallint, col_boolean) values (NULL,NULL,NULL,NULL,NULL,NULL,NULL)|insert into valid_sql_logged (col_varchar, col_integer, col_decimal, col_date, col_timestamp, col_smallint, col_boolean) values (NULL,NULL,NULL,NULL,NULL,NULL,NULL)
+04:44:29,071 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testPreparedStatementExecUpdateWithNulls[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+04:44:29,072 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:29,074 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testPreparedStatementExecUpdate[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+
+*****************************************************************************************
+04:44:29,075 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496269214|0|statement|connection 52|drop table valid_sql_logged|drop table valid_sql_logged
+1490496269215|0|statement|connection 52|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)
+1490496269218|0|statement|connection 52|insert into valid_sql_logged (col_varchar, col_integer, col_decimal, col_date, col_timestamp, col_smallint, col_boolean) values (?,?,?,?,?,?,?)|insert into valid_sql_logged (col_varchar, col_integer, col_decimal, col_date, col_timestamp, col_smallint, col_boolean) values ('prepstmt_test_col1',1,1,'2017-03-26','2017-03-26',1,true)
+1490496269229|11|statement|connection 52|insert into valid_sql_logged (col_varchar, col_integer, col_decimal, col_date, col_timestamp, col_smallint, col_boolean) values ('prepstmt_test_col1',1,1,'2017-03-26','2017-03-26',1,true)|insert into valid_sql_logged (col_varchar, col_integer, col_decimal, col_date, col_timestamp, col_smallint, col_boolean) values ('prepstmt_test_col1',1,1,'2017-03-26','2017-03-26',1,true)
+04:44:29,229 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testPreparedStatementExecUpdate[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+04:44:29,230 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:29,231 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testPreparedStatementExecQuery[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+
+*****************************************************************************************
+04:44:29,232 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496269445|0|statement|connection 53|drop table valid_sql_logged|drop table valid_sql_logged
+1490496269445|0|statement|connection 53|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)|create table valid_sql_logged (col_varchar varchar(255), col_integer integer, col_decimal decimal , col_date date, col_timestamp timestamp, col_smallint smallint , col_boolean boolean)
+1490496269445|0|statement|connection 53|select * from valid_sql_logged where col_varchar = ? and col_integer = ? and col_decimal = ?  and col_date = ?  and col_timestamp = ?  and col_smallint = ?  and col_boolean = ?|select * from valid_sql_logged where col_varchar = 'prepstmt_test_col1' and col_integer = 1 and col_decimal = 1  and col_date = '2017-03-26'  and col_timestamp = '2017-03-26'  and col_smallint = 1  and col_boolean = true
+1490496269446|0|statement|connection 53|select * from valid_sql_logged where col_varchar = 'prepstmt_test_col1' and col_integer = 1 and col_decimal = 1  and col_date = '2017-03-26'  and col_timestamp = '2017-03-26'  and col_smallint = 1  and col_boolean = true|select * from valid_sql_logged where col_varchar = 'prepstmt_test_col1' and col_integer = 1 and col_decimal = 1  and col_date = '2017-03-26'  and col_timestamp = '2017-03-26'  and col_smallint = 1  and col_boolean = true
+04:44:29,449 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testPreparedStatementExecQuery[0: H2](com.p6spy.engine.spy.LoggedSQLValidTest)
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.642 sec - in com.p6spy.engine.spy.LoggedSQLValidTest
+Running com.p6spy.engine.spy.appender.Log4jLoggerTest
+04:44:29,454 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testCategoryToLevelMapping(com.p6spy.engine.spy.appender.Log4jLoggerTest)
+
+*****************************************************************************************
+04:44:29,746 ERROR [p6spy.logSQL] 1490496269746|0|error|connection -1|sample msg|sample msg
+04:44:29,766 ERROR [p6spy.logSQL] 1490496269766|0|error|connection -1|sample msg|sample msg
+04:44:29,770 ERROR [p6spy.logSQL] 1490496269770|0|error|connection -1|sample msg|sample msg
+04:44:29,806 ERROR [p6spy.logSQL] 1490496269805|0|error|connection -1|sample msg|sample msg
+04:44:29,843 WARN  [p6spy.logSQL] 1490496269843|0|warn|connection -1|sample msg|sample msg
+04:44:29,865 WARN  [p6spy.logSQL] 1490496269865|0|warn|connection -1|sample msg|sample msg
+04:44:29,880 WARN  [p6spy.logSQL] 1490496269880|0|warn|connection -1|sample msg|sample msg
+04:44:29,956 INFO  [p6spy.logSQL] 1490496269956|0|info|connection -1|sample msg|sample msg
+04:44:29,966 INFO  [p6spy.logSQL] 1490496269965|0|info|connection -1|sample msg|sample msg
+04:44:30,063 DEBUG [p6spy.logSQL] 1490496270063|0|debug|connection -1|sample msg|sample msg
+04:44:30,114 INFO  [p6spy.logSQL] 1490496270114|0|batch|connection -1|sample msg|sample msg
+04:44:30,132 INFO  [p6spy.logSQL] 1490496270132|0|batch|connection -1|sample msg|sample msg
+04:44:30,172 INFO  [p6spy.logSQL] 1490496270172|0|statement|connection -1|sample msg|sample msg
+04:44:30,188 INFO  [p6spy.logSQL] 1490496270188|0|statement|connection -1|sample msg|sample msg
+04:44:30,228 INFO  [p6spy.logSQL] 1490496270228|0|resultset|connection -1|sample msg|sample msg
+04:44:30,256 INFO  [p6spy.logSQL] 1490496270256|0|resultset|connection -1|sample msg|sample msg
+04:44:30,297 INFO  [p6spy.logSQL] 1490496270297|0|commit|connection -1|sample msg|sample msg
+04:44:30,307 INFO  [p6spy.logSQL] 1490496270307|0|commit|connection -1|sample msg|sample msg
+04:44:30,363 INFO  [p6spy.logSQL] 1490496270363|0|rollback|connection -1|sample msg|sample msg
+04:44:30,375 INFO  [p6spy.logSQL] 1490496270374|0|rollback|connection -1|sample msg|sample msg
+04:44:30,406 INFO  [p6spy.logSQL] 1490496270406|0|result|connection -1|sample msg|sample msg
+04:44:30,413 INFO  [p6spy.logSQL] 1490496270413|0|result|connection -1|sample msg|sample msg
+04:44:30,469 INFO  [p6spy.logSQL] 1490496270469|0|outage|connection -1|sample msg|sample msg
+04:44:30,476 INFO  [p6spy.logSQL] 1490496270476|0|outage|connection -1|sample msg|sample msg
+04:44:30,502 INFO  [p6spy.logSQL] 1490496270502|0|newly_created_category|connection -1|sample msg|sample msg
+04:44:30,526 INFO  [p6spy.logSQL] 1490496270526|0|newly_created_category|connection -1|sample msg|sample msg
+04:44:30,563 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testCategoryToLevelMapping(com.p6spy.engine.spy.appender.Log4jLoggerTest)
+04:44:30,564 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExternallyConfiguredLog4J(com.p6spy.engine.spy.appender.Log4jLoggerTest)
+
+*****************************************************************************************
+04:44:30,788 INFO  [p6spy.logSQL] 1490496270788|0|statement|connection 56|select count(*) from customers|select count(*) from customers
+04:44:30,820 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExternallyConfiguredLog4J(com.p6spy.engine.spy.appender.Log4jLoggerTest)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.37 sec - in com.p6spy.engine.spy.appender.Log4jLoggerTest
+Running com.p6spy.engine.spy.option.P6TestOptionAPI
+04:44:30,823 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:30,825 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testUnSetLogAPI(com.p6spy.engine.spy.option.P6TestOptionAPI)
+
+*****************************************************************************************
+04:44:30,826 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testUnSetLogAPI(com.p6spy.engine.spy.option.P6TestOptionAPI)
+04:44:30,832 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testUnSetSpyAPI(com.p6spy.engine.spy.option.P6TestOptionAPI)
+
+*****************************************************************************************
+04:44:30,832 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testUnSetSpyAPI(com.p6spy.engine.spy.option.P6TestOptionAPI)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.p6spy.engine.spy.option.P6TestOptionAPI
+Running com.p6spy.engine.spy.option.P6TestOptionDefaults
+04:44:30,835 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:30,845 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testP6SpyOptionDefaults(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+
+*****************************************************************************************
+04:44:30,846 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testP6SpyOptionDefaults(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+04:44:30,848 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testDefaultOptions(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+
+*****************************************************************************************
+04:44:30,849 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testDefaultOptions(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+04:44:30,850 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testImplicitlyDisabledLogCategories(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+
+*****************************************************************************************
+04:44:30,876 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testImplicitlyDisabledLogCategories(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+04:44:30,888 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testP6OutageOptionDefaults(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+
+*****************************************************************************************
+04:44:30,894 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testP6OutageOptionDefaults(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+04:44:30,896 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testP6LogOptionDefaults(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+
+*****************************************************************************************
+04:44:30,899 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testP6LogOptionDefaults(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+04:44:30,905 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testWithP6LogOptionDefaultsDefaultDisabledLogCategories(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+
+*****************************************************************************************
+04:44:30,909 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testWithP6LogOptionDefaultsDefaultDisabledLogCategories(com.p6spy.engine.spy.option.P6TestOptionDefaults)
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec - in com.p6spy.engine.spy.option.P6TestOptionDefaults
+Running com.p6spy.engine.spy.option.P6TestOptionsRepository
+04:44:30,927 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testGetPrioToInitCompletedFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,927 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testGetPrioToInitCompletedFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,928 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testParse(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,928 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testParse(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,930 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSetSetOverride(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,930 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSetSetOverride(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,933 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSetGetSimple(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,934 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSetGetSimple(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,935 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSetSetForDeprecatedMinusPrefixOnFirstValueFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,936 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSetSetForDeprecatedMinusPrefixOnFirstValueFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,949 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSetNullDoesNotModifyValue(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,950 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSetNullDoesNotModifyValue(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,950 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSetReturnsTrueForNonNull(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,951 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSetReturnsTrueForNonNull(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,951 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testUnSetIgnoresDefaultForValueNotNull(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,953 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testUnSetIgnoresDefaultForValueNotNull(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,953 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testUnSetUsesDefaultForNullValue(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,954 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testUnSetUsesDefaultForNullValue(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,954 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSetReturnsFalseForNull(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,956 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSetReturnsFalseForNull(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,957 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testParseForSetFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,957 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testParseForSetFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,977 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSetSetForDeprecatedMinusPrefixOnNextValueFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,977 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSetSetForDeprecatedMinusPrefixOnNextValueFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,978 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSetSetEmptyStringNullsValue(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,979 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSetSetEmptyStringNullsValue(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,979 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testParseForCollectionFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,980 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testParseForCollectionFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,980 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testParseForListFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,980 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testParseForListFails(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+04:44:30,982 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testUnSetSetsToNullForDefaultAndValueNull(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+
+*****************************************************************************************
+04:44:30,983 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testUnSetSetsToNullForDefaultAndValueNull(com.p6spy.engine.spy.option.P6TestOptionsRepository)
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 sec - in com.p6spy.engine.spy.option.P6TestOptionsRepository
+Running com.p6spy.engine.spy.option.P6TestOptionsReload
+04:44:30,991 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testJmxSetPropertyDiscartedOnExplicitJmxReload(com.p6spy.engine.spy.option.P6TestOptionsReload)
+
+*****************************************************************************************
+04:44:30,992 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_reload.properties
+04:44:31,059 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testJmxSetPropertyDiscartedOnExplicitJmxReload(com.p6spy.engine.spy.option.P6TestOptionsReload)
+04:44:31,060 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testAutoReloadLifecycle(com.p6spy.engine.spy.option.P6TestOptionsReload)
+
+*****************************************************************************************
+04:44:31,060 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_reload.properties
+04:44:35,090 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testAutoReloadLifecycle(com.p6spy.engine.spy.option.P6TestOptionsReload)
+04:44:35,090 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testOptionSourcesPriorities(com.p6spy.engine.spy.option.P6TestOptionsReload)
+
+*****************************************************************************************
+04:44:35,091 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_reload.properties
+04:44:35,174 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testOptionSourcesPriorities(com.p6spy.engine.spy.option.P6TestOptionsReload)
+04:44:35,174 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSetPropertyDiscartedOnExplicitReload(com.p6spy.engine.spy.option.P6TestOptionsReload)
+
+*****************************************************************************************
+04:44:35,175 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_reload.properties
+04:44:35,194 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSetPropertyDiscartedOnExplicitReload(com.p6spy.engine.spy.option.P6TestOptionsReload)
+04:44:35,194 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSpyDotPropertiesWithSpaceInPathWorks(com.p6spy.engine.spy.option.P6TestOptionsReload)
+
+*****************************************************************************************
+04:44:35,194 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_reload.properties
+04:44:35,248 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSpyDotPropertiesWithSpaceInPathWorks(com.p6spy.engine.spy.option.P6TestOptionsReload)
+04:44:35,248 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSetPropertyDiscartedOnAutoReload(com.p6spy.engine.spy.option.P6TestOptionsReload)
+
+*****************************************************************************************
+04:44:35,248 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_reload.properties
+04:44:37,308 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSetPropertyDiscartedOnAutoReload(com.p6spy.engine.spy.option.P6TestOptionsReload)
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.324 sec - in com.p6spy.engine.spy.option.P6TestOptionsReload
+Running com.p6spy.engine.spy.option.SpyDotPropertiesTest
+04:44:37,310 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testLoadFromCurrentWorkingDirectory(com.p6spy.engine.spy.option.SpyDotPropertiesTest)
+
+*****************************************************************************************
+04:44:37,311 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testLoadFromCurrentWorkingDirectory(com.p6spy.engine.spy.option.SpyDotPropertiesTest)
+04:44:37,312 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testLoadFromJarFile(com.p6spy.engine.spy.option.SpyDotPropertiesTest)
+
+*****************************************************************************************
+04:44:37,325 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testLoadFromJarFile(com.p6spy.engine.spy.option.SpyDotPropertiesTest)
+04:44:37,326 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testMissingSpyDotProperties(com.p6spy.engine.spy.option.SpyDotPropertiesTest)
+
+*****************************************************************************************
+04:44:37,327 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testMissingSpyDotProperties(com.p6spy.engine.spy.option.SpyDotPropertiesTest)
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in com.p6spy.engine.spy.option.SpyDotPropertiesTest
+Running com.p6spy.engine.spy.option.P6TestOptionsSources
+04:44:37,340 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testPojoSetterNullValueDoesntModifySetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+
+*****************************************************************************************
+04:44:37,341 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:37,345 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testPojoSetterNullValueDoesntModifySetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+04:44:37,348 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSpyDotPropetiesNoKeyValueDoesntModifySetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+
+*****************************************************************************************
+04:44:37,349 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:37,350 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:37,351 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSpyDotPropetiesNoKeyValueDoesntModifySetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+04:44:37,352 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSysPropertyNoKeyValueDoesntModifySetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+
+*****************************************************************************************
+04:44:37,352 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:37,361 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:37,362 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSysPropertyNoKeyValueDoesntModifySetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+04:44:37,364 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSpyDotPropetiesEmptyStringValueClearsSetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+
+*****************************************************************************************
+04:44:37,364 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:37,366 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_override_clear.properties
+04:44:37,367 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSpyDotPropetiesEmptyStringValueClearsSetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+04:44:37,368 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSysPropertyEmptyStringValueClearsSetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+
+*****************************************************************************************
+04:44:37,368 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:37,370 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:37,371 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSysPropertyEmptyStringValueClearsSetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+04:44:37,371 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testPojoSetterEmptyStringValueClearsSetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+
+*****************************************************************************************
+04:44:37,371 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_blank.properties
+04:44:37,381 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testPojoSetterEmptyStringValueClearsSetOption(com.p6spy.engine.spy.option.P6TestOptionsSources)
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec - in com.p6spy.engine.spy.option.P6TestOptionsSources
+Running com.p6spy.engine.spy.DataSourceTest
+04:44:37,391 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testGenericDataSourceWithOutDriverManager(com.p6spy.engine.spy.DataSourceTest)
+
+*****************************************************************************************
+04:44:37,392 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_ds.properties
+04:44:37,408 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+04:44:37,783 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testGenericDataSourceWithOutDriverManager(com.p6spy.engine.spy.DataSourceTest)
+04:44:37,784 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testGenericDataSourceWithDriverManager(com.p6spy.engine.spy.DataSourceTest)
+
+*****************************************************************************************
+04:44:37,785 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_ds.properties
+04:44:37,793 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496277991|0|statement|connection 58|select 1 from customers|select 1 from customers
+04:44:37,996 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testGenericDataSourceWithDriverManager(com.p6spy.engine.spy.DataSourceTest)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.609 sec - in com.p6spy.engine.spy.DataSourceTest
+Running com.p6spy.engine.spy.P6TestStatement
+04:44:38,000 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:38,006 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExecute[0: H2](com.p6spy.engine.spy.P6TestStatement)
+
+*****************************************************************************************
+04:44:38,012 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496278184|0|statement|connection 59|insert into customers(name,id) values ('bob', 100)|insert into customers(name,id) values ('bob', 100)
+1490496278190|4|statement|connection 59|select count(*) from customers where id=100|select count(*) from customers where id=100
+04:44:38,191 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExecute[0: H2](com.p6spy.engine.spy.P6TestStatement)
+04:44:38,193 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:38,195 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExecuteUpdate[0: H2](com.p6spy.engine.spy.P6TestStatement)
+
+*****************************************************************************************
+04:44:38,200 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496278375|0|statement|connection 60|update customers set name='xyz' where id=1|update customers set name='xyz' where id=1
+1490496278378|0|statement|connection 60|select count(*) from customers where id=1 and name='xyz'|select count(*) from customers where id=1 and name='xyz'
+04:44:38,379 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExecuteUpdate[0: H2](com.p6spy.engine.spy.P6TestStatement)
+04:44:38,382 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:38,385 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExecutionThreshold[0: H2](com.p6spy.engine.spy.P6TestStatement)
+
+*****************************************************************************************
+04:44:38,390 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496278505|0|statement|connection 62|select count(*) from customers|select count(*) from customers
+1490496278507|0|statement|connection 62|select count(*) from customers where 1 = 2|select count(*) from customers where 1 = 2
+04:44:38,507 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExecutionThreshold[0: H2](com.p6spy.engine.spy.P6TestStatement)
+04:44:38,508 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:38,511 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExecuteEmptyBatchWithIncludeExcludeNonEmpty[0: H2](com.p6spy.engine.spy.P6TestStatement)
+
+*****************************************************************************************
+04:44:38,513 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+04:44:38,688 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExecuteEmptyBatchWithIncludeExcludeNonEmpty[0: H2](com.p6spy.engine.spy.P6TestStatement)
+04:44:38,696 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:38,710 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExecuteBatch[0: H2](com.p6spy.engine.spy.P6TestStatement)
+
+*****************************************************************************************
+04:44:38,715 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496278878|0|batch|connection 64|insert into customers(name,id) values ('jim', 101)|insert into customers(name,id) values ('jim', 101)
+1490496278879|0|batch|connection 64|insert into customers(name,id) values ('billy', 102)|insert into customers(name,id) values ('billy', 102)
+1490496278879|0|batch|connection 64|insert into customers(name,id) values ('billy', 102)|insert into customers(name,id) values ('billy', 102)
+1490496278881|0|statement|connection 64|select count(*) from customers where id > 100|select count(*) from customers where id > 100
+1490496278882|0|result|connection 64|select count(*) from customers where id > 100|
+1490496278882|0|resultset|connection -1|select count(*) from customers where id > 100|1 = 2
+04:44:38,882 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExecuteBatch[0: H2](com.p6spy.engine.spy.P6TestStatement)
+04:44:38,883 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+1490496278884|0|debug|connection -1||Registered factory: com.p6spy.engine.spy.P6SpyFactory with options: com.p6spy.engine.spy.P6SpyOptions
+1490496278884|0|debug|connection -1||Registered factory: com.p6spy.engine.logging.P6LogFactory with options: com.p6spy.engine.logging.P6LogOptions
+1490496278884|0|debug|connection -1||Registered factory: com.p6spy.engine.test.P6TestFactory with options: com.p6spy.engine.test.P6TestOptions
+1490496278885|0|debug|connection -1||com.p6spy.engine.spy.P6ModuleManager re/initiating modules done
+04:44:38,887 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExecuteQuery[0: H2](com.p6spy.engine.spy.P6TestStatement)
+
+*****************************************************************************************
+04:44:38,888 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496279003|0|statement|connection 66|select count(*) from customers where id=1|select count(*) from customers where id=1
+04:44:39,008 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExecuteQuery[0: H2](com.p6spy.engine.spy.P6TestStatement)
+04:44:39,009 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_H2.properties
+04:44:39,013 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testExecuteEmptyBatchWithIncludeExcludeEmpty[0: H2](com.p6spy.engine.spy.P6TestStatement)
+
+*****************************************************************************************
+04:44:39,014 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+04:44:39,221 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testExecuteEmptyBatchWithIncludeExcludeEmpty[0: H2](com.p6spy.engine.spy.P6TestStatement)
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.222 sec - in com.p6spy.engine.spy.P6TestStatement
+Running com.p6spy.engine.spy.MultipleDataSourceTest
+04:44:39,229 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testNotSpyEnabledDataSource(com.p6spy.engine.spy.MultipleDataSourceTest)
+
+*****************************************************************************************
+04:44:39,231 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_ds.properties
+04:44:39,394 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testNotSpyEnabledDataSource(com.p6spy.engine.spy.MultipleDataSourceTest)
+04:44:39,395 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testSpyEnabledDataSource(com.p6spy.engine.spy.MultipleDataSourceTest)
+
+*****************************************************************************************
+04:44:39,396 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_ds.properties
+1490496279411|0|statement|connection 68|select current_date from dual|select current_date from dual
+1490496279415|0|statement|connection 70|set database sql syntax ora true|set database sql syntax ora true
+1490496279419|2|statement|connection 70|select current_date from dual|select current_date from dual
+04:44:39,422 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testSpyEnabledDataSource(com.p6spy.engine.spy.MultipleDataSourceTest)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.199 sec - in com.p6spy.engine.spy.MultipleDataSourceTest
+Running com.p6spy.engine.spy.P6TestOutage
+04:44:39,426 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_outage.properties
+04:44:39,437 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testCallingSetMethodsOnStatementInterface[0](com.p6spy.engine.spy.P6TestOutage)
+
+*****************************************************************************************
+04:44:39,438 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+04:44:39,739 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testCallingSetMethodsOnStatementInterface[0](com.p6spy.engine.spy.P6TestOutage)
+04:44:39,740 INFO  [com.p6spy.engine.test.P6TestFramework.<init>] P6Spy will be configured using P6Test_outage.properties
+04:44:39,753 INFO  [com.p6spy.engine.test.BaseTestCase.starting] 
+*****************************************************************************************
+
+Executing test testOutage[0](com.p6spy.engine.spy.P6TestOutage)
+
+*****************************************************************************************
+04:44:39,754 INFO  [com.p6spy.engine.spy.P6TestUtil.setupTestData] Setting up database for testing
+1490496279968|20|statement|connection 73|CALL SLEEP( 1)|CALL SLEEP( 1)
+1490496281962|1992|outage|connection -1|CALL SLEEP( 3000)|CALL SLEEP( 3000)
+1490496282962|2993|outage|connection -1|CALL SLEEP( 3000)|CALL SLEEP( 3000)
+1490496282969|3000|statement|connection 73|CALL SLEEP( 3000)|CALL SLEEP( 3000)
+04:44:42,969 INFO  [com.p6spy.engine.test.BaseTestCase.finished] Completed test testOutage[0](com.p6spy.engine.spy.P6TestOutage)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.546 sec - in com.p6spy.engine.spy.P6TestOutage
+
+Results :
+
+Failed tests: 
+  P6TestCallableStatement.binaryExcludedFalse:254 null
+  P6TestCallableStatement.binaryExcludedTrue:215 null
+
+Tests in error: 
+  XADataSourceTest.setUpXADataSourceTest:116 » ResourceConfiguration cannot crea...
+  XADataSourceTest.setUpXADataSourceTest:116 » ResourceConfiguration cannot crea...
+
+Tests run: 120, Failures: 2, Errors: 2, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:00 min
+[INFO] Finished at: 2017-03-26T04:44:43+02:00
+[INFO] Final Memory: 28M/510M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.17:test (default-test) on project p6spy: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/p6spy/p6spy/215098301/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
