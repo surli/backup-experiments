@@ -505,7 +505,79 @@ public class DefaultDockerClientTest {
     assertTrue(imageFile.length() > 0);
   }
 
-  private File save(final String image) throws Exception {
+  @Test
+  public void testLoad() throws Exception {
+    // Ensure the local Docker instance has the busybox image so that save() will work
+    sut.pull(BUSYBOX_LATEST);
+    final File imageFile = save(BUSYBOX_LATEST);
+
+    // duplicate busybox with another name
+    final String image = BUSYBOX + "test" + System.nanoTime() + ":latest";
+    try (InputStream imagePayload = new BufferedInputStream(new FileInputStream(imageFile))) {
+      sut.create(image, imagePayload);
+    }
+
+    final File imagesFile = save(BUSYBOX_LATEST, image);
+
+    // Remove image from the local Docker instance to test the load
+    sut.removeImage(BUSYBOX_LATEST);
+    sut.removeImage(image);
+
+    // Try to inspect deleted images and make sure ImageNotFoundException is thrown
+    try {
+      sut.inspectImage(BUSYBOX_LATEST);
+      fail("inspectImage should have thrown ImageNotFoundException");
+    } catch (ImageNotFoundException e) {
+      // we should get exception because we deleted image
+    }
+    try {
+      sut.inspectImage(image);
+      fail("inspectImage should have thrown ImageNotFoundException");
+    } catch (ImageNotFoundException e) {
+      // we should get exception because we deleted image
+    }
+
+    final List<ProgressMessage> messages = new ArrayList<>();
+
+    final Set<String> loadedImages;
+    try (InputStream imageFileInputStream = new FileInputStream(imagesFile)) {
+      loadedImages = sut.load(imageFileInputStream, new ProgressHandler() {
+        @Override
+        public void progress(ProgressMessage message) throws DockerException {
+            messages.add(message);
+        }
+      });
+    }
+
+    // Verify that both images are loaded
+    assertEquals(loadedImages.size(), 2);
+    assertTrue(loadedImages.contains(BUSYBOX_LATEST));
+    assertTrue(loadedImages.contains(image));
+
+    // Verify that we have multiple messages, and each one has a non-null field
+    assertThat(messages, not(empty()));
+    for (final ProgressMessage message : messages) {
+      assertTrue(message.error() != null
+                 || message.id() != null
+                 || message.progress() != null
+                 || message.progressDetail() != null
+                 || message.status() != null
+                 || message.stream() != null);
+    }
+
+    // Try to inspect deleted image and make sure ImageNotFoundException is thrown
+    try {
+      sut.inspectImage(BUSYBOX_LATEST);
+      sut.inspectImage(image);
+    } catch (ImageNotFoundException e) {
+      fail("image not properly loaded in the local Docker instance");
+    }
+
+    // Clean created image
+    sut.removeImage(image);
+  }
+
+  private File save(final String ... images) throws Exception {
     final File tmpDir = new File(System.getProperty("java.io.tmpdir"));
     assertTrue("Temp directory " + tmpDir.getAbsolutePath() + " does not exist", tmpDir.exists());
     final File imageFile = new File(tmpDir, "busybox-" + System.nanoTime() + ".tar");
@@ -515,7 +587,7 @@ public class DefaultDockerClientTest {
     final byte[] buffer = new byte[2048];
     int read;
     try (OutputStream imageOutput = new BufferedOutputStream(new FileOutputStream(imageFile))) {
-      try (InputStream imageInput = sut.save(image)) {
+      try (InputStream imageInput = sut.save(images)) {
         while ((read = imageInput.read(buffer)) > -1) {
           imageOutput.write(buffer, 0, read);
         }
@@ -523,6 +595,7 @@ public class DefaultDockerClientTest {
     }
     return imageFile;
   }
+
 
   @Test
   public void testCreate() throws Exception {
