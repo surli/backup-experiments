@@ -14,22 +14,25 @@
  * limitations under the License.
  */
 
-package com.google.errorprone.util;
+package com.google.errorprone.names;
 
 /**
- * A utility class for finding the edit distance between strings. 
- * The edit distance between two strings is the number of deletions, 
- * insertions, and substitutions required to transform the source to the target.
+ * A utility class for finding the Levenshtein edit distance between strings. The edit distance
+ * between two strings is the number of deletions, insertions, and substitutions required to
+ * transform the source to the target. See
+ * {@link https://en.wikipedia.org/wiki/Levenshtein_distance}.
  *
  * @author eaftan@google.com (Eddie Aftandilian)
  */
-public class EditDistance {
+public class LevenshteinEditDistance {
 
-  private EditDistance() { /* disallow instantiation */ }
+  private LevenshteinEditDistance() {
+    /* disallow instantiation */
+  }
 
   /**
    * Returns the edit distance between two strings.
-   * 
+   *
    * @param source The source string.
    * @param target The target distance.
    * @return The edit distance between the source and target string.
@@ -43,21 +46,21 @@ public class EditDistance {
    * Returns the edit distance between two strings.
    * The algorithm used to calculate this distance has space requirements of
    * len(source)*len(target).
-   * 
+   *
    * @param source The source string.
    * @param target The target string
-   * @param caseSensitive If true, case is used in comparisons and 'a' != 'A'. 
+   * @param caseSensitive If true, case is used in comparisons and 'a' != 'A'.
    * @return The edit distance between the source and target strings.
    * @see #getEditDistance(String, String)
    */
-  public static int getEditDistance(String source, String target, 
+  public static int getEditDistance(String source, String target,
       boolean caseSensitive) {
 
     // Levenshtein distance algorithm
 
     int sourceLength = isEmptyOrWhitespace(source) ? 0 : source.length();
     int targetLength = isEmptyOrWhitespace(target) ? 0 : target.length();
-    
+
     if (sourceLength == 0) {
       return targetLength;
     }
@@ -90,7 +93,7 @@ public class EditDistance {
         int cost = 0;
         if (sourceI != targetJ) {
           cost = 1;
-        } 
+        }
 
         levMatrix[i][j] = Math.min(cost + levMatrix[i - 1][j - 1],
             Math.min(levMatrix[i - 1][j] + 1, levMatrix[i][j - 1] + 1));
@@ -122,9 +125,9 @@ public class EditDistance {
 
   /**
    * Determines if a string is empty or consists only of whitespace
-   * 
+   *
    * @param source The string to check
-   * @return True if the string is empty or contains only whitespace, 
+   * @return True if the string is empty or contains only whitespace,
    * false otherwise
    */
   private static boolean isEmptyOrWhitespace(String source) {
