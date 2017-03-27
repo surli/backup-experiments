@@ -31,22 +31,22 @@ import static java.util.Objects.requireNonNull;
  * for the asynchronous checkpoints of the JobGraph, such as interval, and which vertices
  * need to participate.
  */
-public class JobSnapshottingSettings implements java.io.Serializable {
-	
+public class JobCheckpointingSettings implements java.io.Serializable {
+
 	private static final long serialVersionUID = -2593319571078198180L;
-	
+
 	private final List<JobVertexID> verticesToTrigger;
 
 	private final List<JobVertexID> verticesToAcknowledge;
 
 	private final List<JobVertexID> verticesToConfirm;
-	
+
 	private final long checkpointInterval;
-	
+
 	private final long checkpointTimeout;
-	
+
 	private final long minPauseBetweenCheckpoints;
-	
+
 	private final int maxConcurrentCheckpoints;
 
 	/** Settings for externalized checkpoints. */
@@ -65,7 +65,7 @@ public class JobSnapshottingSettings implements java.io.Serializable {
 	 */
 	private final boolean isExactlyOnce;
 
-	public JobSnapshottingSettings(
+	public JobCheckpointingSettings(
 			List<JobVertexID> verticesToTrigger,
 			List<JobVertexID> verticesToAcknowledge,
 			List<JobVertexID> verticesToConfirm,
@@ -82,7 +82,7 @@ public class JobSnapshottingSettings implements java.io.Serializable {
 				minPauseBetweenCheckpoints < 0 || maxConcurrentCheckpoints < 1) {
 			throw new IllegalArgumentException();
 		}
-		
+
 		this.verticesToTrigger = requireNonNull(verticesToTrigger);
 		this.verticesToAcknowledge = requireNonNull(verticesToAcknowledge);
 		this.verticesToConfirm = requireNonNull(verticesToConfirm);
@@ -94,13 +94,13 @@ public class JobSnapshottingSettings implements java.io.Serializable {
 		this.defaultStateBackend = defaultStateBackend;
 		this.isExactlyOnce = isExactlyOnce;
 	}
-	
+
 	// --------------------------------------------------------------------------------------------
 
 	public List<JobVertexID> getVerticesToTrigger() {
 		return verticesToTrigger;
 	}
-	
+
 	public List<JobVertexID> getVerticesToAcknowledge() {
 		return verticesToAcknowledge;
 	}
@@ -139,7 +139,7 @@ public class JobSnapshottingSettings implements java.io.Serializable {
 	}
 
 	// --------------------------------------------------------------------------------------------
-	
+
 	@Override
 	public String toString() {
 		return String.format("SnapshotSettings: interval=%d, timeout=%d, pause-between=%d, " +
