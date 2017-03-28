@@ -101,12 +101,12 @@ public class ReactiveWrapperRepositoryFactorySupportUnitTests {
 	@Test // DATACMNS-988
 	public void callsRxJava2MethodOnBaseImplementationWithTypeConversion() {
 
-		Serializable id = 1L;
+		Long id = 1L;
 
 		RxJava2ConvertingRepository repository = factory.getRepository(RxJava2ConvertingRepository.class);
 		repository.delete(id);
 
-		verify(backingRepo, times(1)).delete((Serializable) id);
+		verify(backingRepo, times(1)).delete(id);
 	}
 
 	interface RxJava1ConvertingRepository extends Repository<Object, Long> {
