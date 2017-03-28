@@ -240,6 +240,7 @@ public class IncrementalIndexStorageAdapter implements StorageAdapter
             return new Cursor()
             {
               private final ValueMatcher filterMatcher = makeFilterMatcher(filter, this);
+              private final int maxRowNumber;
               private Iterator<Map.Entry<IncrementalIndex.TimeAndDims, Integer>> baseIter;
               private Iterable<Map.Entry<IncrementalIndex.TimeAndDims, Integer>> cursorIterable;
               private boolean emptyRange;
@@ -248,6 +249,7 @@ public class IncrementalIndexStorageAdapter implements StorageAdapter
               boolean done;
 
               {
+                maxRowNumber = index.size() - 1;
                 cursorIterable = index.getFacts().timeRangeIterable(
                     descending,
                     timeStart,
@@ -301,7 +303,15 @@ public class IncrementalIndexStorageAdapter implements StorageAdapter
                     return;
                   }
 
-                  currEntry.set(baseIter.next());
+                  Map.Entry<IncrementalIndex.TimeAndDims, Integer> entry = baseIter.next();
+                  // ignore rows whose rowNumber is beyond the maxRowNumber
+                  // rows are order by timestamp, not rowNumber,
+                  // so we need to go through all rows here to skip rows added after cursor created
+                  if (beyondMaxRowNumber(entry.getValue())) {
+                    continue;
+                  }
+
+                  currEntry.set(entry);
 
                   if (filterMatcher.matches()) {
                     return;
@@ -350,7 +360,14 @@ public class IncrementalIndexStorageAdapter implements StorageAdapter
 
                 boolean foundMatched = false;
                 while (baseIter.hasNext()) {
-                  currEntry.set(baseIter.next());
+                  Map.Entry<IncrementalIndex.TimeAndDims, Integer> entry = baseIter.next();
+                  // ignore rows whose rowNumber is beyond the maxRowNumber
+                  // rows are order by timestamp, not rowNumber,
+                  // so we need to go through all rows here to skip rows added after cursor created
+                  if (beyondMaxRowNumber(entry.getValue())) {
+                    continue;
+                  }
+                  currEntry.set(entry);
                   if (filterMatcher.matches()) {
                     foundMatched = true;
                     break;
@@ -360,6 +377,10 @@ public class IncrementalIndexStorageAdapter implements StorageAdapter
                 }
 
                 done = !foundMatched && (emptyRange || !baseIter.hasNext());
+              }
+
+              private boolean beyondMaxRowNumber(Integer rowNumber) {
+                return rowNumber.compareTo(maxRowNumber) > 0;
               }
 
               @Override
