@@ -134,7 +134,11 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.regex.Pattern;
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.WebApplicationException;
@@ -1122,13 +1126,10 @@ public class DefaultDockerClient implements DockerClient, Closeable {
     final LoadProgressHandler loadProgressHandler = new LoadProgressHandler(handler);
     final Entity<InputStream> entity = Entity.entity(imagePayload,
                                                      APPLICATION_OCTET_STREAM);
-    try (final ProgressStream load =
-             request(POST, ProgressStream.class, resource,
-                     resource.request(APPLICATION_JSON_TYPE), entity)) {
-      load.tail(loadProgressHandler, POST, resource.getUri());
+    try {
+      requestAndTail(POST, loadProgressHandler, resource,
+              resource.request(APPLICATION_JSON_TYPE), entity);
       tag(loadProgressHandler.getImageId(), image, true);
-    } catch (IOException e) {
-      throw new DockerException(e);
     } finally {
       IOUtils.closeQuietly(imagePayload);
     }
@@ -1214,14 +1215,11 @@ public class DefaultDockerClient implements DockerClient, Closeable {
       resource = resource.queryParam("tag", imageRef.getTag());
     }
 
-    try (ProgressStream pull =
-             request(POST, ProgressStream.class, resource,
-                     resource
-                         .request(APPLICATION_JSON_TYPE)
-                         .header("X-Registry-Auth", authHeader(registryAuth)))) {
-      pull.tail(handler, POST, resource.getUri());
-    } catch (IOException e) {
-      throw new DockerException(e);
+    try {
+      requestAndTail(POST, handler, resource,
+              resource
+                  .request(APPLICATION_JSON_TYPE)
+                  .header("X-Registry-Auth", authHeader(registryAuth)));
     } catch (DockerRequestException e) {
       switch (e.status()) {
         case 404:
@@ -1264,13 +1262,10 @@ public class DefaultDockerClient implements DockerClient, Closeable {
 
     // the docker daemon requires that the X-Registry-Auth header is specified
     // with a non-empty string even if your registry doesn't use authentication
-    try (ProgressStream push =
-             request(POST, ProgressStream.class, resource,
-                     resource.request(APPLICATION_JSON_TYPE)
-                         .header("X-Registry-Auth", authHeader(registryAuth)))) {
-      push.tail(handler, POST, resource.getUri());
-    } catch (IOException e) {
-      throw new DockerException(e);
+    try {
+      requestAndTail(POST, handler, resource,
+              resource.request(APPLICATION_JSON_TYPE)
+                  .header("X-Registry-Auth", authHeader(registryAuth)));
     } catch (DockerRequestException e) {
       switch (e.status()) {
         case 404:
@@ -1379,19 +1374,14 @@ public class DefaultDockerClient implements DockerClient, Closeable {
     }
 
     try (final CompressedDirectory compressedDirectory = CompressedDirectory.create(directory);
-         final InputStream fileStream = Files.newInputStream(compressedDirectory.file());
-         final ProgressStream build =
-             request(POST, ProgressStream.class, resource,
+         final InputStream fileStream = Files.newInputStream(compressedDirectory.file())) {
+
+      final BuildProgressHandler buildHandler = new BuildProgressHandler(handler);
+      requestAndTail(POST, buildHandler, resource,
                      resource.request(APPLICATION_JSON_TYPE)
                          .header("X-Registry-Config",
                                  authRegistryHeader(registryConfigs)),
-                     Entity.entity(fileStream, "application/tar"))) {
-
-      final BuildProgressHandler buildHandler = new BuildProgressHandler(handler);
-
-      while (build.hasNextMessage(POST, resource.getUri())) {
-        buildHandler.progress(build.nextMessage(POST, resource.getUri()));
-      }
+                     Entity.entity(fileStream, "application/tar"));
 
       return buildHandler.getImageId();
     }
@@ -2225,6 +2215,64 @@ public class DefaultDockerClient implements DockerClient, Closeable {
     } catch (ExecutionException | MultiException e) {
       throw propagate(method, resource, e);
     }
+  }
+
+  private static class ResponseTailReader implements Callable<Void> {
+    private final ProgressStream stream;
+    private final ProgressHandler handler;
+    private final String method;
+    private final WebTarget resource;
+
+    public ResponseTailReader(ProgressStream stream, ProgressHandler handler,
+                              String method, WebTarget resource) {
+      this.stream = stream;
+      this.handler = handler;
+      this.method = method;
+      this.resource = resource;
+    }
+
+    @Override
+    public Void call() throws DockerException, InterruptedException, IOException {
+      stream.tail(handler, method, resource.getUri());
+      return null;
+    }
+  }
+
+  private void tailResponse(final String method, final Response response,
+                            final ProgressHandler handler, final WebTarget resource)
+        throws DockerException, InterruptedException {
+    final ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      final ProgressStream stream = response.readEntity(ProgressStream.class);
+      final Future<?> future = executor.submit(
+              new ResponseTailReader(stream, handler, method, resource));
+      future.get();
+    } catch (ExecutionException e) {
+      final Throwable cause = e.getCause();
+      if (cause instanceof DockerException) {
+        throw (DockerException)cause;
+      } else {
+        throw new DockerException(cause);
+      }
+    } finally {
+      response.close();
+      executor.shutdownNow();
+    }
+  }
+
+  private void requestAndTail(final String method, final ProgressHandler handler,
+                               final WebTarget resource, final Invocation.Builder request,
+                               final Entity<?> entity)
+      throws DockerException, InterruptedException {
+    Response response = request(method, Response.class, resource, request, entity);
+    tailResponse(method, response, handler, resource);
+  }
+
+  private void requestAndTail(final String method, final ProgressHandler handler,
+                              final WebTarget resource, final Invocation.Builder request)
+      throws DockerException, InterruptedException {
+    Response response = request(method, Response.class, resource, request);
+    tailResponse(method, response, handler, resource);
   }
 
   private Invocation.Builder headers(final Invocation.Builder request) {
