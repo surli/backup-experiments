@@ -1,0 +1,570 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building vertx-pac4j 3.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ vertx-pac4j ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- kotlin-maven-plugin:1.0.5:compile (compile) @ vertx-pac4j ---
+[INFO] Kotlin Compiler version 1.0.5
+[WARNING] No sources found skipping Kotlin compile
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ vertx-pac4j ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ vertx-pac4j ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- kotlin-maven-plugin:1.0.5:test-compile (test-compile) @ vertx-pac4j ---
+[INFO] Kotlin Compiler version 1.0.5
+[INFO] Compiling Kotlin sources from [/root/workspace/pac4j/vertx-pac4j/215824528/src/test/java, /root/workspace/pac4j/vertx-pac4j/215824528/src/test/kotlin]
+[INFO] Module name is vertx-pac4j
+[WARNING] /root/workspace/pac4j/vertx-pac4j/215824528/src/test/kotlin/org/pac4j/vertx/client/HeaderBasedDirectClient.kt: (31, 17) Condition 'credentials.userId == null' is always 'false'
+[WARNING] /root/workspace/pac4j/vertx-pac4j/215824528/src/test/kotlin/org/pac4j/vertx/client/HeaderBasedDirectClient.kt: (31, 47) Condition 'credentials.email == null' is always 'false'
+[WARNING] /root/workspace/pac4j/vertx-pac4j/215824528/src/test/kotlin/org/pac4j/vertx/handler/impl/StatelessMultiProfileIntegrationTest.kt: (10, 32) 'ExcludedPathMatcher' is deprecated. Deprecated in Java
+[WARNING] /root/workspace/pac4j/vertx-pac4j/215824528/src/test/kotlin/org/pac4j/vertx/handler/impl/StatelessMultiProfileIntegrationTest.kt: (67, 27) 'ExcludedPathMatcher' is deprecated. Deprecated in Java
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ vertx-pac4j ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ vertx-pac4j ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ vertx-pac4j ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 3.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 108.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 533.7 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.pac4j.vertx.handler.impl.LogoutHandlerIntegrationTest
+log4j: reset attribute= "false".
+log4j: Threshold ="null".
+log4j: Level value for root is  [INFO].
+log4j: root level set to INFO
+log4j: Class name: [org.apache.log4j.ConsoleAppender]
+log4j: Parsing layout of class: "org.apache.log4j.PatternLayout"
+log4j: Setting property [conversionPattern] to [%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n].
+log4j: Adding appender named [console] to category [root].
+2017-03-28 13:04:51 INFO  AsyncTestBase:59 - Starting test: LogoutHandlerIntegrationTest#testLogoutWithRedirectToQueryParamUrl
+2017-03-28 13:04:52 INFO  impl:116 - Server started
+2017-03-28 13:04:52 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie null
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/spoof-login
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:50 - Spoof login endpoint called
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:51 - Session id = 75ba8649-ee92-48c1-a1a0-e636a3282eba
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:59 - Spoof login endpoint completing
+2017-03-28 13:04:53 INFO  impl:141 - Content-Length
+2017-03-28 13:04:53 INFO  impl:141 - Set-Cookie
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:378 - Session cookie is null
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:381 - Setting session cookie vertx-web.session=75ba8649-ee92-48c1-a1a0-e636a3282eba; Path=/
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=75ba8649-ee92-48c1-a1a0-e636a3282eba; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:53 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:53 INFO  impl:40 - Session id = 75ba8649-ee92-48c1-a1a0-e636a3282eba
+2017-03-28 13:04:53 INFO  impl:53 - Json is
+{
+  "userId" : "testUser1",
+  "session_id" : "75ba8649-ee92-48c1-a1a0-e636a3282eba",
+  "email" : "testUser1@test.com"
+}
+2017-03-28 13:04:53 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=75ba8649-ee92-48c1-a1a0-e636a3282eba; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/logout?url=/logoutDone
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=75ba8649-ee92-48c1-a1a0-e636a3282eba; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:53 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:53 INFO  impl:40 - Session id = 75ba8649-ee92-48c1-a1a0-e636a3282eba
+2017-03-28 13:04:53 INFO  impl:53 - Json is
+{
+  "userId" : null,
+  "session_id" : "75ba8649-ee92-48c1-a1a0-e636a3282eba",
+  "email" : null
+}
+2017-03-28 13:04:53 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:53 INFO  AsyncTestBase:59 - Starting test: LogoutHandlerIntegrationTest#testLogoutWithLocalLogoutFalse
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie null
+2017-03-28 13:04:53 INFO  impl:116 - Server started
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/spoof-login
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:50 - Spoof login endpoint called
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:51 - Session id = 1732f5c6-cc2d-468b-b777-6283520ae339
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:59 - Spoof login endpoint completing
+2017-03-28 13:04:53 INFO  impl:141 - Content-Length
+2017-03-28 13:04:53 INFO  impl:141 - Set-Cookie
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:378 - Session cookie is null
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:381 - Setting session cookie vertx-web.session=1732f5c6-cc2d-468b-b777-6283520ae339; Path=/
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=1732f5c6-cc2d-468b-b777-6283520ae339; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:53 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:53 INFO  impl:40 - Session id = 1732f5c6-cc2d-468b-b777-6283520ae339
+2017-03-28 13:04:53 INFO  impl:53 - Json is
+{
+  "userId" : "testUser1",
+  "session_id" : "1732f5c6-cc2d-468b-b777-6283520ae339",
+  "email" : "testUser1@test.com"
+}
+2017-03-28 13:04:53 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=1732f5c6-cc2d-468b-b777-6283520ae339; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/logout
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=1732f5c6-cc2d-468b-b777-6283520ae339; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:53 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:53 INFO  impl:40 - Session id = 1732f5c6-cc2d-468b-b777-6283520ae339
+2017-03-28 13:04:53 INFO  impl:53 - Json is
+{
+  "userId" : "testUser1",
+  "session_id" : "1732f5c6-cc2d-468b-b777-6283520ae339",
+  "email" : "testUser1@test.com"
+}
+2017-03-28 13:04:53 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:53 INFO  AsyncTestBase:59 - Starting test: LogoutHandlerIntegrationTest#testLogoutWithDestroySessionTrueDestroysSession
+2017-03-28 13:04:53 INFO  impl:116 - Server started
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/set-session-value
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:64 - Add value to session endpoint called
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:70 - Setting session entry testKeyto testValue
+2017-03-28 13:04:53 INFO  impl:141 - Content-Length
+2017-03-28 13:04:53 INFO  impl:141 - Set-Cookie
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:378 - Session cookie is null
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:381 - Setting session cookie vertx-web.session=d25f4c00-236c-41bd-b548-a0c7020094b6; Path=/
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=d25f4c00-236c-41bd-b548-a0c7020094b6; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/spoof-login
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:50 - Spoof login endpoint called
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:51 - Session id = d25f4c00-236c-41bd-b548-a0c7020094b6
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:59 - Spoof login endpoint completing
+2017-03-28 13:04:53 INFO  impl:141 - Content-Length
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=d25f4c00-236c-41bd-b548-a0c7020094b6; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:53 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:53 INFO  impl:40 - Session id = d25f4c00-236c-41bd-b548-a0c7020094b6
+2017-03-28 13:04:53 INFO  impl:53 - Json is
+{
+  "userId" : "testUser1",
+  "session_id" : "d25f4c00-236c-41bd-b548-a0c7020094b6",
+  "email" : "testUser1@test.com"
+}
+2017-03-28 13:04:53 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=d25f4c00-236c-41bd-b548-a0c7020094b6; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/logout
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=d25f4c00-236c-41bd-b548-a0c7020094b6; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:53 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:53 INFO  impl:40 - Session id = 6a134372-720a-496e-bbda-c06f5081a7e7
+2017-03-28 13:04:53 INFO  impl:53 - Json is
+{
+  "userId" : null,
+  "session_id" : "6a134372-720a-496e-bbda-c06f5081a7e7",
+  "email" : null
+}
+2017-03-28 13:04:53 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=d25f4c00-236c-41bd-b548-a0c7020094b6; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/get-session-value?key=testKey
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:76 - Get value from session endpoint called
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:80 - Value from session is null
+2017-03-28 13:04:53 INFO  AsyncTestBase:59 - Starting test: LogoutHandlerIntegrationTest#simpleLogoutTesWithDefaults
+2017-03-28 13:04:53 INFO  impl:116 - Server started
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/set-session-value
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:64 - Add value to session endpoint called
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:70 - Setting session entry testKeyto testValue
+2017-03-28 13:04:53 INFO  impl:141 - Content-Length
+2017-03-28 13:04:53 INFO  impl:141 - Set-Cookie
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:378 - Session cookie is null
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:381 - Setting session cookie vertx-web.session=f7b2b1fd-7100-46bb-912a-459e07673f78; Path=/
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=f7b2b1fd-7100-46bb-912a-459e07673f78; Path=/
+2017-03-28 13:04:53 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/spoof-login
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:50 - Spoof login endpoint called
+2017-03-28 13:04:53 INFO  LogoutHandlerIntegrationTest:51 - Session id = f7b2b1fd-7100-46bb-912a-459e07673f78
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:59 - Spoof login endpoint completing
+2017-03-28 13:04:54 INFO  impl:141 - Content-Length
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=f7b2b1fd-7100-46bb-912a-459e07673f78; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:54 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:54 INFO  impl:40 - Session id = f7b2b1fd-7100-46bb-912a-459e07673f78
+2017-03-28 13:04:54 INFO  impl:53 - Json is
+{
+  "userId" : "testUser1",
+  "session_id" : "f7b2b1fd-7100-46bb-912a-459e07673f78",
+  "email" : "testUser1@test.com"
+}
+2017-03-28 13:04:54 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=f7b2b1fd-7100-46bb-912a-459e07673f78; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/logout
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=f7b2b1fd-7100-46bb-912a-459e07673f78; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:54 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:54 INFO  impl:40 - Session id = f7b2b1fd-7100-46bb-912a-459e07673f78
+2017-03-28 13:04:54 INFO  impl:53 - Json is
+{
+  "userId" : null,
+  "session_id" : "f7b2b1fd-7100-46bb-912a-459e07673f78",
+  "email" : null
+}
+2017-03-28 13:04:54 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=f7b2b1fd-7100-46bb-912a-459e07673f78; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/get-session-value?key=testKey
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:76 - Get value from session endpoint called
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:80 - Value from session is testValue
+2017-03-28 13:04:54 INFO  AsyncTestBase:59 - Starting test: LogoutHandlerIntegrationTest#testLogoutWithCentralLogoutTrue
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie null
+2017-03-28 13:04:54 INFO  impl:116 - Server started
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/spoof-login
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:50 - Spoof login endpoint called
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:51 - Session id = a23f1b20-5906-4a7b-9ca1-59a4266a999d
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:59 - Spoof login endpoint completing
+2017-03-28 13:04:54 INFO  impl:141 - Content-Length
+2017-03-28 13:04:54 INFO  impl:141 - Set-Cookie
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:378 - Session cookie is null
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:381 - Setting session cookie vertx-web.session=a23f1b20-5906-4a7b-9ca1-59a4266a999d; Path=/
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=a23f1b20-5906-4a7b-9ca1-59a4266a999d; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:54 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:54 INFO  impl:40 - Session id = a23f1b20-5906-4a7b-9ca1-59a4266a999d
+2017-03-28 13:04:54 INFO  impl:53 - Json is
+{
+  "userId" : "testUser1",
+  "session_id" : "a23f1b20-5906-4a7b-9ca1-59a4266a999d",
+  "email" : "testUser1@test.com"
+}
+2017-03-28 13:04:54 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=a23f1b20-5906-4a7b-9ca1-59a4266a999d; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/logout
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:210 - Found
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:211 - 302
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:212 - io.vertx.rxjava.core.http.HttpClientResponse@766ebf47
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=a23f1b20-5906-4a7b-9ca1-59a4266a999d; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:54 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:54 INFO  impl:40 - Session id = a23f1b20-5906-4a7b-9ca1-59a4266a999d
+2017-03-28 13:04:54 INFO  impl:53 - Json is
+{
+  "userId" : null,
+  "session_id" : "a23f1b20-5906-4a7b-9ca1-59a4266a999d",
+  "email" : null
+}
+2017-03-28 13:04:54 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:54 INFO  AsyncTestBase:59 - Starting test: LogoutHandlerIntegrationTest#testLogoutWithDestroySessionFalseDoesNotDestroySession
+2017-03-28 13:04:54 INFO  impl:116 - Server started
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/set-session-value
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:64 - Add value to session endpoint called
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:70 - Setting session entry testKeyto testValue
+2017-03-28 13:04:54 INFO  impl:141 - Content-Length
+2017-03-28 13:04:54 INFO  impl:141 - Set-Cookie
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:378 - Session cookie is null
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:381 - Setting session cookie vertx-web.session=caccf19e-494a-4dec-9f72-7e5f46167c6f; Path=/
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=caccf19e-494a-4dec-9f72-7e5f46167c6f; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/spoof-login
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:50 - Spoof login endpoint called
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:51 - Session id = caccf19e-494a-4dec-9f72-7e5f46167c6f
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:59 - Spoof login endpoint completing
+2017-03-28 13:04:54 INFO  impl:141 - Content-Length
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=caccf19e-494a-4dec-9f72-7e5f46167c6f; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:54 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:54 INFO  impl:40 - Session id = caccf19e-494a-4dec-9f72-7e5f46167c6f
+2017-03-28 13:04:54 INFO  impl:53 - Json is
+{
+  "userId" : "testUser1",
+  "session_id" : "caccf19e-494a-4dec-9f72-7e5f46167c6f",
+  "email" : "testUser1@test.com"
+}
+2017-03-28 13:04:54 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=caccf19e-494a-4dec-9f72-7e5f46167c6f; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/logout
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=caccf19e-494a-4dec-9f72-7e5f46167c6f; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:54 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:54 INFO  impl:40 - Session id = caccf19e-494a-4dec-9f72-7e5f46167c6f
+2017-03-28 13:04:54 INFO  impl:53 - Json is
+{
+  "userId" : null,
+  "session_id" : "caccf19e-494a-4dec-9f72-7e5f46167c6f",
+  "email" : null
+}
+2017-03-28 13:04:54 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=caccf19e-494a-4dec-9f72-7e5f46167c6f; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/get-session-value?key=testKey
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:76 - Get value from session endpoint called
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:80 - Value from session is testValue
+2017-03-28 13:04:54 INFO  AsyncTestBase:59 - Starting test: LogoutHandlerIntegrationTest#testLogoutWithLocalLogoutTrue
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie null
+2017-03-28 13:04:54 INFO  impl:116 - Server started
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/spoof-login
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:50 - Spoof login endpoint called
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:51 - Session id = 28967e64-846b-42c8-9b28-b971d88ded62
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:59 - Spoof login endpoint completing
+2017-03-28 13:04:54 INFO  impl:141 - Content-Length
+2017-03-28 13:04:54 INFO  impl:141 - Set-Cookie
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:378 - Session cookie is null
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:381 - Setting session cookie vertx-web.session=28967e64-846b-42c8-9b28-b971d88ded62; Path=/
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=28967e64-846b-42c8-9b28-b971d88ded62; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:54 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:54 INFO  impl:40 - Session id = 28967e64-846b-42c8-9b28-b971d88ded62
+2017-03-28 13:04:54 INFO  impl:53 - Json is
+{
+  "userId" : "testUser1",
+  "session_id" : "28967e64-846b-42c8-9b28-b971d88ded62",
+  "email" : "testUser1@test.com"
+}
+2017-03-28 13:04:54 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=28967e64-846b-42c8-9b28-b971d88ded62; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/logout
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=28967e64-846b-42c8-9b28-b971d88ded62; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:54 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:54 INFO  impl:40 - Session id = 28967e64-846b-42c8-9b28-b971d88ded62
+2017-03-28 13:04:54 INFO  impl:53 - Json is
+{
+  "userId" : null,
+  "session_id" : "28967e64-846b-42c8-9b28-b971d88ded62",
+  "email" : null
+}
+2017-03-28 13:04:54 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:54 INFO  AsyncTestBase:59 - Starting test: LogoutHandlerIntegrationTest#testLogoutWithCentralLogoutFalse
+2017-03-28 13:04:54 INFO  impl:116 - Server started
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/set-session-value
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:64 - Add value to session endpoint called
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:70 - Setting session entry testKeyto testValue
+2017-03-28 13:04:54 INFO  impl:141 - Content-Length
+2017-03-28 13:04:54 INFO  impl:141 - Set-Cookie
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:378 - Session cookie is null
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:381 - Setting session cookie vertx-web.session=295f2f6c-6da5-4374-bf5a-466a93428248; Path=/
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=295f2f6c-6da5-4374-bf5a-466a93428248; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/spoof-login
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:50 - Spoof login endpoint called
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:51 - Session id = 295f2f6c-6da5-4374-bf5a-466a93428248
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:59 - Spoof login endpoint completing
+2017-03-28 13:04:54 INFO  impl:141 - Content-Length
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=295f2f6c-6da5-4374-bf5a-466a93428248; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:54 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:54 INFO  impl:40 - Session id = 295f2f6c-6da5-4374-bf5a-466a93428248
+2017-03-28 13:04:54 INFO  impl:53 - Json is
+{
+  "userId" : "testUser1",
+  "session_id" : "295f2f6c-6da5-4374-bf5a-466a93428248",
+  "email" : "testUser1@test.com"
+}
+2017-03-28 13:04:54 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=295f2f6c-6da5-4374-bf5a-466a93428248; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/logout
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=295f2f6c-6da5-4374-bf5a-466a93428248; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/profile
+2017-03-28 13:04:54 INFO  impl:39 - Get profile endpoint called
+2017-03-28 13:04:54 INFO  impl:40 - Session id = 295f2f6c-6da5-4374-bf5a-466a93428248
+2017-03-28 13:04:54 INFO  impl:53 - Json is
+{
+  "userId" : null,
+  "session_id" : "295f2f6c-6da5-4374-bf5a-466a93428248",
+  "email" : null
+}
+2017-03-28 13:04:54 INFO  impl:54 - Get profile endpoint completing
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:387 - Retrieving session cookie vertx-web.session=295f2f6c-6da5-4374-bf5a-466a93428248; Path=/
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/get-session-value?key=testKey
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:76 - Get value from session endpoint called
+2017-03-28 13:04:54 INFO  LogoutHandlerIntegrationTest:80 - Value from session is testValue
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.328 sec - in org.pac4j.vertx.handler.impl.LogoutHandlerIntegrationTest
+Running org.pac4j.vertx.handler.impl.StatelessMultiProfileIntegrationTest
+2017-03-28 13:04:54 INFO  AsyncTestBase:59 - Starting test: StatelessMultiProfileIntegrationTest#testTwoOfThreeMatch
+2017-03-28 13:04:54 WARN  PathMatcher:57 - Excluding paths with regexes is an advanced feature: be careful when defining your regular expression to avoid any security issues!
+2017-03-28 13:04:54 WARN  PathMatcher:57 - Excluding paths with regexes is an advanced feature: be careful when defining your regular expression to avoid any security issues!
+2017-03-28 13:04:54 INFO  SecurityHandler:81 - Authorised to view resource /private/success.html
+2017-03-28 13:04:54 INFO  Pac4jAuthHandlerIntegrationTestBase:96 - Login success handler called
+2017-03-28 13:04:54 INFO  MultiProfileTest:29 - Validating profiles in {
+  "abc" : {
+    "userId" : "testUser1",
+    "email" : "testUser1@test.com"
+  },
+  "ghi" : {
+    "userId" : "testUser1",
+    "email" : "testUser1@test.com"
+  }
+}
+2017-03-28 13:04:54 INFO  AsyncTestBase:59 - Starting test: StatelessMultiProfileIntegrationTest#testNoMatches
+2017-03-28 13:04:54 WARN  PathMatcher:57 - Excluding paths with regexes is an advanced feature: be careful when defining your regular expression to avoid any security issues!
+2017-03-28 13:04:54 WARN  PathMatcher:57 - Excluding paths with regexes is an advanced feature: be careful when defining your regular expression to avoid any security issues!
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 sec - in org.pac4j.vertx.handler.impl.StatelessMultiProfileIntegrationTest
+Running org.pac4j.vertx.handler.impl.StatefulMultiProfileIntegrationTest
+2017-03-28 13:04:54 INFO  AsyncTestBase:59 - Starting test: StatefulMultiProfileIntegrationTest#testMultiProfileSecondLoginWorksAsExpected
+2017-03-28 13:04:54 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:83 - oAuthProviderMimic started
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:54 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:9292/authSuccess?response_type=code&client_id=testClient&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FauthResult%3Fclient_name%3DTestOAuth2Client&state=e2a7a13ce2
+2017-03-28 13:04:54 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/authResult?client_name=TestOAuth2Client&state=e2a7a13ce2&code=9f28250c-583c-4d5b-b4ef-c40c0a19e747
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/authResult?client_name=TestOAuth2Client&state=e2a7a13ce2&code=9f28250c-583c-4d5b-b4ef-c40c0a19e747
+2017-03-28 13:04:54 INFO  OAuth20ProfileCreator:85 - UserProfile: {"id":"testOAuth1User"}
+2017-03-28 13:04:54 ERROR DefaultCallbackLogic:123 - Unable to renew the session. The session store may not support this feature
+2017-03-28 13:04:54 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/private/success.html
+2017-03-28 13:04:54 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:54 INFO  SecurityHandler:81 - Authorised to view resource /private/success.html
+2017-03-28 13:04:55 INFO  Pac4jAuthHandlerIntegrationTestBase:96 - Login success handler called
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/forceSecondLogin?client_name=QueryParamBasedIndirectClient&userId=testUser1&email=testUser1@test.com&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fprivate%2Fsuccess.html
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/authResult?client_name=QueryParamBasedIndirectClient&userId=testUser1&email=testUser1@test.com
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/authResult?client_name=QueryParamBasedIndirectClient&userId=testUser1&email=testUser1@test.com
+2017-03-28 13:04:55 ERROR DefaultCallbackLogic:123 - Unable to renew the session. The session store may not support this feature
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/private/success.html
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:55 INFO  SecurityHandler:81 - Authorised to view resource /private/success.html
+2017-03-28 13:04:55 INFO  Pac4jAuthHandlerIntegrationTestBase:96 - Login success handler called
+2017-03-28 13:04:55 INFO  MultiProfileTest:29 - Validating profiles in {
+  "TestOAuth2Client" : {
+    "access_token" : "f9643e69-12a5-4199-86cb-167e6a636fd9"
+  },
+  "QueryParamBasedIndirectClient" : {
+    "userId" : "testUser1",
+    "email" : "testUser1@test.com"
+  }
+}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.409 sec - in org.pac4j.vertx.handler.impl.StatefulMultiProfileIntegrationTest
+Running org.pac4j.vertx.context.session.VertxSessionStoreTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.33 sec - in org.pac4j.vertx.context.session.VertxSessionStoreTest
+Running org.pac4j.vertx.StatefulPac4jAuthHandlerSingleProfileIntegrationTest
+2017-03-28 13:04:55 INFO  AsyncTestBase:59 - Starting test: StatefulPac4jAuthHandlerSingleProfileIntegrationTest#testSuccessfulOAuth2LoginWithoutAuthorities
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerSingleProfileIntegrationTest:36 - testSuccessfulOAuth2LoginWithoutAuthorities
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:83 - oAuthProviderMimic started
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:9292/authSuccess?response_type=code&client_id=testClient&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FauthResult%3Fclient_name%3DTestOAuth2Client&state=0cbb00c973
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/authResult?client_name=TestOAuth2Client&state=0cbb00c973&code=e70b45e1-5e28-4edc-8e3a-6c9c15b754cc
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/authResult?client_name=TestOAuth2Client&state=0cbb00c973&code=e70b45e1-5e28-4edc-8e3a-6c9c15b754cc
+2017-03-28 13:04:55 INFO  OAuth20ProfileCreator:85 - UserProfile: {"id":"testUser1"}
+2017-03-28 13:04:55 ERROR DefaultCallbackLogic:123 - Unable to renew the session. The session store may not support this feature
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/private/success.html
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:55 INFO  SecurityHandler:81 - Authorised to view resource /private/success.html
+2017-03-28 13:04:55 INFO  Pac4jAuthHandlerIntegrationTestBase:96 - Login success handler called
+2017-03-28 13:04:55 INFO  AsyncTestBase:59 - Starting test: StatefulPac4jAuthHandlerSingleProfileIntegrationTest#testSuccessfulOAuth2LoginWithSufficientAuthorities
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:83 - oAuthProviderMimic started
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:9292/authSuccess?response_type=code&client_id=testClient&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FauthResult%3Fclient_name%3DTestOAuth2Client&state=4ac0fd804b
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/authResult?client_name=TestOAuth2Client&state=4ac0fd804b&code=489f9fb0-d303-4ca8-9327-a434ad476776
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/authResult?client_name=TestOAuth2Client&state=4ac0fd804b&code=489f9fb0-d303-4ca8-9327-a434ad476776
+2017-03-28 13:04:55 INFO  OAuth20ProfileCreator:85 - UserProfile: {"id":"testUser2"}
+2017-03-28 13:04:55 ERROR DefaultCallbackLogic:123 - Unable to renew the session. The session store may not support this feature
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/private/success.html
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:55 INFO  SecurityHandler:81 - Authorised to view resource /private/success.html
+2017-03-28 13:04:55 INFO  Pac4jAuthHandlerIntegrationTestBase:96 - Login success handler called
+2017-03-28 13:04:55 INFO  AsyncTestBase:59 - Starting test: StatefulPac4jAuthHandlerSingleProfileIntegrationTest#testSuccessfulOAuth2LoginWithoutAuthorizerName
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:83 - oAuthProviderMimic started
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:9292/authSuccess?response_type=code&client_id=testClient&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FauthResult%3Fclient_name%3DTestOAuth2Client&state=fad27d3023
+2017-03-28 13:04:55 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/authResult?client_name=TestOAuth2Client&state=fad27d3023&code=c9ec6a4a-ac4f-4a94-a5ba-aba3bcf5f608
+2017-03-28 13:04:55 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/authResult?client_name=TestOAuth2Client&state=fad27d3023&code=c9ec6a4a-ac4f-4a94-a5ba-aba3bcf5f608
+2017-03-28 13:04:56 INFO  OAuth20ProfileCreator:85 - UserProfile: {"id":"testUser2"}
+2017-03-28 13:04:56 ERROR DefaultCallbackLogic:123 - Unable to renew the session. The session store may not support this feature
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/private/success.html
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:56 INFO  SecurityHandler:81 - Authorised to view resource /private/success.html
+2017-03-28 13:04:56 INFO  Pac4jAuthHandlerIntegrationTestBase:96 - Login success handler called
+2017-03-28 13:04:56 INFO  AsyncTestBase:59 - Starting test: StatefulPac4jAuthHandlerSingleProfileIntegrationTest#testLogoutRequiresSubsequentReauthentication
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:83 - oAuthProviderMimic started
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:9292/authSuccess?response_type=code&client_id=testClient&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FauthResult%3Fclient_name%3DTestOAuth2Client&state=a5f3186f0c
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/authResult?client_name=TestOAuth2Client&state=a5f3186f0c&code=7d639c6f-79fa-4126-8f3a-21cc3ddbe704
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/authResult?client_name=TestOAuth2Client&state=a5f3186f0c&code=7d639c6f-79fa-4126-8f3a-21cc3ddbe704
+2017-03-28 13:04:56 INFO  OAuth20ProfileCreator:85 - UserProfile: {"id":"testUser1"}
+2017-03-28 13:04:56 ERROR DefaultCallbackLogic:123 - Unable to renew the session. The session store may not support this feature
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/private/success.html
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:56 INFO  SecurityHandler:81 - Authorised to view resource /private/success.html
+2017-03-28 13:04:56 INFO  Pac4jAuthHandlerIntegrationTestBase:96 - Login success handler called
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerSingleProfileIntegrationTest:109 - Successfully logged in, now about to logout
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/logout?url=/
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerSingleProfileIntegrationTest:119 - RedirectTo: http://localhost:9292/authSuccess?response_type=code&client_id=testClient&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FauthResult%3Fclient_name%3DTestOAuth2Client&state=9697633b47
+2017-03-28 13:04:56 INFO  AsyncTestBase:59 - Starting test: StatefulPac4jAuthHandlerSingleProfileIntegrationTest#testSuccessfulOAuth2LoginWithInsufficientAuthorities
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:83 - oAuthProviderMimic started
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:9292/authSuccess?response_type=code&client_id=testClient&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FauthResult%3Fclient_name%3DTestOAuth2Client&state=0350d06f60
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/authResult?client_name=TestOAuth2Client&state=0350d06f60&code=8d8ea62c-4850-4429-b236-6c95f41e860d
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/authResult?client_name=TestOAuth2Client&state=0350d06f60&code=8d8ea62c-4850-4429-b236-6c95f41e860d
+2017-03-28 13:04:56 INFO  OAuth20ProfileCreator:85 - UserProfile: {"id":"testUser2"}
+2017-03-28 13:04:56 ERROR DefaultCallbackLogic:123 - Unable to renew the session. The session store may not support this feature
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/private/success.html
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:56 INFO  AsyncTestBase:59 - Starting test: StatefulPac4jAuthHandlerSingleProfileIntegrationTest#testSubsequentAccessFollowingSuccessfulLogin
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:83 - oAuthProviderMimic started
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:9292/authSuccess?response_type=code&client_id=testClient&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FauthResult%3Fclient_name%3DTestOAuth2Client&state=6753d0d3df
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/authResult?client_name=TestOAuth2Client&state=6753d0d3df&code=629dd7be-7a4f-4a09-981b-177afe4c27b3
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/authResult?client_name=TestOAuth2Client&state=6753d0d3df&code=629dd7be-7a4f-4a09-981b-177afe4c27b3
+2017-03-28 13:04:56 INFO  OAuth20ProfileCreator:85 - UserProfile: {"id":"testUser1"}
+2017-03-28 13:04:56 ERROR DefaultCallbackLogic:123 - Unable to renew the session. The session store may not support this feature
+2017-03-28 13:04:56 INFO  StatefulPac4jAuthHandlerIntegrationTestBase:225 - Redirecting to http://localhost:8080/private/success.html
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:56 INFO  SecurityHandler:81 - Authorised to view resource /private/success.html
+2017-03-28 13:04:56 INFO  Pac4jAuthHandlerIntegrationTestBase:96 - Login success handler called
+2017-03-28 13:04:56 WARN  SessionHandlerImpl:90 - Using session cookies without https could make you susceptible to session hijacking: http://localhost:8080/private/success.html
+2017-03-28 13:04:56 INFO  SecurityHandler:81 - Authorised to view resource /private/success.html
+2017-03-28 13:04:56 INFO  Pac4jAuthHandlerIntegrationTestBase:96 - Login success handler called
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.137 sec - in org.pac4j.vertx.StatefulPac4jAuthHandlerSingleProfileIntegrationTest
+Running org.pac4j.vertx.StatelessPac4jAuthHandlerIntegrationTest
+2017-03-28 13:04:56 INFO  AsyncTestBase:59 - Starting test: StatelessPac4jAuthHandlerIntegrationTest#testExcludedUrlIsAccessibleWithoutCredentials
+2017-03-28 13:04:56 WARN  PathMatcher:57 - Excluding paths with regexes is an advanced feature: be careful when defining your regular expression to avoid any security issues!
+2017-03-28 13:04:56 INFO  SecurityHandler:81 - Authorised to view resource /private/public/success.html
+2017-03-28 13:04:56 INFO  AsyncTestBase:59 - Starting test: StatelessPac4jAuthHandlerIntegrationTest#testFailedLogin
+2017-03-28 13:04:56 WARN  PathMatcher:57 - Excluding paths with regexes is an advanced feature: be careful when defining your regular expression to avoid any security issues!
+2017-03-28 13:04:56 INFO  DirectBasicAuthClient:68 - Failed to retrieve or validate credentials: Username : 'testUser' does not match password
+2017-03-28 13:04:56 INFO  AsyncTestBase:59 - Starting test: StatelessPac4jAuthHandlerIntegrationTest#testSuccessfulLogin
+2017-03-28 13:04:56 WARN  PathMatcher:57 - Excluding paths with regexes is an advanced feature: be careful when defining your regular expression to avoid any security issues!
+2017-03-28 13:04:56 INFO  SecurityHandler:81 - Authorised to view resource /private/success.html
+2017-03-28 13:04:56 INFO  Pac4jAuthHandlerIntegrationTestBase:96 - Login success handler called
+2017-03-28 13:04:56 INFO  AsyncTestBase:59 - Starting test: StatelessPac4jAuthHandlerIntegrationTest#testExcludedUrlIsAccessibleWithInvalidCredentials
+2017-03-28 13:04:56 WARN  PathMatcher:57 - Excluding paths with regexes is an advanced feature: be careful when defining your regular expression to avoid any security issues!
+2017-03-28 13:04:56 INFO  SecurityHandler:81 - Authorised to view resource /private/public/success.html
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.32 sec - in org.pac4j.vertx.StatelessPac4jAuthHandlerIntegrationTest
+Running org.pac4j.vertx.auth.Pac4jUserTest
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.2 sec <<< FAILURE! - in org.pac4j.vertx.auth.Pac4jUserTest
+testClusterSerializationAndDeserializationSingleProfile(org.pac4j.vertx.auth.Pac4jUserTest)  Time elapsed: 0.184 sec  <<< ERROR!
+org.pac4j.core.exception.TechnicalException: Error while decoding object
+	at org.pac4j.vertx.auth.Pac4jUserTest.testClusterSerializationAndDeserializationSingleProfile(Pac4jUserTest.java:32)
+Caused by: com.fasterxml.jackson.databind.JsonMappingException:
+linkedId cannot be null
+ at [Source: {"id":"testUserId1","attributes":{"access_token":"testAccessToken1","access_secret":"testSecret1"},"isRemembered":false,"roles":[],"permissions":[],"clientName":"testClient1","linkedId":null,"hashCode":null}; line: 1, column: 187] (through reference chain: org.pac4j.vertx.profile.TestOAuth1Profile["linkedId"])
+	at org.pac4j.vertx.auth.Pac4jUserTest.testClusterSerializationAndDeserializationSingleProfile(Pac4jUserTest.java:32)
+Caused by: org.pac4j.core.exception.TechnicalException: linkedId cannot be null
+	at org.pac4j.vertx.auth.Pac4jUserTest.testClusterSerializationAndDeserializationSingleProfile(Pac4jUserTest.java:32)
+
+testClusterSerializationAndDeserializationMultipleProfiles(org.pac4j.vertx.auth.Pac4jUserTest)  Time elapsed: 0.016 sec  <<< ERROR!
+org.pac4j.core.exception.TechnicalException: Error while decoding object
+	at org.pac4j.vertx.auth.Pac4jUserTest.testClusterSerializationAndDeserializationMultipleProfiles(Pac4jUserTest.java:51)
+Caused by: com.fasterxml.jackson.databind.JsonMappingException:
+linkedId cannot be null
+ at [Source: {"id":"testUserId1","attributes":{"access_token":"testAccessToken1","access_secret":"testSecret1"},"isRemembered":false,"roles":[],"permissions":[],"clientName":"testClient1","linkedId":null,"hashCode":null}; line: 1, column: 187] (through reference chain: org.pac4j.vertx.profile.TestOAuth1Profile["linkedId"])
+	at org.pac4j.vertx.auth.Pac4jUserTest.testClusterSerializationAndDeserializationMultipleProfiles(Pac4jUserTest.java:51)
+Caused by: org.pac4j.core.exception.TechnicalException: linkedId cannot be null
+	at org.pac4j.vertx.auth.Pac4jUserTest.testClusterSerializationAndDeserializationMultipleProfiles(Pac4jUserTest.java:51)
+
+Running org.pac4j.vertx.core.DefaultJsonConverterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in org.pac4j.vertx.core.DefaultJsonConverterTest
+
+Results :
+
+Tests in error:
+  Pac4jUserTest.testClusterSerializationAndDeserializationMultipleProfiles:51 » Technical
+  Pac4jUserTest.testClusterSerializationAndDeserializationSingleProfile:32 » Technical
+
+Tests run: 28, Failures: 0, Errors: 2, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 49.052 s
+[INFO] Finished at: 2017-03-28T13:04:57+02:00
+[INFO] Final Memory: 43M/745M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project vertx-pac4j: There are test failures.
+[ERROR]
+[ERROR] Please refer to /root/workspace/pac4j/vertx-pac4j/215824528/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
