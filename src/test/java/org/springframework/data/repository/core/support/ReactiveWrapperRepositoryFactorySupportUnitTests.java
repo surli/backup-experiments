@@ -106,7 +106,7 @@ public class ReactiveWrapperRepositoryFactorySupportUnitTests {
 		RxJava2ConvertingRepository repository = factory.getRepository(RxJava2ConvertingRepository.class);
 		repository.delete(id);
 
-		verify(backingRepo, times(1)).delete(id);
+		verify(backingRepo, times(1)).delete((Serializable) id);
 	}
 
 	interface RxJava1ConvertingRepository extends Repository<Object, Long> {
