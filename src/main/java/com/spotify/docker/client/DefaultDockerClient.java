@@ -2255,7 +2255,13 @@ public class DefaultDockerClient implements DockerClient, Closeable {
         throw new DockerException(cause);
       }
     } finally {
-      response.close();
+      // close quietly, since NativeSocketChannel throw an exception
+      // after the CloseableHttpResponse is closed
+      try {
+        response.close();
+      } catch (RuntimeException e) {
+        log.warn("Unable to properly close the response", e);
+      }
       executor.shutdownNow();
     }
   }
