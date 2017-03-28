@@ -212,6 +212,38 @@ public class DefaultDockerClient implements DockerClient, Closeable {
 
   }
 
+  /**
+   * Hack: this {@link ProgressHandler} is meant to capture the image ID
+   * of an image being built.
+   */
+  private static class BuildProgressHandler implements ProgressHandler {
+
+    private final ProgressHandler delegate;
+
+    private String imageId;
+
+    private BuildProgressHandler(ProgressHandler delegate) {
+      this.delegate = delegate;
+    }
+
+    private String getImageId() {
+      Preconditions.checkState(imageId != null,
+                               "Could not acquire image ID or digest following build");
+      return imageId;
+    }
+
+    @Override
+    public void progress(ProgressMessage message) throws DockerException {
+      delegate.progress(message);
+
+      final String id = message.buildImageId();
+      if (id != null) {
+        imageId = id;
+      }
+    }
+
+  }
+
   // ==========================================================================
 
   private static final String UNIX_SCHEME = "unix";
@@ -1355,16 +1387,13 @@ public class DefaultDockerClient implements DockerClient, Closeable {
                                  authRegistryHeader(registryConfigs)),
                      Entity.entity(fileStream, "application/tar"))) {
 
-      String imageId = null;
+      final BuildProgressHandler buildHandler = new BuildProgressHandler(handler);
+
       while (build.hasNextMessage(POST, resource.getUri())) {
-        final ProgressMessage message = build.nextMessage(POST, resource.getUri());
-        final String id = message.buildImageId();
-        if (id != null) {
-          imageId = id;
-        }
-        handler.progress(message);
+        buildHandler.progress(build.nextMessage(POST, resource.getUri()));
       }
-      return imageId;
+
+      return buildHandler.getImageId();
     }
   }
 
