@@ -20,6 +20,7 @@ import java.util.BitSet;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.Set;
 
 import org.eclipse.collections.api.BooleanIterable;
@@ -1729,6 +1730,27 @@ public class ObjectBooleanHashMap<K> implements MutableObjectBooleanMap<K>, Exte
                     procedure.value(ObjectBooleanHashMap.this.toNonSentinel(ObjectBooleanHashMap.this.keys[i]), parameter);
                 }
             }
+        }
+
+        @Override
+        public Optional<K> getOnlyOptional()
+        {
+            if (this.isEmpty())
+            {
+                return Optional.empty();
+            }
+
+            if (this.size() == 1)
+            {
+                K first = this.getFirst();
+                if (first.equals(NULL_KEY))
+                {
+                    throw new NullPointerException();
+                }
+                return Optional.of(first);
+            }
+
+            throw new IllegalStateException("Size must be 0 or 1 but was " + this.size());
         }
 
         @Override
