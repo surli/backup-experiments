@@ -1,0 +1,752 @@
+/*
+ * Licensed to Metamarkets Group Inc. (Metamarkets) under one
+ * or more contributor license agreements. See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership. Metamarkets licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+package io.druid.server.lookup.cache;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.jaxrs.smile.SmileMediaTypes;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Throwables;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Sets;
+import com.google.common.net.HostAndPort;
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.ListenableScheduledFuture;
+import com.google.common.util.concurrent.ListeningScheduledExecutorService;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.inject.Inject;
+import com.metamx.emitter.EmittingLogger;
+import com.metamx.http.client.HttpClient;
+import com.metamx.http.client.Request;
+import com.metamx.http.client.response.ClientResponse;
+import com.metamx.http.client.response.HttpResponseHandler;
+import com.metamx.http.client.response.SequenceInputStreamResponseHandler;
+import io.druid.audit.AuditInfo;
+import io.druid.common.config.JacksonConfigManager;
+import io.druid.concurrent.Execs;
+import io.druid.concurrent.LifecycleLock;
+import io.druid.guice.annotations.Global;
+import io.druid.guice.annotations.Smile;
+import io.druid.java.util.common.IAE;
+import io.druid.java.util.common.IOE;
+import io.druid.java.util.common.ISE;
+import io.druid.java.util.common.StreamUtils;
+import io.druid.java.util.common.StringUtils;
+import io.druid.query.lookup.LookupModule;
+import io.druid.server.listener.announcer.ListenerDiscoverer;
+import io.druid.server.listener.resource.ListenerResource;
+import org.jboss.netty.handler.codec.http.HttpHeaders;
+import org.jboss.netty.handler.codec.http.HttpMethod;
+import org.jboss.netty.handler.codec.http.HttpResponse;
+
+import javax.annotation.Nullable;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+
+/**
+ *
+ */
+public class LookupCoordinatorManager
+{
+  //key used in druid-0.10.0 with config manager
+  public static final String OLD_LOOKUP_CONFIG_KEY = "lookups";
+
+  public static final String LOOKUP_CONFIG_KEY = "lookupsConfig";
+  public static final String LOOKUP_LISTEN_ANNOUNCE_KEY = "lookups";
+  private static final EmittingLogger LOG = new EmittingLogger(LookupCoordinatorManager.class);
+
+  private final ListenerDiscoverer listenerDiscoverer;
+  private final HttpClient httpClient;
+  private final ObjectMapper smileMapper;
+  private final JacksonConfigManager configManager;
+  private final LookupCoordinatorManagerConfig lookupCoordinatorManagerConfig;
+
+  // Known lookup state across various cluster nodes is managed in the reference here. On each lookup management loop
+  // state is rediscovered and updated in the ref here. If some lookup nodes have disappeared since last lookup
+  // management loop, then they get discarded automatically.
+  private final AtomicReference<Map<HostAndPort, LookupsStateWithMap>> knownOldState = new AtomicReference<>();
+
+  // Updated by config watching service
+  private AtomicReference<Map<String, Map<String, LookupExtractorFactoryMapContainer>>> lookupMapConfigRef;
+
+  @VisibleForTesting
+  final LifecycleLock lifecycleLock = new LifecycleLock();
+
+  private ListeningScheduledExecutorService executorService;
+  private ListenableScheduledFuture<?> backgroundManagerFuture;
+  private CountDownLatch backgroundManagerExitedLatch;
+
+  @Inject
+  public LookupCoordinatorManager(
+      final @Global HttpClient httpClient,
+      final ListenerDiscoverer listenerDiscoverer,
+      final @Smile ObjectMapper smileMapper,
+      final JacksonConfigManager configManager,
+      final LookupCoordinatorManagerConfig lookupCoordinatorManagerConfig
+  )
+  {
+    this.listenerDiscoverer = listenerDiscoverer;
+    this.configManager = configManager;
+    this.httpClient = httpClient;
+    this.smileMapper = smileMapper;
+    this.lookupCoordinatorManagerConfig = lookupCoordinatorManagerConfig;
+  }
+
+  public boolean updateLookup(
+      final String tier,
+      final String lookupName,
+      LookupExtractorFactoryMapContainer spec,
+      final AuditInfo auditInfo
+  )
+  {
+    return updateLookups(
+        ImmutableMap.<String, Map<String, LookupExtractorFactoryMapContainer>>of(tier, ImmutableMap.of(lookupName, spec)),
+        auditInfo
+    );
+  }
+
+  public boolean updateLookups(final Map<String, Map<String, LookupExtractorFactoryMapContainer>> updateSpec, AuditInfo auditInfo)
+  {
+    Preconditions.checkState(lifecycleLock.awaitStarted(5, TimeUnit.SECONDS), "not started");
+
+    if (updateSpec.isEmpty() && lookupMapConfigRef.get() != null) {
+      return true;
+    }
+
+    //ensure all the lookups specs have version specified. ideally this should be done in the LookupExtractorFactoryMapContainer
+    //constructor but that allows null to enable backward compatibility with 0.10.0 lookup specs
+    for (final Map.Entry<String, Map<String, LookupExtractorFactoryMapContainer>> tierEntry : updateSpec.entrySet()) {
+      for (Map.Entry<String, LookupExtractorFactoryMapContainer> e : tierEntry.getValue().entrySet()) {
+        Preconditions.checkNotNull(
+            e.getValue().getVersion(),
+            "lookup [%s]:[%s] does not have version.", tierEntry.getKey(), e.getKey()
+        );
+      }
+    }
+
+    synchronized(this) {
+      final Map<String, Map<String, LookupExtractorFactoryMapContainer>> priorSpec = getKnownLookups();
+      if (priorSpec == null && !updateSpec.isEmpty()) {
+        // To prevent accidentally erasing configs if we haven't updated our cache of the values
+        throw new ISE("Not initialized. If this is the first lookup, post an empty map to initialize");
+      }
+      final Map<String, Map<String, LookupExtractorFactoryMapContainer>> updatedSpec;
+
+      // Only add or update here, don't delete.
+      if (priorSpec == null) {
+        // all new
+        updatedSpec = updateSpec;
+      } else {
+        // Needs update
+        updatedSpec = new HashMap<>(priorSpec);
+        for (final Map.Entry<String, Map<String, LookupExtractorFactoryMapContainer>> tierEntry : updateSpec.entrySet()) {
+          final String tier = tierEntry.getKey();
+          final Map<String, LookupExtractorFactoryMapContainer> updateTierSpec = tierEntry.getValue();
+          final Map<String, LookupExtractorFactoryMapContainer> priorTierSpec = priorSpec.get(tier);
+
+          if (priorTierSpec == null) {
+            // New tier
+            updatedSpec.put(tier, updateTierSpec);
+          } else {
+            // Update existing tier
+            final Map<String, LookupExtractorFactoryMapContainer> updatedTierSpec = new HashMap<>(priorTierSpec);
+
+            for (Map.Entry<String, LookupExtractorFactoryMapContainer> e : updateTierSpec.entrySet()) {
+              if (updatedTierSpec.containsKey(e.getKey()) && !e.getValue().replaces(updatedTierSpec.get(e.getKey()))) {
+                throw new IAE(
+                    "given update for lookup [%s]:[%s] can't replace existing spec [%s].",
+                    tier,
+                    e.getKey(),
+                    updatedTierSpec.get(e.getKey())
+                );
+              }
+            }
+            updatedTierSpec.putAll(updateTierSpec);
+            updatedSpec.put(tier, updatedTierSpec);
+          }
+        }
+      }
+      return configManager.set(LOOKUP_CONFIG_KEY, updatedSpec, auditInfo);
+    }
+  }
+
+  public Map<String, Map<String, LookupExtractorFactoryMapContainer>> getKnownLookups()
+  {
+    Preconditions.checkState(lifecycleLock.awaitStarted(5, TimeUnit.SECONDS), "not started");
+    return lookupMapConfigRef.get();
+  }
+
+  public boolean deleteLookup(final String tier, final String lookup, AuditInfo auditInfo)
+  {
+    Preconditions.checkState(lifecycleLock.awaitStarted(5, TimeUnit.SECONDS), "not started");
+
+    synchronized(this) {
+      final Map<String, Map<String, LookupExtractorFactoryMapContainer>> priorSpec = getKnownLookups();
+      if (priorSpec == null) {
+        LOG.warn("Requested delete lookup [%s]/[%s]. But no lookups exist!", tier, lookup);
+        return false;
+      }
+      final Map<String, Map<String, LookupExtractorFactoryMapContainer>> updateSpec = new HashMap<>(priorSpec);
+      final Map<String, LookupExtractorFactoryMapContainer> priorTierSpec = updateSpec.get(tier);
+      if (priorTierSpec == null) {
+        LOG.warn("Requested delete of lookup [%s]/[%s] but tier does not exist!", tier, lookup);
+        return false;
+      }
+
+      if (!priorTierSpec.containsKey(lookup)) {
+        LOG.warn("Requested delete of lookup [%s]/[%s] but lookup does not exist!", tier, lookup);
+        return false;
+      }
+
+      final Map<String, LookupExtractorFactoryMapContainer> updateTierSpec = new HashMap<>(priorTierSpec);
+      updateTierSpec.remove(lookup);
+      updateSpec.put(tier, updateTierSpec);
+      return configManager.set(LOOKUP_CONFIG_KEY, updateSpec, auditInfo);
+    }
+  }
+
+  public Collection<String> discoverTiers()
+  {
+    try {
+      return listenerDiscoverer.discoverChildren(LookupCoordinatorManager.LOOKUP_LISTEN_ANNOUNCE_KEY);
+    }
+    catch (IOException e) {
+      throw Throwables.propagate(e);
+    }
+  }
+
+  /**
+   * Try to find a lookupName spec for the specified lookupName.
+   *
+   * @param lookupName The lookupName to look for
+   *
+   * @return The lookupName spec if found or null if not found or if no lookups at all are found
+   */
+  @Nullable
+  public LookupExtractorFactoryMapContainer getLookup(final String tier, final String lookupName)
+  {
+    final Map<String, Map<String, LookupExtractorFactoryMapContainer>> prior = getKnownLookups();
+    if (prior == null) {
+      LOG.warn("Requested tier [%s] lookupName [%s]. But no lookups exist!", tier, lookupName);
+      return null;
+    }
+    final Map<String, LookupExtractorFactoryMapContainer> tierLookups = prior.get(tier);
+    if (tierLookups == null) {
+      LOG.warn("Tier [%s] does not exist", tier);
+      return null;
+    }
+    return tierLookups.get(lookupName);
+  }
+
+  // start() and stop() are synchronized so that they never run in parallel in case of ZK acting funny or drui bug and
+  // coordinator becomes leader and drops leadership in quick succession.
+  public void start()
+  {
+    synchronized(lifecycleLock) {
+      if (!lifecycleLock.canStart()) {
+        throw new ISE("LookupCoordinatorManager can't start.");
+      }
+
+      try {
+        LOG.debug("Starting.");
+
+        if (executorService != null &&
+            !executorService.awaitTermination(
+                lookupCoordinatorManagerConfig.getHostTimeout().getMillis() * 10,
+                TimeUnit.MILLISECONDS
+            )) {
+          throw new ISE("WTF! LookupCoordinatorManager executor from last start() hasn't finished. Failed to Start.");
+        }
+
+        executorService = MoreExecutors.listeningDecorator(
+            Executors.newScheduledThreadPool(
+                lookupCoordinatorManagerConfig.getThreadPoolSize(),
+                Execs.makeThreadFactory("LookupCoordinatorManager--%s")
+            )
+        );
+
+        initializeLookupsConfigWatcher();
+
+        this.backgroundManagerExitedLatch = new CountDownLatch(1);
+        this.backgroundManagerFuture = executorService.scheduleWithFixedDelay(
+            this::lookupManagementLoop,
+            2000, //initial delay to start management after a little while
+            lookupCoordinatorManagerConfig.getPeriod(),
+            TimeUnit.MILLISECONDS
+        );
+        Futures.addCallback(
+            backgroundManagerFuture, new FutureCallback<Object>()
+            {
+              @Override
+              public void onSuccess(@Nullable Object result)
+              {
+                backgroundManagerExitedLatch.countDown();
+                LOG.debug("Exited background lookup manager");
+              }
+
+              @Override
+              public void onFailure(Throwable t)
+              {
+                backgroundManagerExitedLatch.countDown();
+                if (backgroundManagerFuture.isCancelled()) {
+                  LOG.debug("Exited background lookup manager due to cancellation.");
+                } else {
+                  LOG.makeAlert(t, "Background lookup manager exited with error!").emit();
+                }
+              }
+            }
+        );
+
+        LOG.debug("Started");
+      }
+      catch (Exception ex) {
+        LOG.makeAlert(ex, "Got Exception while start()").emit();
+      }
+      finally {
+        //so that subsequent stop() would happen, even if start() failed with exception
+        lifecycleLock.started();
+        lifecycleLock.exitStart();
+      }
+    }
+  }
+
+  public void stop()
+  {
+    synchronized (lifecycleLock) {
+      if (!lifecycleLock.canStop()) {
+        throw new ISE("LookupCoordinatorManager can't stop.");
+      }
+
+      try {
+        LOG.debug("Stopping");
+
+        if (backgroundManagerFuture != null && !backgroundManagerFuture.cancel(true)) {
+          LOG.warn("Background lookup manager thread could not be cancelled");
+        }
+
+        if (executorService != null) {
+          executorService.shutdownNow();
+        }
+
+        LOG.debug("Stopped");
+      }
+      catch (Exception ex) {
+        LOG.makeAlert(ex, "Got Exception while stop()").emit();
+      }
+      finally {
+        //so that subsequent start() would happen, even if stop() failed with exception
+        lifecycleLock.exitStop();
+        lifecycleLock.reset();
+      }
+    }
+  }
+
+  private void initializeLookupsConfigWatcher()
+  {
+    //Note: this call is idempotent, so multiple start() would not cause any problems.
+    lookupMapConfigRef = configManager.watch(
+        LOOKUP_CONFIG_KEY,
+        new TypeReference<Map<String, Map<String, LookupExtractorFactoryMapContainer>>>()
+        {
+        },
+        null
+    );
+
+    // backward compatibility with 0.10.0
+    if (lookupMapConfigRef.get() == null) {
+      Map<String, Map<String, Map<String, Object>>> oldLookups = configManager.watch(
+          OLD_LOOKUP_CONFIG_KEY,
+          new TypeReference<Map<String, Map<String, Map<String, Object>>>>()
+          {
+          },
+          null
+      ).get();
+
+      if (oldLookups != null) {
+        Map<String, Map<String, LookupExtractorFactoryMapContainer>> converted = new HashMap<>();
+        oldLookups.forEach(
+            (tier, oldTierLookups) -> {
+              if (oldTierLookups != null && !oldTierLookups.isEmpty()) {
+                converted.put(tier, convertTierLookups(oldTierLookups));
+              }
+            }
+        );
+
+        configManager.set(
+            LOOKUP_CONFIG_KEY,
+            converted,
+            new AuditInfo("autoConversion", "autoConversion", "127.0.0.1")
+        );
+      }
+    }
+  }
+
+  private Map<String, LookupExtractorFactoryMapContainer> convertTierLookups(
+      Map<String, Map<String, Object>> oldTierLookups
+  )
+  {
+    Map<String, LookupExtractorFactoryMapContainer> convertedTierLookups = new HashMap<>();
+    oldTierLookups.forEach(
+        (lookup, lookupExtractorFactory) -> {
+          convertedTierLookups.put(lookup, new LookupExtractorFactoryMapContainer(null, lookupExtractorFactory));
+        }
+    );
+    return convertedTierLookups;
+  }
+
+  private void lookupManagementLoop()
+  {
+    // Sanity check for if we are shutting down
+    if (Thread.currentThread().isInterrupted() || !lifecycleLock.awaitStarted(1, TimeUnit.MILLISECONDS)) {
+      LOG.info("Not updating lookups because process was interrupted or not finished starting yet.");
+      return;
+    }
+
+    final Map<String, Map<String, LookupExtractorFactoryMapContainer>> allLookupTiers = lookupMapConfigRef.get();
+
+    if (allLookupTiers == null) {
+      LOG.info("Not updating lookups because no data exists");
+      return;
+    }
+
+    LOG.debug("Starting lookup sync for on all nodes.");
+
+    final Map<HostAndPort, LookupsStateWithMap> currState = new ConcurrentHashMap<>();
+
+    try {
+      List<ListenableFuture<?>> futures = new ArrayList<>();
+      for (Map.Entry<String, Map<String, LookupExtractorFactoryMapContainer>> tierEntry : allLookupTiers.entrySet()) {
+
+        LOG.debug("Starting lookup mgmt for tier [%s].", tierEntry.getKey());
+
+        final Map<String, LookupExtractorFactoryMapContainer> tierLookups = tierEntry.getValue();
+        for (final HostAndPort node : listenerDiscoverer.getNodes(LookupModule.getTierListenerPath(tierEntry.getKey()))) {
+
+          LOG.debug(
+              "Starting lookup mgmt for tier [%s] and host [%s:%s].",
+              tierEntry.getKey(),
+              node.getHostText(),
+              node.getPort()
+          );
+
+          futures.add(
+              executorService.submit(
+                  () -> {
+                    try {
+                      currState.put(node, this.doLookupManagementOnNode(node, tierLookups));
+                    }
+                    catch (Exception ex) {
+                      LOG.makeAlert(
+                          ex,
+                          "Failed to finish lookup management on node [%s:%s]",
+                          node.getHostText(),
+                          node.getPort()
+                      );
+                    }
+                  }
+              )
+          );
+        }
+      }
+
+      final ListenableFuture allFuture = Futures.allAsList(futures);
+      try {
+        allFuture.get(lookupCoordinatorManagerConfig.getAllHostTimeout().getMillis(), TimeUnit.MILLISECONDS);
+        knownOldState.set(currState);
+      }
+      catch (InterruptedException ex) {
+        allFuture.cancel(true);
+        Thread.currentThread().interrupt();
+        throw ex;
+      } catch (Exception ex) {
+        allFuture.cancel(true);
+        throw ex;
+      }
+
+    } catch (Exception ex) {
+      LOG.makeAlert(ex, "Failed to finish lookup management loop.").emit();
+    }
+
+    LOG.debug("Finished lookup sync for on all nodes.");
+  }
+
+  private LookupsStateWithMap doLookupManagementOnNode(
+      HostAndPort node,
+      Map<String, LookupExtractorFactoryMapContainer> nodeTierLookupsToBe
+  ) throws IOException, InterruptedException, ExecutionException
+  {
+    LOG.debug("Starting lookup sync for node [%s].", node);
+
+    LookupsStateWithMap currLookupsStateOnNode = getLookupStateForNode(node);
+    LOG.debug("Received lookups state from node [%s].", node);
+
+
+    // Compare currLookupsStateOnNode with nodeTierLookupsToBe to find what are the lookups
+    // we need to further ask node to load/drop
+    Map<String, LookupExtractorFactoryMapContainer> toLoad = xx(currLookupsStateOnNode, nodeTierLookupsToBe);
+    Set<String> toDrop = toDrop(currLookupsStateOnNode, nodeTierLookupsToBe);
+
+    if (!toLoad.isEmpty() || !toDrop.isEmpty()) {
+      // Send POST request to the node asking to load and drop the lookups necessary.
+      // no need to send "current" in the LookupsStateWithMap , that is not required
+      currLookupsStateOnNode = updateNode(node, new LookupsStateWithMap(null, toLoad, toDrop));
+
+      LOG.debug(
+          "Sent lookup toAdd[%s] and toDrop[%s] updates to node [%s].",
+          toLoad.keySet(),
+          toDrop,
+          node
+      );
+    }
+
+    LOG.debug("Finished lookup sync for node [%s].", node);
+    return currLookupsStateOnNode;
+  }
+
+  // Returns the Map<lookup-name, lookup-spec> that needs to be loaded by the node and it does not know about
+  // those already.
+  private Map<String, LookupExtractorFactoryMapContainer> xx(
+      LookupsStateWithMap currLookupsStateOnNode,
+      Map<String, LookupExtractorFactoryMapContainer> nodeTierLookupsToBe
+  )
+  {
+    Map<String, LookupExtractorFactoryMapContainer> toLoad = new HashMap<>();
+    for (Map.Entry<String, LookupExtractorFactoryMapContainer> e : nodeTierLookupsToBe.entrySet()) {
+      String name = e.getKey();
+      LookupExtractorFactoryMapContainer lookupToBe = e.getValue();
+
+      // get it from the current pending notices list on the node
+      LookupExtractorFactoryMapContainer current = currLookupsStateOnNode.getToLoad().get(name);
+
+      if (current == null) {
+        //ok, not on pending list, get from currently loaded lookups on node
+        current = currLookupsStateOnNode.getCurrent().get(name);
+      }
+
+      if (current == null || //lookup is neither pending nor already loaded on the node OR
+          lookupToBe.replaces(current) //lookup is already know to node, but lookupToBe overrides that
+          ) {
+        toLoad.put(name, lookupToBe);
+      }
+    }
+    return toLoad;
+  }
+
+  // Returns Set<lookup-name> that should be dropped from the node which has them already either in pending to load
+  // state or loaded
+  private Set<String> toDrop(
+      LookupsStateWithMap currLookupsStateOnNode,
+      Map<String, LookupExtractorFactoryMapContainer> nodeTierLookupsToBe
+  )
+  {
+    Set<String> toDrop = new HashSet<>();
+
+    // {currently loading/loaded on the node} - {currently pending deletion on node} - {lookups node should actually have}
+    toDrop.addAll(currLookupsStateOnNode.getCurrent().keySet());
+    toDrop.addAll(currLookupsStateOnNode.getToLoad().keySet());
+    toDrop = Sets.difference(toDrop, currLookupsStateOnNode.getToDrop());
+    toDrop = Sets.difference(toDrop, nodeTierLookupsToBe.keySet());
+    return toDrop;
+  }
+
+  @VisibleForTesting
+  LookupsStateWithMap updateNode(
+      HostAndPort node,
+      LookupsStateWithMap lookupsUpdate
+  )
+      throws IOException, InterruptedException, ExecutionException
+  {
+    final AtomicInteger returnCode = new AtomicInteger(0);
+    final AtomicReference<String> reasonString = new AtomicReference<>(null);
+
+    final URL url = getLookupsUpdateURL(node);
+
+    LOG.debug("Sending lookups load/drop request to [%s]. Request [%s]", url, lookupsUpdate);
+
+    try (final InputStream result = httpClient.go(
+        new Request(HttpMethod.POST, url)
+            .addHeader(HttpHeaders.Names.ACCEPT, SmileMediaTypes.APPLICATION_JACKSON_SMILE)
+            .addHeader(HttpHeaders.Names.CONTENT_TYPE, SmileMediaTypes.APPLICATION_JACKSON_SMILE)
+            .setContent(smileMapper.writeValueAsBytes(lookupsUpdate)),
+        makeResponseHandler(returnCode, reasonString),
+        lookupCoordinatorManagerConfig.getHostTimeout()
+    ).get()) {
+      if (httpStatusIsSuccess(returnCode.get())) {
+        try {
+          final LookupsStateWithMap response = smileMapper.readValue(result, LookupsStateWithMap.class);
+          LOG.debug(
+              "Update on [%s], Status: %s reason: [%s], Response [%s].", url, returnCode.get(), reasonString.get(),
+              response
+          );
+          return response;
+        } catch (IOException ex) {
+          throw new IOE(
+              ex, "Failed to parse update response from [%s]. response [%s]", url, result
+          );
+        }
+      } else {
+        final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        try {
+          StreamUtils.copyAndClose(result, baos);
+        }
+        catch (IOException e2) {
+          LOG.warn(e2, "Error reading response");
+        }
+
+        throw new IOE(
+            "Bad update request to [%s] : [%d] : [%s]  Response: [%s]",
+            url,
+            returnCode.get(),
+            reasonString.get(),
+            StringUtils.fromUtf8(baos.toByteArray())
+        );
+      }
+    }
+  }
+
+  @VisibleForTesting
+  LookupsStateWithMap getLookupStateForNode(
+      HostAndPort node
+  ) throws IOException, InterruptedException, ExecutionException
+  {
+    final URL url = getLookupsURL(node);
+    final AtomicInteger returnCode = new AtomicInteger(0);
+    final AtomicReference<String> reasonString = new AtomicReference<>(null);
+
+    LOG.debug("Getting lookups from [%s]", url);
+
+    try (final InputStream result = httpClient.go(
+        new Request(HttpMethod.GET, url)
+            .addHeader(HttpHeaders.Names.ACCEPT, SmileMediaTypes.APPLICATION_JACKSON_SMILE),
+        makeResponseHandler(returnCode, reasonString),
+        lookupCoordinatorManagerConfig.getHostTimeout()
+    ).get()) {
+      if (returnCode.get() == 200) {
+        try {
+          final LookupsStateWithMap response = smileMapper.readValue(result, LookupsStateWithMap.class);
+          LOG.debug(
+              "Get on [%s], Status: %s reason: [%s], Response [%s].", url, returnCode.get(), reasonString.get(),
+              response
+          );
+          return response;
+        } catch(IOException ex) {
+          throw new IOE(
+              ex,
+              "Failed to parser GET lookups response from [%s]. response [%s].",
+              url,
+              result
+          );
+        }
+      } else {
+        final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        try {
+          StreamUtils.copyAndClose(result, baos);
+        }
+        catch (IOException ex) {
+          LOG.warn(ex, "Error reading response from GET on url [%s]", url);
+        }
+
+        throw new IOE(
+            "GET request failed to [%s] : [%d] : [%s]  Response: [%s]",
+            url,
+            returnCode.get(),
+            reasonString.get(),
+            StringUtils.fromUtf8(baos.toByteArray())
+        );
+      }
+    }
+  }
+
+  static URL getLookupsURL(HostAndPort druidNode) throws MalformedURLException
+  {
+    return new URL(
+        "http",
+        druidNode.getHostText(),
+        druidNode.getPortOrDefault(-1),
+        ListenerResource.BASE_PATH + "/" + LOOKUP_LISTEN_ANNOUNCE_KEY
+    );
+  }
+
+  static URL getLookupsUpdateURL(HostAndPort druidNode) throws MalformedURLException
+  {
+    return new URL(
+        "http",
+        druidNode.getHostText(),
+        druidNode.getPortOrDefault(-1),
+        ListenerResource.BASE_PATH + "/" + LOOKUP_LISTEN_ANNOUNCE_KEY + "/" + "updates"
+    );
+  }
+
+  private static boolean httpStatusIsSuccess(int statusCode)
+  {
+    return statusCode >= 200 && statusCode < 300;
+  }
+
+  @VisibleForTesting
+  boolean backgroundManagerIsRunning()
+  {
+    ListenableScheduledFuture backgroundManagerFuture = this.backgroundManagerFuture;
+    return backgroundManagerFuture != null && !backgroundManagerFuture.isDone();
+  }
+
+  @VisibleForTesting
+  boolean waitForBackgroundTermination(long timeout) throws InterruptedException
+  {
+    return backgroundManagerExitedLatch.await(timeout, TimeUnit.MILLISECONDS);
+  }
+
+  @VisibleForTesting
+  HttpResponseHandler<InputStream, InputStream> makeResponseHandler(
+      final AtomicInteger returnCode,
+      final AtomicReference<String> reasonString
+  )
+  {
+    return new SequenceInputStreamResponseHandler()
+    {
+      @Override
+      public ClientResponse<InputStream> handleResponse(HttpResponse response)
+      {
+        returnCode.set(response.getStatus().getCode());
+        reasonString.set(response.getStatus().getReasonPhrase());
+        return super.handleResponse(response);
+      }
+    };
+  }
+}
