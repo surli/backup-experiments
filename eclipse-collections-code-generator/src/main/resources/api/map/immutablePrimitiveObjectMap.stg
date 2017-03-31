@@ -1,0 +1,45 @@
+import "copyright.stg"
+
+skipBoolean() ::= "true"
+
+targetPath() ::= "org/eclipse/collections/api/map/primitive"
+
+fileName(primitive) ::= "Immutable<primitive.name>ObjectMap"
+
+class(primitive) ::= <<
+<body(primitive.type, primitive.name)>
+>>
+
+body(type, name) ::= <<
+<copyright()>
+
+package org.eclipse.collections.api.map.primitive;
+
+import org.eclipse.collections.api.<name>Iterable;
+import org.eclipse.collections.api.block.procedure.Procedure;
+import org.eclipse.collections.api.block.predicate.primitive.<name>ObjectPredicate;
+
+/**
+ * This file was automatically generated from template file immutablePrimitiveObjectMap.stg.
+ *
+ * @since 3.0.
+ */
+public interface Immutable<name>ObjectMap\<V> extends <name>ObjectMap\<V>, ImmutablePrimitiveObjectMap\<V>
+{
+    @Override
+    Immutable<name>ObjectMap\<V> tap(Procedure\<? super V> procedure);
+
+    @Override
+    Immutable<name>ObjectMap\<V> select(<name>ObjectPredicate\<? super V> predicate);
+
+    @Override
+    Immutable<name>ObjectMap\<V> reject(<name>ObjectPredicate\<? super V> predicate);
+
+    Immutable<name>ObjectMap\<V> newWithKeyValue(<type> key, V value);
+
+    Immutable<name>ObjectMap\<V> newWithoutKey(<type> key);
+
+    Immutable<name>ObjectMap\<V> newWithoutAllKeys(<name>Iterable keys);
+}
+
+>>
