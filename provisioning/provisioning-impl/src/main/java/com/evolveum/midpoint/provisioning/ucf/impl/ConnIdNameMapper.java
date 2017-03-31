@@ -26,19 +26,19 @@ import com.evolveum.midpoint.util.exception.SchemaException;
 import com.evolveum.midpoint.xml.ns._public.common.common_3.ConnectorType;
 import com.evolveum.midpoint.xml.ns._public.common.common_3.ShadowType;
 
-public class IcfNameMapper {
-	
+public class ConnIdNameMapper {
+
 	private static final String CUSTOM_OBJECTCLASS_PREFIX = "Custom";
 	private static final String CUSTOM_OBJECTCLASS_SUFFIX = "ObjectClass";
-	
+
 	private static final Map<String,QName> specialAttributeMapIcf = new HashMap<String,QName>();
 	private static final Map<QName,String> specialAttributeMapMp = new HashMap<QName,String>();
-	
+
 	private ResourceSchema resourceSchema = null;
 	// Used when there is no schema (schemaless resource)
 	private String resourceSchemaNamespace = null;
-	
-	public IcfNameMapper(String resourceSchemaNamespace) {
+
+	public ConnIdNameMapper(String resourceSchemaNamespace) {
 		super();
 		this.resourceSchemaNamespace = resourceSchemaNamespace;
 	}
@@ -57,7 +57,7 @@ public class IcfNameMapper {
 	private static void initialize() {
 		addSpecialAttributeMapping(Name.NAME, ConnectorFactoryIcfImpl.ICFS_NAME);
 		addSpecialAttributeMapping(Uid.NAME, ConnectorFactoryIcfImpl.ICFS_UID);
-		
+
 		addOperationalAttributeMapping(OperationalAttributeInfos.CURRENT_PASSWORD);
 		addOperationalAttributeMapping(OperationalAttributeInfos.DISABLE_DATE);
 		addOperationalAttributeMapping(OperationalAttributeInfos.ENABLE);
@@ -66,32 +66,32 @@ public class IcfNameMapper {
 		addOperationalAttributeMapping(OperationalAttributeInfos.PASSWORD);
 		addOperationalAttributeMapping(OperationalAttributeInfos.PASSWORD_EXPIRATION_DATE);
 		addOperationalAttributeMapping(OperationalAttributeInfos.PASSWORD_EXPIRED);
-		
+
 		addOperationalAttributeMapping(SecretIcfOperationalAttributes.DESCRIPTION);
 		addOperationalAttributeMapping(SecretIcfOperationalAttributes.GROUPS);
 		addOperationalAttributeMapping(SecretIcfOperationalAttributes.LAST_LOGIN_DATE);
 	}
-	
+
 	private static void addSpecialAttributeMapping(String icfName, QName qname) {
 		specialAttributeMapIcf.put(icfName, qname);
 		specialAttributeMapMp.put(qname, icfName);
 	}
-	
+
 	private static void addOperationalAttributeMapping(
 			SecretIcfOperationalAttributes opAttr) {
 		addOperationalAttributeMapping(opAttr.getName());
 	}
-	
+
 	private static void addOperationalAttributeMapping(AttributeInfo attrInfo) {
 		addOperationalAttributeMapping(attrInfo.getName());
 	}
-	
+
 	private static void addOperationalAttributeMapping(String icfName) {
 		QName qName = convertUnderscoreAttributeNameToQName(icfName);
 		addSpecialAttributeMapping(icfName, qName);
 	}
-	
-	
+
+
 	public QName convertAttributeNameToQName(String icfAttrName, ResourceAttributeContainerDefinition attributesContainerDefinition) {
 		return convertAttributeNameToQName(icfAttrName, attributesContainerDefinition.getComplexTypeDefinition());
 	}
@@ -110,7 +110,7 @@ public class IcfNameMapper {
 				ConnectorFactoryIcfImpl.NS_ICF_RESOURCE_INSTANCE_PREFIX);
 		return attrXsdName;
 	}
-	
+
 	public QName convertAttributeNameToQName(String icfAttrName, ResourceAttributeDefinition attrDef) {
 		if (specialAttributeMapIcf.containsKey(icfAttrName)) {
 			if (icfAttrName.equals(attrDef.getFrameworkAttributeName())) {
@@ -121,7 +121,7 @@ public class IcfNameMapper {
 		}
 		return attrDef.getName();
 	}
-	
+
 	public String convertAttributeNameToIcf(ResourceAttribute<?> attribute, ObjectClassComplexTypeDefinition ocDef)
 			throws SchemaException {
 		ResourceAttributeDefinition attrDef = attribute.getDefinition();
@@ -148,28 +148,28 @@ public class IcfNameMapper {
 		if (attrDef.getFrameworkAttributeName() != null) {
 			return attrDef.getFrameworkAttributeName();
 		}
-		
+
 		QName attrQName = attrDef.getName();
 		if (specialAttributeMapMp.containsKey(attrQName)) {
 			return specialAttributeMapMp.get(attrQName);
 		}
-		
+
 		if (!attrQName.getNamespaceURI().equals(resourceSchemaNamespace)) {
 			throw new SchemaException("No mapping from QName " + attrQName + " to an ICF attribute in resource schema namespace: " + resourceSchemaNamespace);
 		}
 
 		return attrQName.getLocalPart();
-		
+
 	}
-	
+
 	private boolean isUnderscoreSyntax(String icfAttrName) {
 		return icfAttrName.startsWith("__") && icfAttrName.endsWith("__");
 	}
-	
+
 	private static QName convertUnderscoreAttributeNameToQName(String icfAttrName) {
 		// Strip leading and trailing underscores
 		String inside = icfAttrName.substring(2, icfAttrName.length()-2);
-		
+
 		StringBuilder sb = new StringBuilder();
 		int lastIndex = 0;
 		while (true) {
@@ -183,7 +183,7 @@ public class IcfNameMapper {
 			sb.append(toCamelCase(upcase, lastIndex == 0));
 			lastIndex = nextIndex + 1;
 		}
-		
+
 		return new QName(ConnectorFactoryIcfImpl.NS_ICF_SCHEMA, sb.toString());
 	}
 
@@ -262,7 +262,7 @@ public class IcfNameMapper {
 					+ " is not in the appropriate namespace for "
 					+ connectorType + ", expected: " + schemaNamespace);
 		}
-		
+
 		String lname = qnameObjectClass.getLocalPart();
 		if (legacySchema) {
 			if (ConnectorFactoryIcfImpl.ACCOUNT_OBJECT_CLASS_LOCAL_NAME.equals(lname)) {
@@ -282,7 +282,7 @@ public class IcfNameMapper {
 			return new ObjectClass(lname);
 		}
 	}
-	
+
 	static {
 		initialize();
 	}

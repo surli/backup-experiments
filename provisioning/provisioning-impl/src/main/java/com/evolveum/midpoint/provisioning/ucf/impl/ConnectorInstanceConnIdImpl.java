@@ -94,6 +94,7 @@ import org.identityconnectors.framework.impl.api.local.ObjectPool.Statistics;
 import org.identityconnectors.framework.impl.api.local.operations.ConnectorOperationalContext;
 import org.identityconnectors.framework.spi.Connector;
 import org.identityconnectors.framework.spi.PoolableConnector;
+import org.omg.PortableInterceptor.SUCCESSFUL;
 
 import com.evolveum.midpoint.prism.crypto.EncryptionException;
 import com.evolveum.midpoint.prism.crypto.Protector;
@@ -112,6 +113,8 @@ import com.evolveum.midpoint.prism.xml.XsdTypeMapper;
 import com.evolveum.midpoint.provisioning.ucf.api.AttributesToReturn;
 import com.evolveum.midpoint.provisioning.ucf.api.Change;
 import com.evolveum.midpoint.provisioning.ucf.api.ConnectorInstance;
+import com.evolveum.midpoint.provisioning.ucf.api.ConnectorOperationResult;
+import com.evolveum.midpoint.provisioning.ucf.api.ConnectorOperationReturnValue;
 import com.evolveum.midpoint.provisioning.ucf.api.ExecuteProvisioningScriptOperation;
 import com.evolveum.midpoint.provisioning.ucf.api.ExecuteScriptArgument;
 import com.evolveum.midpoint.provisioning.ucf.api.GenericFrameworkException;
@@ -174,32 +177,32 @@ import com.evolveum.prism.xml.ns._public.types_3.ProtectedByteArrayType;
 import com.evolveum.prism.xml.ns._public.types_3.ProtectedStringType;
 
 /**
- * Implementation of ConnectorInstance for ICF connectors.
+ * Implementation of ConnectorInstance for ConnId connectors.
  * <p/>
  * This class implements the ConnectorInstance interface. The methods are
  * converting the data from the "midPoint semantics" as seen by the
- * ConnectorInstance interface to the "ICF semantics" as seen by the ICF
+ * ConnectorInstance interface to the "ConnId semantics" as seen by the ICF
  * framework.
- * 
+ *
  * @author Radovan Semancik
  */
-public class ConnectorInstanceIcfImpl implements ConnectorInstance {
+public class ConnectorInstanceConnIdImpl implements ConnectorInstance {
 
-	private static final com.evolveum.midpoint.xml.ns._public.resource.capabilities_3.ObjectFactory capabilityObjectFactory 
+	private static final com.evolveum.midpoint.xml.ns._public.resource.capabilities_3.ObjectFactory capabilityObjectFactory
 		= new com.evolveum.midpoint.xml.ns._public.resource.capabilities_3.ObjectFactory();
 
-	private static final Trace LOGGER = TraceManager.getTrace(ConnectorInstanceIcfImpl.class);
+	private static final Trace LOGGER = TraceManager.getTrace(ConnectorInstanceConnIdImpl.class);
 
 	ConnectorInfo cinfo;
 	ConnectorType connectorType;
 	ConnectorFacade connIdConnectorFacade;
 	String resourceSchemaNamespace;
 	private APIConfiguration apiConfig = null;
-	
+
 	Protector protector;
 	PrismContext prismContext;
-	private IcfNameMapper icfNameMapper;
-	private IcfConvertor icfConvertor;
+	private ConnIdNameMapper connIdNameMapper;
+	private ConnIdConvertor connIdConvertor;
 
 	private ResourceSchema resourceSchema = null;
 	private Collection<Object> capabilities = null;
@@ -209,7 +212,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 	private Boolean legacySchema = null;
 	private boolean supportsReturnDefaultAttributes = false;
 
-	ConnectorInstanceIcfImpl(ConnectorInfo connectorInfo, ConnectorType connectorType,
+	ConnectorInstanceConnIdImpl(ConnectorInfo connectorInfo, ConnectorType connectorType,
 			String schemaNamespace, PrismSchema connectorSchema, Protector protector,
 			PrismContext prismContext) {
 		this.cinfo = connectorInfo;
@@ -218,9 +221,9 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		this.connectorSchema = connectorSchema;
 		this.protector = protector;
 		this.prismContext = prismContext;
-		icfNameMapper = new IcfNameMapper(schemaNamespace);
-		icfConvertor = new IcfConvertor(protector, resourceSchemaNamespace);
-		icfConvertor.setIcfNameMapper(icfNameMapper);
+		connIdNameMapper = new ConnIdNameMapper(schemaNamespace);
+		connIdConvertor = new ConnIdConvertor(protector, resourceSchemaNamespace);
+		connIdConvertor.setIcfNameMapper(connIdNameMapper);
 	}
 
 	public String getDescription() {
@@ -234,12 +237,12 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 	public String getSchemaNamespace() {
 		return resourceSchemaNamespace;
 	}
-	
+
 	public void setResourceSchema(ResourceSchema resourceSchema) {
 		this.resourceSchema = resourceSchema;
-		icfNameMapper.setResourceSchema(resourceSchema);
+		connIdNameMapper.setResourceSchema(resourceSchema);
 	}
-	
+
 	public void resetResourceSchema() {
 		setResourceSchema(null);
 	}
@@ -312,7 +315,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				throw new SystemException("Got unexpected exception: " + ex.getClass().getName() + ": " + ex.getMessage(), ex);
 			}
 		}
-		
+
 		PrismProperty<Boolean> legacySchemaConfigProperty = configuration.findProperty(new QName(
 				ConnectorFactoryIcfImpl.NS_ICF_CONFIGURATION,
 				ConnectorFactoryIcfImpl.CONNECTOR_SCHEMA_LEGACY_SCHEMA_XML_ELEMENT_NAME));
@@ -429,7 +432,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			type = type.getComponentType();
 		}
 		QName propXsdType = null;
-		if (GuardedString.class.equals(type) || 
+		if (GuardedString.class.equals(type) ||
 				(String.class.equals(type) && isConfidential)) {
 			// GuardedString is a special case. It is a ICF-specific
 			// type
@@ -438,7 +441,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			// will be fixed later
 //			propXsdType = SchemaConstants.T_PROTECTED_STRING_TYPE;
 			propXsdType = ProtectedStringType.COMPLEX_TYPE;
-		} else if (GuardedByteArray.class.equals(type) || 
+		} else if (GuardedByteArray.class.equals(type) ||
 				(Byte.class.equals(type) && isConfidential)) {
 			// GuardedString is a special case. It is a ICF-specific
 			// type
@@ -458,7 +461,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		// ... unless it is byte[] or char[]
 		return type.isArray() && !type.equals(byte[].class) && !type.equals(char[].class);
 	}
-	
+
 	private QName icfAttributeInfoToMatchingRule(AttributeInfo attributeInfo) {
 		String icfSubtype = attributeInfo.getSubtype();
 		if (icfSubtype == null) {
@@ -479,29 +482,29 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		LOGGER.debug("Unknown subtype {} defined for attribute {}, ignoring (no matching rule definition)", icfSubtype, attributeInfo.getName());
 		return null;
 	}
-	
+
 	@Override
 	public ConnectorOperationalStatus getOperationalStatus() throws ObjectNotFoundException {
-		
+
 		if (!(cinfo instanceof LocalConnectorInfoImpl)) {
 			LOGGER.trace("Cannot get operational status of a remote connector {}", connectorType);
 			return null;
 		}
-		
+
 		if (apiConfig == null) {
 			LOGGER.trace("Cannot get operational status of a connector {}: connector not yet configured", connectorType);
 			throw new IllegalStateException("Connector "+connectorType+" not yet configured");
 		}
-		
+
 		ConnectorOperationalStatus status = new ConnectorOperationalStatus();
-		
+
 		ConnectorOperationalContext connectorOperationalContext = new ConnectorOperationalContext((LocalConnectorInfoImpl)cinfo, (APIConfigurationImpl) apiConfig);
-		
+
 		Class<? extends Connector> connectorClass = connectorOperationalContext.getConnectorClass();
 		if (connectorClass != null) {
 			status.setConnectorClassName(connectorClass.getName());
 		}
-		
+
 		ObjectPoolConfiguration poolConfiguration = apiConfig.getConnectorPoolConfiguration();
 		if (poolConfiguration != null) {
 			status.setPoolConfigMaxSize(poolConfiguration.getMaxObjects());
@@ -510,7 +513,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			status.setPoolConfigWaitTimeout(poolConfiguration.getMaxWait());
 			status.setPoolConfigMinEvictableIdleTime(poolConfiguration.getMinEvictableIdleTimeMillis());
 		}
-		
+
 		ObjectPool<PoolableConnector> pool = connectorOperationalContext.getPool();
 		if (pool != null) {
 			Statistics poolStats = pool.getStatistics();
@@ -519,7 +522,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				status.setPoolStatusNumIdle(poolStats.getNumIdle());
 			}
 		}
-		
+
 		return status;
 	}
 
@@ -542,7 +545,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		setResourceSchema(resourceSchema);
 		this.capabilities = capabilities;
 		this.caseIgnoreAttributeNames = caseIgnoreAttributeNames;
-		
+
 		if (resourceSchema != null && legacySchema == null) {
 			legacySchema = detectLegacySchema(resourceSchema);
 		}
@@ -551,7 +554,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			try {
 				retrieveResourceSchema(null, result);
 			} catch (CommunicationException ex) {
-				// This is in fact fatal. There is not schema. Not even the pre-cached one. 
+				// This is in fact fatal. There is not schema. Not even the pre-cached one.
 				// The connector will not be able to work.
 				result.recordFatalError(ex);
 				throw ex;
@@ -588,7 +591,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			result.recordFatalError(ex);
 			throw ex;
 		}
-		
+
 		if (resourceSchema == null) {
 			result.recordStatus(OperationResultStatus.NOT_APPLICABLE, "Connector does not support schema");
 		} else {
@@ -597,7 +600,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 
 		return resourceSchema;
 	}
-	
+
 	@Override
 	public Collection<Object> fetchCapabilities(OperationResult parentResult) throws CommunicationException,
 			GenericFrameworkException, ConfigurationException {
@@ -624,7 +627,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 
 		return capabilities;
 	}
-	
+
 	private void retrieveResourceSchema(List<QName> generateObjectClasses, OperationResult parentResult) throws CommunicationException, ConfigurationException, GenericFrameworkException {
 		// Connector operation cannot create result for itself, so we need to
 		// create result for it
@@ -679,7 +682,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				throw new SystemException("Got unexpected exception: " + ex.getClass().getName() + ": " + ex.getMessage(), ex);
 			}
 		}
-		
+
 		if (icfSchema == null) {
 			icfResult.recordStatus(OperationResultStatus.NOT_APPLICABLE, "Null schema returned");
 			resetResourceSchema();
@@ -706,21 +709,21 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			legacySchema = detectLegacySchema(icfSchema);
 		}
 		LOGGER.trace("Converting resource schema (legacy mode: {})", legacySchema);
-		
+
 		Set<ObjectClassInfo> objectClassInfoSet = icfSchema.getObjectClassInfo();
-		// Let's convert every objectclass in the ICF schema ...		
+		// Let's convert every objectclass in the ICF schema ...
 		for (ObjectClassInfo objectClassInfo : objectClassInfoSet) {
 
 			// "Flat" ICF object class names needs to be mapped to QNames
-			QName objectClassXsdName = icfNameMapper.objectClassToQname(new ObjectClass(objectClassInfo.getType()), getSchemaNamespace(), legacySchema);
+			QName objectClassXsdName = connIdNameMapper.objectClassToQname(new ObjectClass(objectClassInfo.getType()), getSchemaNamespace(), legacySchema);
 
 			if (!shouldBeGenerated(generateObjectClasses, objectClassXsdName)){
 				LOGGER.trace("Skipping object class {} ({})", objectClassInfo.getType(), objectClassXsdName);
 				continue;
 			}
-			
+
 			LOGGER.trace("Convering object class {} ({})", objectClassInfo.getType(), objectClassXsdName);
-			
+
 			// ResourceObjectDefinition is a midPpoint way how to represent an
 			// object class.
 			// The important thing here is the last "type" parameter
@@ -734,7 +737,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				((ObjectClassComplexTypeDefinitionImpl) ocDef).setKind(ShadowKindType.ACCOUNT);
 				((ObjectClassComplexTypeDefinitionImpl) ocDef).setDefaultInAKind(true);
 			}
-			
+
 			ResourceAttributeDefinition<String> uidDefinition = null;
 			ResourceAttributeDefinition<String> nameDefinition = null;
 			boolean hasUidDefinition = false;
@@ -758,25 +761,25 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 					// Skip this attribute, capability is sufficient
 					continue;
 				}
-				
+
 				if (OperationalAttributes.ENABLE_DATE_NAME.equals(icfName)) {
 					enableDateAttributeInfo = attributeInfo;
 					// Skip this attribute, capability is sufficient
 					continue;
 				}
-				
+
 				if (OperationalAttributes.DISABLE_DATE_NAME.equals(icfName)) {
 					disableDateAttributeInfo = attributeInfo;
 					// Skip this attribute, capability is sufficient
 					continue;
 				}
-				
+
 				if (OperationalAttributes.LOCK_OUT_NAME.equals(icfName)) {
 					lockoutAttributeInfo = attributeInfo;
 					// Skip this attribute, capability is sufficient
 					continue;
 				}
-				
+
 				if (PredefinedAttributes.AUXILIARY_OBJECT_CLASS_NAME.equals(icfName)) {
 					auxiliaryObjectClasseAttributeInfo = attributeInfo;
 					// Skip this attribute, capability is sufficient
@@ -785,12 +788,12 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 
 				String processedAttributeName = icfName;
 				if ((Name.NAME.equals(icfName) || Uid.NAME.equals(icfName)) && attributeInfo.getNativeName() != null ) {
-					processedAttributeName = attributeInfo.getNativeName();					
+					processedAttributeName = attributeInfo.getNativeName();
 				}
-				
-				QName attrXsdName = icfNameMapper.convertAttributeNameToQName(processedAttributeName, ocDef);
+
+				QName attrXsdName = connIdNameMapper.convertAttributeNameToQName(processedAttributeName, ocDef);
 				QName attrXsdType = icfTypeToXsdType(attributeInfo.getType(), false);
-				
+
 				if (LOGGER.isTraceEnabled()) {
 					LOGGER.trace("Attr conversion ICF: {}({}) -> XSD: {}({})",
 							icfName, attributeInfo.getType().getSimpleName(),
@@ -803,7 +806,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 						attrXsdName, attrXsdType, prismContext);
 
 				attrDef.setMatchingRuleQName(icfAttributeInfoToMatchingRule(attributeInfo));
-				
+
 				if (Name.NAME.equals(icfName)) {
 					nameDefinition = attrDef;
 					if (uidDefinition != null && attrXsdName.equals(uidDefinition.getName())) {
@@ -819,7 +822,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 						}
 						attrDef.setDisplayOrder(ConnectorFactoryIcfImpl.ICFS_NAME_DISPLAY_ORDER);
 					}
-					
+
 				} else if (Uid.NAME.equals(icfName)) {
 					// UID can be the same as other attribute
 					ResourceAttributeDefinition existingDefinition = ocDef.findAttributeDefinition(attrXsdName);
@@ -834,8 +837,8 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 							attrDef.setDisplayName(ConnectorFactoryIcfImpl.ICFS_UID_DISPLAY_NAME);
 						}
 						attrDef.setDisplayOrder(ConnectorFactoryIcfImpl.ICFS_UID_DISPLAY_ORDER);
-					}					
-						
+					}
+
 				} else {
 					// Check conflict with UID definition
 					if (uidDefinition != null && attrXsdName.equals(uidDefinition.getName())) {
@@ -847,7 +850,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 						displayOrder += ConnectorFactoryIcfImpl.ATTR_DISPLAY_ORDER_INCREMENT;
 					}
 				}
-				
+
 				attrDef.setNativeAttributeName(attributeInfo.getNativeName());
 				attrDef.setFrameworkAttributeName(icfName);
 
@@ -886,7 +889,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				attrDef.setCanAdd(canCreate);
 				attrDef.setCanModify(canUpdate);
 				attrDef.setCanRead(canRead);
-				
+
 				if (!Uid.NAME.equals(icfName)) {
 					((ObjectClassComplexTypeDefinitionImpl) ocDef).add(attrDef);
 				}
@@ -929,7 +932,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		// It can be disabled manually.
 		AddRemoveAttributeValuesCapabilityType addRemove = new AddRemoveAttributeValuesCapabilityType();
 		capabilities.add(capabilityObjectFactory.createAddRemoveAttributeValues(addRemove));
-		
+
 		ActivationCapabilityType capAct = null;
 
 		if (enableAttributeInfo != null) {
@@ -942,7 +945,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				capActStatus.setReturnedByDefault(false);
 			}
 		}
-		
+
 		if (enableDateAttributeInfo != null) {
 			if (capAct == null) {
 				capAct = new ActivationCapabilityType();
@@ -964,7 +967,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				capValidTo.setReturnedByDefault(false);
 			}
 		}
-		
+
 		if (lockoutAttributeInfo != null) {
 			if (capAct == null) {
 				capAct = new ActivationCapabilityType();
@@ -992,7 +995,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			capCred.setPassword(capPass);
 			capabilities.add(capabilityObjectFactory.createCredentials(capCred));
 		}
-		
+
 		if (auxiliaryObjectClasseAttributeInfo != null) {
 			AuxiliaryObjectClassesCapabilityType capAux = new AuxiliaryObjectClassesCapabilityType();
 			capabilities.add(capabilityObjectFactory.createAuxiliaryObjectClasses(capAux));
@@ -1002,7 +1005,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 
 		InternalMonitor.recordConnectorOperation("getSupportedOperations");
 		Set<Class<? extends APIOperation>> supportedOperations = connIdConnectorFacade.getSupportedOperations();
-		
+
 		LOGGER.trace("Connector supported operations: {}", supportedOperations);
 
 		if (supportedOperations.contains(SyncApiOp.class)) {
@@ -1014,22 +1017,22 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			TestConnectionCapabilityType capTest = new TestConnectionCapabilityType();
 			capabilities.add(capabilityObjectFactory.createTestConnection(capTest));
 		}
-		
+
 		if (supportedOperations.contains(CreateApiOp.class)){
 			CreateCapabilityType capCreate = new CreateCapabilityType();
 			capabilities.add(capabilityObjectFactory.createCreate(capCreate));
 		}
-		
+
 		if (supportedOperations.contains(GetApiOp.class) || supportedOperations.contains(SearchApiOp.class)){
 			ReadCapabilityType capRead = new ReadCapabilityType();
 			capabilities.add(capabilityObjectFactory.createRead(capRead));
 		}
-		
+
 		if (supportedOperations.contains(UpdateApiOp.class)){
 			UpdateCapabilityType capUpdate = new UpdateCapabilityType();
 			capabilities.add(capabilityObjectFactory.createUpdate(capUpdate));
 		}
-		
+
 		if (supportedOperations.contains(DeleteApiOp.class)){
 			DeleteCapabilityType capDelete = new DeleteCapabilityType();
 			capabilities.add(capabilityObjectFactory.createDelete(capDelete));
@@ -1052,7 +1055,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			}
 			capabilities.add(capabilityObjectFactory.createScript(capScript));
 		}
-		
+
 		boolean canPageSize = false;
 		boolean canPageOffset = false;
 		boolean canSort = false;
@@ -1071,9 +1074,9 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 					supportsReturnDefaultAttributes = true;
 					break;
 			}
-			
+
 		}
-		
+
 		if (canPageSize || canPageOffset || canSort) {
 			PagedSearchCapabilityType capPage = new PagedSearchCapabilityType();
 			capabilities.add(capabilityObjectFactory.createPagedSearch(capPage));
@@ -1091,28 +1094,28 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		}
 		return false;
 	}
-	
+
 	private boolean detectLegacySchema(ResourceSchema resourceSchema) {
 		ComplexTypeDefinition accountObjectClass = resourceSchema.findComplexTypeDefinition(
 				new QName(getSchemaNamespace(), ConnectorFactoryIcfImpl.ACCOUNT_OBJECT_CLASS_LOCAL_NAME));
 		return accountObjectClass != null;
 	}
-	
+
 	private boolean shouldBeGenerated(List<QName> generateObjectClasses,
 			QName objectClassXsdName) {
 		if (generateObjectClasses == null || generateObjectClasses.isEmpty()){
 			return true;
 		}
-		
+
 		for (QName objClassToGenerate : generateObjectClasses){
 			if (objClassToGenerate.equals(objectClassXsdName)){
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	 private <C extends CapabilityType> C getCapability(Class<C> capClass) {
 		if (capabilities == null) {
 			return null;
@@ -1162,7 +1165,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 							+ resourceObjectIdentification + " from " + description);
 		}
 
-		ObjectClass icfObjectClass = icfNameMapper.objectClassToIcf(objectClassDefinition, getSchemaNamespace(), connectorType, legacySchema);
+		ObjectClass icfObjectClass = connIdNameMapper.objectClassToIcf(objectClassDefinition, getSchemaNamespace(), connectorType, legacySchema);
 		if (icfObjectClass == null) {
 			result.recordFatalError("Unable to determine object class from QName "
 					+ objectClassDefinition.getTypeName()
@@ -1173,12 +1176,12 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 					+ " while attempting to fetch object identified by " + resourceObjectIdentification + " from "
 					+ description);
 		}
-		
+
 		OperationOptionsBuilder optionsBuilder = new OperationOptionsBuilder();
 		convertToIcfAttrsToGet(objectClassDefinition, attributesToReturn, optionsBuilder);
 		optionsBuilder.setAllowPartialResults(true);
 		OperationOptions options = optionsBuilder.build();
-		
+
 		ConnectorObject co = null;
 		try {
 
@@ -1221,7 +1224,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		}
 
 		PrismObjectDefinition<T> shadowDefinition = toShadowDefinition(objectClassDefinition);
-		PrismObject<T> shadow = icfConvertor.convertToResourceObject(co, shadowDefinition, false, caseIgnoreAttributeNames, legacySchema);
+		PrismObject<T> shadow = connIdConvertor.convertToResourceObject(co, shadowDefinition, false, caseIgnoreAttributeNames, legacySchema);
 
 		result.recordSuccess();
 		return shadow;
@@ -1250,12 +1253,12 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		icfResult.addParam("uid", uid.getUidValue());
 		icfResult.addArbitraryObjectAsParam("options", options);
 		icfResult.addContext("connector", connIdConnectorFacade.getClass());
-		
+
 		if (LOGGER.isTraceEnabled()) {
 			LOGGER.trace("Fetching connector object ObjectClass={}, UID={}, options={}",
 					new Object[]{icfObjectClass, uid, UcfUtil.dumpOptions(options)});
 		}
-		
+
 		ConnectorObject co = null;
 		try {
 
@@ -1294,7 +1297,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			} else {
 				throw new SystemException(midpointEx.getClass().getName()+": "+midpointEx.getMessage(), midpointEx);
 			}
-		
+
 		}
 
 		return co;
@@ -1310,7 +1313,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				&& (attrs == null || attrs.isEmpty())) {
 			return;
 		}
-		List<String> icfAttrsToGet = new ArrayList<String>(); 
+		List<String> icfAttrsToGet = new ArrayList<String>();
 		if (attributesToReturn.isReturnDefaultAttributes()) {
 			if (supportsReturnDefaultAttributes) {
 				optionsBuilder.setReturnDefaultAttributes(true);
@@ -1318,17 +1321,17 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				// Add all the attributes that are defined as "returned by default" by the schema
 				for (ResourceAttributeDefinition attributeDef: objectClassDefinition.getAttributeDefinitions()) {
 					if (attributeDef.isReturnedByDefault()) {
-						String attrName = icfNameMapper.convertAttributeNameToIcf(attributeDef);
+						String attrName = connIdNameMapper.convertAttributeNameToIcf(attributeDef);
 						icfAttrsToGet.add(attrName);
 					}
 				}
 			}
 		}
-		if (attributesToReturn.isReturnPasswordExplicit() 
+		if (attributesToReturn.isReturnPasswordExplicit()
 				|| (attributesToReturn.isReturnDefaultAttributes() && passwordReturnedByDefault())) {
 			icfAttrsToGet.add(OperationalAttributes.PASSWORD_NAME);
 		}
-		if (attributesToReturn.isReturnAdministrativeStatusExplicit() 
+		if (attributesToReturn.isReturnAdministrativeStatusExplicit()
 				|| (attributesToReturn.isReturnDefaultAttributes() && enabledReturnedByDefault())) {
 			icfAttrsToGet.add(OperationalAttributes.ENABLE_NAME);
 		}
@@ -1344,10 +1347,10 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				|| (attributesToReturn.isReturnDefaultAttributes() && validToReturnedByDefault())) {
 			icfAttrsToGet.add(OperationalAttributes.DISABLE_DATE_NAME);
 		}
-		
+
 		if (attrs != null) {
 			for (ResourceAttributeDefinition attrDef: attrs) {
-				String attrName = icfNameMapper.convertAttributeNameToIcf(attrDef);
+				String attrName = connIdNameMapper.convertAttributeNameToIcf(attrDef);
 				if (!icfAttrsToGet.contains(attrName)) {
 					icfAttrsToGet.add(attrName);
 				}
@@ -1362,7 +1365,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		CredentialsCapabilityType capability = CapabilityUtil.getCapability(capabilities, CredentialsCapabilityType.class);
 		return CapabilityUtil.isPasswordReturnedByDefault(capability);
 	}
-	
+
 	private boolean enabledReturnedByDefault() {
 		ActivationCapabilityType capability = CapabilityUtil.getCapability(capabilities, ActivationCapabilityType.class);
 		return CapabilityUtil.isActivationStatusReturnedByDefault(capability);
@@ -1372,19 +1375,19 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		ActivationCapabilityType capability = CapabilityUtil.getCapability(capabilities, ActivationCapabilityType.class);
 		return CapabilityUtil.isActivationLockoutStatusReturnedByDefault(capability);
 	}
-	
+
 	private boolean validFromReturnedByDefault() {
 		ActivationCapabilityType capability = CapabilityUtil.getCapability(capabilities, ActivationCapabilityType.class);
 		return CapabilityUtil.isActivationValidFromReturnedByDefault(capability);
 	}
-	
+
 	private boolean validToReturnedByDefault() {
 		ActivationCapabilityType capability = CapabilityUtil.getCapability(capabilities, ActivationCapabilityType.class);
 		return CapabilityUtil.isActivationValidToReturnedByDefault(capability);
 	}
 
 	@Override
-	public Collection<ResourceAttribute<?>> addObject(PrismObject<? extends ShadowType> shadow, Collection<Operation> additionalOperations, StateReporter reporter,
+	public ConnectorOperationReturnValue<Collection<ResourceAttribute<?>>> addObject(PrismObject<? extends ShadowType> shadow, Collection<Operation> additionalOperations, StateReporter reporter,
 													  OperationResult parentResult) throws CommunicationException,
 			GenericFrameworkException, SchemaException, ObjectAlreadyExistsException, ConfigurationException {
 		validateShadow(shadow, "add", false);
@@ -1406,9 +1409,9 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				throw new SchemaException("Unknown object class "+shadow.asObjectable().getObjectClass());
 			}
 		}
-		
+
 		// getting icf object class from resource object class
-		ObjectClass icfObjectClass = icfNameMapper.objectClassToIcf(shadow, getSchemaNamespace(), connectorType, legacySchema);
+		ObjectClass icfObjectClass = connIdNameMapper.objectClassToIcf(shadow, getSchemaNamespace(), connectorType, legacySchema);
 
 		if (icfObjectClass == null) {
 			result.recordFatalError("Couldn't get icf object class from " + shadow);
@@ -1421,7 +1424,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			if (LOGGER.isTraceEnabled()) {
 				LOGGER.trace("midPoint object before conversion:\n{}", attributesContainer.debugDump());
 			}
-			attributes = icfConvertor.convertFromResourceObject(attributesContainer, ocDef);
+			attributes = connIdConvertor.convertFromResourceObject(attributesContainer, ocDef);
 
 			if (shadowType.getCredentials() != null && shadowType.getCredentials().getPassword() != null) {
 				PasswordType password = shadowType.getCredentials().getPassword();
@@ -1432,11 +1435,11 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 						guardedPassword));
 				}
 			}
-			
+
 			if (ActivationUtil.hasAdministrativeActivation(shadowType)){
 				attributes.add(AttributeBuilder.build(OperationalAttributes.ENABLE_NAME, ActivationUtil.isAdministrativeEnabled(shadowType)));
 			}
-			
+
 			if (ActivationUtil.hasValidFrom(shadowType)){
 				attributes.add(AttributeBuilder.build(OperationalAttributes.ENABLE_DATE_NAME, XmlTypeConverter.toMillis(shadowType.getActivation().getValidFrom())));
 			}
@@ -1444,11 +1447,11 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			if (ActivationUtil.hasValidTo(shadowType)){
 				attributes.add(AttributeBuilder.build(OperationalAttributes.DISABLE_DATE_NAME, XmlTypeConverter.toMillis(shadowType.getActivation().getValidTo())));
 			}
-			
+
 			if (ActivationUtil.hasLockoutStatus(shadowType)){
 				attributes.add(AttributeBuilder.build(OperationalAttributes.LOCK_OUT_NAME, ActivationUtil.isLockedOut(shadowType)));
 			}
-			
+
 			if (LOGGER.isTraceEnabled()) {
 				LOGGER.trace("ICF attributes after conversion:\n{}", IcfUtil.dump(attributes));
 			}
@@ -1458,7 +1461,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			throw new SchemaException("Error while converting resource object attributes. Reason: "
 					+ ex.getMessage(), ex);
 		}
-		
+
 		if (attributes == null) {
 			result.recordFatalError("Couldn't set attributes for icf.");
 			throw new IllegalStateException("Couldn't set attributes for icf.");
@@ -1467,7 +1470,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		List<String> icfAuxiliaryObjectClasses = new ArrayList<>();
 		for (QName auxiliaryObjectClass: shadowType.getAuxiliaryObjectClass()) {
 			icfAuxiliaryObjectClasses.add(
-					icfNameMapper.objectClassToIcf(auxiliaryObjectClass, resourceSchemaNamespace, 
+					connIdNameMapper.objectClassToIcf(auxiliaryObjectClass, resourceSchemaNamespace,
 							connectorType, false).getObjectClassValue());
 		}
 		if (!icfAuxiliaryObjectClasses.isEmpty()) {
@@ -1476,10 +1479,10 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			ab.addValue(icfAuxiliaryObjectClasses);
 			attributes.add(ab.build());
 		}
-		
+
 		OperationOptionsBuilder operationOptionsBuilder = new OperationOptionsBuilder();
 		OperationOptions options = operationOptionsBuilder.build();
-		
+
 		checkAndExecuteAdditionalOperation(reporter, additionalOperations, BeforeAfterType.BEFORE, result);
 
 		OperationResult connIdResult = result.createSubresult(ConnectorFacade.class.getName() + ".create");
@@ -1525,7 +1528,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				throw new SystemException("Got unexpected exception: " + ex.getClass().getName() + ": " + ex.getMessage(), ex);
 			}
 		}
-		
+
 		checkAndExecuteAdditionalOperation(reporter, additionalOperations, BeforeAfterType.AFTER, result);
 
 		if (uid == null || uid.getUidValue() == null || uid.getUidValue().isEmpty()) {
@@ -1534,8 +1537,8 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			throw new GenericFrameworkException("ICF did not returned UID after create");
 		}
 
-		
-		Collection<ResourceAttribute<?>> identifiers = IcfUtil.convertToIdentifiers(uid, 
+
+		Collection<ResourceAttribute<?>> identifiers = IcfUtil.convertToIdentifiers(uid,
 				attributesContainer.getDefinition().getComplexTypeDefinition(), resourceSchema);
 		for (ResourceAttribute<?> identifier: identifiers) {
 			attributesContainer.getValue().addReplaceExisting(identifier);
@@ -1543,7 +1546,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		connIdResult.recordSuccess();
 
 		result.recordSuccess();
-		return attributesContainer.getAttributes();
+		return ConnectorOperationReturnValue.wrap(attributesContainer.getAttributes(), result);
 	}
 
 	private void validateShadow(PrismObject<? extends ShadowType> shadow, String operation,
@@ -1577,7 +1580,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 	//     (other identifiers are ignored on input and output of this method)
 
 	@Override
-	public Set<PropertyModificationOperation> modifyObject(ObjectClassComplexTypeDefinition objectClassDef, Collection<? extends ResourceAttribute<?>> identifiers, Collection<Operation> changes, StateReporter reporter,
+	public ConnectorOperationReturnValue<Collection<PropertyModificationOperation>> modifyObject(ObjectClassComplexTypeDefinition objectClassDef, Collection<? extends ResourceAttribute<?>> identifiers, Collection<Operation> changes, StateReporter reporter,
 														   OperationResult parentResult) throws ObjectNotFoundException, CommunicationException,
 			GenericFrameworkException, SchemaException, SecurityViolationException, ObjectAlreadyExistsException {
 
@@ -1586,15 +1589,15 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		result.addParam("objectClass", objectClassDef);
 		result.addCollectionOfSerializablesAsParam("identifiers", identifiers);
 		result.addArbitraryCollectionAsParam("changes", changes);
-		
+
 		if (changes.isEmpty()){
 			LOGGER.info("No modifications for connector object specified. Skipping processing.");
-			result.recordSuccess();
-			return new HashSet<PropertyModificationOperation>();
+			result.recordNotApplicableIfUnknown();
+			return ConnectorOperationReturnValue.wrap(new ArrayList<PropertyModificationOperation>(0), result);
 		}
 
-		ObjectClass objClass = icfNameMapper.objectClassToIcf(objectClassDef, getSchemaNamespace(), connectorType, legacySchema);
-		
+		ObjectClass objClass = connIdNameMapper.objectClassToIcf(objectClassDef, getSchemaNamespace(), connectorType, legacySchema);
+
 		Uid uid;
 		try {
 			uid = getUid(objectClassDef, identifiers);
@@ -1602,7 +1605,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			result.recordFatalError(e);
 			throw e;
 		}
-		
+
 		if (uid == null) {
 			result.recordFatalError("Cannot detemine UID from identifiers: " + identifiers);
 			throw new IllegalArgumentException("Cannot detemine UID from identifiers: " + identifiers);
@@ -1612,7 +1615,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		Set<Attribute> attributesToAdd = new HashSet<>();
 		Set<Attribute> attributesToUpdate = new HashSet<>();
 		Set<Attribute> attributesToRemove = new HashSet<>();
-		
+
 		Set<Operation> additionalOperations = new HashSet<Operation>();
 		PasswordChangeOperation passwordChangeOperation = null;
 		Collection<PropertyDelta<?>> activationDeltas = new HashSet<PropertyDelta<?>>();
@@ -1632,7 +1635,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				}
 			}
 		}
-		
+
 		try {
 			ObjectClassComplexTypeDefinition structuralObjectClassDefinition = resourceSchema.findObjectClassDefinition(objectClassDef.getTypeName());
 			Map<QName,ObjectClassComplexTypeDefinition> auxiliaryObjectClassMap = new HashMap<>();
@@ -1647,14 +1650,14 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				} else {
 					addConvertedValues(auxiliaryObjectClassDelta.getValuesToAdd(), attributesToAdd, auxiliaryObjectClassMap);
 					addConvertedValues(auxiliaryObjectClassDelta.getValuesToDelete(), attributesToRemove, auxiliaryObjectClassMap);
-				}		
+				}
 			}
-			
+
 			for (Operation operation : changes) {
 				if (operation instanceof PropertyModificationOperation) {
 					PropertyModificationOperation change = (PropertyModificationOperation) operation;
 					PropertyDelta<?> delta = change.getPropertyDelta();
-	
+
 					if (delta.getParentPath().equivalent(new ItemPath(ShadowType.F_ATTRIBUTES))) {
 						if (delta.getDefinition() == null || !(delta.getDefinition() instanceof ResourceAttributeDefinition)) {
 							ResourceAttributeDefinition def = objectClassDef
@@ -1712,7 +1715,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 						if (delta.isAdd()) {
 							ResourceAttribute<?> mpAttr = (ResourceAttribute<?>) delta.instantiateEmptyProperty();
 							mpAttr.addValues((Collection)PrismValue.cloneCollection(delta.getValuesToAdd()));
-							Attribute connIdAttr = icfConvertor.convertToConnIdAttribute(mpAttr, objectClassDef);
+							Attribute connIdAttr = connIdConvertor.convertToConnIdAttribute(mpAttr, objectClassDef);
 							if (mpAttr.getDefinition().isMultiValue()) {
 								attributesToAdd.add(connIdAttr);
 							} else {
@@ -1726,15 +1729,15 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 							ResourceAttribute<?> mpAttr = (ResourceAttribute<?>) delta.instantiateEmptyProperty();
 							if (mpAttr.getDefinition().isMultiValue() || isInRemovedAuxClass) {
 								mpAttr.addValues((Collection)PrismValue.cloneCollection(delta.getValuesToDelete()));
-								Attribute connIdAttr = icfConvertor.convertToConnIdAttribute(mpAttr, objectClassDef);
+								Attribute connIdAttr = connIdConvertor.convertToConnIdAttribute(mpAttr, objectClassDef);
 								attributesToRemove.add(connIdAttr);
 							} else {
 								// Force "update" for single-valued attributes instead of "add". This is saving one
-								// read in some cases. 
+								// read in some cases.
 								// Update attribute to no values. This will efficiently clean up the attribute.
-								// It should also make no substantial difference in such case. 
+								// It should also make no substantial difference in such case.
 								// But it is working around some connector bugs.
-								Attribute connIdAttr = icfConvertor.convertToConnIdAttribute(mpAttr, objectClassDef);
+								Attribute connIdAttr = connIdConvertor.convertToConnIdAttribute(mpAttr, objectClassDef);
 								// update with EMTPY value. The mpAttr.addValues() is NOT in this branch
 								attributesToUpdate.add(connIdAttr);
 							}
@@ -1742,7 +1745,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 						if (delta.isReplace()) {
 							ResourceAttribute<?> mpAttr = (ResourceAttribute<?>) delta.instantiateEmptyProperty();
 							mpAttr.addValues((Collection)PrismValue.cloneCollection(delta.getValuesToReplace()));
-							Attribute connIdAttr = icfConvertor.convertToConnIdAttribute(mpAttr, objectClassDef);
+							Attribute connIdAttr = connIdConvertor.convertToConnIdAttribute(mpAttr, objectClassDef);
 							if (isInAddedAuxClass) {
 								attributesToAdd.add(connIdAttr);
 							} else {
@@ -1760,20 +1763,20 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 					} else {
 						throw new SchemaException("Change of unknown attribute " + delta.getPath());
 					}
-	
+
 				} else if (operation instanceof PasswordChangeOperation) {
 					passwordChangeOperation = (PasswordChangeOperation) operation;
 					// TODO: check for multiple occurrences and fail
-	
+
 				} else if (operation instanceof ExecuteProvisioningScriptOperation) {
 					ExecuteProvisioningScriptOperation scriptOperation = (ExecuteProvisioningScriptOperation) operation;
 					additionalOperations.add(scriptOperation);
-	
+
 				} else {
 					throw new IllegalArgumentException("Unknown operation type " + operation.getClass().getName()
 							+ ": " + operation);
 				}
-	
+
 			}
 		} catch (SchemaException | RuntimeException e) {
 			result.recordFatalError(e);
@@ -1783,7 +1786,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		if (LOGGER.isTraceEnabled()) {
 			LOGGER.trace("attributes:\nADD: {}\nUPDATE: {}\nREMOVE: {}", attributesToAdd, attributesToUpdate, attributesToRemove);
 		}
-		
+
 		// Needs three complete try-catch blocks because we need to create
 		// icfResult for each operation
 		// and handle the faults individually
@@ -1808,7 +1811,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				}
 
 				InternalMonitor.recordConnectorOperation("addAttributeValues");
-				
+
 				// Invoking ConnId
 				recordIcfOperationStart(reporter, ProvisioningOperation.ICF_UPDATE, objectClassDef, uid);
 				uid = connIdConnectorFacade.addAttributeValues(objClass, uid, attributesToAdd, options);
@@ -1851,7 +1854,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				|| passwordDelta != null || auxiliaryObjectClassDelta != null) {
 
 
-			try {				
+			try {
 				if (activationDeltas != null) {
 					// Activation change means modification of attributes
 					convertFromActivation(attributesToUpdate, activationDeltas);
@@ -1861,7 +1864,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 					// Activation change means modification of attributes
 					convertFromPassword(attributesToUpdate, passwordDelta);
 				}
-				
+
 			} catch (SchemaException ex) {
 				result.recordFatalError(
 						"Error while converting resource object attributes. Reason: " + ex.getMessage(), ex);
@@ -1880,19 +1883,19 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				connIdResult.addArbitraryCollectionAsParam("attributes", attributesToUpdate);
 				connIdResult.addArbitraryObjectAsParam("options", options);
 				connIdResult.addContext("connector", connIdConnectorFacade.getClass());
-	
+
 				if (LOGGER.isTraceEnabled()) {
 					LOGGER.trace("Invoking ICF update(), objectclass={}, uid={}, attributes: {}", new Object[] {
 							objClass, uid, dumpAttributes(attributesToUpdate) });
 				}
-	
+
 				try {
 					// Call ICF
 					InternalMonitor.recordConnectorOperation("update");
 					recordIcfOperationStart(reporter, ProvisioningOperation.ICF_UPDATE, objectClassDef, uid);
 					uid = connIdConnectorFacade.update(objClass, uid, attributesToUpdate, options);
 					recordIcfOperationEnd(reporter, ProvisioningOperation.ICF_UPDATE, objectClassDef, null, uid);
-	
+
 					connIdResult.recordSuccess();
 				} catch (Throwable ex) {
 					recordIcfOperationEnd(reporter, ProvisioningOperation.ICF_UPDATE, objectClassDef, ex, uid);
@@ -1980,10 +1983,10 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			}
 		}
 		checkAndExecuteAdditionalOperation(reporter, additionalOperations, BeforeAfterType.AFTER, result);
-		
+
 		result.computeStatus();
 
-		Set<PropertyModificationOperation> sideEffectChanges = new HashSet<>();
+		Collection<PropertyModificationOperation> sideEffectChanges = new ArrayList<>();
 		if (!originalUid.equals(uid.getUidValue())) {
 			// UID was changed during the operation, this is most likely a
 			// rename
@@ -1994,7 +1997,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 
 			replaceUidValue(objectClassDef, identifiers, uid);
 		}
-		return sideEffectChanges;
+		return ConnectorOperationReturnValue.wrap(sideEffectChanges, result);
 	}
 
 	private PropertyDelta<String> createUidDelta(Uid uid, ResourceAttributeDefinition uidDefinition) {
@@ -2029,8 +2032,8 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 	}
 
 	@Override
-	public void deleteObject(ObjectClassComplexTypeDefinition objectClass, Collection<Operation> additionalOperations, Collection<? extends ResourceAttribute<?>> identifiers, StateReporter reporter,
-							 OperationResult parentResult) 
+	public ConnectorOperationResult deleteObject(ObjectClassComplexTypeDefinition objectClass, Collection<Operation> additionalOperations, Collection<? extends ResourceAttribute<?>> identifiers, StateReporter reporter,
+							 OperationResult parentResult)
 			throws ObjectNotFoundException, CommunicationException, GenericFrameworkException, SchemaException {
 		Validate.notNull(objectClass, "No objectclass");
 
@@ -2038,7 +2041,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				+ ".deleteObject");
 		result.addCollectionOfSerializablesAsParam("identifiers", identifiers);
 
-		ObjectClass objClass = icfNameMapper.objectClassToIcf(objectClass, getSchemaNamespace(), connectorType, legacySchema);
+		ObjectClass objClass = connIdNameMapper.objectClassToIcf(objectClass, getSchemaNamespace(), connectorType, legacySchema);
 		Uid uid;
 		try {
 			uid = getUid(objectClass, identifiers);
@@ -2048,7 +2051,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		}
 
 		checkAndExecuteAdditionalOperation(reporter, additionalOperations, BeforeAfterType.BEFORE, result);
-		
+
 		OperationResult icfResult = result.createSubresult(ConnectorFacade.class.getName() + ".delete");
 		icfResult.addArbitraryObjectAsParam("uid", uid);
 		icfResult.addArbitraryObjectAsParam("objectClass", objClass);
@@ -2087,10 +2090,11 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				throw new SystemException("Got unexpected exception: " + ex.getClass().getName() + ": " + ex.getMessage(), ex);
 			}
 		}
-		
+
 		checkAndExecuteAdditionalOperation(reporter, additionalOperations, BeforeAfterType.AFTER, result);
 
 		result.computeStatus();
+		return ConnectorOperationResult.wrap(result);
 	}
 
 	@Override
@@ -2110,13 +2114,13 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		if (objectClassDef == null) {
 			icfObjectClass = ObjectClass.ALL;
 		} else {
-			icfObjectClass = icfNameMapper.objectClassToIcf(objectClassDef, getSchemaNamespace(), connectorType, legacySchema);
+			icfObjectClass = connIdNameMapper.objectClassToIcf(objectClassDef, getSchemaNamespace(), connectorType, legacySchema);
 		}
-		
+
 		OperationResult icfResult = result.createSubresult(ConnectorFacade.class.getName() + ".sync");
 		icfResult.addContext("connector", connIdConnectorFacade.getClass());
 		icfResult.addArbitraryObjectAsParam("icfObjectClass", icfObjectClass);
-		
+
 		SyncToken syncToken = null;
 		try {
 			InternalMonitor.recordConnectorOperation("getLatestSyncToken");
@@ -2180,7 +2184,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		if (objectClass == null) {
 			icfObjectClass = ObjectClass.ALL;
 		} else {
-			icfObjectClass = icfNameMapper.objectClassToIcf(objectClass, getSchemaNamespace(), connectorType, legacySchema);
+			icfObjectClass = connIdNameMapper.objectClassToIcf(objectClass, getSchemaNamespace(), connectorType, legacySchema);
 		}
 
 		OperationOptionsBuilder optionsBuilder = new OperationOptionsBuilder();
@@ -2188,7 +2192,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			convertToIcfAttrsToGet(objectClass, attrsToReturn, optionsBuilder);
 		}
 		OperationOptions options = optionsBuilder.build();
-		
+
 		SyncResultsHandler syncHandler = new SyncResultsHandler() {
 			@Override
 			public boolean handle(SyncDelta delta) {
@@ -2240,7 +2244,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			result.recordFatalError(ex.getMessage(), ex);
 			throw new SchemaException(ex.getMessage(), ex);
 		}
-		
+
 		if (lastReceivedToken != null) {
 			Change lastChange = new Change((ObjectDelta)null, getToken(lastReceivedToken));
 			LOGGER.trace("Adding last change: {}", lastChange);
@@ -2276,12 +2280,12 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 	}
 
 	@Override
-    public <T extends ShadowType> SearchResultMetadata search(final ObjectClassComplexTypeDefinition objectClassDefinition, 
-    		final ObjectQuery query, final ResultHandler<T> handler, AttributesToReturn attributesToReturn, 
-    		PagedSearchCapabilityType pagedSearchCapabilityType, SearchHierarchyConstraints searchHierarchyConstraints, 
-    		final StateReporter reporter, OperationResult parentResult)
+    public <T extends ShadowType> SearchResultMetadata search(final ObjectClassComplexTypeDefinition objectClassDefinition,
+		final ObjectQuery query, final ResultHandler<T> handler, AttributesToReturn attributesToReturn,
+		PagedSearchCapabilityType pagedSearchCapabilityType, SearchHierarchyConstraints searchHierarchyConstraints,
+		final StateReporter reporter, OperationResult parentResult)
             throws CommunicationException, GenericFrameworkException, SecurityViolationException, SchemaException,
-            			ObjectNotFoundException {
+				ObjectNotFoundException {
 
 		// Result type for this operation
 		final OperationResult result = parentResult.createSubresult(ConnectorInstance.class.getName()
@@ -2294,7 +2298,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			throw new IllegalArgumentException("objectClass not defined");
 		}
 
-		ObjectClass icfObjectClass = icfNameMapper.objectClassToIcf(objectClassDefinition, getSchemaNamespace(), connectorType, legacySchema);
+		ObjectClass icfObjectClass = connIdNameMapper.objectClassToIcf(objectClassDefinition, getSchemaNamespace(), connectorType, legacySchema);
 		if (icfObjectClass == null) {
 			IllegalArgumentException ex = new IllegalArgumentException(
 					"Unable to determine object class from QName " + objectClassDefinition
@@ -2308,11 +2312,11 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		if (pagedSearchCapabilityType == null) {
 			pagedSearchCapabilityType = getCapability(PagedSearchCapabilityType.class);
 		}
-		
+
         final boolean useConnectorPaging = pagedSearchCapabilityType != null;
-        if (!useConnectorPaging && query != null && query.getPaging() != null && 
-        		(query.getPaging().getOffset() != null || query.getPaging().getMaxSize() != null)) {
-        	InternalMonitor.recordConnectorSimulatedPagingSearchCount();
+        if (!useConnectorPaging && query != null && query.getPaging() != null &&
+			(query.getPaging().getOffset() != null || query.getPaging().getMaxSize() != null)) {
+		InternalMonitor.recordConnectorSimulatedPagingSearchCount();
         }
 
         final Holder<Integer> countHolder = new Holder<>(0);
@@ -2341,7 +2345,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				}
 				PrismObject<T> resourceObject;
 				try {
-					resourceObject = icfConvertor.convertToResourceObject(connectorObject, objectDefinition, false, caseIgnoreAttributeNames, legacySchema);
+					resourceObject = connIdConvertor.convertToResourceObject(connectorObject, objectDefinition, false, caseIgnoreAttributeNames, legacySchema);
 				} catch (SchemaException e) {
 					recordResume();
 					throw new IntermediateException(e);
@@ -2360,9 +2364,9 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				recordIcfOperationResume(reporter, ProvisioningOperation.ICF_SEARCH, objectClassDefinition);
 			}
 		};
-		
+
 		OperationOptionsBuilder optionsBuilder = new OperationOptionsBuilder();
-		
+
 		try {
 			convertToIcfAttrsToGet(objectClassDefinition, attributesToReturn, optionsBuilder);
 			if (query != null && query.isAllowPartialResults()) {
@@ -2382,47 +2386,47 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				ItemPath orderByPath = paging.getOrderBy();
 				String desc;
 	            if (orderByPath != null && !orderByPath.isEmpty()) {
-	            	orderByAttributeName = ShadowUtil.getAttributeName(orderByPath, "OrderBy path");
+			orderByAttributeName = ShadowUtil.getAttributeName(orderByPath, "OrderBy path");
 	                if (SchemaConstants.C_NAME.equals(orderByAttributeName)) {
-	                	orderByAttributeName = SchemaConstants.ICFS_NAME;
+				orderByAttributeName = SchemaConstants.ICFS_NAME;
 	                }
 	                isAscending = paging.getDirection() != OrderDirection.DESCENDING;
 	                desc = "(explicitly specified orderBy attribute)";
 	            } else {
-	            	orderByAttributeName = pagedSearchCapabilityType.getDefaultSortField();
+			orderByAttributeName = pagedSearchCapabilityType.getDefaultSortField();
 	                isAscending = pagedSearchCapabilityType.getDefaultSortDirection() != OrderDirectionType.DESCENDING;
 	                desc = "(default orderBy attribute from capability definition)";
 	            }
 	            if (orderByAttributeName != null) {
-	                String orderByIcfName = icfNameMapper.convertAttributeNameToIcf(orderByAttributeName, objectClassDefinition, desc);
+	                String orderByIcfName = connIdNameMapper.convertAttributeNameToIcf(orderByAttributeName, objectClassDefinition, desc);
 	                optionsBuilder.setSortKeys(new SortKey(orderByIcfName, isAscending));
 	            }
 	        }
 	        if (searchHierarchyConstraints != null) {
-	        	ResourceObjectIdentification baseContextIdentification = searchHierarchyConstraints.getBaseContext();
-	        	// Only LDAP connector really supports base context. And this one will work better with
-	        	// DN. And DN is secondary identifier (__NAME__). This is ugly, but practical. It works around ConnId problems.
-	        	ResourceAttribute<?> secondaryIdentifier = baseContextIdentification.getSecondaryIdentifier();
-	        	if (secondaryIdentifier == null) {
-	        		SchemaException e = new SchemaException("No secondary identifier in base context identification "+baseContextIdentification);
-	        		result.recordFatalError(e);
-	        		throw e;
-	        	}
-	        	String secondaryIdentifierValue = secondaryIdentifier.getRealValue(String.class);
-	        	ObjectClass baseContextIcfObjectClass = icfNameMapper.objectClassToIcf(baseContextIdentification.getObjectClassDefinition(), getSchemaNamespace(), connectorType, legacySchema);
-	        	QualifiedUid containerQualifiedUid = new QualifiedUid(baseContextIcfObjectClass, new Uid(secondaryIdentifierValue));
+			ResourceObjectIdentification baseContextIdentification = searchHierarchyConstraints.getBaseContext();
+			// Only LDAP connector really supports base context. And this one will work better with
+			// DN. And DN is secondary identifier (__NAME__). This is ugly, but practical. It works around ConnId problems.
+			ResourceAttribute<?> secondaryIdentifier = baseContextIdentification.getSecondaryIdentifier();
+			if (secondaryIdentifier == null) {
+				SchemaException e = new SchemaException("No secondary identifier in base context identification "+baseContextIdentification);
+				result.recordFatalError(e);
+				throw e;
+			}
+			String secondaryIdentifierValue = secondaryIdentifier.getRealValue(String.class);
+			ObjectClass baseContextIcfObjectClass = connIdNameMapper.objectClassToIcf(baseContextIdentification.getObjectClassDefinition(), getSchemaNamespace(), connectorType, legacySchema);
+			QualifiedUid containerQualifiedUid = new QualifiedUid(baseContextIcfObjectClass, new Uid(secondaryIdentifierValue));
 				optionsBuilder.setContainer(containerQualifiedUid);
 	        }
-	        
+
 		} catch (SchemaException e) {
 			result.recordFatalError(e);
 			throw e;
 		}
-        
+
         // Relax completeness requirements. This is a search, not get. So it is OK to
         // return incomplete member lists and similar attributes.
         optionsBuilder.setAllowPartialAttributeValues(true);
-        
+
 		OperationOptions options = optionsBuilder.build();
 
 		Filter filter;
@@ -2432,7 +2436,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			result.recordFatalError(e);
 			throw e;
 		}
-		
+
 		// Connector operation cannot create result for itself, so we need to
 		// create result for it
 		OperationResult icfResult = result.createSubresult(ConnectorFacade.class.getName() + ".search");
@@ -2478,7 +2482,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				throw new SystemException("Got unexpected exception: " + ex.getClass().getName() + ": " + ex.getMessage(), ex);
 			}
 		}
-		
+
 		SearchResultMetadata metadata = null;
 		if (icfSearchResult != null) {
 			metadata = new SearchResultMetadata();
@@ -2494,7 +2498,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		if (result.isUnknown()) {
 			result.recordSuccess();
 		}
-		
+
 		return metadata;
 	}
 
@@ -2514,7 +2518,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
             throw new IllegalArgumentException("objectClass not defined");
         }
 
-        ObjectClass icfObjectClass = icfNameMapper.objectClassToIcf(objectClassDefinition, getSchemaNamespace(), connectorType, legacySchema);
+        ObjectClass icfObjectClass = connIdNameMapper.objectClassToIcf(objectClassDefinition, getSchemaNamespace(), connectorType, legacySchema);
         if (icfObjectClass == null) {
             IllegalArgumentException ex = new IllegalArgumentException(
                     "Unable to determine object class from QName " + objectClassDefinition
@@ -2533,7 +2537,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
         optionsBuilder.setPagedResultsOffset(1);
         optionsBuilder.setPageSize(1);
         if (pagedSearchCapabilityType.getDefaultSortField() != null) {
-            String orderByIcfName = icfNameMapper.convertAttributeNameToIcf(pagedSearchCapabilityType.getDefaultSortField(), objectClassDefinition, "(default sorting field)");
+            String orderByIcfName = connIdNameMapper.convertAttributeNameToIcf(pagedSearchCapabilityType.getDefaultSortField(), objectClassDefinition, "(default sorting field)");
             boolean isAscending = pagedSearchCapabilityType.getDefaultSortDirection() != OrderDirectionType.DESCENDING;
             optionsBuilder.setSortKeys(new SortKey(orderByIcfName, isAscending));
         }
@@ -2615,7 +2619,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
         if (query != null && query.getFilter() != null) {
             FilterInterpreter interpreter = new FilterInterpreter(objectClassDefinition);
             LOGGER.trace("Start to convert filter: {}", query.getFilter().debugDump());
-            filter = interpreter.interpret(query.getFilter(), icfNameMapper);
+            filter = interpreter.interpret(query.getFilter(), connIdNameMapper);
 
             if (LOGGER.isTraceEnabled()) {
                 LOGGER.trace("ICF filter: {}", IcfUtil.dump(filter));
@@ -2627,7 +2631,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
     // UTILITY METHODS
 
     private Uid getUid(ResourceObjectIdentification resourceObjectIdentification) throws SchemaException {
-    	ResourceAttribute<String> primaryIdentifier = resourceObjectIdentification.getPrimaryIdentifier();
+	ResourceAttribute<String> primaryIdentifier = resourceObjectIdentification.getPrimaryIdentifier();
 		if (primaryIdentifier == null) {
 			return null;
 		}
@@ -2651,7 +2655,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 	 * Looks up ConnId Uid identifier in a (potentially multi-valued) set of
 	 * identifiers. Handy method to convert midPoint identifier style to an ICF
 	 * identifier style.
-	 * 
+	 *
 	 * @param identifiers
 	 *            midPoint resource object identifiers
 	 * @return ConnId UID or null
@@ -2775,11 +2779,11 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			return null;
 		}
 		PrismPropertyValue<T> propValue = prop.getValue(clazz);
-		
+
 		if (propValue == null){
 			return null;
 		}
-		
+
 		return propValue.getValue();
 	}
 
@@ -2810,7 +2814,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			LOGGER.debug("We would like to set password, but we do not have cleartext value. Skipping the opearation.");
 		}
 	}
-	
+
 	private void addConvertedValues(Collection<PrismPropertyValue<QName>> pvals,
 			Set<Attribute> attributes, Map<QName,ObjectClassComplexTypeDefinition> auxiliaryObjectClassMap) throws SchemaException {
 		if (pvals == null) {
@@ -2825,7 +2829,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				throw new SchemaException("Auxiliary object class "+auxQName+" not found in the schema");
 			}
 			auxiliaryObjectClassMap.put(auxQName, auxDef);
-			ObjectClass icfOc = icfNameMapper.objectClassToIcf(pval.getValue(), resourceSchemaNamespace, connectorType, false);
+			ObjectClass icfOc = connIdNameMapper.objectClassToIcf(pval.getValue(), resourceSchemaNamespace, connectorType, false);
 			ab.addValue(icfOc.getObjectClassValue());
 		}
 		attributes.add(ab.build());
@@ -2836,12 +2840,12 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			throws SchemaException, GenericFrameworkException {
 		List<Change> changeList = new ArrayList<Change>();
 
-		QName objectClass = icfNameMapper.objectClassToQname(connIdObjClass, getSchemaNamespace(), legacySchema);
+		QName objectClass = connIdNameMapper.objectClassToQname(connIdObjClass, getSchemaNamespace(), legacySchema);
 		ObjectClassComplexTypeDefinition objClassDefinition = null;
 		if (objectClass != null) {
 			objClassDefinition = (ObjectClassComplexTypeDefinition) schema.findComplexTypeDefinition(objectClass);
 		}
-		
+
 		Validate.notNull(connIdDeltas, "Sync result must not be null.");
 		for (SyncDelta icfDelta : connIdDeltas) {
 
@@ -2850,7 +2854,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			ObjectClassComplexTypeDefinition deltaObjClassDefinition = objClassDefinition;
 			if (objectClass == null) {
 				deltaIcfObjClass = icfDelta.getObjectClass();
-				deltaObjectClass = icfNameMapper.objectClassToQname(deltaIcfObjClass, getSchemaNamespace(), legacySchema);
+				deltaObjectClass = connIdNameMapper.objectClassToQname(deltaIcfObjClass, getSchemaNamespace(), legacySchema);
 				if (deltaIcfObjClass != null) {
 					deltaObjClassDefinition = (ObjectClassComplexTypeDefinition) schema.findComplexTypeDefinition(deltaObjectClass);
 				}
@@ -2862,13 +2866,13 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 					throw new SchemaException("Got delta with object class "+deltaObjectClass+" ("+deltaIcfObjClass+") that has no definition in resource schema");
 				}
 			}
-			
+
 			SyncDeltaType icfDeltaType = icfDelta.getDeltaType();
 			if (SyncDeltaType.DELETE.equals(icfDeltaType)) {
 				LOGGER.trace("START creating delta of type DELETE");
 				ObjectDelta<ShadowType> objectDelta = new ObjectDelta<ShadowType>(
 						ShadowType.class, ChangeType.DELETE, prismContext);
-				Collection<ResourceAttribute<?>> identifiers = IcfUtil.convertToIdentifiers(icfDelta.getUid(), 
+				Collection<ResourceAttribute<?>> identifiers = IcfUtil.convertToIdentifiers(icfDelta.getUid(),
 						deltaObjClassDefinition, resourceSchema);
 				Change change = new Change(identifiers, objectDelta, getToken(icfDelta.getToken()));
 				change.setObjectClassDefinition(deltaObjClassDefinition);
@@ -2878,9 +2882,9 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			} else if (SyncDeltaType.CREATE.equals(icfDeltaType)) {
 				PrismObjectDefinition<ShadowType> objectDefinition = toShadowDefinition(deltaObjClassDefinition);
 				LOGGER.trace("Object definition: {}", objectDefinition);
-				
+
 				LOGGER.trace("START creating delta of type CREATE");
-				PrismObject<ShadowType> currentShadow = icfConvertor.convertToResourceObject(icfDelta.getObject(),
+				PrismObject<ShadowType> currentShadow = connIdConvertor.convertToResourceObject(icfDelta.getObject(),
 						objectDefinition, false, caseIgnoreAttributeNames, legacySchema);
 
 				if (LOGGER.isTraceEnabled()) {
@@ -2888,7 +2892,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				}
 
 				Collection<ResourceAttribute<?>> identifiers = ShadowUtil.getAllIdentifiers(currentShadow);
-				
+
 				ObjectDelta<ShadowType> objectDelta = new ObjectDelta<ShadowType>(
 						ShadowType.class, ChangeType.ADD, prismContext);
 				objectDelta.setObjectToAdd(currentShadow);
@@ -2898,13 +2902,13 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				changeList.add(change);
 				LOGGER.trace("END creating delta of type CREATE");
 
-			} else if (SyncDeltaType.CREATE_OR_UPDATE.equals(icfDeltaType) || 
+			} else if (SyncDeltaType.CREATE_OR_UPDATE.equals(icfDeltaType) ||
 					SyncDeltaType.UPDATE.equals(icfDeltaType)) {
 				PrismObjectDefinition<ShadowType> objectDefinition = toShadowDefinition(deltaObjClassDefinition);
 				LOGGER.trace("Object definition: {}", objectDefinition);
-				
+
 				LOGGER.trace("START creating delta of type {}", icfDeltaType);
-				PrismObject<ShadowType> currentShadow = icfConvertor.convertToResourceObject(icfDelta.getObject(),
+				PrismObject<ShadowType> currentShadow = connIdConvertor.convertToResourceObject(icfDelta.getObject(),
 						objectDefinition, false, caseIgnoreAttributeNames, legacySchema);
 
 				if (LOGGER.isTraceEnabled()) {
@@ -2917,7 +2921,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				change.setObjectClassDefinition(deltaObjClassDefinition);
 				changeList.add(change);
 				LOGGER.trace("END creating delta of type {}:\n{}", icfDeltaType, change.debugDump());
-				
+
 			} else {
 				throw new GenericFrameworkException("Unexpected sync delta type " + icfDeltaType);
 			}
@@ -2982,18 +2986,18 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 		}
 
 	}
-	
+
 	@Override
 	public Object executeScript(ExecuteProvisioningScriptOperation scriptOperation, StateReporter reporter, OperationResult parentResult) throws CommunicationException, GenericFrameworkException {
-		
+
 		OperationResult result = parentResult.createSubresult(ConnectorInstance.class.getName()
 				+ ".executeScript");
-		
+
 		Object output = null;
 		try {
-			
+
 			output = executeScriptIcf(reporter, scriptOperation, result);
-			
+
 		} catch (CommunicationException e) {
 			result.recordFatalError(e);
 			throw e;
@@ -3004,14 +3008,14 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			result.recordFatalError(e);
 			throw e;
 		}
-		
+
 		result.computeStatus();
-		
+
 		return output;
 	}
 
 	private Object executeScriptIcf(StateReporter reporter, ExecuteProvisioningScriptOperation scriptOperation, OperationResult result) throws CommunicationException, GenericFrameworkException {
-		
+
 		String icfOpName = null;
 		if (scriptOperation.isConnectorHost()) {
 			icfOpName = "runScriptOnConnector";
@@ -3021,18 +3025,18 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 			result.recordFatalError("Where to execute the script?");
 			throw new IllegalArgumentException("Where to execute the script?");
 		}
-		
+
 		// convert execute script operation to the script context required from
 			// the connector
 			ScriptContext scriptContext = convertToScriptContext(scriptOperation);
-			
+
 			OperationResult icfResult = result.createSubresult(ConnectorFacade.class.getName() + "." + icfOpName);
 			icfResult.addContext("connector", connIdConnectorFacade.getClass());
-			
+
 			Object output = null;
-			
+
 			try {
-				
+
 				LOGGER.trace("Running script ({})", icfOpName);
 
 				recordIcfOperationStart(reporter, ProvisioningOperation.ICF_SCRIPT, null);
@@ -3046,11 +3050,11 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				recordIcfOperationEnd(reporter, ProvisioningOperation.ICF_SCRIPT, null);
 
 				icfResult.recordSuccess();
-				
+
 				if (LOGGER.isDebugEnabled()) {
 					LOGGER.debug("Finished running script ({}), script result: {}", icfOpName, PrettyPrinter.prettyPrint(output));
 				}
-				
+
 			} catch (Throwable ex) {
 
 				recordIcfOperationEnd(reporter, ProvisioningOperation.ICF_SCRIPT, null, ex);
@@ -3058,7 +3062,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 				if (LOGGER.isDebugEnabled()) {
 					LOGGER.debug("Finished running script ({}), ERROR: {}", icfOpName, ex.getMessage());
 				}
-				
+
 				Throwable midpointEx = processIcfException(ex, this, icfResult);
 				result.computeStatus();
 				// Do some kind of acrobatics to do proper throwing of checked
@@ -3078,7 +3082,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 					throw new SystemException("Got unexpected exception: " + ex.getClass().getName() + ": " + ex.getMessage(), ex);
 				}
 			}
-			
+
 			return output;
 	}
 
@@ -3096,7 +3100,7 @@ public class ConnectorInstanceIcfImpl implements ConnectorInstance {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
