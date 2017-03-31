@@ -32,18 +32,19 @@ public class CreateTableAsSelect
     private final boolean notExists;
     private final Map<String, Expression> properties;
     private final boolean withData;
+    private final Optional<String> comment;
 
-    public CreateTableAsSelect(QualifiedName name, Query query, boolean notExists, Map<String, Expression> properties, boolean withData)
+    public CreateTableAsSelect(QualifiedName name, Query query, boolean notExists, Map<String, Expression> properties, boolean withData, Optional<String> comment)
     {
-        this(Optional.empty(), name, query, notExists, properties, withData);
+        this(Optional.empty(), name, query, notExists, properties, withData, comment);
     }
 
-    public CreateTableAsSelect(NodeLocation location, QualifiedName name, Query query, boolean notExists, Map<String, Expression> properties, boolean withData)
+    public CreateTableAsSelect(NodeLocation location, QualifiedName name, Query query, boolean notExists, Map<String, Expression> properties, boolean withData, Optional<String> comment)
     {
-        this(Optional.of(location), name, query, notExists, properties, withData);
+        this(Optional.of(location), name, query, notExists, properties, withData, comment);
     }
 
-    private CreateTableAsSelect(Optional<NodeLocation> location, QualifiedName name, Query query, boolean notExists, Map<String, Expression> properties, boolean withData)
+    private CreateTableAsSelect(Optional<NodeLocation> location, QualifiedName name, Query query, boolean notExists, Map<String, Expression> properties, boolean withData, Optional<String> comment)
     {
         super(location);
         this.name = requireNonNull(name, "name is null");
@@ -51,6 +52,7 @@ public class CreateTableAsSelect
         this.notExists = notExists;
         this.properties = ImmutableMap.copyOf(requireNonNull(properties, "properties is null"));
         this.withData = withData;
+        this.comment = requireNonNull(comment, "comment is null");
     }
 
     public QualifiedName getName()
@@ -76,6 +78,11 @@ public class CreateTableAsSelect
     public boolean isWithData()
     {
         return withData;
+    }
+
+    public Optional<String> getComment()
+    {
+        return comment;
     }
 
     @Override

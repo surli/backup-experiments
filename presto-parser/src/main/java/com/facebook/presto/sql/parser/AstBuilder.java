@@ -225,13 +225,21 @@ class AstBuilder
     @Override
     public Node visitCreateTableAsSelect(SqlBaseParser.CreateTableAsSelectContext context)
     {
-        return new CreateTableAsSelect(getLocation(context), getQualifiedName(context.qualifiedName()), (Query) visit(context.query()), context.EXISTS() != null, processTableProperties(context.tableProperties()), context.NO() == null);
+        Optional<String> comment = Optional.empty();
+        if (context.COMMENT() != null) {
+            comment = Optional.of(unquote(context.STRING().getText()));
+        }
+        return new CreateTableAsSelect(getLocation(context), getQualifiedName(context.qualifiedName()), (Query) visit(context.query()), context.EXISTS() != null, processTableProperties(context.tableProperties()), context.NO() == null, comment);
     }
 
     @Override
     public Node visitCreateTable(SqlBaseParser.CreateTableContext context)
     {
-        return new CreateTable(getLocation(context), getQualifiedName(context.qualifiedName()), visit(context.tableElement(), TableElement.class), context.EXISTS() != null, processTableProperties(context.tableProperties()));
+        Optional<String> comment = Optional.empty();
+        if (context.COMMENT() != null) {
+            comment = Optional.of(unquote(context.STRING().getText()));
+        }
+        return new CreateTable(getLocation(context), getQualifiedName(context.qualifiedName()), visit(context.tableElement(), TableElement.class), context.EXISTS() != null, processTableProperties(context.tableProperties()), comment);
     }
 
     private Map<String, Expression> processTableProperties(TablePropertiesContext tablePropertiesContext)

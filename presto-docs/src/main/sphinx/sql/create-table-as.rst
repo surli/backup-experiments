@@ -8,6 +8,7 @@ Synopsis
 .. code-block:: none
 
     CREATE TABLE [ IF NOT EXISTS ] table_name
+    [ COMMENT table_comment ]
     [ WITH ( property_name = expression [, ...] ) ]
     AS query
     [ WITH [ NO ] DATA ]
@@ -30,9 +31,10 @@ properties, run the following query::
 Examples
 --------
 
-Create a new table ``orders_by_date`` that summarizes ``orders``::
+Create a new table ``orders_by_date`` that summarizes ``orders``, adding a table comment::
 
     CREATE TABLE orders_by_date
+    COMMENT 'orders summary'
     WITH (format = 'ORC')
     AS
     SELECT orderdate, sum(totalprice) AS price
