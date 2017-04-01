@@ -79,6 +79,14 @@ public class AttributeTest {
 	}
 
 	@Test
+	public void testClone() {
+		Attribute a = new Attribute("Tot", "a&p");
+		Attribute aComp = new Attribute("Tot", "a&p");
+
+		assertEquals(aComp, a.clone());
+	}
+
+	@Test
 	public void testGetKey() {
 		fail("Not yet implemented");
 	}
@@ -107,10 +115,4 @@ public class AttributeTest {
 	public void testIsBooleanAttribute() {
 		fail("Not yet implemented");
 	}
-
-	@Test
-	public void testClone() {
-		fail("Not yet implemented");
-	}
-
 }
