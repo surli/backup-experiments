@@ -2370,7 +2370,7 @@ public abstract class WindowOperatorContractTest extends TestLogger {
 		testPerWindowStateSetAndClearedOnPurge(new ProcessingTimeAdaptor());
 	}
 
-	public void testPerWindowStateSetAndClearedOnPurge(TimeDomainAdaptor timeAdaptor) throws Exception {
+	public void testPerWindowStateSetAndClearedOnPurge(final TimeDomainAdaptor timeAdaptor) throws Exception {
 		WindowAssigner<Integer, TimeWindow> mockAssigner = mockTimeWindowAssigner();
 		timeAdaptor.setIsEventTime(mockAssigner);
 		Trigger<Integer, TimeWindow> mockTrigger = mockTrigger();
@@ -2391,6 +2391,8 @@ public abstract class WindowOperatorContractTest extends TestLogger {
 			@Override
 			public Object answer(InvocationOnMock invocationOnMock) throws Throwable {
 				InternalWindowFunction.InternalWindowContext context = (InternalWindowFunction.InternalWindowContext)invocationOnMock.getArguments()[2];
+				assertEquals(0, context.currentProcessingTime());
+				assertEquals(Long.MIN_VALUE, context.currentWatermark());
 				context.windowState().getState(valueStateDescriptor).update("hello");
 				return null;
 			}
@@ -2400,6 +2402,13 @@ public abstract class WindowOperatorContractTest extends TestLogger {
 			@Override
 			public Object answer(InvocationOnMock invocationOnMock) throws Throwable {
 				InternalWindowFunction.InternalWindowContext context = (InternalWindowFunction.InternalWindowContext)invocationOnMock.getArguments()[1];
+				if (timeAdaptor instanceof ProcessingTimeAdaptor) {
+					assertEquals(19 + 20, context.currentProcessingTime());
+					assertEquals(Long.MIN_VALUE, context.currentWatermark());
+				} else {
+					assertEquals(0, context.currentProcessingTime());
+					assertEquals(19 + 20, context.currentWatermark());
+				}
 				context.windowState().getState(valueStateDescriptor).clear();
 				return null;
 			}
@@ -2440,6 +2449,8 @@ public abstract class WindowOperatorContractTest extends TestLogger {
 			@Override
 			public Object answer(InvocationOnMock invocationOnMock) throws Throwable {
 				InternalWindowFunction.InternalWindowContext context = (InternalWindowFunction.InternalWindowContext)invocationOnMock.getArguments()[2];
+				assertEquals(0, context.currentProcessingTime());
+				assertEquals(Long.MIN_VALUE, context.currentWatermark());
 				context.windowState().getState(valueStateDescriptor).update("hello");
 				return null;
 			}
@@ -2462,7 +2473,6 @@ public abstract class WindowOperatorContractTest extends TestLogger {
 			Trigger<Integer, W> trigger,
 			long allowedLatenss,
 			InternalWindowFunction<Iterable<Integer>, OUT, Integer, W> windowFunction) throws Exception;
-
 
 	private interface TimeDomainAdaptor {
 
