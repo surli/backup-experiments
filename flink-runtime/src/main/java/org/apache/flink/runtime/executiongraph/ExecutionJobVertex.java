@@ -68,6 +68,24 @@ public class ExecutionJobVertex implements AccessExecutionJobVertex, Archiveable
 	private final ExecutionGraph graph;
 	
 	private final JobVertex jobVertex;
+
+	/**
+	 * The IDs of all operators contained in this execution job vertex.
+	 *
+	 * The ID's are stored depth-first post-order; for the forking chain below the ID's would be stored as [D, E, B, C, A].
+	 *  A - B - D
+	 *   \    \
+	 *    C    E
+	 * This is the same order that operators are stored in the {@code StreamTask}.
+	 */
+	private final JobVertexID[] operatorIDs;
+
+	/**
+	 * The alternative IDs of all operators contained in this execution job vertex.
+	 *
+	 * The ID's are in the same order as {@link ExecutionJobVertex#operatorIDs}.
+	 */
+	private final JobVertexID[] userDefinedOperatorIds;
 	
 	private final ExecutionVertex[] taskVertices;
 
@@ -139,6 +157,10 @@ public class ExecutionJobVertex implements AccessExecutionJobVertex, Archiveable
 		this.serializedTaskInformation = null;
 
 		this.taskVertices = new ExecutionVertex[numTaskVertices];
+		List<JobVertexID> opIDs = jobVertex.getOperatorIDs();
+		this.operatorIDs = opIDs.toArray(new JobVertexID[opIDs.size()]);
+		List<JobVertexID> userDefinedOpIDs = jobVertex.getUserDefinedOperatorIDs();
+		this.userDefinedOperatorIds = userDefinedOpIDs.toArray(new JobVertexID[userDefinedOpIDs.size()]);
 		
 		this.inputs = new ArrayList<>(jobVertex.getInputs().size());
 		
@@ -212,6 +234,24 @@ public class ExecutionJobVertex implements AccessExecutionJobVertex, Archiveable
 		}
 		
 		finishedSubtasks = new boolean[parallelism];
+	}
+
+	/**
+	 * Returns an array containing the IDs of all operators contained in this execution job vertex.
+	 *
+	 * @return array containing the IDs of all contained operators
+	 */
+	public JobVertexID[] getOperatorIDs() {
+		return operatorIDs;
+	}
+
+	/**
+	 * Returns an array containing the alternative IDs of all operators contained in this execution job vertex.
+	 *
+	 * @return array containing alternative the IDs of all contained operators
+	 */
+	public JobVertexID[] getUserDefinedOperatorIDs() {
+		return userDefinedOperatorIds;
 	}
 
 	public void setMaxParallelism(int maxParallelismDerived) {
