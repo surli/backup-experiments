@@ -18,21 +18,23 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static java.util.Collections.emptyMap;
 
 public class ConnectorTableMetadata
 {
     private final SchemaTableName table;
+    private final Optional<String> comment;
     private final List<ColumnMetadata> columns;
     private final Map<String, Object> properties;
 
     public ConnectorTableMetadata(SchemaTableName table, List<ColumnMetadata> columns)
     {
-        this(table, columns, emptyMap());
+        this(table, columns, emptyMap(), Optional.empty());
     }
 
-    public ConnectorTableMetadata(SchemaTableName table, List<ColumnMetadata> columns, Map<String, Object> properties)
+    public ConnectorTableMetadata(SchemaTableName table, List<ColumnMetadata> columns, Map<String, Object> properties, Optional<String> comment)
     {
         if (table == null) {
             throw new NullPointerException("table is null or empty");
@@ -40,10 +42,14 @@ public class ConnectorTableMetadata
         if (columns == null) {
             throw new NullPointerException("columns is null");
         }
+        if (comment == null) {
+            throw new NullPointerException("comment is null");
+        }
 
         this.table = table;
         this.columns = Collections.unmodifiableList(new ArrayList<>(columns));
         this.properties = Collections.unmodifiableMap(new LinkedHashMap<>(properties));
+        this.comment = comment;
     }
 
     public SchemaTableName getTable()
@@ -59,6 +65,11 @@ public class ConnectorTableMetadata
     public Map<String, Object> getProperties()
     {
         return properties;
+    }
+
+    public Optional<String> getComment()
+    {
+        return comment;
     }
 
     @Override

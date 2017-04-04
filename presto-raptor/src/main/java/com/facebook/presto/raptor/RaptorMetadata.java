@@ -230,7 +230,7 @@ public class RaptorMetadata
 
         columns.add(hiddenColumn(SHARD_UUID_COLUMN_NAME, SHARD_UUID_COLUMN_TYPE));
         columns.add(hiddenColumn(BUCKET_NUMBER_COLUMN_NAME, INTEGER));
-        return new ConnectorTableMetadata(tableName, columns, properties.build());
+        return new ConnectorTableMetadata(tableName, columns, properties.build(), Optional.empty());
     }
 
     @Override

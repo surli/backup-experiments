@@ -50,7 +50,7 @@ public class TestMemoryMetadata
 
         ConnectorOutputTableHandle table = metadata.beginCreateTable(
                 SESSION,
-                new ConnectorTableMetadata(schemaTableName, ImmutableList.of(), ImmutableMap.of()),
+                new ConnectorTableMetadata(schemaTableName, ImmutableList.of(), ImmutableMap.of(), Optional.empty()),
                 Optional.empty());
 
         metadata.finishCreateTable(SESSION, table, ImmutableList.of());
@@ -66,7 +66,7 @@ public class TestMemoryMetadata
         assertThatNoTableIsCreated();
 
         SchemaTableName firstTableName = new SchemaTableName("default", "first_table");
-        metadata.createTable(SESSION, new ConnectorTableMetadata(firstTableName, ImmutableList.of(), ImmutableMap.of()));
+        metadata.createTable(SESSION, new ConnectorTableMetadata(firstTableName, ImmutableList.of(), ImmutableMap.of(), Optional.empty()));
 
         MemoryTableHandle firstTableHandle = (MemoryTableHandle) metadata.getTableHandle(SESSION, firstTableName);
         Long firstTableId = firstTableHandle.getTableId();
@@ -74,7 +74,7 @@ public class TestMemoryMetadata
         assertTrue(metadata.beginInsert(SESSION, firstTableHandle).getActiveTableIds().contains(firstTableId));
 
         SchemaTableName secondTableName = new SchemaTableName("default", "second_table");
-        metadata.createTable(SESSION, new ConnectorTableMetadata(secondTableName, ImmutableList.of(), ImmutableMap.of()));
+        metadata.createTable(SESSION, new ConnectorTableMetadata(secondTableName, ImmutableList.of(), ImmutableMap.of(), Optional.empty()));
 
         MemoryTableHandle secondTableHandle = (MemoryTableHandle) metadata.getTableHandle(SESSION, secondTableName);
         Long secondTableId = secondTableHandle.getTableId();

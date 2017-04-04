@@ -362,6 +362,7 @@ class StatementAnalyzer
                         .analyze(expression, scope);
             }
             analysis.setCreateTableProperties(node.getProperties());
+            analysis.setComment(node.getComment());
 
             accessControl.checkCanCreateTable(session.getRequiredTransactionId(), session.getIdentity(), targetTable);
 

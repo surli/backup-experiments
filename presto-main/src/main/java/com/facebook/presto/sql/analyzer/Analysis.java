@@ -99,6 +99,7 @@ public class Analysis
     private Map<String, Expression> createTableProperties = ImmutableMap.of();
     private boolean createTableAsSelectWithData = true;
     private boolean createTableAsSelectNoOp = false;
+    private Optional<String> comment = Optional.empty();
 
     private Optional<Insert> insert = Optional.empty();
 
@@ -453,6 +454,16 @@ public class Analysis
     public Map<String, Expression> getCreateTableProperties()
     {
         return createTableProperties;
+    }
+
+    public void setComment(Optional<String> comment)
+    {
+        this.comment = comment;
+    }
+
+    public Optional<String> getComment()
+    {
+        return comment;
     }
 
     public void setInsert(Insert insert)
