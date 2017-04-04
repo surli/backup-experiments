@@ -21,6 +21,7 @@ package org.apache.flink.runtime.checkpoint;
 import org.apache.flink.annotation.VisibleForTesting;
 import org.apache.flink.api.common.JobID;
 import org.apache.flink.configuration.ConfigConstants;
+import org.apache.flink.migration.runtime.checkpoint.StateAssignmentOperation;
 import org.apache.flink.runtime.checkpoint.savepoint.SavepointLoader;
 import org.apache.flink.runtime.checkpoint.savepoint.SavepointStore;
 import org.apache.flink.runtime.concurrent.ApplyFunction;
@@ -964,10 +965,27 @@ public class CheckpointCoordinator {
 
 			final Map<JobVertexID, TaskState> taskStates = latest.getTaskStates();
 
-			StateAssignmentOperation stateAssignmentOperation =
+			// find out whether we will restore on the operator level (from a SavepointV2/PendingCheckpoint) or on the
+			// task level (from a SavepointV1)
+			boolean restoreOnOperatorLevel = true;
+			for (Map.Entry<JobVertexID, TaskState> taskGroupStateEntry : taskStates.entrySet()) {
+				if (taskGroupStateEntry.getValue().getChainLength() != 1) {
+					restoreOnOperatorLevel = false;
+					break;
+				}
+			}
+
+			if (restoreOnOperatorLevel) {
+				StateAssignmentOperationV2 stateAssignmentOperation =
+					new StateAssignmentOperationV2(LOG, tasks, taskStates, allowNonRestoredState);
+
+				stateAssignmentOperation.assignStates();
+			} else {
+				StateAssignmentOperation stateAssignmentOperation =
 					new StateAssignmentOperation(LOG, tasks, taskStates, allowNonRestoredState);
 
-			stateAssignmentOperation.assignStates();
+				stateAssignmentOperation.assignStates();
+			}
 
 			if (statsTracker != null) {
 				long restoreTimestamp = System.currentTimeMillis();

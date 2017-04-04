@@ -16,8 +16,11 @@
  * limitations under the License.
  */
 
-package org.apache.flink.runtime.checkpoint;
+package org.apache.flink.migration.runtime.checkpoint;
 
+import org.apache.flink.runtime.checkpoint.OperatorStateRepartitioner;
+import org.apache.flink.runtime.checkpoint.RoundRobinOperatorStateRepartitioner;
+import org.apache.flink.runtime.checkpoint.SubtaskState;
 import org.apache.flink.runtime.executiongraph.Execution;
 import org.apache.flink.runtime.executiongraph.ExecutionJobVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
@@ -43,19 +46,22 @@ import static org.apache.flink.runtime.checkpoint.StateAssignmentOperationUtils.
 import static org.apache.flink.runtime.checkpoint.StateAssignmentOperationUtils.createKeyGroupPartitions;
 
 /**
- * This class encapsulates the operation of assigning restored state when restoring from a checkpoint.
+ * This class encapsulates the operation of assigning restored state when restoring from a checkpoint that works on the
+ * granularity of tasks. This is the case for checkpoints that were created either with a Flink version <= 1.1 or 1.2
+ * if the savepoint contains any {@link SubtaskState} for which the length of the contained {@link ChainedStateHandle}
+ * is greater than 1.
  */
 public class StateAssignmentOperation {
 
 	private final Logger logger;
 	private final Map<JobVertexID, ExecutionJobVertex> tasks;
-	private final Map<JobVertexID, TaskState> taskStates;
+	private final Map<JobVertexID, org.apache.flink.runtime.checkpoint.TaskState> taskStates;
 	private final boolean allowNonRestoredState;
 
 	public StateAssignmentOperation(
 			Logger logger,
 			Map<JobVertexID, ExecutionJobVertex> tasks,
-			Map<JobVertexID, TaskState> taskStates,
+			Map<JobVertexID, org.apache.flink.runtime.checkpoint.TaskState> taskStates,
 			boolean allowNonRestoredState) {
 
 		this.logger = Preconditions.checkNotNull(logger);
@@ -71,9 +77,9 @@ public class StateAssignmentOperation {
 
 		Map<JobVertexID, ExecutionJobVertex> localTasks = this.tasks;
 
-		for (Map.Entry<JobVertexID, TaskState> taskGroupStateEntry : taskStates.entrySet()) {
+		for (Map.Entry<JobVertexID, org.apache.flink.runtime.checkpoint.TaskState> taskGroupStateEntry : taskStates.entrySet()) {
 
-			TaskState taskState = taskGroupStateEntry.getValue();
+			org.apache.flink.runtime.checkpoint.TaskState taskState = taskGroupStateEntry.getValue();
 
 			//----------------------------------------find vertex for state---------------------------------------------
 
@@ -94,7 +100,7 @@ public class StateAssignmentOperation {
 					continue;
 				} else {
 					throw new IllegalStateException("There is no execution job vertex for the job" +
-							" vertex ID " + taskGroupStateEntry.getKey());
+						" vertex ID " + taskGroupStateEntry.getKey());
 				}
 			}
 
@@ -107,7 +113,7 @@ public class StateAssignmentOperation {
 	}
 
 	private static void assignTaskStatesToOperatorInstances(
-			TaskState taskState, ExecutionJobVertex executionJobVertex) {
+		org.apache.flink.runtime.checkpoint.TaskState taskState, ExecutionJobVertex executionJobVertex) {
 
 		final int oldParallelism = taskState.getParallelism();
 		final int newParallelism = executionJobVertex.getParallelism();
@@ -128,7 +134,7 @@ public class StateAssignmentOperation {
 		List<KeyedStateHandle> parallelKeyedStateStream = new ArrayList<>(oldParallelism);
 
 		for (int p = 0; p < oldParallelism; ++p) {
-			SubtaskState subtaskState = taskState.getState(p);
+			org.apache.flink.runtime.checkpoint.SubtaskState subtaskState = taskState.getState(p);
 
 			if (null != subtaskState) {
 				collectParallelStatesByChainOperator(

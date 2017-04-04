@@ -764,6 +764,11 @@ public class ExecutionJobVertex implements AccessExecutionJobVertex, Archiveable
 						Preconditions.checkState(null == old || old.equals(executionJobVertex),
 								"Ambiguous jobvertex id detected during expansion to legacy ids.");
 					}
+					for (JobVertexID operatorID : jobVertex.getUserDefinedOperatorIDs()) {
+						if (operatorID != null) {
+							expanded.put(operatorID, executionJobVertex);
+						}
+					}
 				}
 			}
 		}
