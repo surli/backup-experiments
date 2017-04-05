@@ -149,20 +149,25 @@ public class ChannelCreator {
                         semaphore.release();
                     }
                     if(!doneMessage) {
-                        if(cause == null) {
-                            successAfterSemaphoreRelease(futureResponse, responseMessage);
-                        } else {
-                            failAfterSemaphoreRelease(futureResponse, cause);
+                        if(cause == null && futureResponse!=null) {
+                            futureResponse.response(responseMessage);
+                            doneMessage = true;
+                        } else if(cause != null && futureResponse!=null) {
+                            futureResponse.failed(cause);
+                            doneMessage = true;
                         }
                     }
 
-                    notified = true;
-                    if(!doneClose) {
-                        doneAfterSemaphoreRelease(futureDone);
+
+                    if(!doneClose && futureDone != null) {
+                        futureDone.done();
+                        doneClose = true;
                     }
+
+                    notified = true;
                 }
             }
-            
+
             public void successAfterSemaphoreRelease(FutureResponse futureResponse, Message responseMessage) {
                 synchronized(this) {
                     if(!notified) {
