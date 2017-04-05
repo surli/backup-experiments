@@ -608,6 +608,7 @@ class StatementAnalyzer
             analysis.setOutputExpressions(node, descriptorToFields(queryBodyScope));
 
             Scope queryScope = Scope.builder()
+                    .withScopeId(ScopeId.of(node))
                     .withParent(withScope)
                     .withRelationType(queryBodyScope.getRelationType())
                     .build();
@@ -1982,6 +1983,7 @@ class StatementAnalyzer
         private Scope createAndAssignScope(Node node, Optional<Scope> parentScope, RelationType relationType)
         {
             Scope scope = scopeBuilder(parentScope)
+                    .withScopeId(ScopeId.of(node))
                     .withRelationType(relationType)
                     .build();
 

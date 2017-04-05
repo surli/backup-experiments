@@ -29,6 +29,7 @@ import java.util.Optional;
 
 import static com.facebook.presto.sql.analyzer.SemanticExceptions.ambiguousAttributeException;
 import static com.facebook.presto.sql.analyzer.SemanticExceptions.missingAttributeException;
+import static com.google.common.base.MoreObjects.toStringHelper;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.collect.Iterables.getOnlyElement;
 import static java.util.Objects.requireNonNull;
@@ -36,6 +37,7 @@ import static java.util.Objects.requireNonNull;
 @Immutable
 public class Scope
 {
+    private final ScopeId scopeId;
     private final Optional<Scope> parent;
     private final boolean queryBoundary;
     private final RelationType relation;
@@ -52,15 +54,22 @@ public class Scope
     }
 
     private Scope(
+            ScopeId scopeId,
             Optional<Scope> parent,
             boolean queryBoundary,
             RelationType relation,
             Map<String, WithQuery> namedQueries)
     {
         this.parent = requireNonNull(parent, "parent is null");
+        this.scopeId = requireNonNull(scopeId, "scopeId is null");
         this.queryBoundary = queryBoundary;
         this.relation = requireNonNull(relation, "relation is null");
         this.namedQueries = ImmutableMap.copyOf(requireNonNull(namedQueries, "namedQueries is null"));
+    }
+
+    public ScopeId getScopeId()
+    {
+        return scopeId;
     }
 
     public Optional<Scope> getOuterQueryParent()
@@ -185,12 +194,27 @@ public class Scope
         return Optional.empty();
     }
 
+    @Override
+    public String toString()
+    {
+        return toStringHelper(this)
+                .addValue(scopeId)
+                .toString();
+    }
+
     public static final class Builder
     {
+        private ScopeId scopeId = ScopeId.anonymous();
         private RelationType relationType = new RelationType();
         private final Map<String, WithQuery> namedQueries = new HashMap<>();
         private Optional<Scope> parent = Optional.empty();
         private boolean queryBoundary;
+
+        public Builder withScopeId(ScopeId scopeId)
+        {
+            this.scopeId = requireNonNull(scopeId, "scopeId is null");
+            return this;
+        }
 
         public Builder withRelationType(RelationType relationType)
         {
@@ -227,7 +251,7 @@ public class Scope
 
         public Scope build()
         {
-            return new Scope(parent, queryBoundary, relationType, namedQueries);
+            return new Scope(scopeId, parent, queryBoundary, relationType, namedQueries);
         }
     }
 }
