@@ -38,6 +38,11 @@ public interface SendBehavior {
 		 * own dispatcher
 		 */
 		SELF,
+
+                /**
+                 * In case of an error.
+                 */
+                CANNOT_CREATE_TCP,
 	}
 
 	/**
