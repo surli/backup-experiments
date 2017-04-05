@@ -1,0 +1,923 @@
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for net.tomp2p:tomp2p-replication:jar:5.0-Beta9-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: ch.qos.logback:logback-classic:jar -> version (?) vs 1.0.1 @ net.tomp2p:tomp2p-replication:[unknown-version], /root/workspace/tomp2p/TomP2P/218797966/replication/pom.xml, line 56, column 15
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] TomP2P
+[INFO] TomP2P Core
+[INFO] TomP2P DHT
+[INFO] TomP2P Replication
+[INFO] TomP2P NAT
+[INFO] TomP2P Storage
+[INFO] TomP2P Tracker
+[INFO] TomP2P All-in-One
+[INFO] TomP2P Examples
+[INFO] TomP2P Social
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building TomP2P 5.0-Beta9-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- lombok-maven-plugin:1.16.12.0:delombok (default) @ tomp2p-parent ---
+[WARNING] Skipping Delombok; no source to process.
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building TomP2P Core 5.0-Beta9-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- lombok-maven-plugin:1.16.12.0:delombok (default) @ tomp2p-core ---
+[WARNING] Skipping Delombok; no source to process.
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tomp2p-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/tomp2p/TomP2P/218797966/core/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ tomp2p-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ tomp2p-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ tomp2p-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ tomp2p-core ---
+[INFO] Surefire report directory: /root/workspace/tomp2p/TomP2P/218797966/core/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.pom (3 KB at 7.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.18.1/surefire-providers-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.18.1/surefire-providers-2.18.1.pom (3 KB at 130.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.18.1/surefire-junit4-2.18.1.jar (67 KB at 657.4 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running net.tomp2p.storage.TestData
+Starting test: clearTest
+Starting test: testData1
+Starting test: testData3
+Starting test: testData4
+Starting test: testData5
+Starting test: testData6
+Starting test: testData7
+Starting test: testData8
+Starting test: testDataDeleted1
+Starting test: testDataDeleted2
+Starting test: testDataDeleted
+Starting test: testData2NoCopy
+Starting test: testData2Copy
+Starting test: testDataBasedOn1
+Starting test: testDataBasedOn2
+Starting test: testDataBasedOn3
+Starting test: testDataBasedOn4
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.701 sec - in net.tomp2p.storage.TestData
+Running net.tomp2p.p2p.TestBroadcast
+Starting test: test4Peers
+Peer 1 got the message
+Peer 3 got the message
+Peer 2 got the message
+Peer 4 got the message
+Starting test: testBroadcastTCP
+Peer 3 got the message
+Peer 2 got the message
+msg count: 3928
+DONE: 1004
+Starting test: testBroadcastUDP
+msg count: 3928
+DONE: 1005
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.575 sec - in net.tomp2p.p2p.TestBroadcast
+Running net.tomp2p.p2p.TestQuit
+Starting test: testQuit
+Starting test: testGracefulhalt
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.273 sec - in net.tomp2p.p2p.TestQuit
+Running net.tomp2p.p2p.TestMaintenance
+Starting test: testMaintenance
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.154 sec - in net.tomp2p.p2p.TestMaintenance
+Running net.tomp2p.p2p.TestDirect
+Starting test: testDirectMessage1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec - in net.tomp2p.p2p.TestDirect
+Running net.tomp2p.p2p.TestRelay
+Starting test: testLoop
+15:50:58.386 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xf12bbb4b46ee9d83b52c856daa616abe17610c9a for 0xf12bbb4b46ee9d83b52c856daa616abe17610c9a with [7]
+15:50:58.405 [NETTY-TOMP2P - worker-client/server - -46-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:58.440 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xb0bfbe2076b20011c3185754c86c400fff88a1e3 for 0xb0bfbe2076b20011c3185754c86c400fff88a1e3 with [7]
+15:50:58.444 [NETTY-TOMP2P - worker-client/server - -50-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:58.593 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xee3dd85262f60bdccc5c83052d68ad16268a478c for 0xee3dd85262f60bdccc5c83052d68ad16268a478c with [7]
+15:50:58.631 [NETTY-TOMP2P - worker-client/server - -54-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:58.686 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x5d7b347f2c167999289d95fa9661a43246302cd9 for 0x5d7b347f2c167999289d95fa9661a43246302cd9 with [7]
+15:50:58.701 [NETTY-TOMP2P - worker-client/server - -58-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:58.749 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x1735c9edc0a47defcc7229ce080b069b510846b6 for 0x1735c9edc0a47defcc7229ce080b069b510846b6 with [7]
+15:50:58.754 [NETTY-TOMP2P - worker-client/server - -62-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:58.813 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xc5004375f95a672314a5c4b6b6a1caca887336a7 for 0xc5004375f95a672314a5c4b6b6a1caca887336a7 with [7]
+15:50:58.821 [NETTY-TOMP2P - worker-client/server - -66-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:58.876 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x988bd7d5d20bc0bc3051ae6fa2fb233f60e0b477 for 0x988bd7d5d20bc0bc3051ae6fa2fb233f60e0b477 with [7]
+15:50:58.885 [NETTY-TOMP2P - worker-client/server - -70-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:58.913 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xa617570a7512bbb5b22b097979021b83f37050bb for 0xa617570a7512bbb5b22b097979021b83f37050bb with [7]
+15:50:58.925 [NETTY-TOMP2P - worker-client/server - -74-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:58.948 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xd75d1a3d57841fbc9e2a3d175d6a35dc2e15b9f for 0xd75d1a3d57841fbc9e2a3d175d6a35dc2e15b9f with [7]
+15:50:58.958 [NETTY-TOMP2P - worker-client/server - -78-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.008 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xf6658a2edd9da64b7b384f917c9134898c547aa0 for 0xf6658a2edd9da64b7b384f917c9134898c547aa0 with [7]
+15:50:59.015 [NETTY-TOMP2P - worker-client/server - -82-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.095 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xa18ba62f50b95daa11fbfb1d9255b57757ec5114 for 0xa18ba62f50b95daa11fbfb1d9255b57757ec5114 with [7]
+15:50:59.100 [NETTY-TOMP2P - worker-client/server - -86-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.130 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x406f233d9dc02e0c624b81c65fd603dd1d6a62be for 0x406f233d9dc02e0c624b81c65fd603dd1d6a62be with [7]
+15:50:59.136 [NETTY-TOMP2P - worker-client/server - -90-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.167 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x2bc13e38cf22cde548e91907a0c03c22c7e254b4 for 0x2bc13e38cf22cde548e91907a0c03c22c7e254b4 with [7]
+15:50:59.174 [NETTY-TOMP2P - worker-client/server - -94-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.204 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xcbc88dc0a296a2bbb1ada3c520526ee717bab863 for 0xcbc88dc0a296a2bbb1ada3c520526ee717bab863 with [7]
+15:50:59.207 [NETTY-TOMP2P - worker-client/server - -98-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.236 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x77fade467bdd30f57598e44aa7b1943e4400ed7b for 0x77fade467bdd30f57598e44aa7b1943e4400ed7b with [7]
+15:50:59.246 [NETTY-TOMP2P - worker-client/server - -102-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.281 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xd13f3576a56f7571fa42cebec53d3c4cb3b93303 for 0xd13f3576a56f7571fa42cebec53d3c4cb3b93303 with [7]
+15:50:59.286 [NETTY-TOMP2P - worker-client/server - -106-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.317 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x9d7a93cd13bbd9ac5c42f173c66e4f6a5dd704e6 for 0x9d7a93cd13bbd9ac5c42f173c66e4f6a5dd704e6 with [7]
+15:50:59.345 [NETTY-TOMP2P - worker-client/server - -110-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.426 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xeba6e6936e6a4d894709554955133402cd5132bc for 0xeba6e6936e6a4d894709554955133402cd5132bc with [7]
+15:50:59.437 [NETTY-TOMP2P - worker-client/server - -114-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.519 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x65827193bec25df0e2ce2fe32bbd76b8e9a40597 for 0x65827193bec25df0e2ce2fe32bbd76b8e9a40597 with [7]
+15:50:59.521 [NETTY-TOMP2P - worker-client/server - -118-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.598 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x4c1f974706eb6ddba918928f8c5fa9a241001e1c for 0x4c1f974706eb6ddba918928f8c5fa9a241001e1c with [7]
+15:50:59.603 [NETTY-TOMP2P - worker-client/server - -122-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.622 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xe6089f53580c9795bac7bc0f0399299d024ac139 for 0xe6089f53580c9795bac7bc0f0399299d024ac139 with [7]
+15:50:59.626 [NETTY-TOMP2P - worker-client/server - -126-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.686 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x8f52be82955dbe2e6cad28a6b030e4feddcae127 for 0x8f52be82955dbe2e6cad28a6b030e4feddcae127 with [7]
+15:50:59.687 [NETTY-TOMP2P - worker-client/server - -130-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.699 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x137f80a2e5280b70e37fbb0ba060ad2ca93aa1a6 for 0x137f80a2e5280b70e37fbb0ba060ad2ca93aa1a6 with [7]
+15:50:59.701 [NETTY-TOMP2P - worker-client/server - -134-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.740 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x25969bf6429c0ce701f1b23cf6551cf3a3ff3194 for 0x25969bf6429c0ce701f1b23cf6551cf3a3ff3194 with [7]
+15:50:59.745 [NETTY-TOMP2P - worker-client/server - -138-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.772 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xf1bd7712d25deaaae42d6346a8c03f84210ee947 for 0xf1bd7712d25deaaae42d6346a8c03f84210ee947 with [7]
+15:50:59.773 [NETTY-TOMP2P - worker-client/server - -142-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.799 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x3359155ebcec5d07fef82b77daf8f87ff8187c57 for 0x3359155ebcec5d07fef82b77daf8f87ff8187c57 with [7]
+15:50:59.800 [NETTY-TOMP2P - worker-client/server - -146-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.842 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x823d039682312252db0a9697c6814386c56506bc for 0x823d039682312252db0a9697c6814386c56506bc with [7]
+15:50:59.851 [NETTY-TOMP2P - worker-client/server - -150-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.888 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x66eb0cfe28fe54540301961cccd0ca17850ba065 for 0x66eb0cfe28fe54540301961cccd0ca17850ba065 with [7]
+15:50:59.894 [NETTY-TOMP2P - worker-client/server - -154-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.919 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xa47f4b25d9ac2d366c6ab179fc2798cb88d03fbd for 0xa47f4b25d9ac2d366c6ab179fc2798cb88d03fbd with [7]
+15:50:59.923 [NETTY-TOMP2P - worker-client/server - -158-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.952 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x2600556b27181dd798fe9cef88d9f933beebdab3 for 0x2600556b27181dd798fe9cef88d9f933beebdab3 with [7]
+15:50:59.964 [NETTY-TOMP2P - worker-client/server - -162-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:50:59.983 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xe79042a263469bf2a127739303e733d5721a3740 for 0xe79042a263469bf2a127739303e733d5721a3740 with [7]
+15:50:59.986 [NETTY-TOMP2P - worker-client/server - -166-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.022 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x7537a68ce5cb54862f653a5b6b3a4e2baf8e8780 for 0x7537a68ce5cb54862f653a5b6b3a4e2baf8e8780 with [7]
+15:51:00.024 [NETTY-TOMP2P - worker-client/server - -170-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.041 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x20c505fc0d6a874a279a257b9a574a85f76d12dc for 0x20c505fc0d6a874a279a257b9a574a85f76d12dc with [7]
+15:51:00.054 [NETTY-TOMP2P - worker-client/server - -174-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.073 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x480137e1846dca42894ca653b60f1446f7ca9cd4 for 0x480137e1846dca42894ca653b60f1446f7ca9cd4 with [7]
+15:51:00.076 [NETTY-TOMP2P - worker-client/server - -178-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.118 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x570a1e914a3660b59af65fbb5e96a8ce3fd5436d for 0x570a1e914a3660b59af65fbb5e96a8ce3fd5436d with [7]
+15:51:00.124 [NETTY-TOMP2P - worker-client/server - -182-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.154 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x5481e40392683f04a77a0f781f5e460fa26c0249 for 0x5481e40392683f04a77a0f781f5e460fa26c0249 with [7]
+15:51:00.156 [NETTY-TOMP2P - worker-client/server - -186-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.189 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xd2b8bcd8ba3fd53a437f1714989701a874fe34f8 for 0xd2b8bcd8ba3fd53a437f1714989701a874fe34f8 with [7]
+15:51:00.193 [NETTY-TOMP2P - worker-client/server - -190-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.222 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xcedbf96ca5775c538ae5e37cd71037eb97322a09 for 0xcedbf96ca5775c538ae5e37cd71037eb97322a09 with [7]
+15:51:00.227 [NETTY-TOMP2P - worker-client/server - -194-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.289 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x8b2f293f9618b680a3f5d203293b5047ff6669d2 for 0x8b2f293f9618b680a3f5d203293b5047ff6669d2 with [7]
+15:51:00.291 [NETTY-TOMP2P - worker-client/server - -198-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.416 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x6ed61c78847988fa9c82aac5132074e99d748f18 for 0x6ed61c78847988fa9c82aac5132074e99d748f18 with [7]
+15:51:00.422 [NETTY-TOMP2P - worker-client/server - -202-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.443 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xa491f052b0671e21770f2b82a71f9d8de1c4c4fd for 0xa491f052b0671e21770f2b82a71f9d8de1c4c4fd with [7]
+15:51:00.444 [NETTY-TOMP2P - worker-client/server - -206-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.473 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x1b6bdeac869668f83af3bb562d50c1da048efcd4 for 0x1b6bdeac869668f83af3bb562d50c1da048efcd4 with [7]
+15:51:00.474 [NETTY-TOMP2P - worker-client/server - -210-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.505 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xa4688e1e56c63f3ff7e707100a7ebdbd4c3a07d2 for 0xa4688e1e56c63f3ff7e707100a7ebdbd4c3a07d2 with [7]
+15:51:00.506 [NETTY-TOMP2P - worker-client/server - -214-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.524 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x6eaaef37a3b31db775ab46eb90d97aa12d42c3b9 for 0x6eaaef37a3b31db775ab46eb90d97aa12d42c3b9 with [7]
+15:51:00.527 [NETTY-TOMP2P - worker-client/server - -218-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.580 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xa2799cd5289d9a5953a219f3b2fcda72d06ec6e5 for 0xa2799cd5289d9a5953a219f3b2fcda72d06ec6e5 with [7]
+15:51:00.582 [NETTY-TOMP2P - worker-client/server - -222-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.653 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xc29b08b67b809a8160d488636a16bdcc70093f6a for 0xc29b08b67b809a8160d488636a16bdcc70093f6a with [7]
+15:51:00.666 [NETTY-TOMP2P - worker-client/server - -226-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.693 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x379fcab282e8875f75e1adbc3f63dccf84275a25 for 0x379fcab282e8875f75e1adbc3f63dccf84275a25 with [7]
+15:51:00.700 [NETTY-TOMP2P - worker-client/server - -230-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.711 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x8b0e003cd03fa1307dc01463fc4a1a63ba2751ed for 0x8b0e003cd03fa1307dc01463fc4a1a63ba2751ed with [7]
+15:51:00.713 [NETTY-TOMP2P - worker-client/server - -234-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.733 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xbd8a1b1fa4c84a046ea9c00cf1d90bf883648c43 for 0xbd8a1b1fa4c84a046ea9c00cf1d90bf883648c43 with [7]
+15:51:00.764 [NETTY-TOMP2P - worker-client/server - -238-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.837 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xb9589992b1d83b24437d91392474b400db68b836 for 0xb9589992b1d83b24437d91392474b400db68b836 with [7]
+15:51:00.846 [NETTY-TOMP2P - worker-client/server - -242-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.892 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x93b73715acef24540418e396d70173c015190d55 for 0x93b73715acef24540418e396d70173c015190d55 with [7]
+15:51:00.898 [NETTY-TOMP2P - worker-client/server - -246-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.945 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xbb5c04bbc958c27bfa2759fe4a4e1121ea055be7 for 0xbb5c04bbc958c27bfa2759fe4a4e1121ea055be7 with [7]
+15:51:00.947 [NETTY-TOMP2P - worker-client/server - -250-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:00.997 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x4ebcd0c4f1bb1b868e148665d42ce7a4a910ecbc for 0x4ebcd0c4f1bb1b868e148665d42ce7a4a910ecbc with [7]
+15:51:01.000 [NETTY-TOMP2P - worker-client/server - -254-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.051 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x303328bbdc9acf7c7461d0ff6bb007ba86920656 for 0x303328bbdc9acf7c7461d0ff6bb007ba86920656 with [7]
+15:51:01.057 [NETTY-TOMP2P - worker-client/server - -258-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.113 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xba515e749f7363149313815f2c35b5f9b2219e42 for 0xba515e749f7363149313815f2c35b5f9b2219e42 with [7]
+15:51:01.122 [NETTY-TOMP2P - worker-client/server - -262-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.263 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xa7861f9911ea9e541cf1655e19b87c0eb84118cf for 0xa7861f9911ea9e541cf1655e19b87c0eb84118cf with [7]
+15:51:01.266 [NETTY-TOMP2P - worker-client/server - -266-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.325 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x73d7b0ab8fcba2083cbc150a148d5f6240564e88 for 0x73d7b0ab8fcba2083cbc150a148d5f6240564e88 with [7]
+15:51:01.353 [NETTY-TOMP2P - worker-client/server - -270-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.417 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xe3987a29c5fc105ad4f8ff4eb9de5bfc75f2e1c for 0xe3987a29c5fc105ad4f8ff4eb9de5bfc75f2e1c with [7]
+15:51:01.422 [NETTY-TOMP2P - worker-client/server - -274-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.466 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x25992790bdd486993e59b78e102ce68532cd8a9f for 0x25992790bdd486993e59b78e102ce68532cd8a9f with [7]
+15:51:01.470 [NETTY-TOMP2P - worker-client/server - -278-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.522 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xd1268df0075c319c5d104b7ad003cf240222c943 for 0xd1268df0075c319c5d104b7ad003cf240222c943 with [7]
+15:51:01.524 [NETTY-TOMP2P - worker-client/server - -282-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.554 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x61ac8b8fd0195bf72f8257fcfd118bfde3a27ef5 for 0x61ac8b8fd0195bf72f8257fcfd118bfde3a27ef5 with [7]
+15:51:01.561 [NETTY-TOMP2P - worker-client/server - -286-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.628 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x2603d62b22a118a29bf6cbe9acc0c2dbf3d5758e for 0x2603d62b22a118a29bf6cbe9acc0c2dbf3d5758e with [7]
+15:51:01.634 [NETTY-TOMP2P - worker-client/server - -290-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.692 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x19fccd3ee21696634fd9facdeed50a9398c55173 for 0x19fccd3ee21696634fd9facdeed50a9398c55173 with [7]
+15:51:01.713 [NETTY-TOMP2P - worker-client/server - -294-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.744 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x60e6a38fbcd6dbd56109791e44bf5b9fe94ffbd1 for 0x60e6a38fbcd6dbd56109791e44bf5b9fe94ffbd1 with [7]
+15:51:01.749 [NETTY-TOMP2P - worker-client/server - -298-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.795 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x503c307fe4b58983aefed3ae060aa7a996535ae4 for 0x503c307fe4b58983aefed3ae060aa7a996535ae4 with [7]
+15:51:01.813 [NETTY-TOMP2P - worker-client/server - -302-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.843 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x3306e72ea0884918bb0a70c276306a5becfa90e7 for 0x3306e72ea0884918bb0a70c276306a5becfa90e7 with [7]
+15:51:01.849 [NETTY-TOMP2P - worker-client/server - -306-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.881 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xf00da6e7b54dbcf47a87407ab498abf7f9114399 for 0xf00da6e7b54dbcf47a87407ab498abf7f9114399 with [7]
+15:51:01.885 [NETTY-TOMP2P - worker-client/server - -310-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.910 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x3af8177833a6f1a8d1b3136996e4667fd93d217e for 0x3af8177833a6f1a8d1b3136996e4667fd93d217e with [7]
+15:51:01.911 [NETTY-TOMP2P - worker-client/server - -314-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.919 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xb68f5d5ffa149320ccde49882388187a155e474a for 0xb68f5d5ffa149320ccde49882388187a155e474a with [7]
+15:51:01.920 [NETTY-TOMP2P - worker-client/server - -318-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.931 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x6893f4f84bf90990a62e60f93b969c9307cb1f15 for 0x6893f4f84bf90990a62e60f93b969c9307cb1f15 with [7]
+15:51:01.933 [NETTY-TOMP2P - worker-client/server - -322-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.950 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x77f6c1092c20365277f28b2862faaba9cf912440 for 0x77f6c1092c20365277f28b2862faaba9cf912440 with [7]
+15:51:01.952 [NETTY-TOMP2P - worker-client/server - -326-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.973 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x7ca3a060378f5f5f1bcf284dbf7ccf0a2fb97242 for 0x7ca3a060378f5f5f1bcf284dbf7ccf0a2fb97242 with [7]
+15:51:01.975 [NETTY-TOMP2P - worker-client/server - -330-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:01.986 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x25577f65307300088756ac6871618ae9996c79b1 for 0x25577f65307300088756ac6871618ae9996c79b1 with [7]
+15:51:01.988 [NETTY-TOMP2P - worker-client/server - -334-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.014 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xdf26a5c827d44018ab244e1bcdca3d5889147639 for 0xdf26a5c827d44018ab244e1bcdca3d5889147639 with [7]
+15:51:02.016 [NETTY-TOMP2P - worker-client/server - -338-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.070 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x553c45b4e528ce8953e1c71b0fed24449479996b for 0x553c45b4e528ce8953e1c71b0fed24449479996b with [7]
+15:51:02.071 [NETTY-TOMP2P - worker-client/server - -342-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.079 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x4c2ee1327c2a5b6b6096af135545454783f7218a for 0x4c2ee1327c2a5b6b6096af135545454783f7218a with [7]
+15:51:02.080 [NETTY-TOMP2P - worker-client/server - -346-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.091 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x30a9439cf417fcb82051651c6fc11c56edde10b5 for 0x30a9439cf417fcb82051651c6fc11c56edde10b5 with [7]
+15:51:02.092 [NETTY-TOMP2P - worker-client/server - -350-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.100 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x77e3605246acfc23b7e9614838d31287a833c02a for 0x77e3605246acfc23b7e9614838d31287a833c02a with [7]
+15:51:02.101 [NETTY-TOMP2P - worker-client/server - -354-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.108 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xf6b5b50ea343f0271825f6cf81fd5c8844e96c72 for 0xf6b5b50ea343f0271825f6cf81fd5c8844e96c72 with [7]
+15:51:02.109 [NETTY-TOMP2P - worker-client/server - -358-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.116 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xf39ba58c96b128df968658d4bd3510844ab1e2b4 for 0xf39ba58c96b128df968658d4bd3510844ab1e2b4 with [7]
+15:51:02.117 [NETTY-TOMP2P - worker-client/server - -362-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.139 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x8262f764c39f716ed92de6e9ac679581bd65fc87 for 0x8262f764c39f716ed92de6e9ac679581bd65fc87 with [7]
+15:51:02.142 [NETTY-TOMP2P - worker-client/server - -366-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.152 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xe167f03ef16981042ab6b3b7d660127d13fc66f1 for 0xe167f03ef16981042ab6b3b7d660127d13fc66f1 with [7]
+15:51:02.154 [NETTY-TOMP2P - worker-client/server - -370-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.169 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x9bf4edcf021142be3a32af72b9aec9d9f0e89a7f for 0x9bf4edcf021142be3a32af72b9aec9d9f0e89a7f with [7]
+15:51:02.170 [NETTY-TOMP2P - worker-client/server - -374-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.195 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x96026e4115c4e9f224ff3101b41565d22155bd97 for 0x96026e4115c4e9f224ff3101b41565d22155bd97 with [7]
+15:51:02.197 [NETTY-TOMP2P - worker-client/server - -378-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.217 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x6010b8f0ebb5a8b1f73e94078724b510fa30b76d for 0x6010b8f0ebb5a8b1f73e94078724b510fa30b76d with [7]
+15:51:02.225 [NETTY-TOMP2P - worker-client/server - -382-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.313 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x44507aaaf58a6077761697301ffa429d4447d14e for 0x44507aaaf58a6077761697301ffa429d4447d14e with [7]
+15:51:02.325 [NETTY-TOMP2P - worker-client/server - -386-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.373 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xae8c05c5cf33d9652338e5657e9f22be4a633512 for 0xae8c05c5cf33d9652338e5657e9f22be4a633512 with [7]
+15:51:02.378 [NETTY-TOMP2P - worker-client/server - -390-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.406 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x6e8a4dd547128282168d0ddbb5924e845d4832f8 for 0x6e8a4dd547128282168d0ddbb5924e845d4832f8 with [7]
+15:51:02.408 [NETTY-TOMP2P - worker-client/server - -394-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.474 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xa86077c71fee85c97061f223ba3d8a0c54c7ce40 for 0xa86077c71fee85c97061f223ba3d8a0c54c7ce40 with [7]
+15:51:02.475 [NETTY-TOMP2P - worker-client/server - -398-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.539 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xc112c2a46111a5180080ae91b87e25cd79f06f32 for 0xc112c2a46111a5180080ae91b87e25cd79f06f32 with [7]
+15:51:02.545 [NETTY-TOMP2P - worker-client/server - -402-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.571 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x92e3f252271af1376ac708bf754d8163a1f2127e for 0x92e3f252271af1376ac708bf754d8163a1f2127e with [7]
+15:51:02.574 [NETTY-TOMP2P - worker-client/server - -406-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.593 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x6f40150430eb8a8c56e4d0fc456f1eb397b5b116 for 0x6f40150430eb8a8c56e4d0fc456f1eb397b5b116 with [7]
+15:51:02.594 [NETTY-TOMP2P - worker-client/server - -410-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.625 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x8d77c54420a24b43e25a2edc71bade64ca2438ec for 0x8d77c54420a24b43e25a2edc71bade64ca2438ec with [7]
+15:51:02.630 [NETTY-TOMP2P - worker-client/server - -414-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.649 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x5411bdb11c440cea242ed64af8a5baf92e3a1643 for 0x5411bdb11c440cea242ed64af8a5baf92e3a1643 with [7]
+15:51:02.651 [NETTY-TOMP2P - worker-client/server - -418-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.682 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xf99600e9905d3fd2e33071c9589e9618b7834e6a for 0xf99600e9905d3fd2e33071c9589e9618b7834e6a with [7]
+15:51:02.684 [NETTY-TOMP2P - worker-client/server - -422-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.707 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x454ecf3ce42e50b452ec77cd87c87bbdd185581f for 0x454ecf3ce42e50b452ec77cd87c87bbdd185581f with [7]
+15:51:02.708 [NETTY-TOMP2P - worker-client/server - -426-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.736 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x1abd7516cdf9f16e82c4f44606d9b1686ea182f4 for 0x1abd7516cdf9f16e82c4f44606d9b1686ea182f4 with [7]
+15:51:02.754 [NETTY-TOMP2P - worker-client/server - -430-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.766 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xe80b784a23be53d2b91cdce086ad0b8ed9e9ae5b for 0xe80b784a23be53d2b91cdce086ad0b8ed9e9ae5b with [7]
+15:51:02.770 [NETTY-TOMP2P - worker-client/server - -434-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.794 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xa77a1f95d4f0d1d9663e1d83b077e9d046349a50 for 0xa77a1f95d4f0d1d9663e1d83b077e9d046349a50 with [7]
+15:51:02.796 [NETTY-TOMP2P - worker-client/server - -438-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+15:51:02.811 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0x3f5b8f1e9116ecc3ba5efc0de58df2c176550eb8 for 0x3f5b8f1e9116ecc3ba5efc0de58df2c176550eb8 with [7]
+15:51:02.812 [NETTY-TOMP2P - worker-client/server - -442-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+Starting test: testPeerConnection
+15:51:02.843 [main] WARN  net.tomp2p.p2p.TestRelay - registering 0xe5e90dc120950ce188d58d6ae717c24fc0c3c3ec for 0xe5e90dc120950ce188d58d6ae717c24fc0c3c3ec with [7]
+15:51:02.849 [NETTY-TOMP2P - worker-client/server - -446-5] WARN  net.tomp2p.p2p.TestRelay - handling response, object reply is true
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.504 sec - in net.tomp2p.p2p.TestRelay
+Running net.tomp2p.p2p.TestConnection
+Starting test: test
+send Hello
+received world! connections: 1
+send Hello
+received world! connections: 1
+Send and get in s:0.011
+done
+done1
+done2
+Starting test: testPermanentConnection
+done
+done1
+done2
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 sec - in net.tomp2p.p2p.TestConnection
+Running net.tomp2p.p2p.TestBootstrap
+Starting test: testBootstrap
+Starting test: testBootstrapDiscover
+Starting test: testBootstrapFail
+15:51:09.932 [NETTY-TOMP2P - worker-client/server - -462-5] WARN  net.tomp2p.connection.Sender - Channel creation failed
+java.net.ConnectException: Connection refused: /127.0.0.1:3000
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_121]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_121]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:225) ~[netty-transport-4.1.0.CR7.jar:4.1.0.CR7]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:353) ~[netty-transport-4.1.0.CR7.jar:4.1.0.CR7]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:544) [netty-transport-4.1.0.CR7.jar:4.1.0.CR7]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:484) [netty-transport-4.1.0.CR7.jar:4.1.0.CR7]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:398) [netty-transport-4.1.0.CR7.jar:4.1.0.CR7]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:370) [netty-transport-4.1.0.CR7.jar:4.1.0.CR7]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:742) [netty-common-4.1.0.CR7.jar:4.1.0.CR7]
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:145) [netty-common-4.1.0.CR7.jar:4.1.0.CR7]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+15:51:09.949 [NETTY-TOMP2P - worker-client/server - -462-5] WARN  net.tomp2p.connection.Sender - Faild message msgid=-1978059371,t=REQUEST_1,c=PING,tcp,s=paddr[/172.17.0.7:t4001/u4001/d0{}r:0()0xba419d350dfe8af7aee7bbe10c45c0284f083ce4],r=paddr[/127.0.0.1:t3000/u3000/d0u!t!d!{}r:0()0x]
+Starting test: testBootstrap2
+Starting test: testBootstrap5
+Starting test: testBootstrap6
+Starting test: testBootstrap7
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.363 sec - in net.tomp2p.p2p.TestBootstrap
+Running net.tomp2p.p2p.real.TestIPv6
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.002 sec - in net.tomp2p.p2p.real.TestIPv6
+Running net.tomp2p.p2p.real.TestShutdown
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.004 sec - in net.tomp2p.p2p.real.TestShutdown
+Running net.tomp2p.p2p.TestStatistics
+Starting test: testCountPeers1
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.106 sec - in net.tomp2p.p2p.TestStatistics
+Running net.tomp2p.p2p.TestRouting
+Starting test: testMerge
+Starting test: testRoutingBootstrap1
+Starting test: testPerfectRouting
+Starting test: testRoutingConcurrently
+Starting test: testRoutingDirectHit
+Starting test: testRouting1
+Starting test: testRouting3
+Starting test: testRouting4
+Starting test: testRouting5
+Starting test: testEvaluate
+Starting test: testRoutingDeadPeer
+15:53:58.374 [main] ERROR net.tomp2p.p2p.TestRouting - round 0
+15:53:58.470 [main] ERROR net.tomp2p.p2p.TestRouting - await!
+15:54:03.481 [main] ERROR net.tomp2p.p2p.TestRouting - await done
+15:54:03.481 [main] ERROR net.tomp2p.p2p.TestRouting - done!
+15:54:03.481 [main] ERROR net.tomp2p.p2p.TestRouting - finally!
+15:54:03.492 [main] ERROR net.tomp2p.p2p.TestRouting - round 1
+15:54:03.502 [main] ERROR net.tomp2p.p2p.TestRouting - await!
+15:54:08.509 [main] ERROR net.tomp2p.p2p.TestRouting - await done
+15:54:08.509 [main] ERROR net.tomp2p.p2p.TestRouting - done!
+15:54:08.509 [main] ERROR net.tomp2p.p2p.TestRouting - finally!
+Starting test: testRoutingBulk
+Starting test: testRoutingLoop
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 177.804 sec - in net.tomp2p.p2p.TestRouting
+Running net.tomp2p.p2p.TestRTTRoutingComparator
+Starting test: testQueueToAskOrder
+Starting test: testRouting
+Starting test: testEquality
+Starting test: testUnequality
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in net.tomp2p.p2p.TestRTTRoutingComparator
+Running net.tomp2p.utils.TestUtils
+Starting test: testDifference1
+Starting test: testDifference2
+Starting test: testDifference3
+Starting test: testDifference4
+Starting test: testDifference5
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in net.tomp2p.utils.TestUtils
+Running net.tomp2p.utils.TestConcurrentCacheMap
+Starting test: testCache
+Starting test: testCache3multi
+waitfor: 1338
+TestCache: expected: 799, got: 799, failed: false - expired 1, inserts: 800/800, threads: 49
+NETTY-TOMP2P - worker-client/server - -4-1
+NETTY-TOMP2P - boss - -5-1
+pool-3-thread-1
+Reference Handler
+NETTY-TOMP2P - worker-client/server - -8-1
+NETTY-TOMP2P - worker-client/server - -6-3
+NETTY-TOMP2P - worker-client/server - -1-3
+NETTY-TOMP2P - worker-client/server - -1-2
+NETTY-TOMP2P - worker-client/server - -8-7
+NETTY-TOMP2P - worker-client/server - -1-4
+NETTY-TOMP2P - worker-client/server - -1-8
+NETTY-TOMP2P - worker-client/server - -6-6
+pool-2-thread-1
+NETTY-TOMP2P - boss - -7-1
+pool-8-thread-1
+NETTY-TOMP2P - boss - -5-2
+NETTY-TOMP2P - worker-client/server - -4-3
+pool-6-thread-1
+NETTY-TOMP2P - worker-client/server - -4-4
+NETTY-TOMP2P - worker-client/server - -6-7
+NETTY-TOMP2P - worker-client/server - -6-4
+main
+NETTY-TOMP2P - worker-client/server - -4-2
+NETTY-TOMP2P - worker-client/server - -4-5
+NETTY-TOMP2P - boss - -3-2
+NETTY-TOMP2P - worker-client/server - -8-3
+NETTY-TOMP2P - worker-client/server - -4-7
+NETTY-TOMP2P - worker-client/server - -8-4
+pool-1-thread-1
+NETTY-TOMP2P - boss - -9-1
+NETTY-TOMP2P - worker-client/server - -6-1
+pool-4-thread-1
+NETTY-TOMP2P - worker-client/server - -8-2
+NETTY-TOMP2P - worker-client/server - -6-8
+NETTY-TOMP2P - worker-client/server - -8-5
+NETTY-TOMP2P - worker-client/server - -1-6
+Finalizer
+NETTY-TOMP2P - boss - -9-2
+pool-5-thread-1
+NETTY-TOMP2P - boss - -7-2
+pool-7-thread-1
+NETTY-TOMP2P - worker-client/server - -4-6
+NETTY-TOMP2P - boss - -3-1
+NETTY-TOMP2P - worker-client/server - -1-7
+NETTY-TOMP2P - worker-client/server - -4-8
+NETTY-TOMP2P - worker-client/server - -1-5
+NETTY-TOMP2P - worker-client/server - -1-1
+NETTY-TOMP2P - worker-client/server - -8-8
+NETTY-TOMP2P - worker-client/server - -6-5
+NETTY-TOMP2P - worker-client/server - -6-2
+Signal Dispatcher
+NETTY-TOMP2P - worker-client/server - -8-6
+waitfor: 1803
+TestCache: expected: 799, got: 799, failed: false - expired 1, inserts: 800/800, threads: 49
+NETTY-TOMP2P - worker-client/server - -4-1
+NETTY-TOMP2P - boss - -5-1
+pool-3-thread-1
+Reference Handler
+NETTY-TOMP2P - worker-client/server - -8-1
+NETTY-TOMP2P - worker-client/server - -6-3
+NETTY-TOMP2P - worker-client/server - -1-3
+NETTY-TOMP2P - worker-client/server - -1-2
+NETTY-TOMP2P - worker-client/server - -8-7
+NETTY-TOMP2P - worker-client/server - -1-4
+NETTY-TOMP2P - worker-client/server - -1-8
+NETTY-TOMP2P - worker-client/server - -6-6
+pool-2-thread-1
+NETTY-TOMP2P - boss - -7-1
+pool-8-thread-1
+NETTY-TOMP2P - boss - -5-2
+NETTY-TOMP2P - worker-client/server - -4-3
+pool-6-thread-1
+NETTY-TOMP2P - worker-client/server - -4-4
+NETTY-TOMP2P - worker-client/server - -6-7
+NETTY-TOMP2P - worker-client/server - -6-4
+main
+NETTY-TOMP2P - worker-client/server - -4-2
+NETTY-TOMP2P - worker-client/server - -4-5
+NETTY-TOMP2P - boss - -3-2
+NETTY-TOMP2P - worker-client/server - -8-3
+NETTY-TOMP2P - worker-client/server - -4-7
+NETTY-TOMP2P - worker-client/server - -8-4
+pool-1-thread-1
+NETTY-TOMP2P - boss - -9-1
+NETTY-TOMP2P - worker-client/server - -6-1
+pool-4-thread-1
+NETTY-TOMP2P - worker-client/server - -8-2
+NETTY-TOMP2P - worker-client/server - -6-8
+NETTY-TOMP2P - worker-client/server - -8-5
+NETTY-TOMP2P - worker-client/server - -1-6
+Finalizer
+NETTY-TOMP2P - boss - -9-2
+pool-5-thread-1
+NETTY-TOMP2P - boss - -7-2
+pool-7-thread-1
+NETTY-TOMP2P - worker-client/server - -4-6
+NETTY-TOMP2P - boss - -3-1
+NETTY-TOMP2P - worker-client/server - -1-7
+NETTY-TOMP2P - worker-client/server - -4-8
+NETTY-TOMP2P - worker-client/server - -1-5
+NETTY-TOMP2P - worker-client/server - -1-1
+NETTY-TOMP2P - worker-client/server - -8-8
+NETTY-TOMP2P - worker-client/server - -6-5
+NETTY-TOMP2P - worker-client/server - -6-2
+Signal Dispatcher
+NETTY-TOMP2P - worker-client/server - -8-6
+waitfor: 2429
+TestCache: expected: 799, got: 799, failed: false - expired 1, inserts: 800/800, threads: 50
+NETTY-TOMP2P - worker-client/server - -4-1
+NETTY-TOMP2P - boss - -5-1
+pool-3-thread-1
+globalEventExecutor-2-167
+Reference Handler
+NETTY-TOMP2P - worker-client/server - -8-1
+NETTY-TOMP2P - worker-client/server - -6-3
+NETTY-TOMP2P - worker-client/server - -1-3
+NETTY-TOMP2P - worker-client/server - -1-2
+NETTY-TOMP2P - worker-client/server - -8-7
+NETTY-TOMP2P - worker-client/server - -1-4
+NETTY-TOMP2P - worker-client/server - -1-8
+NETTY-TOMP2P - worker-client/server - -6-6
+pool-2-thread-1
+NETTY-TOMP2P - boss - -7-1
+pool-8-thread-1
+NETTY-TOMP2P - boss - -5-2
+NETTY-TOMP2P - worker-client/server - -4-3
+pool-6-thread-1
+NETTY-TOMP2P - worker-client/server - -4-4
+NETTY-TOMP2P - worker-client/server - -6-7
+NETTY-TOMP2P - worker-client/server - -6-4
+main
+NETTY-TOMP2P - worker-client/server - -4-2
+NETTY-TOMP2P - worker-client/server - -4-5
+NETTY-TOMP2P - boss - -3-2
+NETTY-TOMP2P - worker-client/server - -8-3
+NETTY-TOMP2P - worker-client/server - -4-7
+NETTY-TOMP2P - worker-client/server - -8-4
+pool-1-thread-1
+NETTY-TOMP2P - boss - -9-1
+NETTY-TOMP2P - worker-client/server - -6-1
+pool-4-thread-1
+NETTY-TOMP2P - worker-client/server - -8-2
+NETTY-TOMP2P - worker-client/server - -6-8
+NETTY-TOMP2P - worker-client/server - -8-5
+NETTY-TOMP2P - worker-client/server - -1-6
+Finalizer
+NETTY-TOMP2P - boss - -9-2
+pool-5-thread-1
+NETTY-TOMP2P - boss - -7-2
+pool-7-thread-1
+NETTY-TOMP2P - worker-client/server - -4-6
+NETTY-TOMP2P - boss - -3-1
+NETTY-TOMP2P - worker-client/server - -1-7
+NETTY-TOMP2P - worker-client/server - -4-8
+NETTY-TOMP2P - worker-client/server - -1-5
+NETTY-TOMP2P - worker-client/server - -1-1
+NETTY-TOMP2P - worker-client/server - -8-8
+NETTY-TOMP2P - worker-client/server - -6-5
+NETTY-TOMP2P - worker-client/server - -6-2
+Signal Dispatcher
+NETTY-TOMP2P - worker-client/server - -8-6
+waitfor: 1614
+TestCache: expected: 799, got: 799, failed: false - expired 1, inserts: 800/800, threads: 49
+NETTY-TOMP2P - worker-client/server - -4-1
+NETTY-TOMP2P - boss - -5-1
+pool-3-thread-1
+Reference Handler
+NETTY-TOMP2P - worker-client/server - -8-1
+NETTY-TOMP2P - worker-client/server - -6-3
+NETTY-TOMP2P - worker-client/server - -1-3
+NETTY-TOMP2P - worker-client/server - -1-2
+NETTY-TOMP2P - worker-client/server - -8-7
+NETTY-TOMP2P - worker-client/server - -1-4
+NETTY-TOMP2P - worker-client/server - -1-8
+NETTY-TOMP2P - worker-client/server - -6-6
+pool-2-thread-1
+NETTY-TOMP2P - boss - -7-1
+pool-8-thread-1
+NETTY-TOMP2P - boss - -5-2
+NETTY-TOMP2P - worker-client/server - -4-3
+pool-6-thread-1
+NETTY-TOMP2P - worker-client/server - -4-4
+NETTY-TOMP2P - worker-client/server - -6-7
+NETTY-TOMP2P - worker-client/server - -6-4
+main
+NETTY-TOMP2P - worker-client/server - -4-2
+NETTY-TOMP2P - worker-client/server - -4-5
+NETTY-TOMP2P - boss - -3-2
+NETTY-TOMP2P - worker-client/server - -8-3
+NETTY-TOMP2P - worker-client/server - -4-7
+NETTY-TOMP2P - worker-client/server - -8-4
+pool-1-thread-1
+NETTY-TOMP2P - boss - -9-1
+NETTY-TOMP2P - worker-client/server - -6-1
+pool-4-thread-1
+NETTY-TOMP2P - worker-client/server - -8-2
+NETTY-TOMP2P - worker-client/server - -6-8
+NETTY-TOMP2P - worker-client/server - -8-5
+NETTY-TOMP2P - worker-client/server - -1-6
+Finalizer
+NETTY-TOMP2P - boss - -9-2
+pool-5-thread-1
+NETTY-TOMP2P - boss - -7-2
+pool-7-thread-1
+NETTY-TOMP2P - worker-client/server - -4-6
+NETTY-TOMP2P - boss - -3-1
+NETTY-TOMP2P - worker-client/server - -1-7
+NETTY-TOMP2P - worker-client/server - -4-8
+NETTY-TOMP2P - worker-client/server - -1-5
+NETTY-TOMP2P - worker-client/server - -1-1
+NETTY-TOMP2P - worker-client/server - -8-8
+NETTY-TOMP2P - worker-client/server - -6-5
+NETTY-TOMP2P - worker-client/server - -6-2
+Signal Dispatcher
+NETTY-TOMP2P - worker-client/server - -8-6
+waitfor: 1864
+TestCache: expected: 799, got: 799, failed: false - expired 1, inserts: 800/800, threads: 49
+NETTY-TOMP2P - worker-client/server - -4-1
+NETTY-TOMP2P - boss - -5-1
+pool-3-thread-1
+Reference Handler
+NETTY-TOMP2P - worker-client/server - -8-1
+NETTY-TOMP2P - worker-client/server - -6-3
+NETTY-TOMP2P - worker-client/server - -1-3
+NETTY-TOMP2P - worker-client/server - -1-2
+NETTY-TOMP2P - worker-client/server - -8-7
+NETTY-TOMP2P - worker-client/server - -1-4
+NETTY-TOMP2P - worker-client/server - -1-8
+NETTY-TOMP2P - worker-client/server - -6-6
+pool-2-thread-1
+NETTY-TOMP2P - boss - -7-1
+pool-8-thread-1
+NETTY-TOMP2P - boss - -5-2
+NETTY-TOMP2P - worker-client/server - -4-3
+pool-6-thread-1
+NETTY-TOMP2P - worker-client/server - -4-4
+NETTY-TOMP2P - worker-client/server - -6-7
+NETTY-TOMP2P - worker-client/server - -6-4
+main
+NETTY-TOMP2P - worker-client/server - -4-2
+NETTY-TOMP2P - worker-client/server - -4-5
+NETTY-TOMP2P - boss - -3-2
+NETTY-TOMP2P - worker-client/server - -8-3
+NETTY-TOMP2P - worker-client/server - -4-7
+NETTY-TOMP2P - worker-client/server - -8-4
+pool-1-thread-1
+NETTY-TOMP2P - boss - -9-1
+NETTY-TOMP2P - worker-client/server - -6-1
+pool-4-thread-1
+NETTY-TOMP2P - worker-client/server - -8-2
+NETTY-TOMP2P - worker-client/server - -6-8
+NETTY-TOMP2P - worker-client/server - -8-5
+NETTY-TOMP2P - worker-client/server - -1-6
+Finalizer
+NETTY-TOMP2P - boss - -9-2
+pool-5-thread-1
+NETTY-TOMP2P - boss - -7-2
+pool-7-thread-1
+NETTY-TOMP2P - worker-client/server - -4-6
+NETTY-TOMP2P - boss - -3-1
+NETTY-TOMP2P - worker-client/server - -1-7
+NETTY-TOMP2P - worker-client/server - -4-8
+NETTY-TOMP2P - worker-client/server - -1-5
+NETTY-TOMP2P - worker-client/server - -1-1
+NETTY-TOMP2P - worker-client/server - -8-8
+NETTY-TOMP2P - worker-client/server - -6-5
+NETTY-TOMP2P - worker-client/server - -6-2
+Signal Dispatcher
+NETTY-TOMP2P - worker-client/server - -8-6
+Starting test: testIteratorKey
+Starting test: testIteratorValue
+Starting test: testCache2
+Starting test: testCache4
+Starting test: testCache5
+Starting test: testCache6
+Starting test: testCache7
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.737 sec - in net.tomp2p.utils.TestConcurrentCacheMap
+Running net.tomp2p.utils.TestConcurrentCacheSet
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.007 sec - in net.tomp2p.utils.TestConcurrentCacheSet
+Running net.tomp2p.message.TestMessageHeaderCodec
+Starting test: testContentTypeCodec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in net.tomp2p.message.TestMessageHeaderCodec
+Running net.tomp2p.message.TestMessage
+Starting test: testBigDataSigned
+Starting test: testNumber160Conversion
+Starting test: testEncodeDecode480Set
+Starting test: serializationTest
+Starting test: testRelay
+Starting test: testSize
+Starting test: testRelayAddresses1
+Starting test: serializationTestFail
+Starting test: compositeBufferTest1
+Starting test: compositeBufferTest2
+Starting test: testBigData
+Starting test: testSlowFlag
+Starting test: testEncodeDecode
+Starting test: testEncodeDecode2
+Starting test: testEncodeDecode3
+Starting test: testEncodeDecode4
+Starting test: testEncodeDecode5
+Starting test: testEncodeDecode6
+Starting test: testEncodeDecode7
+Starting test: testEncodeDecode480MapRep
+Starting test: testEncodeDecode480MapReq
+Starting test: testInternalPeerSocket
+Starting test: testRelay2
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.279 sec - in net.tomp2p.message.TestMessage
+Running net.tomp2p.connection.TestReservation
+Starting test: testReservationTCP
+started tcp: true, started udp: true
+Starting test: testReservationUDP
+started tcp: true, started udp: true
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.662 sec - in net.tomp2p.connection.TestReservation
+Running net.tomp2p.futures.TestFutures
+Starting test: testPerformanceSingle
+XOR performance: single-thread: 1967ms
+==> number160s[0]=0x3a0ac19675d590bfec23b59216f165de6ab1241a
+==> number160s[1]=0x8856ac153941fd822c733e2089024599ea6ee08e
+==> number160s[2]=0x8080f1974b74b475726de04756668732af06ec52
+==> number160s[3]=0xcc7ba019e1651d66decb701915801e5232c2add
+==> number160s[4]=0xe4bd2364859474ffdc2e4ac05676e67a14daba82
+==> number160s[5]=0xdf66e77bedc5e5435995c98e630c98b7d591032a
+==> number160s[6]=0x4451c20ff93ba1ea2c36017c74688c3077bd78a1
+==> number160s[7]=0x43ed08030cbcd5241b6411f55d7be0fbbe8a8843
+==> number160s[8]=0x30f808aa1f2c8f0e4afbd3b77f82984e5ed4bc8d
+==> number160s[9]=0x5b3d5ec4e98123df8126023dc0c95805ebe660bd
+Starting test: testPerformanceMulti
+XOR performance: multi-thread: 1028ms
+==> number160s[0]=0x3a0ac19675d590bfec23b59216f165de6ab1241a
+==> number160s[1]=0x8856ac153941fd822c733e2089024599ea6ee08e
+==> number160s[2]=0x8080f1974b74b475726de04756668732af06ec52
+==> number160s[3]=0xcc7ba019e1651d66decb701915801e5232c2add
+==> number160s[4]=0xe4bd2364859474ffdc2e4ac05676e67a14daba82
+==> number160s[5]=0xdf66e77bedc5e5435995c98e630c98b7d591032a
+==> number160s[6]=0x4451c20ff93ba1ea2c36017c74688c3077bd78a1
+==> number160s[7]=0x43ed08030cbcd5241b6411f55d7be0fbbe8a8843
+==> number160s[8]=0x30f808aa1f2c8f0e4afbd3b77f82984e5ed4bc8d
+==> number160s[9]=0x5b3d5ec4e98123df8126023dc0c95805ebe660bd
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.998 sec - in net.tomp2p.futures.TestFutures
+Running net.tomp2p.peers.TestFilter
+Starting test: testIPv4Filter1
+Starting test: testIPv4Filter2
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in net.tomp2p.peers.TestFilter
+Running net.tomp2p.peers.TestNumber160
+Starting test: testPerformance
+Starting test: testPerformance2
+Starting test: testSerialization
+Starting test: testXor
+Starting test: testFloat
+Starting test: testLong
+Starting test: testFromInt
+Starting test: testFromIntArray
+Starting test: testRandomXor
+Starting test: testBitLength
+Starting test: testDouble
+Starting test: testIsZero
+Starting test: testFromString
+Starting test: testLength
+Starting test: testFromByteArray
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.014 sec - in net.tomp2p.peers.TestNumber160
+Running net.tomp2p.peers.TestIP
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in net.tomp2p.peers.TestIP
+Running net.tomp2p.peers.TestPeerMap
+Starting test: testPerformance
+Starting test: testAddNode
+Starting test: testRemoveConcurrent
+Starting test: testClose
+Starting test: testOrder
+Starting test: testAdd1
+Starting test: testAdd2
+Starting test: testAddNode2
+Starting test: testMaintenance
+Starting test: testRandomAddRemove
+Starting test: testAddConcurrent
+Starting test: testCloser2
+Starting test: testMultiRandomAddRemove
+Starting test: testDifference
+Starting test: testCloser
+Starting test: testLength
+Starting test: testRemove
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.161 sec - in net.tomp2p.peers.TestPeerMap
+Running net.tomp2p.peers.TestPeerAddress
+Starting test: testLongConversion
+Starting test: testIPv6Coding
+Starting test: testPeerAddress
+Starting test: testPeerAddress2
+Starting test: testPeerAddress3
+Starting test: testPeerAddress4
+Starting test: testPeerAddress5
+Starting test: testPeerAddress6
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in net.tomp2p.peers.TestPeerAddress
+Running net.tomp2p.rpc.TestRealPing
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0 sec - in net.tomp2p.rpc.TestRealPing
+Running net.tomp2p.rpc.TestPing
+Starting test: testPingTCPPool
+Starting test: testPingReserveLoop
+Starting test: testPingTCP
+Starting test: testPingUDP
+Starting test: testPingTCPPool2
+Starting test: testPingTCP2
+Starting test: testPingTime
+TCP time: 776
+UDP time: 329
+Starting test: testPingHandlerFailure
+Starting test: testPingTCPDeadLock2
+Starting test: testPingHandlerError
+Starting test: testPingReserve
+Starting test: testPingTimeoutTCP
+Starting test: testPingTimeoutUDP
+Tests run: 13, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 34.278 sec <<< FAILURE! - in net.tomp2p.rpc.TestPing
+testPingReserveLoop(net.tomp2p.rpc.TestPing)  Time elapsed: 0.039 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at net.tomp2p.connection.Connect.connectTCP(Connect.java:120)
+	at net.tomp2p.connection.RequestHandler.sendTCP(RequestHandler.java:247)
+	at net.tomp2p.connection.RequestHandler.sendTCP(RequestHandler.java:242)
+	at net.tomp2p.rpc.PingRPC.pingTCP(PingRPC.java:140)
+	at net.tomp2p.rpc.TestPing.testPingReserve(TestPing.java:460)
+	at net.tomp2p.rpc.TestPing.testPingReserveLoop(TestPing.java:440)
+
+testPingReserve(net.tomp2p.rpc.TestPing)  Time elapsed: 0.014 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at net.tomp2p.connection.Connect.connectTCP(Connect.java:120)
+	at net.tomp2p.connection.RequestHandler.sendTCP(RequestHandler.java:247)
+	at net.tomp2p.connection.RequestHandler.sendTCP(RequestHandler.java:242)
+	at net.tomp2p.rpc.PingRPC.pingTCP(PingRPC.java:140)
+	at net.tomp2p.rpc.TestPing.testPingReserve(TestPing.java:460)
+
+testPingTimeoutTCP(net.tomp2p.rpc.TestPing)  Time elapsed: 11.018 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<true> but was:<false>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at net.tomp2p.rpc.TestPing.testPingTimeoutTCP(TestPing.java:228)
+
+testPingTimeoutUDP(net.tomp2p.rpc.TestPing)  Time elapsed: 10.007 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<true> but was:<false>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at net.tomp2p.rpc.TestPing.testPingTimeoutUDP(TestPing.java:293)
+
+Running net.tomp2p.rpc.TestDirect
+Starting test: testOrder
+Starting test: testDirectReconnect
+Starting test: testDirect2
+15:56:10.967 [NETTY-TOMP2P - worker-client/server - -5620-5] WARN  net.tomp2p.connection.RequestHandler - Got exception, but ignored it. (FutureResponse completed.): Future (compl/canc):true/, OK, OK.
+request 2
+done
+Starting test: testDirectMessage1
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.477 sec - in net.tomp2p.rpc.TestDirect
+Running net.tomp2p.rpc.TestBloomFilter
+Starting test: testEmptyBloomfilter
+Starting test: intersect1
+Starting test: testFullBloomfilter
+15:56:16.017 [main] WARN  net.tomp2p.rpc.SimpleBloomFilter - Bit size too small for storing all expected elements. For optimum result increase byteArraySize to 3.0981640079170456E9
+Starting test: testCountingBloomFilter
+Starting test: testOneBloomfilter1
+Starting test: testOneBloomfilter2
+Starting test: intersect
+Starting test: testCountingBloomFilter2
+0.9999546000702375
+Starting test: testCountingBloomFilter3
+Starting test: testBloomfilter
+15:56:16.100 [main] WARN  net.tomp2p.rpc.SimpleBloomFilter - Bit size too small for storing all expected elements. For optimum result increase byteArraySize to 1442.6950408889634
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.09 sec - in net.tomp2p.rpc.TestBloomFilter
+Running net.tomp2p.rpc.TestNeighbor
+Starting test: testNeigbhorTCP
+Starting test: testNeigbhorFail
+Starting test: testNeigbhor2
+Starting test: testNeigbhor
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 sec - in net.tomp2p.rpc.TestNeighbor
+Running net.tomp2p.rpc.TestReservation
+Starting test: testReservationTCP
+Starting test: testReservationUDP
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.906 sec - in net.tomp2p.rpc.TestReservation
+
+Results :
+
+Failed tests:
+  TestPing.testPingTimeoutTCP:228 expected:<true> but was:<false>
+  TestPing.testPingTimeoutUDP:293 expected:<true> but was:<false>
+Tests in error:
+  TestPing.testPingReserve:460 » NullPointer
+  TestPing.testPingReserveLoop:440->testPingReserve:460 » NullPointer
+
+Tests run: 187, Failures: 2, Errors: 2, Skipped: 7
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO]
+[INFO] TomP2P ............................................. SUCCESS [  0.478 s]
+[INFO] TomP2P Core ........................................ FAILURE [05:36 min]
+[INFO] TomP2P DHT ......................................... SKIPPED
+[INFO] TomP2P Replication ................................. SKIPPED
+[INFO] TomP2P NAT ......................................... SKIPPED
+[INFO] TomP2P Storage ..................................... SKIPPED
+[INFO] TomP2P Tracker ..................................... SKIPPED
+[INFO] TomP2P All-in-One .................................. SKIPPED
+[INFO] TomP2P Examples .................................... SKIPPED
+[INFO] TomP2P Social ...................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 05:38 min
+[INFO] Finished at: 2017-04-05T15:56:19+02:00
+[INFO] Final Memory: 20M/356M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.18.1:test (default-test) on project tomp2p-core: There are test failures.
+[ERROR]
+[ERROR] Please refer to /root/workspace/tomp2p/TomP2P/218797966/core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :tomp2p-core
