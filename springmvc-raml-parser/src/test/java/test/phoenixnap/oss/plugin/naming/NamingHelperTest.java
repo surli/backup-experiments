@@ -57,6 +57,26 @@ public class NamingHelperTest {
 	}
 
 	@Test
+	public void test_getAllResourcesNames_Success() {
+		RamlResource testResource = RamlModelFactoryOfFactories.createRamlModelFactoryV08().createRamlResource();
+
+		testResource.setParentUri("/services");
+		testResource.setRelativeUri("/things");
+
+		assertEquals("Should deal with unlimited depth", "ServicesThings", NamingHelper.getAllResourcesNames(testResource, false, -1));
+		assertEquals("Should deal with unlimited depth and singularization", "ServiceThing", NamingHelper.getAllResourcesNames(testResource, true, -1));
+		assertEquals("Should deal with depth=1", "Things", NamingHelper.getAllResourcesNames(testResource, false, 1));
+		assertEquals("Should deal with depth=1 and singularization", "Thing", NamingHelper.getAllResourcesNames(testResource, true, 1));
+		assertEquals("Should deal with depth=2", "ServicesThings", NamingHelper.getAllResourcesNames(testResource, false, 2));
+		assertEquals("Should deal with depth=2 and singularization", "ServiceThing", NamingHelper.getAllResourcesNames(testResource, true, 2));
+
+		testResource.setRelativeUri("/things/quotes");
+
+		assertEquals("Should deal with unlimited depth", "ServicesThingsQuotes", NamingHelper.getAllResourcesNames(testResource, false, -1));
+		assertEquals("Should deal with unlimited depth and singularization", "ServiceThingQuote", NamingHelper.getAllResourcesNames(testResource, true, -1));
+	}
+
+	@Test
 	public void test_cleanLeadingAndTrailingNewLineAndChars_Empty() {
 		assertEquals("EmptyString", "", NamingHelper.cleanLeadingAndTrailingNewLineAndChars(""));
 		assertEquals("Null", null, NamingHelper.cleanLeadingAndTrailingNewLineAndChars(null));
