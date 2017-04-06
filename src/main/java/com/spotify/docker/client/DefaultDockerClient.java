@@ -702,7 +702,7 @@ public class DefaultDockerClient implements DockerClient, Closeable {
   }
 
   @Override
-  public void killContainer(final String containerId, final TerminationSignals signal)
+  public void killContainer(final String containerId, final TerminationSignal signal)
       throws DockerException, InterruptedException {
     checkNotNull(containerId, "containerId");
 
