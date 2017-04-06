@@ -72,6 +72,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static com.facebook.presto.spi.predicate.TupleDomain.extractFixedValues;
 import static com.facebook.presto.sql.planner.SystemPartitioningHandle.FIXED_ARBITRARY_DISTRIBUTION;
@@ -84,6 +85,7 @@ import static com.facebook.presto.util.ImmutableCollectors.toImmutableSet;
 import static com.google.common.base.MoreObjects.toStringHelper;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
+import static com.google.common.base.Verify.verify;
 import static java.util.Objects.requireNonNull;
 
 final class StreamPropertyDerivations
@@ -117,8 +119,19 @@ final class StreamPropertyDerivations
                 types,
                 parser);
 
-        return node.accept(new Visitor(metadata, session), inputProperties)
+        StreamProperties result = node.accept(new Visitor(metadata, session), inputProperties)
                 .withOtherActualProperties(otherProperties);
+
+        result.getPartitioningColumns().ifPresent(columns ->
+                verify(node.getOutputSymbols().containsAll(columns), "Stream-level partitioning properties contain columns not present in node's output"));
+
+        List<Symbol> localPropertyColumns = result.getLocalProperties().stream()
+                .flatMap(property -> property.getColumns().stream())
+                .collect(Collectors.toList());
+
+        verify(node.getOutputSymbols().containsAll(localPropertyColumns), "Stream-level local properties contain columns not present in node's output");
+
+        return result;
     }
 
     private static class Visitor
@@ -150,7 +163,7 @@ final class StreamPropertyDerivations
 
             switch (node.getType()) {
                 case INNER:
-                    return leftProperties;
+                    return leftProperties.translate(column -> PropertyDerivations.filterOrRewrite(node.getOutputSymbols(), node.getCriteria(), column));
                 case LEFT:
                     // the left can contain nulls in any stream so we can't say anything about the
                     // partitioning but the other properties of the left will be maintained.
@@ -627,6 +640,11 @@ final class StreamPropertyDerivations
                         return Optional.of(newPartitioningColumns.build());
                     }),
                     ordered, otherActualProperties.translate(translator));
+        }
+
+        public Optional<List<Symbol>> getPartitioningColumns()
+        {
+            return partitioningColumns;
         }
 
         @Override
