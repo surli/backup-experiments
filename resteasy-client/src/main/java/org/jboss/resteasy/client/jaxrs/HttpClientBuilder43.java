@@ -24,6 +24,8 @@ import org.jboss.resteasy.client.jaxrs.engines.PassthroughTrustManager;
 import org.jboss.resteasy.client.jaxrs.engines.factory.ApacheHttpClient4EngineFactory;
 
 import java.io.IOException;
+import java.security.AccessController;
+import java.security.PrivilegedAction;
 import java.security.SecureRandom;
 
 
@@ -116,7 +118,7 @@ public class HttpClientBuilder43 {
                 .register("https", sslsf)
                 .build();
 
-            HttpClientConnectionManager cm = null;
+            final HttpClientConnectionManager cm;
             if (that.connectionPoolSize > 0)
             {
                 PoolingHttpClientConnectionManager tcm = new PoolingHttpClientConnectionManager(
@@ -134,7 +136,7 @@ public class HttpClientBuilder43 {
                 cm = new BasicHttpClientConnectionManager(registry);
             }
 
-            RequestConfig.Builder rcBuilder = RequestConfig.custom();
+            final RequestConfig.Builder rcBuilder = RequestConfig.custom();
             if (that.socketTimeout > -1)
             {
                 rcBuilder.setSocketTimeout((int) that.socketTimeoutUnits.toMillis(that.socketTimeout));
@@ -148,12 +150,32 @@ public class HttpClientBuilder43 {
                 rcBuilder.setConnectionRequestTimeout(that.connectionCheckoutTimeoutMs);
             }
 
-            httpClient = HttpClientBuilder.create()
-                .setConnectionManager(cm)
-                .setDefaultRequestConfig(rcBuilder.build())
-                .setProxy(that.defaultProxy)
-                .disableContentCompression()
-                .build();
+            if (System.getSecurityManager() == null)
+            {
+                httpClient = HttpClientBuilder.create()
+                        .setConnectionManager(cm)
+                        .setDefaultRequestConfig(rcBuilder.build())
+                        .setProxy(that.defaultProxy)
+                        .disableContentCompression()
+                        .build();
+            }
+            else
+            {
+                httpClient = AccessController.doPrivileged(new PrivilegedAction<HttpClient>()
+                {
+                    @Override
+                    public HttpClient run()
+                    {
+                        return HttpClientBuilder.create()
+                                .setConnectionManager(cm)
+                                .setDefaultRequestConfig(rcBuilder.build())
+                                .setProxy(that.defaultProxy)
+                                .disableContentCompression()
+                                .build();
+                    }
+                });
+            }
+
             ApacheHttpClient43Engine engine =
                 (ApacheHttpClient43Engine) ApacheHttpClient4EngineFactory.create(httpClient, true);
             engine.setResponseBufferSize(that.responseBufferSize);
