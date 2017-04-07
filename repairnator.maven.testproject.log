@@ -1,0 +1,955 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Singularity
+[INFO] SingularityBase
+[INFO] SingularityUI
+[INFO] SingularityMesosClient
+[INFO] SingularitySwagger
+[INFO] SingularityService
+[INFO] SingularityRunnerBase
+[INFO] SingularityS3Base
+[INFO] SingularityClient
+[INFO] SingularityExecutor
+[INFO] SingularityExecutorCleanup
+[INFO] SingularityS3Uploader
+[INFO] SingularityS3Downloader
+[INFO] EmbedSingularityExample
+[INFO] SingularityServiceIntegrationTests
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Singularity 0.15.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- property-helper-maven-plugin:2.0:get (get-build-id) @ Singularity ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (default) @ Singularity ---
+[INFO] 
+[INFO] --- maven-dependency-versions-check-plugin:2.0.2:check (default) @ Singularity ---
+[INFO] Checking dependency versions
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (default) @ Singularity ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- dependency-management-plugin:0.4:analyze (analyze) @ Singularity ---
+[INFO] No dependency management issues found
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ Singularity ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.5.201505241946:prepare-agent (default) @ Singularity ---
+[INFO] argLine set to -javaagent:/root/./workspace/HubSpot/Singularity/219808460/.m2/org/jacoco/org.jacoco.agent/0.7.5.201505241946/org.jacoco.agent-0.7.5.201505241946-runtime.jar=destfile=/root/workspace/HubSpot/Singularity/219808460/target/jacoco.exec
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SingularityBase 0.15.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- property-helper-maven-plugin:2.0:get (get-build-id) @ SingularityBase ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (default) @ SingularityBase ---
+[INFO] 
+[INFO] --- maven-dependency-versions-check-plugin:2.0.2:check (default) @ SingularityBase ---
+[INFO] Checking dependency versions
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (default) @ SingularityBase ---
+[INFO] Starting audit...
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityBase/src/main/java/com/hubspot/mesos/JavaUtils.java:206:17: Redundant 'final' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityBase/src/main/java/com/hubspot/singularity/RequestCleanupType.java:12:3: Redundant 'private' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityBase/src/main/java/com/hubspot/singularity/RequestType.java:13:3: Redundant 'private' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityBase/src/main/java/com/hubspot/singularity/TaskCleanupType.java:13:3: Redundant 'private' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityBase/src/main/java/com/hubspot/singularity/RequestState.java:9:3: Redundant 'private' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityBase/src/main/java/com/hubspot/singularity/SlaveMatchState.java:18:3: Redundant 'private' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityBase/src/main/java/com/hubspot/singularity/DeployState.java:9:3: Redundant 'private' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityBase/src/main/java/com/hubspot/singularity/HealthcheckProtocol.java:9:3: Redundant 'private' modifier. [RedundantModifier]
+Audit done.
+[INFO] 
+[INFO] --- dependency-management-plugin:0.4:analyze (analyze) @ SingularityBase ---
+[INFO] No dependency management issues found
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ SingularityBase ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.5.201505241946:prepare-agent (default) @ SingularityBase ---
+[INFO] argLine set to -javaagent:/root/./workspace/HubSpot/Singularity/219808460/.m2/org/jacoco/org.jacoco.agent/0.7.5.201505241946/org.jacoco.agent-0.7.5.201505241946-runtime.jar=destfile=/root/workspace/HubSpot/Singularity/219808460/SingularityBase/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ SingularityBase ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/HubSpot/Singularity/219808460/SingularityBase/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ SingularityBase ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ SingularityBase ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/HubSpot/Singularity/219808460/SingularityBase/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ SingularityBase ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ SingularityBase ---
+[INFO] No tests to run.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SingularityUI 0.15.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- property-helper-maven-plugin:2.0:get (get-build-id) @ SingularityUI ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (default) @ SingularityUI ---
+[INFO] 
+[INFO] --- maven-dependency-versions-check-plugin:2.0.2:check (default) @ SingularityUI ---
+[INFO] Checking dependency versions
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (default) @ SingularityUI ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- dependency-management-plugin:0.4:analyze (analyze) @ SingularityUI ---
+[INFO] No dependency management issues found
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ SingularityUI ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.5.201505241946:prepare-agent (default) @ SingularityUI ---
+[INFO] argLine set to -javaagent:/root/./workspace/HubSpot/Singularity/219808460/.m2/org/jacoco/org.jacoco.agent/0.7.5.201505241946/org.jacoco.agent-0.7.5.201505241946-runtime.jar=destfile=/root/workspace/HubSpot/Singularity/219808460/SingularityUI/target/jacoco.exec
+[INFO] 
+[INFO] --- frontend-maven-plugin:0.0.23:install-node-and-npm (install node and npm) @ SingularityUI ---
+[INFO] Node v6.2.1 is already installed.
+[INFO] Found NPM version 3.9.3
+[INFO] 
+[INFO] --- frontend-maven-plugin:0.0.23:npm (npm install) @ SingularityUI ---
+[INFO] Running 'npm install --color=false' in /root/workspace/HubSpot/Singularity/219808460/SingularityUI
+[ERROR] npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
+[ERROR] npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.1
+[INFO] 
+[INFO] --- frontend-maven-plugin:0.0.23:npm (npm test) @ SingularityUI ---
+[INFO] Running 'npm test --color=false' in /root/workspace/HubSpot/Singularity/219808460/SingularityUI
+[INFO] 
+[INFO] > SingularityUI@0.3.0 test /root/workspace/HubSpot/Singularity/219808460/SingularityUI
+[INFO] > mocha --compilers js:babel-core/register test/index.test
+[INFO] 
+[ERROR] Warning: Accessing PropTypes via the main React package is deprecated. Use the prop-types package from npm instead.
+[INFO] 
+[INFO] 
+[INFO]   Utils
+[INFO]     getTaskDataFromTaskId()
+[INFO]       ✓ should grab all fields from a valid task id
+[INFO] 
+[INFO]   Reducers
+[INFO]     tailerView
+[INFO]       ✓ should be properly initialized
+[INFO]       ✓ should populate the tailerId field
+[INFO]       ✓ should auto-populate the requestIds, taskIds, and paths fields
+[INFO]       ✓ should add tailer groups
+[INFO]       ✓ should remove tailer groups
+[INFO]       ✓ should pick an individual tailer group
+[INFO] 
+[INFO] 
+[INFO]   7 passing (83ms)
+[INFO] 
+[INFO] 
+[INFO] --- frontend-maven-plugin:0.0.23:gulp (gulp build) @ SingularityUI ---
+[INFO] Running 'gulp build --no-color' in /root/workspace/HubSpot/Singularity/219808460/SingularityUI
+[INFO] [22:49:07] Using gulpfile ~/workspace/HubSpot/Singularity/219808460/SingularityUI/gulpfile.js
+[INFO] [22:49:07] Starting 'clean'...
+[INFO] [22:49:07] Finished 'clean' after 287 ms
+[INFO] [22:49:07] Starting 'static'...
+[INFO] [22:49:07] Finished 'static' after 214 ms
+[INFO] [22:49:07] Starting 'html'...
+[INFO] [22:49:07] Finished 'html' after 93 ms
+[INFO] [22:49:07] Starting 'build'...
+[INFO] [22:51:05] Version: webpack [1m1.13.1[22m
+[INFO] Time: [1m114653[22mms
+[INFO]                                [1mAsset[22m     [1mSize[22m  [1mChunks[22m  [1m[22m           [1mChunk Names[22m
+[INFO] [1m[32m89889688147bd7575d6327160d64e760.svg[39m[22m   109 kB        [1m[22m  [1m[32m[emitted][39m[22m  
+[INFO]                  [1m[32mjs/vendor.bundle.js[39m[22m   606 kB       [1m0[22m  [1m[32m[emitted][39m[22m  js/vendor
+[INFO]                     [1m[32mjs/app.bundle.js[39m[22m  2.11 MB       [1m1[22m  [1m[32m[emitted][39m[22m  js/app
+[INFO]                          [1m[32mcss/app.css[39m[22m   338 kB       [1m1[22m  [1m[32m[emitted][39m[22m  js/app
+[INFO]              [1m[32mjs/vendor.bundle.js.map[39m[22m  4.62 MB       [1m0[22m  [1m[32m[emitted][39m[22m  js/vendor
+[INFO]                 [1m[32mjs/app.bundle.js.map[39m[22m  9.99 MB       [1m1[22m  [1m[32m[emitted][39m[22m  js/app
+[INFO]                      [1m[32mcss/app.css.map[39m[22m   413 kB       [1m1[22m  [1m[32m[emitted][39m[22m  js/app
+[INFO] Child [1mextract-text-webpack-plugin[22m:
+[INFO]     
+[INFO] Child [1mextract-text-webpack-plugin[22m:
+[INFO]     
+[INFO] Child [1mextract-text-webpack-plugin[22m:
+[INFO]     
+[INFO] Child [1mextract-text-webpack-plugin[22m:
+[INFO]     
+[INFO] Child [1mextract-text-webpack-plugin[22m:
+[INFO]     
+[INFO] Child [1mextract-text-webpack-plugin[22m:
+[INFO]     
+[INFO] [22:51:05] Finished 'build' after 1.95 min
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SingularityMesosClient 0.15.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- property-helper-maven-plugin:2.0:get (get-build-id) @ SingularityMesosClient ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (default) @ SingularityMesosClient ---
+[INFO] 
+[INFO] --- maven-dependency-versions-check-plugin:2.0.2:check (default) @ SingularityMesosClient ---
+[INFO] Checking dependency versions
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (default) @ SingularityMesosClient ---
+[INFO] Starting audit...
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/src/main/java/com/hubspot/mesos/client/MesosClient.java:12:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/src/main/java/com/hubspot/mesos/client/MesosClient.java:14:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/src/main/java/com/hubspot/mesos/client/MesosClient.java:16:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/src/main/java/com/hubspot/mesos/client/MesosClient.java:29:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/src/main/java/com/hubspot/mesos/client/MesosClient.java:31:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/src/main/java/com/hubspot/mesos/client/MesosClient.java:33:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/src/main/java/com/hubspot/mesos/client/MesosClient.java:35:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/src/main/java/com/hubspot/mesos/client/MesosClient.java:37:3: Redundant 'public' modifier. [RedundantModifier]
+Audit done.
+[INFO] 
+[INFO] --- dependency-management-plugin:0.4:analyze (analyze) @ SingularityMesosClient ---
+[INFO] No dependency management issues found
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ SingularityMesosClient ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.5.201505241946:prepare-agent (default) @ SingularityMesosClient ---
+[INFO] argLine set to -javaagent:/root/./workspace/HubSpot/Singularity/219808460/.m2/org/jacoco/org.jacoco.agent/0.7.5.201505241946/org.jacoco.agent-0.7.5.201505241946-runtime.jar=destfile=/root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ SingularityMesosClient ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ SingularityMesosClient ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ SingularityMesosClient ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/HubSpot/Singularity/219808460/SingularityMesosClient/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ SingularityMesosClient ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ SingularityMesosClient ---
+[INFO] No tests to run.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SingularitySwagger 0.15.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- property-helper-maven-plugin:2.0:get (get-build-id) @ SingularitySwagger ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (default) @ SingularitySwagger ---
+[INFO] 
+[INFO] --- maven-dependency-versions-check-plugin:2.0.2:check (default) @ SingularitySwagger ---
+[INFO] Checking dependency versions
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (default) @ SingularitySwagger ---
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- dependency-management-plugin:0.4:analyze (analyze) @ SingularitySwagger ---
+[INFO] No dependency management issues found
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ SingularitySwagger ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.5.201505241946:prepare-agent (default) @ SingularitySwagger ---
+[INFO] argLine set to -javaagent:/root/./workspace/HubSpot/Singularity/219808460/.m2/org/jacoco/org.jacoco.agent/0.7.5.201505241946/org.jacoco.agent-0.7.5.201505241946-runtime.jar=destfile=/root/workspace/HubSpot/Singularity/219808460/SingularitySwagger/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ SingularitySwagger ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/HubSpot/Singularity/219808460/SingularitySwagger/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ SingularitySwagger ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ SingularitySwagger ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/HubSpot/Singularity/219808460/SingularitySwagger/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ SingularitySwagger ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ SingularitySwagger ---
+[INFO] No tests to run.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SingularityService 0.15.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- property-helper-maven-plugin:2.0:get (get-build-id) @ SingularityService ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (default) @ SingularityService ---
+[INFO] 
+[INFO] --- maven-dependency-versions-check-plugin:2.0.2:check (default) @ SingularityService ---
+[INFO] Checking dependency versions
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (default) @ SingularityService ---
+[INFO] Starting audit...
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/smtp/SmtpMailer.java:366:5: Redundant 'private' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/data/CuratorAsyncManager.java:46:5: Redundant 'private' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/data/CuratorManager.java:64:5: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/data/history/SingularityHistoryModule.java:126:5: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/data/zkmigrations/SingularityRequestTypeMigration.java:84:9: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/data/zkmigrations/SingularityRequestTypeMigration.java:139:9: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/data/zkmigrations/SingularityCmdLineArgsMigration.java:58:5: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/mesos/OfferCache.java:13:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/mesos/OfferCache.java:15:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/mesos/OfferCache.java:17:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/mesos/OfferCache.java:19:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/mesos/OfferCache.java:21:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/mesos/OfferCache.java:23:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/mesos/OfferCache.java:25:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/mesos/OfferCache.java:27:3: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/hooks/LoadBalancerClientImpl.java:110:5: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/scheduler/SingularityNewTaskChecker.java:171:10: Redundant 'static' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/scheduler/SingularityExpiringUserActionPoller.java:175:5: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/scheduler/SingularityExpiringUserActionPoller.java:224:5: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/scheduler/SingularityExpiringUserActionPoller.java:249:5: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/scheduler/SingularityExpiringUserActionPoller.java:289:5: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/scheduler/SingularityExpiringUserActionPoller.java:315:5: Redundant 'public' modifier. [RedundantModifier]
+[WARN] /root/workspace/HubSpot/Singularity/219808460/SingularityService/src/main/java/com/hubspot/singularity/config/UIConfiguration.java:21:10: Redundant 'static' modifier. [RedundantModifier]
+Audit done.
+[INFO] 
+[INFO] --- dependency-management-plugin:0.4:analyze (analyze) @ SingularityService ---
+[INFO] No dependency management issues found
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.0:revision (default) @ SingularityService ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.5.201505241946:prepare-agent (default) @ SingularityService ---
+[INFO] argLine set to -javaagent:/root/./workspace/HubSpot/Singularity/219808460/.m2/org/jacoco/org.jacoco.agent/0.7.5.201505241946/org.jacoco.agent-0.7.5.201505241946-runtime.jar=destfile=/root/workspace/HubSpot/Singularity/219808460/SingularityService/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:copy-resources (copy-index.html-template) @ SingularityService ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:copy-resources (copy-ui) @ SingularityService ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 12 resources
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.10:add-resource (add-generated-resources) @ SingularityService ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ SingularityService ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] Copying 13 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ SingularityService ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- swagger-maven-plugin:2.3.2:generate (build-embedded-documentation) @ SingularityService ---
+[INFO] Reflections took 334 ms to scan 1 urls, producing 13 keys and 74 values 
+[INFO] Detect Resource:com.hubspot.singularity.resources.InactiveSlaveResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.S3LogResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.WebhookResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.StateResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.DeployResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.UsageResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.RackResource
+UNKNOWN TYPE: java.lang.Iterable
+UNKNOWN TYPE: java.lang.Iterable
+UNKNOWN TYPE: java.lang.Iterable
+UNKNOWN TYPE: java.lang.Iterable
+UNKNOWN TYPE: java.lang.Iterable
+UNKNOWN TYPE: java.lang.Iterable
+[INFO] Detect Resource:com.hubspot.singularity.resources.TaskResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.SlaveResource
+UNKNOWN TYPE: com.hubspot.singularity.SingularityPaginatedResponse
+UNKNOWN TYPE: com.hubspot.singularity.SingularityPaginatedResponse
+UNKNOWN TYPE: com.hubspot.singularity.SingularityPaginatedResponse
+UNKNOWN TYPE: com.hubspot.singularity.SingularityPaginatedResponse
+UNKNOWN TYPE: com.hubspot.singularity.SingularityPaginatedResponse
+UNKNOWN TYPE: java.lang.Iterable
+[INFO] Detect Resource:com.hubspot.singularity.resources.HistoryResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.PriorityResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.DisastersResource
+UNKNOWN TYPE: java.lang.Iterable
+[INFO] Detect Resource:com.hubspot.singularity.resources.RequestResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.SandboxResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.TestResource
+[INFO] Detect Resource:com.hubspot.singularity.resources.RequestGroupResource
+[INFO] Writing doc to /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/index.html...
+[INFO] Done!
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/service.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_disasters.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_logs.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_webhooks.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_state.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_deploys.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_usage.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_racks.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_tasks.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_slaves.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_history.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_priority.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_disasters.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_requests.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_sandbox.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_test.json
+[INFO] Creating file /root/workspace/HubSpot/Singularity/219808460/SingularityService/target/classes/assets/api-docs/api_groups.json
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ SingularityService ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ SingularityService ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ SingularityService ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.pom (4 KB at 5.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19/surefire-providers-2.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19/surefire-providers-2.19.pom (3 KB at 80.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.jar (75 KB at 704.9 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.hubspot.singularity.config.MergingSourceProviderTest
+Running com.hubspot.singularity.data.zkmigrations.ZkMigrationTest
+Running com.hubspot.singularity.data.SandboxManagerTest
+Running com.hubspot.singularity.scheduler.SingularitySlavePlacementTest
+22:52:14.773 [main] WARN com.squarespace.jersey2.guice.JerseyGuiceUtils - It appears jersey2-guice-spi is either not present or in conflict with some other Jar: ServiceLocatorGeneratorImpl(hk2-locator, 754707140)
+22:52:14.925 [main] INFO com.squarespace.jersey2.guice.JerseyGuiceUtils - Attempting to install (using relfection) a Guice-aware ServiceLocatorFactory...
+22:52:14.966 [main] WARN com.squarespace.jersey2.guice.JerseyGuiceUtils - It appears jersey2-guice-spi is either not present or in conflict with some other Jar: ServiceLocatorGeneratorImpl(hk2-locator, 817689537)
+22:52:15.100 [main] INFO com.squarespace.jersey2.guice.JerseyGuiceUtils - Attempting to install (using relfection) a Guice-aware ServiceLocatorFactory...
+22:52:15.078 [main] WARN com.squarespace.jersey2.guice.JerseyGuiceUtils - It appears jersey2-guice-spi is either not present or in conflict with some other Jar: ServiceLocatorGeneratorImpl(hk2-locator, 1928621590)
+22:52:15.194 [main] INFO com.squarespace.jersey2.guice.JerseyGuiceUtils - Attempting to install (using relfection) a Guice-aware ServiceLocatorFactory...
+22:52:16.319 [main] WARN com.squarespace.jersey2.guice.JerseyGuiceUtils - It appears jersey2-guice-spi is either not present or in conflict with some other Jar: ServiceLocatorGeneratorImpl(hk2-locator, 2121645869)
+22:52:16.473 [main] INFO com.squarespace.jersey2.guice.JerseyGuiceUtils - Attempting to install (using relfection) a Guice-aware ServiceLocatorFactory...
+22:52:23.359 [main] DEBUG org.eclipse.jetty.util.log - Logging to Logger[org.eclipse.jetty.util.log] via org.eclipse.jetty.util.log.Slf4jLog
+22:52:23.426 [main] INFO org.eclipse.jetty.util.log - Logging initialized @18550ms
+22:52:23.778 [main] DEBUG org.eclipse.jetty.util.DecoratedObjectFactory - Adding Decorator: org.eclipse.jetty.util.DeprecationWarning@40277077
+22:52:24.007 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - i.d.j.MutableServletContextHandler@31a4db4f{/,null,null} added {org.eclipse.jetty.servlet.ServletHandler@2842ef02,MANAGED}
+22:52:24.054 [main] DEBUG org.eclipse.jetty.util.DecoratedObjectFactory - Adding Decorator: org.eclipse.jetty.util.DeprecationWarning@141229f6
+22:52:24.062 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - i.d.j.MutableServletContextHandler@723b8eff{/,null,null} added {org.eclipse.jetty.servlet.ServletHandler@3987a1e8,MANAGED}
+22:52:24.409 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - org.eclipse.jetty.servlet.ServletHandler@3987a1e8 added {tasks@6907b8e==io.dropwizard.servlets.tasks.TaskServlet,1,true,AUTO}
+22:52:24.469 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - org.eclipse.jetty.servlet.ServletHandler@3987a1e8 added {[/tasks/*]=>tasks,POJO}
+22:52:25.102 [main] DEBUG org.eclipse.jetty.util.log - Logging to Logger[org.eclipse.jetty.util.log] via org.eclipse.jetty.util.log.Slf4jLog
+22:52:25.149 [main] INFO org.eclipse.jetty.util.log - Logging initialized @20255ms
+22:52:25.391 [main] DEBUG org.eclipse.jetty.util.DecoratedObjectFactory - Adding Decorator: org.eclipse.jetty.util.DeprecationWarning@13c81bc5
+22:52:25.487 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - i.d.j.MutableServletContextHandler@20960b51{/,null,null} added {org.eclipse.jetty.servlet.ServletHandler@2078bf0a,MANAGED}
+22:52:25.507 [main] DEBUG org.eclipse.jetty.util.DecoratedObjectFactory - Adding Decorator: org.eclipse.jetty.util.DeprecationWarning@4c114687
+22:52:25.508 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - i.d.j.MutableServletContextHandler@2a60981c{/,null,null} added {org.eclipse.jetty.servlet.ServletHandler@3f1fb139,MANAGED}
+22:52:25.581 [main] DEBUG org.eclipse.jetty.util.log - Logging to Logger[org.eclipse.jetty.util.log] via org.eclipse.jetty.util.log.Slf4jLog
+22:52:25.608 [main] INFO org.eclipse.jetty.util.log - Logging initialized @20390ms
+22:52:25.684 [main] DEBUG org.eclipse.jetty.util.log - Logging to Logger[org.eclipse.jetty.util.log] via org.eclipse.jetty.util.log.Slf4jLog
+22:52:25.737 [main] INFO org.eclipse.jetty.util.log - Logging initialized @20521ms
+22:52:25.812 [main] DEBUG org.eclipse.jetty.util.DecoratedObjectFactory - Adding Decorator: org.eclipse.jetty.util.DeprecationWarning@51097500
+22:52:25.853 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - org.eclipse.jetty.servlet.ServletHandler@3f1fb139 added {tasks@6907b8e==io.dropwizard.servlets.tasks.TaskServlet,1,true,AUTO}
+22:52:25.907 [main] DEBUG org.eclipse.jetty.util.DecoratedObjectFactory - Adding Decorator: org.eclipse.jetty.util.DeprecationWarning@64e657b0
+22:52:25.916 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - org.eclipse.jetty.servlet.ServletHandler@3f1fb139 added {[/tasks/*]=>tasks,POJO}
+22:52:25.954 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - i.d.j.MutableServletContextHandler@40f15786{/,null,null} added {org.eclipse.jetty.servlet.ServletHandler@72ea6fcb,MANAGED}
+22:52:25.955 [main] DEBUG org.eclipse.jetty.util.DecoratedObjectFactory - Adding Decorator: org.eclipse.jetty.util.DeprecationWarning@5d2bc446
+22:52:25.997 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - i.d.j.MutableServletContextHandler@6e96f3cd{/,null,null} added {org.eclipse.jetty.servlet.ServletHandler@4a0ee0ba,MANAGED}
+22:52:26.029 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - i.d.j.MutableServletContextHandler@4c78e00c{/,null,null} added {org.eclipse.jetty.servlet.ServletHandler@22b3b5d0,MANAGED}
+22:52:26.031 [main] DEBUG org.eclipse.jetty.util.DecoratedObjectFactory - Adding Decorator: org.eclipse.jetty.util.DeprecationWarning@184bb873
+22:52:26.057 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - i.d.j.MutableServletContextHandler@696ce057{/,null,null} added {org.eclipse.jetty.servlet.ServletHandler@5eba9e41,MANAGED}
+22:52:26.236 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - org.eclipse.jetty.servlet.ServletHandler@4a0ee0ba added {tasks@6907b8e==io.dropwizard.servlets.tasks.TaskServlet,1,true,AUTO}
+22:52:26.280 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - org.eclipse.jetty.servlet.ServletHandler@4a0ee0ba added {[/tasks/*]=>tasks,POJO}
+22:52:26.380 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - org.eclipse.jetty.servlet.ServletHandler@5eba9e41 added {tasks@6907b8e==io.dropwizard.servlets.tasks.TaskServlet,1,true,AUTO}
+22:52:26.419 [main] DEBUG org.eclipse.jetty.util.component.ContainerLifeCycle - org.eclipse.jetty.servlet.ServletHandler@5eba9e41 added {[/tasks/*]=>tasks,POJO}
+22:53:42.839 [main-EventThread] ERROR com.hubspot.singularity.SingularityLeaderLatch - Can't find our node. Resetting. Index: -1
+22:53:43.702 [main-EventThread] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl - Background exception was not retry-able or retry gave up
+java.lang.IllegalStateException: instance must be started before calling this method
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:174)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.delete(CuratorFrameworkImpl.java:347)
+	at org.apache.curator.framework.recipes.leader.LeaderLatch.setNode(LeaderLatch.java:661)
+	at org.apache.curator.framework.recipes.leader.LeaderLatch.access$300(LeaderLatch.java:63)
+	at org.apache.curator.framework.recipes.leader.LeaderLatch$4.processResult(LeaderLatch.java:490)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.sendToBackgroundCallback(CuratorFrameworkImpl.java:728)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.processBackgroundOperation(CuratorFrameworkImpl.java:505)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.sendBackgroundResponse(CreateBuilderImpl.java:541)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.access$700(CreateBuilderImpl.java:44)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$6.processResult(CreateBuilderImpl.java:500)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:599)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:498)
+22:53:52.786 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl - Background exception was not retry-able or retry gave up
+java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1342)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:781)
+	at org.apache.curator.utils.ZKPaths.mkdirs(ZKPaths.java:232)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$7.performBackgroundOperation(CreateBuilderImpl.java:522)
+	at org.apache.curator.framework.imps.OperationAndData.callPerformBackgroundOperation(OperationAndData.java:65)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:802)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+22:53:52.797 [SingularityStatePoller] ERROR com.hubspot.singularity.SingularityLeaderController - Caught exception while saving state
+java.lang.RuntimeException: java.lang.InterruptedException
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:101)
+	at com.hubspot.singularity.SingularityLeaderController$StatePoller.run(SingularityLeaderController.java:210)
+Caused by: java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1342)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:781)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:696)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:679)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:676)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:453)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:443)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:98)
+	... 1 common frames omitted
+22:53:55.976 [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl - Background exception was not retry-able or retry gave up
+java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1342)
+	at org.apache.zookeeper.ZooKeeper.getChildren(ZooKeeper.java:1470)
+	at org.apache.zookeeper.ZooKeeper.getChildren(ZooKeeper.java:1500)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$12.call(CreateBuilderImpl.java:742)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$12.call(CreateBuilderImpl.java:734)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.findProtectedNodeInForeground(CreateBuilderImpl.java:731)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.access$1100(CreateBuilderImpl.java:44)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$10.callPerformBackgroundOperation(CreateBuilderImpl.java:633)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:802)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:792)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:62)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:257)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+22:53:55.977 [SingularityStatePoller] ERROR com.hubspot.singularity.SingularityLeaderController - Caught exception while saving state
+java.lang.RuntimeException: java.lang.InterruptedException
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:101)
+	at com.hubspot.singularity.SingularityLeaderController$StatePoller.run(SingularityLeaderController.java:210)
+Caused by: java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1342)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:781)
+	at org.apache.curator.utils.ZKPaths.mkdirs(ZKPaths.java:232)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:702)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:679)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:676)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:453)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:443)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:98)
+	... 1 common frames omitted
+22:53:56.995 [main] WARN com.hubspot.singularity.scheduler.SingularityLeaderCache - savePendingTask SingularityPendingTask{pendingTaskId=r1-d1-23-3-BOUNCE-1, cmdLineArgsList=Optional.absent(), user=Optional.absent(), runId=Optional.absent(), skipHealthchecks=Optional.absent(), message=Optional.absent(), resources=Optional.absent(), actionId=Optional.absent()}, but not active
+22:53:57.071 [SingularityStatePoller] ERROR com.hubspot.singularity.SingularityLeaderController - Caught exception while saving state
+java.lang.RuntimeException: java.lang.InterruptedException
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:101)
+	at com.hubspot.singularity.SingularityLeaderController$StatePoller.run(SingularityLeaderController.java:210)
+Caused by: java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1342)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:781)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:696)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:679)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:676)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:453)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:443)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:98)
+	... 1 common frames omitted
+22:53:57.186 [main] WARN com.hubspot.singularity.scheduler.SingularityLeaderCache - savePendingTask SingularityPendingTask{pendingTaskId=r2-d3-231-1-UNPAUSED-23, cmdLineArgsList=Optional.of([cmd line args]), user=Optional.absent(), runId=Optional.absent(), skipHealthchecks=Optional.absent(), message=Optional.absent(), resources=Optional.absent(), actionId=Optional.absent()}, but not active
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 106.75 sec - in com.hubspot.singularity.config.MergingSourceProviderTest
+Running com.hubspot.singularity.mesos.SingularityTaskShellCommandTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 107.702 sec - in com.hubspot.singularity.data.zkmigrations.ZkMigrationTest
+Running com.hubspot.singularity.scheduler.SingularityUsageTest
+22:53:58.844 [SingularityStatePoller] ERROR com.hubspot.singularity.SingularityLeaderController - Caught exception while saving state
+java.lang.RuntimeException: java.lang.InterruptedException
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:101)
+	at com.hubspot.singularity.SingularityLeaderController$StatePoller.run(SingularityLeaderController.java:210)
+Caused by: java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1342)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:781)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:696)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:679)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:676)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:453)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:443)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:98)
+	... 1 common frames omitted
+22:54:07.347 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 6638ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:54:08.174 [SingularityStatePoller] ERROR com.hubspot.singularity.SingularityLeaderController - Caught exception while saving state
+java.lang.RuntimeException: java.lang.InterruptedException
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:101)
+	at com.hubspot.singularity.SingularityLeaderController$StatePoller.run(SingularityLeaderController.java:210)
+Caused by: java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1342)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:781)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:696)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:679)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:676)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:453)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:443)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:98)
+	... 1 common frames omitted
+22:54:08.792 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 3014ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:54:08.792 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 2310ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:54:08.792 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 5467ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:54:12.766 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:57879] WARN org.apache.zookeeper.server.NIOServerCnxn - Exception causing close of session 0x15b4a9e7cc90000 due to java.nio.channels.ClosedChannelException
+22:54:13.750 [SingularityStatePoller] ERROR com.hubspot.singularity.SingularityLeaderController - Caught exception while saving state
+java.lang.IllegalStateException: instance must be started before calling this method
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:174)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.create(CuratorFrameworkImpl.java:339)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:98)
+	at com.hubspot.singularity.SingularityLeaderController$StatePoller.run(SingularityLeaderController.java:210)
+22:54:15.562 [SingularityStatePoller] ERROR com.hubspot.singularity.SingularityLeaderController - Caught exception while saving state
+java.lang.RuntimeException: java.lang.InterruptedException
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:101)
+	at com.hubspot.singularity.SingularityLeaderController$StatePoller.run(SingularityLeaderController.java:210)
+Caused by: java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1342)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:781)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:696)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:679)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:676)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:453)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:443)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:98)
+	... 1 common frames omitted
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 124.502 sec - in com.hubspot.singularity.data.SandboxManagerTest
+Running com.hubspot.singularity.data.ValidatorTest
+22:54:22.085 [SingularityStatePoller] ERROR com.hubspot.singularity.SingularityLeaderController - Caught exception while saving state
+java.lang.IllegalStateException: instance must be started before calling this method
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:174)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.create(CuratorFrameworkImpl.java:339)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:98)
+	at com.hubspot.singularity.SingularityLeaderController$StatePoller.run(SingularityLeaderController.java:210)
+22:54:24.183 [SingularityStatePoller] ERROR com.hubspot.singularity.SingularityLeaderController - Caught exception while saving state
+java.lang.RuntimeException: java.lang.InterruptedException
+	at com.google.common.base.Throwables.propagate(Throwables.java:160)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:101)
+	at com.hubspot.singularity.SingularityLeaderController$StatePoller.run(SingularityLeaderController.java:210)
+Caused by: java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.zookeeper.ClientCnxn.submitRequest(ClientCnxn.java:1342)
+	at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:781)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:696)
+	at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:679)
+	at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:676)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:453)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:443)
+	at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:44)
+	at com.hubspot.singularity.data.StateManager.save(StateManager.java:98)
+	... 1 common frames omitted
+22:54:24.272 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:39671] WARN org.apache.zookeeper.server.NIOServerCnxn - Exception causing close of session 0x15b4aa02bcb0000 due to java.nio.channels.AsynchronousCloseException
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.079 sec - in com.hubspot.singularity.data.ValidatorTest
+Running com.hubspot.singularity.SingularityS3Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 sec - in com.hubspot.singularity.SingularityS3Test
+Running com.hubspot.singularity.mesos.SingularityMesosTaskBuilderTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.721 sec - in com.hubspot.singularity.mesos.SingularityMesosTaskBuilderTest
+Running com.hubspot.singularity.scheduler.SingularityDeploysTest
+22:54:28.664 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1196ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:54:32.389 [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:49076] WARN org.apache.zookeeper.server.NIOServerCnxn - caught end of stream exception
+org.apache.zookeeper.server.ServerCnxn$EndOfStreamException: Unable to read additional data from client sessionid 0x15b4aa02af40000, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:228)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:208)
+	at java.lang.Thread.run(Thread.java:745)
+22:54:36.850 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1265ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:54:37.010 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1621ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 43.69 sec - in com.hubspot.singularity.mesos.SingularityTaskShellCommandTest
+Running com.hubspot.singularity.JavaUtilsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.282 sec - in com.hubspot.singularity.JavaUtilsTest
+Running com.hubspot.singularity.SingularityHistoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 48.256 sec - in com.hubspot.singularity.scheduler.SingularityUsageTest
+Running com.hubspot.singularity.scheduler.HistoryPersisterTest
+22:54:54.690 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1386ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:54:54.691 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594891398-1-host1-rack1
+22:54:54.870 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1297ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:54:55.490 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491605689787-1-host1-rack1
+22:54:57.182 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594895624-1-host1-rack1
+22:54:59.147 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594898093-1-host1-rack1
+22:55:01.668 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594899800-1-host1-rack1
+22:55:05.995 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491605702385-1-host1-rack1
+22:55:06.419 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594903353-1-host1-rack1
+22:55:11.574 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594908013-1-host1-rack1
+22:55:18.224 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1034ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:55:19.501 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594913537-1-host1-rack1
+22:55:23.670 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1187ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:55:24.981 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594921223-1-host1-rack1
+22:55:26.962 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1746ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:55:29.180 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594926519-1-host1-rack1
+22:55:31.848 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594930169-1-host1-rack1
+22:55:44.182 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 2286ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:55:46.145 [main] WARN com.hubspot.singularity.scheduler.SingularityDeployChecker - Deploy SingularityPendingDeploy{deployMarker=SingularityDeployMarker{requestId='test-request', deployId='timeout_test', timestamp=1491602144020, user=Optional.absent(), message=Optional.absent()}, lastLoadBalancerUpdate=Optional.absent(), currentDeployState=WAITING, deployProgress=Optional.of(SingularityIncrementalDeployProgress{targetActiveInstances=1, currentActiveInstances=0, deployInstanceCountPerStep=1, deployStepWaitTimeMs=10, stepComplete=false, autoAdvanceDeploySteps=true, failedDeployTasks=[], timestamp=1491602144020}), updatedRequest=Optional.absent()} is overdue (duration: 01:00:02.125), allowed: 00:01:00.000
+22:55:50.902 [main] WARN com.hubspot.singularity.data.history.SingularityRequestHistoryPersister - Failed to persist SingularityRequestHistory{createdAt=1491594950411, user=Optional.absent(), eventType=CREATED, request=SingularityRequest{id='test-request', requestType=WORKER, owners=Optional.absent(), numRetriesOnFailure=Optional.absent(), schedule=Optional.absent(), quartzSchedule=Optional.absent(), scheduleType=Optional.absent(), scheduleTimeZone=Optional.absent(), killOldNonLongRunningTasksAfterMillis=Optional.absent(), taskExecutionTimeLimitMillis=Optional.absent(), scheduledExpectedRuntimeMillis=Optional.absent(), waitAtLeastMillisAfterTaskFinishesForReschedule=Optional.absent(), instances=Optional.absent(), skipHealthchecks=Optional.absent(), rackSensitive=Optional.absent(), rackAffinity=Optional.absent(), slavePlacement=Optional.absent(), requiredSlaveAttributes=Optional.absent(), allowedSlaveAttributes=Optional.absent(), loadBalanced=Optional.of(false), group=Optional.absent(), requiredRole=Optional.absent(), readWriteGroups=Optional.absent(), readOnlyGroups=Optional.absent(), bounceAfterScale=Optional.absent(), emailConfigurationOverrides=Optional.absent(), hideEvenNumberAcrossRacksHint=Optional.absent(), taskLogErrorRegex=Optional.absent(), taskLogErrorRegexCaseSensitive=Optional.absent(), taskPriorityLevel=Optional.absent(), maxTasksPerOffer=Optional.absent(), allowBounceToSameHost=Optional.absent()}, message=Optional.absent()} into History
+java.lang.UnsupportedOperationException: NoopHistoryManager can not save
+	at com.hubspot.singularity.data.history.NoopHistoryManager.saveRequestHistoryUpdate(NoopHistoryManager.java:26)
+	at com.hubspot.singularity.data.history.SingularityRequestHistoryPersister.moveToHistory(SingularityRequestHistoryPersister.java:141)
+	at com.hubspot.singularity.data.history.SingularityRequestHistoryPersister.moveToHistory(SingularityRequestHistoryPersister.java:25)
+	at com.hubspot.singularity.data.history.SingularityHistoryPersister.moveToHistoryOrCheckForPurgeAndShouldDelete(SingularityHistoryPersister.java:63)
+	at com.hubspot.singularity.data.history.SingularityHistoryPersister.moveToHistoryOrCheckForPurge(SingularityHistoryPersister.java:52)
+	at com.hubspot.singularity.data.history.SingularityRequestHistoryPersister.runActionOnPoll(SingularityRequestHistoryPersister.java:119)
+	at com.hubspot.singularity.scheduler.HistoryPersisterTest.testPurgingDoesntApplyIfDatabasePresent(HistoryPersisterTest.java:211)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:344)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:269)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:184)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:286)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:240)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+22:56:04.238 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1185ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:56:15.823 [check-new-task-pool-0] ERROR com.hubspot.singularity.scheduler.SingularityNewTaskChecker - Uncaught throwable in task check for task SingularityTask{taskRequest=SingularityTaskRequest{request=SingularityRequest{id='test-request', requestType=WORKER, owners=Optional.absent(), numRetriesOnFailure=Optional.absent(), schedule=Optional.absent(), quartzSchedule=Optional.absent(), scheduleType=Optional.absent(), scheduleTimeZone=Optional.absent(), killOldNonLongRunningTasksAfterMillis=Optional.absent(), taskExecutionTimeLimitMillis=Optional.absent(), scheduledExpectedRuntimeMillis=Optional.absent(), waitAtLeastMillisAfterTaskFinishesForReschedule=Optional.absent(), instances=Optional.absent(), skipHealthchecks=Optional.absent(), rackSensitive=Optional.absent(), rackAffinity=Optional.absent(), slavePlacement=Optional.absent(), requiredSlaveAttributes=Optional.absent(), allowedSlaveAttributes=Optional.absent(), loadBalanced=Optional.of(false), group=Optional.absent(), requiredRole=Optional.absent(), readWriteGroups=Optional.absent(), readOnlyGroups=Optional.absent(), bounceAfterScale=Optional.absent(), emailConfigurationOverrides=Optional.absent(), hideEvenNumberAcrossRacksHint=Optional.absent(), taskLogErrorRegex=Optional.absent(), taskLogErrorRegexCaseSensitive=Optional.absent(), taskPriorityLevel=Optional.absent(), maxTasksPerOffer=Optional.absent(), allowBounceToSameHost=Optional.absent()}, deploy=SingularityDeploy{requestId='test-request', id='firstDeployId', version=Optional.absent(), timestamp=Optional.absent(), metadata=Optional.absent(), containerInfo=Optional.absent(), customExecutorCmd=Optional.absent(), customExecutorId=Optional.absent(), customExecutorSource=Optional.absent(), customExecutorResources=Optional.absent(), resources=Optional.absent(), command=Optional.of(sleep 100), arguments=Optional.absent(), env=Optional.absent(), uris=Optional.absent(), executorData=Optional.absent(), labels=Optional.absent(), mesosLabels=Optional.absent(), taskLabels=Optional.absent(), mesosTaskLabels=Optional.absent(), taskEnv=Optional.absent(), healthcheckUri=Optional.absent(), healthcheckIntervalSeconds=Optional.absent(), healthcheckTimeoutSeconds=Optional.absent(), healthcheckPortIndex=Optional.absent(), healthcheckProtocol=Optional.absent(), healthcheckMaxRetries=Optional.absent(), healthcheckMaxTotalTimeoutSeconds=Optional.absent(), healthcheck=Optional.absent(), skipHealthchecksOnDeploy=Optional.absent(), deployHealthTimeoutSeconds=Optional.absent(), considerHealthyAfterRunningForSeconds=Optional.absent(), serviceBasePath=Optional.absent(), loadBalancerGroups=Optional.absent(), loadBalancerPortIndex=Optional.absent(), loadBalancerOptions=Optional.absent(), loadBalancerDomains=Optional.absent(), loadBalancerAdditionalRoutes=Optional.absent(), loadBalancerTemplate=Optional.absent(), loadBalancerServiceIdOverride=Optional.absent(), loadBalancerUpstreamGroup=Optional.absent(), deployInstanceCountPerStep=Optional.absent(), deployStepWaitTimeMs=Optional.absent(), autoAdvanceDeploySteps=Optional.absent(), maxTaskRetries=Optional.absent(), shell=Optional.absent(), user=Optional.absent()}, pendingTask=SingularityPendingTask{pendingTaskId=test-request-firstDeployId-1491605649673-1-IMMEDIATE-1491605649673, cmdLineArgsList=Optional.absent(), user=Optional.absent(), runId=Optional.absent(), skipHealthchecks=Optional.absent(), message=Optional.absent(), resources=Optional.absent(), actionId=Optional.absent()}}, offer=id { value: "offer354"}framework_id { value: "framework1"}slave_id { value: "slave1"}hostname: "host1"resources { name: "cpus" type: SCALAR scalar { value: 125.0 }}resources { name: "mem" type: SCALAR scalar { value: 1024.0 }}resources { name: "ports" type: RANGES ranges { }}attributes { name: "rackid" type: TEXT text { value: "DEFAULT" }}, mesosTask=name: "name"task_id { value: "test-request-firstDeployId-1491605649673-1-host1-rack1"}slave_id { value: "slave1"}, rackId=Optional.of(rack1)}, re-enqueing
+java.lang.IllegalStateException: instance must be started before calling this method
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:174)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getChildren(CuratorFrameworkImpl.java:379)
+	at com.hubspot.singularity.data.CuratorManager.getChildren(CuratorManager.java:130)
+	at com.hubspot.singularity.data.CuratorAsyncManager.getAsyncChildrenThrows(CuratorAsyncManager.java:54)
+	at com.hubspot.singularity.data.CuratorAsyncManager.getAsyncChildren(CuratorAsyncManager.java:260)
+	at com.hubspot.singularity.data.TaskManager.getTaskHistoryUpdates(TaskManager.java:482)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.getTaskState(SingularityNewTaskChecker.java:289)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.checkTask(SingularityNewTaskChecker.java:252)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.access$200(SingularityNewTaskChecker.java:56)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker$1.run(SingularityNewTaskChecker.java:206)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+22:56:16.173 [check-new-task-pool-0] ERROR com.hubspot.singularity.scheduler.SingularityNewTaskChecker - Uncaught throwable re-enqueuing task check for task SingularityTask{taskRequest=SingularityTaskRequest{request=SingularityRequest{id='test-request', requestType=WORKER, owners=Optional.absent(), numRetriesOnFailure=Optional.absent(), schedule=Optional.absent(), quartzSchedule=Optional.absent(), scheduleType=Optional.absent(), scheduleTimeZone=Optional.absent(), killOldNonLongRunningTasksAfterMillis=Optional.absent(), taskExecutionTimeLimitMillis=Optional.absent(), scheduledExpectedRuntimeMillis=Optional.absent(), waitAtLeastMillisAfterTaskFinishesForReschedule=Optional.absent(), instances=Optional.absent(), skipHealthchecks=Optional.absent(), rackSensitive=Optional.absent(), rackAffinity=Optional.absent(), slavePlacement=Optional.absent(), requiredSlaveAttributes=Optional.absent(), allowedSlaveAttributes=Optional.absent(), loadBalanced=Optional.of(false), group=Optional.absent(), requiredRole=Optional.absent(), readWriteGroups=Optional.absent(), readOnlyGroups=Optional.absent(), bounceAfterScale=Optional.absent(), emailConfigurationOverrides=Optional.absent(), hideEvenNumberAcrossRacksHint=Optional.absent(), taskLogErrorRegex=Optional.absent(), taskLogErrorRegexCaseSensitive=Optional.absent(), taskPriorityLevel=Optional.absent(), maxTasksPerOffer=Optional.absent(), allowBounceToSameHost=Optional.absent()}, deploy=SingularityDeploy{requestId='test-request', id='firstDeployId', version=Optional.absent(), timestamp=Optional.absent(), metadata=Optional.absent(), containerInfo=Optional.absent(), customExecutorCmd=Optional.absent(), customExecutorId=Optional.absent(), customExecutorSource=Optional.absent(), customExecutorResources=Optional.absent(), resources=Optional.absent(), command=Optional.of(sleep 100), arguments=Optional.absent(), env=Optional.absent(), uris=Optional.absent(), executorData=Optional.absent(), labels=Optional.absent(), mesosLabels=Optional.absent(), taskLabels=Optional.absent(), mesosTaskLabels=Optional.absent(), taskEnv=Optional.absent(), healthcheckUri=Optional.absent(), healthcheckIntervalSeconds=Optional.absent(), healthcheckTimeoutSeconds=Optional.absent(), healthcheckPortIndex=Optional.absent(), healthcheckProtocol=Optional.absent(), healthcheckMaxRetries=Optional.absent(), healthcheckMaxTotalTimeoutSeconds=Optional.absent(), healthcheck=Optional.absent(), skipHealthchecksOnDeploy=Optional.absent(), deployHealthTimeoutSeconds=Optional.absent(), considerHealthyAfterRunningForSeconds=Optional.absent(), serviceBasePath=Optional.absent(), loadBalancerGroups=Optional.absent(), loadBalancerPortIndex=Optional.absent(), loadBalancerOptions=Optional.absent(), loadBalancerDomains=Optional.absent(), loadBalancerAdditionalRoutes=Optional.absent(), loadBalancerTemplate=Optional.absent(), loadBalancerServiceIdOverride=Optional.absent(), loadBalancerUpstreamGroup=Optional.absent(), deployInstanceCountPerStep=Optional.absent(), deployStepWaitTimeMs=Optional.absent(), autoAdvanceDeploySteps=Optional.absent(), maxTaskRetries=Optional.absent(), shell=Optional.absent(), user=Optional.absent()}, pendingTask=SingularityPendingTask{pendingTaskId=test-request-firstDeployId-1491605649673-1-IMMEDIATE-1491605649673, cmdLineArgsList=Optional.absent(), user=Optional.absent(), runId=Optional.absent(), skipHealthchecks=Optional.absent(), message=Optional.absent(), resources=Optional.absent(), actionId=Optional.absent()}}, offer=id { value: "offer354"}framework_id { value: "framework1"}slave_id { value: "slave1"}hostname: "host1"resources { name: "cpus" type: SCALAR scalar { value: 125.0 }}resources { name: "mem" type: SCALAR scalar { value: 1024.0 }}resources { name: "ports" type: RANGES ranges { }}attributes { name: "rackid" type: TEXT text { value: "DEFAULT" }}, mesosTask=name: "name"task_id { value: "test-request-firstDeployId-1491605649673-1-host1-rack1"}slave_id { value: "slave1"}, rackId=Optional.of(rack1)}, aborting
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@6f51a361 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@4b8c38d3[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2047)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:823)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.enqueueCheckWithDelay(SingularityNewTaskChecker.java:240)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.reEnqueueCheck(SingularityNewTaskChecker.java:234)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.reEnqueueCheckOrAbort(SingularityNewTaskChecker.java:225)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.access$600(SingularityNewTaskChecker.java:56)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker$1.run(SingularityNewTaskChecker.java:217)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+22:56:27.658 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1135ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:56:30.370 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-10000-1-host1-rack1
+22:56:31.373 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491594985199-1-host1-rack1
+22:56:31.488 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-2-firstDeployId-15000-1-host1-rack1
+22:56:32.064 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave3 for task test-request-2-firstDeployId-35000-3-host3-rack1
+22:56:33.311 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave2 for task test-request-2-firstDeployId-25000-2-host2-rack1
+22:56:33.825 [check-new-task-pool-0] ERROR com.hubspot.singularity.scheduler.SingularityNewTaskChecker - Uncaught throwable in task check for task SingularityTask{taskRequest=SingularityTaskRequest{request=SingularityRequest{id='test-request', requestType=WORKER, owners=Optional.absent(), numRetriesOnFailure=Optional.absent(), schedule=Optional.absent(), quartzSchedule=Optional.absent(), scheduleType=Optional.absent(), scheduleTimeZone=Optional.absent(), killOldNonLongRunningTasksAfterMillis=Optional.absent(), taskExecutionTimeLimitMillis=Optional.absent(), scheduledExpectedRuntimeMillis=Optional.absent(), waitAtLeastMillisAfterTaskFinishesForReschedule=Optional.absent(), instances=Optional.absent(), skipHealthchecks=Optional.absent(), rackSensitive=Optional.absent(), rackAffinity=Optional.absent(), slavePlacement=Optional.absent(), requiredSlaveAttributes=Optional.absent(), allowedSlaveAttributes=Optional.absent(), loadBalanced=Optional.of(false), group=Optional.absent(), requiredRole=Optional.absent(), readWriteGroups=Optional.absent(), readOnlyGroups=Optional.absent(), bounceAfterScale=Optional.absent(), emailConfigurationOverrides=Optional.absent(), hideEvenNumberAcrossRacksHint=Optional.absent(), taskLogErrorRegex=Optional.absent(), taskLogErrorRegexCaseSensitive=Optional.absent(), taskPriorityLevel=Optional.absent(), maxTasksPerOffer=Optional.absent(), allowBounceToSameHost=Optional.absent()}, deploy=SingularityDeploy{requestId='test-request', id='firstDeployId', version=Optional.absent(), timestamp=Optional.absent(), metadata=Optional.absent(), containerInfo=Optional.absent(), customExecutorCmd=Optional.absent(), customExecutorId=Optional.absent(), customExecutorSource=Optional.absent(), customExecutorResources=Optional.absent(), resources=Optional.absent(), command=Optional.of(sleep 100), arguments=Optional.absent(), env=Optional.absent(), uris=Optional.absent(), executorData=Optional.absent(), labels=Optional.absent(), mesosLabels=Optional.absent(), taskLabels=Optional.absent(), mesosTaskLabels=Optional.absent(), taskEnv=Optional.absent(), healthcheckUri=Optional.absent(), healthcheckIntervalSeconds=Optional.absent(), healthcheckTimeoutSeconds=Optional.absent(), healthcheckPortIndex=Optional.absent(), healthcheckProtocol=Optional.absent(), healthcheckMaxRetries=Optional.absent(), healthcheckMaxTotalTimeoutSeconds=Optional.absent(), healthcheck=Optional.absent(), skipHealthchecksOnDeploy=Optional.absent(), deployHealthTimeoutSeconds=Optional.absent(), considerHealthyAfterRunningForSeconds=Optional.absent(), serviceBasePath=Optional.absent(), loadBalancerGroups=Optional.absent(), loadBalancerPortIndex=Optional.absent(), loadBalancerOptions=Optional.absent(), loadBalancerDomains=Optional.absent(), loadBalancerAdditionalRoutes=Optional.absent(), loadBalancerTemplate=Optional.absent(), loadBalancerServiceIdOverride=Optional.absent(), loadBalancerUpstreamGroup=Optional.absent(), deployInstanceCountPerStep=Optional.absent(), deployStepWaitTimeMs=Optional.absent(), autoAdvanceDeploySteps=Optional.absent(), maxTaskRetries=Optional.absent(), shell=Optional.absent(), user=Optional.absent()}, pendingTask=SingularityPendingTask{pendingTaskId=test-request-firstDeployId-1491605671500-1-IMMEDIATE-1491605671500, cmdLineArgsList=Optional.absent(), user=Optional.absent(), runId=Optional.absent(), skipHealthchecks=Optional.absent(), message=Optional.absent(), resources=Optional.absent(), actionId=Optional.absent()}}, offer=id { value: "offer126"}framework_id { value: "framework1"}slave_id { value: "slave1"}hostname: "host1"resources { name: "cpus" type: SCALAR scalar { value: 125.0 }}resources { name: "mem" type: SCALAR scalar { value: 1024.0 }}resources { name: "ports" type: RANGES ranges { }}attributes { name: "rackid" type: TEXT text { value: "DEFAULT" }}, mesosTask=name: "name"task_id { value: "test-request-firstDeployId-1491605671500-1-host1-rack1"}slave_id { value: "slave1"}, rackId=Optional.of(rack1)}, re-enqueing
+java.lang.IllegalStateException: instance must be started before calling this method
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:174)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getChildren(CuratorFrameworkImpl.java:379)
+	at com.hubspot.singularity.data.CuratorManager.getChildren(CuratorManager.java:130)
+	at com.hubspot.singularity.data.CuratorAsyncManager.getAsyncChildrenThrows(CuratorAsyncManager.java:54)
+	at com.hubspot.singularity.data.CuratorAsyncManager.getAsyncChildren(CuratorAsyncManager.java:260)
+	at com.hubspot.singularity.data.TaskManager.getTaskHistoryUpdates(TaskManager.java:482)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.getTaskState(SingularityNewTaskChecker.java:289)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.checkTask(SingularityNewTaskChecker.java:252)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.access$200(SingularityNewTaskChecker.java:56)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker$1.run(SingularityNewTaskChecker.java:206)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+22:56:33.827 [check-new-task-pool-0] ERROR com.hubspot.singularity.scheduler.SingularityNewTaskChecker - Uncaught throwable re-enqueuing task check for task SingularityTask{taskRequest=SingularityTaskRequest{request=SingularityRequest{id='test-request', requestType=WORKER, owners=Optional.absent(), numRetriesOnFailure=Optional.absent(), schedule=Optional.absent(), quartzSchedule=Optional.absent(), scheduleType=Optional.absent(), scheduleTimeZone=Optional.absent(), killOldNonLongRunningTasksAfterMillis=Optional.absent(), taskExecutionTimeLimitMillis=Optional.absent(), scheduledExpectedRuntimeMillis=Optional.absent(), waitAtLeastMillisAfterTaskFinishesForReschedule=Optional.absent(), instances=Optional.absent(), skipHealthchecks=Optional.absent(), rackSensitive=Optional.absent(), rackAffinity=Optional.absent(), slavePlacement=Optional.absent(), requiredSlaveAttributes=Optional.absent(), allowedSlaveAttributes=Optional.absent(), loadBalanced=Optional.of(false), group=Optional.absent(), requiredRole=Optional.absent(), readWriteGroups=Optional.absent(), readOnlyGroups=Optional.absent(), bounceAfterScale=Optional.absent(), emailConfigurationOverrides=Optional.absent(), hideEvenNumberAcrossRacksHint=Optional.absent(), taskLogErrorRegex=Optional.absent(), taskLogErrorRegexCaseSensitive=Optional.absent(), taskPriorityLevel=Optional.absent(), maxTasksPerOffer=Optional.absent(), allowBounceToSameHost=Optional.absent()}, deploy=SingularityDeploy{requestId='test-request', id='firstDeployId', version=Optional.absent(), timestamp=Optional.absent(), metadata=Optional.absent(), containerInfo=Optional.absent(), customExecutorCmd=Optional.absent(), customExecutorId=Optional.absent(), customExecutorSource=Optional.absent(), customExecutorResources=Optional.absent(), resources=Optional.absent(), command=Optional.of(sleep 100), arguments=Optional.absent(), env=Optional.absent(), uris=Optional.absent(), executorData=Optional.absent(), labels=Optional.absent(), mesosLabels=Optional.absent(), taskLabels=Optional.absent(), mesosTaskLabels=Optional.absent(), taskEnv=Optional.absent(), healthcheckUri=Optional.absent(), healthcheckIntervalSeconds=Optional.absent(), healthcheckTimeoutSeconds=Optional.absent(), healthcheckPortIndex=Optional.absent(), healthcheckProtocol=Optional.absent(), healthcheckMaxRetries=Optional.absent(), healthcheckMaxTotalTimeoutSeconds=Optional.absent(), healthcheck=Optional.absent(), skipHealthchecksOnDeploy=Optional.absent(), deployHealthTimeoutSeconds=Optional.absent(), considerHealthyAfterRunningForSeconds=Optional.absent(), serviceBasePath=Optional.absent(), loadBalancerGroups=Optional.absent(), loadBalancerPortIndex=Optional.absent(), loadBalancerOptions=Optional.absent(), loadBalancerDomains=Optional.absent(), loadBalancerAdditionalRoutes=Optional.absent(), loadBalancerTemplate=Optional.absent(), loadBalancerServiceIdOverride=Optional.absent(), loadBalancerUpstreamGroup=Optional.absent(), deployInstanceCountPerStep=Optional.absent(), deployStepWaitTimeMs=Optional.absent(), autoAdvanceDeploySteps=Optional.absent(), maxTaskRetries=Optional.absent(), shell=Optional.absent(), user=Optional.absent()}, pendingTask=SingularityPendingTask{pendingTaskId=test-request-firstDeployId-1491605671500-1-IMMEDIATE-1491605671500, cmdLineArgsList=Optional.absent(), user=Optional.absent(), runId=Optional.absent(), skipHealthchecks=Optional.absent(), message=Optional.absent(), resources=Optional.absent(), actionId=Optional.absent()}}, offer=id { value: "offer126"}framework_id { value: "framework1"}slave_id { value: "slave1"}hostname: "host1"resources { name: "cpus" type: SCALAR scalar { value: 125.0 }}resources { name: "mem" type: SCALAR scalar { value: 1024.0 }}resources { name: "ports" type: RANGES ranges { }}attributes { name: "rackid" type: TEXT text { value: "DEFAULT" }}, mesosTask=name: "name"task_id { value: "test-request-firstDeployId-1491605671500-1-host1-rack1"}slave_id { value: "slave1"}, rackId=Optional.of(rack1)}, aborting
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@3e153946 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@30d2c0f4[Shutting down, pool size = 2, active threads = 1, queued tasks = 1, completed tasks = 0]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2047)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:823)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.enqueueCheckWithDelay(SingularityNewTaskChecker.java:240)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.reEnqueueCheck(SingularityNewTaskChecker.java:234)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.reEnqueueCheckOrAbort(SingularityNewTaskChecker.java:225)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.access$600(SingularityNewTaskChecker.java:56)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker$1.run(SingularityNewTaskChecker.java:217)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+22:56:37.295 [check-new-task-pool-1] ERROR com.hubspot.singularity.scheduler.SingularityNewTaskChecker - Uncaught throwable in task check for task SingularityTask{taskRequest=SingularityTaskRequest{request=SingularityRequest{id='test-request', requestType=WORKER, owners=Optional.absent(), numRetriesOnFailure=Optional.absent(), schedule=Optional.absent(), quartzSchedule=Optional.absent(), scheduleType=Optional.absent(), scheduleTimeZone=Optional.absent(), killOldNonLongRunningTasksAfterMillis=Optional.absent(), taskExecutionTimeLimitMillis=Optional.absent(), scheduledExpectedRuntimeMillis=Optional.absent(), waitAtLeastMillisAfterTaskFinishesForReschedule=Optional.absent(), instances=Optional.absent(), skipHealthchecks=Optional.absent(), rackSensitive=Optional.absent(), rackAffinity=Optional.absent(), slavePlacement=Optional.absent(), requiredSlaveAttributes=Optional.absent(), allowedSlaveAttributes=Optional.absent(), loadBalanced=Optional.of(true), group=Optional.absent(), requiredRole=Optional.absent(), readWriteGroups=Optional.absent(), readOnlyGroups=Optional.absent(), bounceAfterScale=Optional.absent(), emailConfigurationOverrides=Optional.absent(), hideEvenNumberAcrossRacksHint=Optional.absent(), taskLogErrorRegex=Optional.absent(), taskLogErrorRegexCaseSensitive=Optional.absent(), taskPriorityLevel=Optional.absent(), maxTasksPerOffer=Optional.absent(), allowBounceToSameHost=Optional.absent()}, deploy=SingularityDeploy{requestId='test-request', id='firstDeployId', version=Optional.absent(), timestamp=Optional.absent(), metadata=Optional.absent(), containerInfo=Optional.absent(), customExecutorCmd=Optional.absent(), customExecutorId=Optional.absent(), customExecutorSource=Optional.absent(), customExecutorResources=Optional.absent(), resources=Optional.absent(), command=Optional.of(sleep 100), arguments=Optional.absent(), env=Optional.absent(), uris=Optional.absent(), executorData=Optional.absent(), labels=Optional.absent(), mesosLabels=Optional.absent(), taskLabels=Optional.absent(), mesosTaskLabels=Optional.absent(), taskEnv=Optional.absent(), healthcheckUri=Optional.absent(), healthcheckIntervalSeconds=Optional.absent(), healthcheckTimeoutSeconds=Optional.absent(), healthcheckPortIndex=Optional.absent(), healthcheckProtocol=Optional.absent(), healthcheckMaxRetries=Optional.absent(), healthcheckMaxTotalTimeoutSeconds=Optional.absent(), healthcheck=Optional.absent(), skipHealthchecksOnDeploy=Optional.absent(), deployHealthTimeoutSeconds=Optional.absent(), considerHealthyAfterRunningForSeconds=Optional.absent(), serviceBasePath=Optional.absent(), loadBalancerGroups=Optional.absent(), loadBalancerPortIndex=Optional.absent(), loadBalancerOptions=Optional.absent(), loadBalancerDomains=Optional.absent(), loadBalancerAdditionalRoutes=Optional.absent(), loadBalancerTemplate=Optional.absent(), loadBalancerServiceIdOverride=Optional.absent(), loadBalancerUpstreamGroup=Optional.absent(), deployInstanceCountPerStep=Optional.absent(), deployStepWaitTimeMs=Optional.absent(), autoAdvanceDeploySteps=Optional.absent(), maxTaskRetries=Optional.absent(), shell=Optional.absent(), user=Optional.absent()}, pendingTask=SingularityPendingTask{pendingTaskId=test-request-firstDeployId-1491594989730-2-IMMEDIATE-1491594989730, cmdLineArgsList=Optional.absent(), user=Optional.absent(), runId=Optional.absent(), skipHealthchecks=Optional.absent(), message=Optional.absent(), resources=Optional.absent(), actionId=Optional.absent()}}, offer=id { value: "offer907"}framework_id { value: "framework1"}slave_id { value: "slave1"}hostname: "host1"resources { name: "cpus" type: SCALAR scalar { value: 125.0 }}resources { name: "mem" type: SCALAR scalar { value: 1024.0 }}resources { name: "ports" type: RANGES ranges { }}attributes { name: "rackid" type: TEXT text { value: "DEFAULT" }}, mesosTask=name: "name"task_id { value: "test-request-firstDeployId-1491594989730-2-host1-rack1"}slave_id { value: "slave1"}, rackId=Optional.of(rack1)}, re-enqueing
+java.lang.IllegalStateException: instance must be started before calling this method
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:174)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getChildren(CuratorFrameworkImpl.java:379)
+	at com.hubspot.singularity.data.CuratorManager.getChildren(CuratorManager.java:130)
+	at com.hubspot.singularity.data.CuratorAsyncManager.getAsyncChildrenThrows(CuratorAsyncManager.java:54)
+	at com.hubspot.singularity.data.CuratorAsyncManager.getAsyncChildren(CuratorAsyncManager.java:260)
+	at com.hubspot.singularity.data.TaskManager.getTaskHistoryUpdates(TaskManager.java:482)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.getTaskState(SingularityNewTaskChecker.java:289)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.checkTask(SingularityNewTaskChecker.java:252)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.access$200(SingularityNewTaskChecker.java:56)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker$1.run(SingularityNewTaskChecker.java:206)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+22:56:37.307 [check-new-task-pool-1] ERROR com.hubspot.singularity.scheduler.SingularityNewTaskChecker - Uncaught throwable re-enqueuing task check for task SingularityTask{taskRequest=SingularityTaskRequest{request=SingularityRequest{id='test-request', requestType=WORKER, owners=Optional.absent(), numRetriesOnFailure=Optional.absent(), schedule=Optional.absent(), quartzSchedule=Optional.absent(), scheduleType=Optional.absent(), scheduleTimeZone=Optional.absent(), killOldNonLongRunningTasksAfterMillis=Optional.absent(), taskExecutionTimeLimitMillis=Optional.absent(), scheduledExpectedRuntimeMillis=Optional.absent(), waitAtLeastMillisAfterTaskFinishesForReschedule=Optional.absent(), instances=Optional.absent(), skipHealthchecks=Optional.absent(), rackSensitive=Optional.absent(), rackAffinity=Optional.absent(), slavePlacement=Optional.absent(), requiredSlaveAttributes=Optional.absent(), allowedSlaveAttributes=Optional.absent(), loadBalanced=Optional.of(true), group=Optional.absent(), requiredRole=Optional.absent(), readWriteGroups=Optional.absent(), readOnlyGroups=Optional.absent(), bounceAfterScale=Optional.absent(), emailConfigurationOverrides=Optional.absent(), hideEvenNumberAcrossRacksHint=Optional.absent(), taskLogErrorRegex=Optional.absent(), taskLogErrorRegexCaseSensitive=Optional.absent(), taskPriorityLevel=Optional.absent(), maxTasksPerOffer=Optional.absent(), allowBounceToSameHost=Optional.absent()}, deploy=SingularityDeploy{requestId='test-request', id='firstDeployId', version=Optional.absent(), timestamp=Optional.absent(), metadata=Optional.absent(), containerInfo=Optional.absent(), customExecutorCmd=Optional.absent(), customExecutorId=Optional.absent(), customExecutorSource=Optional.absent(), customExecutorResources=Optional.absent(), resources=Optional.absent(), command=Optional.of(sleep 100), arguments=Optional.absent(), env=Optional.absent(), uris=Optional.absent(), executorData=Optional.absent(), labels=Optional.absent(), mesosLabels=Optional.absent(), taskLabels=Optional.absent(), mesosTaskLabels=Optional.absent(), taskEnv=Optional.absent(), healthcheckUri=Optional.absent(), healthcheckIntervalSeconds=Optional.absent(), healthcheckTimeoutSeconds=Optional.absent(), healthcheckPortIndex=Optional.absent(), healthcheckProtocol=Optional.absent(), healthcheckMaxRetries=Optional.absent(), healthcheckMaxTotalTimeoutSeconds=Optional.absent(), healthcheck=Optional.absent(), skipHealthchecksOnDeploy=Optional.absent(), deployHealthTimeoutSeconds=Optional.absent(), considerHealthyAfterRunningForSeconds=Optional.absent(), serviceBasePath=Optional.absent(), loadBalancerGroups=Optional.absent(), loadBalancerPortIndex=Optional.absent(), loadBalancerOptions=Optional.absent(), loadBalancerDomains=Optional.absent(), loadBalancerAdditionalRoutes=Optional.absent(), loadBalancerTemplate=Optional.absent(), loadBalancerServiceIdOverride=Optional.absent(), loadBalancerUpstreamGroup=Optional.absent(), deployInstanceCountPerStep=Optional.absent(), deployStepWaitTimeMs=Optional.absent(), autoAdvanceDeploySteps=Optional.absent(), maxTaskRetries=Optional.absent(), shell=Optional.absent(), user=Optional.absent()}, pendingTask=SingularityPendingTask{pendingTaskId=test-request-firstDeployId-1491594989730-2-IMMEDIATE-1491594989730, cmdLineArgsList=Optional.absent(), user=Optional.absent(), runId=Optional.absent(), skipHealthchecks=Optional.absent(), message=Optional.absent(), resources=Optional.absent(), actionId=Optional.absent()}}, offer=id { value: "offer907"}framework_id { value: "framework1"}slave_id { value: "slave1"}hostname: "host1"resources { name: "cpus" type: SCALAR scalar { value: 125.0 }}resources { name: "mem" type: SCALAR scalar { value: 1024.0 }}resources { name: "ports" type: RANGES ranges { }}attributes { name: "rackid" type: TEXT text { value: "DEFAULT" }}, mesosTask=name: "name"task_id { value: "test-request-firstDeployId-1491594989730-2-host1-rack1"}slave_id { value: "slave1"}, rackId=Optional.of(rack1)}, aborting
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@a43c13f rejected from java.util.concurrent.ScheduledThreadPoolExecutor@63ee4fa7[Shutting down, pool size = 3, active threads = 1, queued tasks = 0, completed tasks = 2]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2047)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:823)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.enqueueCheckWithDelay(SingularityNewTaskChecker.java:240)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.reEnqueueCheck(SingularityNewTaskChecker.java:234)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.reEnqueueCheckOrAbort(SingularityNewTaskChecker.java:225)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.access$600(SingularityNewTaskChecker.java:56)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker$1.run(SingularityNewTaskChecker.java:217)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+22:56:38.932 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave2 for task test-request-firstDeployId-20000-2-host2-rack1
+22:56:39.677 [check-new-task-pool-1] ERROR com.hubspot.singularity.scheduler.SingularityNewTaskChecker - Uncaught throwable in task check for task SingularityTask{taskRequest=SingularityTaskRequest{request=SingularityRequest{id='test-request', requestType=WORKER, owners=Optional.absent(), numRetriesOnFailure=Optional.absent(), schedule=Optional.absent(), quartzSchedule=Optional.absent(), scheduleType=Optional.absent(), scheduleTimeZone=Optional.absent(), killOldNonLongRunningTasksAfterMillis=Optional.absent(), taskExecutionTimeLimitMillis=Optional.absent(), scheduledExpectedRuntimeMillis=Optional.absent(), waitAtLeastMillisAfterTaskFinishesForReschedule=Optional.absent(), instances=Optional.absent(), skipHealthchecks=Optional.absent(), rackSensitive=Optional.absent(), rackAffinity=Optional.absent(), slavePlacement=Optional.absent(), requiredSlaveAttributes=Optional.absent(), allowedSlaveAttributes=Optional.absent(), loadBalanced=Optional.of(false), group=Optional.absent(), requiredRole=Optional.absent(), readWriteGroups=Optional.absent(), readOnlyGroups=Optional.absent(), bounceAfterScale=Optional.absent(), emailConfigurationOverrides=Optional.absent(), hideEvenNumberAcrossRacksHint=Optional.absent(), taskLogErrorRegex=Optional.absent(), taskLogErrorRegexCaseSensitive=Optional.absent(), taskPriorityLevel=Optional.absent(), maxTasksPerOffer=Optional.absent(), allowBounceToSameHost=Optional.absent()}, deploy=SingularityDeploy{requestId='test-request', id='firstDeployId', version=Optional.absent(), timestamp=Optional.absent(), metadata=Optional.absent(), containerInfo=Optional.absent(), customExecutorCmd=Optional.absent(), customExecutorId=Optional.absent(), customExecutorSource=Optional.absent(), customExecutorResources=Optional.absent(), resources=Optional.absent(), command=Optional.of(sleep 100), arguments=Optional.absent(), env=Optional.absent(), uris=Optional.absent(), executorData=Optional.absent(), labels=Optional.absent(), mesosLabels=Optional.absent(), taskLabels=Optional.absent(), mesosTaskLabels=Optional.absent(), taskEnv=Optional.absent(), healthcheckUri=Optional.absent(), healthcheckIntervalSeconds=Optional.absent(), healthcheckTimeoutSeconds=Optional.absent(), healthcheckPortIndex=Optional.absent(), healthcheckProtocol=Optional.absent(), healthcheckMaxRetries=Optional.absent(), healthcheckMaxTotalTimeoutSeconds=Optional.absent(), healthcheck=Optional.absent(), skipHealthchecksOnDeploy=Optional.absent(), deployHealthTimeoutSeconds=Optional.absent(), considerHealthyAfterRunningForSeconds=Optional.absent(), serviceBasePath=Optional.absent(), loadBalancerGroups=Optional.absent(), loadBalancerPortIndex=Optional.absent(), loadBalancerOptions=Optional.absent(), loadBalancerDomains=Optional.absent(), loadBalancerAdditionalRoutes=Optional.absent(), loadBalancerTemplate=Optional.absent(), loadBalancerServiceIdOverride=Optional.absent(), loadBalancerUpstreamGroup=Optional.absent(), deployInstanceCountPerStep=Optional.absent(), deployStepWaitTimeMs=Optional.absent(), autoAdvanceDeploySteps=Optional.absent(), maxTaskRetries=Optional.absent(), shell=Optional.absent(), user=Optional.absent()}, pendingTask=SingularityPendingTask{pendingTaskId=test-request-firstDeployId-1491605675384-1-IMMEDIATE-1491605675384, cmdLineArgsList=Optional.absent(), user=Optional.absent(), runId=Optional.absent(), skipHealthchecks=Optional.absent(), message=Optional.absent(), resources=Optional.absent(), actionId=Optional.absent()}}, offer=id { value: "offer953"}framework_id { value: "framework1"}slave_id { value: "slave1"}hostname: "host1"resources { name: "cpus" type: SCALAR scalar { value: 125.0 }}resources { name: "mem" type: SCALAR scalar { value: 1024.0 }}resources { name: "ports" type: RANGES ranges { }}attributes { name: "rackid" type: TEXT text { value: "DEFAULT" }}, mesosTask=name: "name"task_id { value: "test-request-firstDeployId-1491605675384-1-host1-rack1"}slave_id { value: "slave1"}, rackId=Optional.of(rack1)}, re-enqueing
+java.lang.IllegalStateException: instance must be started before calling this method
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:174)
+	at org.apache.curator.framework.imps.CuratorFrameworkImpl.getChildren(CuratorFrameworkImpl.java:379)
+	at com.hubspot.singularity.data.CuratorManager.getChildren(CuratorManager.java:130)
+	at com.hubspot.singularity.data.CuratorAsyncManager.getAsyncChildrenThrows(CuratorAsyncManager.java:54)
+	at com.hubspot.singularity.data.CuratorAsyncManager.getAsyncChildren(CuratorAsyncManager.java:260)
+	at com.hubspot.singularity.data.TaskManager.getTaskHistoryUpdates(TaskManager.java:482)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.getTaskState(SingularityNewTaskChecker.java:289)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.checkTask(SingularityNewTaskChecker.java:252)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.access$200(SingularityNewTaskChecker.java:56)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker$1.run(SingularityNewTaskChecker.java:206)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+22:56:39.683 [check-new-task-pool-1] ERROR com.hubspot.singularity.scheduler.SingularityNewTaskChecker - Uncaught throwable re-enqueuing task check for task SingularityTask{taskRequest=SingularityTaskRequest{request=SingularityRequest{id='test-request', requestType=WORKER, owners=Optional.absent(), numRetriesOnFailure=Optional.absent(), schedule=Optional.absent(), quartzSchedule=Optional.absent(), scheduleType=Optional.absent(), scheduleTimeZone=Optional.absent(), killOldNonLongRunningTasksAfterMillis=Optional.absent(), taskExecutionTimeLimitMillis=Optional.absent(), scheduledExpectedRuntimeMillis=Optional.absent(), waitAtLeastMillisAfterTaskFinishesForReschedule=Optional.absent(), instances=Optional.absent(), skipHealthchecks=Optional.absent(), rackSensitive=Optional.absent(), rackAffinity=Optional.absent(), slavePlacement=Optional.absent(), requiredSlaveAttributes=Optional.absent(), allowedSlaveAttributes=Optional.absent(), loadBalanced=Optional.of(false), group=Optional.absent(), requiredRole=Optional.absent(), readWriteGroups=Optional.absent(), readOnlyGroups=Optional.absent(), bounceAfterScale=Optional.absent(), emailConfigurationOverrides=Optional.absent(), hideEvenNumberAcrossRacksHint=Optional.absent(), taskLogErrorRegex=Optional.absent(), taskLogErrorRegexCaseSensitive=Optional.absent(), taskPriorityLevel=Optional.absent(), maxTasksPerOffer=Optional.absent(), allowBounceToSameHost=Optional.absent()}, deploy=SingularityDeploy{requestId='test-request', id='firstDeployId', version=Optional.absent(), timestamp=Optional.absent(), metadata=Optional.absent(), containerInfo=Optional.absent(), customExecutorCmd=Optional.absent(), customExecutorId=Optional.absent(), customExecutorSource=Optional.absent(), customExecutorResources=Optional.absent(), resources=Optional.absent(), command=Optional.of(sleep 100), arguments=Optional.absent(), env=Optional.absent(), uris=Optional.absent(), executorData=Optional.absent(), labels=Optional.absent(), mesosLabels=Optional.absent(), taskLabels=Optional.absent(), mesosTaskLabels=Optional.absent(), taskEnv=Optional.absent(), healthcheckUri=Optional.absent(), healthcheckIntervalSeconds=Optional.absent(), healthcheckTimeoutSeconds=Optional.absent(), healthcheckPortIndex=Optional.absent(), healthcheckProtocol=Optional.absent(), healthcheckMaxRetries=Optional.absent(), healthcheckMaxTotalTimeoutSeconds=Optional.absent(), healthcheck=Optional.absent(), skipHealthchecksOnDeploy=Optional.absent(), deployHealthTimeoutSeconds=Optional.absent(), considerHealthyAfterRunningForSeconds=Optional.absent(), serviceBasePath=Optional.absent(), loadBalancerGroups=Optional.absent(), loadBalancerPortIndex=Optional.absent(), loadBalancerOptions=Optional.absent(), loadBalancerDomains=Optional.absent(), loadBalancerAdditionalRoutes=Optional.absent(), loadBalancerTemplate=Optional.absent(), loadBalancerServiceIdOverride=Optional.absent(), loadBalancerUpstreamGroup=Optional.absent(), deployInstanceCountPerStep=Optional.absent(), deployStepWaitTimeMs=Optional.absent(), autoAdvanceDeploySteps=Optional.absent(), maxTaskRetries=Optional.absent(), shell=Optional.absent(), user=Optional.absent()}, pendingTask=SingularityPendingTask{pendingTaskId=test-request-firstDeployId-1491605675384-1-IMMEDIATE-1491605675384, cmdLineArgsList=Optional.absent(), user=Optional.absent(), runId=Optional.absent(), skipHealthchecks=Optional.absent(), message=Optional.absent(), resources=Optional.absent(), actionId=Optional.absent()}}, offer=id { value: "offer953"}framework_id { value: "framework1"}slave_id { value: "slave1"}hostname: "host1"resources { name: "cpus" type: SCALAR scalar { value: 125.0 }}resources { name: "mem" type: SCALAR scalar { value: 1024.0 }}resources { name: "ports" type: RANGES ranges { }}attributes { name: "rackid" type: TEXT text { value: "DEFAULT" }}, mesosTask=name: "name"task_id { value: "test-request-firstDeployId-1491605675384-1-host1-rack1"}slave_id { value: "slave1"}, rackId=Optional.of(rack1)}, aborting
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@4d224a27 rejected from java.util.concurrent.ScheduledThreadPoolExecutor@30d2c0f4[Shutting down, pool size = 2, active threads = 1, queued tasks = 0, completed tasks = 1]
+	at java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2047)
+	at java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:823)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:326)
+	at java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:533)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.enqueueCheckWithDelay(SingularityNewTaskChecker.java:240)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.reEnqueueCheck(SingularityNewTaskChecker.java:234)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.reEnqueueCheckOrAbort(SingularityNewTaskChecker.java:225)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker.access$600(SingularityNewTaskChecker.java:56)
+	at com.hubspot.singularity.scheduler.SingularityNewTaskChecker$1.run(SingularityNewTaskChecker.java:217)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+22:56:39.722 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave3 for task test-request-firstDeployId-30000-3-host3-rack1
+22:56:40.554 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave7 for task test-request-2-firstDeployId-70000-7-host7-rack1
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 115.941 sec <<< FAILURE! - in com.hubspot.singularity.scheduler.HistoryPersisterTest
+testTaskAgePurging(com.hubspot.singularity.scheduler.HistoryPersisterTest)  Time elapsed: 15.255 sec  <<< FAILURE!
+java.lang.AssertionError
+	at com.hubspot.singularity.scheduler.HistoryPersisterTest.testTaskAgePurging(HistoryPersisterTest.java:139)
+
+Running com.hubspot.singularity.data.BlendedHistoryTest
+22:56:47.400 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1045ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:56:48.084 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1180ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.617 sec - in com.hubspot.singularity.data.BlendedHistoryTest
+Running com.hubspot.singularity.scheduler.SingularityMachineStatesTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 288.41 sec - in com.hubspot.singularity.scheduler.SingularitySlavePlacementTest
+Running com.hubspot.singularity.helpers.RFC5545ScheduleTest
+22:57:00.634 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491605818696-1-host1-rack1
+22:57:01.866 [SyncThread:0] WARN org.apache.zookeeper.server.persistence.FileTxnLog - fsync-ing the write ahead log in SyncThread:0 took 1297ms which will adversely effect operation latency. See the ZooKeeper troubleshooting guide
+22:57:02.343 [main] WARN com.hubspot.singularity.mesos.SingularitySlaveAndRackManager - Couldn't find slave with id slave1 for task test-request-firstDeployId-1491605821364-1-host1-rack1
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.147 sec - in com.hubspot.singularity.helpers.RFC5545ScheduleTest
+Running com.hubspot.singularity.scheduler.SingularitySchedulerTest
+22:57:09.961 [main] WARN com.hubspot.singularity.mesos.SingularityMesosScheduler - Lost a slave value: "slave1"
+
+
+Results :
+
+Failed tests: 
+  HistoryPersisterTest.testTaskAgePurging:139 null
+
+Tests run: 52, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Singularity ........................................ SUCCESS [ 10.535 s]
+[INFO] SingularityBase .................................... SUCCESS [ 12.843 s]
+[INFO] SingularityUI ...................................... SUCCESS [02:41 min]
+[INFO] SingularityMesosClient ............................. SUCCESS [  4.651 s]
+[INFO] SingularitySwagger ................................. SUCCESS [  3.000 s]
+[INFO] SingularityService ................................. FAILURE [05:58 min]
+[INFO] SingularityRunnerBase .............................. SKIPPED
+[INFO] SingularityS3Base .................................. SKIPPED
+[INFO] SingularityClient .................................. SKIPPED
+[INFO] SingularityExecutor ................................ SKIPPED
+[INFO] SingularityExecutorCleanup ......................... SKIPPED
+[INFO] SingularityS3Uploader .............................. SKIPPED
+[INFO] SingularityS3Downloader ............................ SKIPPED
+[INFO] EmbedSingularityExample ............................ SKIPPED
+[INFO] SingularityServiceIntegrationTests ................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 09:13 min
+[INFO] Finished at: 2017-04-08T00:57:12+02:00
+[INFO] Final Memory: 130M/1443M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19:test (default-test) on project SingularityService: There was a timeout or other error in the fork -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :SingularityService
