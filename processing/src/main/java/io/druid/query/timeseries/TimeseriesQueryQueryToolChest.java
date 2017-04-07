@@ -39,6 +39,7 @@ import io.druid.query.ResultGranularTimestampComparator;
 import io.druid.query.ResultMergeQueryRunner;
 import io.druid.query.aggregation.AggregatorFactory;
 import io.druid.query.aggregation.MetricManipulationFn;
+import io.druid.query.aggregation.MetricManipulatorFns;
 import io.druid.query.aggregation.PostAggregator;
 import io.druid.query.cache.CacheKeyBuilder;
 import org.joda.time.DateTime;
@@ -243,7 +244,8 @@ public class TimeseriesQueryQueryToolChest extends QueryToolChest<Result<Timeser
       TimeseriesQuery query, MetricManipulationFn fn
   )
   {
-    return makeComputeManipulatorFn(query, fn, true);
+    boolean shouldFinalize = MetricManipulatorFns.finalizing().equals(fn);
+    return makeComputeManipulatorFn(query, fn, shouldFinalize);
   }
 
   private Function<Result<TimeseriesResultValue>, Result<TimeseriesResultValue>> makeComputeManipulatorFn(
