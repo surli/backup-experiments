@@ -1,0 +1,1374 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] OpenGrok
+[INFO] Java RCS
+[INFO] OpenGrok Indexer
+[INFO] OpenGrok Sample Plugins
+[INFO] OpenGrok Web
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building OpenGrok 0.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.pom (7 KB at 36.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom (9 KB at 152.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom (30 KB at 492.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom (15 KB at 657.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.4/maven-install-plugin-2.4.jar (27 KB at 598.2 KB/sec)
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ opengrok ---
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.pom (2 KB at 40.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.6/maven-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.6/maven-2.0.6.pom (9 KB at 267.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/5/maven-parent-5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/5/maven-parent-5.pom (15 KB at 391.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/3/apache-3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/3/apache-3.pom (4 KB at 85.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom (3 KB at 95.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom (2 KB at 67.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom (3 KB at 114.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom (2 KB at 64.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom (9 KB at 461.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom (4 KB at 175.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom (492 B at 20.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom (6 KB at 350.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom (998 B at 48.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom (7 KB at 352.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom (4 KB at 152.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom (2 KB at 92.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom (3 KB at 91.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom (2 KB at 69.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom (2 KB at 81.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom (2 KB at 86.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.pom (3 KB at 111.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom (19 KB at 586.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom (7 KB at 314.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom (14 KB at 551.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom (2 KB at 49.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.7/plexus-components-1.1.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.7/plexus-components-1.1.7.pom (5 KB at 211.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.8/plexus-1.0.8.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.8/plexus-1.0.8.pom (8 KB at 392.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.pom (8 KB at 272.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar (13 KB at 256.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar (114 KB at 1181.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar (29 KB at 264.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar (35 KB at 299.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar (48 KB at 368.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar (190 KB at 1415.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar (56 KB at 336.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar (119 KB at 679.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar (24 KB at 134.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar (37 KB at 202.4 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar (85 KB at 463.5 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar (12 KB at 58.2 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar (86 KB at 418.2 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.jar (226 KB at 991.4 KB/sec)
+[INFO] Installing /root/workspace/OpenGrok/OpenGrok/219716179/pom.xml to /root/./workspace/OpenGrok/OpenGrok/219716179/.m2/org/opensolaris/opengrok/opengrok/0.13-SNAPSHOT/opengrok-0.13-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java RCS 0.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom (8 KB at 233.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar (29 KB at 847.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.pom (10 KB at 495.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/28/maven-plugins-28.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/28/maven-plugins-28.pom (12 KB at 470.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/27/maven-parent-27.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/27/maven-parent-27.pom (40 KB at 1590.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/17/apache-17.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/17/apache-17.pom (16 KB at 712.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.5.1/maven-compiler-plugin-3.5.1.jar (50 KB at 1532.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.19.1/maven-surefire-plugin-2.19.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.19.1/maven-surefire-plugin-2.19.1.pom (6 KB at 187.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.19.1/surefire-2.19.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.19.1/surefire-2.19.1.pom (19 KB at 858.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/26/maven-parent-26.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/26/maven-parent-26.pom (39 KB at 1387.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/16/apache-16.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/16/apache-16.pom (16 KB at 626.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.19.1/maven-surefire-plugin-2.19.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.19.1/maven-surefire-plugin-2.19.1.jar (38 KB at 1250.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.pom (6 KB at 178.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom (13 KB at 578.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom (26 KB at 1119.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom (15 KB at 628.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar (34 KB at 949.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom (24 KB at 1005.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom (766 B at 37.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom (2 KB at 107.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar (44 KB at 1099.2 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar (308 KB at 4331.7 KB/sec)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jrcs ---
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom (7 KB at 312.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom (2 KB at 69.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom (2 KB at 95.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom (2 KB at 74.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom (424 B at 21.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom (4 KB at 212.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom (2 KB at 59.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom (3 KB at 97.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom (2 KB at 93.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom (7 KB at 238.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom (2 KB at 61.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom (4 KB at 190.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom (4 KB at 162.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom (17 KB at 682.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom (6 KB at 226.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom (9 KB at 499.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom (7 KB at 352.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom (12 KB at 666.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom (889 B at 48.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom (6 KB at 248.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom (3 KB at 111.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom (3 KB at 163.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom (5 KB at 234.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom (8 KB at 328.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom (890 B at 23.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom (3 KB at 163.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom (16 KB at 719.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar (6 KB at 161.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.jar (21 KB at 422.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar (10 KB at 202.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.jar (14 KB at 316.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.jar (149 KB at 2350.2 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar (30 KB at 498.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar (14 KB at 207.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar (37 KB at 551.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.jar (37 KB at 514.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.jar (11 KB at 135.2 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar (43 KB at 507.2 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar (7 KB at 77.3 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar (60 KB at 662.5 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar (218 KB at 2223.9 KB/sec)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OpenGrok/OpenGrok/219716179/jrcs/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ jrcs ---
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (3 KB at 131.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0/maven-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0/maven-3.0.pom (22 KB at 1187.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/15/maven-parent-15.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/15/maven-parent-15.pom (24 KB at 1378.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/6/apache-6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/6/apache-6.pom (13 KB at 735.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (4 KB at 172.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.pom (4 KB at 171.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.pom (2 KB at 99.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (6 KB at 194.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (4 KB at 145.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (3 KB at 133.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (2 KB at 61.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (8 KB at 474.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 KB at 456.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom (815 B at 41.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom (5 KB at 230.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom (17 KB at 649.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4 KB at 244.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (6 KB at 171.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 KB at 491.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (7 KB at 359.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (2 KB at 108.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (3 KB at 90.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (910 B at 59.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (6 KB at 249.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom (3 KB at 180.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom (7 KB at 390.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom (9 KB at 341.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.pom (6 KB at 239.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom (3 KB at 118.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (2 KB at 99.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (3 KB at 129.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (3 KB at 120.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (2 KB at 96.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (8 KB at 314.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (3 KB at 91.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (4 KB at 240.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (2 KB at 100.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom (4 KB at 204.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.2.1/maven-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.2.1/maven-2.2.1.pom (22 KB at 1287.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/11/maven-parent-11.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/11/maven-parent-11.pom (32 KB at 1758.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/5/apache-5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/5/apache-5.pom (5 KB at 200.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom (12 KB at 668.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom (3 KB at 92.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom (4 KB at 186.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom (889 B at 54.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom (2 KB at 83.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom (2 KB at 109.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom (8 KB at 483.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom (3 KB at 182.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom (3 KB at 124.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.pom (2 KB at 106.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.2.1/maven-reporting-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.2.1/maven-reporting-2.2.1.pom (2 KB at 44.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.pom (2 KB at 83.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1/doxia-1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1/doxia-1.1.pom (15 KB at 823.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.pom (2 KB at 40.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.pom (4 KB at 199.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-30/plexus-containers-1.0-alpha-30.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-30/plexus-containers-1.0-alpha-30.pom (2 KB at 102.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.5/plexus-utils-1.4.5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.5/plexus-utils-1.4.5.pom (3 KB at 138.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-9/plexus-classworlds-1.2-alpha-9.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/1.2-alpha-9/plexus-classworlds-1.2-alpha-9.pom (4 KB at 174.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.10/plexus-1.0.10.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.10/plexus-1.0.10.pom (9 KB at 503.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom (3 KB at 96.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom (2 KB at 90.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom (2 KB at 114.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom (2 KB at 69.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom (3 KB at 159.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom (4 KB at 189.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.pom (880 B at 43.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom (2 KB at 89.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.pom (8 KB at 389.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/11/commons-parent-11.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/11/commons-parent-11.pom (25 KB at 1416.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/4/apache-4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/4/apache-4.pom (5 KB at 274.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.pom (2 KB at 89.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom (3 KB at 118.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom (2 KB at 64.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom (6 KB at 209.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom (5 KB at 293.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom (37 KB at 2031.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom (15 KB at 929.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom (10 KB at 431.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/25/commons-parent-25.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/25/commons-parent-25.pom (48 KB at 2051.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/9/apache-9.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/9/apache-9.pom (15 KB at 779.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom (965 B at 42.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom (5 KB at 231.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/19/maven-shared-components-19.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/19/maven-shared-components-19.pom (7 KB at 388.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom (32 KB at 1767.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom (14 KB at 852.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom (4 KB at 247.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom (5 KB at 283.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.pom (891 B at 43.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.7/plexus-compiler-2.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.7/plexus-compiler-2.7.pom (5 KB at 301.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (3 KB at 173.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom (21 KB at 1312.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (4 KB at 249.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom (20 KB at 1247.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.pom (711 B at 43.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.pom (792 B at 48.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.7/plexus-compilers-2.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.7/plexus-compilers-2.7.pom (2 KB at 84.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar (48 KB at 901.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (150 KB at 4527.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.jar (161 KB at 2871.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (197 KB at 5051.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.jar (51 KB at 1236.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.jar (46 KB at 785.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.jar (37 KB at 625.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 KB at 386.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar (217 KB at 2552.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (145 KB at 1474.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (50 KB at 471.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.jar (515 KB at 4679.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (461 KB at 4150.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 KB at 116.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (104 KB at 872.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 KB at 338.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (73 KB at 540.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (60 KB at 441.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar (5 KB at 29.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (106 KB at 727.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar (28 KB at 175.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar (14 KB at 82.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar (37 KB at 226.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.jar (152 KB at 873.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar (14 KB at 74.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.jar (26 KB at 139.4 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.jar (181 KB at 1004.4 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar (32 KB at 165.5 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.jar (5 KB at 23.8 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.jar (20 KB at 96.1 KB/sec)
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 51 source files to /root/workspace/OpenGrok/OpenGrok/219716179/jrcs/target/classes
+[INFO] /root/workspace/OpenGrok/OpenGrok/219716179/jrcs/src/main/java/org/apache/commons/jrcs/util/ToString.java: Some input files use unchecked or unsafe operations.
+[INFO] /root/workspace/OpenGrok/OpenGrok/219716179/jrcs/src/main/java/org/apache/commons/jrcs/util/ToString.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jrcs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OpenGrok/OpenGrok/219716179/jrcs/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ jrcs ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ jrcs ---
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.pom (8 KB at 265.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom (2 KB at 93.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom (13 KB at 398.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/24/maven-parent-24.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/24/maven-parent-24.pom (37 KB at 1242.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/14/apache-14.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/14/apache-14.pom (15 KB at 796.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.pom (4 KB at 214.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.pom (4 KB at 194.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.pom (3 KB at 122.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/15/maven-shared-components-15.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/15/maven-shared-components-15.pom (10 KB at 268.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/16/maven-parent-16.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/16/maven-parent-16.pom (23 KB at 1420.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/7/apache-7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/7/apache-7.pom (15 KB at 939.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom (17 KB at 858.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom (41 KB at 2274.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar (13 KB at 326.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.jar (39 KB at 799.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar (79 KB at 1508.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.jar (286 KB at 3038.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.jar (45 KB at 504.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar (153 KB at 1623.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar (48 KB at 420.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar (223 KB at 1887.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar (30 KB at 204.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar (35 KB at 238.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar (66 KB at 442.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar (50 KB at 323.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar (324 KB at 2063.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar (86 KB at 524.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar (9 KB at 50.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar (22 KB at 117.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.jar (22 KB at 115.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar (17 KB at 84.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar (11 KB at 51.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar (26 KB at 120.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.jar (174 KB at 804.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.jar (11 KB at 47.3 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar (13 KB at 54.3 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar (14 KB at 56.9 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.jar (192 KB at 794.5 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar (309 KB at 1233.6 KB/sec)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ jrcs ---
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom (5 KB at 170.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom (3 KB at 152.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom (4 KB at 248.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom (9 KB at 510.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/5/forge-parent-5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/5/forge-parent-5.pom (9 KB at 480.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom (2 KB at 112.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom (3 KB at 101.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom (19 KB at 1069.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom (1018 B at 38.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.pom (10 KB at 293.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar (22 KB at 349.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar (60 KB at 1342.2 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar (181 KB at 3463.8 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar (57 KB at 1053.7 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar (203 KB at 3169.6 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar (221 KB at 3199.6 KB/sec)
+[INFO] Building jar: /root/workspace/OpenGrok/OpenGrok/219716179/jrcs/target/jrcs-0.13-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ jrcs ---
+[INFO] Installing /root/workspace/OpenGrok/OpenGrok/219716179/jrcs/target/jrcs-0.13-SNAPSHOT.jar to /root/./workspace/OpenGrok/OpenGrok/219716179/.m2/org/opensolaris/opengrok/jrcs/0.13-SNAPSHOT/jrcs-0.13-SNAPSHOT.jar
+[INFO] Installing /root/workspace/OpenGrok/OpenGrok/219716179/jrcs/pom.xml to /root/./workspace/OpenGrok/OpenGrok/219716179/.m2/org/opensolaris/opengrok/jrcs/0.13-SNAPSHOT/jrcs-0.13-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building OpenGrok Indexer 0.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repo.maven.apache.org/maven2/de/jflex/jflex-maven-plugin/1.6.1/jflex-maven-plugin-1.6.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/de/jflex/jflex-maven-plugin/1.6.1/jflex-maven-plugin-1.6.1.pom (13 KB at 430.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (5 KB at 261.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/de/jflex/jflex-maven-plugin/1.6.1/jflex-maven-plugin-1.6.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/de/jflex/jflex-maven-plugin/1.6.1/jflex-maven-plugin-1.6.1.jar (14 KB at 630.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/com/google/code/maven-replacer-plugin/replacer/1.5.3/replacer-1.5.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/com/google/code/maven-replacer-plugin/replacer/1.5.3/replacer-1.5.3.pom (6 KB at 259.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/com/google/code/maven-replacer-plugin/replacer/1.5.3/replacer-1.5.3.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/com/google/code/maven-replacer-plugin/replacer/1.5.3/replacer-1.5.3.jar (39 KB at 1685.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.pom (4 KB at 190.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/27/maven-plugins-27.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/27/maven-plugins-27.pom (12 KB at 504.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.jar (36 KB at 1850.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.pom (7 KB at 317.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/30/maven-plugins-30.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/30/maven-plugins-30.pom (10 KB at 620.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/30/maven-parent-30.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/30/maven-parent-30.pom (41 KB at 2017.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom (16 KB at 850.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.jar (27 KB at 1255.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/bcel/bcel/6.0/bcel-6.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/bcel/bcel/6.0/bcel-6.0.pom (19 KB at 161.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/40/commons-parent-40.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/40/commons-parent-40.pom (63 KB at 2722.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-core/6.5.0/lucene-core-6.5.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-core/6.5.0/lucene-core-6.5.0.pom (3 KB at 164.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-parent/6.5.0/lucene-parent-6.5.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-parent/6.5.0/lucene-parent-6.5.0.pom (5 KB at 303.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-solr-grandparent/6.5.0/lucene-solr-grandparent-6.5.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-solr-grandparent/6.5.0/lucene-solr-grandparent-6.5.0.pom (441 KB at 11906.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-analyzers-common/6.5.0/lucene-analyzers-common-6.5.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-analyzers-common/6.5.0/lucene-analyzers-common-6.5.0.pom (4 KB at 139.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queryparser/6.5.0/lucene-queryparser-6.5.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queryparser/6.5.0/lucene-queryparser-6.5.0.pom (4 KB at 107.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queries/6.5.0/lucene-queries-6.5.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queries/6.5.0/lucene-queries-6.5.0.pom (3 KB at 101.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-sandbox/6.5.0/lucene-sandbox-6.5.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-sandbox/6.5.0/lucene-sandbox-6.5.0.pom (3 KB at 105.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-suggest/6.5.0/lucene-suggest-6.5.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-suggest/6.5.0/lucene-suggest-6.5.0.pom (4 KB at 124.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom (157 B at 9.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.pom (4 KB at 199.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.7/ant-1.9.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.7/ant-1.9.7.pom (10 KB at 552.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.9.7/ant-parent-1.9.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.9.7/ant-parent-1.9.7.pom (6 KB at 288.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.7/ant-launcher-1.9.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.7/ant-launcher-1.9.7.pom (3 KB at 84.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.pom (3 KB at 127.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/derby/derby-project/10.12.1.1/derby-project-10.12.1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/derby/derby-project/10.12.1.1/derby-project-10.12.1.1.pom (6 KB at 322.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/bcel/bcel/6.0/bcel-6.0.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-analyzers-common/6.5.0/lucene-analyzers-common-6.5.0.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queryparser/6.5.0/lucene-queryparser-6.5.0.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-core/6.5.0/lucene-core-6.5.0.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queries/6.5.0/lucene-queries-6.5.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/bcel/bcel/6.0/bcel-6.0.jar (656 KB at 8851.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-sandbox/6.5.0/lucene-sandbox-6.5.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-sandbox/6.5.0/lucene-sandbox-6.5.0.jar (166 KB at 2798.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-suggest/6.5.0/lucene-suggest-6.5.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queryparser/6.5.0/lucene-queryparser-6.5.0.jar (396 KB at 4880.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-queries/6.5.0/lucene-queries-6.5.0.jar (232 KB at 3091.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-suggest/6.5.0/lucene-suggest-6.5.0.jar (244 KB at 2594.8 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar (24 KB at 243.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.7/ant-1.9.7.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.7/ant-launcher-1.9.7.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar (103 KB at 933.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.7/ant-launcher-1.9.7.jar (18 KB at 138.0 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-analyzers-common/6.5.0/lucene-analyzers-common-6.5.0.jar (1479 KB at 6541.5 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/lucene/lucene-core/6.5.0/lucene-core-6.5.0.jar (2711 KB at 8549.2 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.7/ant-1.9.7.jar (1989 KB at 7178.6 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.jar (3150 KB at 10158.5 KB/sec)
+[INFO] 
+[INFO] --- jflex-maven-plugin:1.6.1:generate (default) @ opengrok-indexer ---
+[INFO] Downloading: http://repo.maven.apache.org/maven2/de/jflex/jflex/1.6.1/jflex-1.6.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/de/jflex/jflex/1.6.1/jflex-1.6.1.pom (12 KB at 641.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/de/jflex/jflex-parent/1.6.1/jflex-parent-1.6.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/de/jflex/jflex-parent/1.6.1/jflex-parent-1.6.1.pom (8 KB at 421.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.7.0/ant-1.7.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.7.0/ant-1.7.0.pom (10 KB at 453.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.7.0/ant-parent-1.7.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.7.0/ant-parent-1.7.0.pom (5 KB at 251.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.pom (3 KB at 145.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/1.4/commons-io-1.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/1.4/commons-io-1.4.pom (13 KB at 857.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/7/commons-parent-7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/7/commons-parent-7.pom (18 KB at 1139.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/de/jflex/jflex/1.6.1/jflex-1.6.1.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.7.0/ant-1.7.0.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/1.4/commons-io-1.4.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/de/jflex/jflex/1.6.1/jflex-1.6.1.jar (1027 KB at 13326.3 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/1.4/commons-io-1.4.jar (107 KB at 1365.2 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar (12 KB at 146.9 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.7.0/ant-1.7.0.jar (1260 KB at 11347.5 KB/sec)
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/fortran/FortranXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/fortran/FortranSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/perl/PerlXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/perl/PerlSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/lisp/LispSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/lisp/LispXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/lua/LuaXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/lua/LuaSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/c/CxxSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/c/CSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/c/CxxXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/c/CXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/sql/PLSQLXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/sql/SQLXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/java/JavaXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/java/JavaSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/haskell/HaskellSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/haskell/HaskellXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/sh/ShSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/sh/ShXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/clojure/ClojureXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/clojure/ClojureSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/python/PythonSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/python/PythonXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/csharp/CSharpSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/csharp/CSharpXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/scala/ScalaXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/scala/ScalaSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/plain/PlainXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/plain/XMLXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/plain/PlainSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/plain/PlainFullTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/pascal/PascalSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/pascal/PascalXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/rust/RustSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/rust/RustXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/tcl/TclXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/tcl/TclSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/erlang/ErlangXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/erlang/ErlangSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/javascript/JavaScriptXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/javascript/JavaScriptSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/uue/UuencodeFullTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/uue/UuencodeXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/php/PhpSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/php/PhpXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/vb/VBXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/vb/VBSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/document/TroffXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/document/TroffFullTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/golang/GolangSymbolTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/analysis/golang/GolangXref.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/search/context/HistoryLineTokenizer.java
+[INFO]   generated /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/generated-sources/jflex/org/opensolaris/opengrok/search/context/PlainLineTokenizer.java
+[INFO] 
+[INFO] --- replacer:1.5.3:replace (default) @ opengrok-indexer ---
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0.3/maven-plugin-api-3.0.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0.3/maven-plugin-api-3.0.3.pom (3 KB at 93.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0.3/maven-3.0.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0.3/maven-3.0.3.pom (23 KB at 1103.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0.3/maven-model-3.0.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0.3/maven-model-3.0.3.pom (4 KB at 152.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom (3 KB at 176.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0.3/maven-artifact-3.0.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0.3/maven-artifact-3.0.3.pom (2 KB at 89.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/2.1.1/sisu-inject-plexus-2.1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/2.1.1/sisu-inject-plexus-2.1.1.pom (3 KB at 183.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/2.1.1/guice-plexus-2.1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/2.1.1/guice-plexus-2.1.1.pom (4 KB at 217.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/2.1.1/guice-bean-2.1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/2.1.1/guice-bean-2.1.1.pom (3 KB at 114.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/2.1.1/sisu-inject-2.1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/2.1.1/sisu-inject-2.1.1.pom (2 KB at 50.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/2.1.1/sisu-parent-2.1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/2.1.1/sisu-parent-2.1.1.pom (10 KB at 603.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/7/forge-parent-7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/7/forge-parent-7.pom (13 KB at 590.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom (4 KB at 223.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.1.1/sisu-inject-bean-2.1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.1.1/sisu-inject-bean-2.1.1.pom (3 KB at 183.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.9.4/sisu-guice-2.9.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.9.4/sisu-guice-2.9.4.pom (8 KB at 383.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/2.9.4/guice-parent-2.9.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/2.9.4/guice-parent-2.9.4.pom (13 KB at 790.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.pom (10 KB at 507.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.8.2/ant-parent-1.8.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.8.2/ant-parent-1.8.2.pom (5 KB at 286.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.pom (3 KB at 112.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.pom (18 KB at 1004.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/17/commons-parent-17.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/17/commons-parent-17.pom (31 KB at 1791.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.1/commons-io-2.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.1/commons-io-2.1.pom (11 KB at 519.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.pom (2 KB at 85.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/1/apache-1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/1/apache-1.pom (4 KB at 158.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom (738 B at 34.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0.3/maven-plugin-api-3.0.3.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0.3/maven-model-3.0.3.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0.3/maven-artifact-3.0.3.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/2.1.1/sisu-inject-plexus-2.1.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0.3/maven-model-3.0.3.jar (160 KB at 3990.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.jar (219 KB at 5594.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.1.1/sisu-inject-bean-2.1.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0.3/maven-artifact-3.0.3.jar (51 KB at 849.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.9.4/sisu-guice-2.9.4-no_aop.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar (46 KB at 707.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.1.1/sisu-inject-bean-2.1.1.jar (225 KB at 2805.8 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0.3/maven-plugin-api-3.0.3.jar (49 KB at 572.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.jar (13 KB at 102.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.1/commons-io-2.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/2.1.1/sisu-inject-plexus-2.1.1.jar (192 KB at 1541.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.9.4/sisu-guice-2.9.4-no_aop.jar (473 KB at 3605.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar (278 KB at 2011.3 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.1/commons-io-2.1.jar (160 KB at 1083.9 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.jar (191 KB at 903.1 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.jar (1179 KB at 5016.1 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.jar (1889 KB at 7464.1 KB/sec)
+[INFO] Replacement run on 4 files.
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.8:run (default) @ opengrok-indexer ---
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.pom (4 KB at 103.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.4/ant-1.9.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.4/ant-1.9.4.pom (10 KB at 268.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.9.4/ant-parent-1.9.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.9.4/ant-parent-1.9.4.pom (6 KB at 188.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.pom (3 KB at 58.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.4/ant-1.9.4.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar (18 KB at 641.1 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.jar (238 KB at 6417.0 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.4/ant-1.9.4.jar (1972 KB at 21434.2 KB/sec)
+[INFO] Executing tasks
+
+main:
+
+-check-is-git-repo:
+
+-get-changeset-from-command:
+
+-get-changeset-from-file:
+
+-update-build-info:
+    [mkdir] Created dir: /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/classes/org/opensolaris/opengrok
+[propertyfile] Creating new property file: /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/classes/org/opensolaris/opengrok/info.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ opengrok-indexer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources to org/opensolaris/opengrok/analysis/sql/
+[INFO] Copying 1 resource to org/opensolaris/opengrok/analysis/vb/
+[INFO] Copying 1 resource to org/opensolaris/opengrok/index/
+[INFO] Copying 0 resource to org/opensolaris/opengrok/history/
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ opengrok-indexer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 295 source files to /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ opengrok-indexer ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources to org/opensolaris/opengrok/history/
+[INFO] Copying 2 resources to org/opensolaris/opengrok/analysis/php/
+[INFO] Copying 2 resources to org/opensolaris/opengrok/analysis/haskell/
+[INFO] Copying 1 resource to org/opensolaris/opengrok/analysis/java/
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ opengrok-indexer ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 100 source files to /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/test-classes
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.8:run (build-config-files) @ opengrok-indexer ---
+[INFO] Executing tasks
+
+main:
+
+-post-compile-test:
+
+-create-svn-repository:
+    [mkdir] Created dir: /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/reposroot
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/archives
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/archives/tarfile.tar
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/archives/tarfile.tar.bz2
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/archives/tarfile.tar.gz
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug14924
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug14924/FileLogFormatter.java
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug16070
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug16070/arguments.c
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug16465
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug16465/bugreport16465@
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug19195
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug19195/ctags.config
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug19195/test.s
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug3430
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug3430/truncated
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug3430/zzcomlete
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug3658
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug3658/empty.file
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/bug3658/pic.127.5.0.1.1040
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/Makefile
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/bug15890.c
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/foobar.c
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/header.h
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/i386
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/i386/testsprog
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/main.c
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/myclass.cc
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/sample.c
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/sample.cxx
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/sparc
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/c/sparc/testsprog
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/clojure
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/clojure/sample.clj
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/csharp
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/csharp/Sample.cs
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/data
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/data/Logo.png
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/data/README.pdf
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/document
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/document/document.html
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/document/document.xml
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/document/foobar.1
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/fortran
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/fortran/hello.f90
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/haskell
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/haskell/bug15890.hs
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/issue10
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/issue10/bcel-5.2small.jar
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/java
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/java/Main.class
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/java/Main.java
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/java/Sample.java
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/java/bug15890.java
+     [exec] Adding  (bin)  /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/java/main.jar
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/javascript
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/javascript/function.js
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/javascript/testlong.js
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/lisp
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/lisp/bug15890.lisp
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/lisp/test.el
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/pascal
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/pascal/Sample.pas
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/perl
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/perl/main.pl
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/php
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/php/my_php.inc
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/python
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/python/main.py
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/rfe2575
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/rfe2575/SCCS
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/rfe2575/SCCS/s.versioned.txt
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/rfe2575/non-versioned.txt
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/rfe2575/versioned.txt
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/rust
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/rust/main.rs
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/scala
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/scala/computeserver.scala
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/scopes
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/scopes/scopes_eof
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/scopes/scopes_eof/sample.cpp
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/scopes/scopes_eol_win
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/scopes/scopes_eol_win/WeirdEOL.java
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/script
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/script/bazaar.sh
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/script/bug15661.ksh
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/sql
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/sql/bug18586.sql
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/sql/test.sql
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/tcl
+     [exec] Adding         /root/workspace/OpenGrok/OpenGrok/219716179/testdata/sources/tcl/test.tcl
+     [exec] 
+     [exec] Committed revision 1.
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/csharp
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/csharp/Sample.cs
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/java
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/java/Main.class
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/java/main.jar
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/java/Sample.java
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/java/Main.java
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/java/bug15890.java
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug14924
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug14924/FileLogFormatter.java
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/python
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/python/main.py
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/bug15890.c
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/main.c
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/sparc
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/sparc/testsprog
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/foobar.c
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/i386
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/i386/testsprog
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/Makefile
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/header.h
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/myclass.cc
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/sample.c
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/c/sample.cxx
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/tcl
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/tcl/test.tcl
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/haskell
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/haskell/bug15890.hs
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug16465
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug16465/bugreport16465@
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/scala
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/scala/computeserver.scala
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug19195
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug19195/test.s
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug19195/ctags.config
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/php
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/php/my_php.inc
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug3430
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug3430/truncated
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug3430/zzcomlete
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/issue10
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/issue10/bcel-5.2small.jar
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/scopes
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/scopes/scopes_eof
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/scopes/scopes_eof/sample.cpp
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/scopes/scopes_eol_win
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/scopes/scopes_eol_win/WeirdEOL.java
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/rust
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/rust/main.rs
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/sql
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/sql/bug18586.sql
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/sql/test.sql
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/rfe2575
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/rfe2575/non-versioned.txt
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/rfe2575/SCCS
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/rfe2575/SCCS/s.versioned.txt
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/rfe2575/versioned.txt
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/perl
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/perl/main.pl
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/pascal
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/pascal/Sample.pas
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug3658
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug3658/pic.127.5.0.1.1040
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug3658/empty.file
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/clojure
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/clojure/sample.clj
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/script
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/script/bazaar.sh
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/script/bug15661.ksh
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/archives
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/archives/tarfile.tar.bz2
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/archives/tarfile.tar.gz
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/archives/tarfile.tar
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/javascript
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/javascript/function.js
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/javascript/testlong.js
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/lisp
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/lisp/bug15890.lisp
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/lisp/test.el
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/data
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/data/Logo.png
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/data/README.pdf
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/fortran
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/fortran/hello.f90
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug16070
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/bug16070/arguments.c
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/document
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/document/foobar.1
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/document/document.xml
+     [exec] A    /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn/document/document.html
+     [exec] Checked out revision 1.
+
+-create-razor-repository:
+     [copy] Copying 4 files to /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/razor/Razor-Simple
+     [copy] Copying 20 files to /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/razor/Razor-Simple/SimpleCProgram/.razor
+     [copy] Copying 50 files to /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/git/.git
+     [copy] Copying 27 files to /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/mercurial/.hg
+     [copy] Copying 1 file to /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/mercurial
+     [copy] Copying 11 files to /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/bitkeeper/.bk
+      [zip] Building zip: /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/test-classes/org/opensolaris/opengrok/index/source.zip
+      [zip] Building zip: /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/test-classes/org/opensolaris/opengrok/history/repositories.zip
+     [copy] Copying 1 file to /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/test-classes/org/opensolaris/opengrok/authorization
+
+-delete-generated-repository-files:
+   [delete] Deleting directory /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/mercurial/.hg
+   [delete] Deleting: /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/mercurial/.hgignore
+   [delete] Deleting directory /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/git/.git
+   [delete] Deleting directory /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/svn
+   [delete] Deleting directory /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/razor
+   [delete] Deleting: /root/workspace/OpenGrok/OpenGrok/219716179/testdata/repositories/cvs_test/cvsrepo/CVS/Root
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ opengrok-indexer ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ opengrok-indexer ---
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom (748 B at 25.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom (4 KB at 131.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom (22 KB at 876.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom (5 KB at 117.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/30/maven-shared-components-30.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/30/maven-shared-components-30.pom (5 KB at 279.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom (5 KB at 279.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom (13 KB at 447.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/39/commons-parent-39.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/39/commons-parent-39.pom (61 KB at 2751.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom (6 KB at 247.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.2/plexus-3.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.2/plexus-3.2.pom (19 KB at 610.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (5 KB at 183.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom (5 KB at 300.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom (11 KB at 673.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom (47 KB at 2715.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom (13 KB at 721.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom (15 KB at 835.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom (2 KB at 116.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom (2 KB at 21.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom (3 KB at 73.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom (6 KB at 208.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar (5 KB at 78.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.jar (24 KB at 453.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar (204 KB at 4632.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar (151 KB at 3351.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.jar (183 KB at 4804.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar (57 KB at 1204.2 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar (98 KB at 1767.7 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar (416 KB at 7557.6 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar (84 KB at 1470.3 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar (242 KB at 3896.0 KB/sec)
+[INFO] Building jar: /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/opengrok-indexer-0.13-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ opengrok-indexer ---
+[INFO] Installing /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/target/opengrok-indexer-0.13-SNAPSHOT.jar to /root/./workspace/OpenGrok/OpenGrok/219716179/.m2/org/opensolaris/opengrok/opengrok-indexer/0.13-SNAPSHOT/opengrok-indexer-0.13-SNAPSHOT.jar
+[INFO] Installing /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-indexer/pom.xml to /root/./workspace/OpenGrok/OpenGrok/219716179/.m2/org/opensolaris/opengrok/opengrok-indexer/0.13-SNAPSHOT/opengrok-indexer-0.13-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building OpenGrok Sample Plugins 0.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ plugins ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OpenGrok/OpenGrok/219716179/plugins/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ plugins ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /root/workspace/OpenGrok/OpenGrok/219716179/plugins/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ plugins ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OpenGrok/OpenGrok/219716179/plugins/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ plugins ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ plugins ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ plugins ---
+[INFO] Building jar: /root/workspace/OpenGrok/OpenGrok/219716179/plugins/target/plugins-0.13-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ plugins ---
+[INFO] Installing /root/workspace/OpenGrok/OpenGrok/219716179/plugins/target/plugins-0.13-SNAPSHOT.jar to /root/./workspace/OpenGrok/OpenGrok/219716179/.m2/org/opensolaris/opengrok/plugins/0.13-SNAPSHOT/plugins-0.13-SNAPSHOT.jar
+[INFO] Installing /root/workspace/OpenGrok/OpenGrok/219716179/plugins/pom.xml to /root/./workspace/OpenGrok/OpenGrok/219716179/.m2/org/opensolaris/opengrok/plugins/0.13-SNAPSHOT/plugins-0.13-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building OpenGrok Web 0.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.6/maven-war-plugin-2.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.6/maven-war-plugin-2.6.pom (9 KB at 286.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.6/maven-war-plugin-2.6.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.6/maven-war-plugin-2.6.jar (86 KB at 4758.6 KB/sec)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ opengrok-web ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-web/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ opengrok-web ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ opengrok-web ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-web/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ opengrok-web ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ opengrok-web ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-war-plugin:2.6:war (default-war) @ opengrok-web ---
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.pom (5 KB at 201.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/20/maven-shared-components-20.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/20/maven-shared-components-20.pom (5 KB at 311.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom (5 KB at 257.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.8.1/plexus-archiver-2.8.1.pom (5 KB at 251.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3/plexus-components-1.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3/plexus-components-1.3.pom (3 KB at 199.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3/plexus-3.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3/plexus-3.3.pom (20 KB at 1295.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.3.2/plexus-io-2.3.2.pom (3 KB at 161.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.2/plexus-components-1.2.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.2/plexus-components-1.2.pom (3 KB at 199.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.pom (12 KB at 744.3 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/34/commons-parent-34.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/34/commons-parent-34.pom (55 KB at 3213.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom (2 KB at 94.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.4.1/plexus-io-2.4.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.4.1/plexus-io-2.4.1.pom (4 KB at 214.4 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.9/plexus-archiver-2.9.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.9/plexus-archiver-2.9.pom (5 KB at 266.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.4/plexus-io-2.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.4/plexus-io-2.4.pom (4 KB at 242.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.pom (9 KB at 465.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream-parent/1.4.4/xstream-parent-1.4.4.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream-parent/1.4.4/xstream-parent-1.4.4.pom (19 KB at 1169.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/3/codehaus-parent-3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/3/codehaus-parent-3.pom (5 KB at 250.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.pom (386 B at 19.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.pom (2 KB at 104.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.3/maven-filtering-1.3.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.3/maven-filtering-1.3.pom (7 KB at 356.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.6/maven-shared-utils-0.6.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.6/maven-shared-utils-0.6.pom (5 KB at 297.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.18/plexus-utils-3.0.18.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.18/plexus-utils-3.0.18.pom (4 KB at 195.0 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom (2 KB at 59.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-mapping/1.0/maven-mapping-1.0.pom
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-mapping/1.0/maven-mapping-1.0.pom (5 KB at 217.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 KB at 312.9 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (12 KB at 212.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.4.1/plexus-io-2.4.1.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.jar
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (10 KB at 111.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar (167 KB at 5536.8 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.9/plexus-archiver-2.9.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.4.1/plexus-io-2.4.1.jar (81 KB at 2516.6 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar (41 KB at 472.5 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.6/maven-archiver-2.6.jar (23 KB at 301.9 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.jar (170 KB at 4036.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.9/plexus-archiver-2.9.jar (142 KB at 2366.1 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar (8 KB at 113.2 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.3/maven-filtering-1.3.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar (370 KB at 5862.7 KB/sec)
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-mapping/1.0/maven-mapping-1.0.jar
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.jar (61 KB at 884.0 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar (25 KB at 316.5 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.3/maven-filtering-1.3.jar (50 KB at 595.1 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-mapping/1.0/maven-mapping-1.0.jar (10 KB at 115.4 KB/sec)
+[INFO] Downloaded: http://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.jar (473 KB at 4917.9 KB/sec)
+[INFO] Packaging webapp
+[INFO] Assembling webapp [opengrok-web] in [/root/workspace/OpenGrok/OpenGrok/219716179/opengrok-web/target/source]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/root/workspace/OpenGrok/OpenGrok/219716179/web]
+[INFO] Webapp assembled in [303 msecs]
+[INFO] Building war: /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-web/target/source.war
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ opengrok-web ---
+[INFO] Installing /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-web/target/source.war to /root/./workspace/OpenGrok/OpenGrok/219716179/.m2/org/opensolaris/opengrok/opengrok-web/0.13-SNAPSHOT/opengrok-web-0.13-SNAPSHOT.war
+[INFO] Installing /root/workspace/OpenGrok/OpenGrok/219716179/opengrok-web/pom.xml to /root/./workspace/OpenGrok/OpenGrok/219716179/.m2/org/opensolaris/opengrok/opengrok-web/0.13-SNAPSHOT/opengrok-web-0.13-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] OpenGrok ........................................... SUCCESS [  2.676 s]
+[INFO] Java RCS ........................................... SUCCESS [ 10.414 s]
+[INFO] OpenGrok Indexer ................................... SUCCESS [ 24.541 s]
+[INFO] OpenGrok Sample Plugins ............................ SUCCESS [  0.226 s]
+[INFO] OpenGrok Web ....................................... SUCCESS [  2.592 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 40.788 s
+[INFO] Finished at: 2017-04-07T21:40:24+02:00
+[INFO] Final Memory: 47M/862M
+[INFO] ------------------------------------------------------------------------
