@@ -1,6 +1,6 @@
 package com.evolveum.midpoint.testing.conntest;
 /*
- * Copyright (c) 2010-2016 Evolveum
+ * Copyright (c) 2010-2017 Evolveum
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,6 +119,7 @@ import com.evolveum.midpoint.xml.ns._public.common.common_3.SystemConfigurationT
 import com.evolveum.midpoint.xml.ns._public.common.common_3.SystemObjectsType;
 import com.evolveum.midpoint.xml.ns._public.common.common_3.TaskType;
 import com.evolveum.midpoint.xml.ns._public.common.common_3.UserType;
+import com.evolveum.midpoint.xml.ns._public.resource.capabilities_3.LiveSyncCapabilityType;
 import com.evolveum.prism.xml.ns._public.types_3.ProtectedStringType;
 
 /**
@@ -166,6 +167,13 @@ public abstract class AbstractLdapSynchronizationTest extends AbstractLdapTest {
 		cleanupDelete(toGroupDn(GROUP_FOOLS_CN));
 	}
 	
+	@Override
+	protected void assertAdditionalCapabilities(List<Object> nativeCapabilities) {
+		super.assertAdditionalCapabilities(nativeCapabilities);
+
+		assertCapability(nativeCapabilities, LiveSyncCapabilityType.class);
+	}
+
 	@Test
     public void test800ImportSyncTask() throws Exception {
 		final String TEST_NAME = "test800ImportSyncTask";
