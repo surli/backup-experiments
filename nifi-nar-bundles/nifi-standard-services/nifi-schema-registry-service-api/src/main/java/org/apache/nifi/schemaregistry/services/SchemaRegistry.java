@@ -50,5 +50,4 @@ public interface SchemaRegistry extends ControllerService, AutoCloseable {
 
 
     RecordSchema retrieveSchema(String schemaName, Map<String, String> attributes);
-
 }
