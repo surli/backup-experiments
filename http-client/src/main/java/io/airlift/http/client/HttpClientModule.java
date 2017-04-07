@@ -29,8 +29,11 @@ import io.airlift.configuration.ConfigDefaults;
 import io.airlift.http.client.jetty.JettyHttpClient;
 import io.airlift.http.client.jetty.JettyIoPool;
 import io.airlift.http.client.jetty.JettyIoPoolConfig;
+import io.airlift.http.client.jetty.QueuedThreadPoolMBean;
 import io.airlift.http.client.spnego.KerberosConfig;
 import io.airlift.log.Logger;
+import org.eclipse.jetty.util.thread.QueuedThreadPool;
+import org.weakref.jmx.MBeanExporter;
 
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
@@ -46,6 +49,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static com.google.inject.multibindings.Multibinder.newSetBinder;
 import static io.airlift.configuration.ConfigBinder.configBinder;
 import static java.util.Objects.requireNonNull;
+import static org.weakref.jmx.ObjectNames.generatedNameOf;
 import static org.weakref.jmx.guice.ExportBinder.newExporter;
 
 @Beta
@@ -203,6 +207,10 @@ public class HttpClientModule
             if (pool != null) {
                 pool.close();
                 pool = null;
+                if(injector.getExistingBinding(Key.get(MBeanExporter.class)) != null) {
+                    injector.getInstance(MBeanExporter.class)
+                            .unexport(generatedNameOf(QueuedThreadPoolMBean.class) + "_" + name);
+                }
             }
             destroyed.set(true);
         }
@@ -212,6 +220,12 @@ public class HttpClientModule
             if (pool == null) {
                 JettyIoPoolConfig config = injector.getInstance(keyFromNullable(JettyIoPoolConfig.class, annotation));
                 pool = new JettyIoPool(name, config);
+                if(injector.getExistingBinding(Key.get(MBeanExporter.class)) != null)
+                {
+                    injector.getInstance(MBeanExporter.class)
+                            .export(generatedNameOf(QueuedThreadPoolMBean.class) + "_" + name,
+                            new QueuedThreadPoolMBean((QueuedThreadPool) get().getExecutor()));
+                }
             }
             return pool;
         }
