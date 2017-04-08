@@ -1,7 +1,6 @@
 package org.zeromq;
 
 import java.io.IOException;
-
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
@@ -22,8 +21,8 @@ public class TestZProxy
     @Before
     public void setUp() throws IOException
     {
-        frontPort    = Utils.findOpenPort();
-        backPort     = Utils.findOpenPort();
+        frontPort = Utils.findOpenPort();
+        backPort = Utils.findOpenPort();
         capturePort1 = Utils.findOpenPort();
         capturePort2 = Utils.findOpenPort();
     }
@@ -115,7 +114,7 @@ public class TestZProxy
         wait4NewContext(ctx);
     }
 
-    final ZProxy.Proxy provider = new  ZProxy.Proxy.SimpleProxy()
+    final ZProxy.Proxy provider = new ZProxy.Proxy.SimpleProxy()
     {
         @Override
         public Socket create(ZContext ctx, ZProxy.Plug place, Object[] extraArgs)
@@ -147,7 +146,7 @@ public class TestZProxy
         @Override
         public boolean restart(ZMsg cfg, Socket socket, ZProxy.Plug place, Object[] extraArgs)
         {
-//            System.out.println("HOT restart msg : " + cfg);
+            //            System.out.println("HOT restart msg : " + cfg);
             if (place == ZProxy.Plug.FRONT) {
                 socket.unbind("tcp://127.0.0.1:" + frontPort);
                 waitSomeTime();
@@ -178,8 +177,7 @@ public class TestZProxy
         }
 
         @Override
-        public boolean custom(Socket pipe, String cmd, Socket frontend,
-                Socket backend, Socket capture, Object[] args)
+        public boolean custom(Socket pipe, String cmd, Socket frontend, Socket backend, Socket capture, Object[] args)
         {
             // TODO test custom commands
             return super.custom(pipe, cmd, frontend, backend, capture, args);
@@ -200,7 +198,7 @@ public class TestZProxy
     private void wait4NullContext(ZContext ctx)
     {
         // it's necessary to wait a bit for unregistering selectors and signalers
-        LockSupport.parkNanos(TimeUnit.NANOSECONDS.convert(100, TimeUnit.MILLISECONDS));
+        LockSupport.parkNanos(TimeUnit.NANOSECONDS.convert(300, TimeUnit.MILLISECONDS));
     }
 
     private void waitSomeTime()
@@ -221,7 +219,12 @@ public class TestZProxy
 
     private void testAllOptionsAsync(ZContext ctx, ZMsg hot)
     {
-        ZProxy proxy = ZProxy.newProxy(ctx, "ProxyAsync" + (ctx == null ? "Null" : ""), provider, "ABRACADABRA", Arrays.asList("TEST"));
+        ZProxy proxy = ZProxy.newProxy(
+                                       ctx,
+                                       "ProxyAsync" + (ctx == null ? "Null" : ""),
+                                       provider,
+                                       "ABRACADABRA",
+                                       Arrays.asList("TEST"));
 
         final boolean async = false;
         String status = null;
@@ -261,9 +264,14 @@ public class TestZProxy
         Assert.assertTrue("exit status is not good!", ZProxy.EXITED.equals(status));
     }
 
-   private void testAllOptionsSync(ZContext ctx, ZMsg hot)
+    private void testAllOptionsSync(ZContext ctx, ZMsg hot)
     {
-        ZProxy proxy = ZProxy.newProxy(ctx, "ProxySync" + (ctx == null ? "Null" : ""), provider, "ABRACADABRA", Arrays.asList("TEST"));
+        ZProxy proxy = ZProxy.newProxy(
+                                       ctx,
+                                       "ProxySync" + (ctx == null ? "Null" : ""),
+                                       provider,
+                                       "ABRACADABRA",
+                                       Arrays.asList("TEST"));
 
         final boolean sync = true;
         String status = null;
@@ -307,116 +315,131 @@ public class TestZProxy
         Assert.assertEquals("exit status is not good!", ZProxy.EXITED, status);
     }
 
-   private void testStateSync(ZContext ctx)
-   {
-       final boolean sync = true;
-       String status = null;
-       ZProxy proxy = ZProxy.newProxy(ctx, "ProxyStateSync" + (ctx == null ? "Null" : ""), provider, "ABRACADABRA", Arrays.asList("TEST"));
+    private void testStateSync(ZContext ctx)
+    {
+        final boolean sync = true;
+        String status = null;
+        ZProxy proxy = ZProxy.newProxy(
+                                       ctx,
+                                       "ProxyStateSync" + (ctx == null ? "Null" : ""),
+                                       provider,
+                                       "ABRACADABRA",
+                                       Arrays.asList("TEST"));
 
-       status = proxy.start(sync);
-       Assert.assertEquals("Start sync status is not good!", ZProxy.STARTED, status);
+        status = proxy.start(sync);
+        Assert.assertEquals("Start sync status is not good!", ZProxy.STARTED, status);
 
-       status = proxy.pause(sync);
-       Assert.assertEquals("Pause sync status is not good!", ZProxy.PAUSED, status);
+        status = proxy.pause(sync);
+        Assert.assertEquals("Pause sync status is not good!", ZProxy.PAUSED, status);
 
-       status = proxy.stop(sync);
-       Assert.assertEquals("Stop sync status is not good!", ZProxy.STOPPED, status);
+        status = proxy.stop(sync);
+        Assert.assertEquals("Stop sync status is not good!", ZProxy.STOPPED, status);
 
-       waitSomeTime();
+        waitSomeTime();
 
-       // start the proxy after stopping it
-       status = proxy.start(sync);
-       Assert.assertEquals("Start sync status is not good!", ZProxy.STARTED, status);
+        // start the proxy after stopping it
+        status = proxy.start(sync);
+        Assert.assertEquals("Start sync status is not good!", ZProxy.STARTED, status);
 
-       waitSomeTime();
+        waitSomeTime();
 
-       status = proxy.stop(sync);
-       Assert.assertEquals("Stop sync status is not good!", ZProxy.STOPPED, status);
+        status = proxy.stop(sync);
+        Assert.assertEquals("Stop sync status is not good!", ZProxy.STOPPED, status);
 
-       waitSomeTime();
+        waitSomeTime();
 
-       // pause the proxy after stopping it
-       status = proxy.pause(sync);
-       Assert.assertEquals("Pause sync status is not good!", ZProxy.PAUSED, status);
+        // pause the proxy after stopping it
+        status = proxy.pause(sync);
+        Assert.assertEquals("Pause sync status is not good!", ZProxy.PAUSED, status);
 
-       status = proxy.exit();
+        status = proxy.exit();
 
-       Assert.assertEquals("exit status is not good!", ZProxy.EXITED, status);
-   }
+        Assert.assertEquals("exit status is not good!", ZProxy.EXITED, status);
+    }
 
-   private void testStateSyncPause(ZContext ctx)
-   {
-       final boolean sync = true;
-       String status = null;
-       ZProxy proxy = ZProxy.newProxy(ctx, "ProxyStatePauseSync" + (ctx == null ? "Null" : ""), provider, "ABRACADABRA", Arrays.asList("TEST"));
+    private void testStateSyncPause(ZContext ctx)
+    {
+        final boolean sync = true;
+        String status = null;
+        ZProxy proxy = ZProxy.newProxy(
+                                       ctx,
+                                       "ProxyStatePauseSync" + (ctx == null ? "Null" : ""),
+                                       provider,
+                                       "ABRACADABRA",
+                                       Arrays.asList("TEST"));
 
-       status = proxy.pause(sync);
-       Assert.assertEquals("Pause sync status is not good!", ZProxy.PAUSED, status);
+        status = proxy.pause(sync);
+        Assert.assertEquals("Pause sync status is not good!", ZProxy.PAUSED, status);
 
-       status = proxy.start(sync);
-       Assert.assertEquals("Start sync status is not good!", ZProxy.STARTED, status);
+        status = proxy.start(sync);
+        Assert.assertEquals("Start sync status is not good!", ZProxy.STARTED, status);
 
-       waitSomeTime();
+        waitSomeTime();
 
-       status = proxy.stop(sync);
-       Assert.assertEquals("Stop sync status is not good!", ZProxy.STOPPED, status);
+        status = proxy.stop(sync);
+        Assert.assertEquals("Stop sync status is not good!", ZProxy.STOPPED, status);
 
-       waitSomeTime();
+        waitSomeTime();
 
-       // start the proxy after stopping it
-       status = proxy.start(sync);
-       Assert.assertEquals("Start sync status is not good!", ZProxy.STARTED, status);
+        // start the proxy after stopping it
+        status = proxy.start(sync);
+        Assert.assertEquals("Start sync status is not good!", ZProxy.STARTED, status);
 
-       waitSomeTime();
+        waitSomeTime();
 
-       status = proxy.stop(sync);
-       Assert.assertEquals("Stop sync status is not good!", ZProxy.STOPPED, status);
+        status = proxy.stop(sync);
+        Assert.assertEquals("Stop sync status is not good!", ZProxy.STOPPED, status);
 
-       waitSomeTime();
+        waitSomeTime();
 
-       // pause the proxy after stopping it
-       status = proxy.pause(sync);
-       Assert.assertEquals("Pause sync status is not good!", ZProxy.PAUSED, status);
+        // pause the proxy after stopping it
+        status = proxy.pause(sync);
+        Assert.assertEquals("Pause sync status is not good!", ZProxy.PAUSED, status);
 
-       status = proxy.exit();
+        status = proxy.exit();
 
-       Assert.assertEquals("exit status is not good!", ZProxy.EXITED, status);
-   }
+        Assert.assertEquals("exit status is not good!", ZProxy.EXITED, status);
+    }
 
-   private void testStateASync(ZContext ctx)
-   {
-       final boolean sync = false;
-       String status = null;
-       ZProxy proxy = ZProxy.newProxy(ctx, "ProxyStateASync" + (ctx == null ? "Null" : ""), provider, "ABRACADABRA", Arrays.asList("TEST"));
+    private void testStateASync(ZContext ctx)
+    {
+        final boolean sync = false;
+        String status = null;
+        ZProxy proxy = ZProxy.newProxy(
+                                       ctx,
+                                       "ProxyStateASync" + (ctx == null ? "Null" : ""),
+                                       provider,
+                                       "ABRACADABRA",
+                                       Arrays.asList("TEST"));
 
-       status = proxy.start(sync);
-       Assert.assertEquals("Start sync status is not good!", ZProxy.ALIVE, status);
+        status = proxy.start(sync);
+        Assert.assertEquals("Start sync status is not good!", ZProxy.ALIVE, status);
 
-       status = proxy.pause(sync);
-       Assert.assertEquals("Pause sync status is not good!", ZProxy.STARTED, status);
+        status = proxy.pause(sync);
+        Assert.assertEquals("Pause sync status is not good!", ZProxy.STARTED, status);
 
-       status = proxy.stop(sync);
-       Assert.assertEquals("Stop sync status is not good!", ZProxy.PAUSED, status);
+        status = proxy.stop(sync);
+        Assert.assertEquals("Stop sync status is not good!", ZProxy.PAUSED, status);
 
-       waitSomeTime();
+        waitSomeTime();
 
-       // start the proxy after stopping it
-       status = proxy.start(sync);
-       Assert.assertEquals("Start sync status is not good!", ZProxy.STOPPED, status);
+        // start the proxy after stopping it
+        status = proxy.start(sync);
+        Assert.assertEquals("Start sync status is not good!", ZProxy.STOPPED, status);
 
-       waitSomeTime();
+        waitSomeTime();
 
-       status = proxy.stop(sync);
-       Assert.assertEquals("Stop sync status is not good!", ZProxy.STARTED, status);
+        status = proxy.stop(sync);
+        Assert.assertEquals("Stop sync status is not good!", ZProxy.STARTED, status);
 
-       waitSomeTime();
+        waitSomeTime();
 
-       // pause the proxy after stopping it
-       status = proxy.pause(sync);
-       Assert.assertEquals("Pause sync status is not good!", ZProxy.STOPPED, status);
+        // pause the proxy after stopping it
+        status = proxy.pause(sync);
+        Assert.assertEquals("Pause sync status is not good!", ZProxy.STOPPED, status);
 
-       status = proxy.exit();
+        status = proxy.exit();
 
-       Assert.assertEquals("exit status is not good!", ZProxy.EXITED, status);
-   }
+        Assert.assertEquals("exit status is not good!", ZProxy.EXITED, status);
+    }
 }
