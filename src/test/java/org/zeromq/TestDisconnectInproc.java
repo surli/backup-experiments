@@ -1,9 +1,9 @@
 package org.zeromq;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 
 public class TestDisconnectInproc
 {
@@ -46,7 +46,7 @@ public class TestDisconnectInproc
                     }
 
                     if (!pubSocket.hasReceiveMore()) {
-                        break;      //  Last message part
+                        break; //  Last message part
                     }
                 }
             }
@@ -60,7 +60,7 @@ public class TestDisconnectInproc
 
                     if (!subSocket.hasReceiveMore()) {
                         publicationsReceived++;
-                        break;      //  Last message part
+                        break; //  Last message part
                     }
                 }
             }
