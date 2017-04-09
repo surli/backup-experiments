@@ -1,0 +1,99 @@
+{
+  "index.query.default_field": "_any",
+  "index.mapping.total_fields.limit": 100000,
+  "index.mapping.ignore_malformed": true,
+  "index": {
+    "refresh_interval" : "2s",
+    "number_of_shards": "2",
+    "number_of_replicas": "1"
+  },
+  "analysis": {
+    "analyzer": {
+      "contains_analyzer": {
+        "char_filter": [ "html_strip" ],
+        "tokenizer": "whitespace",
+        "filter" : [ "lowercase", "asciifolding" ]
+      },
+      "search_contains_analyzer": {
+        "char_filter": [ "html_strip" ],
+        "tokenizer": "whitespace",
+        "filter" : [ "lowercase", "asciifolding" ]
+      },
+      "match_analyzer": {
+        "char_filter": [ "html_strip" ],
+        "tokenizer": "whitespace",
+        "filter" : [ "text_delimiter", "lowercase", "asciifolding", "text_stemmer" ]
+      },
+      "search_match_analyzer": {
+        "char_filter": [ "html_strip" ],
+        "tokenizer": "whitespace",
+        "filter" : [ "search_delimiter", "lowercase", "asciifolding", "text_stemmer" ]
+      },
+      "any_analyzer": {
+          "char_filter": [ "html_strip" ],
+          "tokenizer": "whitespace",
+          "filter" : [ "text_delimiter", "lowercase", "asciifolding", "text_stemmer", "unique_words" ]
+      },
+      "search_any_analyzer": {
+        "char_filter": [ "html_strip" ],
+        "tokenizer": "whitespace",
+        "filter" : [ "search_delimiter", "lowercase", "asciifolding", "text_stemmer" ]
+      },
+      "suggest_analyzer": {
+        "char_filter": [ "html_strip" ],
+        "tokenizer": "whitespace",
+        "filter" : [ "suggest_delimiter", "lowercase", "asciifolding", "ngram_filter" ]
+      },
+      "search_suggest_analyzer": {
+        "char_filter": [ "html_strip" ],
+        "tokenizer": "whitespace",
+        "filter" : [ "suggest_delimiter", "lowercase", "asciifolding" ]
+      }
+    },
+    "filter" : {
+      "ngram_filter": {
+        "type": "edge_ngram",
+        "min_gram": 1,
+        "max_gram": 12,
+        "token_chars": [
+          "letter",
+          "digit"
+        ]
+      },
+      "search_delimiter" : {
+        "type" : "word_delimiter",
+        "catenate_all": false,
+        "catenate_numbers": false,
+        "catenate_words": true,
+        "generate_number_parts": true,
+        "generate_word_parts": true,
+        "split_on_case_change": true
+      },
+      "suggest_delimiter" : {
+        "type" : "word_delimiter",
+        "catenate_all": false,
+        "catenate_numbers": false,
+        "catenate_words": true,
+        "generate_number_parts": true,
+        "generate_word_parts": true,
+        "split_on_case_change": true
+      },
+      "text_delimiter" : {
+        "type" : "word_delimiter",
+        "catenate_all": false,
+        "catenate_numbers": true,
+        "catenate_words": true,
+        "generate_number_parts": true,
+        "generate_word_parts": true,
+        "split_on_case_change": true
+      },
+      "text_stemmer" : {
+        "type" : "stemmer",
+        "name" : "porter2"
+      },
+      "unique_words" : {
+        "type" : "unique"
+      }
+    }
+  }
+}
