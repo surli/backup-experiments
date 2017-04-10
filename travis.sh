@@ -24,7 +24,7 @@ time sudo cp -R $HOME /mnt/ramdisk
 printf "${RED}give permissions to travis on its home in ramdisk${NC}\n"
 sudo chown -R travis:travis /mnt/ramdisk/travis
 printf "${RED}move original home${NC}\n"
-mv /home/travis /home/travis.ori
+sudo mv /home/travis /home/travis.ori
 printf "${RED}link to new home in ramdisk${NC}\n"
 ln -s /mnt/ramdisk/travis /home/travis
 printf "${RED}File System:${NC}\n"
