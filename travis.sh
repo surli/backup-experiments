@@ -3,6 +3,7 @@ set -euo pipefail
 
 echo "disk size before build"
 df -h
+du -sh $HOME
 du -sh $HOME/.m2/repository
 du -sh $HOME/.sonar
 du -sh server/sonar-web/node
@@ -203,6 +204,7 @@ esac
 
 echo "disk size after build"
 df -h
+du -sh $HOME
 du -sh $HOME/.m2/repository
 du -sh $HOME/.sonar
 du -sh server/sonar-web/node
