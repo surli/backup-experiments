@@ -1,6 +1,16 @@
 #!/bin/bash
 set -euo pipefail
 
+echo "disk size before build"
+df -h
+du -sh $HOME/.m2/repository
+du -sh $HOME/.sonar
+du -sh server/sonar-web/node
+du -sh server/sonar-web/node_modules
+du -sh $HOME/jvm
+du -sh $HOME/maven
+du -sh $HOME/phantomjs
+
 function installPhantomJs {
   echo "Setup PhantomJS 2.1"
   mkdir -p ~/phantomjs
@@ -190,6 +200,16 @@ WEB_TESTS)
   ;;
 
 esac
+
+echo "disk size after build"
+df -h
+du -sh $HOME/.m2/repository
+du -sh $HOME/.sonar
+du -sh server/sonar-web/node
+du -sh server/sonar-web/node_modules
+du -sh $HOME/jvm
+du -sh $HOME/maven
+du -sh $HOME/phantomjs
 
 #stop the clock
 touch stop
