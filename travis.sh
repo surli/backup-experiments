@@ -26,7 +26,7 @@ sudo chown -R travis:travis /mnt/ramdisk/travis
 printf "${RED}move original home${NC}\n"
 sudo mv /home/travis /home/travis.ori
 printf "${RED}link to new home in ramdisk${NC}\n"
-ln -s /mnt/ramdisk/travis /home/travis
+sudo ln -s /mnt/ramdisk/travis /home/travis
 printf "${RED}File System:${NC}\n"
 df -h
 
