@@ -30,6 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static io.moquette.spi.impl.Utils.defaultGet;
 
@@ -37,20 +38,20 @@ public class MemorySessionStore implements ISessionsStore {
 
     private static final Logger LOG = LoggerFactory.getLogger(MemorySessionStore.class);
 
-    private Map<String, Map<Topic, Subscription>> m_persistentSubscriptions = new HashMap<>();
+    private Map<String, Map<Topic, Subscription>> m_persistentSubscriptions = new ConcurrentHashMap<>();
 
-    private Map<String, PersistentSession> m_persistentSessions = new HashMap<>();
+    private Map<String, PersistentSession> m_persistentSessions = new ConcurrentHashMap<>();
 
     // maps clientID->[MessageId -> guid]
-    private Map<String, Map<Integer, MessageGUID>> m_inflightStore = new HashMap<>();
+    private Map<String, Map<Integer, MessageGUID>> m_inflightStore = new ConcurrentHashMap<>();
     // maps clientID->BlockingQueue
-    private Map<String, BlockingQueue<StoredMessage>> queues = new HashMap<>();
+    private Map<String, BlockingQueue<StoredMessage>> queues = new ConcurrentHashMap<>();
     // maps clientID->[MessageId -> guid]
-    private Map<String, Map<Integer, MessageGUID>> m_secondPhaseStore = new HashMap<>();
+    private Map<String, Map<Integer, MessageGUID>> m_secondPhaseStore = new ConcurrentHashMap<>();
 
-    private Map<String, Map<Integer, MessageGUID>> outboundFlightMessageToGuid = new HashMap<>();
+    private Map<String, Map<Integer, MessageGUID>> outboundFlightMessageToGuid = new ConcurrentHashMap<>();
 
-    private Map<String, Map<Integer, MessageGUID>> inboundFlightMessageToGuid = new HashMap<>();
+    private Map<String, Map<Integer, MessageGUID>> inboundFlightMessageToGuid = new ConcurrentHashMap<>();
 
     private final IMessagesStore m_messagesStore;
 
@@ -76,7 +77,7 @@ public class MemorySessionStore implements ISessionsStore {
     public void addNewSubscription(Subscription newSubscription) {
         final String clientID = newSubscription.getClientId();
         if (!m_persistentSubscriptions.containsKey(clientID)) {
-            m_persistentSubscriptions.put(clientID, new HashMap<Topic, Subscription>());
+            m_persistentSubscriptions.put(clientID, new ConcurrentHashMap<Topic, Subscription>());
         }
 
         m_persistentSubscriptions.get(clientID).put(newSubscription.getTopicFilter(), newSubscription);
@@ -100,7 +101,7 @@ public class MemorySessionStore implements ISessionsStore {
             throw new IllegalArgumentException("Can't create a session with the ID of an already existing" + clientID);
         }
         LOG.debug("clientID {} is a newcome, creating it's empty subscriptions set", clientID);
-        m_persistentSubscriptions.put(clientID, new HashMap<Topic, Subscription>());
+        m_persistentSubscriptions.put(clientID, new ConcurrentHashMap<Topic, Subscription>());
         m_persistentSessions.put(clientID, new PersistentSession(cleanSession));
         return new ClientSession(clientID, m_messagesStore, this, cleanSession);
     }
@@ -172,12 +173,12 @@ public class MemorySessionStore implements ISessionsStore {
     public void inFlight(String clientID, int messageID, MessageGUID guid) {
         Map<Integer, MessageGUID> m = this.m_inflightStore.get(clientID);
         if (m == null) {
-            m = new HashMap<>();
+            m = new ConcurrentHashMap<>();
         }
         m.put(messageID, guid);
         this.m_inflightStore.put(clientID, m);
 
-        final HashMap<Integer, MessageGUID> emptyGuids = new HashMap<>();
+        Map<Integer, MessageGUID> emptyGuids = new ConcurrentHashMap<>();
         Map<Integer, MessageGUID> guids = defaultGet(outboundFlightMessageToGuid, clientID, emptyGuids);
         guids.put(messageID, guid);
         outboundFlightMessageToGuid.put(clientID, guids);
@@ -190,7 +191,7 @@ public class MemorySessionStore implements ISessionsStore {
     public int nextPacketID(String clientID) {
         Map<Integer, MessageGUID> m = this.m_inflightStore.get(clientID);
         if (m == null) {
-            m = new HashMap<>();
+            m = new ConcurrentHashMap<>();
             int nextPacketId = 1;
             m.put(nextPacketId, null);
             return nextPacketId;
@@ -225,7 +226,7 @@ public class MemorySessionStore implements ISessionsStore {
         MessageGUID guid = m.remove(messageID);
 
         LOG.info("Moving to second phase store");
-        final HashMap<Integer, MessageGUID> emptyGuids = new HashMap<>();
+        Map<Integer, MessageGUID> emptyGuids = new ConcurrentHashMap<>();
         Map<Integer, MessageGUID> messageIDs = Utils.defaultGet(m_secondPhaseStore, clientID, emptyGuids);
         messageIDs.put(messageID, guid);
         m_secondPhaseStore.put(clientID, messageIDs);
@@ -233,7 +234,7 @@ public class MemorySessionStore implements ISessionsStore {
 
     @Override
     public MessageGUID secondPhaseAcknowledged(String clientID, int messageID) {
-        final HashMap<Integer, MessageGUID> emptyGuids = new HashMap<>();
+        Map<Integer, MessageGUID> emptyGuids = new ConcurrentHashMap<>();
         Map<Integer, MessageGUID> messageIDs = Utils.defaultGet(m_secondPhaseStore, clientID, emptyGuids);
         MessageGUID guid = messageIDs.remove(messageID);
         m_secondPhaseStore.put(clientID, messageIDs);
@@ -258,7 +259,7 @@ public class MemorySessionStore implements ISessionsStore {
 
     @Override
     public StoredMessage inboundInflight(String clientID, int messageID) {
-        final HashMap<Integer, MessageGUID> emptyGuids = new HashMap<>();
+        Map<Integer, MessageGUID> emptyGuids = new ConcurrentHashMap<>();
         Map<Integer, MessageGUID> guids = Utils.defaultGet(inboundFlightMessageToGuid, clientID, emptyGuids);
         final MessageGUID guid = guids.get(messageID);
         return m_messagesStore.getMessageByGuid(guid);
@@ -266,7 +267,7 @@ public class MemorySessionStore implements ISessionsStore {
 
     @Override
     public void markAsInboundInflight(String clientID, int messageID, MessageGUID guid) {
-        final HashMap<Integer, MessageGUID> emptyGuids = new HashMap<>();
+        Map<Integer, MessageGUID> emptyGuids = new ConcurrentHashMap<>();
         Map<Integer, MessageGUID> guids = Utils.defaultGet(inboundFlightMessageToGuid, clientID, emptyGuids);
         guids.put(messageID, guid);
         inboundFlightMessageToGuid.put(clientID, guids);
