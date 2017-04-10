@@ -15,18 +15,16 @@ du -sh $HOME/jvm
 du -sh $HOME/maven
 du -sh $HOME/phantomjs
 
-printf "${RED}create ramdisk mount point${NC}\n"
-sudo mkdir -p /mnt/ramdisk	
-printf "${RED}create ramdisk${NC}\n"
-sudo mount -t tmpfs -o size=4096m tmpfs /mnt/ramdisk
-printf "${RED}copy home to ramdisk${NC}\n"
-time sudo cp -R $HOME /mnt/ramdisk
-printf "${RED}give permissions to travis on its home in ramdisk${NC}\n"
-sudo chown -R travis:travis /mnt/ramdisk/travis
 printf "${RED}move original home${NC}\n"
 sudo mv /home/travis /home/travis.ori
-printf "${RED}link to new home in ramdisk${NC}\n"
-sudo ln -s /mnt/ramdisk/travis /home/travis
+printf "${RED}create ramdisk mount point${NC}\n"
+sudo mkdir -p /home/travis
+printf "${RED}create ramdisk${NC}\n"
+sudo mount -t tmpfs -o size=4096m tmps /home/travis
+printf "${RED}copy home to ramdisk${NC}\n"
+time sudo cp -R /home/travis.ori/. /home/travis
+printf "${RED}give permissions to travis on its home in ramdisk${NC}\n"
+sudo chown -R travis:travis /home/travis
 printf "${RED}File System:${NC}\n"
 df -h
 
