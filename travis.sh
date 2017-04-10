@@ -20,7 +20,7 @@ sudo mv /home/travis /home/travis.ori
 printf "${RED}create ramdisk mount point${NC}\n"
 sudo mkdir -p /home/travis
 printf "${RED}create ramdisk${NC}\n"
-sudo mount -t tmpfs -o size=4096m tmps /home/travis
+sudo mount -t tmpfs -o size=8192m tmps /home/travis
 printf "${RED}copy home to ramdisk${NC}\n"
 time sudo cp -R /home/travis.ori/. /home/travis
 printf "${RED}give permissions to travis on its home in ramdisk${NC}\n"
