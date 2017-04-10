@@ -51,8 +51,9 @@ public class AuthorizationPluginClassLoader extends ClassLoader {
         "org.opensolaris.opengrok.configuration.Project",
         "org.opensolaris.opengrok.configuration.RuntimeEnvironment",
         "org.opensolaris.opengrok.authorization.IAuthorizationPlugin",
+        "org.opensolaris.opengrok.authorization.plugins.*",
         "org.opensolaris.opengrok.util.*",
-        "org.opensolaris.opengrok.logger.*",
+        "org.opensolaris.opengrok.logger.*"
     };
 
     private final static String[] PACKAGE_BLACKLIST = new String[]{
@@ -170,7 +171,7 @@ public class AuthorizationPluginClassLoader extends ClassLoader {
             }
         }
     }
-    
+
     /**
      * Loads the class with given name.
      *
@@ -194,7 +195,7 @@ public class AuthorizationPluginClassLoader extends ClassLoader {
     public Class loadClass(String name) throws ClassNotFoundException, SecurityException {
         return loadClass(name, true);
     }
-    
+
     /**
      * Loads the class with given name.
      *
