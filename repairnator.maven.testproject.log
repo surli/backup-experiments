@@ -1,0 +1,3050 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.kaazing:gateway.client.javascript.bridge:jar:develop-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-resources-plugin is missing. @ org.kaazing:gateway.client.javascript.bridge:[unknown-version], /root/workspace/kaazing/gateway/220993458/bridge/gateway.client.javascript.bridge/pom.xml, line 57, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Kaazing Gateway
+[INFO] Kaazing Gateway Bridge Parent
+[INFO] Kaazing Gateway Client Javascript Bridge Packaging
+[INFO] Kaazing Gateway Bridge
+[INFO] Test Utils
+[INFO] Resource Address
+[INFO] Kaazing WebSocket Gateway - Server Service Provider Interface
+[INFO] Apache MINA
+[INFO] Apache MINA Parent POM
+[INFO] Apache MINA Core
+[INFO] Apache MINA JavaBeans Integration
+[INFO] Apache MINA OGNL Integration
+[INFO] Apache MINA JMX Integration
+[INFO] Mina Netty Adapter
+[INFO] Gateway Utils
+[INFO] Gateway Security
+[INFO] Tcp Resource Address
+[INFO] Ssl Resource Address
+[INFO] Http Resource Address
+[INFO] Httpx Resource Address
+[INFO] Httpxe Resource Address
+[INFO] Httpxdraft Resource Address
+[INFO] Ws Resource Address
+[INFO] Transport Core
+[INFO] Gateway Service
+[INFO] Wsn Resource Address
+[INFO] Wsdraft Resource Address
+[INFO] Wsxdraft Resource Address
+[INFO] Sse Resource Address
+[INFO] Wsx Resource Address
+[INFO] Rtmp Resource Address
+[INFO] Udp Resource Address
+[INFO] Wse Resource Address
+[INFO] Pipe Resource Address
+[INFO] Echo Service
+[INFO] Kaazing WebSocket Gateway - Server API
+[INFO] Kaazing WebSocket Gateway - Server
+[INFO] BIO Transport
+[INFO] NIO Transport
+[INFO] Pipe Transport
+[INFO] Http Transport
+[INFO] Proxy Service
+[INFO] Broadcast Service
+[INFO] Sse Transport
+[INFO] WS Transport
+[INFO] SSL Transport
+[INFO] WSN Transport
+[INFO] WSEB Transport
+[INFO] Http Balancer Service
+[INFO] Update Check Service
+[INFO] Kaazing WebSocket Gateway - Management
+[INFO] Kaazing Gateway BOM
+[INFO] Kaazing WebSocket Gateway - AMQP Service
+[INFO] Update Check
+[INFO] Http Directory Service
+[INFO] Http Proxy Service
+[INFO] Update Check Management Service
+[INFO] Http Redirect Service
+[INFO] TURN REST Service
+[INFO] Kaazing Gateway Distribution
+[INFO] Apache MINA Legal
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Kaazing Gateway develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Kaazing Gateway Bridge Parent develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.bridge.parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.bridge.parent ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.bridge.parent ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.bridge.parent ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Kaazing Gateway Client Javascript Bridge Packaging develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.client.javascript.bridge ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.client.javascript.bridge ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.client.javascript.bridge ---
+[INFO] 
+[INFO] --- unpack-bower-dependency-maven-plugin:1.0.2:unpack (default) @ gateway.client.javascript.bridge ---
+[debug] Git Repo is at https://github.com/kaazing/bower-kaazing-client-javascript-bridge.git
+[debug] Found tag version "1.0.0-1" from tag with name "refs/tags/1.0.0-1"
+[debug] Found tag version "5.0.0-1" from tag with name "refs/tags/5.0.0-1"
+[debug] Found tag version "5.0.0-2" from tag with name "refs/tags/5.0.0-2"
+[debug] Found tag version "5.0.0-3" from tag with name "refs/tags/5.0.0-3"
+[debug] Found tag version "5.0.0-4" from tag with name "refs/tags/5.0.0-4"
+[debug] Found tag version "5.0.0-5" from tag with name "refs/tags/5.0.0-5"
+[debug] Found tag version "5.0.0-6" from tag with name "refs/tags/5.0.0-6"
+[debug] Found tag version "5.0.0-7" from tag with name "refs/tags/5.0.0-7"
+[debug] Found tag version "5.0.0-8" from tag with name "refs/tags/5.0.0-8"
+[debug] Found tag version "5.0.0-9" from tag with name "refs/tags/5.0.0-9"
+[info] version is a range
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:copy-resources (copy-resources) @ gateway.client.javascript.bridge ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.client.javascript.bridge ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/bridge/gateway.client.javascript.bridge/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.client.javascript.bridge ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.client.javascript.bridge ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.client.javascript.bridge ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/bridge/gateway.client.javascript.bridge/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.client.javascript.bridge ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.client.javascript.bridge ---
+[INFO] No tests to run.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Kaazing Gateway Bridge develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.bridge ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.bridge ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.bridge ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy-dependencies (default) @ gateway.bridge ---
+[INFO] classes already exists in destination.
+[INFO] gateway.client.java.bridge-5.0.0.5.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (default) @ gateway.bridge ---
+[INFO] Executing tasks
+
+main:
+    [unzip] Expanding: /root/workspace/kaazing/gateway/220993458/bridge/gateway.bridge/target/resources/gateway.client.javascript.bridge.jar into /root/workspace/kaazing/gateway/220993458/bridge/gateway.bridge/target/classes
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.bridge ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/bridge/gateway.bridge/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.bridge ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.bridge ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.bridge ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/bridge/gateway.bridge/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.bridge ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.bridge ---
+[INFO] No tests to run.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Test Utils develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ test.util ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.11:check (default) @ test.util ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.11:check (validate) @ test.util ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ test.util ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ test.util ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ test.util ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ test.util ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ test.util ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/test.util/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ test.util ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ test.util ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.pom (4 KB at 11.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19/surefire-providers-2.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19/surefire-providers-2.19.pom (3 KB at 125.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19/surefire-junit4-2.19.jar (75 KB at 1104.6 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.test.util.MemoryAppenderTest
+testMemoryAppender(org.kaazing.test.util.MemoryAppenderTest) starting
+Printing last 6 of 6 log messages
+0    org.kaazing.test.util.MemoryAppenderTest [main] TRACE MemoryAppenderTest  - Entering method1
+0    org.kaazing.test.util.MemoryAppenderTest [main] TRACE MemoryAppenderTest  - Exiting method1
+0    org.kaazing.test.util.MemoryAppenderTest [main] TRACE MemoryAppenderTest  - Entering method2
+0    org.kaazing.test.util.MemoryAppenderTest [main] TRACE MemoryAppenderTest  - Exiting method2
+0    org.kaazing.test.util.MemoryAppenderTest [main] TRACE MemoryAppenderTest  - Entering method3
+0    org.kaazing.test.util.MemoryAppenderTest [main] TRACE MemoryAppenderTest  - Exiting method3
+MemoryAppenderTest.testMemoryAppender success (0.04 secs)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.197 sec - in org.kaazing.test.util.MemoryAppenderTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/spi/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.uri.URIUtilsTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec - in org.kaazing.gateway.resource.address.uri.URIUtilsTest
+Running org.kaazing.gateway.resource.address.ResolutionUtilsTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 sec - in org.kaazing.gateway.resource.address.ResolutionUtilsTest
+Running org.kaazing.gateway.resource.address.ResourceAddressFactoryTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 sec - in org.kaazing.gateway.resource.address.ResourceAddressFactoryTest
+Running org.kaazing.gateway.resource.address.ResolveResourceAddressTest
+[test://opaque/newpath (test://opaque/newpath)]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/path0 (test://transport/path) testable]
+  [test://transport/path1 (test://transport/path) testable]
+  [test://transport/path2 (test://transport/path) testable]
+[test://opaque/path0 (test://opaque/path)]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path0 (test://transport/path) testable]
+  [test://transport/path1 (test://transport/path) testable]
+  [test://transport/path2 (test://transport/path) testable]
+[test://opaque/path1 (test://opaque/path)]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path0 (test://transport/path) testable]
+  [test://transport/path1 (test://transport/path) testable]
+  [test://transport/path2 (test://transport/path) testable]
+[test://opaque/path2 (test://opaque/path)]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path0 (test://transport/path) testable]
+  [test://transport/path1 (test://transport/path) testable]
+  [test://transport/path2 (test://transport/path) testable]
+[test://opaque/newpath (test://opaque/newpath)]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+[test://opaque/newpath (test://opaque/newpath)]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+[test://opaque/newpath (test://opaque/newpath)]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+[test://opaque/newpath (test://opaque/newpath)]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport/newpath (test://transport/newpath) testable]
+[test://opaque/path (test://opaque/path)]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+[test://opaque/path (test://opaque/path)]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+[test://opaque/path (test://opaque/path)]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+[test://opaque/path (test://opaque/path)]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+  [test://transport/path (test://transport/path) testable]
+[test://opaque/newpath (test://opaque/newpath)]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport0/newpath (test://transport/newpath) testable]
+  [test://transport1/newpath (test://transport/newpath) testable]
+  [test://transport2/newpath (test://transport/newpath) testable]
+[test://opaque0/newpath (test://opaque/newpath)]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport0/newpath (test://transport/newpath) testable]
+  [test://transport1/newpath (test://transport/newpath) testable]
+  [test://transport2/newpath (test://transport/newpath) testable]
+[test://opaque1/newpath (test://opaque/newpath)]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport0/newpath (test://transport/newpath) testable]
+  [test://transport1/newpath (test://transport/newpath) testable]
+  [test://transport2/newpath (test://transport/newpath) testable]
+[test://opaque2/newpath (test://opaque/newpath)]
+  [test://transport/newpath (test://transport/newpath) testable]
+  [test://transport0/newpath (test://transport/newpath) testable]
+  [test://transport1/newpath (test://transport/newpath) testable]
+  [test://transport2/newpath (test://transport/newpath) testable]
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 sec - in org.kaazing.gateway.resource.address.ResolveResourceAddressTest
+Running org.kaazing.gateway.resource.address.UriResolveTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.kaazing.gateway.resource.address.UriResolveTest
+
+Results :
+
+Tests run: 39, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Kaazing WebSocket Gateway - Server Service Provider Interface develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.server.spi ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-tools) @ gateway.server.spi ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.server.spi ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.server.spi ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.server.spi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/server.spi/src/main/resources
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.8.1:jar (javadoc) @ gateway.server.spi ---
+[INFO] 
+Loading source files for package org.kaazing.gateway.server.spi.security...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_121
+Building tree for all the packages and classes...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/AuthenticationToken.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/AuthenticationTokenCallback.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/ExpiringState.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/InetAddressCallback.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/LoginModuleOptions.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/LoginResult.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/LoginResult.Type.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/LoginResultCallback.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/NamedSubjectCallback.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/package-frame.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/package-summary.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/package-tree.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/constant-values.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/class-use/LoginResult.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/class-use/LoginResult.Type.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/class-use/ExpiringState.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/class-use/NamedSubjectCallback.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/class-use/AuthenticationToken.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/class-use/AuthenticationTokenCallback.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/class-use/InetAddressCallback.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/class-use/LoginResultCallback.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/class-use/LoginModuleOptions.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/org/kaazing/gateway/server/spi/security/package-use.html...
+Building index for all the packages and classes...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/overview-tree.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/index-all.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/deprecated-list.html...
+Building index for all classes...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/allclasses-frame.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/allclasses-noframe.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/index.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.spi/target/apidocs/help-doc.html...
+1 warning
+[WARNING] Javadoc Warnings
+[WARNING] /root/workspace/kaazing/gateway/220993458/server.spi/src/main/java/org/kaazing/gateway/server/spi/security/LoginModuleOptions.java:86: warning - @return tag has no arguments.
+[INFO] Building jar: /root/workspace/kaazing/gateway/220993458/server.spi/target/gateway.server.spi-develop-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.server.spi ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.server.spi ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.server.spi ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/server.spi/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.server.spi ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.server.spi ---
+[INFO] No tests to run.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache MINA develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ mina-build ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ mina-build ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ mina-build ---
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ mina-build ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache MINA Parent POM develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ mina-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ mina-parent ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ mina-parent ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.0:process (default) @ mina-parent ---
+[INFO] Setting property: classpath.resource.loader.class => 'org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader'.
+[INFO] Setting property: velocimacro.messages.on => 'false'.
+[INFO] Setting property: resource.loader => 'classpath'.
+[INFO] Setting property: resource.manager.logwhenfound => 'false'.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ mina-parent ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache MINA Core develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ mina-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ mina-core ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ mina-core ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.0:process (default) @ mina-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mina-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/mina.core/core/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mina-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ mina-core ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mina-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mina-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ mina-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.4.3/surefire-junit4-2.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.4.3/surefire-junit4-2.4.3.pom (2 KB at 101.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.4.3/surefire-providers-2.4.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.4.3/surefire-providers-2.4.3.pom (2 KB at 30.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.0/junit-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.0/junit-4.0.pom (210 B at 7.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.0/junit-4.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.4.3/surefire-junit4-2.4.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.4.3/surefire-junit4-2.4.3.jar (12 KB at 256.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.0/junit-4.0.jar (104 KB at 937.5 KB/sec)
+[INFO] Surefire report directory: /root/workspace/kaazing/gateway/220993458/mina.core/core/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.mina.filter.ssl.KeyStoreFactoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec
+Running org.apache.mina.transport.socket.nio.DatagramPortUnreachableTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.005 sec
+Running org.apache.mina.util.byteaccess.ByteAccessTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.149 sec
+Running org.apache.mina.filter.stream.StreamWriteFilterTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.645 sec
+Running org.apache.mina.transport.socket.nio.DatagramRecyclerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.129 sec
+Running org.apache.mina.transport.socket.nio.NioFileRegionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.mina.filter.reqres.RequestResponseFilterTest
+[01:31:31] WARN [org.apache.mina.filter.reqres.RequestResponseFilter] - Unknown request ID '1' for the response message. Timed out already?: org.apache.mina.filter.reqres.RequestResponseFilterTest$Message@5c10f1c3
+[01:31:31] WARN [org.apache.mina.filter.reqres.RequestResponseFilter] - Unknown request ID '1' for the response message. Timed out already?: org.apache.mina.filter.reqres.RequestResponseFilterTest$Message@52de51b6
+[01:31:31] WARN [org.apache.mina.filter.reqres.RequestResponseFilter] - Unknown request ID '1' for the response message. Timed out already?: org.apache.mina.filter.reqres.RequestResponseFilterTest$Message@18c5069b
+[01:31:31] WARN [org.apache.mina.filter.reqres.RequestResponseFilter] - Unknown request ID '1' for the response message. Timed out already?: org.apache.mina.filter.reqres.RequestResponseFilterTest$Message@2a79d4b1
+[01:31:32] WARN [org.apache.mina.filter.reqres.RequestResponseFilter] - Unknown request ID '1' for the response message. Timed out already?: org.apache.mina.filter.reqres.RequestResponseFilterTest$Message@2371aaca
+[01:31:32] WARN [org.apache.mina.filter.reqres.RequestResponseFilter] - Unknown request ID '1' for the response message. Timed out already?: org.apache.mina.filter.reqres.RequestResponseFilterTest$Message@5b529706
+[01:31:32] WARN [org.apache.mina.filter.reqres.RequestResponseFilter] - Unknown request ID '1' for the response message. Timed out already?: org.apache.mina.filter.reqres.RequestResponseFilterTest$Message@14dda234
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.65 sec
+Running org.apache.mina.core.DefaultIoFilterChainBuilderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec
+Running org.apache.mina.filter.firewall.SubnetIPv4Test
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running org.apache.mina.transport.socket.nio.SocketBindTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.936 sec
+Running org.apache.mina.filter.codec.CumulativeProtocolDecoderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
+Running org.apache.mina.core.IoServiceListenerSupportTest
+[01:31:35] WARN [org.apache.mina.core.filterchain.DefaultIoFilterChain] - Unexpected exception from exceptionCaught handler.
+java.lang.AssertionError: 
+  Unexpected method call exceptionCaught((0x00000030: mina dummy, server, ? => 0.0.0.0/0.0.0.0:8080), java.lang.AssertionError: 
+  Unexpected method call sessionClosed((0x00000030: mina dummy, server, ? => 0.0.0.0/0.0.0.0:8080)):
+    sessionClosed((0x00000030: mina dummy, server, ? => 0.0.0.0/0.0.0.0:8080)): expected: 1, actual: 1 (+1)):
+	at org.easymock.internal.MockInvocationHandler.invoke(MockInvocationHandler.java:29)
+	at org.easymock.internal.ObjectMethodsFilter.invoke(ObjectMethodsFilter.java:56)
+	at com.sun.proxy.$Proxy9.exceptionCaught(Unknown Source)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.exceptionCaught(DefaultIoFilterChain.java:689)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextExceptionCaught(DefaultIoFilterChain.java:478)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1100(DefaultIoFilterChain.java:44)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.exceptionCaught(DefaultIoFilterChain.java:783)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.exceptionCaught(IoFilterAdapter.java:107)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextExceptionCaught(DefaultIoFilterChain.java:478)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireExceptionCaught(DefaultIoFilterChain.java:466)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextSessionClosed(DefaultIoFilterChain.java:395)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$900(DefaultIoFilterChain.java:44)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.sessionClosed(DefaultIoFilterChain.java:773)
+	at org.apache.mina.core.filterchain.IoFilterAdapter.sessionClosed(IoFilterAdapter.java:91)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextSessionClosed(DefaultIoFilterChain.java:393)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.fireSessionClosed(DefaultIoFilterChain.java:386)
+	at org.apache.mina.core.service.IoServiceListenerSupport.fireSessionDestroyed(IoServiceListenerSupport.java:206)
+	at org.apache.mina.core.IoServiceListenerSupportTest$1.run(IoServiceListenerSupportTest.java:188)
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.121 sec
+Running org.apache.mina.filter.codec.textline.TextLineEncoderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running org.apache.mina.filter.firewall.ConnectionThrottleFilterTest
+[01:31:37] WARN [org.apache.mina.filter.firewall.ConnectionThrottleFilter] - Session connection interval too short
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.002 sec
+Running org.apache.mina.handler.chain.ChainedIoHandlerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.apache.mina.transport.vmpipe.VmPipeTrafficControlTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.718 sec
+Running org.apache.mina.filter.codec.DemuxingProtocolDecoderBugTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec
+Running org.apache.mina.filter.buffer.BufferedWriteFilterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
+Running org.apache.mina.transport.socket.nio.SocketConnectorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 sec
+Running org.apache.mina.transport.vmpipe.VmPipeSessionCrossCommunicationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec
+Running org.apache.mina.filter.firewall.SubnetIPv6Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.apache.mina.transport.socket.nio.SocketTrafficControlTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.755 sec
+Running org.apache.mina.transport.socket.nio.DatagramTrafficControlTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.711 sec
+Running org.apache.mina.handler.demux.DemuxingIoHandlerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec
+Running org.apache.mina.filter.codec.serialization.ObjectSerializationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.166 sec
+Running org.apache.mina.util.ExpiringMapTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.001 sec
+Running org.apache.mina.transport.socket.nio.DatagramConnectorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running org.apache.mina.util.CircularQueueTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 sec
+Running org.apache.mina.proxy.NTLMTest
+---
+Type 2: Domain name
+Length: 12 bytes
+Data: DOMAIN
+---
+Type 1: Server name
+Length: 12 bytes
+Data: SERVER
+---
+Type 4: DNS domain name
+Length: 20 bytes
+Data: domain.com
+---
+Type 3: Fully qualified DNS hostname
+Length: 34 bytes
+Data: server.domain.com
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 sec
+Running org.apache.mina.transport.vmpipe.VmPipeEventOrderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.103 sec
+Running org.apache.mina.core.FutureTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running org.apache.mina.transport.vmpipe.VmPipeBindTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.561 sec
+Running org.apache.mina.filter.util.WrappingFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.apache.mina.proxy.MD4Test
+Testing vector []: 31d6cfe0d16ae931b73c59d7e0c089c0Testing vector [a]: bde52cb31de33e46245e05fbdbd6fb24Testing vector [abc]: a448017aaf21d8525fc10ae87aa6729dTesting vector [message digest]: d9130a8164549fe818874806e1c7014bTesting vector [abcdefghijklmnopqrstuvwxyz]: d79e1c308aa5bbcdeea8ed63df412da9Testing vector [ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789]: 043f8582f241db351ce627e153e7f0e4Testing vector [12345678901234567890123456789012345678901234567890123456789012345678901234567890]: e33b4ddc9c38f2199c3e7b164fcc0536Testing vector [Wikipedia, l'encyclopedie libre et gratuite]: b94e66e0817dd34dc7858a0c131d4079Testing vector [The quick brown fox jumps over the lazy dog]: 1bee69a46ba811185c194762abaeae90Testing vector [The quick brown fox jumps over the lazy cog]: b86e130ce7028da59e672d56ad0113df@SLTests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running org.apache.mina.filter.codec.textline.TextLineDecoderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.73 sec
+Running org.apache.mina.proxy.HttpAuthTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running org.apache.mina.core.IoBufferTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.351 sec
+Running org.apache.mina.filter.stream.FileRegionWriteFilterTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.293 sec
+Running org.apache.mina.filter.logging.MdcInjectionFilterTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.525 sec
+Running org.apache.mina.transport.socket.nio.DatagramBindTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.937 sec
+Running org.apache.mina.transport.socket.nio.DatagramConfigTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 sec
+Running org.apache.mina.core.IoFilterChainTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running org.apache.mina.filter.keepalive.KeepAliveFilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.021 sec
+
+Results :
+
+Tests run: 183, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache MINA JavaBeans Integration develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ mina-integration-beans ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ mina-integration-beans ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ mina-integration-beans ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.0:process (default) @ mina-integration-beans ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mina-integration-beans ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/mina.core/integration-beans/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mina-integration-beans ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ mina-integration-beans ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mina-integration-beans ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/mina.core/integration-beans/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mina-integration-beans ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ mina-integration-beans ---
+[INFO] Surefire report directory: /root/workspace/kaazing/gateway/220993458/mina.core/integration-beans/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.mina.integration.beans.VmPipeAddressEditorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec
+Running org.apache.mina.integration.beans.InetSocketAddressEditorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 sec
+Running org.apache.mina.integration.beans.InetAddressEditorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+
+Results :
+
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache MINA OGNL Integration develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ mina-integration-ognl ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ mina-integration-ognl ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ mina-integration-ognl ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.0:process (default) @ mina-integration-ognl ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mina-integration-ognl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/mina.core/integration-ognl/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mina-integration-ognl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ mina-integration-ognl ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mina-integration-ognl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/mina.core/integration-ognl/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mina-integration-ognl ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ mina-integration-ognl ---
+[INFO] Surefire report directory: /root/workspace/kaazing/gateway/220993458/mina.core/integration-ognl/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+There are no tests to run.
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache MINA JMX Integration develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ mina-integration-jmx ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ mina-integration-jmx ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ mina-integration-jmx ---
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.0:process (default) @ mina-integration-jmx ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mina-integration-jmx ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/mina.core/integration-jmx/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mina-integration-jmx ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ mina-integration-jmx ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mina-integration-jmx ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/mina.core/integration-jmx/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mina-integration-jmx ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.4.3:test (default-test) @ mina-integration-jmx ---
+[INFO] Surefire report directory: /root/workspace/kaazing/gateway/220993458/mina.core/integration-jmx/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+There are no tests to run.
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Mina Netty Adapter develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.1:enforce (default-enforce) @ mina.netty ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.1:enforce (enforce-tools) @ mina.netty ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ mina.netty ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ mina.netty ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mina.netty ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/mina.netty/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ mina.netty ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ mina.netty ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mina.netty ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/mina.netty/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ mina.netty ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ mina.netty ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.mina.core.session.AbstractIoSessionExTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.266 sec - in org.kaazing.mina.core.session.AbstractIoSessionExTest
+Running org.kaazing.mina.core.session.DummySessionExTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in org.kaazing.mina.core.session.DummySessionExTest
+Running org.kaazing.mina.core.buffer.SimpleBufferTest
+Tests run: 66, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec - in org.kaazing.mina.core.buffer.SimpleBufferTest
+Running org.kaazing.mina.core.service.AbstractIoProcessorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 sec - in org.kaazing.mina.core.service.AbstractIoProcessorTest
+Running org.kaazing.mina.netty.DefaultExceptionMonitorTest
+exceptionCaughtShouldRethrowError(org.kaazing.mina.netty.DefaultExceptionMonitorTest) starting
+DefaultExceptionMonitorTest.exceptionCaughtShouldRethrowError success (0.05 secs)
+shouldLogMessageIncludingSession(org.kaazing.mina.netty.DefaultExceptionMonitorTest) starting
+WARN Unexpected exception in session session java.lang.NullPointerException: EXCEPTION
+DefaultExceptionMonitorTest.shouldLogMessageIncludingSession success (0.00 secs)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 sec - in org.kaazing.mina.netty.DefaultExceptionMonitorTest
+Running org.kaazing.mina.netty.socket.nio.NioSocketChannelIoAcceptorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.395 sec - in org.kaazing.mina.netty.socket.nio.NioSocketChannelIoAcceptorTest
+Running org.kaazing.mina.netty.socket.nio.NioSocketChannelIoConnectorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 sec - in org.kaazing.mina.netty.socket.nio.NioSocketChannelIoConnectorTest
+Running org.kaazing.mina.netty.socket.nio.DefaultNioSocketChannelIoSessionConfigTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.649 sec - in org.kaazing.mina.netty.socket.nio.DefaultNioSocketChannelIoSessionConfigTest
+Running org.kaazing.mina.netty.ExceptionMonitorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.kaazing.mina.netty.ExceptionMonitorTest
+Running org.jboss.netty.channel.socket.nio.NioServerBossTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 sec - in org.jboss.netty.channel.socket.nio.NioServerBossTest
+Running org.jboss.netty.channel.socket.nio.NioWorkerTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in org.jboss.netty.channel.socket.nio.NioWorkerTest
+Running org.jboss.netty.channel.socket.NioNioSocketEchoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.357 sec - in org.jboss.netty.channel.socket.NioNioSocketEchoTest
+Running org.jboss.netty.channel.socket.OioNioSocketEchoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 sec - in org.jboss.netty.channel.socket.OioNioSocketEchoTest
+Running org.jboss.netty.channel.socket.OioOioSocketEchoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in org.jboss.netty.channel.socket.OioOioSocketEchoTest
+Running org.jboss.netty.channel.socket.NioOioSocketEchoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec - in org.jboss.netty.channel.socket.NioOioSocketEchoTest
+
+Results :
+
+Tests run: 123, Failures: 0, Errors: 0, Skipped: 2
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Gateway Utils develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.util ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.util ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.util ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.util ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/util/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.util ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.util ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.util ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/util/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.util ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.util ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.util.parse.ConfigParameterTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 sec - in org.kaazing.gateway.util.parse.ConfigParameterTest
+Running org.kaazing.gateway.util.feature.EarlyAccessFeatureTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 sec - in org.kaazing.gateway.util.feature.EarlyAccessFeatureTest
+Running org.kaazing.gateway.util.UtilsTest
+Tests run: 77, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.108 sec - in org.kaazing.gateway.util.UtilsTest
+Running org.kaazing.gateway.util.der.DerIdTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.kaazing.gateway.util.der.DerIdTest
+Running org.kaazing.gateway.util.der.DerUtilsTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.kaazing.gateway.util.der.DerUtilsTest
+Running org.kaazing.gateway.util.ssl.SslCipherSuitesTest
+Tests run: 69, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.126 sec - in org.kaazing.gateway.util.ssl.SslCipherSuitesTest
+Running org.kaazing.gateway.util.EncodingTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec - in org.kaazing.gateway.util.EncodingTest
+Running org.kaazing.gateway.util.asn1.Asn1UtilsTest
+Tests run: 73, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 sec - in org.kaazing.gateway.util.asn1.Asn1UtilsTest
+Running org.kaazing.gateway.util.Utf8UtilTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.kaazing.gateway.util.Utf8UtilTest
+
+Results :
+
+Tests run: 310, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Gateway Security develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.security ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.security ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.security ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.security ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/security/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.security ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.security ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.security ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.security ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.security ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.security.GatewaySecurityTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in org.kaazing.gateway.security.GatewaySecurityTest
+Running org.kaazing.gateway.security.auth.BasicLoginModuleTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.356 sec - in org.kaazing.gateway.security.auth.BasicLoginModuleTest
+Running org.kaazing.gateway.security.auth.FileLoginModuleTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 sec - in org.kaazing.gateway.security.auth.FileLoginModuleTest
+Running org.kaazing.gateway.security.auth.context.DefaultLoginContextFactoryTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.kaazing.gateway.security.auth.context.DefaultLoginContextFactoryTest
+Running org.kaazing.gateway.security.auth.NegotiateLoginModuleWithDataCallbackRegisterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 sec - in org.kaazing.gateway.security.auth.NegotiateLoginModuleWithDataCallbackRegisterTest
+Running org.kaazing.gateway.security.auth.GrantLoginModuleTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.kaazing.gateway.security.auth.GrantLoginModuleTest
+Running org.kaazing.gateway.security.auth.DispatchCallbackHandlerTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.kaazing.gateway.security.auth.DispatchCallbackHandlerTest
+Running org.kaazing.gateway.security.auth.NegotiateLoginModuleWithoutDataCallbackRegisterTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in org.kaazing.gateway.security.auth.NegotiateLoginModuleWithoutDataCallbackRegisterTest
+Running org.kaazing.gateway.security.auth.DefaultLoginResultTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.kaazing.gateway.security.auth.DefaultLoginResultTest
+Running org.kaazing.gateway.security.auth.TimeoutLoginModuleTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.kaazing.gateway.security.auth.TimeoutLoginModuleTest
+
+Results :
+
+Tests run: 51, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Tcp Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.tcp ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.tcp ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.tcp ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.tcp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.tcp ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.tcp ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.tcp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/tcp/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.tcp ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.tcp ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.tcp.TcpResourceAddressFactorySpiTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.166 sec - in org.kaazing.gateway.resource.address.tcp.TcpResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.tcp.TcpResourceAddressFactorySpiPreferIPV4Test
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in org.kaazing.gateway.resource.address.tcp.TcpResourceAddressFactorySpiPreferIPV4Test
+
+Results :
+
+Tests run: 36, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Ssl Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.ssl ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.ssl ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.ssl ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.ssl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.ssl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.ssl ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.ssl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/ssl/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.ssl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.ssl ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.ssl.SslResourceAddressFactorySpiTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.136 sec - in org.kaazing.gateway.resource.address.ssl.SslResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Http Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.http ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.http ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.http ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.http ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.http ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.http ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.http ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/http/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.http ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.http ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.http.HttpResourceAddressFactorySpiTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.263 sec - in org.kaazing.gateway.resource.address.http.HttpResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.http.HttpsResourceAddressFactorySpiTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 sec - in org.kaazing.gateway.resource.address.http.HttpsResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Httpx Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.httpx ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.httpx ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.httpx ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.httpx ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.httpx ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.httpx ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.httpx ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/httpx/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.httpx ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.httpx ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.httpx.HttpxSslResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 sec - in org.kaazing.gateway.resource.address.httpx.HttpxSslResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.httpx.HttpxResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in org.kaazing.gateway.resource.address.httpx.HttpxResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Httpxe Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.httpxe ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.httpxe ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.httpxe ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.httpxe ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.httpxe ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.httpxe ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.httpxe ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/httpxe/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.httpxe ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.httpxe ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.httpxe.HttpxeResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.132 sec - in org.kaazing.gateway.resource.address.httpxe.HttpxeResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.httpxe.HttpxeSslResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in org.kaazing.gateway.resource.address.httpxe.HttpxeSslResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Httpxdraft Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.httpxdraft ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.httpxdraft ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.httpxdraft ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.httpxdraft ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.httpxdraft ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.httpxdraft ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.httpxdraft ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/httpxdraft/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.httpxdraft ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.httpxdraft ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.httpxdraft.HttpxDraftResourceAddressFactorySpiTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec - in org.kaazing.gateway.resource.address.httpxdraft.HttpxDraftResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Ws Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.ws ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.ws ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.ws ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.ws ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.ws ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.ws ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.ws ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.ws ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.ws ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.ws.WsResourceAddressFactorySpiTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.151 sec - in org.kaazing.gateway.resource.address.ws.WsResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.ws.WssResourceAddressFactorySpiTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.kaazing.gateway.resource.address.ws.WssResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Transport Core develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.transport ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.transport ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.transport ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.transport ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/transport/spi/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.transport ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.transport ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.transport ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/transport/spi/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.transport ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.transport ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.transport.LoggingFilterTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.655 sec - in org.kaazing.gateway.transport.LoggingFilterTest
+Running org.kaazing.gateway.transport.BindingsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 sec - in org.kaazing.gateway.transport.BindingsTest
+Running org.kaazing.gateway.transport.TransportTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.kaazing.gateway.transport.TransportTest
+Running org.kaazing.gateway.transport.TransportExceptionMonitorTest
+shouldLogMessageIncludingNullSession(org.kaazing.gateway.transport.TransportExceptionMonitorTest) starting
+WARN Unexpected exception. java.lang.NullPointerException: EXCEPTION
+TransportExceptionMonitorTest.shouldLogMessageIncludingNullSession success (0.01 secs)
+exceptionCaughtShouldRethrowError(org.kaazing.gateway.transport.TransportExceptionMonitorTest) starting
+TransportExceptionMonitorTest.exceptionCaughtShouldRethrowError success (0.00 secs)
+shouldLogMessageIncludingSession(org.kaazing.gateway.transport.TransportExceptionMonitorTest) starting
+WARN [wsn#23 127.0.0.1:2121] java.lang.NullPointerException: EXCEPTION java.lang.NullPointerException: EXCEPTION
+TransportExceptionMonitorTest.shouldLogMessageIncludingSession success (0.04 secs)
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.139 sec - in org.kaazing.gateway.transport.TransportExceptionMonitorTest
+Running org.kaazing.gateway.transport.TransportFactoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 sec - in org.kaazing.gateway.transport.TransportFactoryTest
+Running org.kaazing.gateway.transport.LoggingUtilsTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.388 sec - in org.kaazing.gateway.transport.LoggingUtilsTest
+
+Results :
+
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Gateway Service develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.service ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.service ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.service ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/service/spi/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.service ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.service ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.service ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.service.test.CreateServiceTest
+createTestService(org.kaazing.gateway.service.test.CreateServiceTest) starting
+CreateServiceTest.createTestService success (0.00 secs)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 sec - in org.kaazing.gateway.service.test.CreateServiceTest
+Running org.kaazing.gateway.service.messaging.collections.MemoryCollectionsFactoryTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.129 sec - in org.kaazing.gateway.service.messaging.collections.MemoryCollectionsFactoryTest
+
+Results :
+
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Wsn Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.wsn ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.wsn ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.wsn ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.wsn ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.wsn ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.wsn ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.wsn ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/wsn/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.wsn ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.wsn ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.wsn.WsnSslResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 sec - in org.kaazing.gateway.resource.address.wsn.WsnSslResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.wsn.WsnResourceAddressFactorySpiTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.22 sec - in org.kaazing.gateway.resource.address.wsn.WsnResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Wsdraft Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.wsdraft ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.wsdraft ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.wsdraft ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.wsdraft ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.wsdraft ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.wsdraft ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.wsdraft ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/wsdraft/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.wsdraft ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.wsdraft ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.wsdraft.WsDraftSslResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.16 sec - in org.kaazing.gateway.resource.address.wsdraft.WsDraftSslResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.wsdraft.WsDraftResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in org.kaazing.gateway.resource.address.wsdraft.WsDraftResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Wsxdraft Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.wsxdraft ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.wsxdraft ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.wsxdraft ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.wsxdraft ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.wsxdraft ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.wsxdraft ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.wsxdraft ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/wsxdraft/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.wsxdraft ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.wsxdraft ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.wsxdraft.WsxDraftResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 sec - in org.kaazing.gateway.resource.address.wsxdraft.WsxDraftResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.wsxdraft.WsxDraftSslResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec - in org.kaazing.gateway.resource.address.wsxdraft.WsxDraftSslResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Sse Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.sse ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.sse ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.sse ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.sse ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.sse ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.sse ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.sse ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/sse/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.sse ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.sse ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.sse.SseSslResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.421 sec - in org.kaazing.gateway.resource.address.sse.SseSslResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.sse.SseResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.192 sec - in org.kaazing.gateway.resource.address.sse.SseResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Wsx Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.wsx ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.wsx ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.wsx ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.wsx ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.wsx ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.wsx ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.wsx ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/wsx/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.wsx ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.wsx ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.wsx.WsxSslResourceAddressFactorySpiTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.403 sec - in org.kaazing.gateway.resource.address.wsx.WsxSslResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.wsx.WsxResourceAddressFactorySpiTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec - in org.kaazing.gateway.resource.address.wsx.WsxResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Rtmp Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.rtmp ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.rtmp ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.rtmp ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.rtmp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.rtmp ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.rtmp ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.rtmp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/rtmp/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.rtmp ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.rtmp ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.rtmp.RtmpsResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 sec - in org.kaazing.gateway.resource.address.rtmp.RtmpsResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.rtmp.RtmpResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.kaazing.gateway.resource.address.rtmp.RtmpResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Udp Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.udp ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.udp ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.udp ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.udp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.udp ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.udp ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.udp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/udp/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.udp ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.udp ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.udp.UdpResourceAddressFactorySpiTest
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.483 sec - in org.kaazing.gateway.resource.address.udp.UdpResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.udp.UdpResourceAddressFactorySpiPreferIPV4Test
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec - in org.kaazing.gateway.resource.address.udp.UdpResourceAddressFactorySpiPreferIPV4Test
+
+Results :
+
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Wse Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.wse ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.wse ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.wse ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.wse ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.wse ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.wse ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.wse ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/wse/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.wse ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.wse ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.wse.WseResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 sec - in org.kaazing.gateway.resource.address.wse.WseResourceAddressFactorySpiTest
+Running org.kaazing.gateway.resource.address.wse.WseSslResourceAddressTest
+[ws://localhost:2020/ (wse+ssl://localhost:2020/)]
+  [http://localhost:2020/ (https://localhost:2020/) wse/1.0]
+    [ssl://localhost:2020 (ssl://localhost:2020) http/1.1]
+      [tcp://127.0.0.1:2020 (tcp://localhost:2020) ssl]
+      [tcp://[0:0:0:0:0:0:0:1]:2020 (tcp://localhost:2020) ssl]
+  [http://localhost:2020/ (httpxe+ssl://localhost:2020/) wse/1.0]
+    [http://localhost:2020/ (https://localhost:2020/) httpxe/1.1]
+      [ssl://localhost:2020 (ssl://localhost:2020) http/1.1]
+        [tcp://127.0.0.1:2020 (tcp://localhost:2020) ssl]
+        [tcp://[0:0:0:0:0:0:0:1]:2020 (tcp://localhost:2020) ssl]
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.201 sec - in org.kaazing.gateway.resource.address.wse.WseSslResourceAddressTest
+Running org.kaazing.gateway.resource.address.wse.WseSslResourceAddressFactorySpiTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec - in org.kaazing.gateway.resource.address.wse.WseSslResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pipe Resource Address develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.resource.address.pipe ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.resource.address.pipe ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.resource.address.pipe ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.resource.address.pipe ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.resource.address.pipe ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.resource.address.pipe ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.resource.address.pipe ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/resource.address/pipe/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.resource.address.pipe ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.resource.address.pipe ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.resource.address.pipe.PipeResourceAddressFactorySpiTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 sec - in org.kaazing.gateway.resource.address.pipe.PipeResourceAddressFactorySpiTest
+
+Results :
+
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Echo Service develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.service.echo ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.service.echo ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.service.echo ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.service.echo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.service.echo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.service.echo ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.service.echo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/service/echo/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.service.echo ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.service.echo ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.service.echo.EchoServiceTest
+testCreateService(org.kaazing.gateway.service.echo.EchoServiceTest) starting
+EchoServiceTest.testCreateService success (0.01 secs)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.312 sec - in org.kaazing.gateway.service.echo.EchoServiceTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Kaazing WebSocket Gateway - Server API develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.server.api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.server.api ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.server.api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.server.api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/server.api/src/main/resources
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.1:jar (attach-javadocs) @ gateway.server.api ---
+[INFO] 
+Loading source files for package org.kaazing.gateway.server...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_121
+Building tree for all the packages and classes...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/org/kaazing/gateway/server/Gateway.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/org/kaazing/gateway/server/GatewayFactory.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/org/kaazing/gateway/server/package-frame.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/org/kaazing/gateway/server/package-summary.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/org/kaazing/gateway/server/package-tree.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/constant-values.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/org/kaazing/gateway/server/class-use/GatewayFactory.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/org/kaazing/gateway/server/class-use/Gateway.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/org/kaazing/gateway/server/package-use.html...
+Building index for all the packages and classes...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/overview-tree.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/index-all.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/deprecated-list.html...
+Building index for all classes...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/allclasses-frame.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/allclasses-noframe.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/index.html...
+Generating /root/workspace/kaazing/gateway/220993458/server.api/target/apidocs/help-doc.html...
+[INFO] Building jar: /root/workspace/kaazing/gateway/220993458/server.api/target/gateway.server.api-develop-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.server.api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.server.api ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.server.api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.server.api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.server.api ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.server.impl.VersionUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 sec - in org.kaazing.gateway.server.impl.VersionUtilsTest
+
+Results :
+
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Kaazing WebSocket Gateway - Server develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.server ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-tools) @ gateway.server ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.server ---
+[INFO] 
+[INFO] --- xmlbeans-maven-plugin:2.3.3:xmlbeans (default) @ gateway.server ---
+[INFO] All schema objects are up to date.
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.server ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:unpack-dependencies (unpack-truststore) @ gateway.server ---
+[INFO] gateway.test.ca-1.0.0.24-keystore.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 34 resources
+[INFO] Copying 1352 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.server ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 82 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.server ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.transport.GatewayBindTest
+0    [main] WARN  DefaultSecurityContext  - Keystore is not specified
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.482 sec - in org.kaazing.gateway.transport.GatewayBindTest
+Running org.kaazing.gateway.server.test.GatewayTest
+289  [main] WARN  DefaultSecurityContext  - Keystore is not specified
+325  [main] WARN  DefaultSecurityContext  - Keystore is not specified
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 sec - in org.kaazing.gateway.server.test.GatewayTest
+Running org.kaazing.gateway.server.test.config.builder.GatewayConfigurationBuilderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.kaazing.gateway.server.test.config.builder.GatewayConfigurationBuilderTest
+Running org.kaazing.gateway.server.topic.DefaultClusterTopicTest
+shouldAllowSendAndReceiveMessagesOnTopics(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldAllowSendAndReceiveMessagesOnTopics success (0.02 secs)
+shouldSendAndReceiveMessagesBetweenMembers(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldSendAndReceiveMessagesBetweenMembers success (0.00 secs)
+shouldNotDeadlockNestedPublishOnDifferentThread(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldNotDeadlockNestedPublishOnDifferentThread success (0.01 secs)
+shouldAllowAddAndRemoveFromMessageListenerDifferentThread(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldAllowAddAndRemoveFromMessageListenerDifferentThread success (0.02 secs)
+shouldCallMultipleTimesMessageListener(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldCallMultipleTimesMessageListener success (0.01 secs)
+shouldCallMessageListenersOnTwoThreads(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldCallMessageListenersOnTwoThreads success (0.02 secs)
+shouldAddAndRemoveMessageListener(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldAddAndRemoveMessageListener success (0.01 secs)
+shouldNotifyListenersIfOneThrowsException(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldNotifyListenersIfOneThrowsException success (0.03 secs)
+shouldNotAddNullMessageListener(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldNotAddNullMessageListener success (0.01 secs)
+shouldDetectClassIncompatibility(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldDetectClassIncompatibility success (0.03 secs)
+shouldPubSubFromMessageListeners(org.kaazing.gateway.server.topic.DefaultClusterTopicTest) starting
+DefaultClusterTopicTest.shouldPubSubFromMessageListeners success (0.01 secs)
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.628 sec - in org.kaazing.gateway.server.topic.DefaultClusterTopicTest
+Running org.kaazing.gateway.server.topic.StandaloneClusterTopicTest
+shouldNotAllowNestedPublish(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldNotAllowNestedPublish success (0.01 secs)
+shouldRejectAddAndRemoveFromMessageListenerSameThread(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldRejectAddAndRemoveFromMessageListenerSameThread success (0.02 secs)
+shouldNotDeadlockNestedPublishOnDifferentThread(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldNotDeadlockNestedPublishOnDifferentThread success (0.02 secs)
+shouldAllowAddAndRemoveFromMessageListenerDifferentThread(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldAllowAddAndRemoveFromMessageListenerDifferentThread success (0.00 secs)
+shouldCallMultipleTimesMessageListener(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldCallMultipleTimesMessageListener success (0.02 secs)
+shouldCallMessageListenersOnTwoThreads(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldCallMessageListenersOnTwoThreads success (0.01 secs)
+shouldAddAndRemoveMessageListener(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldAddAndRemoveMessageListener success (0.01 secs)
+shouldNotifyListenersIfOneThrowsException(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldNotifyListenersIfOneThrowsException success (0.00 secs)
+shouldNotAddNullMessageListener(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldNotAddNullMessageListener success (0.00 secs)
+shouldDetectClassIncompatibility(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldDetectClassIncompatibility success (0.00 secs)
+shouldPubSubFromMessageListeners(org.kaazing.gateway.server.topic.StandaloneClusterTopicTest) starting
+StandaloneClusterTopicTest.shouldPubSubFromMessageListeners success (0.02 secs)
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 sec - in org.kaazing.gateway.server.topic.StandaloneClusterTopicTest
+Running org.kaazing.gateway.server.context.resolve.TLStoSSLTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.043 sec - in org.kaazing.gateway.server.context.resolve.TLStoSSLTest
+Running org.kaazing.gateway.server.context.resolve.GatewayContextResolverTest
+testWrongTruststoreType(org.kaazing.gateway.server.context.resolve.GatewayContextResolverTest) starting
+GatewayContextResolverTest.testWrongTruststoreType success (0.12 secs)
+shouldAcceptTrustStoreFileAbsolutePath(org.kaazing.gateway.server.context.resolve.GatewayContextResolverTest) starting
+GatewayContextResolverTest.shouldAcceptTrustStoreFileAbsolutePath success (0.24 secs)
+shouldInjectResourcesIntoTransportExtensions(org.kaazing.gateway.server.context.resolve.GatewayContextResolverTest) starting
+GatewayContextResolverTest.shouldInjectResourcesIntoTransportExtensions success (0.14 secs)
+shouldNotResolveDuplicateRealms(org.kaazing.gateway.server.context.resolve.GatewayContextResolverTest) starting
+GatewayContextResolverTest.shouldNotResolveDuplicateRealms success (0.17 secs)
+shouldAcceptKeyStoreFileAbsolutePath(org.kaazing.gateway.server.context.resolve.GatewayContextResolverTest) starting
+GatewayContextResolverTest.shouldAcceptKeyStoreFileAbsolutePath success (0.12 secs)
+testLowerCaseOfResolvedServices(org.kaazing.gateway.server.context.resolve.GatewayContextResolverTest) starting
+GatewayContextResolverTest.testLowerCaseOfResolvedServices success (0.18 secs)
+testWrongKeystoreType(org.kaazing.gateway.server.context.resolve.GatewayContextResolverTest) starting
+GatewayContextResolverTest.testWrongKeystoreType success (0.47 secs)
+shouldAcceptKeyStorePasswordFileAbsolutePath(org.kaazing.gateway.server.context.resolve.GatewayContextResolverTest) starting
+GatewayContextResolverTest.shouldAcceptKeyStorePasswordFileAbsolutePath success (0.88 secs)
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.357 sec - in org.kaazing.gateway.server.context.resolve.GatewayContextResolverTest
+Running org.kaazing.gateway.server.context.resolve.StandaloneClusterContextTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.kaazing.gateway.server.context.resolve.StandaloneClusterContextTest
+Running org.kaazing.gateway.server.context.resolve.ConnectOptionsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.411 sec - in org.kaazing.gateway.server.context.resolve.ConnectOptionsTest
+Running org.kaazing.gateway.server.context.resolve.AcceptOptionsTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 3.674 sec - in org.kaazing.gateway.server.context.resolve.AcceptOptionsTest
+Running org.kaazing.gateway.server.context.resolve.ServiceContextRealmInvalidUserPrincipalClassTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.187 sec - in org.kaazing.gateway.server.context.resolve.ServiceContextRealmInvalidUserPrincipalClassTest
+Running org.kaazing.gateway.server.context.resolve.DefaultClusterContextTest
+shouldSeeLocalNodeDataAfterAClusterIsStarted(org.kaazing.gateway.server.context.resolve.DefaultClusterContextTest) starting
+DefaultClusterContextTest.shouldSeeLocalNodeDataAfterAClusterIsStarted success (1.37 secs)
+shouldNotListenOnMulticastInterfaceImplicitly(org.kaazing.gateway.server.context.resolve.DefaultClusterContextTest) starting
+Calling clusterContext.start in thread pool-137-thread-1
+clusterContext.start has completed in thread pool-137-thread-1
+Calling clusterContext.start in thread pool-140-thread-1
+clusterContext.start has completed in thread pool-140-thread-1
+DefaultClusterContextTest.shouldNotListenOnMulticastInterfaceImplicitly success (8.70 secs)
+shouldSeeBalancerStateAfterClusterMembersLeave(org.kaazing.gateway.server.context.resolve.DefaultClusterContextTest) starting
+Calling clusterContext.start in thread pool-143-thread-1
+clusterContext.start has completed in thread pool-143-thread-1
+Calling clusterContext.start in thread pool-146-thread-1
+clusterContext.start has completed in thread pool-146-thread-1
+Calling clusterContext.start in thread pool-149-thread-1
+clusterContext.start has completed in thread pool-149-thread-1
+Calling clusterContext.start in thread pool-152-thread-1
+clusterContext.start has completed in thread pool-152-thread-1
+Calling clusterContext.start in thread pool-155-thread-1
+clusterContext.start has completed in thread pool-155-thread-1
+Calling clusterContext.start in thread pool-158-thread-1
+clusterContext.start has completed in thread pool-158-thread-1
+DefaultClusterContextTest.shouldSeeBalancerStateAfterClusterMembersLeave success (51.28 secs)
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 61.361 sec - in org.kaazing.gateway.server.context.resolve.DefaultClusterContextTest
+Running org.kaazing.gateway.server.context.resolve.CustomOptionParserTest
+shouldInsertNestedOptions(org.kaazing.gateway.server.context.resolve.CustomOptionParserTest) starting
+CustomOptionParserTest.shouldInsertNestedOptions success (0.29 secs)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.299 sec - in org.kaazing.gateway.server.context.resolve.CustomOptionParserTest
+Running org.kaazing.gateway.server.observer.GatewayObserverTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.574 sec - in org.kaazing.gateway.server.observer.GatewayObserverTest
+Running org.kaazing.gateway.server.impl.GatewayImplTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in org.kaazing.gateway.server.impl.GatewayImplTest
+Running org.kaazing.gateway.server.util.version.DuplicateJarFinderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.557 sec - in org.kaazing.gateway.server.util.version.DuplicateJarFinderTest
+Running org.kaazing.gateway.server.util.URLUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.kaazing.gateway.server.util.URLUtilsTest
+Running org.kaazing.gateway.server.util.collection.FixedArrayQueueTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.kaazing.gateway.server.util.collection.FixedArrayQueueTest
+Running org.kaazing.gateway.server.util.ParseTimeIntervalTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.076 sec - in org.kaazing.gateway.server.util.ParseTimeIntervalTest
+Running org.kaazing.gateway.server.config.parse.ServiceDefaultsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.131 sec - in org.kaazing.gateway.server.config.parse.ServiceDefaultsTest
+Running org.kaazing.gateway.server.config.parse.ConfigEnforcementTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.428 sec - in org.kaazing.gateway.server.config.parse.ConfigEnforcementTest
+Running org.kaazing.gateway.server.config.parse.translate.GatewayConfigTranslatorFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.kaazing.gateway.server.config.parse.translate.GatewayConfigTranslatorFactoryTest
+Running org.kaazing.gateway.server.config.parse.translate.RemoveRequireUserTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec - in org.kaazing.gateway.server.config.parse.translate.RemoveRequireUserTest
+Running org.kaazing.gateway.server.config.parse.GatewayConfigParserTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 7.48 sec - in org.kaazing.gateway.server.config.parse.GatewayConfigParserTest
+Running org.kaazing.gateway.server.HelpTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in org.kaazing.gateway.server.HelpTest
+
+Results :
+
+Tests run: 166, Failures: 0, Errors: 0, Skipped: 14
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building BIO Transport develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.transport.bio ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.transport.bio ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.transport.bio ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.transport.bio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.transport.bio ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.transport.bio ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.transport.bio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/transport/bio/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.transport.bio ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.transport.bio ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.transport.bio.MulticastAcceptorImplTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in org.kaazing.gateway.transport.bio.MulticastAcceptorImplTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building NIO Transport develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.transport.nio ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.transport.nio ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.transport.nio ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.transport.nio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.transport.nio ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.transport.nio ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.transport.nio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.transport.nio ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.transport.nio ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.transport.nio.internal.TcpExtensionFactoryTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.237 sec - in org.kaazing.gateway.transport.nio.internal.TcpExtensionFactoryTest
+Running org.kaazing.gateway.transport.nio.internal.NioSocketConnectorTest
+allWorkerThreadsShouldBeUsed(org.kaazing.gateway.transport.nio.internal.NioSocketConnectorTest) starting
+NioSocketConnectorTest.allWorkerThreadsShouldBeUsed success (1.85 secs)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.017 sec - in org.kaazing.gateway.transport.nio.internal.NioSocketConnectorTest
+Running org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest
+bindAndAcceptShouldInvokeExtensions(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+NioSocketAcceptorTest.bindAndAcceptShouldInvokeExtensions success (0.05 secs)
+shouldBindAndUnbindLeavingEmptyBindingsMaps(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+accept.bind, i=0
+accept.bind, i=0
+accept.bind, i=1
+accept.bind, i=0
+accept.bind, i=1
+accept.bind, i=2
+accept.bind, i=3
+accept.bind, i=4
+accept.bind, i=5
+accept.bind, i=6
+accept.bind, i=7
+accept.bind, i=8
+accept.bind, i=9
+NioSocketAcceptorTest.shouldBindAndUnbindLeavingEmptyBindingsMaps success (0.01 secs)
+initWorkerPoolShouldReturnSamePoolOnSameInstance(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+NioSocketAcceptorTest.initWorkerPoolShouldReturnSamePoolOnSameInstance success (0.02 secs)
+disposeWithUnwrittenDataShouldNotHang(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+session write request queue length is empty
+NioSocketAcceptorTest.disposeWithUnwrittenDataShouldNotHang success (0.06 secs)
+getWorkerCountShouldDefaultToMachineProcessorCount(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+NioSocketAcceptorTest.getWorkerCountShouldDefaultToMachineProcessorCount success (0.00 secs)
+getWorkerCountShouldBeConfiguredProcessorCountIfConfigured(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+NioSocketAcceptorTest.getWorkerCountShouldBeConfiguredProcessorCountIfConfigured success (0.00 secs)
+bindAndAcceptShouldWorkWhenThereAreNoExtensions(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+NioSocketAcceptorTest.bindAndAcceptShouldWorkWhenThereAreNoExtensions success (0.04 secs)
+unbindDuringConnect(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+NioSocketAcceptorTest.unbindDuringConnect success (0.13 secs)
+initWorkerPoolShouldReturnDifferentPoolsOnDifferentInstances(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+NioSocketAcceptorTest.initWorkerPoolShouldReturnDifferentPoolsOnDifferentInstances success (0.01 secs)
+reusingNioAcceptorShouldWorkWithAlignment(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+NioSocketAcceptorTest.reusingNioAcceptorShouldWorkWithAlignment success (0.02 secs)
+allWorkersShouldBeUsed_and_reported_by_getWorkerCount_getWorkers(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+NioSocketAcceptorTest.allWorkersShouldBeUsed_and_reported_by_getWorkerCount_getWorkers success (0.04 secs)
+disposeShouldStopWorkerThreads(org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest) starting
+List of active threads before test:
+List of active threads after createBindConnectDispose:
+NioSocketAcceptorTest.disposeShouldStopWorkerThreads success (0.02 secs)
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.428 sec - in org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorTest
+Running org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorBindingsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 sec - in org.kaazing.gateway.transport.nio.internal.NioSocketAcceptorBindingsTest
+Running org.kaazing.gateway.transport.nio.internal.NioTransportTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.kaazing.gateway.transport.nio.internal.NioTransportTest
+Running org.kaazing.gateway.transport.nio.internal.BridgeTransportTest
+shouldBridgeUdpOverTcpSessions(org.kaazing.gateway.transport.nio.internal.BridgeTransportTest) starting
+BridgeTransportTest.shouldBridgeUdpOverTcpSessions success (0.06 secs)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 sec - in org.kaazing.gateway.transport.nio.internal.BridgeTransportTest
+Running org.kaazing.gateway.transport.nio.internal.NioDatagramAcceptorTest
+echo(org.kaazing.gateway.transport.nio.internal.NioDatagramAcceptorTest) starting
+NioDatagramAcceptorTest.echo success (0.04 secs)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in org.kaazing.gateway.transport.nio.internal.NioDatagramAcceptorTest
+Running org.kaazing.gateway.transport.nio.TcpTransportTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.kaazing.gateway.transport.nio.TcpTransportTest
+
+Results :
+
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pipe Transport develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.transport.pipe ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.transport.pipe ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.transport.pipe ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.transport.pipe ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.transport.pipe ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.transport.pipe ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.transport.pipe ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/transport/pipe/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.transport.pipe ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.transport.pipe ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.transport.pipe.PipeTransportTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.kaazing.gateway.transport.pipe.PipeTransportTest
+Running org.kaazing.gateway.transport.pipe.NamedPipeConnectorImplTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.155 sec - in org.kaazing.gateway.transport.pipe.NamedPipeConnectorImplTest
+Running org.kaazing.gateway.transport.pipe.NamedPipeAcceptorImplTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.kaazing.gateway.transport.pipe.NamedPipeAcceptorImplTest
+Running org.kaazing.gateway.transport.pipe.NamedPipeTransportTest
+shouldBindAndUnbindLeavingEmptyBindingsMaps(org.kaazing.gateway.transport.pipe.NamedPipeTransportTest) starting
+NamedPipeTransportTest.shouldBindAndUnbindLeavingEmptyBindingsMaps success (0.03 secs)
+sendAndClose(org.kaazing.gateway.transport.pipe.NamedPipeTransportTest) starting
+Server  Session message received: HeapBuffer[pos=0 lim=11 cap=11: 48 65 6C 6C 6F 20 4B 69 74 74 79]
+Server  Session closed
+Client  Session created
+Client  Session opened
+NamedPipeTransportTest.sendAndClose success (0.01 secs)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.126 sec - in org.kaazing.gateway.transport.pipe.NamedPipeTransportTest
+
+Results :
+
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Http Transport develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.transport.http ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.transport.http ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.transport.http ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.transport.http ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.transport.http ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.transport.http ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.transport.http ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.transport.http ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.transport.http ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.transport.http.WsHandshakeValidatorTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.2 sec - in org.kaazing.gateway.transport.http.WsHandshakeValidatorTest
+Running org.kaazing.gateway.transport.http.HttpUtilsTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.272 sec - in org.kaazing.gateway.transport.http.HttpUtilsTest
+Running org.kaazing.gateway.transport.http.bridge.filter.HttpContentFilterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in org.kaazing.gateway.transport.http.bridge.filter.HttpContentFilterTest
+Running org.kaazing.gateway.transport.http.bridge.filter.HttpRequestEncoderTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 sec - in org.kaazing.gateway.transport.http.bridge.filter.HttpRequestEncoderTest
+Running org.kaazing.gateway.transport.http.bridge.filter.HttpResponseDecoderTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.52 sec - in org.kaazing.gateway.transport.http.bridge.filter.HttpResponseDecoderTest
+Running org.kaazing.gateway.transport.http.bridge.filter.HttpSubjectSecurityFilterTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.392 sec - in org.kaazing.gateway.transport.http.bridge.filter.HttpSubjectSecurityFilterTest
+Running org.kaazing.gateway.transport.http.bridge.filter.HttpProtocolCompatibilityFilterTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.24 sec - in org.kaazing.gateway.transport.http.bridge.filter.HttpProtocolCompatibilityFilterTest
+Running org.kaazing.gateway.transport.http.bridge.filter.HttpRequestDecoderTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec - in org.kaazing.gateway.transport.http.bridge.filter.HttpRequestDecoderTest
+Running org.kaazing.gateway.transport.http.bridge.filter.HttpResponseEncoderTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.kaazing.gateway.transport.http.bridge.filter.HttpResponseEncoderTest
+Running org.kaazing.gateway.transport.http.bridge.filter.HttpContentLengthAdjustementFilterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 sec - in org.kaazing.gateway.transport.http.bridge.filter.HttpContentLengthAdjustementFilterTest
+Running org.kaazing.gateway.transport.http.bridge.filter.HttpOperationFilterTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 sec - in org.kaazing.gateway.transport.http.bridge.filter.HttpOperationFilterTest
+Running org.kaazing.gateway.transport.http.bridge.filter.HttpxeProtocolFilterTest
+Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.225 sec - in org.kaazing.gateway.transport.http.bridge.filter.HttpxeProtocolFilterTest
+Running org.kaazing.gateway.transport.http.security.auth.challenge.HttpChallengeFactoriesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.kaazing.gateway.transport.http.security.auth.challenge.HttpChallengeFactoriesTest
+Running org.kaazing.gateway.transport.http.security.auth.challenge.TokenHttpChallengeFactoryTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.kaazing.gateway.transport.http.security.auth.challenge.TokenHttpChallengeFactoryTest
+Running org.kaazing.gateway.transport.http.security.auth.challenge.NegotiateHttpChallengeFactoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.kaazing.gateway.transport.http.security.auth.challenge.NegotiateHttpChallengeFactoryTest
+Running org.kaazing.gateway.transport.http.security.auth.challenge.DispatchHttpChallengeFactoryTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in org.kaazing.gateway.transport.http.security.auth.challenge.DispatchHttpChallengeFactoryTest
+Running org.kaazing.gateway.transport.http.security.auth.challenge.BasicHttpChallengeFactoryTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.kaazing.gateway.transport.http.security.auth.challenge.BasicHttpChallengeFactoryTest
+Running org.kaazing.gateway.transport.http.security.auth.token.CustomAuthenticationTokenCookiesTest
+
+Test Case: I am expecting an exception to occur when presented with:
+	No cookies
+	with no configured cookies, and no configured separator....success!
+
+Test Case: I am expecting to extract 'bar'  when presented with:
+	cookies:[Cookie:{foo/bar}]foo,
+	with configured cookie(s) named '', and no configured separator....success!
+
+Test Case: I am expecting to extract 'bar'  when presented with:
+	cookies:[Cookie:{foo/bar}, Cookie:{cow/moo}]foo,
+	with configured cookie(s) named '', and no configured separator....success!
+
+Test Case: I am expecting an exception to occur when presented with:
+	cookies:[Cookie:{foo/bar}, Cookie:{cow/moo}]foo,cow,
+	with configured cookie(s) named '', and no configured separator....success!
+
+Test Case: I am expecting to extract 'bar&moo'  when presented with:
+	cookies:[Cookie:{foo/bar}, Cookie:{cow/moo}]foo,cow,
+	with configured cookie(s) named '',and configured separator '&'....success!
+
+Test Case: I am expecting to extract 'null'  when presented with:
+	cookies:[Cookie:{foo/bar}, Cookie:{cow/moo}]gah,
+	with configured cookie(s) named '', and no configured separator....success!
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.kaazing.gateway.transport.http.security.auth.token.CustomAuthenticationTokenCookiesTest
+Running org.kaazing.gateway.transport.http.security.auth.token.DefaultAuthenticationTokenExtractorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.kaazing.gateway.transport.http.security.auth.token.DefaultAuthenticationTokenExtractorTest
+Running org.kaazing.gateway.transport.http.security.auth.token.CustomAuthenticationTokenHeadersTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.kaazing.gateway.transport.http.security.auth.token.CustomAuthenticationTokenHeadersTest
+Running org.kaazing.gateway.transport.http.security.auth.token.DefaultAuthenticationTokenTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.kaazing.gateway.transport.http.security.auth.token.DefaultAuthenticationTokenTest
+Running org.kaazing.gateway.transport.http.security.auth.token.CustomAuthenticationTokenParametersTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.kaazing.gateway.transport.http.security.auth.token.CustomAuthenticationTokenParametersTest
+Running org.kaazing.gateway.transport.http.security.auth.WWWAuthenticateHeaderUtilsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.kaazing.gateway.transport.http.security.auth.WWWAuthenticateHeaderUtilsTest
+Running org.kaazing.gateway.transport.http.HttpTransportTest
+Server Http Session message received: HeapBuffer[pos=0 lim=11 cap=11: 48 65 6C 6C 6F 20 4B 69 74 74 79]
+Server Http Session closed
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.518 sec - in org.kaazing.gateway.transport.http.HttpTransportTest
+Running org.kaazing.gateway.transport.http.HttpAcceptProcessorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 sec - in org.kaazing.gateway.transport.http.HttpAcceptProcessorTest
+Running org.kaazing.gateway.transport.http.HttpTransportOptionsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.388 sec - in org.kaazing.gateway.transport.http.HttpTransportOptionsTest
+Running org.kaazing.gateway.transport.http.HttpBindingsTest
+{
+  [http://example.com/]=(
+    /foo=([http://example.com:80/foo],0x197d671,0x402e37bc,#2)
+    #1)
+}
+{}
+{
+  [http://example.com/]=(
+    /foo=([http://example.com:80/foo],0x6293abcc,0x7995092a,#1)
+    #1)
+}
+{
+  [http://example.com/]=(
+    /foo=([http://example.com:80/foo],0x7fc2413d,0xf8c1ddd,#1)
+    #1)
+}
+{}
+{
+  [http://origin1.com/]=(
+    /foo=([http://origin1.com:80/foo],0x7d3a22a9,0x1d082e88,#1)
+    #1),
+  [http://origin2.com/]=(
+    /foo=([http://origin2.com:80/foo],0x7d3a22a9,0x1d082e88,#1)
+    #1)
+}
+{
+  [http://origin1.com/]=(
+    /foo=([http://origin1.com:80/foo],0x60704c,0x6b19b79,#1)
+    #1),
+  [httpx://origin1.com/]=(
+    /foo=([http://origin1.com:80/foo],0x60704c,0x6b19b79,#1)
+    #1)
+}
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 sec - in org.kaazing.gateway.transport.http.HttpBindingsTest
+Running org.kaazing.gateway.transport.http.HttpIdentityResolverTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.kaazing.gateway.transport.http.HttpIdentityResolverTest
+Running org.kaazing.gateway.transport.http.HttpxeTransportTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.223 sec - in org.kaazing.gateway.transport.http.HttpxeTransportTest
+Running org.kaazing.gateway.transport.http.HttpStatusTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.kaazing.gateway.transport.http.HttpStatusTest
+
+Results :
+
+Tests run: 236, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Proxy Service develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.service.proxy ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.service.proxy ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.service.proxy ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.service.proxy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.service.proxy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.service.proxy ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.service.proxy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/service/proxy/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.service.proxy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.service.proxy ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.service.proxy.ProxyServiceExtensionTest
+shouldInvokeExtension(org.kaazing.gateway.service.proxy.ProxyServiceExtensionTest) starting
+ProxyServiceExtensionTest.shouldInvokeExtension success (1.02 secs)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.473 sec - in org.kaazing.gateway.service.proxy.ProxyServiceExtensionTest
+Running org.kaazing.gateway.service.proxy.ServiceConnectManagerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.205 sec - in org.kaazing.gateway.service.proxy.ServiceConnectManagerTest
+Running org.kaazing.gateway.service.proxy.DeferredConnectStrategyFilterTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.309 sec - in org.kaazing.gateway.service.proxy.DeferredConnectStrategyFilterTest
+Running org.kaazing.gateway.service.proxy.ProxyServiceTest
+testCreateService(org.kaazing.gateway.service.proxy.ProxyServiceTest) starting
+ProxyServiceTest.testCreateService success (0.00 secs)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.kaazing.gateway.service.proxy.ProxyServiceTest
+
+Results :
+
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Broadcast Service develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.service.broadcast ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.service.broadcast ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.service.broadcast ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:unpack-dependencies (unpack-truststore) @ gateway.service.broadcast ---
+[INFO] gateway.test.ca-1.0.0.24-keystore.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.service.broadcast ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.service.broadcast ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.service.broadcast ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.service.broadcast ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.service.broadcast ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.service.broadcast ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.service.broadcast.BroadcastServiceTest
+testBroadcast(org.kaazing.gateway.service.broadcast.BroadcastServiceTest) starting
+TestClient 3:  received message >|<
+TestClient 2:  received message >|<
+TestClient 1:  received message >|<
+TestClient 3:  received message >|<
+TestClient 2:  received message >|<
+BroadcastServiceTest.testBroadcast success (4.48 secs)
+testSlowConsumer(org.kaazing.gateway.service.broadcast.BroadcastServiceTest) starting
+service started
+FastTestBackendProducer send buffer size: 1313280
+FastTestBackendProducer sending hello message >|<
+SlowTestClient 1: socket is Socket[addr=localhost/127.0.0.1,port=9880,localport=58239]
+SlowTestClient receive buffer size: 1152
+SlowTestClient send buffer size: 1313280
+FastTestBackendProducer sending hello message >|<
+TestClient 1:  read returned 3
+TestClient 1:  received message >|<
+FastTestBackendProducer targetBytes: 13137800
+FastTestBackendProducer batch size: 131328
+Time: 0  Producer, sent 131328 bytes
+Time: 200  Producer, sent 262656 bytes
+Time: 401  Producer, sent 393984 bytes
+Time: 601  Producer, sent 525312 bytes
+Time: 802  Producer, sent 656640 bytes
+SlowTestClient 1: iteration #0 has 1152 bytes available
+SlowTestClient 1: reading 1 byte
+SlowTestClient 1: writing 1 byte
+Time: 1002  Producer, sent 787968 bytes
+Time: 1202  Producer, sent 919296 bytes
+Time: 1403  Producer, sent 1050624 bytes
+Time: 1603  Producer, sent 1181952 bytes
+SlowTestClient 1: iteration #1 has 1151 bytes available
+SlowTestClient 1: reading 1 byte
+SlowTestClient 1: writing 1 byte
+SlowTestClient 1: write threw exception java.net.SocketException: Connection reset, assuming socket closed
+SlowTestClient 1: connection closed, that'll teach me
+Time: 1803  Producer, sent 1313280 bytes
+BroadcastServiceTest.testSlowConsumer success (2.45 secs)
+testReconnect(org.kaazing.gateway.service.broadcast.BroadcastServiceTest) starting
+BroadcastServiceTest.testReconnect success (3.04 secs)
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.158 sec - in org.kaazing.gateway.service.broadcast.BroadcastServiceTest
+
+Results :
+
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Sse Transport develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.transport.sse ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.transport.sse ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.transport.sse ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:unpack-dependencies (unpack-truststore) @ gateway.transport.sse ---
+[INFO] gateway.test.ca-1.0.0.24-keystore.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.transport.sse ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.transport.sse ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.transport.sse ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.transport.sse ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/kaazing/gateway/220993458/transport/sse/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.transport.sse ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.transport.sse ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.transport.sse.SseTransportTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.kaazing.gateway.transport.sse.SseTransportTest
+Running org.kaazing.gateway.transport.sse.SseSessionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.982 sec - in org.kaazing.gateway.transport.sse.SseSessionTest
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building WS Transport develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.transport.ws ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.transport.ws ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.transport.ws ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.transport.ws ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.transport.ws ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.transport.ws ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.transport.ws ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.transport.ws ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.transport.ws ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.transport.ws.WsCommandMessageTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in org.kaazing.gateway.transport.ws.WsCommandMessageTest
+Running org.kaazing.gateway.transport.ws.extension.ExtensionHeaderBuilderTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in org.kaazing.gateway.transport.ws.extension.ExtensionHeaderBuilderTest
+Running org.kaazing.gateway.transport.ws.extension.WebSocketExtensionFactoryTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.414 sec - in org.kaazing.gateway.transport.ws.extension.WebSocketExtensionFactoryTest
+Running org.kaazing.gateway.transport.ws.bridge.MessageTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.132 sec - in org.kaazing.gateway.transport.ws.bridge.MessageTest
+Running org.kaazing.gateway.transport.ws.bridge.filter.WsFrameEncoderTest
+###### null
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec - in org.kaazing.gateway.transport.ws.bridge.filter.WsFrameEncoderTest
+Running org.kaazing.gateway.transport.ws.bridge.filter.WsDraftHixieFrameEncoderTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.kaazing.gateway.transport.ws.bridge.filter.WsDraftHixieFrameEncoderTest
+Running org.kaazing.gateway.transport.ws.bridge.filter.WsCheckAliveFilterTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.393 sec - in org.kaazing.gateway.transport.ws.bridge.filter.WsCheckAliveFilterTest
+Running org.kaazing.gateway.transport.ws.bridge.filter.EncodingTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.kaazing.gateway.transport.ws.bridge.filter.EncodingTest
+Running org.kaazing.gateway.transport.ws.bridge.filter.WsDraftHixieFrameDecoderTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in org.kaazing.gateway.transport.ws.bridge.filter.WsDraftHixieFrameDecoderTest
+Running org.kaazing.gateway.transport.ws.bridge.filter.WsFrameDecoderTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 sec - in org.kaazing.gateway.transport.ws.bridge.filter.WsFrameDecoderTest
+Running org.kaazing.gateway.transport.ws.bridge.extensions.pingpong.PingPongExtensionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.kaazing.gateway.transport.ws.bridge.extensions.pingpong.PingPongExtensionTest
+Running org.kaazing.gateway.transport.ws.bridge.extensions.pingpong.PingPongFilterTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 sec - in org.kaazing.gateway.transport.ws.bridge.extensions.pingpong.PingPongFilterTest
+Running org.kaazing.gateway.transport.ws.bridge.extensions.pingpong.PingPongExtensionFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.314 sec - in org.kaazing.gateway.transport.ws.bridge.extensions.pingpong.PingPongExtensionFactoryTest
+Running org.kaazing.gateway.transport.ws.bridge.extensions.idletimeout.IdleTimeouExtensionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.kaazing.gateway.transport.ws.bridge.extensions.idletimeout.IdleTimeouExtensionTest
+Running org.kaazing.gateway.transport.ws.bridge.extensions.idletimeout.IdleTimeouExtensionFactoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 sec - in org.kaazing.gateway.transport.ws.bridge.extensions.idletimeout.IdleTimeouExtensionFactoryTest
+Running org.kaazing.gateway.transport.ws.bridge.extensions.idletimeout.IdleTimeoutFilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in org.kaazing.gateway.transport.ws.bridge.extensions.idletimeout.IdleTimeoutFilterTest
+Running org.kaazing.gateway.transport.ws.util.WsUtilsTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.252 sec - in org.kaazing.gateway.transport.ws.util.WsUtilsTest
+Running org.kaazing.gateway.transport.ws.WsAcceptorTest
+shouldBindAndUnbindOnWsAddress(org.kaazing.gateway.transport.ws.WsAcceptorTest) starting
+WsAcceptorTest.shouldBindAndUnbindOnWsAddress success (0.34 secs)
+testShouldThrowIllegalArgumentExceptionWhenInvalidTransportsSpecified(org.kaazing.gateway.transport.ws.WsAcceptorTest) starting
+WsAcceptorTest.testShouldThrowIllegalArgumentExceptionWhenInvalidTransportsSpecified success (0.09 secs)
+testShouldBindWsebOnly(org.kaazing.gateway.transport.ws.WsAcceptorTest) starting
+WsAcceptorTest.testShouldBindWsebOnly success (0.04 secs)
+testShouldBindWsnOnly(org.kaazing.gateway.transport.ws.WsAcceptorTest) starting
+WsAcceptorTest.testShouldBindWsnOnly success (0.07 secs)
+testShouldBindWsnWsebOnly(org.kaazing.gateway.transport.ws.WsAcceptorTest) starting
+WsAcceptorTest.testShouldBindWsnWsebOnly success (0.06 secs)
+shouldNotBindOnNonWsAddress(org.kaazing.gateway.transport.ws.WsAcceptorTest) starting
+WsAcceptorTest.shouldNotBindOnNonWsAddress success (0.04 secs)
+testShouldBindAllTransportsByDefault(org.kaazing.gateway.transport.ws.WsAcceptorTest) starting
+WsAcceptorTest.testShouldBindAllTransportsByDefault success (0.06 secs)
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.799 sec - in org.kaazing.gateway.transport.ws.WsAcceptorTest
+Running org.kaazing.gateway.transport.ws.WsTransportTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.kaazing.gateway.transport.ws.WsTransportTest
+
+Results :
+
+Tests run: 169, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SSL Transport develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.transport.ssl ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.transport.ssl ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.transport.ssl ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:unpack-dependencies (unpack-truststore) @ gateway.transport.ssl ---
+[INFO] gateway.test.ca-1.0.0.24-keystore.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.transport.ssl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.transport.ssl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.transport.ssl ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.transport.ssl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.transport.ssl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.14:test (default-test) @ gateway.transport.ssl ---
+[INFO] Surefire report directory: /root/workspace/kaazing/gateway/220993458/transport/ssl/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.14/surefire-junit4-2.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.14/surefire-junit4-2.14.pom (3 KB at 83.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.14/surefire-providers-2.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.14/surefire-providers-2.14.pom (3 KB at 129.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.14/surefire-junit4-2.14.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.14/surefire-junit4-2.14.jar (78 KB at 1206.8 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.transport.ssl.SslTransportTest
+shouldConnect(org.kaazing.gateway.transport.ssl.SslTransportTest) starting
+SSL client: doSessionCreated
+SSL client: doSessionOpened
+SSL server: doSessionOpened
+SSL client: messageReceived HeapBuffer[pos=0 lim=20 cap=69: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+SSL server: doMessageReceived: HeapBuffer[pos=0 lim=20 cap=122: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+SSL server message contents: How's it going Sven?
+SslTransportTest.shouldConnect success (1.54 secs)
+shouldConnectWithClientAuth(org.kaazing.gateway.transport.ssl.SslTransportTest) starting
+SSL client: doSessionCreated
+SSL client: doSessionOpened
+SSL server: doSessionOpened
+SSL client: messageReceived HeapBuffer[pos=0 lim=20 cap=69: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+SSL server: doMessageReceived: HeapBuffer[pos=0 lim=20 cap=122: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+SSL server message contents: How's it going Sven?
+SslTransportTest.shouldConnectWithClientAuth success (0.36 secs)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.757 sec
+Running org.kaazing.gateway.transport.ssl.SslSessionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.04 sec
+Running org.kaazing.gateway.transport.ssl.SslAcceptorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.823 sec
+Running org.kaazing.gateway.transport.ssl.VirtualHostKeySelectorTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 1.053 sec
+Running org.kaazing.gateway.transport.ssl.Sslv3Test
+connectSucceedsWithoutSslv3(org.kaazing.gateway.transport.ssl.Sslv3Test) starting
+Sslv3Test.connectSucceedsWithoutSslv3 success (2.46 secs)
+acceptFailsWithoutSslv3(org.kaazing.gateway.transport.ssl.Sslv3Test) starting
+Sslv3Test.acceptFailsWithoutSslv3 success (0.20 secs)
+connectSucceedsWithSslv3(org.kaazing.gateway.transport.ssl.Sslv3Test) starting
+Sslv3Test.connectSucceedsWithSslv3 success (0.29 secs)
+connectFailsWithoutSslv3(org.kaazing.gateway.transport.ssl.Sslv3Test) starting
+Sslv3Test.connectFailsWithoutSslv3 success (0.08 secs)
+connectFailsWithSslv3(org.kaazing.gateway.transport.ssl.Sslv3Test) starting
+Sslv3Test.connectFailsWithSslv3 success (0.14 secs)
+acceptSucceedsWithSslv3(org.kaazing.gateway.transport.ssl.Sslv3Test) starting
+Sslv3Test.acceptSucceedsWithSslv3 success (0.19 secs)
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.866 sec
+Running org.kaazing.gateway.transport.ssl.SslAcceptProcessorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.117 sec
+Running org.kaazing.gateway.transport.ssl.SslAcceptFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.786 sec
+
+Results :
+
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 7
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building WSN Transport develop-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (default-enforce) @ gateway.transport.wsn ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.13:check (default) @ gateway.transport.wsn ---
+[INFO] 
+[INFO] --- license-maven-plugin:2.11:check (default) @ gateway.transport.wsn ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:unpack-dependencies (unpack-truststore) @ gateway.transport.wsn ---
+[INFO] gateway.test.ca-1.0.0.24-keystore.jar already exists in destination.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gateway.transport.wsn ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gateway.transport.wsn ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (default-animal-sniffer) @ gateway.transport.wsn ---
+[INFO] Checking unresolved references to org.kaazing.mojo.signature:java18:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gateway.transport.wsn ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gateway.transport.wsn ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ gateway.transport.wsn ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.kaazing.gateway.transport.wsn.WsnAcceptorTest
+{}
+Tests run: 4, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 11.343 sec <<< FAILURE! - in org.kaazing.gateway.transport.wsn.WsnAcceptorTest
+shouldBeAbleToBindAndUnbindWsxAndWsnAddresses(org.kaazing.gateway.transport.wsn.WsnAcceptorTest)  Time elapsed: 10.015 sec  <<< ERROR!
+org.junit.runners.model.TestTimedOutException: test timed out after 10 seconds
+	at org.kaazing.gateway.transport.wsn.WsnAcceptorTest.disposeConnector(WsnAcceptorTest.java:107)
+
+shouldBeAbleToBindAndUnbindWsxAndWsnAddresses(org.kaazing.gateway.transport.wsn.WsnAcceptorTest)  Time elapsed: 10.016 sec  <<< ERROR!
+java.lang.Exception: Appears to be stuck in thread New I/O worker #14
+
+Running org.kaazing.gateway.transport.wsn.WsCloseTransportTest
+shouldConnectAndCloseTimeoutByServer(org.kaazing.gateway.transport.wsn.WsCloseTransportTest) starting
+WS server: doSessionCreated: (#00000005: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doSessionOpened: (#00000005: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: doSessionCreated: (#00000006: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: doSessionOpened: (#00000006: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: messageReceived HeapBuffer[pos=0 lim=20 cap=20: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+WS client message contents: How's it going Sven?
+WS server: doMessageReceived: HeapBuffer[pos=0 lim=20 cap=20: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+WS server message contents: How's it going Sven?
+WS server: doSessionClosed: (#00000005: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: doSessionClosed: (#00000006: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WsCloseTransportTest.shouldConnectAndCloseTimeoutByServer success (7.26 secs)
+shouldConnectAndCloseImplicitlyByClient(org.kaazing.gateway.transport.wsn.WsCloseTransportTest) starting
+WS client: doSessionCreated: (#00000011: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: doSessionOpened: (#00000011: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doSessionCreated: (#00000012: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doSessionOpened: (#00000012: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doMessageReceived: HeapBuffer[pos=0 lim=20 cap=20: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+WS server message contents: How's it going Sven?
+WS client: messageReceived HeapBuffer[pos=0 lim=20 cap=20: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+WS client message contents: How's it going Sven?
+WS client: doSessionClosed: (#00000011: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doSessionClosed: (#00000012: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WsCloseTransportTest.shouldConnectAndCloseImplicitlyByClient success (0.13 secs)
+shouldConnectAndCloseImplicitlyByServer(org.kaazing.gateway.transport.wsn.WsCloseTransportTest) starting
+WS client: doSessionCreated: (#00000017: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: doSessionOpened: (#00000017: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doSessionCreated: (#00000018: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doSessionOpened: (#00000018: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: messageReceived HeapBuffer[pos=0 lim=20 cap=20: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+WS client message contents: How's it going Sven?
+WS server: doMessageReceived: HeapBuffer[pos=0 lim=20 cap=20: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+WS server message contents: How's it going Sven?
+WS client: doSessionClosed: (#00000017: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doSessionClosed: (#00000018: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WsCloseTransportTest.shouldConnectAndCloseImplicitlyByServer success (0.12 secs)
+shouldConnectAndCloseExplicitlyByClient(org.kaazing.gateway.transport.wsn.WsCloseTransportTest) starting
+WS server: doSessionCreated: (#00000023: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doSessionOpened: (#00000023: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: doSessionCreated: (#00000024: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: doSessionOpened: (#00000024: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doMessageReceived: HeapBuffer[pos=0 lim=20 cap=20: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+WS server message contents: How's it going Sven?
+WS client: messageReceived HeapBuffer[pos=0 lim=20 cap=20: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+WS client message contents: How's it going Sven?
+WS client: doSessionClosed: (#00000024: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doSessionClosed: (#00000023: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WsCloseTransportTest.shouldConnectAndCloseExplicitlyByClient success (0.11 secs)
+shouldConnectAndCloseExplicitlyByServer(org.kaazing.gateway.transport.wsn.WsCloseTransportTest) starting
+WS server: doSessionCreated: (#00000029: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS server: doSessionOpened: (#00000029: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: doSessionCreated: (#00000030: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: doSessionOpened: (#00000030: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: messageReceived HeapBuffer[pos=0 lim=20 cap=20: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+WS client message contents: How's it going Sven?
+WS server: doMessageReceived: HeapBuffer[pos=0 lim=20 cap=20: 48 6F 77 27 73 20 69 74 20 67 6F 69 6E 67 20 53...]
+WS server message contents: How's it going Sven?
+WS server: doSessionClosed: (#00000029: kzg wsn, server, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WS client: doSessionClosed: (#00000030: kzg wsn, client, ws://localhost:4444/echo => wsn://localhost:4444/echo)
+WsCloseTransportTest.shouldConnectAndCloseExplicitlyByServer success (0.16 secs)
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.905 sec - in org.kaazing.gateway.transport.wsn.WsCloseTransportTest
+Running org.kaazing.gateway.transport.wsn.WsnConnectorTest
+shouldCloseWsnSessionWhenTransportClosesCleanlyButUnexpectedly(org.kaazing.gateway.transport.wsn.WsnConnectorTest) starting
+WsnConnectorTest.shouldCloseWsnSessionWhenTransportClosesCleanlyButUnexpectedly success (0.24 secs)
+shouldCorrectlyConstructLocalAndRemoteAddressesForConnectedWsnSessions(org.kaazing.gateway.transport.wsn.WsnConnectorTest) starting
+WsnConnectorTest.shouldCorrectlyConstructLocalAndRemoteAddressesForConnectedWsnSessions success (0.13 secs)
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.396 sec - in org.kaazing.gateway.transport.wsn.WsnConnectorTest
+Running org.kaazing.gateway.transport.wsn.WsFrameEncoderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in org.kaazing.gateway.transport.wsn.WsFrameEncoderTest
+Running org.kaazing.gateway.transport.wsn.WsCloseFilterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.606 sec - in org.kaazing.gateway.transport.wsn.WsCloseFilterTest
+Running org.kaazing.gateway.transport.wsn.WsnTransportTest
+connectorShouldWriteAndReceiveMessage(org.kaazing.gateway.transport.wsn.WsnTransportTest) starting
+Acceptor: received message: Message from connector
+WsnTransportTest.connectorShouldWriteAndReceiveMessage success (0.10 secs)
+connectorShouldReceiveMessageFromAcceptor(org.kaazing.gateway.transport.wsn.WsnTransportTest) starting
+WsnTransportTest.connectorShouldReceiveMessageFromAcceptor success (0.08 secs)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.183 sec - in org.kaazing.gateway.transport.wsn.WsnTransportTest
+Running org.kaazing.gateway.transport.wsn.WsnBindingsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.471 sec - in org.kaazing.gateway.transport.wsn.WsnBindingsTest
+
+Results :
+
+Tests in error: 
+org.kaazing.gateway.transport.wsn.WsnAcceptorTest.shouldBeAbleToBindAndUnbindWsxAndWsnAddresses(org.kaazing.gateway.transport.wsn.WsnAcceptorTest)
+  Run 1: WsnAcceptorTest.disposeConnector:107->Object.wait:502->Object.wait:-2 » TestTimedOut
+  Run 2: WsnAcceptorTest.shouldBeAbleToBindAndUnbindWsxAndWsnAddresses »  Appears to be...
+
+
+Tests run: 22, Failures: 0, Errors: 1, Skipped: 1
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Kaazing Gateway .................................... SUCCESS [  3.543 s]
+[INFO] Kaazing Gateway Bridge Parent ...................... SUCCESS [  0.466 s]
+[INFO] Kaazing Gateway Client Javascript Bridge Packaging . SUCCESS [  5.704 s]
+[INFO] Kaazing Gateway Bridge ............................. SUCCESS [  2.871 s]
+[INFO] Test Utils ......................................... SUCCESS [  3.471 s]
+[INFO] Resource Address ................................... SUCCESS [  1.668 s]
+[INFO] Kaazing WebSocket Gateway - Server Service Provider Interface SUCCESS [  5.461 s]
+[INFO] Apache MINA ........................................ SUCCESS [  0.384 s]
+[INFO] Apache MINA Parent POM ............................. SUCCESS [  1.163 s]
+[INFO] Apache MINA Core ................................... SUCCESS [ 48.167 s]
+[INFO] Apache MINA JavaBeans Integration .................. SUCCESS [  1.084 s]
+[INFO] Apache MINA OGNL Integration ....................... SUCCESS [  1.501 s]
+[INFO] Apache MINA JMX Integration ........................ SUCCESS [  1.571 s]
+[INFO] Mina Netty Adapter ................................. SUCCESS [  4.947 s]
+[INFO] Gateway Utils ...................................... SUCCESS [  2.200 s]
+[INFO] Gateway Security ................................... SUCCESS [  2.590 s]
+[INFO] Tcp Resource Address ............................... SUCCESS [  1.480 s]
+[INFO] Ssl Resource Address ............................... SUCCESS [  1.628 s]
+[INFO] Http Resource Address .............................. SUCCESS [  1.743 s]
+[INFO] Httpx Resource Address ............................. SUCCESS [  1.635 s]
+[INFO] Httpxe Resource Address ............................ SUCCESS [  1.658 s]
+[INFO] Httpxdraft Resource Address ........................ SUCCESS [  1.307 s]
+[INFO] Ws Resource Address ................................ SUCCESS [  2.530 s]
+[INFO] Transport Core ..................................... SUCCESS [  3.220 s]
+[INFO] Gateway Service .................................... SUCCESS [  2.681 s]
+[INFO] Wsn Resource Address ............................... SUCCESS [  2.013 s]
+[INFO] Wsdraft Resource Address ........................... SUCCESS [  1.761 s]
+[INFO] Wsxdraft Resource Address .......................... SUCCESS [  1.768 s]
+[INFO] Sse Resource Address ............................... SUCCESS [  1.930 s]
+[INFO] Wsx Resource Address ............................... SUCCESS [  2.228 s]
+[INFO] Rtmp Resource Address .............................. SUCCESS [  1.671 s]
+[INFO] Udp Resource Address ............................... SUCCESS [  1.750 s]
+[INFO] Wse Resource Address ............................... SUCCESS [  1.918 s]
+[INFO] Pipe Resource Address .............................. SUCCESS [  1.804 s]
+[INFO] Echo Service ....................................... SUCCESS [  2.254 s]
+[INFO] Kaazing WebSocket Gateway - Server API ............. SUCCESS [  6.394 s]
+[INFO] Kaazing WebSocket Gateway - Server ................. SUCCESS [01:40 min]
+[INFO] BIO Transport ...................................... SUCCESS [  1.456 s]
+[INFO] NIO Transport ...................................... SUCCESS [  5.006 s]
+[INFO] Pipe Transport ..................................... SUCCESS [  1.611 s]
+[INFO] Http Transport ..................................... SUCCESS [  5.768 s]
+[INFO] Proxy Service ...................................... SUCCESS [  4.142 s]
+[INFO] Broadcast Service .................................. SUCCESS [ 11.903 s]
+[INFO] Sse Transport ...................................... SUCCESS [  2.466 s]
+[INFO] WS Transport ....................................... SUCCESS [  4.836 s]
+[INFO] SSL Transport ...................................... SUCCESS [ 18.661 s]
+[INFO] WSN Transport ...................................... FAILURE [ 23.136 s]
+[INFO] WSEB Transport ..................................... SKIPPED
+[INFO] Http Balancer Service .............................. SKIPPED
+[INFO] Update Check Service ............................... SKIPPED
+[INFO] Kaazing WebSocket Gateway - Management ............. SKIPPED
+[INFO] Kaazing Gateway BOM ................................ SKIPPED
+[INFO] Kaazing WebSocket Gateway - AMQP Service ........... SKIPPED
+[INFO] Update Check ....................................... SKIPPED
+[INFO] Http Directory Service ............................. SKIPPED
+[INFO] Http Proxy Service ................................. SKIPPED
+[INFO] Update Check Management Service .................... SKIPPED
+[INFO] Http Redirect Service .............................. SKIPPED
+[INFO] TURN REST Service .................................. SKIPPED
+[INFO] Kaazing Gateway Distribution ....................... SKIPPED
+[INFO] Apache MINA Legal .................................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 05:12 min
+[INFO] Finished at: 2017-04-12T01:36:11+02:00
+[INFO] Final Memory: 69M/1059M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19:test (default-test) on project gateway.transport.wsn: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/kaazing/gateway/220993458/transport/wsn/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :gateway.transport.wsn
