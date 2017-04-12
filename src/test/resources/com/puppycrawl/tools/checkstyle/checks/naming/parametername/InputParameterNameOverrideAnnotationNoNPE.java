@@ -1,14 +1,14 @@
 package com.puppycrawl.tools.checkstyle.checks.naming.parametername;
 
-class InputOverrideAnnotationNoNPE
+class InputParameterNameOverrideAnnotationNoNPE
 {
     // method with many parameters
-    void InputOverrideAnnotationNoNPEMethod(int a, int b) {
+    void InputParameterNameOverrideAnnotationNoNPEMethod(int a, int b) {
 
     }
 
     // method with many parameters
-    void InputOverrideAnnotationNoNPEMethod2(int a, int b) {
+    void InputParameterNameOverrideAnnotationNoNPEMethod2(int a, int b) {
 
     }
 }
@@ -16,12 +16,12 @@ class InputOverrideAnnotationNoNPE
 class Test extends InputParameterNameOverrideAnnotationNoNPE
 {
     @Override
-    void InputOverrideAnnotationNoNPEMethod(int a, int b) {
+    void InputParameterNameOverrideAnnotationNoNPEMethod(int a, int b) {
 
     }
 
     @java.lang.Override
-    void InputOverrideAnnotationNoNPEMethod2(int a, int b) {
+    void InputParameterNameOverrideAnnotationNoNPEMethod2(int a, int b) {
 
     }
 }
