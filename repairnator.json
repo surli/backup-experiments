@@ -1,7 +1,7 @@
 {
   "step-durations": {
     "CheckoutBuild": 4,
-    "": 1205,
+    "": 8,
     "CloneRepository": 31,
     "BuildProject": 866
   },
@@ -10,7 +10,55 @@
   "pr-head-commit-id": "12c1f52d008af07c81c8e995c96be1b474d5de8f",
   "pr-id": 1671,
   "repo": "apache/nifi",
+  "failingModule": "/root/workspace/apache/nifi/221697437/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors",
   "is-pr": "true",
   "buildid": 221697437,
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException:"
+  ],
+  "failing-test-cases": [
+    {
+      "className": "org.apache.nifi.processors.standard.TestAbstractListProcessor",
+      "failingMethods": [
+        "org.apache.nifi.processors.standard.TestAbstractListProcessor#testOnlyNewEntriesEmitted"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c0\u003e but was:\u003c2\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.nifi.processors.standard.TestGetFile",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnreadableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnwritableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithInaccessibleDir"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    }
+  ],
   "pr-base-commit-id": "68c592ea43d30754ec07c42cf10563fe9db185ae"
 }
