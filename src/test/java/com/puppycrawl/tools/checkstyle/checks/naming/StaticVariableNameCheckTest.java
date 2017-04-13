@@ -37,7 +37,7 @@ public class StaticVariableNameCheckTest
     @Override
     protected String getPath(String filename) throws IOException {
         return super.getPath("checks" + File.separator
-                + "naming" + File.separator + filename);
+                + "staticvariablename" + File.separator + filename);
     }
 
     @Test
@@ -59,7 +59,7 @@ public class StaticVariableNameCheckTest
         final String[] expected = {
             "30:24: " + getCheckMessage(MSG_INVALID_PATTERN, "badStatic", pattern),
         };
-        verify(checkConfig, getPath("InputSimple.java"), expected);
+        verify(checkConfig, getPath("InputStaticVariableNameS.java"), expected);
     }
 
     @Test
@@ -73,7 +73,7 @@ public class StaticVariableNameCheckTest
         checkConfig.addAttribute("applyToPrivate", "false");
 
         final String[] expected = CommonUtils.EMPTY_STRING_ARRAY;
-        verify(checkConfig, getPath("InputSimple.java"), expected);
+        verify(checkConfig, getPath("InputStaticVariableNameS.java"), expected);
     }
 
     @Test
