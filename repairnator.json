@@ -1,7 +1,7 @@
 {
   "step-durations": {
     "CheckoutBuild": 4,
-    "": 1257,
+    "": 10,
     "CloneRepository": 25,
     "BuildProject": 840
   },
@@ -10,7 +10,38 @@
   "pr-head-commit-id": "72f129ab78005fd2f66653f8c9ffdaab63f5b959",
   "pr-id": 1660,
   "repo": "apache/nifi",
+  "failingModule": "/root/workspace/apache/nifi/221697212/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors",
   "is-pr": "true",
   "buildid": 221697212,
+  "error-types": [
+    "java.lang.NullPointerException:"
+  ],
+  "failing-test-cases": [
+    {
+      "className": "org.apache.nifi.processors.standard.TestGetFile",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnreadableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnwritableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithInaccessibleDir"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    }
+  ],
   "pr-base-commit-id": "5419891fe760746f3fd4bb5c397d9a43b79f8281"
 }
