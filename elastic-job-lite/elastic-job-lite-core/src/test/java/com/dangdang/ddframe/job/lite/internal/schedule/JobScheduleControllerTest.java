@@ -32,6 +32,8 @@ import org.quartz.TriggerKey;
 import org.quartz.impl.triggers.CronTriggerImpl;
 import org.unitils.util.ReflectionUtils;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.times;
@@ -54,6 +56,31 @@ public final class JobScheduleControllerTest {
         jobScheduleController = new JobScheduleController(scheduler, jobDetail, "test_job_Trigger");
     }
     
+    @Test(expected = JobSystemException.class)
+    public void assertIsPausedFailure() throws NoSuchFieldException, SchedulerException {
+        doThrow(SchedulerException.class).when(scheduler).getTriggerState(new TriggerKey("test_job_Trigger"));
+        ReflectionUtils.setFieldValue(jobScheduleController, "scheduler", scheduler);
+        try {
+            jobScheduleController.isPaused();
+        } finally {
+            verify(scheduler).getTriggerState(new TriggerKey("test_job_Trigger"));
+        }
+    }
+
+    @Test
+    public void assertIsPausedIfTriggerStateIsNormal() throws NoSuchFieldException, SchedulerException {
+        when(scheduler.getTriggerState(new TriggerKey("test_job_Trigger"))).thenReturn(Trigger.TriggerState.NORMAL);
+        ReflectionUtils.setFieldValue(jobScheduleController, "scheduler", scheduler);
+        assertFalse(jobScheduleController.isPaused());
+    }
+
+    @Test
+    public void assertIsPausedIfTriggerStateIsPaused() throws NoSuchFieldException, SchedulerException {
+        when(scheduler.getTriggerState(new TriggerKey("test_job_Trigger"))).thenReturn(Trigger.TriggerState.PAUSED);
+        ReflectionUtils.setFieldValue(jobScheduleController, "scheduler", scheduler);
+        assertTrue(jobScheduleController.isPaused());
+    }
+
     @Test
     public void assertPauseJobIfShutdown() throws NoSuchFieldException, SchedulerException {
         when(scheduler.isShutdown()).thenReturn(true);

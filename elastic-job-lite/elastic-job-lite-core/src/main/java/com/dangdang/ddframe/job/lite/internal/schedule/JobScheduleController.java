@@ -24,6 +24,7 @@ import org.quartz.CronTrigger;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
+import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
 
@@ -77,6 +78,19 @@ public final class JobScheduleController {
         return TriggerBuilder.newTrigger().withIdentity(triggerIdentity).withSchedule(CronScheduleBuilder.cronSchedule(cron).withMisfireHandlingInstructionDoNothing()).build();
     }
     
+    /**
+     * 判断作业是否暂停.
+     *
+     * @return 作业是否暂停
+     */
+    public boolean isPaused() {
+        try {
+            return Trigger.TriggerState.PAUSED == scheduler.getTriggerState(new TriggerKey(triggerIdentity));
+        } catch (final SchedulerException ex) {
+            throw new JobSystemException(ex);
+        }
+    }
+
     /**
      * 暂停作业.
      */
