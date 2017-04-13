@@ -1,7 +1,7 @@
 {
   "step-durations": {
     "CheckoutBuild": 2,
-    "": 501,
+    "": 0,
     "CloneRepository": 8,
     "BuildProject": 84
   },
@@ -10,7 +10,29 @@
   "pr-head-commit-id": "2505f79069d791ded41e2bceb6496bf00b8e9eb4",
   "pr-id": 511,
   "repo": "apache/apex-core",
+  "failingModule": "/root/workspace/apache/apex-core/221779747/engine",
   "is-pr": "true",
   "buildid": 221779747,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "failing-test-cases": [
+    {
+      "className": "com.datatorrent.stram.util.VersionInfoTest",
+      "failingMethods": [
+        "com.datatorrent.stram.util.VersionInfoTest#testMavenProperties"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Version number pattern does not match: Unknown",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "pr-base-commit-id": "01eb7926dcf9fb6ad40be010894e635bd24f37e3"
 }
