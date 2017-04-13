@@ -1,7 +1,7 @@
 {
   "step-durations": {
     "CheckoutBuild": 3,
-    "": 31,
+    "": 1,
     "CloneRepository": 37,
     "BuildProject": 1011
   },
@@ -10,7 +10,29 @@
   "pr-head-commit-id": "90e02bf004d1ab842e0ff7e10162afaa367a1cd5",
   "pr-id": 3711,
   "repo": "apache/flink",
+  "failingModule": "/root/workspace/apache/flink/221685776/flink-core",
   "is-pr": "true",
   "buildid": 221685776,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "failing-test-cases": [
+    {
+      "className": "org.apache.flink.util.FileUtilsTest",
+      "failingMethods": [
+        "org.apache.flink.util.FileUtilsTest#testDeleteDirectory"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "this should fail with an exception",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "pr-base-commit-id": "e651df99f47a0e738c4aa7fb7b8957acca901197"
 }
