@@ -1388,18 +1388,14 @@ public class DefaultDockerClientTest {
     sut.startContainer(containerId);
 
     // Must be running
-    {
-      final ContainerInfo containerInfo = sut.inspectContainer(containerId);
-      assertThat(containerInfo.state().running(), equalTo(true));
-    }
+    final ContainerInfo containerInfo = sut.inspectContainer(containerId);
+    assertThat(containerInfo.state().running(), equalTo(true));
 
     sut.killContainer(containerId);
 
     // Should not be running
-    {
-      final ContainerInfo containerInfoLatest = sut.inspectContainer(containerId);
-      assertFalse(containerInfoLatest.state().running());
-    }
+    final ContainerInfo containerInfoLatest = sut.inspectContainer(containerId);
+    assertFalse(containerInfoLatest.state().running());
   }
 
   @Test
@@ -1420,22 +1416,18 @@ public class DefaultDockerClientTest {
     sut.startContainer(containerId);
 
     // Must be running
-    {
-      final ContainerInfo containerInfo = sut.inspectContainer(containerId);
-      assertThat(containerInfo.state().running(), equalTo(true));
-    }
+    final ContainerInfo containerInfo = sut.inspectContainer(containerId);
+    assertThat(containerInfo.state().running(), equalTo(true));
 
     final ContainerInfo tempContainerInfo = sut.inspectContainer(containerId);
     final Integer originalPid = tempContainerInfo.state().pid();
 
     // kill with SIGKILL
-    sut.killContainer(containerId, DockerClient.TerminationSignal.SIGKILL);
+    sut.killContainer(containerId, DockerClient.Signal.SIGKILL);
 
     // Should not be running
-    {
-      final ContainerInfo containerInfoLatest = sut.inspectContainer(containerId);
-      assertFalse(containerInfoLatest.state().running());
-    }
+    final ContainerInfo containerInfoLatest = sut.inspectContainer(containerId);
+    assertFalse(containerInfoLatest.state().running());
   }
 
   @Test
@@ -3167,7 +3159,7 @@ public class DefaultDockerClientTest {
 
   @Test(expected = ContainerNotFoundException.class)
   public void testKillBadContainerWithSignal() throws Exception {
-    sut.killContainer(randomName(), DockerClient.TerminationSignal.SIGKILL);
+    sut.killContainer(randomName(), DockerClient.Signal.SIGKILL);
   }
 
   @Test(expected = ContainerNotFoundException.class)
