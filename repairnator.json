@@ -1,11 +1,69 @@
 {
   "step-durations": {
     "CheckoutBuild": 0,
-    "": 696,
+    "": 0,
     "CloneRepository": 26,
     "BuildProject": 330
   },
   "buildid": 221819313,
   "workspace": "./workspace",
-  "repo": "druid-io/druid"
+  "repo": "druid-io/druid",
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "failing-test-cases": [
+    {
+      "className": "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest",
+      "failingMethods": [
+        "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest#testRetryAllFail",
+        "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest#testRetrySuccessAtSecondLocation"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.segment.loading.LocalDataSegmentPusherTest",
+      "failingMethods": [
+        "io.druid.segment.loading.LocalDataSegmentPusherTest#testPushCannotCreateDirectory"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected test to throw (an instance of java.io.IOException and exception with message a string containing \"Unable to create directory\")",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.query.lookup.LookupSnapshotTakerTest",
+      "failingMethods": [
+        "io.druid.query.lookup.LookupSnapshotTakerTest#testIOExceptionDuringLookupPersist"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected exception: io.druid.java.util.common.ISE",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
+  "failingModule": "/root/workspace/druid-io/druid/221819313/server"
 }
