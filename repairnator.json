@@ -1,7 +1,7 @@
 {
   "step-durations": {
     "CheckoutBuild": 4,
-    "": 674,
+    "": 0,
     "CloneRepository": 27,
     "BuildProject": 328
   },
@@ -10,7 +10,65 @@
   "pr-head-commit-id": "0a1cc22ca3691d9fee052ac0a729f1f246a0a2fc",
   "pr-id": 4118,
   "repo": "druid-io/druid",
+  "failingModule": "/root/workspace/druid-io/druid/221667787/server",
   "is-pr": "true",
   "buildid": 221667787,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "failing-test-cases": [
+    {
+      "className": "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest",
+      "failingMethods": [
+        "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest#testRetryAllFail",
+        "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest#testRetrySuccessAtSecondLocation"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.segment.loading.LocalDataSegmentPusherTest",
+      "failingMethods": [
+        "io.druid.segment.loading.LocalDataSegmentPusherTest#testPushCannotCreateDirectory"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected test to throw (an instance of java.io.IOException and exception with message a string containing \"Unable to create directory\")",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.query.lookup.LookupSnapshotTakerTest",
+      "failingMethods": [
+        "io.druid.query.lookup.LookupSnapshotTakerTest#testIOExceptionDuringLookupPersist"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected exception: io.druid.java.util.common.ISE",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "pr-base-commit-id": "a0f2cf05d5a3a7d71635d1f54dd0efdfe57e469a"
 }
