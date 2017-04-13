@@ -1,11 +1,33 @@
 {
   "step-durations": {
     "CheckoutBuild": 0,
-    "": 32,
+    "": 0,
     "CloneRepository": 6,
     "BuildProject": 177
   },
   "buildid": 221727512,
   "workspace": "./workspace",
-  "repo": "dangdangdotcom/elastic-job"
+  "repo": "dangdangdotcom/elastic-job",
+  "error-types": [
+    "org.mockito.exceptions.verification.NeverWantedButInvoked"
+  ],
+  "failing-test-cases": [
+    {
+      "className": "com.dangdang.ddframe.job.lite.internal.failover.FailoverServiceTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.job.lite.internal.failover.FailoverServiceTest#assertGetLocalFailoverItemsIfShutdown"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.mockito.exceptions.verification.NeverWantedButInvoked",
+          "failureDetail": "\njobNodeStorage.getJobNodeChildrenKeys(\n    \"sharding\"\n);\nNever wanted here:\n-\u003e at com.dangdang.ddframe.job.lite.internal.storage.JobNodeStorage.getJobNodeChildrenKeys(JobNodeStorage.java:92)\nBut invoked here:\n-\u003e at com.dangdang.ddframe.job.lite.internal.failover.FailoverService.getLocalFailoverItems(FailoverService.java:103)\n",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
+  "failingModule": "/root/workspace/dangdangdotcom/elastic-job/221727512/elastic-job-lite/elastic-job-lite-core"
 }
