@@ -22,31 +22,36 @@ package de.kopis.glacier.commands;
  * #L%
  */
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
+import java.io.OutputStream;
 
+import com.amazonaws.services.glacier.AmazonGlacier;
+import com.amazonaws.services.sns.AmazonSNS;
+import com.amazonaws.services.sqs.AmazonSQS;
 import de.kopis.glacier.parsers.GlacierUploaderOptionParser;
 import joptsimple.OptionSet;
 
 public class HelpCommand extends AbstractCommand {
 
-    public HelpCommand() throws IOException {
-        super(null, null);
+    private final OutputStream out;
+
+    public HelpCommand(AmazonGlacier client, AmazonSQS sqs, AmazonSNS sns) {
+        this(client, sqs, sns, System.out);
     }
 
-    public HelpCommand(final URL endpoint, final File credentials) throws IOException {
-        super(endpoint, credentials);
+    public HelpCommand(final AmazonGlacier client, final AmazonSQS sqs, final AmazonSNS sns, final OutputStream out) {
+        super(client, sqs, sns);
+        this.out = out;
     }
 
     @Override
     public void exec(OptionSet options, GlacierUploaderOptionParser optionParser) {
         if (!options.has(optionParser.HELP)) {
             log.info("Ooops, can't determine what you want to do. Check your options. " + System.getProperty("line.separator") +
-                    "Do not forget that --vault and --endpoint are mandatory for all commands." + System.getProperty("line.separator"));
+                    "Do not forget that --vault and --region are mandatory for all commands." + System.getProperty("line.separator"));
         }
         try {
-            optionParser.printHelpOn(System.out);
+            optionParser.printHelpOn(out);
         } catch (final IOException e) {
             log.error("Can not print help", e);
         }
