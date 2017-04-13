@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+
+
+<configuration>
+
+  <!-- sample for defining DAG in Hadoop configuration format -->
+
+  <property>
+    <name>dt.gateway.listenAddress</name>
+    <value>hostname:9090</value>
+  </property>
+
+  <!--  Operator 1 -->
+
+  <property>
+    <name>apex.operator.operator1.classname</name>
+    <value>com.datatorrent.stram.engine.TestGeneratorInputOperator</value>
+    <description>The root operator</description>
+  </property>
+
+  <!-- operator subclass specific property -->
+  <property>
+    <name>apex.operator.operator1.myStringProperty</name>
+    <value>myStringPropertyValue</value>
+    <description>subclass specific property</description>
+  </property>
+
+  <!-- Operator 2, with stream partitioning policy -->
+
+  <property>
+    <name>apex.operator.operator2.classname</name>
+    <value>com.datatorrent.stram.engine.GenericTestOperator</value>
+    <description>Another operator, which gets input from root</description>
+  </property>
+
+  <!--  Stream connecting operator1 and operator2 -->
+
+  <property>
+    <name>apex.stream.n1n2.source</name>
+    <value>operator1.outport</value>
+    <description></description>
+  </property>
+
+  <property>
+    <name>apex.stream.n1n2.sinks</name>
+    <value>operator2.inport1</value>
+    <description></description>
+  </property>
+
+  <property>
+    <name>apex.stream.n1n2.partitionPolicy</name>
+    <value>someTargetPolicy</value>
+    <description>The partition policy for this stream.</description>
+  </property>
+
+  <!-- Operator 3, receives input from operator 2 -->
+
+  <property>
+    <name>apex.operator.operator3.classname</name>
+    <value>com.datatorrent.stram.engine.GenericTestOperator</value>
+    <description>Another operator, which gets input from root</description>
+  </property>
+
+  <!-- Operator 4, also receives input from operator 2 -->
+
+  <property>
+    <name>apex.operator.operator4.classname</name>
+    <value>com.datatorrent.stram.engine.GenericTestOperator</value>
+    <description>Another operator, which gets input from root</description>
+  </property>
+
+  <property>
+    <name>apex.stream.n2n3.source</name>
+    <value>operator2.outport1</value>
+    <description>Operator 3 receives input from operator 2.</description>
+  </property>
+
+  <property>
+    <name>apex.stream.n2n3.sinks</name>
+    <value>operator3.inport1,operator4.inport1</value>
+    <description>operator3 and operator4 receives input from operator 2.</description>
+  </property>
+
+  <!-- Operator 5 -->
+
+  <property>
+    <name>apex.operator.operator5.classname</name>
+    <value>com.datatorrent.stram.engine.GenericTestOperator</value>
+  </property>
+
+  <property>
+    <name>apex.stream.n4n5.source</name>
+    <value>operator4.outport1</value>
+    <description>Operator 5 receives input from operator 4.</description>
+  </property>
+
+  <property>
+    <name>apex.stream.n4n5.sinks</name>
+    <value>operator5.inport1</value>
+    <description>Operator 5 receives input from operator 4.</description>
+  </property>
+
+
+  <!-- Operator 6, single operator w/o links -->
+
+  <property>
+    <name>apex.operator.operator6.classname</name>
+    <value>com.datatorrent.stram.engine.TestGeneratorInputOperator</value>
+    <description>Another operator, which gets input from root</description>
+  </property>
+
+
+</configuration>
