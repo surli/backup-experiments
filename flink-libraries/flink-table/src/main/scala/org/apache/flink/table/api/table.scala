@@ -22,7 +22,7 @@ import org.apache.flink.api.common.typeinfo.TypeInformation
 import org.apache.flink.api.java.operators.join.JoinType
 import org.apache.flink.table.calcite.FlinkTypeFactory
 import org.apache.flink.table.plan.logical.Minus
-import org.apache.flink.table.expressions.{Alias, Asc, Call, Expression, ExpressionParser, Ordering, TableFunctionCall, UnresolvedAlias}
+import org.apache.flink.table.expressions.{Alias, Asc, Call, Expression, ExpressionParser, Literal, Ordering, TableFunctionCall, UnresolvedAlias, UnresolvedFieldReference}
 import org.apache.flink.table.plan.ProjectionTranslator._
 import org.apache.flink.table.plan.logical._
 import org.apache.flink.table.sinks.TableSink
@@ -810,6 +810,47 @@ class Table(
     new WindowedTable(this, window)
   }
 
+  /**
+    * Groups the records of a table by assigning them to windows defined by a time or row interval.
+    *
+    * For streaming tables of infinite size, grouping into windows is required to define finite
+    * groups on which over-based aggregates can be computed.
+    *
+    * Over window for batch tables are currently not supported.
+    *
+    * @param overWindows windows that specifies how elements are grouped.
+    * @return Over windowed table
+    */
+  def window(overWindows: OverWindow*): OverWindowedTable = {
+
+    if (tableEnv.isInstanceOf[BatchTableEnvironment]) {
+      throw TableException("Over window for batch tables are currently not supported.")
+    } else {
+      overWindows.foreach { overWindow =>
+        val orderName = overWindow.orderBy.asInstanceOf[UnresolvedFieldReference].name
+        if (!orderName.equalsIgnoreCase("rowtime")
+          && !orderName.equalsIgnoreCase("proctime")) {
+          throw ValidationException(
+            s"OrderBy expression must be ['rowtime] or ['proctime], but got ['${orderName}]")
+        }
+      }
+    }
+
+    if (overWindows.size != 1) {
+      throw TableException("OverWindow only supported single window at current time.")
+    }
+
+    overWindows.foreach { overWindow =>
+      if (!overWindow.preceding.asInstanceOf[Literal].resultType.getClass
+           .equals(overWindow.following.asInstanceOf[Literal].resultType.getClass)) {
+        throw ValidationException(
+          "Proceeding and the following must be based on same intervals type (time or row-count).")
+      }
+    }
+
+    new OverWindowedTable(this, overWindows: _*)
+  }
+
   var tableName: String = _
 
   /**
@@ -926,6 +967,27 @@ class WindowedTable(
     groupBy(fieldsExpr: _*)
   }
 
+}
+
+class OverWindowedTable(
+    private[flink] val table: Table,
+    private[flink] val overWindows: OverWindow*) {
+
+  def select(fields: Expression*): Table = {
+    val expandedFields = expandProjectList(
+      fields,
+      table.logicalPlan,
+      table.tableEnv,
+      overWindows: _*)
+    new Table(
+      table.tableEnv,
+      Project(expandedFields.map(UnresolvedAlias), table.logicalPlan).validate(table.tableEnv))
+  }
+
+  def select(fields: String): Table = {
+    val fieldExprs = ExpressionParser.parseExpressionList(fields)
+    select(fieldExprs: _*)
+  }
 }
 
 class WindowGroupedTable(

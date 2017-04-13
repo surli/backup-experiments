@@ -23,7 +23,9 @@ import org.apache.calcite.rel.`type`.{RelDataType, RelDataTypeFieldImpl}
 import org.apache.calcite.rel.core.AggregateCall
 import org.apache.calcite.rel.core.Window.Group
 import org.apache.calcite.rel.core.Window
-import org.apache.calcite.rex.{RexInputRef}
+import org.apache.calcite.rex.{RexInputRef, RexLiteral}
+import org.apache.calcite.util.NlsString
+import com.google.common.collect.ImmutableList
 import org.apache.flink.table.runtime.aggregate.AggregateUtil._
 import org.apache.flink.table.functions.{ProcTimeType, RowTimeType}
 
@@ -38,14 +40,29 @@ trait OverAggregate {
 
   private[flink] def orderingToString(
     inputType: RelDataType,
-    orderFields: java.util.List[RelFieldCollation]): String = {
+    orderFields: java.util.List[RelFieldCollation],
+    constants: ImmutableList[RexLiteral]): String = {
 
     val inFields = inputType.getFieldList.asScala
 
-    val orderingString = orderFields.asScala.map {
+    var orderingString = orderFields.asScala.map {
       x => inFields(x.getFieldIndex).getValue
     }.mkString(", ")
 
+    if (orderingString.isEmpty) {
+      val it = constants.listIterator()
+      if (it.hasNext) {
+        val item = it.next().getValue
+        if (item.isInstanceOf[NlsString]) {
+          val value = item.asInstanceOf[NlsString].getValue
+          if (value.equalsIgnoreCase("rowtime")) {
+            orderingString = "ROWTIME"
+          } else {
+            orderingString = "PROCTIME"
+          }
+        }
+      }
+    }
     orderingString
   }
 
@@ -109,7 +126,14 @@ trait OverAggregate {
     input: RelNode): Long = {
 
     val ref: RexInputRef = overWindow.lowerBound.getOffset.asInstanceOf[RexInputRef]
-    val lowerBoundIndex = input.getRowType.getFieldCount - ref.getIndex;
+    var lowerBoundIndex = input.getRowType.getFieldCount - ref.getIndex;
+
+    // We currently distinguish proctime and rowtime of over in TableAPI by some constants
+    // TODO Remove this code after the FLINK-5884 is resolved
+    if (lowerBoundIndex < 0) {
+      lowerBoundIndex = 1
+    }
+
     val lowerBound = logicWindow.constants.get(lowerBoundIndex).getValue2
     lowerBound match {
       case x: java.math.BigDecimal => x.asInstanceOf[java.math.BigDecimal].longValue()

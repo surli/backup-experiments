@@ -18,11 +18,13 @@
 package org.apache.flink.table.expressions
 
 import org.apache.calcite.rex.RexNode
-import org.apache.calcite.sql.fun.SqlStdOperatorTable
+import org.apache.calcite.sql.SqlAggFunction
+import org.apache.calcite.sql.fun._
+import org.apache.calcite.sql.SqlKind._
 import org.apache.calcite.tools.RelBuilder
 import org.apache.calcite.tools.RelBuilder.AggCall
+import org.apache.flink.table.typeutils.{SqlTypeUtils, TypeCheckUtils}
 import org.apache.flink.api.common.typeinfo.BasicTypeInfo
-import org.apache.flink.table.typeutils.TypeCheckUtils
 
 abstract sealed class Aggregation extends UnaryExpression {
 
@@ -35,6 +37,18 @@ abstract sealed class Aggregation extends UnaryExpression {
     * Convert Aggregate to its counterpart in Calcite, i.e. AggCall
     */
   private[flink] def toAggCall(name: String)(implicit relBuilder: RelBuilder): AggCall
+
+  /**
+    * Because SqlAggFunction from Calcite's AggCallImpl is invisible,
+    * we have to manually create sqlAggFunction in flink code base.
+    *
+    */
+  private[flink] def toSqlAggFunction()(implicit relBuilder: RelBuilder): SqlAggFunction
+
+  /**
+    * Attach the Resolved Child to aggregation
+    */
+  private[flink] def withResolvedChild(child: Expression): Aggregation
 }
 
 case class Sum(child: Expression) extends Aggregation {
@@ -48,6 +62,13 @@ case class Sum(child: Expression) extends Aggregation {
 
   override private[flink] def validateInput() =
     TypeCheckUtils.assertNumericExpr(child.resultType, "sum")
+
+  override private[flink] def toSqlAggFunction()(implicit relBuilder: RelBuilder) = {
+    val returnType = SqlTypeUtils.createSqlType(relBuilder.getTypeFactory, child.resultType)
+    new SqlSumAggFunction(returnType)
+  }
+
+  override private[flink] def withResolvedChild(child: Expression) = Sum(child)
 }
 
 case class Min(child: Expression) extends Aggregation {
@@ -61,6 +82,12 @@ case class Min(child: Expression) extends Aggregation {
 
   override private[flink] def validateInput() =
     TypeCheckUtils.assertOrderableExpr(child.resultType, "min")
+
+  override private[flink] def toSqlAggFunction()(implicit relBuilder: RelBuilder) = {
+    new SqlMinMaxAggFunction(MIN)
+  }
+
+  override private[flink] def withResolvedChild(child: Expression) = Min(child)
 }
 
 case class Max(child: Expression) extends Aggregation {
@@ -74,6 +101,12 @@ case class Max(child: Expression) extends Aggregation {
 
   override private[flink] def validateInput() =
     TypeCheckUtils.assertOrderableExpr(child.resultType, "max")
+
+  override private[flink] def toSqlAggFunction()(implicit relBuilder: RelBuilder) = {
+    new SqlMinMaxAggFunction(MAX)
+  }
+
+  override private[flink] def withResolvedChild(child: Expression) = Max(child)
 }
 
 case class Count(child: Expression) extends Aggregation {
@@ -84,6 +117,12 @@ case class Count(child: Expression) extends Aggregation {
   }
 
   override private[flink] def resultType = BasicTypeInfo.LONG_TYPE_INFO
+
+  override private[flink] def toSqlAggFunction()(implicit relBuilder: RelBuilder) = {
+    new SqlCountAggFunction()
+  }
+
+  override private[flink] def withResolvedChild(child: Expression) = Count(child)
 }
 
 case class Avg(child: Expression) extends Aggregation {
@@ -97,4 +136,10 @@ case class Avg(child: Expression) extends Aggregation {
 
   override private[flink] def validateInput() =
     TypeCheckUtils.assertNumericExpr(child.resultType, "avg")
+
+  override private[flink] def toSqlAggFunction()(implicit relBuilder: RelBuilder) = {
+    new SqlAvgAggFunction(AVG)
+  }
+
+  override private[flink] def withResolvedChild(child: Expression) = Avg(child)
 }

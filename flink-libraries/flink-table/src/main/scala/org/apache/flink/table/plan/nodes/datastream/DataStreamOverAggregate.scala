@@ -25,6 +25,7 @@ import org.apache.calcite.rel.core.{AggregateCall, Window}
 import org.apache.calcite.rel.core.Window.Group
 import org.apache.calcite.rel.{RelNode, RelWriter, SingleRel}
 import org.apache.calcite.rel.RelFieldCollation.Direction.ASCENDING
+import org.apache.calcite.util.NlsString
 import org.apache.flink.api.java.typeutils.RowTypeInfo
 import org.apache.flink.streaming.api.datastream.DataStream
 import org.apache.flink.table.api.{StreamTableEnvironment, TableException}
@@ -32,10 +33,9 @@ import org.apache.flink.table.calcite.FlinkTypeFactory
 import org.apache.flink.table.plan.nodes.OverAggregate
 import org.apache.flink.table.runtime.aggregate._
 import org.apache.flink.types.Row
-
 import org.apache.flink.api.java.functions.NullByteKeySelector
 import org.apache.flink.table.codegen.CodeGenerator
-import org.apache.flink.table.functions.{ProcTimeType, RowTimeType}
+import org.apache.flink.table.functions.{ProcTimeType, RowTimeType, TimeModeType}
 import org.apache.flink.table.runtime.aggregate.AggregateUtil.CalcitePair
 
 class DataStreamOverAggregate(
@@ -73,7 +73,10 @@ class DataStreamOverAggregate(
 
     super.explainTerms(pw)
       .itemIf("partitionBy", partitionToString(inputType, partitionKeys), partitionKeys.nonEmpty)
-      .item("orderBy",orderingToString(inputType, overWindow.orderKeys.getFieldCollations))
+      .item("orderBy",orderingToString(
+        inputType,
+        overWindow.orderKeys.getFieldCollations,
+        logicWindow.constants))
       .itemIf("rows", windowRange(logicWindow, overWindow, getInput), overWindow.isRows)
       .itemIf("range", windowRange(logicWindow, overWindow, getInput), !overWindow.isRows)
       .item(
@@ -93,28 +96,43 @@ class DataStreamOverAggregate(
 
     val orderKeys = overWindow.orderKeys.getFieldCollations
 
-    if (orderKeys.size() != 1) {
-      throw new TableException(
-        "Unsupported use of OVER windows. The window can only be ordered by a single time column.")
-    }
-    val orderKey = orderKeys.get(0)
+    val timeType = if (!orderKeys.isEmpty) {
+      if (orderKeys.size() != 1) {
+        throw new TableException(
+          "Unsupported use of OVER windows. The window can only be ordered by a single time " +
+            "column.")
+      }
+      val orderKey = orderKeys.get(0)
 
-    if (!orderKey.direction.equals(ASCENDING)) {
-      throw new TableException(
-        "Unsupported use of OVER windows. The window can only be ordered in ASCENDING mode.")
+      if (!orderKey.direction.equals(ASCENDING)) {
+        throw new TableException(
+          "Unsupported use of OVER windows. The window can only be ordered in ASCENDING mode.")
+      }
+      inputType
+        .getFieldList
+        .get(orderKey.getFieldIndex)
+        .getValue.asInstanceOf[TimeModeType]
+    } else {
+      val it = logicWindow.constants.listIterator()
+      if (it.hasNext) {
+        val item = it.next().getValue
+        if (item.isInstanceOf[NlsString]) {
+          val value = item.asInstanceOf[NlsString].getValue
+          if (value.equalsIgnoreCase("rowtime")) {
+            new RowTimeType
+          } else {
+            new ProcTimeType
+          }
+        }
+      }
     }
 
     val inputDS = input.asInstanceOf[DataStreamRel].translateToPlan(tableEnv)
 
     val generator = new CodeGenerator(
-      tableEnv.getConfig,
-      false,
-      inputDS.getType)
-
-    val timeType = inputType
-      .getFieldList
-      .get(orderKey.getFieldIndex)
-      .getValue
+    tableEnv.getConfig,
+    false,
+    inputDS.getType)
 
     timeType match {
       case _: ProcTimeType =>
@@ -279,14 +297,16 @@ class DataStreamOverAggregate(
     val overWindow: Group = logicWindow.groups.get(0)
     val partitionKeys: Array[Int] = overWindow.keys.toArray
     val namedAggregates: Seq[CalcitePair[AggregateCall, String]] = generateNamedAggregates
-
     s"over: (${
       if (!partitionKeys.isEmpty) {
         s"PARTITION BY: ${partitionToString(inputType, partitionKeys)}, "
       } else {
         ""
       }
-    }ORDER BY: ${orderingToString(inputType, overWindow.orderKeys.getFieldCollations)}, " +
+    }ORDER BY: ${orderingToString(
+      inputType,
+      overWindow.orderKeys.getFieldCollations,
+      logicWindow.constants)}, " +
       s"${if (overWindow.isRows) "ROWS" else "RANGE"}" +
       s"${windowRange(logicWindow, overWindow, getInput)}, " +
       s"select: (${

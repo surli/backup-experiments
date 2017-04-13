@@ -19,7 +19,7 @@
 package org.apache.flink.table.plan
 
 import org.apache.flink.api.common.typeutils.CompositeType
-import org.apache.flink.table.api.TableEnvironment
+import org.apache.flink.table.api.{OverWindow, TableEnvironment, TableException}
 import org.apache.flink.table.expressions._
 import org.apache.flink.table.plan.logical.{LogicalNode, Project}
 
@@ -190,8 +190,8 @@ object ProjectionTranslator {
   def expandProjectList(
       exprs: Seq[Expression],
       parent: LogicalNode,
-      tableEnv: TableEnvironment)
-    : Seq[Expression] = {
+      tableEnv: TableEnvironment,
+      overWindows: OverWindow*): Seq[Expression] = {
 
     val projectList = new ListBuffer[Expression]
 
@@ -215,6 +215,26 @@ object ProjectionTranslator {
           case _ =>
             projectList += unresolved
         }
+
+      case OverCall(agg, aggAlias, alias, _) =>
+        val overWindow = overWindows.find(_.alias.equals(alias))
+        val aggName = agg.child.asInstanceOf[UnresolvedFieldReference].name
+        val childrenOutput = parent.output
+        val candidates = childrenOutput.filter(_.name.equalsIgnoreCase(aggName))
+
+        val resolvedFieldReference = if (candidates.length > 1) {
+          throw new TableException(s"Reference $aggName is ambiguous.")
+        } else if (candidates.isEmpty) {
+          throw new TableException(s"Can not resolve [$aggName].")
+        } else {
+          Some(candidates.head.withName(aggName))
+        }
+
+        projectList += new OverCall(
+          agg.withResolvedChild(resolvedFieldReference.get.toAttribute),
+          aggAlias,
+          alias,
+          overWindow.get)
 
       case e: Expression => projectList += e
     }

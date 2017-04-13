@@ -17,15 +17,23 @@
  */
 package org.apache.flink.table.expressions
 
-import org.apache.calcite.rex.RexNode
+import java.util
+
+import com.google.common.collect.ImmutableList
+import org.apache.calcite.rex.RexWindowBound._
+import org.apache.calcite.rex.{RexFieldCollation, RexNode, RexWindowBound}
+import org.apache.calcite.sql._
+import org.apache.calcite.sql.`type`.{BasicSqlType, SqlTypeName, OrdinalReturnTypeInference}
+import org.apache.calcite.sql.parser.SqlParserPos
 import org.apache.calcite.tools.RelBuilder
 import org.apache.flink.api.common.typeinfo.TypeInformation
-import org.apache.flink.table.api.{UnresolvedException, ValidationException}
+import org.apache.flink.table.api.{OverWindow, UnresolvedException, ValidationException}
 import org.apache.flink.table.calcite.FlinkTypeFactory
 import org.apache.flink.table.functions.utils.UserDefinedFunctionUtils._
 import org.apache.flink.table.functions.{ScalarFunction, TableFunction}
 import org.apache.flink.table.plan.logical.{LogicalNode, LogicalTableFunctionCall}
 import org.apache.flink.table.validate.{ValidationFailure, ValidationResult, ValidationSuccess}
+import org.apache.flink.table.typeutils.{RowIntervalTypeInfo, SqlTypeUtils}
 
 /**
   * General expression for unresolved function calls. The function can be a built-in
@@ -46,6 +54,128 @@ case class Call(functionName: String, args: Seq[Expression]) extends Expression 
 
   override private[flink] def validateInput(): ValidationResult =
     ValidationFailure(s"Unresolved function call: $functionName")
+}
+
+/**
+  * Over expression for calcite over transform.
+  *
+  * @param agg             over-agg expression
+  * @param aggAlias        agg alias for following `select()` clause.
+  * @param overWindowAlias over window alias
+  * @param overWindow      over window
+  */
+case class OverCall(
+    agg: Aggregation,
+    var aggAlias: Expression,
+    overWindowAlias: Expression,
+    var overWindow: OverWindow = null) extends Expression {
+
+  private[flink] def as(aggAlias: Expression): OverCall = {
+    this.aggAlias = aggAlias
+    this
+  }
+
+  override private[flink] def toRexNode(implicit relBuilder: RelBuilder): RexNode = {
+
+    val rexBuilder = relBuilder.getRexBuilder
+
+    val operator: SqlAggFunction = agg.toSqlAggFunction()
+
+    val aggReturnType: TypeInformation[_] = agg.resultType
+
+    val relDataType = SqlTypeUtils.createSqlType(relBuilder.getTypeFactory, aggReturnType)
+
+    val aggExprs: util.ArrayList[RexNode] = new util.ArrayList[RexNode]()
+    val aggChildName = agg.child.asInstanceOf[ResolvedFieldReference].name
+
+    aggExprs.add(relBuilder.field(aggChildName))
+
+    val orderKeys: ImmutableList.Builder[RexFieldCollation] =
+      new ImmutableList.Builder[RexFieldCollation]()
+
+    val sets:util.HashSet[SqlKind] = new util.HashSet[SqlKind]()
+    val orderName = overWindow.orderBy.asInstanceOf[UnresolvedFieldReference].name
+
+    val rexNode =
+      if (orderName.equalsIgnoreCase("rowtime") || orderName.equalsIgnoreCase("proctime")) {
+        // for stream
+        relBuilder.literal(orderName)
+      } else {
+        // for batch
+        relBuilder.field(orderName)
+      }
+
+    orderKeys.add(new RexFieldCollation(rexNode,sets))
+
+    val partitionKeys: util.ArrayList[RexNode] = new util.ArrayList[RexNode]()
+    overWindow.partitionBy.foreach(x=>
+      partitionKeys.add(relBuilder.field(x.asInstanceOf[UnresolvedFieldReference].name)))
+
+    val preceding = overWindow.preceding.asInstanceOf[Literal]
+    val following = overWindow.following.asInstanceOf[Literal]
+
+    val isPhysical: Boolean = preceding.resultType.isInstanceOf[RowIntervalTypeInfo]
+
+    val lowerBound = createBound(relBuilder, preceding.value.asInstanceOf[Long], SqlKind.PRECEDING)
+    val upperBound = createBound(relBuilder, following.value.asInstanceOf[Long], SqlKind.FOLLOWING)
+
+    rexBuilder.makeOver(
+      relDataType,
+      operator,
+      aggExprs,
+      partitionKeys,
+      orderKeys.build,
+      lowerBound,
+      upperBound,
+      isPhysical,
+      true,
+      false)
+  }
+
+  private def createBound(
+    relBuilder: RelBuilder,
+    precedingValue: Long,
+    sqlKind: SqlKind): RexWindowBound = {
+
+    if (precedingValue == Long.MaxValue) {
+      val unbounded = SqlWindow.createUnboundedPreceding(SqlParserPos.ZERO)
+      create(unbounded, null)
+    } else if (precedingValue == 0L) {
+      val currentRow = SqlWindow.createCurrentRow(SqlParserPos.ZERO)
+      create(currentRow, null)
+    } else {
+
+      val returnType = new BasicSqlType(
+        relBuilder.getTypeFactory.getTypeSystem,
+        SqlTypeName.DECIMAL)
+
+      val sqlOperator = new SqlPostfixOperator(
+        sqlKind.name,
+        sqlKind,
+        2,
+        new OrdinalReturnTypeInference(0),
+        null,
+        null)
+
+      val operands: Array[SqlNode] = new Array[SqlNode](1)
+      operands(0) = (SqlLiteral.createExactNumeric("1", SqlParserPos.ZERO))
+
+      val node = new SqlBasicCall(sqlOperator, operands, SqlParserPos.ZERO)
+
+      val expressions: util.ArrayList[RexNode] = new util.ArrayList[RexNode]()
+      expressions.add(relBuilder.literal(precedingValue))
+
+      val rexNode = relBuilder.getRexBuilder.makeCall(returnType, sqlOperator, expressions)
+
+      create(node, rexNode)
+    }
+  }
+
+  override private[flink] def children: Seq[Expression] = Seq()
+
+  override def toString = s"${this.getClass.getCanonicalName}(${overWindowAlias.toString})"
+
+  override private[flink] def resultType = agg.resultType
 }
 
 /**

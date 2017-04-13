@@ -54,6 +54,9 @@ case class Project(projectList: Seq[NamedExpression], child: LogicalNode) extend
             case expr if !expr.valid => u
             case c @ Cast(ne: NamedExpression, tp) => Alias(c, s"${ne.name}-$tp")
             case gcf: GetCompositeField => Alias(gcf, gcf.aliasName().getOrElse(s"_c$i"))
+            case over: OverCall if null != over.aggAlias =>
+              val aggAlias = over.aggAlias.asInstanceOf[UnresolvedFieldReference].name
+              Alias(over, s"$aggAlias")
             case other => Alias(other, s"_c$i")
           }
           case _ =>
