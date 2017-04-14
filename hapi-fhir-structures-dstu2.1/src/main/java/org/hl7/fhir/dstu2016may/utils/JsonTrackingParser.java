@@ -16,7 +16,7 @@ import com.google.gson.JsonPrimitive;
 
 /**
  * This is created to get a json parser that can track line numbers... grr...
- * 
+ *
  * @author Grahame Grieve
  *
  */
@@ -25,35 +25,35 @@ public class JsonTrackingParser {
 	public enum TokenType {
 		Open, Close, String, Number, Colon, Comma, OpenArray, CloseArray, Eof, Null, Boolean;
 	}
-	
+
 	public class LocationData {
 		private int line;
 		private int col;
-		
+
 		protected LocationData(int line, int col) {
 			super();
 			this.line = line;
 			this.col = col;
 		}
-		
+
 		public int getLine() {
 			return line;
 		}
-		
+
 		public int getCol() {
 			return col;
 		}
-		
+
 		public void newLine() {
 			line++;
-			col = 1;		
+			col = 1;
 		}
 
 		public LocationData copy() {
 			return new LocationData(line, col);
 		}
 	}
-	
+
 	private class State {
 		private String name;
 		private boolean isProp;
@@ -69,7 +69,7 @@ public class JsonTrackingParser {
 			return isProp;
 		}
 	}
-	
+
 	private class Lexer {
 		private String source;
 		private int cursor;
@@ -81,35 +81,35 @@ public class JsonTrackingParser {
 		private LocationData lastLocationAWS;
 		private LocationData location;
 		private StringBuilder b = new StringBuilder();
-		
+
     public Lexer(String source) throws FHIRException {
-    	this.source = source;
-    	cursor = -1;
-    	location = new LocationData(1, 1);  
-    	start();
+	this.source = source;
+	cursor = -1;
+	location = new LocationData(1, 1);
+	start();
     }
-    
+
     private boolean more() {
-    	return peek != null || cursor < source.length(); 
+	return peek != null || cursor < source.length();
     }
-    
+
     private String getNext(int length) throws FHIRException {
-    	String result = "";
+	String result = "";
       if (peek != null) {
-      	if (peek.length() > length) {
-      		result = peek.substring(0, length);
-      		peek = peek.substring(length);
-      	} else {
-      		result = peek;
-      		peek = null;
-      	}
+	if (peek.length() > length) {
+		result = peek.substring(0, length);
+		peek = peek.substring(length);
+	} else {
+		result = peek;
+		peek = null;
+	}
       }
       if (result.length() < length) {
-      	int len = length - result.length(); 
-      	if (cursor > source.length() - len) 
-      		throw error("Attempt to read past end of source");
-      	result = result + source.substring(cursor+1, cursor+len+1);
-      	cursor = cursor + len;
+	int len = length - result.length();
+	if (cursor > source.length() - len)
+		throw error("Attempt to read past end of source");
+	result = result + source.substring(cursor+1, cursor+len+1);
+	cursor = cursor + len;
       }
        for (char ch : result.toCharArray())
         if (ch == '\n')
@@ -118,12 +118,12 @@ public class JsonTrackingParser {
           location.col++;
       return result;
     }
-    
+
     private char getNextChar() throws FHIRException {
       if (peek != null) {
-      	char ch = peek.charAt(0);
-      	peek = peek.length() == 1 ? null : peek.substring(1);
-      	return ch;
+	char ch = peek.charAt(0);
+	peek = peek.length() == 1 ? null : peek.substring(1);
+	return ch;
       } else {
         cursor++;
         if (cursor >= source.length())
@@ -137,28 +137,28 @@ public class JsonTrackingParser {
         return ch;
       }
     }
-    
+
     private void push(char ch){
-    	peek = peek == null ? String.valueOf(ch) : String.valueOf(ch)+peek;
+	peek = peek == null ? String.valueOf(ch) : String.valueOf(ch)+peek;
     }
-    
+
     private void parseWord(String word, char ch, TokenType type) throws FHIRException {
       this.type = type;
       value = ""+ch+getNext(word.length()-1);
       if (!value.equals(word))
-      	throw error("Syntax error in json reading special word "+word);
+	throw error("Syntax error in json reading special word "+word);
     }
-    
+
     private FHIRException error(String msg) {
       return new FHIRException("Error parsing JSON source: "+msg+" at Line "+Integer.toString(location.line)+" (path=["+path()+"])");
     }
-    
+
     private String path() {
       if (states.empty())
         return value;
       else {
-      	String result = "";
-        for (State s : states) 
+	String result = "";
+        for (State s : states)
           result = result + '/'+ s.getName();
         result = result + value;
         return result;
@@ -177,103 +177,103 @@ public class JsonTrackingParser {
 //        push(ch);
       next();
     }
-    
+
     public TokenType getType() {
-    	return type;
+	return type;
     }
-    
+
     public String getValue() {
-    	return value;
+	return value;
     }
 
 
     public LocationData getLastLocationBWS() {
-    	return lastLocationBWS;
+	return lastLocationBWS;
     }
 
     public LocationData getLastLocationAWS() {
-    	return lastLocationAWS;
+	return lastLocationAWS;
     }
 
     public void next() throws FHIRException {
-    	lastLocationBWS = location.copy();
-    	char ch;
-    	do {
-    		ch = getNextChar();
-    	} while (more() && Utilities.charInSet(ch, ' ', '\r', '\n', '\t'));
-    	lastLocationAWS = location.copy();
+	lastLocationBWS = location.copy();
+	char ch;
+	do {
+		ch = getNextChar();
+	} while (more() && Utilities.charInSet(ch, ' ', '\r', '\n', '\t'));
+	lastLocationAWS = location.copy();
 
-    	if (!more()) {
-    		type = TokenType.Eof;
-    	} else {
-    		switch (ch) {
-    		case '{' : 
-    			type = TokenType.Open;
-    			break;
-    		case '}' : 
-    			type = TokenType.Close;
-    			break;
-    		case '"' :
-    			type = TokenType.String;
-    			b.setLength(0);
-    			do {
-    				ch = getNextChar();
-    				if (ch == '\\') {
-    					ch = getNextChar();
-    					switch (ch) {
-    					case '"': b.append('"'); break;
-    					case '\\': b.append('\\'); break;
-    					case '/': b.append('/'); break;
-    					case 'n': b.append('\n'); break;
-    					case 'r': b.append('\r'); break;
-    					case 't': b.append('\t'); break;
-    					case 'u': b.append((char) Integer.parseInt(getNext(4), 16)); break;
-    					default :
-    						throw error("unknown escape sequence: \\"+ch);
-    					}
-    					ch = ' ';
-    				} else if (ch != '"')
-    					b.append(ch);
-    			} while (more() && (ch != '"'));
-    			if (!more())
-    				throw error("premature termination of json stream during a string");
-    			value = b.toString();
-    			break;
-    		case ':' : 
-    			type = TokenType.Colon;
-    			break;
-    		case ',' : 
-    			type = TokenType.Comma;
-    			break;
-    		case '[' : 
-    			type = TokenType.OpenArray;
-    			break;
-    		case ']' : 
-    			type = TokenType.CloseArray;
-    			break;
-    		case 't' : 
-    			parseWord("true", ch, TokenType.Boolean);
-    			break;
-    		case 'f' : 
-    			parseWord("false", ch, TokenType.Boolean);
-    			break;
-    		case 'n' : 
-    			parseWord("null", ch, TokenType.Null);
-    			break;
-    		default:
-    			if ((ch >= '0' && ch <= '9') || ch == '-') {
-    				type = TokenType.Number;
-    				b.setLength(0);
-    				while (more() && ((ch >= '0' && ch <= '9') || ch == '-' || ch == '.')) {
-    					b.append(ch);
-    					ch = getNextChar();
-    				}
-    				value = b.toString();
-    				push(ch);
-    			} else
-    				throw error("Unexpected char '"+ch+"' in json stream");
-    		}
-    	}
+	if (!more()) {
+		type = TokenType.Eof;
+	} else {
+		switch (ch) {
+		case '{' :
+			type = TokenType.Open;
+			break;
+		case '}' :
+			type = TokenType.Close;
+			break;
+		case '"' :
+			type = TokenType.String;
+			b.setLength(0);
+			do {
+				ch = getNextChar();
+				if (ch == '\\') {
+					ch = getNextChar();
+					switch (ch) {
+					case '"': b.append('"'); break;
+					case '\\': b.append('\\'); break;
+					case '/': b.append('/'); break;
+					case 'n': b.append('\n'); break;
+					case 'r': b.append('\r'); break;
+					case 't': b.append('\t'); break;
+					case 'u': b.append((char) Integer.parseInt(getNext(4), 16)); break;
+					default :
+						throw error("unknown escape sequence: \\"+ch);
+					}
+					ch = ' ';
+				} else if (ch != '"')
+					b.append(ch);
+			} while (more() && (ch != '"'));
+			if (!more())
+				throw error("premature termination of json stream during a string");
+			value = b.toString();
+			break;
+		case ':' :
+			type = TokenType.Colon;
+			break;
+		case ',' :
+			type = TokenType.Comma;
+			break;
+		case '[' :
+			type = TokenType.OpenArray;
+			break;
+		case ']' :
+			type = TokenType.CloseArray;
+			break;
+		case 't' :
+			parseWord("true", ch, TokenType.Boolean);
+			break;
+		case 'f' :
+			parseWord("false", ch, TokenType.Boolean);
+			break;
+		case 'n' :
+			parseWord("null", ch, TokenType.Null);
+			break;
+		default:
+			if ((ch >= '0' && ch <= '9') || ch == '-') {
+				type = TokenType.Number;
+				b.setLength(0);
+				while (more() && ((ch >= '0' && ch <= '9') || ch == '-' || ch == '.')) {
+					b.append(ch);
+					ch = getNextChar();
+				}
+				value = b.toString();
+				push(ch);
+			} else
+				throw error("Unexpected char '"+ch+"' in json stream");
+		}
+	}
     }
 
     public String consume(TokenType type) throws FHIRException {
@@ -308,7 +308,7 @@ public class JsonTrackingParser {
     if (lexer.getType() == TokenType.Open) {
       lexer.next();
       lexer.states.push(new State("", false));
-    } 
+    }
     else
       throw lexer.error("Unexpected content at start of JSON: "+lexer.getType().toString());
 
@@ -362,8 +362,10 @@ public class JsonTrackingParser {
 				readArray(arr, false);
 				map.put(arr, loc);
 				break;
-			case Eof : 
+			case Eof :
 				throw lexer.error("Unexpected End of File");
+			default:
+				break;
 			}
 			next();
 		}
@@ -373,25 +375,25 @@ public class JsonTrackingParser {
 	  while (!((itemType == ItemType.End) || (root && (itemType == ItemType.Eof)))) {
 	    switch (itemType) {
 	    case Object:
-	    	JsonObject obj  = new JsonObject(); // (arr.path+'['+inttostr(i)+']');
+		JsonObject obj  = new JsonObject(); // (arr.path+'['+inttostr(i)+']');
 				LocationData loc = lexer.location.copy();
-	    	arr.add(obj);
+		arr.add(obj);
 	      next();
 	      readObject(obj, false);
 				map.put(obj, loc);
 	      break;
 	    case String:
-	    	JsonPrimitive v = new JsonPrimitive(itemValue);
+		JsonPrimitive v = new JsonPrimitive(itemValue);
 				arr.add(v);
 				map.put(v, lexer.location.copy());
 				break;
 	    case Number:
-	    	v = new JsonPrimitive(new BigDecimal(itemValue));
+		v = new JsonPrimitive(new BigDecimal(itemValue));
 				arr.add(v);
 				map.put(v, lexer.location.copy());
 				break;
 	    case Null :
-	    	JsonNull n = new JsonNull();
+		JsonNull n = new JsonNull();
 				arr.add(n);
 				map.put(n, lexer.location.copy());
 				break;
@@ -403,8 +405,10 @@ public class JsonTrackingParser {
 	      readArray(child, false);
 				map.put(arr, loc);
         break;
-	    case Eof : 
-	    	throw lexer.error("Unexpected End of File");
+	    case Eof :
+		throw lexer.error("Unexpected End of File");
+       default:
+			break;
 	    }
 	    next();
 	  }
@@ -423,8 +427,8 @@ public class JsonTrackingParser {
 			break;
 		case Null:
 		case String:
-		case Number: 
-		case End: 
+		case Number:
+		case End:
 		case Boolean :
 			if (itemType == ItemType.End)
 				lexer.states.pop();
