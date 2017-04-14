@@ -9,7 +9,7 @@ import org.hl7.fhir.dstu2016may.utils.IWorkerContext;
 public class Manager {
 
   public enum FhirFormat { XML, JSON, JSONLD, TURTLE }
-  
+
   public static Element parse(IWorkerContext context, InputStream source, FhirFormat inputFormat) throws Exception {
     return makeParser(context, inputFormat).parse(source);
   }
@@ -22,8 +22,9 @@ public class Manager {
     switch (format) {
     case JSON : return new JsonParser(context);
     case XML : return new XmlParser(context);
+    default:
+      throw new IllegalArgumentException("Unknown type: " + format);
     }
-    return null;
   }
-  
+
 }

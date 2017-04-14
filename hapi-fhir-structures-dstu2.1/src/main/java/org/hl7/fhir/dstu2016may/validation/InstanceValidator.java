@@ -84,9 +84,9 @@ import com.google.gson.JsonObject;
 import ca.uhn.fhir.util.ObjectUtil;
 
 
-/* 
+/*
  * todo:
- * check urn's don't start oid: or uuid: 
+ * check urn's don't start oid: or uuid:
  */
 public class InstanceValidator extends BaseValidator implements IResourceValidator {
 
@@ -97,7 +97,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 	// configuration items
 	private CheckDisplayOption checkDisplay;
 	private IWorkerContext context;
-	private FHIRPathEngine fpe; 
+	private FHIRPathEngine fpe;
 
 	private List<String> extensionDomains = new ArrayList<String>();
 
@@ -137,10 +137,13 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 			switch (bpWarnings) {
 			case Error:
 				rule(errors, invalid, line, col, literalPath, test, message);
+				break;
 			case Warning:
 				warning(errors, invalid, line, col, literalPath, test, message);
+				break;
 			case Hint:
 				hint(errors, invalid, line, col, literalPath, test, message);
+				break;
 			default: // do nothing
 			}
 		}
@@ -165,7 +168,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 	@Override
 	public void validate(List<ValidationMessage> errors, InputStream stream, FhirFormat format, StructureDefinition profile) throws Exception {
 		ParserBase parser = Manager.makeParser(context, format);
-		parser.setupValidation(ValidationPolicy.EVERYTHING, errors); 
+		parser.setupValidation(ValidationPolicy.EVERYTHING, errors);
 		long t = System.nanoTime();
 		Element e = parser.parse(stream);
 		loadTime = System.nanoTime() - t;
@@ -192,11 +195,11 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 	public void validate(List<ValidationMessage> errors, Resource resource, StructureDefinition profile) throws Exception {
 		throw new Exception("Not done yet");
 		//    ParserBase parser = new ObjectParser(context);
-		//    parser.setupValidation(ValidationPolicy.EVERYTHING, errors); 
+		//    parser.setupValidation(ValidationPolicy.EVERYTHING, errors);
 		//    long t = System.nanoTime();
 		//    Element e = parser.parse(resource);
 		//    loadTime = System.nanoTime() - t;
-		//    validate(errors, e, profile);    
+		//    validate(errors, e, profile);
 	}
 
 	@Override
@@ -232,7 +235,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 	@Override
 	public void validate(List<ValidationMessage> errors, org.w3c.dom.Element element, StructureDefinition profile) throws Exception {
 		XmlParser parser = new XmlParser(context);
-		parser.setupValidation(ValidationPolicy.EVERYTHING, errors); 
+		parser.setupValidation(ValidationPolicy.EVERYTHING, errors);
 		long t = System.nanoTime();
 		Element e = parser.parse(element);
 		loadTime = System.nanoTime() - t;
@@ -257,7 +260,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 	@Override
 	public void validate(List<ValidationMessage> errors, Document document, StructureDefinition profile) throws Exception {
 		XmlParser parser = new XmlParser(context);
-		parser.setupValidation(ValidationPolicy.EVERYTHING, errors); 
+		parser.setupValidation(ValidationPolicy.EVERYTHING, errors);
 		long t = System.nanoTime();
 		Element e = parser.parse(document);
 		loadTime = System.nanoTime() - t;
@@ -282,7 +285,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 	@Override
 	public void validate(List<ValidationMessage> errors, JsonObject object, StructureDefinition profile) throws Exception {
 		JsonParser parser = new JsonParser(context);
-		parser.setupValidation(ValidationPolicy.EVERYTHING, errors); 
+		parser.setupValidation(ValidationPolicy.EVERYTHING, errors);
 		long t = System.nanoTime();
 		Element e = parser.parse(object);
 		loadTime = System.nanoTime() - t;
@@ -814,12 +817,12 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 				// check that the namespace is there and correct.
 				String ns = xhtml.getNsDecl();
 				rule(errors, IssueType.INVALID, e.line(), e.col(), path, FormatUtilities.XHTML_NS.equals(ns), "Wrong namespace on the XHTML ('"+ns+"')");
-				// check that inner namespaces are all correct 
+				// check that inner namespaces are all correct
 				checkInnerNS(errors, e, path, xhtml.getChildNodes());
 				rule(errors, IssueType.INVALID, e.line(), e.col(), path, "div".equals(xhtml.getName()), "Wrong name on the XHTML ('"+ns+"') - must start with div");
 				// check that no illegal elements and attributes have been used
 				checkInnerNames(errors, e, path, xhtml.getChildNodes());
-			} 
+			}
 		}
 		// for nothing to check
 	}
@@ -827,7 +830,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 	private void checkInnerNames(List<ValidationMessage> errors, Element e, String path, List<XhtmlNode> list) {
 		for (XhtmlNode node : list) {
 			if (node.getNodeType() == NodeType.Element) {
-				rule(errors, IssueType.INVALID, e.line(), e.col(), path, Utilities.existsInList(node.getName(), 
+				rule(errors, IssueType.INVALID, e.line(), e.col(), path, Utilities.existsInList(node.getName(),
 						"p", "br", "div", "h1", "h2", "h3", "h4", "h5", "h6", "a", "span", "b", "em", "i", "strong",
 						"small", "big", "tt", "small", "dfn", "q", "var", "abbr", "acronym", "cite", "blockquote", "hr", "address", "bdo", "kbd", "q", "sub", "sup",
 						"ul", "ol", "li", "dl", "dt", "dd", "pre", "table", "caption", "colgroup", "col", "thead", "tr", "tfoot", "tbody", "th", "td",
@@ -835,7 +838,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 
 						), "Illegal element name in the XHTML ('"+node.getName()+"')");
 				for (String an : node.getAttributes().keySet()) {
-					boolean ok = an.startsWith("xmlns") || Utilities.existsInList(an, 
+					boolean ok = an.startsWith("xmlns") || Utilities.existsInList(an,
 							"title", "style", "class", "id", "lang", "xml:lang", "dir", "accesskey", "tabindex",
 							// tables
 							"span", "width", "align", "valign", "char", "charoff", "abbr", "axis", "headers", "scope", "rowspan", "colspan") ||
@@ -851,7 +854,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 				}
 				checkInnerNames(errors, e, path, node.getChildNodes());
 			}
-		}	
+		}
 	}
 
 	private void checkInnerNS(List<ValidationMessage> errors, Element e, String path, List<XhtmlNode> list) {
@@ -861,7 +864,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 				rule(errors, IssueType.INVALID, e.line(), e.col(), path, ns == null || FormatUtilities.XHTML_NS.equals(ns), "Wrong namespace on the XHTML ('"+ns+"')");
 				checkInnerNS(errors, e, path, node.getChildNodes());
 			}
-		}	
+		}
 	}
 
 	// note that we don't check the type here; it could be string, uri or code.
@@ -995,7 +998,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 				return true;
 			if (codeinExpansion(c, system, code))
 				return true;
-		}    
+		}
 		return false;
 	}
 
@@ -1044,11 +1047,11 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 			return base + id;
 		else
 			return Utilities.appendSlash(base) + type + "/" + id;
-	}  
+	}
 
 	public BestPracticeWarningLevel getBasePracticeWarningLevel() {
 		return bpWarnings;
-	}  
+	}
 
 	private String getBaseType(StructureDefinition profile, String pr)  {
 		// if (pr.startsWith("http://hl7.org/fhir/StructureDefinition/")) {
@@ -1108,7 +1111,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 		for (Element we : contained) {
 			if (id.equals(we.getNamedChildValue("id")))
 				return we;
-		}   
+		}
 		return null;
 	}
 
@@ -1182,7 +1185,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 			}
 		}
 		return null;
-	}  
+	}
 
 	private StructureDefinition getProfileForType(String type) {
 		if (logical != null)
@@ -1362,7 +1365,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 
 	private Element resolveInBundle(List<Element> entries, String ref, String fullUrl, String type, String id) {
 		if (Utilities.isAbsoluteUrl(ref)) {
-			// if the reference is absolute, then you resolve by fullUrl. No other thinking is required. 
+			// if the reference is absolute, then you resolve by fullUrl. No other thinking is required.
 			for (Element entry : entries) {
 				String fu = entry.getNamedChildValue("fullUrl");
 				if (ref.equals(fu))
@@ -1463,7 +1466,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 	}
 
 	/**
-	 * 
+	 *
 	 * @param element
 	 *          - the candidate that might be in the slice
 	 * @param path
@@ -1473,8 +1476,8 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 	 * @param ed
 	 *          - the slice for which to test membership
 	 * @return
-	 * @throws DefinitionException 
-	 * @throws DefinitionException 
+	 * @throws DefinitionException
+	 * @throws DefinitionException
 	 * @throws Exception
 	 */
 	private boolean sliceMatches(Element element, String path, ElementDefinition slice, ElementDefinition ed, StructureDefinition profile) throws DefinitionException, DefinitionException {
@@ -1524,7 +1527,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 			sdTime = sdTime + (System.nanoTime() - t);
 			if (warning(errors, IssueType.REQUIRED, q.line(), q.col(), stack.getLiteralPath(), qsrc != null, "The questionnaire could not be resolved, so no validation can be performed against the base questionnaire")) {
 				boolean inProgress = "in-progress".equals(element.getNamedChildValue("status"));
-				validateQuestionannaireResponseItems(qsrc, qsrc.getItem(), errors, element, stack, inProgress);        
+				validateQuestionannaireResponseItems(qsrc, qsrc.getItem(), errors, element, stack, inProgress);
 			}
 		}
 	}
@@ -1545,53 +1548,53 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 		for (Element answer : answers) {
 			NodeStack ns = stack.push(answer, -1, null, null);
 			switch (qItem.getType()) {
-			case GROUP: 
-				rule(errors, IssueType.STRUCTURE, answer.line(), answer.col(), stack.getLiteralPath(), false, "Items of type group should not have answers"); 
+			case GROUP:
+				rule(errors, IssueType.STRUCTURE, answer.line(), answer.col(), stack.getLiteralPath(), false, "Items of type group should not have answers");
 				break;
 			case DISPLAY:  // nothing
 				break;
-			case BOOLEAN:       
+			case BOOLEAN:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "boolean");
 				break;
-			case DECIMAL:       
+			case DECIMAL:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "decimal");
 				break;
-			case INTEGER:       
+			case INTEGER:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "integer");
 				break;
-			case DATE:          
+			case DATE:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "date");
 				break;
-			case DATETIME:      
+			case DATETIME:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "dateTime");
 				break;
-			case INSTANT:       
+			case INSTANT:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "instant");
 				break;
-			case TIME:          
+			case TIME:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "time");
 				break;
-			case STRING:        
+			case STRING:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "string");
 				break;
-			case TEXT:          
+			case TEXT:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "text");
 				break;
-			case URL:           
+			case URL:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "uri");
 				break;
-			case ATTACHMENT:    
+			case ATTACHMENT:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "Attachment");
 				break;
-			case REFERENCE:     
+			case REFERENCE:
 				validateQuestionnaireResponseItemType(errors, answer, ns, "Reference");
 				break;
-			case QUANTITY:   
+			case QUANTITY:
 				if (validateQuestionnaireResponseItemType(errors, answer, ns, "Quantity").equals("Quantity"))
 					if (qItem.hasExtension("???"))
 						validateQuestionnaireResponseItemQuantity(errors, answer, ns);
 				break;
-			case CHOICE:     
+			case CHOICE:
 				String itemType=validateQuestionnaireResponseItemType(errors, answer, ns, "Coding", "date", "time", "integer", "string");
 				if (itemType.equals("Coding")) validateAnswerCode(errors, answer, ns, qsrc, qItem, false);
 				else if (itemType.equals("date")) checkOption(errors, answer, ns, qsrc, qItem, "date");
@@ -1599,13 +1602,15 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 				else if (itemType.equals("integer")) checkOption(errors, answer, ns, qsrc, qItem, "integer");
 				else if (itemType.equals("string")) checkOption(errors, answer, ns, qsrc, qItem, "string");
 				break;
-			case OPENCHOICE: 
+			case OPENCHOICE:
 				itemType=validateQuestionnaireResponseItemType(errors, answer, ns, "Coding", "date", "time", "integer", "string");
 				if (itemType.equals("Coding")) validateAnswerCode(errors, answer, ns, qsrc, qItem, true);
 				else if (itemType.equals("date")) checkOption(errors, answer, ns, qsrc, qItem, "date");
 				else if (itemType.equals("time")) checkOption(errors, answer, ns, qsrc, qItem, "time");
 				else if (itemType.equals("integer")) checkOption(errors, answer, ns, qsrc, qItem, "integer");
 				else if (itemType.equals("string")) checkOption(errors, answer, ns, qsrc, qItem, "string", true);
+				break;
+			default:
 				break;
 			}
 			validateQuestionannaireResponseItems(qsrc, qItem.getItem(), errors, answer, stack, inProgress);
@@ -1697,7 +1702,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 			CommaSeparatedStringBuilder l = new CommaSeparatedStringBuilder();
 			for (String s : types)  {
 				l.append(s);
-				if (values.get(0).getName().equals("value"+Utilities.capitalize(s))) 
+				if (values.get(0).getName().equals("value"+Utilities.capitalize(s)))
 					return(s);
 			}
 			if (types.length == 1)
@@ -2004,7 +2009,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 		StructureDefinition profile = this.context.fetchResource(StructureDefinition.class, "http://hl7.org/fhir/StructureDefinition/" + resourceName);
 		sdTime = sdTime + (System.nanoTime() - t);
 		// special case: resource wrapper is reset if we're crossing a bundle boundary, but not otherwise
-		if (element.getSpecial() == SpecialElement.BUNDLE_ENTRY) 
+		if (element.getSpecial() == SpecialElement.BUNDLE_ENTRY)
 			resource = element;
 		if (rule(errors, IssueType.INVALID, element.line(), element.col(), stack.getLiteralPath(), profile != null, "No profile found for contained resource of type '" + resourceName + "'"))
 			validateResource(errors, resource, element, profile, idstatus, stack);
@@ -2136,7 +2141,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 						TypeRefComponent trc = ei.definition.getType().get(0);
 						if (trc.getCode().equals("Reference"))
 							type = "Reference";
-						else 
+						else
 							rule(errors, IssueType.STRUCTURE, ei.line(), ei.col(), stack.getLiteralPath(), false,
 									"The element " + ei.name + " is illegal. Valid types at this point are " + describeTypes(ei.definition.getType()));
 					}
@@ -2220,12 +2225,12 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 				} else if (s.equals("POST"))
 					return IdStatus.OPTIONAL; // this should be prohibited, but see task 9102
 				else // actually, we should never get to here; a bundle entry with method get/delete should not have a resource
-					return IdStatus.OPTIONAL;					
+					return IdStatus.OPTIONAL;
 			}
 		} else if (isParametersEntry(ei.path))
-			return IdStatus.OPTIONAL; 
+			return IdStatus.OPTIONAL;
 		else
-			return IdStatus.REQUIRED; 
+			return IdStatus.REQUIRED;
 	}
 
 	private void checkInvariants(List<ValidationMessage> errors, String path, StructureDefinition profile, ElementDefinition ed, String typename, String typeProfile, Element resource, Element element) throws FHIRException, FHIRException {
@@ -2248,7 +2253,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 					msg = fpe.forLog();
 				} catch (Exception ex) {
 					ok = false;
-					msg = ex.getMessage(); 
+					msg = ex.getMessage();
 				}
 				if (!ok) {
 					if (inv.getSeverity() == ConstraintSeverity.ERROR)
@@ -2292,7 +2297,7 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 				ok = rule(errors, IssueType.INVALID, element.line(), element.col(), stack.addToLiteralPath(resourceName), profile != null, "No profile found for resource type '" + resourceName + "'");
 			} else {
 				String type = profile.getKind() == StructureDefinitionKind.LOGICAL ? profile.getId() : profile.hasBaseType() && profile.getDerivation() == TypeDerivationRule.CONSTRAINT ? profile.getBaseType() : profile.getName();
-				// special case: we have a bundle, and the profile is not for a bundle. We'll try the first entry instead 
+				// special case: we have a bundle, and the profile is not for a bundle. We'll try the first entry instead
 				if (!type.equals(resourceName) && resourceName.equals("Bundle")) {
 					Element first = getFirstEntry(element);
 					if (first != null && first.getType().equals(type)) {
@@ -2420,12 +2425,12 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 		private ElementDefinition type;
 
 		public NodeStack() {
-		}	  
+		}
 
 		public NodeStack(Element element) {
 			this.element = element;
 			literalPath = element.getName();
-		}	  
+		}
 
 		public String addToLiteralPath(String... path) {
 			StringBuilder b = new StringBuilder();
@@ -2438,8 +2443,8 @@ public class InstanceValidator extends BaseValidator implements IResourceValidat
 				} else {
 					b.append(".");
 					b.append(p);
-				}	  
-			}	  
+				}
+			}
 			return b.toString();
 		}
 
