@@ -200,6 +200,7 @@ public class MemorySessionStore implements ISessionsStore {
                 m = new HashMap<>();
                 int nextPacketId = 1;
                 m.put(nextPacketId, null);
+                m_inflightStore.put(clientID, m);
                 return nextPacketId;
             }
             int maxId = m.keySet().isEmpty() ? 0 :Collections.max(m.keySet());
