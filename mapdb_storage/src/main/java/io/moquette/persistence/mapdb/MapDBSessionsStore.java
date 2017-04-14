@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
@@ -42,9 +41,8 @@ class MapDBSessionsStore implements ISessionsStore {
     private static final Logger LOG = LoggerFactory.getLogger(MapDBSessionsStore.class);
 
     // maps clientID->[MessageId -> guid]
-    private ConcurrentMap<String, ConcurrentMap<Integer, MessageGUID>> m_inflightStore;
+    private ConcurrentMap<String, Map<Integer, MessageGUID>> m_inflightStore;
     // map clientID <-> set of currently in flight packet identifiers
-    private Map<String, Set<Integer>> m_inFlightIds;
     private ConcurrentMap<String, PersistentSession> m_persistentSessions;
     // maps clientID->[MessageId -> guid]
     private ConcurrentMap<String, Map<Integer, MessageGUID>> m_secondPhaseStore;
@@ -59,8 +57,9 @@ class MapDBSessionsStore implements ISessionsStore {
 
     @Override
     public void initStore() {
-        m_inflightStore = m_db.getHashMap("inflight");
-        m_inFlightIds = m_db.getHashMap("inflightPacketIDs");
+        synchronized (m_inflightStore) {
+            m_inflightStore = m_db.getHashMap("inflight");
+        }
         m_persistentSessions = m_db.getHashMap("sessions");
         m_secondPhaseStore = m_db.getHashMap("secondPhase");
     }
@@ -189,19 +188,20 @@ class MapDBSessionsStore implements ISessionsStore {
         if (LOG.isDebugEnabled()) {
             LOG.debug("Generating next packet ID. ClientId={}", clientID);
         }
-        Set<Integer> inFlightForClient = this.m_inFlightIds.get(clientID);
-        if (inFlightForClient == null) {
-            int nextPacketId = 1;
-            inFlightForClient = Collections.newSetFromMap(new ConcurrentHashMap<Integer, Boolean>());
-            inFlightForClient.add(nextPacketId);
-            this.m_inFlightIds.put(clientID, inFlightForClient);
-            return nextPacketId;
-
+        int nextPacketId;
+        synchronized (m_inflightStore) {
+            Map<Integer, MessageGUID> inFlightForClient = m_inflightStore.get(clientID);
+            if (inFlightForClient == null) {
+                nextPacketId = 1;
+                inFlightForClient = new HashMap<>();
+                inFlightForClient.put(nextPacketId, null);
+                this.m_inflightStore.put(clientID, inFlightForClient);
+                return nextPacketId;
+            }
+            int maxId = inFlightForClient.isEmpty() ? 0 : Collections.max(inFlightForClient.keySet());
+            nextPacketId = (maxId % 0xFFFF) + 1;
+            inFlightForClient.put(nextPacketId, null);
         }
-
-        int maxId = inFlightForClient.isEmpty() ? 0 : Collections.max(inFlightForClient);
-        int nextPacketId = (maxId % 0xFFFF) + 1;
-        inFlightForClient.add(nextPacketId);
         if (LOG.isDebugEnabled()) {
             LOG.debug("The next packet ID has been generated. ClientId={}, result={}", clientID, nextPacketId);
         }
@@ -211,30 +211,28 @@ class MapDBSessionsStore implements ISessionsStore {
     @Override
     public void inFlightAck(String clientID, int messageID) {
         LOG.debug("Acknowledging inflight message. ClientId={}, messageId={}", clientID, messageID);
-        Map<Integer, MessageGUID> m = this.m_inflightStore.get(clientID);
-        if (m == null) {
-            LOG.warn("Unable to retrieve inflight message record. ClientId={}, messageId={}", clientID, messageID);
-            return;
-        }
-        m.remove(messageID);
-
-        // remove from the ids store
-        Set<Integer> inFlightForClient = this.m_inFlightIds.get(clientID);
-        if (inFlightForClient != null) {
-            inFlightForClient.remove(messageID);
+        synchronized (m_inflightStore) {
+            Map<Integer, MessageGUID> m = m_inflightStore.get(clientID);
+            if (m == null) {
+                LOG.warn("Unable to retrieve inflight message record. ClientId={}, messageId={}", clientID, messageID);
+                return;
+            }
+            m.remove(messageID);
         }
     }
 
     @Override
     public void inFlight(String clientID, int messageID, MessageGUID guid) {
         LOG.debug("Storing inflight message. ClientId={}, messageId={}, guid={}", clientID, messageID, guid);
-        ConcurrentMap<Integer, MessageGUID> m = this.m_inflightStore.get(clientID);
-        if (m == null) {
-            m = new ConcurrentHashMap<>();
+        synchronized (m_inflightStore) {
+            Map<Integer, MessageGUID> m = this.m_inflightStore.get(clientID);
+            if (m == null) {
+                m = new HashMap<>();
+            }
+            m.put(messageID, guid);
+            LOG.info("storing inflight clientID <{}> messageID {} guid <{}>", clientID, messageID, guid);
+            this.m_inflightStore.put(clientID, m);
         }
-        m.put(messageID, guid);
-        LOG.info("storing inflight clientID <{}> messageID {} guid <{}>", clientID, messageID, guid);
-        this.m_inflightStore.put(clientID, m);
     }
 
     @Override
@@ -254,17 +252,14 @@ class MapDBSessionsStore implements ISessionsStore {
         if (LOG.isDebugEnabled()) {
             LOG.debug("Moving inflight message to 2nd phase ack state. ClientId={}, messageID={}", clientID, messageID);
         }
-        Map<Integer, MessageGUID> m = this.m_inflightStore.get(clientID);
-        if (m == null) {
-            LOG.warn("Unable to retrieve inflight message record. ClientId={}, messageId={}", clientID, messageID);
-            return;
-        }
-        MessageGUID guid = m.remove(messageID);
-
-        // remove from the ids store
-        Set<Integer> inFlightForClient = this.m_inFlightIds.get(clientID);
-        if (inFlightForClient != null) {
-            inFlightForClient.remove(messageID);
+        MessageGUID guid;
+        synchronized (m_inflightStore) {
+            Map<Integer, MessageGUID> m = m_inflightStore.get(clientID);
+            if (m == null) {
+                LOG.warn("Unable to retrieve inflight message record. ClientId={}, messageId={}", clientID, messageID);
+                return;
+            }
+            guid = m.remove(messageID);
         }
 
         final HashMap<Integer, MessageGUID> emptyGuids = new HashMap<>();
@@ -288,12 +283,15 @@ class MapDBSessionsStore implements ISessionsStore {
     @Override
     public StoredMessage getInflightMessage(String clientID, int messageID) {
         LOG.info("Retrieving inflight message CId={}, messageId={}", clientID, messageID);
-        Map<Integer, MessageGUID> clientEntries = m_inflightStore.get(clientID);
-        if (clientEntries == null) {
-            LOG.warn("The client has no inflight messages CId={}, messageId={}", clientID, messageID);
-            return null;
+        MessageGUID guid;
+        synchronized (m_inflightStore) {
+            Map<Integer, MessageGUID> clientEntries = m_inflightStore.get(clientID);
+            if (clientEntries == null) {
+                LOG.warn("The client has no inflight messages CId={}, messageId={}", clientID, messageID);
+                return null;
+            }
+            guid = clientEntries.get(messageID);
         }
-        MessageGUID guid = clientEntries.get(messageID);
         if (guid == null) {
             LOG.warn("The message ID does not have an associated GUID. ClientId={}, messageId={}", clientID, messageID);
             return null;
@@ -303,10 +301,12 @@ class MapDBSessionsStore implements ISessionsStore {
 
     @Override
     public int getInflightMessagesNo(String clientID) {
-        if (!m_inflightStore.containsKey(clientID))
-            return 0;
-        else
-            return m_inflightStore.get(clientID).size();
+        synchronized (m_inflightStore) {
+            if (!m_inflightStore.containsKey(clientID))
+                return 0;
+            else
+                return m_inflightStore.get(clientID).size();
+        }
     }
 
     @Override
