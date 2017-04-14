@@ -1,19 +1,46 @@
 {
+  "pr-base-commit-id": "caf64b3a4ffca05fc5c7aa39fc4dc78ffbdab3db",
+  "pr-head-commit-id": "3c4695023d3032cac5c2343bebc70778fe02dcd6",
+  "totalNumberSkippingTests": 0,
+  "pr-remote-repo": "Teradata/presto",
+  "error-types": [
+    "java.lang.IndexOutOfBoundsException"
+  ],
+  "totalNumberFailingTests": 1,
+  "buildid": 222132544,
+  "totalNumberErroringTests": 0,
+  "is-pr": "true",
+  "totalNumberRunningTests": 3014,
+  "pr-head-commit-id-url": "https://github.com/Teradata/presto/commit/3c4695023d3032cac5c2343bebc70778fe02dcd6",
+  "pr-id": 7817,
+  "repo": "prestodb/presto",
+  "failing-test-cases": [
+    {
+      "className": "com.facebook.presto.sql.planner.iterative.rule.test.TestMergeAdjacentWindows",
+      "failingMethods": [
+        "com.facebook.presto.sql.planner.iterative.rule.test.TestMergeAdjacentWindows#testIdenticalAdjacentWindowSpecifications"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.IndexOutOfBoundsException",
+          "failureDetail": "index (1) must be less than size (1)",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 49,
+    "": 0,
     "CloneRepository": 33,
     "ResolveDependency": 135,
     "TestProject": 370,
     "BuildProject": 648
   },
   "workspace": "./workspace",
-  "pr-remote-repo": "Teradata/presto",
-  "pr-head-commit-id": "3c4695023d3032cac5c2343bebc70778fe02dcd6",
-  "pr-id": 7817,
-  "repo": "prestodb/presto",
-  "pr-head-commit-id-url": "https://github.com/Teradata/presto/commit/3c4695023d3032cac5c2343bebc70778fe02dcd6",
-  "is-pr": "true",
-  "buildid": 222132544,
   "pr-base-commit-id-url": "https://github.com/prestodb/presto/commit/caf64b3a4ffca05fc5c7aa39fc4dc78ffbdab3db",
-  "pr-base-commit-id": "caf64b3a4ffca05fc5c7aa39fc4dc78ffbdab3db"
+  "failingModule": "/root/workspace/prestodb/presto/222132544/presto-main"
 }
