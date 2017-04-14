@@ -1,7 +1,7 @@
 {
   "step-durations": {
     "CheckoutBuild": 11,
-    "": 474,
+    "": 7,
     "CloneRepository": 33,
     "BuildProject": 669
   },
@@ -10,7 +10,45 @@
   "pr-head-commit-id": "328cefa1543216e419ccbec633b23199f47006bb",
   "pr-id": 7831,
   "repo": "prestodb/presto",
+  "failingModule": "/root/workspace/prestodb/presto/221963700/presto-main",
   "is-pr": "true",
   "buildid": 221963700,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "failing-test-cases": [
+    {
+      "className": "com.facebook.presto.operator.TestWindowOperator",
+      "failingMethods": [
+        "com.facebook.presto.operator.TestWindowOperator#testPartiallyPreGroupedPartition"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected: collections to be equal (ignoring order).\nActual:\n      [1, a, 100, A, 1]\n      [2, a, 101, B, 1]\n      [1, b, 103, D, 1]\n      [3, b, 104, C, 2]\n      [3, b, 102, E, 3]\n      [1, c, 105, F, 1]\nExpected:\n      [1, a, 100, A, 1]\n      [2, a, 101, B, 1]\n      [3, b, 104, C, 1]\n      [3, b, 102, E, 2]\n      [1, b, 103, D, 1]\n      [1, c, 105, F, 1]",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.facebook.presto.operator.window.TestAggregateWindowFunction",
+      "failingMethods": [
+        "com.facebook.presto.operator.window.TestAggregateWindowFunction#testSumAllNulls"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected: collections to be equal (ignoring order).\nActual:\n      [3, F, 3]\n      [6, F, 6]\n      [7, null, 7]\n      [5, F, 5]\n      [null, F, 5]\n      [null, O, 5]\n      [null, null, 5]\n      [null, null, 5]\n      [1, null, 1]\n      [34, O, 34]\nExpected:\n      [1, null, 1]\n      [3, F, 3]\n      [5, F, 5]\n      [6, F, 6]\n      [7, null, 7]\n      [34, O, 34]\n      [null, F, null]\n      [null, O, null]\n      [null, null, null]\n      [null, null, null]",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "pr-base-commit-id": "caf64b3a4ffca05fc5c7aa39fc4dc78ffbdab3db"
 }
