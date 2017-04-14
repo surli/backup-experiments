@@ -18,61 +18,36 @@ import com.facebook.presto.spi.ColumnHandle;
 import com.facebook.presto.spi.predicate.Domain;
 import com.facebook.presto.spi.predicate.Range;
 import com.facebook.presto.spi.predicate.TupleDomain;
+import com.google.common.base.Joiner;
+import com.google.common.base.VerifyException;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import static com.facebook.presto.cassandra.util.CassandraCqlUtils.toCQLCompatibleString;
-import static com.google.common.collect.Sets.cartesianProduct;
 import static java.util.Objects.requireNonNull;
 
 public class CassandraClusteringPredicatesExtractor
 {
-    private final List<CassandraColumnHandle> clusteringColumns;
-    private final TupleDomain<ColumnHandle> predicates;
     private final ClusteringPushDownResult clusteringPushDownResult;
 
-    public CassandraClusteringPredicatesExtractor(List<CassandraColumnHandle> clusteringColumns, TupleDomain<ColumnHandle> predicates)
+    public CassandraClusteringPredicatesExtractor(List<CassandraColumnHandle> clusteringColumns,
+            TupleDomain<ColumnHandle> predicates)
     {
-        this.clusteringColumns = ImmutableList.copyOf(requireNonNull(clusteringColumns, "clusteringColumns is null"));
         this.predicates = requireNonNull(predicates, "predicates is null");
         this.clusteringPushDownResult = getClusteringKeysSet(clusteringColumns, predicates);
     }
 
-    public List<String> getClusteringKeyPredicates()
+    private final TupleDomain<ColumnHandle> predicates;
+
+	public List<String> getClusteringKeyPredicates()
     {
-        Set<List<Object>> pushedDownDomainValues = clusteringPushDownResult.getDomainValues();
-
-        if (pushedDownDomainValues.isEmpty()) {
-            return ImmutableList.of();
-        }
-
-        ImmutableList.Builder<String> clusteringPredicates = ImmutableList.builder();
-        for (List<Object> clusteringKeys : pushedDownDomainValues) {
-            if (clusteringKeys.isEmpty()) {
-                continue;
-            }
-
-            StringBuilder stringBuilder = new StringBuilder();
-
-            for (int i = 0; i < clusteringKeys.size(); i++) {
-                if (i > 0) {
-                    stringBuilder.append(" AND ");
-                }
-
-                stringBuilder.append(CassandraCqlUtils.validColumnName(clusteringColumns.get(i).getName()));
-                stringBuilder.append(" = ");
-                stringBuilder.append(CassandraCqlUtils.cqlValue(toCQLCompatibleString(clusteringKeys.get(i)), clusteringColumns.get(i).getCassandraType()));
-            }
-
-            clusteringPredicates.add(stringBuilder.toString());
-        }
-        return clusteringPredicates.build();
+        ImmutableList.Builder<String> clusteringColumnSql = ImmutableList.builder();
+        return clusteringColumnSql.add(Joiner.on(" AND ").join(clusteringPushDownResult.getDomainQuery())).build();
     }
 
     public TupleDomain<ColumnHandle> getUnenforcedConstraints()
@@ -87,65 +62,130 @@ public class CassandraClusteringPredicatesExtractor
         return TupleDomain.withColumnDomains(notPushedDown);
     }
 
-    private static ClusteringPushDownResult getClusteringKeysSet(List<CassandraColumnHandle> clusteringColumns, TupleDomain<ColumnHandle> predicates)
+    private static ClusteringPushDownResult getClusteringKeysSet(List<CassandraColumnHandle> clusteringColumns,
+            TupleDomain<ColumnHandle> predicates)
     {
         ImmutableMap.Builder<ColumnHandle, Domain> domainsBuilder = ImmutableMap.builder();
-        ImmutableList.Builder<Set<Object>> clusteringColumnValues = ImmutableList.builder();
+        ImmutableList.Builder<String> clusteringColumnSql = ImmutableList.builder();
         for (CassandraColumnHandle columnHandle : clusteringColumns) {
             Domain domain = predicates.getDomains().get().get(columnHandle);
 
             if (domain == null) {
                 break;
             }
+            String predicateString = null;
+            if (!domain.isNullAllowed()) {
+                predicateString = domain.getValues().getValuesProcessor().transform(ranges -> {
 
-            if (domain.isNullAllowed()) {
-                return new ClusteringPushDownResult(domainsBuilder.build(), ImmutableSet.of());
-            }
+                    List<Object> singleValues = new ArrayList<>();
+                    List<String> rangeConjuncts = new ArrayList<>();
+                    String predicate = null;
 
-            Set<Object> values = domain.getValues().getValuesProcessor().transform(
-                    ranges -> {
-                        ImmutableSet.Builder<Object> columnValues = ImmutableSet.builder();
-                        for (Range range : ranges.getOrderedRanges()) {
-                            if (!range.isSingleValue()) {
-                                return ImmutableSet.of();
+                    for (Range range : ranges.getOrderedRanges()) {
+                        if (!range.isAll()) {
+                            if (range.isSingleValue()) {
+                                singleValues
+                                        .add(CassandraCqlUtils.cqlValue(toCQLCompatibleString(range.getSingleValue()),
+                                                columnHandle.getCassandraType()));
                             }
-                            /* TODO add code to handle a range of values for the last column
-                             * Prior to Cassandra 2.2, only the last clustering column can have a range of values
-                             * Take a look at how this is done in PreparedStatementBuilder.java
-                             */
+                            else {
+                                if (!range.getLow().isLowerUnbounded()) {
+                                    switch (range.getLow().getBound()) {
+                                    case ABOVE:
+                                        rangeConjuncts
+                                                .add(CassandraCqlUtils.validColumnName(columnHandle.getName()) + " > "
+                                                        + CassandraCqlUtils.cqlValue(
+                                                                toCQLCompatibleString(range.getLow().getValue()),
+                                                                columnHandle.getCassandraType()));
+                                        break;
+                                    case EXACTLY:
+                                        rangeConjuncts
+                                                .add(CassandraCqlUtils.validColumnName(columnHandle.getName()) + " >= "
+                                                        + CassandraCqlUtils.cqlValue(
+                                                                toCQLCompatibleString(range.getLow().getValue()),
+                                                                columnHandle.getCassandraType()));
+                                        break;
+                                    case BELOW:
+                                        throw new VerifyException("Low Marker should never use BELOW bound");
+                                    default:
+                                        throw new AssertionError("Unhandled bound: " + range.getLow().getBound());
+                                    }
+                                }
+                                if (!range.getHigh().isUpperUnbounded()) {
 
-                            Object value = range.getSingleValue();
-
-                            CassandraType valueType = columnHandle.getCassandraType();
-                            columnValues.add(valueType.validateClusteringKey(value));
+                                    switch (range.getHigh().getBound()) {
+                                    case ABOVE:
+                                        throw new VerifyException("High Marker should never use ABOVE bound");
+                                    case EXACTLY:
+                                        rangeConjuncts
+                                                .add(CassandraCqlUtils.validColumnName(columnHandle.getName()) + " <= "
+                                                        + CassandraCqlUtils.cqlValue(
+                                                                toCQLCompatibleString(range.getHigh().getValue()),
+                                                                columnHandle.getCassandraType()));
+                                        break;
+                                    case BELOW:
+                                        rangeConjuncts
+                                                .add(CassandraCqlUtils.validColumnName(columnHandle.getName()) + " < "
+                                                        + CassandraCqlUtils.cqlValue(
+                                                                toCQLCompatibleString(range.getHigh().getValue()),
+                                                                columnHandle.getCassandraType()));
+                                        break;
+                                    default:
+                                        throw new AssertionError("Unhandled bound: " + range.getHigh().getBound());
+                                    }
+                                }
+                            }
                         }
-                        return columnValues.build();
-                    },
-                    discreteValues -> {
-                        if (discreteValues.isWhiteList()) {
-                            return ImmutableSet.copyOf(discreteValues.getValues());
-                        }
-                        return ImmutableSet.of();
-                    },
-                    allOrNone -> ImmutableSet.of());
+                    }
 
-            if (!values.isEmpty()) {
-                clusteringColumnValues.add(values);
-                domainsBuilder.put(columnHandle, domain);
+                    if (singleValues.size() == 1) {
+                        predicate = CassandraCqlUtils.validColumnName(columnHandle.getName()) + " = "
+                                + singleValues.get(0);
+                    }
+                    else if (singleValues.size() > 1) {
+                        predicate = CassandraCqlUtils.validColumnName(columnHandle.getName()) + " IN ("
+                                + Joiner.on(",").join(singleValues) + ")";
+                    }
+                    else if (!rangeConjuncts.isEmpty()) {
+                        predicate = Joiner.on(" AND ").join(rangeConjuncts);
+                    }
+                    return predicate;
+                }, discreteValues -> {
+                    if (discreteValues.isWhiteList()) {
+                        ImmutableList.Builder<Object> discreteValuesList = ImmutableList.builder();
+                        for (Object discreteValue : discreteValues.getValues()) {
+                            discreteValuesList.add(CassandraCqlUtils.cqlValue(toCQLCompatibleString(discreteValue),
+                                    columnHandle.getCassandraType()));
+                        }
+                        String predicate = CassandraCqlUtils.validColumnName(columnHandle.getName()) + " IN ("
+                                + Joiner.on(",").join(discreteValuesList.build()) + ")";
+                        return predicate;
+                    }
+                    return null;
+                }, allOrNone -> null);
+
+                if (predicateString != null) {
+                    clusteringColumnSql.add(predicateString);
+                    domainsBuilder.put(columnHandle, domain);
+                    // Check for last clustering column should be only restricted by range condition
+                    if (predicateString.contains(">") || predicateString.contains("<")) {
+                        break;
+                    }
+                }
             }
         }
-        return new ClusteringPushDownResult(domainsBuilder.build(), cartesianProduct(clusteringColumnValues.build()));
+        return new ClusteringPushDownResult(domainsBuilder.build(), clusteringColumnSql.build());
     }
 
     private static class ClusteringPushDownResult
     {
         private final Map<ColumnHandle, Domain> domains;
-        private final Set<List<Object>> domainValues;
+        private final List<String> domainQuery;
 
-        public ClusteringPushDownResult(Map<ColumnHandle, Domain> domains, Set<List<Object>> domainValues)
+        public ClusteringPushDownResult(Map<ColumnHandle, Domain> domains, List<String> domainQuery)
         {
             this.domains = requireNonNull(ImmutableMap.copyOf(domains));
-            this.domainValues = requireNonNull(ImmutableSet.copyOf(domainValues));
+            this.domainQuery = requireNonNull(ImmutableList.copyOf(domainQuery));
         }
 
         public Map<ColumnHandle, Domain> getDomains()
@@ -153,9 +193,10 @@ public class CassandraClusteringPredicatesExtractor
             return domains;
         }
 
-        public Set<List<Object>> getDomainValues()
+        public List<String> getDomainQuery()
         {
-            return domainValues;
+            return domainQuery;
         }
+
     }
 }
