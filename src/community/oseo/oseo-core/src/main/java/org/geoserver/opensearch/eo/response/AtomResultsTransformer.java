@@ -8,8 +8,6 @@ import static org.geoserver.opensearch.eo.store.OpenSearchAccess.EO_NAMESPACE;
 
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -159,6 +157,19 @@ public class AtomResultsTransformer extends LambdaTransformerBase {
             String updated = DateTimeFormatter.ISO_INSTANT.format(Instant.now());
             element("updated", updated);
             buildPaginationLinks(results);
+            buildSearchLink(results.getRequest());
+            encodeEntries(results.getResults(), results.getRequest());
+        }
+
+        private void buildSearchLink(SearchRequest request) {
+            Map<String, String> kvp = null;
+            if(request.getParentId() != null) {
+                kvp = Collections.singletonMap("parentId", request.getParentId());
+            }
+            String href = ResponseUtils.buildURL(request.getBaseUrl(), "oseo/search/description", kvp, URLType.SERVICE);
+            element("link", NO_CONTENTS,
+                    attributes("rel", "search", "href", href, "type", DescriptionResponse.OS_DESCRIPTION_MIME));
+            
         }
 
         private int getQueryStartIndex(SearchResults results) {
@@ -187,7 +198,6 @@ public class AtomResultsTransformer extends LambdaTransformerBase {
             }
             encodePaginationLink("last", getLastPageStart(total, itemsPerPage), itemsPerPage,
                     request);
-            encodeEntries(results.getResults(), results.getRequest());
         }
 
         private void encodeEntries(FeatureCollection results, SearchRequest request) {
@@ -304,6 +314,7 @@ public class AtomResultsTransformer extends LambdaTransformerBase {
                 final String identifierLink, Map<String, String> descriptionVariables) {
             element("id", identifierLink);
             element("title", name);
+            element("dc:identifier", name);
             // TODO: need an actual update column
             Date updated = (Date) value(feature, "timeStart");
             if (updated != null) {
@@ -425,7 +436,7 @@ public class AtomResultsTransformer extends LambdaTransformerBase {
 
         private int getLastPageStart(int total, int itemsPerPage) {
             // all in one page?
-            if (total <= itemsPerPage) {
+            if (total <= itemsPerPage || itemsPerPage == 0) {
                 return 1;
             }
             // check how many items in the last page, is the last page partial or full?

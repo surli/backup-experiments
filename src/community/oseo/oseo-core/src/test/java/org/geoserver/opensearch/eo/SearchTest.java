@@ -50,6 +50,8 @@ public class SearchTest extends OSEOTestSupport {
         assertThat(dom, hasXPath("/at:feed/os:Query[@startIndex='1']"));
         assertThat(dom, hasXPath("/at:feed/at:author/at:name", equalTo("GeoServer")));
         assertThat(dom, hasXPath("/at:feed/at:updated"));
+        assertThat(dom, hasXPath("/at:feed/at:link[@rel='search']/@href", 
+                equalTo("http://localhost:8080/geoserver/oseo/search/description")));
 
         assertNoResults(dom);
 
@@ -57,6 +59,7 @@ public class SearchTest extends OSEOTestSupport {
         assertThat(dom, hasXPath("count(/at:feed/at:entry)", equalTo("3")));
         // ... sorted by date
         assertThat(dom, hasXPath("/at:feed/at:entry[1]/at:title", equalTo("SENTINEL2")));
+        assertThat(dom, hasXPath("/at:feed/at:entry[1]/dc:identifier", equalTo("SENTINEL2")));
         assertThat(dom, hasXPath("/at:feed/at:entry[2]/at:title", equalTo("SENTINEL1")));
         assertThat(dom, hasXPath("/at:feed/at:entry[3]/at:title", equalTo("LANDSAT8")));
 
@@ -107,6 +110,32 @@ public class SearchTest extends OSEOTestSupport {
 
         // overall schema validation for good measure
         checkValidAtomFeed(dom);
+    }
+    
+    @Test
+    public void testAllCollectionCountZero() throws Exception {
+        MockHttpServletResponse response = getAsServletResponse(
+                "oseo/search?count=0&httpAccept=" + AtomSearchResponse.MIME);
+        assertEquals(AtomSearchResponse.MIME, response.getContentType());
+        assertEquals(200, response.getStatus());
+
+        Document dom = dom(new ByteArrayInputStream(response.getContentAsByteArray()));
+        // print(dom);
+
+        // basics
+        assertThat(dom, hasXPath("/at:feed/os:totalResults", equalTo("3")));
+        assertThat(dom, hasXPath("/at:feed/os:startIndex", equalTo("1")));
+        assertThat(dom, hasXPath("/at:feed/os:itemsPerPage", equalTo("0")));
+        assertThat(dom, hasXPath("/at:feed/os:Query"));
+        assertThat(dom, hasXPath("/at:feed/os:Query[@count='0']"));
+        assertThat(dom, hasXPath("/at:feed/os:Query[@startIndex='1']"));
+        assertThat(dom, hasXPath("/at:feed/at:author/at:name", equalTo("GeoServer")));
+        assertThat(dom, hasXPath("/at:feed/at:updated"));
+        assertThat(dom, hasXPath("/at:feed/at:link[@rel='search']/@href", 
+                equalTo("http://localhost:8080/geoserver/oseo/search/description")));
+
+        // check no entries
+        assertThat(dom, hasXPath("count(/at:feed/at:entry)", equalTo("0")));
     }
 
     @Test
@@ -247,6 +276,8 @@ public class SearchTest extends OSEOTestSupport {
 
         // check that filtering worked and offerings have been properly grouped
         assertThat(dom, hasXPath("count(/at:feed/at:entry)", equalTo("1")));
+        assertThat(dom, hasXPath("/at:feed/at:entry/at:id", containsString("S2A_OPER_MSI_L1C_TL_SGS__20160929T154211_A006640_T32TPP_N02.04")));
+        
         assertThat(dom, hasXPath("/at:feed/at:entry/at:title", equalTo("S2A_OPER_MSI_L1C_TL_SGS__20160929T154211_A006640_T32TPP_N02.04")));
         assertThat(dom, hasXPath("count(/at:feed/at:entry/owc:offering)", equalTo("3")));
         assertThat(dom, hasXPath("count(/at:feed/at:entry/owc:offering[@code='http://www.opengis.net/spec/owc/1.0/req/atom/wcs']/owc:operation)", equalTo("2")));
@@ -259,16 +290,36 @@ public class SearchTest extends OSEOTestSupport {
         Document dom = getAsDOM(
                 "oseo/search?parentId=SENTINEL2&httpAccept=" + AtomSearchResponse.MIME);
         // print(dom);
+        
+        assertThat(dom, hasXPath("/at:feed/os:totalResults", equalTo("19")));
 
         // check that filtering worked
         assertThat(dom, hasXPath("/at:feed/at:entry/at:title", startsWith("S2A")));
         assertThat(dom, not(hasXPath("/at:feed/at:entry[at:title='S1A']")));
         assertThat(dom, not(hasXPath("/at:feed/at:entry[at:title='LS08']")));
+        assertThat(dom, hasXPath("/at:feed/at:link[@rel='search']/@href", 
+                equalTo("http://localhost:8080/geoserver/oseo/search/description?parentId=SENTINEL2")));
+
         
         // there are two products only with links, verify, three offerings each
         assertThat(dom, hasXPath("count(/at:feed/at:entry[at:title='S2A_OPER_MSI_L1C_TL_SGS__20160929T154211_A006640_T32TPP_N02.04']/owc:offering)", equalTo("3")));
         assertThat(dom, hasXPath("count(/at:feed/at:entry[at:title='S2A_OPER_MSI_L1C_TL_SGS__20160117T141030_A002979_T32TPL_N02.01']/owc:offering)", equalTo("3")));
     }
+    
+    @Test
+    public void testAllSentinel2ProductsCountZero() throws Exception {
+        Document dom = getAsDOM(
+                "oseo/search?parentId=SENTINEL2&count=0&httpAccept=" + AtomSearchResponse.MIME);
+        // print(dom);
+
+        assertThat(dom, hasXPath("/at:feed/os:totalResults", equalTo("19")));
+        assertThat(dom, hasXPath("/at:feed/os:startIndex", equalTo("1")));
+        assertThat(dom, hasXPath("/at:feed/os:itemsPerPage", equalTo("0")));
+        
+        // there are two products only with links, verify, three offerings each
+        assertThat(dom, hasXPath("count(/at:feed/at:entry)", equalTo("0")));
+    }
+
 
     @Test
     public void testSpecificProduct() throws Exception {
