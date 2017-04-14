@@ -1,7 +1,7 @@
 {
   "step-durations": {
     "CheckoutBuild": 2,
-    "": 232,
+    "": 0,
     "CloneRepository": 3,
     "BuildProject": 172
   },
@@ -10,7 +10,58 @@
   "pr-head-commit-id": "c6ababf377b095698702b91154dc7e14a7001b7e",
   "pr-id": 294,
   "repo": "andsel/moquette",
+  "failingModule": "/root/workspace/andsel/moquette/222062099/mapdb_storage",
   "is-pr": "true",
   "buildid": 222062099,
+  "error-types": [
+    "java.lang.NullPointerException"
+  ],
+  "failing-test-cases": [
+    {
+      "className": "io.moquette.persistence.mapdb.MapDBPersistentStoreTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.moquette.persistence.mapdb.MapDBPersistentStoreTest#testCloseShutdownCommitTask",
+        "io.moquette.persistence.mapdb.MapDBPersistentStoreTest#overridingSubscriptions",
+        "io.moquette.persistence.mapdb.MapDBPersistentStoreTest#testNextPacketID",
+        "io.moquette.persistence.mapdb.MapDBPersistentStoreTest#testDropMessagesInSessionDoesntCleanAnyRetainedStoredMessages",
+        "io.moquette.persistence.mapdb.MapDBPersistentStoreTest#testNextPacketID_existingClientSession",
+        "io.moquette.persistence.mapdb.MapDBPersistentStoreTest#testDropMessagesInSessionCleanAllNotRetainedStoredMessages",
+        "io.moquette.persistence.mapdb.MapDBPersistentStoreTest#testNextPacketID_notExistingClientSession"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 7
+    }
+  ],
   "pr-base-commit-id": "c1694ec6e255bb7451c493936f4efe1e604c6ac7"
 }
