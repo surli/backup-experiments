@@ -1,7 +1,7 @@
 {
   "step-durations": {
     "CheckoutBuild": 2,
-    "": 107,
+    "": 0,
     "CloneRepository": 2,
     "BuildProject": 27
   },
@@ -10,7 +10,46 @@
   "pr-head-commit-id": "de7e48907f49678e1694b3c18b78e1cff2b92e4c",
   "pr-id": 417,
   "repo": "zeromq/jeromq",
+  "failingModule": "/root/workspace/zeromq/jeromq/221842344",
   "is-pr": "true",
   "buildid": 221842344,
+  "error-types": [
+    "java.lang.AssertionError",
+    "org.junit.ComparisonFailure"
+  ],
+  "failing-test-cases": [
+    {
+      "className": "org.zeromq.TestZProxy",
+      "failingMethods": [
+        "org.zeromq.TestZProxy#testStateSyncPause"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "Start sync status is not good! expected:\u003c[STAR]TED\u003e but was:\u003c[EXI]TED\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.zeromq.HighWatermarkTest",
+      "failingMethods": [
+        "org.zeromq.HighWatermarkTest#testReliabilityOnWatermark2"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": " Expected: is \u003ctrue\u003e      but: was \u003cfalse\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "pr-base-commit-id": "807ed39e9f86b2442938456b386d69d964e5e6a0"
 }
