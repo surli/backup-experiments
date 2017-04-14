@@ -203,7 +203,7 @@ public class MemorySessionStore implements ISessionsStore {
                 return nextPacketId;
             }
             int maxId = m.keySet().isEmpty() ? 0 :Collections.max(m.keySet());
-            int nextPacketId = (maxId + 1) % 0xFFFF;
+            int nextPacketId = (maxId % 0xFFFF) + 1;
             m.put(nextPacketId, null);
             return nextPacketId;
         }
