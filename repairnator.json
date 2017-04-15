@@ -1,19 +1,257 @@
 {
+  "pr-base-commit-id": "1444c6d105c9c993911c4fcec23a36a825018dd5",
+  "pr-head-commit-id": "e726b0fb4f73fb7a052457c99452f1e4a98f7506",
+  "totalNumberSkippingTests": 11,
+  "pr-remote-repo": "selvasingh/azure-sdk-for-java",
+  "error-types": [
+    "java.util.concurrent.ExecutionException",
+    "java.lang.RuntimeException"
+  ],
+  "totalNumberFailingTests": 0,
+  "buildid": 222236958,
+  "totalNumberErroringTests": 31,
+  "is-pr": "true",
+  "totalNumberRunningTests": 186,
+  "pr-head-commit-id-url": "https://github.com/selvasingh/azure-sdk-for-java/commit/e726b0fb4f73fb7a052457c99452f1e4a98f7506",
+  "pr-id": 1587,
+  "repo": "Azure/azure-sdk-for-java",
+  "failing-test-cases": [
+    {
+      "className": "com.microsoft.azure.keyvault.test.SecretOperationsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.microsoft.azure.keyvault.test.SecretOperationsTest#transparentAuthentication",
+        "com.microsoft.azure.keyvault.test.SecretOperationsTest#disabledSecretGet",
+        "com.microsoft.azure.keyvault.test.SecretOperationsTest#listSecrets",
+        "com.microsoft.azure.keyvault.test.SecretOperationsTest#listSecretVersions",
+        "com.microsoft.azure.keyvault.test.SecretOperationsTest#crudOperations"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 5
+    },
+    {
+      "className": "com.microsoft.azure.keyvault.test.KeyOperationsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.microsoft.azure.keyvault.test.KeyOperationsTest#listKeyVersions",
+        "com.microsoft.azure.keyvault.test.KeyOperationsTest#transparentAuthentication",
+        "com.microsoft.azure.keyvault.test.KeyOperationsTest#crudOperations",
+        "com.microsoft.azure.keyvault.test.KeyOperationsTest#listKeys",
+        "com.microsoft.azure.keyvault.test.KeyOperationsTest#importKeyOperation",
+        "com.microsoft.azure.keyvault.test.KeyOperationsTest#signVerifyOperations",
+        "com.microsoft.azure.keyvault.test.KeyOperationsTest#encryptDecryptOperations",
+        "com.microsoft.azure.keyvault.test.KeyOperationsTest#backupRestore",
+        "com.microsoft.azure.keyvault.test.KeyOperationsTest#wrapUnwrapOperations"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 9
+    },
+    {
+      "className": "com.microsoft.azure.keyvault.test.CertificateOperationsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#createCertificatePkcs12",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#createSelfSignedCertificatePkcs12",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#contactsCrudOperations",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#certificateUpdate",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#listCertificateVersions",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#listCertificates",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#issuerCrudOperations",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#importCertificatePkcs12",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#certificateAsyncRequestCancellation",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#createCertificatePem",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#createCsr",
+        "com.microsoft.azure.keyvault.test.CertificateOperationsTest#createSelfSignedCertificatePem"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 12
+    },
+    {
+      "className": "com.microsoft.azure.keyvault.test.AsyncOperationsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.microsoft.azure.keyvault.test.AsyncOperationsTest#certificateAsync",
+        "com.microsoft.azure.keyvault.test.AsyncOperationsTest#certificateContactsAsync",
+        "com.microsoft.azure.keyvault.test.AsyncOperationsTest#secretAsync",
+        "com.microsoft.azure.keyvault.test.AsyncOperationsTest#issuerAsync",
+        "com.microsoft.azure.keyvault.test.AsyncOperationsTest#keyAsync"
+      ],
+      "failures": [
+        {
+          "failureName": "java.util.concurrent.ExecutionException",
+          "failureDetail": "java.lang.RuntimeException: java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.util.concurrent.ExecutionException",
+          "failureDetail": "java.lang.RuntimeException: java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.util.concurrent.ExecutionException",
+          "failureDetail": "java.lang.RuntimeException: java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.util.concurrent.ExecutionException",
+          "failureDetail": "java.lang.RuntimeException: java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        },
+        {
+          "failureName": "java.util.concurrent.ExecutionException",
+          "failureDetail": "java.lang.RuntimeException: java.lang.Exception: Please inform arm.clientid in the environment settings.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 5
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 2,
+    "": 0,
     "CloneRepository": 35,
     "ResolveDependency": 142,
     "TestProject": 208,
     "BuildProject": 86
   },
   "workspace": "./workspace",
-  "pr-remote-repo": "selvasingh/azure-sdk-for-java",
-  "pr-head-commit-id": "e726b0fb4f73fb7a052457c99452f1e4a98f7506",
-  "pr-id": 1587,
-  "repo": "Azure/azure-sdk-for-java",
-  "pr-head-commit-id-url": "https://github.com/selvasingh/azure-sdk-for-java/commit/e726b0fb4f73fb7a052457c99452f1e4a98f7506",
-  "is-pr": "true",
-  "buildid": 222236958,
   "pr-base-commit-id-url": "https://github.com/Azure/azure-sdk-for-java/commit/1444c6d105c9c993911c4fcec23a36a825018dd5",
-  "pr-base-commit-id": "1444c6d105c9c993911c4fcec23a36a825018dd5"
+  "failingModule": "/root/workspace/Azure/azure-sdk-for-java/222236958/azure-keyvault"
 }
