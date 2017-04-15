@@ -44,7 +44,7 @@ public class CassandraClusteringPredicatesExtractor
 
     private final TupleDomain<ColumnHandle> predicates;
 
-	public List<String> getClusteringKeyPredicates()
+    public List<String> getClusteringKeyPredicates()
     {
         ImmutableList.Builder<String> clusteringColumnSql = ImmutableList.builder();
         return clusteringColumnSql.add(Joiner.on(" AND ").join(clusteringPushDownResult.getDomainQuery())).build();
@@ -76,7 +76,6 @@ public class CassandraClusteringPredicatesExtractor
             String predicateString = null;
             if (!domain.isNullAllowed()) {
                 predicateString = domain.getValues().getValuesProcessor().transform(ranges -> {
-
                     List<Object> singleValues = new ArrayList<>();
                     List<String> rangeConjuncts = new ArrayList<>();
                     String predicate = null;
@@ -112,7 +111,6 @@ public class CassandraClusteringPredicatesExtractor
                                     }
                                 }
                                 if (!range.getHigh().isUpperUnbounded()) {
-
                                     switch (range.getHigh().getBound()) {
                                     case ABOVE:
                                         throw new VerifyException("High Marker should never use ABOVE bound");
@@ -197,6 +195,5 @@ public class CassandraClusteringPredicatesExtractor
         {
             return domainQuery;
         }
-
     }
 }
