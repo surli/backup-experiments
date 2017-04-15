@@ -1,14 +1,67 @@
 {
-  "bugRepo": "apache/nifi",
+  "totalNumberSkippingTests": 64,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 8,
     "CloneRepository": 25,
     "ResolveDependency": 28,
     "TestProject": 1219,
     "BuildProject": 887
   },
-  "buildid": 222267655,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 3,
   "repo": "apache/nifi",
-  "bugCommit": "https://github.com/apache/nifi/compare/deed25656fac...5f73ba7f2cca"
+  "bugCommit": "https://github.com/apache/nifi/compare/deed25656fac...5f73ba7f2cca",
+  "failingModule": "/root/workspace/apache/nifi/222267655/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors",
+  "buildid": 222267655,
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException:"
+  ],
+  "totalNumberRunningTests": 2413,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.nifi.processors.standard.TestListDatabaseTables",
+      "failingMethods": [
+        "org.apache.nifi.processors.standard.TestListDatabaseTables#testListTablesMultipleRefresh"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c2\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.nifi.processors.standard.TestGetFile",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnreadableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnwritableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithInaccessibleDir"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    }
+  ],
+  "bugRepo": "apache/nifi"
 }
