@@ -1,19 +1,58 @@
 {
+  "pr-base-commit-id": "caf64b3a4ffca05fc5c7aa39fc4dc78ffbdab3db",
+  "pr-head-commit-id": "bcc1e15348671de8e211933954584f809e671279",
+  "totalNumberSkippingTests": 7,
+  "pr-remote-repo": "sumitkgec/presto",
+  "error-types": [
+    "com.facebook.presto.client.FailureInfo$FailureException"
+  ],
+  "totalNumberFailingTests": 3,
+  "buildid": 222336217,
+  "totalNumberErroringTests": 0,
+  "is-pr": "true",
+  "totalNumberRunningTests": 5981,
+  "pr-head-commit-id-url": "https://github.com/sumitkgec/presto/commit/bcc1e15348671de8e211933954584f809e671279",
+  "pr-id": 7833,
+  "repo": "prestodb/presto",
+  "failing-test-cases": [
+    {
+      "className": "com.facebook.presto.cassandra.TestCassandraIntegrationSmokeTest",
+      "failingMethods": [
+        "com.facebook.presto.cassandra.TestCassandraIntegrationSmokeTest#testMultiplePartitionClusteringPredicates",
+        "com.facebook.presto.cassandra.TestCassandraIntegrationSmokeTest#testPartitionKeyPredicate",
+        "com.facebook.presto.cassandra.TestCassandraIntegrationSmokeTest#testClusteringPredicates"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "com.facebook.presto.client.FailureInfo$FailureException",
+          "failureDetail": "Clustering column \"clust_two\" cannot be restricted by an IN relation",
+          "isError": false
+        },
+        {
+          "failureName": "com.facebook.presto.client.FailureInfo$FailureException",
+          "failureDetail": "Clustering column \"clust_two\" cannot be restricted by an IN relation",
+          "isError": false
+        },
+        {
+          "failureName": "com.facebook.presto.client.FailureInfo$FailureException",
+          "failureDetail": "line 0:-1 no viable alternative at input \u0027\u003cEOF\u003e\u0027",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 3,
+    "": 0,
     "CloneRepository": 30,
     "ResolveDependency": 141,
     "TestProject": 2733,
     "BuildProject": 618
   },
   "workspace": "./workspace",
-  "pr-remote-repo": "sumitkgec/presto",
-  "pr-head-commit-id": "bcc1e15348671de8e211933954584f809e671279",
-  "pr-id": 7833,
-  "repo": "prestodb/presto",
-  "pr-head-commit-id-url": "https://github.com/sumitkgec/presto/commit/bcc1e15348671de8e211933954584f809e671279",
-  "is-pr": "true",
-  "buildid": 222336217,
   "pr-base-commit-id-url": "https://github.com/prestodb/presto/commit/caf64b3a4ffca05fc5c7aa39fc4dc78ffbdab3db",
-  "pr-base-commit-id": "caf64b3a4ffca05fc5c7aa39fc4dc78ffbdab3db"
+  "failingModule": "/root/workspace/prestodb/presto/222336217/presto-cassandra"
 }
