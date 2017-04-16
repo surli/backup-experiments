@@ -1,19 +1,517 @@
 {
+  "pr-base-commit-id": "764f9f8a2d06681ca5ceffe0f69960d99455dff5",
+  "pr-head-commit-id": "75c3940e62a4a8d719c2fccc71fef8dd69c426c3",
+  "totalNumberSkippingTests": 3,
+  "pr-remote-repo": "testcontainers/testcontainers-java",
+  "error-types": [
+    "java.lang.IllegalStateException",
+    "java.lang.AssertionError",
+    "java.lang.ExceptionInInitializerError",
+    "skipped"
+  ],
+  "totalNumberFailingTests": 1,
+  "buildid": 222622726,
+  "totalNumberErroringTests": 37,
+  "is-pr": "true",
+  "totalNumberRunningTests": 68,
+  "pr-head-commit-id-url": "https://github.com/testcontainers/testcontainers-java/commit/75c3940e62a4a8d719c2fccc71fef8dd69c426c3",
+  "pr-id": 329,
+  "repo": "testcontainers/testcontainers-java",
+  "failing-test-cases": [
+    {
+      "className": "org.testcontainers.junit.DockerComposeV2WithNetworkTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerComposeV2WithNetworkTest#org.testcontainers.junit.DockerComposeV2WithNetworkTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.WorkingDirectoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.WorkingDirectoryTest#org.testcontainers.junit.WorkingDirectoryTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.ExceptionInInitializerError",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.ParameterizedDockerfileContainerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.ParameterizedDockerfileContainerTest#simpleTest[alpine:3.3]",
+        "org.testcontainers.junit.ParameterizedDockerfileContainerTest#simpleTest[alpine:3.2]"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.testcontainers.junit.DockerComposePassthroughTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerComposePassthroughTest#org.testcontainers.junit.DockerComposePassthroughTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.PullCachePerformanceTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.PullCachePerformanceTest#testWithoutNameFilter",
+        "org.testcontainers.junit.PullCachePerformanceTest#testWithNameFilter"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.testcontainers.junit.DockerComposeContainerScalingTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerComposeContainerScalingTest#org.testcontainers.junit.DockerComposeContainerScalingTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.wait.HttpWaitStrategyTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.wait.HttpWaitStrategyTest#testWaitUntilReady_Success",
+        "org.testcontainers.junit.wait.HttpWaitStrategyTest#testWaitUntilReady_Timeout"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.testcontainers.junit.OutputStreamTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.OutputStreamTest#testFetchStdoutWithTimeout",
+        "org.testcontainers.junit.OutputStreamTest#testFetchStdoutWithNoLimit",
+        "org.testcontainers.junit.OutputStreamTest#testToStringConsumer",
+        "org.testcontainers.junit.OutputStreamTest#testLogConsumer",
+        "org.testcontainers.junit.OutputStreamTest#testFetchStdout"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 5
+    },
+    {
+      "className": "org.testcontainers.junit.DockerNetworkModeTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerNetworkModeTest#org.testcontainers.junit.DockerNetworkModeTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.ExceptionInInitializerError",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.DockerComposeOverrideTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerComposeOverrideTest#org.testcontainers.junit.DockerComposeOverrideTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.utility.DirectoryTarResourceTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.utility.DirectoryTarResourceTest#simpleRecursiveFileTest",
+        "org.testcontainers.utility.DirectoryTarResourceTest#simpleRecursiveClasspathResourceTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.testcontainers.junit.NonExistentImagePullTest",
+      "failingMethods": [
+        "org.testcontainers.junit.NonExistentImagePullTest#pullingNonExistentImageFailsGracefully"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Pulling a nonexistent container will cause an exception to be thrown: IllegalStateException was thrown instead of ContainerFetchException",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.testcontainers.junit.DockerfileContainerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerfileContainerTest#simpleDslTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.DockerComposeV2FormatTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerComposeV2FormatTest#org.testcontainers.junit.DockerComposeV2FormatTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.FixedHostPortContainerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.FixedHostPortContainerTest#testFixedHostPortMapping"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.wait.LogMessageWaitStrategyTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.wait.LogMessageWaitStrategyTest#testWaitUntilReady_Timeout",
+        "org.testcontainers.junit.wait.LogMessageWaitStrategyTest#testWaitUntilReady_Success"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.testcontainers.junit.DockerComposeContainerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerComposeContainerTest#org.testcontainers.junit.DockerComposeContainerTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.GenericContainerRuleTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.GenericContainerRuleTest#org.testcontainers.junit.GenericContainerRuleTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.ExceptionInInitializerError",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.DockerfileTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerfileTest#filePermissions",
+        "org.testcontainers.junit.DockerfileTest#simpleDockerfileWorks",
+        "org.testcontainers.junit.DockerfileTest#customizableImage",
+        "org.testcontainers.junit.DockerfileTest#dockerfileBuilderWorks"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    },
+    {
+      "className": "org.testcontainers.junit.wait.HostPortWaitStrategyTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.wait.HostPortWaitStrategyTest#testWaitUntilReady_Success",
+        "org.testcontainers.junit.wait.HostPortWaitStrategyTest#testWaitUntilReady_Timeout"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.testcontainers.dockerclient.DockerClientConfigUtilsTest",
+      "failingMethods": [
+        "org.testcontainers.dockerclient.DockerClientConfigUtilsTest#getDockerHostIpAddressShouldReturnDockerHostIpWhenHttpsUri",
+        "org.testcontainers.dockerclient.DockerClientConfigUtilsTest#getDockerHostIpAddressShouldReturnNullWhenUnsupportedUriScheme",
+        "org.testcontainers.dockerclient.DockerClientConfigUtilsTest#getDockerHostIpAddressShouldReturnDockerHostIpWhenHttpUri"
+      ],
+      "erroringMethods": [
+        "org.testcontainers.dockerclient.DockerClientConfigUtilsTest#getDockerHostIpAddressShouldReturnLocalhostWhenUnixSocket",
+        "org.testcontainers.dockerclient.DockerClientConfigUtilsTest#getDockerHostIpAddressShouldReturnDockerHostIpWhenTcpUri"
+      ],
+      "failures": [
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.testcontainers.junit.DockerComposeDoNotOverrideTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerComposeDoNotOverrideTest#org.testcontainers.junit.DockerComposeDoNotOverrideTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.DockerClientFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.DockerClientFactoryTest#runCommandInsideDockerShouldNotFailIfImageDoesNotExistsLocally"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.testcontainers.junit.DockerComposeErrorHandlingTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.testcontainers.junit.DockerComposeErrorHandlingTest#simpleTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Could not find a valid Docker environment. Please see logs and check configuration",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 1,
+    "": 0,
     "CloneRepository": 2,
     "ResolveDependency": 11,
     "TestProject": 591,
     "BuildProject": 54
   },
   "workspace": "./workspace",
-  "pr-remote-repo": "testcontainers/testcontainers-java",
-  "pr-head-commit-id": "75c3940e62a4a8d719c2fccc71fef8dd69c426c3",
-  "pr-id": 329,
-  "repo": "testcontainers/testcontainers-java",
-  "pr-head-commit-id-url": "https://github.com/testcontainers/testcontainers-java/commit/75c3940e62a4a8d719c2fccc71fef8dd69c426c3",
-  "is-pr": "true",
-  "buildid": 222622726,
   "pr-base-commit-id-url": "https://github.com/testcontainers/testcontainers-java/commit/764f9f8a2d06681ca5ceffe0f69960d99455dff5",
-  "pr-base-commit-id": "764f9f8a2d06681ca5ceffe0f69960d99455dff5"
+  "failingModule": "/root/workspace/testcontainers/testcontainers-java/222622726/core"
 }
