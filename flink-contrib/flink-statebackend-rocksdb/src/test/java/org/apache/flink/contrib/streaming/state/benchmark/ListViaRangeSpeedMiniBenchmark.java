@@ -105,7 +105,8 @@ public class ListViaRangeSpeedMiniBenchmark {
 		}
 
 		final long endGet = System.nanoTime();
-
+		write_options.close();
+		rocksDB.close();
 		System.out.println("end get - duration: " + ((endGet - beginGet) / 1_000_000) + " ms");
 	}
 
