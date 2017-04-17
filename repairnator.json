@@ -1,19 +1,74 @@
 {
+  "pr-base-commit-id": "675eeab7409f6cfcb9992288f66a62e33a478e47",
+  "pr-head-commit-id": "092db55945e16f9ded6800496afa2091f691c8b4",
+  "totalNumberSkippingTests": 0,
+  "pr-remote-repo": "tkd-yas/java-cas-client",
+  "error-types": [
+    "java.lang.RuntimeException"
+  ],
+  "totalNumberFailingTests": 0,
+  "buildid": 222756190,
+  "totalNumberErroringTests": 4,
+  "is-pr": "true",
+  "totalNumberRunningTests": 143,
+  "pr-head-commit-id-url": "https://github.com/tkd-yas/java-cas-client/commit/092db55945e16f9ded6800496afa2091f691c8b4",
+  "pr-id": 209,
+  "repo": "apereo/java-cas-client",
+  "failing-test-cases": [
+    {
+      "className": "org.jasig.cas.client.validation.Cas10TicketValidatorTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.jasig.cas.client.validation.Cas10TicketValidatorTests#testBadResponse",
+        "org.jasig.cas.client.validation.Cas10TicketValidatorTests#testYesResponse",
+        "org.jasig.cas.client.validation.Cas10TicketValidatorTests#testNoResponse"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.jasig.cas.client.validation.Cas20ServiceTicketValidatorTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.jasig.cas.client.validation.Cas20ServiceTicketValidatorTests#testNoResponse"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 2,
+    "": 0,
     "CloneRepository": 3,
     "ResolveDependency": 36,
     "TestProject": 12,
     "BuildProject": 18
   },
   "workspace": "./workspace",
-  "pr-remote-repo": "tkd-yas/java-cas-client",
-  "pr-head-commit-id": "092db55945e16f9ded6800496afa2091f691c8b4",
-  "pr-id": 209,
-  "repo": "apereo/java-cas-client",
-  "pr-head-commit-id-url": "https://github.com/tkd-yas/java-cas-client/commit/092db55945e16f9ded6800496afa2091f691c8b4",
-  "is-pr": "true",
-  "buildid": 222756190,
   "pr-base-commit-id-url": "https://github.com/apereo/java-cas-client/commit/675eeab7409f6cfcb9992288f66a62e33a478e47",
-  "pr-base-commit-id": "675eeab7409f6cfcb9992288f66a62e33a478e47"
+  "failingModule": "/root/workspace/apereo/java-cas-client/222756190/cas-client-core"
 }
