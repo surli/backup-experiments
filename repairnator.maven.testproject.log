@@ -1,0 +1,903 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 4 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 4 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] Jest Parent POM
+[INFO] Jest Common Jar
+[INFO] Jest Apache HC Jar
+[INFO] Jest Android Jar
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Jest Parent POM 5.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Jest Common Jar 5.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jest-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/searchbox-io/Jest/222733122/jest-common/src/main/resources
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ jest-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jest-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ jest-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ jest-common ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 11.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 119.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 1712.8 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.searchbox.client.JestResultTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.267 sec - in io.searchbox.client.JestResultTest
+Running io.searchbox.client.config.ClientConfigTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.client.config.ClientConfigTest
+Running io.searchbox.client.config.discovery.NodeCheckerTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.204 sec - in io.searchbox.client.config.discovery.NodeCheckerTest
+Running io.searchbox.client.AbstractJestClientTest
+{http://localhost:9400=4000, http://localhost:9200=4000, http://localhost:9300=4000}
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec - in io.searchbox.client.AbstractJestClientTest
+Running io.searchbox.search.aggregation.TopHitsAggregationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.searchbox.search.aggregation.TopHitsAggregationTest
+Running io.searchbox.action.AbstractActionTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in io.searchbox.action.AbstractActionTest
+Running io.searchbox.indices.OptimizeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.searchbox.indices.OptimizeTest
+Running io.searchbox.indices.type.TypeExistTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.indices.type.TypeExistTest
+Running io.searchbox.indices.OpenIndexTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.indices.OpenIndexTest
+Running io.searchbox.indices.IndicesExistsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.indices.IndicesExistsTest
+Running io.searchbox.indices.script.GetIndexedScriptTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.searchbox.indices.script.GetIndexedScriptTest
+Running io.searchbox.indices.script.DeleteIndexedScriptTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.searchbox.indices.script.DeleteIndexedScriptTest
+Running io.searchbox.indices.script.CreateIndexedScriptTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in io.searchbox.indices.script.CreateIndexedScriptTest
+Running io.searchbox.indices.DeleteIndexTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.indices.DeleteIndexTest
+Running io.searchbox.indices.FlushTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.indices.FlushTest
+Running io.searchbox.indices.settings.UpdateSettingsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.indices.settings.UpdateSettingsTest
+Running io.searchbox.indices.settings.GetSettingsTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.searchbox.indices.settings.GetSettingsTest
+Running io.searchbox.indices.mapping.DeleteMappingTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.indices.mapping.DeleteMappingTest
+Running io.searchbox.indices.mapping.GetMappingTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.searchbox.indices.mapping.GetMappingTest
+Running io.searchbox.indices.mapping.PutMappingTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.indices.mapping.PutMappingTest
+Running io.searchbox.indices.CloseIndexTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.indices.CloseIndexTest
+Running io.searchbox.indices.aliases.GetAliasesTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.indices.aliases.GetAliasesTest
+Running io.searchbox.indices.aliases.RemoveAliasMappingTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.searchbox.indices.aliases.RemoveAliasMappingTest
+Running io.searchbox.indices.aliases.ModifyAliasesTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.searchbox.indices.aliases.ModifyAliasesTest
+Running io.searchbox.indices.aliases.AddAliasMappingTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.indices.aliases.AddAliasMappingTest
+Running io.searchbox.indices.RefreshTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.indices.RefreshTest
+Running io.searchbox.indices.StatsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.searchbox.indices.StatsTest
+Running io.searchbox.indices.CreateIndexTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.searchbox.indices.CreateIndexTest
+Running io.searchbox.indices.ClearCacheTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.indices.ClearCacheTest
+Running io.searchbox.indices.template.GetTemplateTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.indices.template.GetTemplateTest
+Running io.searchbox.indices.template.DeleteTemplateTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.indices.template.DeleteTemplateTest
+Running io.searchbox.indices.template.PutTemplateTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.searchbox.indices.template.PutTemplateTest
+Running io.searchbox.indices.AnalyzeTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.searchbox.indices.AnalyzeTest
+Running io.searchbox.indices.ForceMergeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.indices.ForceMergeTest
+Running io.searchbox.indices.reindex.ReindexTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.searchbox.indices.reindex.ReindexTest
+Running io.searchbox.snapshot.GetSnapshotTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.searchbox.snapshot.GetSnapshotTest
+Running io.searchbox.snapshot.CreateSnapshotRepositoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.searchbox.snapshot.CreateSnapshotRepositoryTest
+Running io.searchbox.snapshot.SnapshotStatusTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.snapshot.SnapshotStatusTest
+Running io.searchbox.snapshot.GetSnapshotRepositoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.snapshot.GetSnapshotRepositoryTest
+Running io.searchbox.snapshot.RestoreSnapshotTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.snapshot.RestoreSnapshotTest
+Running io.searchbox.snapshot.DeleteSnapshotTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.snapshot.DeleteSnapshotTest
+Running io.searchbox.snapshot.DeleteSnapshotRepositoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in io.searchbox.snapshot.DeleteSnapshotRepositoryTest
+Running io.searchbox.snapshot.CreateSnapshotTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.snapshot.CreateSnapshotTest
+Running io.searchbox.cluster.NodesInfoTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.cluster.NodesInfoTest
+Running io.searchbox.cluster.StateTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.searchbox.cluster.StateTest
+Running io.searchbox.cluster.reroute.RerouteMoveTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.cluster.reroute.RerouteMoveTest
+Running io.searchbox.cluster.reroute.RerouteAllocateReplicaTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.cluster.reroute.RerouteAllocateReplicaTest
+Running io.searchbox.cluster.reroute.RerouteCancelTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.cluster.reroute.RerouteCancelTest
+Running io.searchbox.cluster.NodesStatsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.cluster.NodesStatsTest
+Running io.searchbox.cluster.NodesShutdownTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.searchbox.cluster.NodesShutdownTest
+Running io.searchbox.cluster.NodesHotThreadsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.cluster.NodesHotThreadsTest
+Running io.searchbox.cluster.RerouteTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.cluster.RerouteTest
+Running io.searchbox.core.MultiGetTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.searchbox.core.MultiGetTest
+Running io.searchbox.core.BulkResultTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.searchbox.core.BulkResultTest
+Running io.searchbox.core.SearchTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in io.searchbox.core.SearchTest
+Running io.searchbox.core.SearchResultTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.searchbox.core.SearchResultTest
+Running io.searchbox.core.CountTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.searchbox.core.CountTest
+Running io.searchbox.core.CountResultTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.core.CountResultTest
+Running io.searchbox.core.CatNodesBuilderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.core.CatNodesBuilderTest
+Running io.searchbox.core.ValidateTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.core.ValidateTest
+Running io.searchbox.core.GetTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.core.GetTest
+Running io.searchbox.core.DocTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.core.DocTest
+Running io.searchbox.core.CatResultTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.core.CatResultTest
+Running io.searchbox.core.CatShardsBuilderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.core.CatShardsBuilderTest
+Running io.searchbox.core.search.sort.SortTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.core.search.sort.SortTest
+Running io.searchbox.core.search.aggregation.TermsAggregationTermTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.core.search.aggregation.TermsAggregationTermTest
+Running io.searchbox.core.IndexTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.core.IndexTest
+Running io.searchbox.core.DocumentResultTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.searchbox.core.DocumentResultTest
+Running io.searchbox.core.SuggestTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.searchbox.core.SuggestTest
+Running io.searchbox.core.ExplainTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.core.ExplainTest
+Running io.searchbox.core.UpdateTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.core.UpdateTest
+Running io.searchbox.core.CatAliasesBuilderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.core.CatAliasesBuilderTest
+Running io.searchbox.core.CatIndicesBuilderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.core.CatIndicesBuilderTest
+Running io.searchbox.core.DeleteTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.core.DeleteTest
+Running io.searchbox.core.MultiSearchTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.searchbox.core.MultiSearchTest
+Running io.searchbox.core.BulkTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in io.searchbox.core.BulkTest
+Running io.searchbox.core.PercolateTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.searchbox.core.PercolateTest
+Running io.searchbox.core.DeleteByQueryTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.core.DeleteByQueryTest
+Running io.searchbox.core.SearchScrollTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.searchbox.core.SearchScrollTest
+
+Results :
+
+Tests run: 357, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Jest Apache HC Jar 5.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/searchbox-io/Jest/222733122/jest/src/main/resources
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ jest ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ jest ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ jest ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.searchbox.client.JestClientFactoryTest
+13:33:47 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:9200]
+13:33:47 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:47 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:47 INFO  JestClientFactory:86 - Node Discovery disabled...
+13:33:47 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:47 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:9200]
+13:33:47 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:47 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:47 INFO  JestClientFactory:77 - Node Discovery enabled...
+13:33:47 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:47 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:47 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [someUri]
+13:33:47 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:47 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:47 INFO  JestClientFactory:86 - Node Discovery disabled...
+13:33:47 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:47 INFO  JestClientFactory:103 - Authentication cache set for preemptive authentication
+13:33:47 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:9200]
+13:33:47 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:47 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:47 INFO  JestClientFactory:77 - Node Discovery enabled...
+13:33:47 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:47 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:9200]
+13:33:47 INFO  JestClientFactory:223 - Using multi thread/connection supporting pooling connection manager
+13:33:47 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:47 INFO  JestClientFactory:86 - Node Discovery disabled...
+13:33:47 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:47 INFO  JestClientFactory:223 - Using multi thread/connection supporting pooling connection manager
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.838 sec - in io.searchbox.client.JestClientFactoryTest
+Running io.searchbox.client.JestClientFactoryIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.575 sec <<< FAILURE! - in io.searchbox.client.JestClientFactoryIntegrationTest
+io.searchbox.client.JestClientFactoryIntegrationTest  Time elapsed: 0.571 sec  <<< ERROR!
+java.lang.RuntimeException: can not run elasticsearch as root
+
+Running io.searchbox.client.http.JestHttpClientSystemWideProxyIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.043 sec <<< FAILURE! - in io.searchbox.client.http.JestHttpClientSystemWideProxyIntegrationTest
+io.searchbox.client.http.JestHttpClientSystemWideProxyIntegrationTest  Time elapsed: 0.043 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.test.ESIntegTestCase
+
+Running io.searchbox.client.http.JestHttpClientConfiguredProxyIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.037 sec <<< FAILURE! - in io.searchbox.client.http.JestHttpClientConfiguredProxyIntegrationTest
+io.searchbox.client.http.JestHttpClientConfiguredProxyIntegrationTest  Time elapsed: 0.034 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.test.ESIntegTestCase
+
+Running io.searchbox.client.http.JestHttpClientTest
+13:33:48 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:9200]
+13:33:48 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:48 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:48 INFO  JestClientFactory:86 - Node Discovery disabled...
+13:33:48 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:48 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:9200]
+13:33:48 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:48 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:48 INFO  JestClientFactory:86 - Node Discovery disabled...
+13:33:48 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:48 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:9200]
+13:33:48 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:48 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:48 INFO  JestClientFactory:86 - Node Discovery disabled...
+13:33:48 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.257 sec - in io.searchbox.client.http.JestHttpClientTest
+Running io.searchbox.client.http.FailingProxyTest
+13:33:48 INFO  DefaultHttpProxyServer:459 - Starting proxy at address: /127.0.0.1:45822
+13:33:48 INFO  DefaultHttpProxyServer:488 - Proxy listening with TCP transport
+13:33:48 INFO  DefaultHttpProxyServer:523 - Proxy started at address: /127.0.0.1:45822
+13:33:49 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:45822/]
+13:33:49 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:49 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:49 INFO  JestClientFactory:86 - Node Discovery disabled...
+13:33:49 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:49 ERROR JestHttpClient:253 - Exception occurred during async execution.
+java.io.IOException: Request GET http://localhost:45822//_all/_stats HTTP/1.1 yielded text/html; charset=UTF-8, should be json: HTTP/1.1 400 Bad Request
+	at io.searchbox.client.http.JestHttpClient.deserializeResponse(JestHttpClient.java:188)
+	at io.searchbox.client.http.JestHttpClient.access$000(JestHttpClient.java:36)
+	at io.searchbox.client.http.JestHttpClient$DefaultCallback.completed(JestHttpClient.java:242)
+	at io.searchbox.client.http.JestHttpClient$DefaultCallback.completed(JestHttpClient.java:227)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:119)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:177)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:432)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:325)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:267)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:116)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:164)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:339)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:317)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:278)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:590)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 1 column 6 path $
+	at com.google.gson.JsonParser.parse(JsonParser.java:65)
+	at com.google.gson.JsonParser.parse(JsonParser.java:45)
+	at io.searchbox.action.AbstractAction.parseResponseBody(AbstractAction.java:99)
+	at io.searchbox.action.AbstractAction.createNewElasticSearchResult(AbstractAction.java:67)
+	at io.searchbox.action.GenericResultAbstractAction.createNewElasticSearchResult(GenericResultAbstractAction.java:20)
+	at io.searchbox.client.http.JestHttpClient.deserializeResponse(JestHttpClient.java:175)
+	... 18 more
+Caused by: com.google.gson.stream.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 1 column 6 path $
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1567)
+	at com.google.gson.stream.JsonReader.checkLenient(JsonReader.java:1416)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:546)
+	at com.google.gson.stream.JsonReader.peek(JsonReader.java:429)
+	at com.google.gson.JsonParser.parse(JsonParser.java:60)
+	... 23 more
+13:33:49 INFO  DefaultHttpProxyServer:398 - Shutting down proxy server gracefully
+13:33:49 INFO  DefaultHttpProxyServer:433 - Closing all channels (graceful)
+13:33:49 INFO  ServerGroup:212 - Shutting down server group event loops (graceful)
+13:33:51 INFO  DefaultHttpProxyServer:414 - Done shutting down proxy server
+13:33:51 INFO  DefaultHttpProxyServer:459 - Starting proxy at address: /127.0.0.1:33936
+13:33:51 INFO  DefaultHttpProxyServer:488 - Proxy listening with TCP transport
+13:33:51 INFO  DefaultHttpProxyServer:523 - Proxy started at address: /127.0.0.1:33936
+13:33:51 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:33936/]
+13:33:51 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:51 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:51 INFO  JestClientFactory:86 - Node Discovery disabled...
+13:33:51 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:51 INFO  DefaultHttpProxyServer:398 - Shutting down proxy server gracefully
+13:33:51 INFO  DefaultHttpProxyServer:433 - Closing all channels (graceful)
+13:33:51 INFO  ClientToProxyConnection:730 - (AWAITING_INITIAL) [id: 0xe2210817, L:/127.0.0.1:33936 - R:/127.0.0.1:46447]: An IOException occurred on ClientToProxyConnection: Connection reset by peer
+13:33:51 INFO  ServerGroup:212 - Shutting down server group event loops (graceful)
+13:33:53 INFO  DefaultHttpProxyServer:414 - Done shutting down proxy server
+13:33:53 INFO  DefaultHttpProxyServer:459 - Starting proxy at address: /127.0.0.1:38925
+13:33:53 INFO  DefaultHttpProxyServer:488 - Proxy listening with TCP transport
+13:33:53 INFO  DefaultHttpProxyServer:523 - Proxy started at address: /127.0.0.1:38925
+13:33:53 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:38925/]
+13:33:53 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:53 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:53 INFO  JestClientFactory:86 - Node Discovery disabled...
+13:33:53 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:53 INFO  DefaultHttpProxyServer:398 - Shutting down proxy server gracefully
+13:33:53 INFO  DefaultHttpProxyServer:433 - Closing all channels (graceful)
+13:33:53 INFO  ServerGroup:212 - Shutting down server group event loops (graceful)
+13:33:55 INFO  DefaultHttpProxyServer:414 - Done shutting down proxy server
+13:33:55 INFO  DefaultHttpProxyServer:459 - Starting proxy at address: /127.0.0.1:45766
+13:33:55 INFO  DefaultHttpProxyServer:488 - Proxy listening with TCP transport
+13:33:55 INFO  DefaultHttpProxyServer:523 - Proxy started at address: /127.0.0.1:45766
+13:33:55 INFO  AbstractJestClient:56 - Setting server pool to a list of 1 servers: [http://localhost:45766/]
+13:33:55 INFO  JestClientFactory:240 - Using single thread/connection supporting basic connection manager
+13:33:55 INFO  JestClientFactory:69 - Using default GSON instance
+13:33:55 INFO  JestClientFactory:86 - Node Discovery disabled...
+13:33:55 INFO  JestClientFactory:98 - Idle connection reaping disabled...
+13:33:55 ERROR JestHttpClient:253 - Exception occurred during async execution.
+java.io.IOException: Request GET http://localhost:45766//_all/_stats HTTP/1.1 yielded text/html; charset=UTF-8, should be json: HTTP/1.1 400 Bad Request
+	at io.searchbox.client.http.JestHttpClient.deserializeResponse(JestHttpClient.java:188)
+	at io.searchbox.client.http.JestHttpClient.access$000(JestHttpClient.java:36)
+	at io.searchbox.client.http.JestHttpClient$DefaultCallback.completed(JestHttpClient.java:242)
+	at io.searchbox.client.http.JestHttpClient$DefaultCallback.completed(JestHttpClient.java:227)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:119)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:177)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:432)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:325)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:267)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:116)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:164)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:339)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:317)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:278)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:106)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:590)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 1 column 6 path $
+	at com.google.gson.JsonParser.parse(JsonParser.java:65)
+	at com.google.gson.JsonParser.parse(JsonParser.java:45)
+	at io.searchbox.action.AbstractAction.parseResponseBody(AbstractAction.java:99)
+	at io.searchbox.action.AbstractAction.createNewElasticSearchResult(AbstractAction.java:67)
+	at io.searchbox.action.GenericResultAbstractAction.createNewElasticSearchResult(GenericResultAbstractAction.java:20)
+	at io.searchbox.client.http.JestHttpClient.deserializeResponse(JestHttpClient.java:175)
+	... 18 more
+Caused by: com.google.gson.stream.MalformedJsonException: Use JsonReader.setLenient(true) to accept malformed JSON at line 1 column 6 path $
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1567)
+	at com.google.gson.stream.JsonReader.checkLenient(JsonReader.java:1416)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:546)
+	at com.google.gson.stream.JsonReader.peek(JsonReader.java:429)
+	at com.google.gson.JsonParser.parse(JsonParser.java:60)
+	... 23 more
+13:33:55 INFO  DefaultHttpProxyServer:398 - Shutting down proxy server gracefully
+13:33:55 INFO  DefaultHttpProxyServer:433 - Closing all channels (graceful)
+13:33:55 INFO  ServerGroup:212 - Shutting down server group event loops (graceful)
+13:33:58 INFO  DefaultHttpProxyServer:414 - Done shutting down proxy server
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.262 sec - in io.searchbox.client.http.FailingProxyTest
+Running io.searchbox.client.config.HttpClientConfigTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in io.searchbox.client.config.HttpClientConfigTest
+Running io.searchbox.indices.DeleteIndexIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.03 sec <<< FAILURE! - in io.searchbox.indices.DeleteIndexIntegrationTest
+io.searchbox.indices.DeleteIndexIntegrationTest  Time elapsed: 0.03 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.test.ESIntegTestCase
+
+Running io.searchbox.indices.type.TypeExistIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.01 sec <<< FAILURE! - in io.searchbox.indices.type.TypeExistIntegrationTest
+io.searchbox.indices.type.TypeExistIntegrationTest  Time elapsed: 0.01 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.OptimizeIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.019 sec <<< FAILURE! - in io.searchbox.indices.OptimizeIntegrationTest
+io.searchbox.indices.OptimizeIntegrationTest  Time elapsed: 0.008 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.StatsIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE! - in io.searchbox.indices.StatsIntegrationTest
+io.searchbox.indices.StatsIntegrationTest  Time elapsed: 0.006 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.FlushIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.012 sec <<< FAILURE! - in io.searchbox.indices.FlushIntegrationTest
+io.searchbox.indices.FlushIntegrationTest  Time elapsed: 0.012 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.CreateIndexIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.008 sec <<< FAILURE! - in io.searchbox.indices.CreateIndexIntegrationTest
+io.searchbox.indices.CreateIndexIntegrationTest  Time elapsed: 0.008 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.script.DeleteIndexedScriptIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.016 sec <<< FAILURE! - in io.searchbox.indices.script.DeleteIndexedScriptIntegrationTest
+io.searchbox.indices.script.DeleteIndexedScriptIntegrationTest  Time elapsed: 0.012 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.script.GetIndexedScriptIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE! - in io.searchbox.indices.script.GetIndexedScriptIntegrationTest
+io.searchbox.indices.script.GetIndexedScriptIntegrationTest  Time elapsed: 0.009 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.script.CreateIndexedScriptIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.013 sec <<< FAILURE! - in io.searchbox.indices.script.CreateIndexedScriptIntegrationTest
+io.searchbox.indices.script.CreateIndexedScriptIntegrationTest  Time elapsed: 0.01 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.IndicesExistsIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.012 sec <<< FAILURE! - in io.searchbox.indices.IndicesExistsIntegrationTest
+io.searchbox.indices.IndicesExistsIntegrationTest  Time elapsed: 0.011 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.PutMappingIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.016 sec <<< FAILURE! - in io.searchbox.indices.PutMappingIntegrationTest
+io.searchbox.indices.PutMappingIntegrationTest  Time elapsed: 0.014 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.settings.GetSettingsIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.01 sec <<< FAILURE! - in io.searchbox.indices.settings.GetSettingsIntegrationTest
+io.searchbox.indices.settings.GetSettingsIntegrationTest  Time elapsed: 0.009 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.settings.UpdateSettingsIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.013 sec <<< FAILURE! - in io.searchbox.indices.settings.UpdateSettingsIntegrationTest
+io.searchbox.indices.settings.UpdateSettingsIntegrationTest  Time elapsed: 0.011 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.PutTemplateIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.012 sec <<< FAILURE! - in io.searchbox.indices.PutTemplateIntegrationTest
+io.searchbox.indices.PutTemplateIntegrationTest  Time elapsed: 0.012 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.aliases.GetAliasesIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE! - in io.searchbox.indices.aliases.GetAliasesIntegrationTest
+io.searchbox.indices.aliases.GetAliasesIntegrationTest  Time elapsed: 0.008 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.aliases.ModifyAliasesIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE! - in io.searchbox.indices.aliases.ModifyAliasesIntegrationTest
+io.searchbox.indices.aliases.ModifyAliasesIntegrationTest  Time elapsed: 0.006 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.AnalyzeIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.indices.AnalyzeIntegrationTest
+io.searchbox.indices.AnalyzeIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.GetMappingIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE! - in io.searchbox.indices.GetMappingIntegrationTest
+io.searchbox.indices.GetMappingIntegrationTest  Time elapsed: 0.009 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.OpenIndexIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE! - in io.searchbox.indices.OpenIndexIntegrationTest
+io.searchbox.indices.OpenIndexIntegrationTest  Time elapsed: 0.009 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.ForceMergeIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE! - in io.searchbox.indices.ForceMergeIntegrationTest
+io.searchbox.indices.ForceMergeIntegrationTest  Time elapsed: 0.013 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.CloseIndexIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE! - in io.searchbox.indices.CloseIndexIntegrationTest
+io.searchbox.indices.CloseIndexIntegrationTest  Time elapsed: 0.014 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.reindex.ReindexIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE! - in io.searchbox.indices.reindex.ReindexIntegrationTest
+io.searchbox.indices.reindex.ReindexIntegrationTest  Time elapsed: 0.014 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.indices.RefreshIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.008 sec <<< FAILURE! - in io.searchbox.indices.RefreshIntegrationTest
+io.searchbox.indices.RefreshIntegrationTest  Time elapsed: 0.008 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.cluster.NodesHotThreadsIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE! - in io.searchbox.cluster.NodesHotThreadsIntegrationTest
+io.searchbox.cluster.NodesHotThreadsIntegrationTest  Time elapsed: 0.006 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.cluster.GetSettingsIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE! - in io.searchbox.cluster.GetSettingsIntegrationTest
+io.searchbox.cluster.GetSettingsIntegrationTest  Time elapsed: 0.009 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.cluster.NodesInfoIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.007 sec <<< FAILURE! - in io.searchbox.cluster.NodesInfoIntegrationTest
+io.searchbox.cluster.NodesInfoIntegrationTest  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.cluster.NodesStatsIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.007 sec <<< FAILURE! - in io.searchbox.cluster.NodesStatsIntegrationTest
+io.searchbox.cluster.NodesStatsIntegrationTest  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.cluster.UpdateSettingsIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.cluster.UpdateSettingsIntegrationTest
+io.searchbox.cluster.UpdateSettingsIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.cluster.HealthIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.007 sec <<< FAILURE! - in io.searchbox.cluster.HealthIntegrationTest
+io.searchbox.cluster.HealthIntegrationTest  Time elapsed: 0.006 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.cluster.RerouteIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.008 sec <<< FAILURE! - in io.searchbox.cluster.RerouteIntegrationTest
+io.searchbox.cluster.RerouteIntegrationTest  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.cluster.StateIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.008 sec <<< FAILURE! - in io.searchbox.cluster.StateIntegrationTest
+io.searchbox.cluster.StateIntegrationTest  Time elapsed: 0.008 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.GetIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.015 sec <<< FAILURE! - in io.searchbox.core.GetIntegrationTest
+io.searchbox.core.GetIntegrationTest  Time elapsed: 0.015 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.ValidateIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE! - in io.searchbox.core.ValidateIntegrationTest
+io.searchbox.core.ValidateIntegrationTest  Time elapsed: 0.014 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.IndexIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.011 sec <<< FAILURE! - in io.searchbox.core.IndexIntegrationTest
+io.searchbox.core.IndexIntegrationTest  Time elapsed: 0.011 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.UpdateIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.011 sec <<< FAILURE! - in io.searchbox.core.UpdateIntegrationTest
+io.searchbox.core.UpdateIntegrationTest  Time elapsed: 0.011 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.SearchScrollIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.007 sec <<< FAILURE! - in io.searchbox.core.SearchScrollIntegrationTest
+io.searchbox.core.SearchScrollIntegrationTest  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.PercolateIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.core.PercolateIntegrationTest
+io.searchbox.core.PercolateIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.ExplainIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.core.ExplainIntegrationTest
+io.searchbox.core.ExplainIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.sort.SortIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.011 sec <<< FAILURE! - in io.searchbox.core.search.sort.SortIntegrationTest
+io.searchbox.core.search.sort.SortIntegrationTest  Time elapsed: 0.01 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.StatsAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.StatsAggregationIntegrationTest
+io.searchbox.core.search.aggregation.StatsAggregationIntegrationTest  Time elapsed: 0.014 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.DateHistogramAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.008 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.DateHistogramAggregationIntegrationTest
+io.searchbox.core.search.aggregation.DateHistogramAggregationIntegrationTest  Time elapsed: 0.008 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.Ipv4RangeAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.008 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.Ipv4RangeAggregationIntegrationTest
+io.searchbox.core.search.aggregation.Ipv4RangeAggregationIntegrationTest  Time elapsed: 0.008 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.HistogramAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.HistogramAggregationIntegrationTest
+io.searchbox.core.search.aggregation.HistogramAggregationIntegrationTest  Time elapsed: 0.009 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.PercentileRanksAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.015 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.PercentileRanksAggregationIntegrationTest
+io.searchbox.core.search.aggregation.PercentileRanksAggregationIntegrationTest  Time elapsed: 0.014 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.ScriptedMetricAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.01 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.ScriptedMetricAggregationIntegrationTest
+io.searchbox.core.search.aggregation.ScriptedMetricAggregationIntegrationTest  Time elapsed: 0.01 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.TermsAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.TermsAggregationIntegrationTest
+io.searchbox.core.search.aggregation.TermsAggregationIntegrationTest  Time elapsed: 0.009 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.FiltersAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.FiltersAggregationIntegrationTest
+io.searchbox.core.search.aggregation.FiltersAggregationIntegrationTest  Time elapsed: 0.014 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.ValueCountAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.ValueCountAggregationIntegrationTest
+io.searchbox.core.search.aggregation.ValueCountAggregationIntegrationTest  Time elapsed: 0.009 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.CardinalityAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.012 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.CardinalityAggregationIntegrationTest
+io.searchbox.core.search.aggregation.CardinalityAggregationIntegrationTest  Time elapsed: 0.012 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.GeoBoundsAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.GeoBoundsAggregationIntegrationTest
+io.searchbox.core.search.aggregation.GeoBoundsAggregationIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.ExtendedStatsAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.ExtendedStatsAggregationIntegrationTest
+io.searchbox.core.search.aggregation.ExtendedStatsAggregationIntegrationTest  Time elapsed: 0.006 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.FilterAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.FilterAggregationIntegrationTest
+io.searchbox.core.search.aggregation.FilterAggregationIntegrationTest  Time elapsed: 0.004 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.DateRangeAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.DateRangeAggregationIntegrationTest
+io.searchbox.core.search.aggregation.DateRangeAggregationIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.GeoDistanceAggregationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.GeoDistanceAggregationTest
+io.searchbox.core.search.aggregation.GeoDistanceAggregationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.RangeAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.RangeAggregationIntegrationTest
+io.searchbox.core.search.aggregation.RangeAggregationIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.MaxAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.MaxAggregationIntegrationTest
+io.searchbox.core.search.aggregation.MaxAggregationIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.PercentilesAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.PercentilesAggregationIntegrationTest
+io.searchbox.core.search.aggregation.PercentilesAggregationIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.AvgAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.AvgAggregationIntegrationTest
+io.searchbox.core.search.aggregation.AvgAggregationIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.SumAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.SumAggregationIntegrationTest
+io.searchbox.core.search.aggregation.SumAggregationIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.SignificantTermsAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.01 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.SignificantTermsAggregationIntegrationTest
+io.searchbox.core.search.aggregation.SignificantTermsAggregationIntegrationTest  Time elapsed: 0.01 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.GeoHashGridAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.GeoHashGridAggregationIntegrationTest
+io.searchbox.core.search.aggregation.GeoHashGridAggregationIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.MinAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.008 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.MinAggregationIntegrationTest
+io.searchbox.core.search.aggregation.MinAggregationIntegrationTest  Time elapsed: 0.008 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.search.aggregation.MissingAggregationIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.007 sec <<< FAILURE! - in io.searchbox.core.search.aggregation.MissingAggregationIntegrationTest
+io.searchbox.core.search.aggregation.MissingAggregationIntegrationTest  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.SearchIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.011 sec <<< FAILURE! - in io.searchbox.core.SearchIntegrationTest
+io.searchbox.core.SearchIntegrationTest  Time elapsed: 0.011 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.MultiSearchIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE! - in io.searchbox.core.MultiSearchIntegrationTest
+io.searchbox.core.MultiSearchIntegrationTest  Time elapsed: 0.006 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.SearchShardsIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.007 sec <<< FAILURE! - in io.searchbox.core.SearchShardsIntegrationTest
+io.searchbox.core.SearchShardsIntegrationTest  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.DeleteIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in io.searchbox.core.DeleteIntegrationTest
+io.searchbox.core.DeleteIntegrationTest  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.CatIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.007 sec <<< FAILURE! - in io.searchbox.core.CatIntegrationTest
+io.searchbox.core.CatIntegrationTest  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.SuggestIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.015 sec <<< FAILURE! - in io.searchbox.core.SuggestIntegrationTest
+io.searchbox.core.SuggestIntegrationTest  Time elapsed: 0.015 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.BulkIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.015 sec <<< FAILURE! - in io.searchbox.core.BulkIntegrationTest
+io.searchbox.core.BulkIntegrationTest  Time elapsed: 0.015 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.DeleteByQueryIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.01 sec <<< FAILURE! - in io.searchbox.core.DeleteByQueryIntegrationTest
+io.searchbox.core.DeleteByQueryIntegrationTest  Time elapsed: 0.01 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.SearchTemplateIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE! - in io.searchbox.core.SearchTemplateIntegrationTest
+io.searchbox.core.SearchTemplateIntegrationTest  Time elapsed: 0.013 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.MultiGetIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.013 sec <<< FAILURE! - in io.searchbox.core.MultiGetIntegrationTest
+io.searchbox.core.MultiGetIntegrationTest  Time elapsed: 0.013 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+Running io.searchbox.core.CountIntegrationTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.011 sec <<< FAILURE! - in io.searchbox.core.CountIntegrationTest
+io.searchbox.core.CountIntegrationTest  Time elapsed: 0.011 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class io.searchbox.common.AbstractIntegrationTest
+
+
+Results :
+
+Tests in error:
+  JestClientFactoryIntegrationTest>ESTestCase.<clinit>:161 » Runtime can not run...
+  JestHttpClientConfiguredProxyIntegrationTest.io.searchbox.client.http.JestHttpClientConfiguredProxyIntegrationTest » NoClassDefFound
+  JestHttpClientSystemWideProxyIntegrationTest.io.searchbox.client.http.JestHttpClientSystemWideProxyIntegrationTest » NoClassDefFound
+  GetSettingsIntegrationTest.io.searchbox.cluster.GetSettingsIntegrationTest » NoClassDefFound
+  HealthIntegrationTest.io.searchbox.cluster.HealthIntegrationTest » NoClassDefFound
+  NodesHotThreadsIntegrationTest.io.searchbox.cluster.NodesHotThreadsIntegrationTest » NoClassDefFound
+  NodesInfoIntegrationTest.io.searchbox.cluster.NodesInfoIntegrationTest » NoClassDefFound
+  NodesStatsIntegrationTest.io.searchbox.cluster.NodesStatsIntegrationTest » NoClassDefFound
+  RerouteIntegrationTest.io.searchbox.cluster.RerouteIntegrationTest » NoClassDefFound
+  StateIntegrationTest.io.searchbox.cluster.StateIntegrationTest » NoClassDefFound
+  UpdateSettingsIntegrationTest.io.searchbox.cluster.UpdateSettingsIntegrationTest » NoClassDefFound
+  BulkIntegrationTest.io.searchbox.core.BulkIntegrationTest » NoClassDefFound Co...
+  CatIntegrationTest.io.searchbox.core.CatIntegrationTest » NoClassDefFound Coul...
+  CountIntegrationTest.io.searchbox.core.CountIntegrationTest » NoClassDefFound ...
+  DeleteByQueryIntegrationTest.io.searchbox.core.DeleteByQueryIntegrationTest » NoClassDefFound
+  DeleteIntegrationTest.io.searchbox.core.DeleteIntegrationTest » NoClassDefFound
+  ExplainIntegrationTest.io.searchbox.core.ExplainIntegrationTest » NoClassDefFound
+  GetIntegrationTest.io.searchbox.core.GetIntegrationTest » NoClassDefFound Coul...
+  IndexIntegrationTest.io.searchbox.core.IndexIntegrationTest » NoClassDefFound ...
+  MultiGetIntegrationTest.io.searchbox.core.MultiGetIntegrationTest » NoClassDefFound
+  MultiSearchIntegrationTest.io.searchbox.core.MultiSearchIntegrationTest » NoClassDefFound
+  PercolateIntegrationTest.io.searchbox.core.PercolateIntegrationTest » NoClassDefFound
+  SearchIntegrationTest.io.searchbox.core.SearchIntegrationTest » NoClassDefFound
+  SearchScrollIntegrationTest.io.searchbox.core.SearchScrollIntegrationTest » NoClassDefFound
+  SearchShardsIntegrationTest.io.searchbox.core.SearchShardsIntegrationTest » NoClassDefFound
+  SearchTemplateIntegrationTest.io.searchbox.core.SearchTemplateIntegrationTest » NoClassDefFound
+  SuggestIntegrationTest.io.searchbox.core.SuggestIntegrationTest » NoClassDefFound
+  UpdateIntegrationTest.io.searchbox.core.UpdateIntegrationTest » NoClassDefFound
+  ValidateIntegrationTest.io.searchbox.core.ValidateIntegrationTest » NoClassDefFound
+  AvgAggregationIntegrationTest.io.searchbox.core.search.aggregation.AvgAggregationIntegrationTest » NoClassDefFound
+  CardinalityAggregationIntegrationTest.io.searchbox.core.search.aggregation.CardinalityAggregationIntegrationTest » NoClassDefFound
+  DateHistogramAggregationIntegrationTest.io.searchbox.core.search.aggregation.DateHistogramAggregationIntegrationTest » NoClassDefFound
+  DateRangeAggregationIntegrationTest.io.searchbox.core.search.aggregation.DateRangeAggregationIntegrationTest » NoClassDefFound
+  ExtendedStatsAggregationIntegrationTest.io.searchbox.core.search.aggregation.ExtendedStatsAggregationIntegrationTest » NoClassDefFound
+  FilterAggregationIntegrationTest.io.searchbox.core.search.aggregation.FilterAggregationIntegrationTest » NoClassDefFound
+  FiltersAggregationIntegrationTest.io.searchbox.core.search.aggregation.FiltersAggregationIntegrationTest » NoClassDefFound
+  GeoBoundsAggregationIntegrationTest.io.searchbox.core.search.aggregation.GeoBoundsAggregationIntegrationTest » NoClassDefFound
+  GeoDistanceAggregationTest.io.searchbox.core.search.aggregation.GeoDistanceAggregationTest » NoClassDefFound
+  GeoHashGridAggregationIntegrationTest.io.searchbox.core.search.aggregation.GeoHashGridAggregationIntegrationTest » NoClassDefFound
+  HistogramAggregationIntegrationTest.io.searchbox.core.search.aggregation.HistogramAggregationIntegrationTest » NoClassDefFound
+  Ipv4RangeAggregationIntegrationTest.io.searchbox.core.search.aggregation.Ipv4RangeAggregationIntegrationTest » NoClassDefFound
+  MaxAggregationIntegrationTest.io.searchbox.core.search.aggregation.MaxAggregationIntegrationTest » NoClassDefFound
+  MinAggregationIntegrationTest.io.searchbox.core.search.aggregation.MinAggregationIntegrationTest » NoClassDefFound
+  MissingAggregationIntegrationTest.io.searchbox.core.search.aggregation.MissingAggregationIntegrationTest » NoClassDefFound
+  PercentileRanksAggregationIntegrationTest.io.searchbox.core.search.aggregation.PercentileRanksAggregationIntegrationTest » NoClassDefFound
+  PercentilesAggregationIntegrationTest.io.searchbox.core.search.aggregation.PercentilesAggregationIntegrationTest » NoClassDefFound
+  RangeAggregationIntegrationTest.io.searchbox.core.search.aggregation.RangeAggregationIntegrationTest » NoClassDefFound
+  ScriptedMetricAggregationIntegrationTest.io.searchbox.core.search.aggregation.ScriptedMetricAggregationIntegrationTest » NoClassDefFound
+  SignificantTermsAggregationIntegrationTest.io.searchbox.core.search.aggregation.SignificantTermsAggregationIntegrationTest » NoClassDefFound
+  StatsAggregationIntegrationTest.io.searchbox.core.search.aggregation.StatsAggregationIntegrationTest » NoClassDefFound
+  SumAggregationIntegrationTest.io.searchbox.core.search.aggregation.SumAggregationIntegrationTest » NoClassDefFound
+  TermsAggregationIntegrationTest.io.searchbox.core.search.aggregation.TermsAggregationIntegrationTest » NoClassDefFound
+  ValueCountAggregationIntegrationTest.io.searchbox.core.search.aggregation.ValueCountAggregationIntegrationTest » NoClassDefFound
+  SortIntegrationTest.io.searchbox.core.search.sort.SortIntegrationTest » NoClassDefFound
+  AnalyzeIntegrationTest.io.searchbox.indices.AnalyzeIntegrationTest » NoClassDefFound
+  CloseIndexIntegrationTest.io.searchbox.indices.CloseIndexIntegrationTest » NoClassDefFound
+  CreateIndexIntegrationTest.io.searchbox.indices.CreateIndexIntegrationTest » NoClassDefFound
+  DeleteIndexIntegrationTest.io.searchbox.indices.DeleteIndexIntegrationTest » NoClassDefFound
+  FlushIntegrationTest.io.searchbox.indices.FlushIntegrationTest » NoClassDefFound
+  ForceMergeIntegrationTest.io.searchbox.indices.ForceMergeIntegrationTest » NoClassDefFound
+  GetMappingIntegrationTest.io.searchbox.indices.GetMappingIntegrationTest » NoClassDefFound
+  IndicesExistsIntegrationTest.io.searchbox.indices.IndicesExistsIntegrationTest » NoClassDefFound
+  OpenIndexIntegrationTest.io.searchbox.indices.OpenIndexIntegrationTest » NoClassDefFound
+  OptimizeIntegrationTest.io.searchbox.indices.OptimizeIntegrationTest » NoClassDefFound
+  PutMappingIntegrationTest.io.searchbox.indices.PutMappingIntegrationTest » NoClassDefFound
+  PutTemplateIntegrationTest.io.searchbox.indices.PutTemplateIntegrationTest » NoClassDefFound
+  RefreshIntegrationTest.io.searchbox.indices.RefreshIntegrationTest » NoClassDefFound
+  StatsIntegrationTest.io.searchbox.indices.StatsIntegrationTest » NoClassDefFound
+  GetAliasesIntegrationTest.io.searchbox.indices.aliases.GetAliasesIntegrationTest » NoClassDefFound
+  ModifyAliasesIntegrationTest.io.searchbox.indices.aliases.ModifyAliasesIntegrationTest » NoClassDefFound
+  ReindexIntegrationTest.io.searchbox.indices.reindex.ReindexIntegrationTest » NoClassDefFound
+  CreateIndexedScriptIntegrationTest.io.searchbox.indices.script.CreateIndexedScriptIntegrationTest » NoClassDefFound
+  DeleteIndexedScriptIntegrationTest.io.searchbox.indices.script.DeleteIndexedScriptIntegrationTest » NoClassDefFound
+  GetIndexedScriptIntegrationTest.io.searchbox.indices.script.GetIndexedScriptIntegrationTest » NoClassDefFound
+  GetSettingsIntegrationTest.io.searchbox.indices.settings.GetSettingsIntegrationTest » NoClassDefFound
+  UpdateSettingsIntegrationTest.io.searchbox.indices.settings.UpdateSettingsIntegrationTest » NoClassDefFound
+  TypeExistIntegrationTest.io.searchbox.indices.type.TypeExistIntegrationTest » NoClassDefFound
+
+Tests run: 102, Failures: 0, Errors: 77, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO]
+[INFO] Jest Parent POM .................................... SUCCESS [  0.056 s]
+[INFO] Jest Common Jar .................................... SUCCESS [  2.947 s]
+[INFO] Jest Apache HC Jar ................................. FAILURE [ 12.814 s]
+[INFO] Jest Android Jar ................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16.495 s
+[INFO] Finished at: 2017-04-17T13:33:59+02:00
+[INFO] Final Memory: 23M/303M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project jest: There are test failures.
+[ERROR]
+[ERROR] Please refer to /root/workspace/searchbox-io/Jest/222733122/jest/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :jest
