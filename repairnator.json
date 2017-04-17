@@ -1,14 +1,66 @@
 {
-  "bugRepo": "square/moshi",
+  "totalNumberSkippingTests": 15,
   "step-durations": {
     "CheckoutBuild": 2,
+    "": 0,
     "CloneRepository": 2,
     "ResolveDependency": 22,
     "TestProject": 23,
     "BuildProject": 37
   },
-  "buildid": 222823378,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 5,
   "repo": "square/moshi",
-  "bugCommit": "https://github.com/square/moshi/compare/7f046b19a183...03e5c5aea1ec"
+  "bugCommit": "https://github.com/square/moshi/compare/7f046b19a183...03e5c5aea1ec",
+  "failingModule": "/root/workspace/square/moshi/222823378/kotlin",
+  "buildid": 222823378,
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.IllegalArgumentException",
+    "java.lang.Exception"
+  ],
+  "totalNumberRunningTests": 611,
+  "failing-test-cases": [
+    {
+      "className": "com.squareup.moshi.KotlinJsonAdapterFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.squareup.moshi.KotlinJsonAdapterFactoryTest#testDefaultParam",
+        "com.squareup.moshi.KotlinJsonAdapterFactoryTest#testInnerOuter",
+        "com.squareup.moshi.KotlinJsonAdapterFactoryTest#test",
+        "com.squareup.moshi.KotlinJsonAdapterFactoryTest#testMissingJsonValue",
+        "com.squareup.moshi.KotlinJsonAdapterFactoryTest#testNonTransientNonConstructorProperty"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalArgumentException",
+          "failureDetail": "No property for constructor parameter ignored",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003ccom.squareup.moshi.JsonDataException\u003e but was\u003cjava.lang.IllegalArgumentException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalArgumentException",
+          "failureDetail": "No property for constructor parameter foo",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalArgumentException",
+          "failureDetail": "No property for constructor parameter x",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalArgumentException",
+          "failureDetail": "No property for constructor parameter x",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 5
+    }
+  ],
+  "bugRepo": "square/moshi"
 }
