@@ -1,14 +1,106 @@
 {
-  "bugRepo": "spring-projects/spring-data-examples",
+  "totalNumberSkippingTests": 0,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 0,
     "CloneRepository": 5,
     "ResolveDependency": 167,
     "TestProject": 22,
     "BuildProject": 269
   },
-  "buildid": 222756437,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 4,
   "repo": "spring-projects/spring-data-examples",
-  "bugCommit": "https://github.com/spring-projects/spring-data-examples/compare/b1ffd9cedeabbb41b11ffb3b1b3f0ad56b85a4d3...45f19a6c1d81ebd0fec5fe86763232f74b20720f"
+  "bugCommit": "https://github.com/spring-projects/spring-data-examples/compare/b1ffd9cedeabbb41b11ffb3b1b3f0ad56b85a4d3...45f19a6c1d81ebd0fec5fe86763232f74b20720f",
+  "failingModule": "/root/workspace/spring-projects/spring-data-examples/222756437/cassandra/example",
+  "buildid": 222756437,
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "com.datastax.driver.core.exceptions.NoHostAvailableException",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 5,
+  "failing-test-cases": [
+    {
+      "className": "example.springdata.cassandra.basic.BasicUserRepositoryTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "example.springdata.cassandra.basic.BasicUserRepositoryTests#example.springdata.cassandra.basic.BasicUserRepositoryTests"
+      ],
+      "failures": [
+        {
+          "failureName": "com.datastax.driver.core.exceptions.NoHostAvailableException",
+          "failureDetail": "All host(s) tried for query failed (tried: localhost/127.0.0.1:9042 (com.datastax.driver.core.exceptions.TransportException: [localhost/127.0.0.1:9042] Cannot connect), localhost/0:0:0:0:0:0:0:1:9042 (com.datastax.driver.core.exceptions.TransportException: [localhost/0:0:0:0:0:0:0:1:9042] Cannot connect))",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "example.springdata.cassandra.convert.ConversionIntegrationTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "example.springdata.cassandra.convert.ConversionIntegrationTests#example.springdata.cassandra.convert.ConversionIntegrationTests"
+      ],
+      "failures": [
+        {
+          "failureName": "com.datastax.driver.core.exceptions.NoHostAvailableException",
+          "failureDetail": "All host(s) tried for query failed (tried: localhost/127.0.0.1:9042 (com.datastax.driver.core.exceptions.TransportException: [localhost/127.0.0.1:9042] Cannot connect), localhost/0:0:0:0:0:0:0:1:9042 (com.datastax.driver.core.exceptions.TransportException: [localhost/0:0:0:0:0:0:0:1:9042] Cannot connect))",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "example.springdata.cassandra.udt.UserDefinedTypeIntegrationTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "example.springdata.cassandra.udt.UserDefinedTypeIntegrationTest#example.springdata.cassandra.udt.UserDefinedTypeIntegrationTest"
+      ],
+      "failures": [
+        {
+          "failureName": "com.datastax.driver.core.exceptions.NoHostAvailableException",
+          "failureDetail": "All host(s) tried for query failed (tried: localhost/127.0.0.1:9042 (com.datastax.driver.core.exceptions.TransportException: [localhost/127.0.0.1:9042] Cannot connect), localhost/0:0:0:0:0:0:0:1:9042 (com.datastax.driver.core.exceptions.TransportException: [localhost/0:0:0:0:0:0:0:1:9042] Cannot connect))",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "example.springdata.cassandra.projection.CustomerRepositoryIntegrationTest",
+      "failingMethods": [
+        "example.springdata.cassandra.projection.CustomerRepositoryIntegrationTest#example.springdata.cassandra.projection.CustomerRepositoryIntegrationTest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Cassandra daemon did not start within timeout",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "example.springdata.cassandra.basic.CassandraOperationsIntegrationTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "example.springdata.cassandra.basic.CassandraOperationsIntegrationTests#example.springdata.cassandra.basic.CassandraOperationsIntegrationTests"
+      ],
+      "failures": [
+        {
+          "failureName": "com.datastax.driver.core.exceptions.NoHostAvailableException",
+          "failureDetail": "All host(s) tried for query failed (tried: localhost/0:0:0:0:0:0:0:1:9042 (com.datastax.driver.core.exceptions.TransportException: [localhost/0:0:0:0:0:0:0:1:9042] Cannot connect), localhost/127.0.0.1:9042 (com.datastax.driver.core.exceptions.TransportException: [localhost/127.0.0.1:9042] Cannot connect))",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ],
+  "bugRepo": "spring-projects/spring-data-examples"
 }
