@@ -1,14 +1,50 @@
 {
-  "bugRepo": "apache/nifi",
+  "totalNumberSkippingTests": 64,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 9,
     "CloneRepository": 23,
     "ResolveDependency": 27,
     "TestProject": 1171,
     "BuildProject": 826
   },
-  "buildid": 222832197,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 3,
   "repo": "apache/nifi",
-  "bugCommit": "https://github.com/apache/nifi/compare/5f73ba7f2cca...edb9c644ddd7"
+  "bugCommit": "https://github.com/apache/nifi/compare/5f73ba7f2cca...edb9c644ddd7",
+  "failingModule": "/root/workspace/apache/nifi/222832197/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors",
+  "buildid": 222832197,
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.NullPointerException:"
+  ],
+  "totalNumberRunningTests": 2413,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.nifi.processors.standard.TestGetFile",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnreadableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnwritableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithInaccessibleDir"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    }
+  ],
+  "bugRepo": "apache/nifi"
 }
