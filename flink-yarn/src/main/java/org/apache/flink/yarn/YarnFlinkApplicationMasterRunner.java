@@ -47,6 +47,7 @@ import org.apache.flink.runtime.util.JvmShutdownSafeguard;
 import org.apache.flink.runtime.util.SignalHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.concurrent.Future;
 import scala.concurrent.duration.FiniteDuration;
 
 import javax.annotation.concurrent.GuardedBy;
@@ -126,7 +127,6 @@ public class YarnFlinkApplicationMasterRunner extends AbstractYarnFlinkApplicati
 
 	@Override
 	protected int runApplicationMaster(Configuration config) {
-
 		try {
 			// ---- (1) create common services
 
@@ -136,6 +136,8 @@ public class YarnFlinkApplicationMasterRunner extends AbstractYarnFlinkApplicati
 					ConfigConstants.YARN_APPLICATION_MASTER_PORT,
 					ConfigConstants.DEFAULT_YARN_JOB_MANAGER_PORT);
 
+			// to get the calculation result from rpc endpoint has been terminated.
+			Future<?> future;
 			synchronized (lock) {
 				LOG.info("Starting High Availability Services");
 				haServices = HighAvailabilityServicesUtils.createAvailableOrEmbeddedServices(config);
@@ -158,14 +160,16 @@ public class YarnFlinkApplicationMasterRunner extends AbstractYarnFlinkApplicati
 				jobManagerRunner.start();
 				LOG.debug("Job Manager Runner started");
 
+				// wait for resource manager to finish and return a value for later to get
+				future = (Future<?>) resourceManager.getTerminationFuture();
+
 				// ---- (5) start the web monitor
 				// TODO: add web monitor
 			}
+			Object result = future.value().get();
 
-			// wait for resource manager to finish
-			resourceManager.getTerminationFuture().get();
 			// everything started, we can wait until all is done or the process is killed
-			LOG.info("YARN Application Master finished");
+			LOG.info("YARN Application Master finished and the result is {}", result);
 		}
 		catch (Throwable t) {
 			// make sure that everything whatever ends up in the log
