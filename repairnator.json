@@ -1,19 +1,55 @@
 {
+  "pr-base-commit-id": "68c592ea43d30754ec07c42cf10563fe9db185ae",
+  "pr-head-commit-id": "93c6ce626781b12337e504027600753aa2c1dea0",
+  "totalNumberSkippingTests": 75,
+  "pr-remote-repo": "YolandaMDavis/nifi",
+  "error-types": [
+    "java.lang.NullPointerException:"
+  ],
+  "totalNumberFailingTests": 0,
+  "buildid": 222859152,
+  "totalNumberErroringTests": 3,
+  "is-pr": "true",
+  "totalNumberRunningTests": 2425,
+  "pr-head-commit-id-url": "https://github.com/YolandaMDavis/nifi/commit/93c6ce626781b12337e504027600753aa2c1dea0",
+  "pr-id": 1669,
+  "repo": "apache/nifi",
+  "failing-test-cases": [
+    {
+      "className": "org.apache.nifi.processors.standard.TestGetFile",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnreadableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnwritableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithInaccessibleDir"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 4,
+    "": 1,
     "CloneRepository": 26,
     "ResolveDependency": 27,
     "TestProject": 1060,
     "BuildProject": 698
   },
   "workspace": "./workspace",
-  "pr-remote-repo": "YolandaMDavis/nifi",
-  "pr-head-commit-id": "93c6ce626781b12337e504027600753aa2c1dea0",
-  "pr-id": 1669,
-  "repo": "apache/nifi",
-  "pr-head-commit-id-url": "https://github.com/YolandaMDavis/nifi/commit/93c6ce626781b12337e504027600753aa2c1dea0",
-  "is-pr": "true",
-  "buildid": 222859152,
   "pr-base-commit-id-url": "https://github.com/apache/nifi/commit/68c592ea43d30754ec07c42cf10563fe9db185ae",
-  "pr-base-commit-id": "68c592ea43d30754ec07c42cf10563fe9db185ae"
+  "failingModule": "/root/workspace/apache/nifi/222859152/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors"
 }
