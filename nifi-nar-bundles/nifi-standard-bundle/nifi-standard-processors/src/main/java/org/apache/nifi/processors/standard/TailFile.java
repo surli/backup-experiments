@@ -108,8 +108,7 @@ public class TailFile extends AbstractProcessor {
             + " In this mode, the file may not exist when starting the processor.");
     static final AllowableValue MODE_MULTIFILE = new AllowableValue("Multiple files", "Multiple files",
             "In this mode, the 'Files to tail' property accepts a regular expression and the processor will look"
-            + " for files in 'Base directory' to list the files to tail by the processor. In this mode, only the files existing"
-            + " when starting the processor will be used.");
+            + " for files in 'Base directory' to list the files to tail by the processor.");
 
     static final AllowableValue FIXED_NAME = new AllowableValue("Fixed name", "Fixed name", "With this rolling strategy, the files "
             + "where the log messages are appended have always the same name.");
