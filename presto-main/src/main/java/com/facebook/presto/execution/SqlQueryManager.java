@@ -327,6 +327,7 @@ public class SqlQueryManager
         Session session = null;
         QueryExecution queryExecution;
         Statement statement;
+        WarningSink warningSink = new SimpleWarningSink();
         try {
             session = sessionSupplier.createSession(queryId, transactionManager, accessControl, sessionPropertyManager);
             if (query.length() > maxQueryLength) {
@@ -349,7 +350,7 @@ public class SqlQueryManager
                     throw new PrestoException(NOT_SUPPORTED, "EXPLAIN ANALYZE only supported for statements that are queries");
                 }
             }
-            queryExecution = queryExecutionFactory.createQueryExecution(queryId, query, session, statement, parameters);
+            queryExecution = queryExecutionFactory.createQueryExecution(queryId, query, session, statement, parameters, warningSink);
         }
         catch (ParsingException | PrestoException | SemanticException e) {
             // This is intentionally not a method, since after the state change listener is registered
