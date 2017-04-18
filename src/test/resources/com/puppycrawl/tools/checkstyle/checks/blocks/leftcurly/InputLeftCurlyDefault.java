@@ -2,9 +2,9 @@
 // Test case file for checkstyle.
 // Created: 2001
 ////////////////////////////////////////////////////////////////////////////////
-package com.puppycrawl.tools.checkstyle.checks.blocks;
+package com.puppycrawl.tools.checkstyle.checks.blocks.leftcurly;
 
-public class InputScopeInnerInterfaces
+public class InputLeftCurlyDefault
 {
     private interface PrivateInterface
     {
@@ -23,11 +23,11 @@ public class InputScopeInnerInterfaces
     }
 
     private
-    class 
+    class
     MyClass1 {
     }
 
-    class 
+    class
     MyClass2 {
     }
 
@@ -44,7 +44,7 @@ public class InputScopeInnerInterfaces
     enum
     MyEnum {
     }
-    
+
     private
     @interface
     MyAnnotation {

@@ -2,12 +2,12 @@
 // Test case file for checkstyle.
 // Created: 2001
 ////////////////////////////////////////////////////////////////////////////////
-package com.puppycrawl.tools.checkstyle.checks.blocks;
+package com.puppycrawl.tools.checkstyle.checks.blocks.leftcurly;
 
-public class InputScopeInnerInterfaces2{
+public class InputLeftCurlyCoverageIncrease {
     // inner interfaces with different scopes
 
-    
+
     private interface PrivateInterface
     {
         public String CA = "CONST A";
@@ -45,11 +45,11 @@ public class InputScopeInnerInterfaces2{
     }
 
     private
-    class 
+    class
  MyClass1
   {
     }
-    class 
+    class
     MyClass2 {
     }
 
@@ -66,7 +66,7 @@ public class InputScopeInnerInterfaces2{
     enum
     MyEnum {
     }
-    
+
     private
     @interface
     MyAnnotation {
