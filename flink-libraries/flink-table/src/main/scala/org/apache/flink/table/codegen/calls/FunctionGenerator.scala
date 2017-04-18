@@ -33,6 +33,7 @@ import org.apache.flink.table.functions.{EventTimeExtractor, ProcTimeExtractor}
 import org.apache.flink.table.functions.utils.{ScalarSqlFunction, TableSqlFunction}
 
 import scala.collection.mutable
+import org.apache.flink.table.functions.DistinctAggregatorExtractor
 
 /**
   * Global hub for user-defined and built-in advanced SQL functions.
@@ -335,6 +336,22 @@ object FunctionGenerator {
       Some(new CallGenerator {
         override def generate(codeGenerator: CodeGenerator, operands: Seq[GeneratedExpression]) = {
           GeneratedExpression("0L", "false", "", SqlTimeTypeInfo.TIMESTAMP)
+        }
+      })
+
+      /**
+       * Temporary workaround waiting for the resolution of
+       * https://issues.apache.org/jira/browse/CALCITE-1740
+       * To support distinct on aggregation
+       */
+    case DistinctAggregatorExtractor =>
+      Some(new CallGenerator {
+        override def generate(codeGenerator: CodeGenerator, operands: Seq[GeneratedExpression]) = {
+          // the "empty" unary operator generates an equivalence between
+          // the parameter and the result of the function, making distinct
+          // a dummy function from the computation perspective
+          ScalarOperators.
+            generateUnaryArithmeticOperator("", true, resultType, operands.head)
         }
       })
 
