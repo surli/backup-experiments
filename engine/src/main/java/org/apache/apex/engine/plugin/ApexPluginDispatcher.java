@@ -18,10 +18,10 @@
  */
 package org.apache.apex.engine.plugin;
 
-import org.apache.apex.engine.api.DAGExecutionPluginContext.RegistrationType;
+import org.apache.apex.api.ApexPluginContext.EventType;
 import org.apache.hadoop.service.Service;
 
 public interface ApexPluginDispatcher extends Service
 {
-  <T> void dispatch(RegistrationType<T> registrationType, T data);
+  <T> void dispatch(EventType<T> eventType, T data);
 }

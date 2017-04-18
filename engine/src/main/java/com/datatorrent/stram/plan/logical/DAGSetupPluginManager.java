@@ -19,13 +19,21 @@
 package com.datatorrent.stram.plan.logical;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 
+import org.apache.apex.api.ApexPluginContext;
 import org.apache.apex.api.DAGSetupPlugin;
 import org.apache.apex.engine.plugin.loaders.PropertyBasedPluginLocator;
 import org.apache.hadoop.conf.Configuration;
+
+import com.google.common.collect.Maps;
+
+import com.datatorrent.api.Attribute;
+import com.datatorrent.api.DAG;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -33,11 +41,17 @@ public class DAGSetupPluginManager
 {
   private static final Logger LOG = getLogger(DAGSetupPluginManager.class);
 
+  // Internal event types
+  public static final ApexPluginContext.EventType<DAG> SETUP = new ApexPluginContext.EventType<>();
+  public static final ApexPluginContext.EventType<Void> DESTROY = new ApexPluginContext.EventType<>();
+
   private final transient List<DAGSetupPlugin> plugins = new ArrayList<>();
   private Configuration conf;
 
   public static final String DAGSETUP_PLUGINS_CONF_KEY = "apex.plugin.dag.setup";
-  private DAGSetupPlugin.DAGSetupPluginContext contex;
+  private DAGSetupPlugin.DAGSetupPluginContext context;
+
+  private Map<ApexPluginContext.EventType, List<ApexPluginContext.Handler>> eventHandlers = Maps.newHashMap();
 
   private void loadVisitors(Configuration conf)
   {
@@ -50,56 +64,80 @@ public class DAGSetupPluginManager
     this.plugins.addAll(locator.discoverPlugins(conf));
   }
 
-  public void setup(DAGSetupPlugin.DAGSetupPluginContext context)
+  private class DefaultDAGSetupPluginContext implements DAGSetupPlugin.DAGSetupPluginContext
   {
-    this.contex = context;
-    for (DAGSetupPlugin plugin : plugins) {
-      plugin.setup(context);
+    private final DAG dag;
+    private final Configuration conf;
+
+    public DefaultDAGSetupPluginContext(DAG dag, Configuration conf)
+    {
+      this.dag = dag;
+      this.conf = conf;
+    }
+
+    @Override
+    public <T> void register(EventType<T> type, Handler<T> handler)
+    {
+      List<Handler> handlers = eventHandlers.get(type);
+      if (handlers == null) {
+        handlers = new ArrayList<>();
+        eventHandlers.put(type, handlers);
+      }
+      handlers.add(handler);
+    }
+
+    public DAG getDAG()
+    {
+      return dag;
+    }
+
+    public Configuration getConfiguration()
+    {
+      return conf;
+    }
+
+    @Override
+    public Attribute.AttributeMap getAttributes()
+    {
+      throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public <T> T getValue(Attribute<T> key)
+    {
+      throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void setCounters(Object counters)
+    {
+      throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void sendMetrics(Collection<String> metricNames)
+    {
+      throw new UnsupportedOperationException("Not supported yet.");
     }
   }
 
-  public enum DispatchType
+  public <T> void dispatch(ApexPluginContext.EventType<T> type, T data)
   {
-    SETUP,
-    PRE_POPULATE,
-    POST_POPULATE,
-    PRE_CONFIGURE,
-    POST_CONFIGURE,
-    PRE_VALIDATE,
-    POST_VALIDATE,
-    TEARDOWN
-  }
-
-  public void dispatch(DispatchType type, DAGSetupPlugin.DAGSetupPluginContext context)
-  {
-    for (DAGSetupPlugin plugin : plugins) {
-      switch (type) {
-        case SETUP:
+    if (type == SETUP) {
+      context = new DefaultDAGSetupPluginContext((DAG)data, conf);
+    }
+    if ((type == SETUP) || (type == DESTROY)) {
+      for (DAGSetupPlugin plugin : plugins) {
+        if (type == SETUP) {
           plugin.setup(context);
-          break;
-        case PRE_POPULATE:
-          plugin.prePopulateDAG();
-          break;
-        case POST_POPULATE:
-          plugin.postPopulateDAG();
-          break;
-        case PRE_CONFIGURE:
-          plugin.preConfigureDAG();
-          break;
-        case POST_CONFIGURE:
-          plugin.postValidateDAG();
-          break;
-        case PRE_VALIDATE:
-          plugin.preValidateDAG();
-          break;
-        case POST_VALIDATE:
-          plugin.postValidateDAG();
-          break;
-        case TEARDOWN:
+        } else if (type == DESTROY) {
           plugin.teardown();
-          break;
-        default:
-          throw new UnsupportedOperationException("Not implemented ");
+        }
+      }
+    } else {
+      List<ApexPluginContext.Handler> handlers = eventHandlers.get(type);
+      for (ApexPluginContext.Handler handler : handlers) {
+        handler.handle(type, data);
       }
     }
   }

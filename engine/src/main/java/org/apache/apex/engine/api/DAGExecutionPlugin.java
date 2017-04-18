@@ -25,7 +25,7 @@ import com.datatorrent.api.Component;
 /**
  * An Apex plugin is a user code which runs inside Stram. The interaction
  * between plugin and Stram is managed by DAGExecutionPluginContext. Plugin can register to handle event in interest
- * with callback handler using ${@link DAGExecutionPluginContext#register(DAGExecutionPluginContext.RegistrationType, DAGExecutionPluginContext.Handler)}
+ * with callback handler using ${@link DAGExecutionPluginContext#register(ApexPluginContext.EventType, DAGExecutionPluginContext.Handler)}
  *
  * Following events are supported
  * <ul>

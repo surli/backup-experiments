@@ -28,8 +28,8 @@ import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.apache.apex.api.ApexPluginContext.EventType;
 import org.apache.apex.engine.api.DAGExecutionPluginContext.Handler;
-import org.apache.apex.engine.api.DAGExecutionPluginContext.RegistrationType;
 import org.apache.apex.engine.api.PluginLocator;
 import org.apache.hadoop.conf.Configuration;
 
@@ -56,10 +56,10 @@ public class DefaultApexPluginDispatcher extends ApexPluginManager implements Ap
   }
 
   @Override
-  public <T> void dispatch(RegistrationType<T> registrationType, T data)
+  public <T> void dispatch(EventType<T> eventType, T data)
   {
     if (executorService != null) {
-      executorService.submit(new ProcessEventTask<>(registrationType, data));
+      executorService.submit(new ProcessEventTask<>(eventType, data));
     }
   }
 
@@ -100,12 +100,12 @@ public class DefaultApexPluginDispatcher extends ApexPluginManager implements Ap
 
   private class ProcessEventTask<T> implements Runnable
   {
-    private final RegistrationType<T> registrationType;
+    private final EventType<T> eventType;
     private final T data;
 
-    public ProcessEventTask(RegistrationType<T> type, T data)
+    public ProcessEventTask(EventType<T> type, T data)
     {
-      this.registrationType = type;
+      this.eventType = type;
       this.data = data;
     }
 
@@ -113,9 +113,9 @@ public class DefaultApexPluginDispatcher extends ApexPluginManager implements Ap
     public void run()
     {
       for (final PluginInfo pInfo : pluginInfoMap.values()) {
-        final Handler<T> handler = pInfo.get(registrationType);
+        final Handler<T> handler = pInfo.get(eventType);
         if (handler != null) {
-          handler.handle(data);
+          handler.handle(eventType, data);
         }
       }
     }

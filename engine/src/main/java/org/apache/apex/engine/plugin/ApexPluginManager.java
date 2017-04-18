@@ -28,9 +28,9 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.apache.apex.api.ApexPluginContext.EventType;
 import org.apache.apex.engine.api.DAGExecutionPlugin;
 import org.apache.apex.engine.api.DAGExecutionPluginContext.Handler;
-import org.apache.apex.engine.api.DAGExecutionPluginContext.RegistrationType;
 import org.apache.apex.engine.api.PluginLocator;
 import org.apache.commons.digester.plugins.PluginContext;
 import org.apache.hadoop.conf.Configuration;
@@ -129,16 +129,16 @@ public abstract class ApexPluginManager extends AbstractService
   class PluginInfo
   {
     private final DAGExecutionPlugin plugin;
-    private final Map<RegistrationType<?>, Handler<?>> registrationMap = new HashMap<>();
+    private final Map<EventType<?>, Handler<?>> registrationMap = new HashMap<>();
 
-    <T> void put(RegistrationType<T> registrationType, Handler<T> handler)
+    <T> void put(EventType<T> eventType, Handler<T> handler)
     {
-      registrationMap.put(registrationType, handler);
+      registrationMap.put(eventType, handler);
     }
 
-    <T> Handler<T> get(RegistrationType<T> registrationType)
+    <T> Handler<T> get(EventType<T> eventType)
     {
-      return (Handler<T>)registrationMap.get(registrationType);
+      return (Handler<T>)registrationMap.get(eventType);
     }
 
     public PluginInfo(DAGExecutionPlugin plugin)
@@ -162,7 +162,7 @@ public abstract class ApexPluginManager extends AbstractService
     return pInfo;
   }
 
-  public <T> void register(RegistrationType<T> type, Handler<T> handler, DAGExecutionPlugin owner)
+  public <T> void register(EventType<T> type, Handler<T> handler, DAGExecutionPlugin owner)
   {
     PluginInfo pInfo = getPluginInfo(owner);
     pInfo.put(type, handler);
@@ -183,7 +183,7 @@ public abstract class ApexPluginManager extends AbstractService
     }
 
     @Override
-    public <T> void register(RegistrationType<T> type, Handler<T> handler)
+    public <T> void register(EventType<T> type, Handler<T> handler)
     {
       ApexPluginManager.this.register(type, handler, owner);
     }

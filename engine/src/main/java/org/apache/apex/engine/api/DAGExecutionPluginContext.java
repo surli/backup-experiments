@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
+import org.apache.apex.api.ApexPluginContext;
 import org.apache.hadoop.classification.InterfaceStability;
 import org.apache.hadoop.conf.Configuration;
 
@@ -38,7 +39,7 @@ import com.datatorrent.stram.webapp.LogicalOperatorInfo;
 /**
  * An Apex plugin is a user code which runs inside Stram. The interaction
  * between plugin and Stram is managed by DAGExecutionPluginContext. Plugin can register to handle event in interest
- * with callback handler using ${@link DAGExecutionPluginContext#register(DAGExecutionPluginContext.RegistrationType, DAGExecutionPluginContext.Handler)}
+ * with callback handler using ${@link DAGExecutionPluginContext#register(ApexPluginContext.EventType, DAGExecutionPluginContext.Handler)}
  *
  * Following events are supported
  * <ul>
@@ -54,19 +55,16 @@ import com.datatorrent.stram.webapp.LogicalOperatorInfo;
 @InterfaceStability.Evolving
 public interface DAGExecutionPluginContext extends Context
 {
-  class RegistrationType<T>
-  {
-  }
 
-  RegistrationType<StreamingContainerUmbilicalProtocol.ContainerHeartbeat> HEARTBEAT = new RegistrationType<>();
-  RegistrationType<StramEvent> STRAM_EVENT = new RegistrationType<>();
-  RegistrationType<Long> COMMIT_EVENT = new RegistrationType<>();
+  ApexPluginContext.EventType<StreamingContainerUmbilicalProtocol.ContainerHeartbeat> HEARTBEAT = new ApexPluginContext.EventType<>();
+  ApexPluginContext.EventType<StramEvent> STRAM_EVENT = new ApexPluginContext.EventType<>();
+  ApexPluginContext.EventType<Long> COMMIT_EVENT = new ApexPluginContext.EventType<>();
 
-  <T> void register(RegistrationType<T> type, Handler<T> handler);
+  <T> void register(ApexPluginContext.EventType<T> type, Handler<T> handler);
 
   interface Handler<T>
   {
-    void handle(T data);
+    void handle(ApexPluginContext.EventType<T> type, T data);
   }
 
   StramAppContext getApplicationContext();

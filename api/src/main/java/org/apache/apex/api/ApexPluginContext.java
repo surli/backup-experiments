@@ -26,4 +26,14 @@ import com.datatorrent.api.Context;
  */
 public interface ApexPluginContext extends Context
 {
+  class EventType<T>
+  {
+  }
+
+  <T> void register(ApexPluginContext.EventType<T> type, Handler<T> handler);
+
+  interface Handler<T>
+  {
+    void handle(EventType<T> type, T data);
+  }
 }

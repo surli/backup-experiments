@@ -33,43 +33,7 @@ public class BaseDAGSetupPlugin implements DAGSetupPlugin
   }
 
   @Override
-  public void prePopulateDAG()
-  {
-
-  }
-
-  @Override
   public void teardown()
-  {
-
-  }
-
-  @Override
-  public void postPopulateDAG()
-  {
-
-  }
-
-  @Override
-  public void preConfigureDAG()
-  {
-
-  }
-
-  @Override
-  public void postConfigureDAG()
-  {
-
-  }
-
-  @Override
-  public void preValidateDAG()
-  {
-
-  }
-
-  @Override
-  public void postValidateDAG()
   {
 
   }

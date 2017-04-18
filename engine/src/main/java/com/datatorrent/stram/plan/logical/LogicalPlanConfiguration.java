@@ -86,15 +86,6 @@ import com.datatorrent.stram.plan.logical.LogicalPlan.OutputPortMeta;
 import com.datatorrent.stram.plan.logical.LogicalPlan.StreamMeta;
 import com.datatorrent.stram.util.ObjectMapperFactory;
 
-import static com.datatorrent.stram.plan.logical.DAGSetupPluginManager.DispatchType.POST_CONFIGURE;
-import static com.datatorrent.stram.plan.logical.DAGSetupPluginManager.DispatchType.POST_POPULATE;
-import static com.datatorrent.stram.plan.logical.DAGSetupPluginManager.DispatchType.POST_VALIDATE;
-import static com.datatorrent.stram.plan.logical.DAGSetupPluginManager.DispatchType.PRE_CONFIGURE;
-import static com.datatorrent.stram.plan.logical.DAGSetupPluginManager.DispatchType.PRE_POPULATE;
-import static com.datatorrent.stram.plan.logical.DAGSetupPluginManager.DispatchType.PRE_VALIDATE;
-import static com.datatorrent.stram.plan.logical.DAGSetupPluginManager.DispatchType.SETUP;
-import static com.datatorrent.stram.plan.logical.DAGSetupPluginManager.DispatchType.TEARDOWN;
-
 /**
  *
  * Builder for the DAG logical representation of operators and streams from properties.<p>
@@ -2076,19 +2067,18 @@ public class LogicalPlanConfiguration
   private LogicalPlan populateDAGAndValidate(LogicalPlanConfiguration tb, String appName)
   {
     LogicalPlan dag = new LogicalPlan();
-    DAGSetupPluginContext context = new DAGSetupPluginContext(dag, this.conf);
-    pluginManager.dispatch(SETUP, context);
-    pluginManager.dispatch(PRE_POPULATE, context);
+    pluginManager.dispatch(DAGSetupPluginManager.SETUP, dag);
+    pluginManager.dispatch(DAGSetupPluginContext.PRE_POPULATE_DAG, null);
     tb.populateDAG(dag);
     // configure with embedded settings
     tb.prepareDAG(dag, null, appName);
-    pluginManager.dispatch(POST_POPULATE, context);
+    pluginManager.dispatch(DAGSetupPluginContext.POST_POPULATE_DAG, null);
     // configure with external settings
     prepareDAG(dag, null, appName);
-    pluginManager.dispatch(PRE_VALIDATE, context);
+    pluginManager.dispatch(DAGSetupPluginContext.PRE_VALIDATE_DAG, null);
     dag.validate();
-    pluginManager.dispatch(POST_VALIDATE, context);
-    pluginManager.dispatch(TEARDOWN, context);
+    pluginManager.dispatch(DAGSetupPluginContext.POST_VALIDATE_DAG, null);
+    pluginManager.dispatch(DAGSetupPluginManager.DESTROY, null);
     return dag;
   }
 
@@ -2118,13 +2108,12 @@ public class LogicalPlanConfiguration
   public LogicalPlan createFromStreamingApplication(StreamingApplication app, String appName)
   {
     LogicalPlan dag = new LogicalPlan();
-    DAGSetupPluginContext context = new DAGSetupPluginContext(dag, this.conf);
-    pluginManager.dispatch(SETUP, context);
+    pluginManager.dispatch(DAGSetupPluginManager.SETUP, dag);
     prepareDAG(dag, app, appName);
-    pluginManager.dispatch(PRE_VALIDATE, context);
+    pluginManager.dispatch(DAGSetupPluginContext.PRE_VALIDATE_DAG, null);
     dag.validate();
-    pluginManager.dispatch(POST_VALIDATE, context);
-    pluginManager.dispatch(TEARDOWN, context);
+    pluginManager.dispatch(DAGSetupPluginContext.POST_VALIDATE_DAG, null);
+    pluginManager.dispatch(DAGSetupPluginManager.DESTROY, null);
     return dag;
   }
 
@@ -2256,14 +2245,13 @@ public class LogicalPlanConfiguration
     // EVENTUALLY to be replaced by variable enabled configuration in the demo where the attribute below is used
     String connectAddress = conf.get(KEY_GATEWAY_CONNECT_ADDRESS);
     dag.setAttribute(Context.DAGContext.GATEWAY_CONNECT_ADDRESS, connectAddress == null ? conf.get(GATEWAY_LISTEN_ADDRESS) : connectAddress);
-    DAGSetupPluginContext context = new DAGSetupPluginContext(dag, this.conf);
+    pluginManager.dispatch(DAGSetupPluginManager.SETUP, dag);
     if (app != null) {
-      pluginManager.dispatch(SETUP, context);
-      pluginManager.dispatch(PRE_POPULATE, context);
+      pluginManager.dispatch(DAGSetupPluginContext.PRE_POPULATE_DAG, null);
       app.populateDAG(dag, conf);
-      pluginManager.dispatch(POST_POPULATE, context);
+      pluginManager.dispatch(DAGSetupPluginContext.POST_POPULATE_DAG, null);
     }
-    pluginManager.dispatch(PRE_CONFIGURE, context);
+    pluginManager.dispatch(DAGSetupPluginContext.PRE_CONFIGURE_DAG, null);
     String appAlias = getAppAlias(name);
     String appName = appAlias == null ? name : appAlias;
     List<AppConf> appConfs = stramConf.getMatchingChildConf(appName, StramElement.APPLICATION);
@@ -2279,7 +2267,8 @@ public class LogicalPlanConfiguration
     // inject external operator configuration
     setOperatorConfiguration(dag, appConfs, appName);
     setStreamConfiguration(dag, appConfs, appName);
-    pluginManager.dispatch(POST_CONFIGURE, context);
+    pluginManager.dispatch(DAGSetupPluginContext.POST_CONFIGURE_DAG, null);
+    pluginManager.dispatch(DAGSetupPluginManager.DESTROY, null);
   }
 
   private void flattenDAG(LogicalPlan dag, Configuration conf)

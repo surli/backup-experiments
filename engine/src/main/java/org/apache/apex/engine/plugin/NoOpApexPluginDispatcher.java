@@ -18,7 +18,7 @@
  */
 package org.apache.apex.engine.plugin;
 
-import org.apache.apex.engine.api.DAGExecutionPluginContext.RegistrationType;
+import org.apache.apex.api.ApexPluginContext.EventType;
 import org.apache.hadoop.service.AbstractService;
 
 public class NoOpApexPluginDispatcher extends AbstractService implements ApexPluginDispatcher
@@ -29,7 +29,7 @@ public class NoOpApexPluginDispatcher extends AbstractService implements ApexPlu
   }
 
   @Override
-  public <T> void dispatch(RegistrationType<T> registrationType, T data)
+  public <T> void dispatch(EventType<T> eventType, T data)
   {
 
   }

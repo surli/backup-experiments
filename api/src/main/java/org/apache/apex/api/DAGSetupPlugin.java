@@ -19,12 +19,10 @@
 package org.apache.apex.api;
 
 import java.io.Serializable;
-import java.util.Collection;
 
 import org.apache.hadoop.classification.InterfaceStability;
 import org.apache.hadoop.conf.Configuration;
 
-import com.datatorrent.api.Attribute;
 import com.datatorrent.api.DAG;
 
 /**
@@ -43,93 +41,53 @@ import com.datatorrent.api.DAG;
 @InterfaceStability.Evolving
 public interface DAGSetupPlugin extends ApexPlugin<DAGSetupPlugin.DAGSetupPluginContext>, Serializable
 {
-
-  /**
-   * This method is called before platform adds operators and streams in the DAG. i.e this method
-   * will get called just before {@link com.datatorrent.api.StreamingApplication#populateDAG(DAG, Configuration)}
-   *
-   * For Application specified using property and json file format, this method will get called
-   * before platform adds operators and streams in the DAG as per specification in the file.
-   */
-  void prePopulateDAG();
-
-  /**
-   * This method is called after platform adds operators and streams in the DAG. i.e this method
-   * will get called just after {@link com.datatorrent.api.StreamingApplication#populateDAG(DAG, Configuration)}
-   * in case application is specified in java.
-   *
-   * For Application specified using property and json file format, this method will get called
-   * after platform has added operators and streams in the DAG as per specification in the file.
-   */
-  void postPopulateDAG();
-
-  /**
-   * This is method is called before DAG is configured, i.e operator and application
-   * properties/attributes are injected from configuration files.
-   */
-  void preConfigureDAG();
-
-  /**
-   * This is method is called after DAG is configured, i.e operator and application
-   * properties/attributes are injected from configuration files.
-   */
-  void postConfigureDAG();
-
-  /**
-   * This method is called just before dag is validated before final job submission.
-   */
-  void preValidateDAG();
-
-  /**
-   * This method is called after dag is validated. If plugin makes in incompatible changes
-   * to the DAG at this stage, then application may get launched incorrectly or application
-   * launch may fail.
-   */
-  void postValidateDAG();
-
-  class DAGSetupPluginContext implements ApexPluginContext
+  interface DAGSetupPluginContext extends ApexPluginContext
   {
-    private final DAG dag;
-    private final Configuration conf;
+    /**
+     * This event is sent before platform adds operators and streams in the DAG. i.e this method
+     * will get called just before {@link com.datatorrent.api.StreamingApplication#populateDAG(DAG, Configuration)}
+     *
+     * For Application specified using property and json file format, this will be sent
+     * before platform adds operators and streams in the DAG as per specification in the file.
+     */
+    EventType<Void> PRE_POPULATE_DAG = new EventType<>();
 
-    public DAGSetupPluginContext(DAG dag, Configuration conf)
-    {
-      this.dag = dag;
-      this.conf = conf;
-    }
+    /**
+     * This event is sent after platform adds operators and streams in the DAG. i.e this method
+     * will get called just after {@link com.datatorrent.api.StreamingApplication#populateDAG(DAG, Configuration)}
+     * in case application is specified in java.
+     *
+     * For Application specified using property and json file format, this will be sent
+     * after platform has added operators and streams in the DAG as per specification in the file.
+     */
+    EventType<Void> POST_POPULATE_DAG = new EventType<>();
 
-    public DAG getDAG()
-    {
-      return dag;
-    }
+    /**
+     * This event is sent before DAG is configured, i.e operator and application
+     * properties/attributes are injected from configuration files.
+     */
+    EventType<Void> PRE_CONFIGURE_DAG = new EventType<>();
 
-    public Configuration getConfiguration()
-    {
-      return conf;
-    }
+    /**
+     * This event is sent after DAG is configured, i.e operator and application
+     * properties/attributes are injected from configuration files.
+     */
+    EventType<Void> POST_CONFIGURE_DAG = new EventType<>();
 
-    @Override
-    public Attribute.AttributeMap getAttributes()
-    {
-      throw new UnsupportedOperationException("Not supported yet.");
-    }
+    /**
+     * This event is sent just before dag is validated before final job submission.
+     */
+    EventType<Void> PRE_VALIDATE_DAG = new EventType<>();
 
-    @Override
-    public <T> T getValue(Attribute<T> key)
-    {
-      throw new UnsupportedOperationException("Not supported yet.");
-    }
+    /**
+     * This event is sent after dag is validated. If plugin makes in incompatible changes
+     * to the DAG at this stage, then application may get launched incorrectly or application
+     * launch may fail.
+     */
+    EventType<Void> POST_VALIDATE_DAG = new EventType<>();
 
-    @Override
-    public void setCounters(Object counters)
-    {
-      throw new UnsupportedOperationException("Not supported yet.");
-    }
+    DAG getDAG();
 
-    @Override
-    public void sendMetrics(Collection<String> metricNames)
-    {
-      throw new UnsupportedOperationException("Not supported yet.");
-    }
+    Configuration getConfiguration();
   }
 }

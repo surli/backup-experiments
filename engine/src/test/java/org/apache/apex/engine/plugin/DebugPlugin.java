@@ -22,6 +22,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.apache.apex.api.ApexPluginContext;
 import org.apache.apex.engine.api.DAGExecutionPlugin;
 import org.apache.apex.engine.api.DAGExecutionPluginContext;
 import org.apache.apex.engine.api.DAGExecutionPluginContext.Handler;
@@ -47,7 +48,7 @@ public class DebugPlugin implements DAGExecutionPlugin
     context.register(STRAM_EVENT, new Handler<StramEvent>()
     {
       @Override
-      public void handle(StramEvent stramEvent)
+      public void handle(ApexPluginContext.EventType type, StramEvent stramEvent)
       {
         lock();
         eventCount++;
@@ -59,7 +60,7 @@ public class DebugPlugin implements DAGExecutionPlugin
     context.register(HEARTBEAT, new Handler<StreamingContainerUmbilicalProtocol.ContainerHeartbeat>()
     {
       @Override
-      public void handle(StreamingContainerUmbilicalProtocol.ContainerHeartbeat heartbeat)
+      public void handle(ApexPluginContext.EventType type, StreamingContainerUmbilicalProtocol.ContainerHeartbeat heartbeat)
       {
         lock();
         heartbeatCount++;
@@ -71,7 +72,7 @@ public class DebugPlugin implements DAGExecutionPlugin
     context.register(COMMIT_EVENT, new Handler<Long>()
     {
       @Override
-      public void handle(Long aLong)
+      public void handle(ApexPluginContext.EventType type, Long aLong)
       {
         lock();
         commitCount++;
