@@ -1,14 +1,105 @@
 {
-  "bugRepo": "jamesagnew/hapi-fhir",
+  "totalNumberSkippingTests": 6,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 0,
     "CloneRepository": 143,
     "ResolveDependency": 102,
     "TestProject": 206,
     "BuildProject": 238
   },
-  "buildid": 222941724,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 1,
   "repo": "jamesagnew/hapi-fhir",
-  "bugCommit": "https://github.com/jamesagnew/hapi-fhir/compare/edff92f88441...c66e147ec8d5"
+  "bugCommit": "https://github.com/jamesagnew/hapi-fhir/compare/edff92f88441...c66e147ec8d5",
+  "failingModule": "/root/workspace/jamesagnew/hapi-fhir/222941724/hapi-fhir-structures-dstu2",
+  "buildid": 222941724,
+  "totalNumberFailingTests": 7,
+  "error-types": [
+    "java.lang.Error",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 1384,
+  "failing-test-cases": [
+    {
+      "className": "ca.uhn.fhir.parser.JsonParserDstu2Test",
+      "failingMethods": [
+        "ca.uhn.fhir.parser.JsonParserDstu2Test#testCustomUrlExtension"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "myName expected null, but was:\u003cnull\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "ca.uhn.fhir.parser.XmlParserDstu2Test",
+      "failingMethods": [
+        "ca.uhn.fhir.parser.XmlParserDstu2Test#testCustomUrlExtension"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "myName expected null, but was:\u003cnull\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "ca.uhn.fhir.parser.ElementWithExtensionDstu2Test",
+      "failingMethods": [
+        "ca.uhn.fhir.parser.ElementWithExtensionDstu2Test#testExtensionOnIDDatatypeJson",
+        "ca.uhn.fhir.parser.ElementWithExtensionDstu2Test#testExtensionOnPrimitiveExtensionJson",
+        "ca.uhn.fhir.parser.ElementWithExtensionDstu2Test#testExtensionOnIDDatatypeXml",
+        "ca.uhn.fhir.parser.ElementWithExtensionDstu2Test#testExtensionOnIDDatatypeExtensionJson",
+        "ca.uhn.fhir.parser.ElementWithExtensionDstu2Test#testExtensionOnIDDatatypeExtensionXml"
+      ],
+      "erroringMethods": [
+        "ca.uhn.fhir.parser.ElementWithExtensionDstu2Test#ca.uhn.fhir.parser.ElementWithExtensionDstu2Test"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.Error",
+          "failureDetail": "Test has final field of type FhirContext: private static final ca.uhn.fhir.context.FhirContext ca.uhn.fhir.parser.ElementWithExtensionDstu2Test.ctx",
+          "isError": true
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 1
+    }
+  ],
+  "bugRepo": "jamesagnew/hapi-fhir"
 }
