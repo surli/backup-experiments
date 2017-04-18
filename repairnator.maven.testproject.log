@@ -1,0 +1,2115 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] Oryx
+[INFO] API
+[INFO] Common
+[INFO] Kafka Utilities
+[INFO] Lambda
+[INFO] Lambda Serving
+[INFO] ML
+[INFO] Apps: API
+[INFO] Apps: Common
+[INFO] Apps: Spark MLlib
+[INFO] Apps: Oryx
+[INFO] Apps: Oryx (Serving)
+[INFO] Example
+[INFO] Batch Layer
+[INFO] Speed Layer
+[INFO] Serving Layer
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Oryx 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building API 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx-api ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ oryx-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/framework/oryx-api/src/main/resources
+[INFO]
+[INFO] --- scala-maven-plugin:3.2.2:add-source (scala-compile-first) @ oryx-api ---
+[INFO] Add Source directory: /root/workspace/OryxProject/oryx/223328603/framework/oryx-api/src/main/scala
+[INFO] Add Test Source directory: /root/workspace/OryxProject/oryx/223328603/framework/oryx-api/src/test/scala
+[INFO]
+[INFO] --- scala-maven-plugin:3.2.2:compile (scala-compile-first) @ oryx-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ oryx-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /root/workspace/OryxProject/oryx/223328603/framework/oryx-api/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ oryx-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/framework/oryx-api/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ oryx-api ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ oryx-api ---
+[INFO] No tests to run.
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Common 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx-common ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ oryx-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ oryx-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 31 source files to /root/workspace/OryxProject/oryx/223328603/framework/oryx-common/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ oryx-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ oryx-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ oryx-common ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 6.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 89.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 792.0 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.cloudera.oryx.common.random.RandomManagerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.535 sec - in com.cloudera.oryx.common.random.RandomManagerTest
+Running com.cloudera.oryx.common.random.RandomManagerRandomTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in com.cloudera.oryx.common.random.RandomManagerRandomTest
+Running com.cloudera.oryx.common.io.IOUtilsTest
+2017-04-19 00:44:47,280 INFO  OryxTest:50 Test temp dir is /tmp/OryxTest8679950901788269480
+2017-04-19 00:44:47,329 INFO  OryxTest:50 Test temp dir is /tmp/OryxTest2609864094936433028
+2017-04-19 00:44:47,332 INFO  OryxTest:50 Test temp dir is /tmp/OryxTest7455464715667218954
+2017-04-19 00:44:47,335 INFO  OryxTest:50 Test temp dir is /tmp/OryxTest9070946808714563934
+2017-04-19 00:44:47,358 WARN  IOUtils:124 Unable to close
+java.io.IOException: It's safe to ignore this exception
+2017-04-19 00:44:47,361 INFO  OryxTest:50 Test temp dir is /tmp/OryxTest7839606928907147319
+2017-04-19 00:44:47,366 INFO  OryxTest:50 Test temp dir is /tmp/OryxTest1377743872445464579
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 sec - in com.cloudera.oryx.common.io.IOUtilsTest
+Running com.cloudera.oryx.common.settings.ConfigToPropertiesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.15 sec - in com.cloudera.oryx.common.settings.ConfigToPropertiesTest
+Running com.cloudera.oryx.common.settings.ConfigUtilsTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in com.cloudera.oryx.common.settings.ConfigUtilsTest
+Running com.cloudera.oryx.common.math.DoubleWeightedMeanTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in com.cloudera.oryx.common.math.DoubleWeightedMeanTest
+Running com.cloudera.oryx.common.math.VectorMathTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.786 sec - in com.cloudera.oryx.common.math.VectorMathTest
+Running com.cloudera.oryx.common.math.LinearSystemSolverTest
+2017-04-19 00:44:48,431 WARN  LinearSystemSolver:73 3 x 3 matrix is near-singular (threshold 1.4500100000000002E-4). Add more data or decrease the number of features, to <= about 2
+2017-04-19 00:44:48,431 WARN  LinearSystemSolver:73 3 x 3 matrix is near-singular (threshold 1.20003E-4). Add more data or decrease the number of features, to <= about 1
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in com.cloudera.oryx.common.math.LinearSystemSolverTest
+Running com.cloudera.oryx.common.collection.PairTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.cloudera.oryx.common.collection.PairTest
+Running com.cloudera.oryx.common.collection.PairsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in com.cloudera.oryx.common.collection.PairsTest
+Running com.cloudera.oryx.common.lang.JVMUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.cloudera.oryx.common.lang.JVMUtilsTest
+Running com.cloudera.oryx.common.lang.LoggingTest
+2017-04-19 00:44:48,471 WARN  LoggingCallable:58 Unexpected error in com.cloudera.oryx.common.lang.LoggingTest$$Lambda$19/1988859660@5a4041cc
+java.io.IOException: It's safe to ignore this exception
+2017-04-19 00:44:48,477 WARN  LoggingCallable:58 Unexpected error in com.cloudera.oryx.common.lang.LoggingTest$$Lambda$23/2109874862@aecb35a
+java.lang.AssertionError: It's safe to ignore this exception
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in com.cloudera.oryx.common.lang.LoggingTest
+Running com.cloudera.oryx.common.lang.AutoLockTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in com.cloudera.oryx.common.lang.AutoLockTest
+Running com.cloudera.oryx.common.lang.AutoReadWriteLockTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.cloudera.oryx.common.lang.AutoReadWriteLockTest
+Running com.cloudera.oryx.common.lang.ClassUtilsTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in com.cloudera.oryx.common.lang.ClassUtilsTest
+Running com.cloudera.oryx.common.lang.RateLimitCheckTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.21 sec - in com.cloudera.oryx.common.lang.RateLimitCheckTest
+Running com.cloudera.oryx.common.lang.ExecUtilsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.034 sec - in com.cloudera.oryx.common.lang.ExecUtilsTest
+Running com.cloudera.oryx.common.pmml.PMMLUtilsTest
+2017-04-19 00:45:14,849 INFO  OryxTest:50 Test temp dir is /tmp/OryxTest793853784063274878
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.175 sec - in com.cloudera.oryx.common.pmml.PMMLUtilsTest
+Running com.cloudera.oryx.common.text.TextUtilsTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.694 sec - in com.cloudera.oryx.common.text.TextUtilsTest
+
+Results :
+
+Tests run: 92, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Kafka Utilities 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ kafka-util ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ kafka-util ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ kafka-util ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/framework/kafka-util/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ kafka-util ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /root/workspace/OryxProject/oryx/223328603/framework/kafka-util/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ kafka-util ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/framework/kafka-util/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ kafka-util ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ kafka-util ---
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Lambda 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx-lambda ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx-lambda ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ oryx-lambda ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/framework/oryx-lambda/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ oryx-lambda ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 18 source files to /root/workspace/OryxProject/oryx/223328603/framework/oryx-lambda/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ oryx-lambda ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/framework/oryx-lambda/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ oryx-lambda ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ oryx-lambda ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.cloudera.oryx.lambda.batch.ValueWritableConverterTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.299 sec - in com.cloudera.oryx.lambda.batch.ValueWritableConverterTest
+Running com.cloudera.oryx.lambda.batch.WritableToValueFunctionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in com.cloudera.oryx.lambda.batch.WritableToValueFunctionTest
+Running com.cloudera.oryx.lambda.batch.ValueToWritableFunctionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.cloudera.oryx.lambda.batch.ValueToWritableFunctionTest
+Running com.cloudera.oryx.lambda.TopicProducerImplTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.cloudera.oryx.lambda.TopicProducerImplTest
+Running com.cloudera.oryx.lambda.HadoopUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.cloudera.oryx.lambda.HadoopUtilsTest
+
+Results :
+
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Lambda Serving 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx-lambda-serving ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx-lambda-serving ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ oryx-lambda-serving ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/framework/oryx-lambda-serving/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ oryx-lambda-serving ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /root/workspace/OryxProject/oryx/223328603/framework/oryx-lambda-serving/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ oryx-lambda-serving ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ oryx-lambda-serving ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ oryx-lambda-serving ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.cloudera.oryx.lambda.serving.InMemoryRealmTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.631 sec - in com.cloudera.oryx.lambda.serving.InMemoryRealmTest
+Running com.cloudera.oryx.lambda.serving.ErrorResourceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.729 sec - in com.cloudera.oryx.lambda.serving.ErrorResourceTest
+Running com.cloudera.oryx.lambda.serving.OryxExceptionMapperTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.cloudera.oryx.lambda.serving.OryxExceptionMapperTest
+Running com.cloudera.oryx.lambda.serving.TopicProducerImplTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.cloudera.oryx.lambda.serving.TopicProducerImplTest
+Running com.cloudera.oryx.lambda.serving.ServingLayerTest
+2017-04-19 00:45:21,573 INFO  ServingLayer:94 Configuration:
+oryx {
+    batch {
+        storage {
+            data-dir="file:/tmp/Oryx/data/"
+            key-writable-class="org.apache.hadoop.io.Text"
+            max-age-data-hours=-1
+            max-age-model-hours=-1
+            message-writable-class="org.apache.hadoop.io.Text"
+            model-dir="file:/tmp/Oryx/model/"
+        }
+        streaming {
+            config {
+                spark {
+                    io {
+                        compression {
+                            codec=lzf
+                        }
+                    }
+                    logConf=true
+                    serializer="org.apache.spark.serializer.KryoSerializer"
+                    speculation=true
+                    ui {
+                        showConsoleProgress=false
+                    }
+                }
+            }
+            deploy-mode=client
+            driver-memory="1g"
+            dynamic-allocation=false
+            executor-cores=4
+            executor-memory="2g"
+            generation-interval-sec=21600
+            master=yarn
+            num-executors=4
+        }
+        ui {
+            port=4040
+        }
+        update-class=null
+    }
+    default-streaming-config {
+        spark {
+            io {
+                compression {
+                    codec=lzf
+                }
+            }
+            logConf=true
+            serializer="org.apache.spark.serializer.KryoSerializer"
+            speculation=true
+            ui {
+                showConsoleProgress=false
+            }
+        }
+    }
+    id=null
+    input-topic {
+        broker="localhost:9092"
+        lock {
+            master="localhost:2181"
+        }
+        message {
+            key-class="java.lang.String"
+            key-decoder-class="kafka.serializer.StringDecoder"
+            message-class="java.lang.String"
+            message-decoder-class="kafka.serializer.StringDecoder"
+            topic=OryxInput
+        }
+    }
+    ml {
+        eval {
+            candidates=1
+            parallelism=1
+            test-fraction=0.1
+            threshold=null
+        }
+    }
+    serving {
+        api {
+            context-path="/"
+            key-alias=null
+            keystore-file=null
+            keystore-password=*****
+            password=*****
+            port=52330
+            read-only=false
+            secure-port=38110
+            user-name=null
+        }
+        application-resources="com.cloudera.oryx.lambda.serving"
+        memory="4000m"
+        min-model-load-fraction=0.8
+        model-manager-class="com.cloudera.oryx.lambda.serving.MockServingModelManager"
+        no-init-topics=true
+        yarn {
+            cores="4"
+            instances=1
+        }
+    }
+    speed {
+        min-model-load-fraction=0.8
+        model-manager-class=null
+        streaming {
+            config {
+                spark {
+                    io {
+                        compression {
+                            codec=lzf
+                        }
+                    }
+                    logConf=true
+                    serializer="org.apache.spark.serializer.KryoSerializer"
+                    speculation=true
+                    ui {
+                        showConsoleProgress=false
+                    }
+                }
+            }
+            deploy-mode=client
+            driver-memory="512m"
+            dynamic-allocation=false
+            executor-cores=4
+            executor-memory="1g"
+            generation-interval-sec=10
+            master=yarn
+            num-executors=2
+        }
+        ui {
+            port=4040
+        }
+    }
+    update-topic {
+        broker="localhost:9092"
+        lock {
+            master="localhost:2181"
+        }
+        message {
+            decoder-class="kafka.serializer.StringDecoder"
+            encoder-class="kafka.serializer.StringEncoder"
+            max-size=16777216
+            topic=OryxUpdate
+        }
+    }
+}
+
+2017-04-19 00:45:23,690 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.lambda.serving,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:23,816 INFO  Reflections:232 Reflections took 78 ms to scan 2 urls, producing 21 keys and 33 values
+2017-04-19 00:45:24,115 INFO  ServingLayer:94 Configuration:
+oryx {
+    batch {
+        storage {
+            data-dir="file:/tmp/Oryx/data/"
+            key-writable-class="org.apache.hadoop.io.Text"
+            max-age-data-hours=-1
+            max-age-model-hours=-1
+            message-writable-class="org.apache.hadoop.io.Text"
+            model-dir="file:/tmp/Oryx/model/"
+        }
+        streaming {
+            config {
+                spark {
+                    io {
+                        compression {
+                            codec=lzf
+                        }
+                    }
+                    logConf=true
+                    serializer="org.apache.spark.serializer.KryoSerializer"
+                    speculation=true
+                    ui {
+                        showConsoleProgress=false
+                    }
+                }
+            }
+            deploy-mode=client
+            driver-memory="1g"
+            dynamic-allocation=false
+            executor-cores=4
+            executor-memory="2g"
+            generation-interval-sec=21600
+            master=yarn
+            num-executors=4
+        }
+        ui {
+            port=4040
+        }
+        update-class=null
+    }
+    default-streaming-config {
+        spark {
+            io {
+                compression {
+                    codec=lzf
+                }
+            }
+            logConf=true
+            serializer="org.apache.spark.serializer.KryoSerializer"
+            speculation=true
+            ui {
+                showConsoleProgress=false
+            }
+        }
+    }
+    id=null
+    input-topic {
+        broker="localhost:9092"
+        lock {
+            master="localhost:2181"
+        }
+        message {
+            key-class="java.lang.String"
+            key-decoder-class="kafka.serializer.StringDecoder"
+            message-class="java.lang.String"
+            message-decoder-class="kafka.serializer.StringDecoder"
+            topic=OryxInput
+        }
+    }
+    ml {
+        eval {
+            candidates=1
+            parallelism=1
+            test-fraction=0.1
+            threshold=null
+        }
+    }
+    serving {
+        api {
+            context-path="/"
+            key-alias=oryxtest
+            keystore-file="/tmp/oryxtest6514998212075665293.jks"
+            keystore-password=*****
+            password=*****
+            port=55205
+            read-only=false
+            secure-port=41737
+            user-name=null
+        }
+        application-resources="com.cloudera.oryx.lambda.serving"
+        memory="4000m"
+        min-model-load-fraction=0.8
+        model-manager-class="com.cloudera.oryx.lambda.serving.MockServingModelManager"
+        no-init-topics=true
+        yarn {
+            cores="4"
+            instances=1
+        }
+    }
+    speed {
+        min-model-load-fraction=0.8
+        model-manager-class=null
+        streaming {
+            config {
+                spark {
+                    io {
+                        compression {
+                            codec=lzf
+                        }
+                    }
+                    logConf=true
+                    serializer="org.apache.spark.serializer.KryoSerializer"
+                    speculation=true
+                    ui {
+                        showConsoleProgress=false
+                    }
+                }
+            }
+            deploy-mode=client
+            driver-memory="512m"
+            dynamic-allocation=false
+            executor-cores=4
+            executor-memory="1g"
+            generation-interval-sec=10
+            master=yarn
+            num-executors=2
+        }
+        ui {
+            port=4040
+        }
+    }
+    update-topic {
+        broker="localhost:9092"
+        lock {
+            master="localhost:2181"
+        }
+        message {
+            decoder-class="kafka.serializer.StringDecoder"
+            encoder-class="kafka.serializer.StringEncoder"
+            max-size=16777216
+            topic=OryxUpdate
+        }
+    }
+}
+
+2017-04-19 00:45:24,922 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.lambda.serving,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:24,981 INFO  Reflections:232 Reflections took 57 ms to scan 2 urls, producing 21 keys and 33 values
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.799 sec - in com.cloudera.oryx.lambda.serving.ServingLayerTest
+Running com.cloudera.oryx.lambda.serving.CSVMessageBodyWriterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.cloudera.oryx.lambda.serving.CSVMessageBodyWriterTest
+
+Results :
+
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building ML 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx-ml ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx-ml ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ oryx-ml ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/framework/oryx-ml/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ oryx-ml ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /root/workspace/OryxProject/oryx/223328603/framework/oryx-ml/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ oryx-ml ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/framework/oryx-ml/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ oryx-ml ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ oryx-ml ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.cloudera.oryx.ml.param.HyperParamsTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.756 sec - in com.cloudera.oryx.ml.param.HyperParamsTest
+
+Results :
+
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apps: API 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx-app-api ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx-app-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ oryx-app-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/app/oryx-app-api/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ oryx-app-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ oryx-app-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/app/oryx-app-api/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ oryx-app-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ oryx-app-api ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.cloudera.oryx.app.als.MultiRescorerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.343 sec - in com.cloudera.oryx.app.als.MultiRescorerTest
+Running com.cloudera.oryx.app.als.MultiRescorerProviderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.cloudera.oryx.app.als.MultiRescorerProviderTest
+Running com.cloudera.oryx.app.als.AbstractRescorerProviderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.cloudera.oryx.app.als.AbstractRescorerProviderTest
+
+Results :
+
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apps: Common 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx-app-common ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx-app-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ oryx-app-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ oryx-app-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 45 source files to /root/workspace/OryxProject/oryx/223328603/app/oryx-app-common/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ oryx-app-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/app/oryx-app-common/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ oryx-app-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ oryx-app-common ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.cloudera.oryx.app.common.fn.MLFunctionsTest
+2017-04-19 00:45:31,119 WARN  MLFunctions:50 Bad input: [1,]
+2017-04-19 00:45:31,142 WARN  MLFunctions:62 Bad input: [1,2,3]
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.575 sec - in com.cloudera.oryx.app.common.fn.MLFunctionsTest
+Running com.cloudera.oryx.app.schema.CategoricalValueEncodingsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in com.cloudera.oryx.app.schema.CategoricalValueEncodingsTest
+Running com.cloudera.oryx.app.schema.InputSchemaTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 sec - in com.cloudera.oryx.app.schema.InputSchemaTest
+Running com.cloudera.oryx.app.pmml.AppPMMLUtilsTest
+2017-04-19 00:45:33,073 INFO  OryxTest:50 Test temp dir is /tmp/OryxTest7781632190087321053
+2017-04-19 00:45:33,720 WARN  NativeCodeLoader:62 Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2017-04-19 00:45:34,526 WARN  AppPMMLUtils:277 Unable to load model file at no-such-path; ignoring
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.259 sec - in com.cloudera.oryx.app.pmml.AppPMMLUtilsTest
+Running com.cloudera.oryx.app.als.SolverCacheTest
+2017-04-19 00:45:34,690 INFO  SolverCache:78 Computing cached solver
+2017-04-19 00:45:34,734 INFO  SolverCache:83 Computed new solver null
+2017-04-19 00:45:34,734 INFO  SolverCache:78 Computing cached solver
+2017-04-19 00:45:34,735 INFO  SolverCache:83 Computed new solver Solver[org.apache.commons.math3.linear.RRQRDecomposition$Solver@15cdd8e0]
+2017-04-19 00:45:34,778 INFO  SolverCache:78 Computing cached solver
+2017-04-19 00:45:34,784 INFO  SolverCache:83 Computed new solver null
+2017-04-19 00:45:34,789 INFO  SolverCache:78 Computing cached solver
+2017-04-19 00:45:34,792 INFO  SolverCache:83 Computed new solver Solver[org.apache.commons.math3.linear.RRQRDecomposition$Solver@6ecd99ad]
+2017-04-19 00:45:34,810 INFO  SolverCache:78 Computing cached solver
+2017-04-19 00:45:34,811 INFO  SolverCache:78 Computing cached solver
+2017-04-19 00:45:34,813 WARN  LinearSystemSolver:73 3 x 3 matrix is near-singular (threshold 6.600000000000001E-4). Add more data or decrease the number of features, to <= about 3
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.235 sec - in com.cloudera.oryx.app.als.SolverCacheTest
+Running com.cloudera.oryx.app.als.ALSUtilsTest
+2017-04-19 00:45:34,824 WARN  LoggingCallable:68 Unexpected error in com.cloudera.oryx.common.lang.LoggingCallable$$Lambda$34/366916060@3f4a7b9c
+com.cloudera.oryx.common.math.SingularMatrixSolverException: Apparent rank: 3
+	at com.cloudera.oryx.common.math.LinearSystemSolver.getSolver(LinearSystemSolver.java:79)
+	at com.cloudera.oryx.common.math.LinearSystemSolver.getSolver(LinearSystemSolver.java:52)
+	at com.cloudera.oryx.app.als.SolverCache.lambda$compute$0(SolverCache.java:81)
+	at com.cloudera.oryx.common.lang.LoggingCallable.lambda$log$0(LoggingCallable.java:48)
+	at com.cloudera.oryx.common.lang.LoggingCallable.lambda$asRunnable$1(LoggingCallable.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in com.cloudera.oryx.app.als.ALSUtilsTest
+Running com.cloudera.oryx.app.als.FeatureVectorsPartitionTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.595 sec - in com.cloudera.oryx.app.als.FeatureVectorsPartitionTest
+Running com.cloudera.oryx.app.als.PartitionedFeatureVectorsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.365 sec - in com.cloudera.oryx.app.als.PartitionedFeatureVectorsTest
+Running com.cloudera.oryx.app.classreg.predict.NumericPredictionTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.cloudera.oryx.app.classreg.predict.NumericPredictionTest
+Running com.cloudera.oryx.app.classreg.predict.WeightedPredictionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in com.cloudera.oryx.app.classreg.predict.WeightedPredictionTest
+Running com.cloudera.oryx.app.classreg.predict.CategoricalPredictionTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.cloudera.oryx.app.classreg.predict.CategoricalPredictionTest
+Running com.cloudera.oryx.app.classreg.example.NumericFeatureTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.cloudera.oryx.app.classreg.example.NumericFeatureTest
+Running com.cloudera.oryx.app.classreg.example.ExampleUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.cloudera.oryx.app.classreg.example.ExampleUtilsTest
+Running com.cloudera.oryx.app.classreg.example.CategoricalFeatureTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.cloudera.oryx.app.classreg.example.CategoricalFeatureTest
+Running com.cloudera.oryx.app.kmeans.KMeansPMMLUtilsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in com.cloudera.oryx.app.kmeans.KMeansPMMLUtilsTest
+Running com.cloudera.oryx.app.kmeans.EuclideanDistanceFnTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in com.cloudera.oryx.app.kmeans.EuclideanDistanceFnTest
+Running com.cloudera.oryx.app.kmeans.ClusterInfoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.cloudera.oryx.app.kmeans.ClusterInfoTest
+Running com.cloudera.oryx.app.kmeans.KMeansUtilsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in com.cloudera.oryx.app.kmeans.KMeansUtilsTest
+Running com.cloudera.oryx.app.rdf.RDFPMMLUtilsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in com.cloudera.oryx.app.rdf.RDFPMMLUtilsTest
+Running com.cloudera.oryx.app.rdf.tree.DecisionForestTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.cloudera.oryx.app.rdf.tree.DecisionForestTest
+Running com.cloudera.oryx.app.rdf.tree.DecisionTreeTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.cloudera.oryx.app.rdf.tree.DecisionTreeTest
+Running com.cloudera.oryx.app.rdf.tree.TerminalNodeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.cloudera.oryx.app.rdf.tree.TerminalNodeTest
+Running com.cloudera.oryx.app.rdf.tree.TreePathTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.cloudera.oryx.app.rdf.tree.TreePathTest
+Running com.cloudera.oryx.app.rdf.tree.DecisionNodeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.cloudera.oryx.app.rdf.tree.DecisionNodeTest
+Running com.cloudera.oryx.app.rdf.decision.CategoricalDecisionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.cloudera.oryx.app.rdf.decision.CategoricalDecisionTest
+Running com.cloudera.oryx.app.rdf.decision.NumericDecisionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.cloudera.oryx.app.rdf.decision.NumericDecisionTest
+
+Results :
+
+Tests run: 99, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apps: Spark MLlib 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx-app-mllib ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx-app-mllib ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ oryx-app-mllib ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/app/oryx-app-mllib/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ oryx-app-mllib ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /root/workspace/OryxProject/oryx/223328603/app/oryx-app-mllib/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ oryx-app-mllib ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/app/oryx-app-mllib/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ oryx-app-mllib ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ oryx-app-mllib ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.cloudera.oryx.app.batch.mllib.als.ALSUpdateTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.214 sec - in com.cloudera.oryx.app.batch.mllib.als.ALSUpdateTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apps: Oryx 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx-app ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx-app ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ oryx-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/app/oryx-app/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ oryx-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /root/workspace/OryxProject/oryx/223328603/app/oryx-app/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ oryx-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/app/oryx-app/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ oryx-app ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ oryx-app ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.cloudera.oryx.app.speed.als.ALSSpeedModelTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.384 sec - in com.cloudera.oryx.app.speed.als.ALSSpeedModelTest
+Running com.cloudera.oryx.app.speed.kmeans.KMeansSpeedModelTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in com.cloudera.oryx.app.speed.kmeans.KMeansSpeedModelTest
+
+Results :
+
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apps: Oryx (Serving) 2.3.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ oryx-app-serving ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce) @ oryx-app-serving ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ oryx-app-serving ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ oryx-app-serving ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 58 source files to /root/workspace/OryxProject/oryx/223328603/app/oryx-app-serving/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ oryx-app-serving ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OryxProject/oryx/223328603/app/oryx-app-serving/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ oryx-app-serving ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ oryx-app-serving ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.cloudera.oryx.app.serving.als.RecommendTest
+2017-04-19 00:45:43,607 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:43,732 INFO  Reflections:232 Reflections took 85 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:43,944 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:43,987 INFO  Reflections:232 Reflections took 41 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:44,071 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:44,116 INFO  Reflections:232 Reflections took 43 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:44,201 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:44,221 INFO  Reflections:232 Reflections took 19 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:44,294 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:44,314 INFO  Reflections:232 Reflections took 18 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:44,467 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:44,512 INFO  Reflections:232 Reflections took 42 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:44,790 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:44,822 INFO  Reflections:232 Reflections took 30 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:45,108 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:45,136 INFO  Reflections:232 Reflections took 26 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:45,325 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:45,341 INFO  Reflections:232 Reflections took 15 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:45,540 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:45,576 INFO  Reflections:232 Reflections took 29 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 10, Failures: 0, Errors: 10, Skipped: 0, Time elapsed: 4.574 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.RecommendTest
+testRecommendCSV(com.cloudera.oryx.app.serving.als.RecommendTest)  Time elapsed: 2.635 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendTest.testRecommendCSV(RecommendTest.java:41)
+
+testTooMany(com.cloudera.oryx.app.serving.als.RecommendTest)  Time elapsed: 0.18 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendTest.testTooMany(RecommendTest.java:67)
+
+testConsiderKnownItems(com.cloudera.oryx.app.serving.als.RecommendTest)  Time elapsed: 0.141 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendTest.testConsiderKnownItems(RecommendTest.java:78)
+
+testNoArg(com.cloudera.oryx.app.serving.als.RecommendTest)  Time elapsed: 0.092 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendTest.testNoArg(RecommendTest.java:93)
+
+testBadHowMany(com.cloudera.oryx.app.serving.als.RecommendTest)  Time elapsed: 0.096 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendTest.testBadHowMany(RecommendTest.java:54)
+
+testRescorer(com.cloudera.oryx.app.serving.als.RecommendTest)  Time elapsed: 0.215 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendTest.testRescorer(RecommendTest.java:99)
+
+testHowMany(com.cloudera.oryx.app.serving.als.RecommendTest)  Time elapsed: 0.298 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendTest.testHowMany(RecommendTest.java:47)
+
+testOffset(com.cloudera.oryx.app.serving.als.RecommendTest)  Time elapsed: 0.318 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendTest.testOffset(RecommendTest.java:59)
+
+testRecommend(com.cloudera.oryx.app.serving.als.RecommendTest)  Time elapsed: 0.196 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendTest.testRecommend(RecommendTest.java:33)
+
+testBadOffset(com.cloudera.oryx.app.serving.als.RecommendTest)  Time elapsed: 0.244 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendTest.testBadOffset(RecommendTest.java:72)
+
+Running com.cloudera.oryx.app.serving.als.EstimateTest
+2017-04-19 00:45:45,767 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:45,814 INFO  Reflections:232 Reflections took 46 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:45,947 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:45,972 INFO  Reflections:232 Reflections took 22 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:46,120 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:46,170 INFO  Reflections:232 Reflections took 39 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:46,288 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:46,341 INFO  Reflections:232 Reflections took 51 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.537 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.EstimateTest
+testEstimate(com.cloudera.oryx.app.serving.als.EstimateTest)  Time elapsed: 0 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.EstimateTest.testEstimate(EstimateTest.java:30)
+
+testBadRequest(com.cloudera.oryx.app.serving.als.EstimateTest)  Time elapsed: 0.151 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.EstimateTest.testBadRequest(EstimateTest.java:45)
+
+testZeroEstimate(com.cloudera.oryx.app.serving.als.EstimateTest)  Time elapsed: 0.193 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.EstimateTest.testZeroEstimate(EstimateTest.java:51)
+
+testEstimateCSV(com.cloudera.oryx.app.serving.als.EstimateTest)  Time elapsed: 0.192 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.EstimateTest.testEstimateCSV(EstimateTest.java:39)
+
+Running com.cloudera.oryx.app.serving.als.IngestTest
+2017-04-19 00:45:46,522 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:46,557 INFO  Reflections:232 Reflections took 32 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:46,728 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:46,750 INFO  Reflections:232 Reflections took 21 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:46,834 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:46,867 INFO  Reflections:232 Reflections took 27 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:47,103 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:47,152 INFO  Reflections:232 Reflections took 48 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:47,269 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:47,304 INFO  Reflections:232 Reflections took 34 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:47,387 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:47,408 INFO  Reflections:232 Reflections took 20 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 6, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.949 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.IngestTest
+testDeflateIngest(com.cloudera.oryx.app.serving.als.IngestTest)  Time elapsed: 0.089 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.als.IngestTest.checkResponse(IngestTest.java:86)
+	at com.cloudera.oryx.app.serving.als.IngestTest.testDeflateIngest(IngestTest.java:63)
+
+testFormIngest(com.cloudera.oryx.app.serving.als.IngestTest)  Time elapsed: 0.195 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.als.IngestTest.checkResponse(IngestTest.java:86)
+	at com.cloudera.oryx.app.serving.als.IngestTest.testFormIngest(IngestTest.java:68)
+
+testSimpleIngest(com.cloudera.oryx.app.serving.als.IngestTest)  Time elapsed: 0.131 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.als.IngestTest.checkResponse(IngestTest.java:86)
+	at com.cloudera.oryx.app.serving.als.IngestTest.testSimpleIngest(IngestTest.java:46)
+
+testZippedFormIngest(com.cloudera.oryx.app.serving.als.IngestTest)  Time elapsed: 0.289 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.als.IngestTest.checkResponse(IngestTest.java:86)
+	at com.cloudera.oryx.app.serving.als.IngestTest.testZippedFormIngest(IngestTest.java:78)
+
+testGzippedFormIngest(com.cloudera.oryx.app.serving.als.IngestTest)  Time elapsed: 0.148 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.als.IngestTest.checkResponse(IngestTest.java:86)
+	at com.cloudera.oryx.app.serving.als.IngestTest.testGzippedFormIngest(IngestTest.java:73)
+
+testGZippedIngest(com.cloudera.oryx.app.serving.als.IngestTest)  Time elapsed: 0.096 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.als.IngestTest.checkResponse(IngestTest.java:86)
+	at com.cloudera.oryx.app.serving.als.IngestTest.testGZippedIngest(IngestTest.java:55)
+
+Running com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest
+2017-04-19 00:45:47,559 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:47,599 INFO  Reflections:232 Reflections took 39 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:47,768 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:47,834 INFO  Reflections:232 Reflections took 56 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:48,001 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:48,064 INFO  Reflections:232 Reflections took 54 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:48,232 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:48,262 INFO  Reflections:232 Reflections took 17 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:48,423 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:48,475 INFO  Reflections:232 Reflections took 37 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:48,592 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:48,620 INFO  Reflections:232 Reflections took 27 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:48,721 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:48,773 INFO  Reflections:232 Reflections took 51 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:48,847 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:48,874 INFO  Reflections:232 Reflections took 26 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:48,978 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:49,003 INFO  Reflections:232 Reflections took 24 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:49,121 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:49,145 INFO  Reflections:232 Reflections took 23 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:49,285 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:49,306 INFO  Reflections:232 Reflections took 20 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 11, Failures: 0, Errors: 11, Skipped: 0, Time elapsed: 1.705 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest
+testRecommendToAnonymous(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.022 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testRecommendToAnonymous(RecommendToAnonymousTest.java:33)
+
+testTooMany(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.22 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testTooMany(RecommendToAnonymousTest.java:78)
+
+testNoArg(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.234 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testNoArg(RecommendToAnonymousTest.java:88)
+
+testBadHowMany(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.201 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testBadHowMany(RecommendToAnonymousTest.java:65)
+
+testRecommendToAnonymousWithAllUnknown(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.192 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testRecommendToAnonymousWithAllUnknown(RecommendToAnonymousTest.java:53)
+
+testRecommendToAnonymousCSV(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.151 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testRecommendToAnonymousCSV(RecommendToAnonymousTest.java:41)
+
+testRescorer(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.148 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testRescorer(RecommendToAnonymousTest.java:95)
+
+testHowMany(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.108 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testHowMany(RecommendToAnonymousTest.java:58)
+
+testOffset(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.119 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testOffset(RecommendToAnonymousTest.java:70)
+
+testRecommendToAnonymousWithUnknown(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.145 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testRecommendToAnonymousWithUnknown(RecommendToAnonymousTest.java:47)
+
+testBadOffset(com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest)  Time elapsed: 0.16 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest.testBadOffset(RecommendToAnonymousTest.java:83)
+
+Running com.cloudera.oryx.app.serving.als.CompressedResponseTest
+2017-04-19 00:45:49,454 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:49,488 INFO  Reflections:232 Reflections took 34 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:49,616 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:49,649 INFO  Reflections:232 Reflections took 23 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.CompressedResponseTest
+testDeflateResponse(com.cloudera.oryx.app.serving.als.CompressedResponseTest)  Time elapsed: 0 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.CompressedResponseTest.doTestCompressedResponse(CompressedResponseTest.java:47)
+	at com.cloudera.oryx.app.serving.als.CompressedResponseTest.testDeflateResponse(CompressedResponseTest.java:42)
+
+testGzipResponse(com.cloudera.oryx.app.serving.als.CompressedResponseTest)  Time elapsed: 0.001 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.CompressedResponseTest.doTestCompressedResponse(CompressedResponseTest.java:47)
+	at com.cloudera.oryx.app.serving.als.CompressedResponseTest.testGzipResponse(CompressedResponseTest.java:37)
+
+Running com.cloudera.oryx.app.serving.als.ConsoleTest
+2017-04-19 00:45:49,727 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:49,751 INFO  Reflections:232 Reflections took 23 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.ConsoleTest
+testConsole(com.cloudera.oryx.app.serving.als.ConsoleTest)  Time elapsed: 0.06 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<public> but was:<null>
+	at com.cloudera.oryx.app.serving.als.ConsoleTest.testConsole(ConsoleTest.java:29)
+
+Running com.cloudera.oryx.app.serving.als.KnownItemsTest
+2017-04-19 00:45:49,886 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:49,946 INFO  Reflections:232 Reflections took 49 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:50,125 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:50,175 INFO  Reflections:232 Reflections took 29 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:50,326 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:50,350 INFO  Reflections:232 Reflections took 23 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.565 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.KnownItemsTest
+testKnownItemsCSV(com.cloudera.oryx.app.serving.als.KnownItemsTest)  Time elapsed: 0.19 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.KnownItemsTest.testKnownItemsCSV(KnownItemsTest.java:41)
+
+testEmptyItems(com.cloudera.oryx.app.serving.als.KnownItemsTest)  Time elapsed: 0.194 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.KnownItemsTest.testEmptyItems(KnownItemsTest.java:52)
+
+testKnownItems(com.cloudera.oryx.app.serving.als.KnownItemsTest)  Time elapsed: 0.181 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.KnownItemsTest.testKnownItems(KnownItemsTest.java:32)
+
+Running com.cloudera.oryx.app.serving.als.AllUserIDsTest
+2017-04-19 00:45:50,458 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:50,480 INFO  Reflections:232 Reflections took 21 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:50,642 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:50,677 INFO  Reflections:232 Reflections took 33 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.258 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.AllUserIDsTest
+testAllUserIDsCSV(com.cloudera.oryx.app.serving.als.AllUserIDsTest)  Time elapsed: 0.056 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.AllUserIDsTest.testAllUserIDsCSV(AllUserIDsTest.java:40)
+
+testAllItemIDs(com.cloudera.oryx.app.serving.als.AllUserIDsTest)  Time elapsed: 0.202 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.AllUserIDsTest.testAllItemIDs(AllUserIDsTest.java:31)
+
+Running com.cloudera.oryx.app.serving.als.RecommendWithContextTest
+2017-04-19 00:45:50,820 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:50,848 INFO  Reflections:232 Reflections took 22 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:50,901 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:50,915 INFO  Reflections:232 Reflections took 13 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:51,019 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:51,050 INFO  Reflections:232 Reflections took 22 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:51,196 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:51,208 INFO  Reflections:232 Reflections took 11 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:51,342 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:51,416 INFO  Reflections:232 Reflections took 74 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:51,525 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:51,555 INFO  Reflections:232 Reflections took 22 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:51,694 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:51,763 INFO  Reflections:232 Reflections took 59 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:51,832 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:51,843 INFO  Reflections:232 Reflections took 10 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:51,953 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:51,965 INFO  Reflections:232 Reflections took 10 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:52,076 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:52,108 INFO  Reflections:232 Reflections took 26 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:52,183 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:52,218 INFO  Reflections:232 Reflections took 32 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:52,334 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:52,353 INFO  Reflections:232 Reflections took 18 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:52,398 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:52,408 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:45:52,445 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:45:52,457 INFO  Reflections:232 Reflections took 11 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 14, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 1.743 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.RecommendWithContextTest
+testRecommendCSV(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.137 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testRecommendCSV(RecommendWithContextTest.java:41)
+
+testRecommendWithContextCSV(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.067 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testRecommendWithContextCSV(RecommendWithContextTest.java:123)
+
+testRecommendWithContext(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.139 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testRecommendWithContext(RecommendWithContextTest.java:115)
+
+testTooMany(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.155 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testTooMany(RecommendWithContextTest.java:67)
+
+testNoArg(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.205 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testNoArg(RecommendWithContextTest.java:95)
+
+testBadHowMany(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.157 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testBadHowMany(RecommendWithContextTest.java:54)
+
+testRescorer(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.19 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testRescorer(RecommendWithContextTest.java:106)
+
+testRecommendWithContextWithAllUnknown(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.084 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testRecommendWithContextWithAllUnknown(RecommendWithContextTest.java:135)
+
+testHowMany(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.121 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testHowMany(RecommendWithContextTest.java:47)
+
+testRecommendWithContextWithUnknown(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.144 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testRecommendWithContextWithUnknown(RecommendWithContextTest.java:129)
+
+testBadArg(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.109 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testBadArg(RecommendWithContextTest.java:100)
+
+testOffset(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.131 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testOffset(RecommendWithContextTest.java:59)
+
+testRecommend(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.054 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testRecommend(RecommendWithContextTest.java:33)
+
+testBadOffset(com.cloudera.oryx.app.serving.als.RecommendWithContextTest)  Time elapsed: 0.049 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendWithContextTest.testBadOffset(RecommendWithContextTest.java:72)
+
+Running com.cloudera.oryx.app.serving.als.model.ALSServingModelTest
+2017-04-19 00:45:52,484 INFO  LocalitySensitiveHash:76 LSH with 2 hashes, querying partitions with up to 2 bits differing
+2017-04-19 00:45:52,933 INFO  LocalitySensitiveHash:105 Chose 2 random hash vectors
+2017-04-19 00:45:53,064 INFO  LocalitySensitiveHash:76 LSH with 2 hashes, querying partitions with up to 2 bits differing
+2017-04-19 00:45:53,077 INFO  LocalitySensitiveHash:105 Chose 2 random hash vectors
+2017-04-19 00:45:53,088 INFO  LocalitySensitiveHash:76 LSH with 2 hashes, querying partitions with up to 2 bits differing
+2017-04-19 00:45:53,099 INFO  LocalitySensitiveHash:105 Chose 2 random hash vectors
+2017-04-19 00:45:53,099 INFO  LocalitySensitiveHash:76 LSH with 3 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:45:53,106 INFO  LocalitySensitiveHash:105 Chose 3 random hash vectors
+2017-04-19 00:46:30,021 INFO  ALSServingModelTest:202 Mean matching prefix: 4.382500000000009
+2017-04-19 00:46:59,724 INFO  ALSServingModelTest:218 Mean matching prefix: 5.934900000000001
+2017-04-19 00:46:59,724 INFO  LocalitySensitiveHash:76 LSH with 2 hashes, querying partitions with up to 2 bits differing
+2017-04-19 00:46:59,725 INFO  LocalitySensitiveHash:105 Chose 2 random hash vectors
+2017-04-19 00:46:59,726 INFO  LocalitySensitiveHash:76 LSH with 2 hashes, querying partitions with up to 2 bits differing
+2017-04-19 00:46:59,727 INFO  LocalitySensitiveHash:105 Chose 2 random hash vectors
+2017-04-19 00:46:59,739 INFO  LocalitySensitiveHash:76 LSH with 2 hashes, querying partitions with up to 2 bits differing
+2017-04-19 00:46:59,740 INFO  LocalitySensitiveHash:105 Chose 2 random hash vectors
+2017-04-19 00:46:59,741 INFO  LocalitySensitiveHash:76 LSH with 2 hashes, querying partitions with up to 2 bits differing
+2017-04-19 00:46:59,742 INFO  LocalitySensitiveHash:105 Chose 2 random hash vectors
+2017-04-19 00:46:59,742 INFO  LocalitySensitiveHash:76 LSH with 2 hashes, querying partitions with up to 2 bits differing
+2017-04-19 00:46:59,744 INFO  LocalitySensitiveHash:105 Chose 2 random hash vectors
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 67.159 sec - in com.cloudera.oryx.app.serving.als.model.ALSServingModelTest
+Running com.cloudera.oryx.app.serving.als.model.LocalitySensitiveHashTest
+2017-04-19 00:46:59,748 INFO  LocalitySensitiveHash:76 LSH with 1 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:46:59,748 INFO  LocalitySensitiveHash:105 Chose 1 random hash vectors
+2017-04-19 00:46:59,749 INFO  LocalitySensitiveHash:76 LSH with 2 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:46:59,751 INFO  LocalitySensitiveHash:105 Chose 2 random hash vectors
+2017-04-19 00:46:59,751 INFO  LocalitySensitiveHash:76 LSH with 0 hashes, querying partitions with up to 0 bits differing
+2017-04-19 00:46:59,751 INFO  LocalitySensitiveHash:105 Chose 0 random hash vectors
+2017-04-19 00:46:59,752 INFO  LocalitySensitiveHash:76 LSH with 1 hashes, querying partitions with up to 0 bits differing
+2017-04-19 00:46:59,752 INFO  LocalitySensitiveHash:105 Chose 1 random hash vectors
+2017-04-19 00:46:59,752 INFO  LocalitySensitiveHash:76 LSH with 4 hashes, querying partitions with up to 0 bits differing
+2017-04-19 00:46:59,758 INFO  LocalitySensitiveHash:105 Chose 4 random hash vectors
+2017-04-19 00:46:59,759 INFO  LocalitySensitiveHash:76 LSH with 7 hashes, querying partitions with up to 3 bits differing
+2017-04-19 00:46:59,770 INFO  LocalitySensitiveHash:105 Chose 7 random hash vectors
+2017-04-19 00:46:59,771 INFO  LocalitySensitiveHash:76 LSH with 2 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:46:59,773 INFO  LocalitySensitiveHash:105 Chose 2 random hash vectors
+2017-04-19 00:46:59,773 INFO  LocalitySensitiveHash:76 LSH with 3 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:46:59,777 INFO  LocalitySensitiveHash:105 Chose 3 random hash vectors
+2017-04-19 00:46:59,777 INFO  LocalitySensitiveHash:76 LSH with 7 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:46:59,789 INFO  LocalitySensitiveHash:105 Chose 7 random hash vectors
+2017-04-19 00:46:59,789 INFO  LocalitySensitiveHash:76 LSH with 11 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:46:59,808 INFO  LocalitySensitiveHash:105 Chose 11 random hash vectors
+2017-04-19 00:46:59,809 INFO  LocalitySensitiveHash:76 LSH with 14 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:46:59,835 INFO  LocalitySensitiveHash:105 Chose 14 random hash vectors
+2017-04-19 00:46:59,835 INFO  LocalitySensitiveHash:76 LSH with 16 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:46:59,866 INFO  LocalitySensitiveHash:105 Chose 16 random hash vectors
+2017-04-19 00:46:59,867 INFO  LocalitySensitiveHash:76 LSH with 16 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:46:59,896 INFO  LocalitySensitiveHash:105 Chose 16 random hash vectors
+2017-04-19 00:46:59,897 INFO  LocalitySensitiveHash:76 LSH with 3 hashes, querying partitions with up to 3 bits differing
+2017-04-19 00:46:59,900 INFO  LocalitySensitiveHash:105 Chose 3 random hash vectors
+2017-04-19 00:46:59,901 INFO  LocalitySensitiveHash:76 LSH with 7 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:46:59,912 INFO  LocalitySensitiveHash:105 Chose 7 random hash vectors
+2017-04-19 00:46:59,912 INFO  LocalitySensitiveHash:76 LSH with 4 hashes, querying partitions with up to 4 bits differing
+2017-04-19 00:47:00,012 INFO  LocalitySensitiveHash:105 Chose 4 random hash vectors
+2017-04-19 00:47:02,019 INFO  LocalitySensitiveHashTest:150 [6078, 6362, 6179, 6158, 6278, 6244, 6126, 6197, 6232, 6179, 6443, 6343, 6231, 6259, 6246, 6445]
+2017-04-19 00:47:02,025 INFO  LocalitySensitiveHashTest:153 Total 100000 / Max 6445 / Min 6078
+2017-04-19 00:47:02,026 INFO  LocalitySensitiveHash:76 LSH with 9 hashes, querying partitions with up to 2 bits differing
+2017-04-19 00:47:02,300 INFO  LocalitySensitiveHash:105 Chose 9 random hash vectors
+2017-04-19 00:47:04,431 INFO  LocalitySensitiveHashTest:150 [196, 209, 190, 200, 201, 243, 189, 209, 215, 214, 183, 218, 214, 216, 163, 217, 168, 205, 181, 192, 154, 196, 179, 174, 178, 206, 177, 215, 161, 191, 153, 195, 188, 222, 202, 196, 177, 210, 182, 213, 206, 211, 202, 249, 167, 221, 214, 236, 197, 201, 189, 193, 183, 190, 166, 197, 155, 208, 200, 215, 172, 189, 144, 206, 195, 240, 209, 231, 212, 226, 211, 229, 196, 212, 217, 220, 193, 197, 190, 238, 168, 202, 182, 207, 187, 173, 162, 207, 179, 164, 198, 232, 153, 173, 161, 169, 177, 187, 235, 219, 177, 205, 194, 216, 174, 171, 185, 234, 180, 171, 203, 219, 163, 217, 179, 205, 154, 180, 195, 225, 146, 177, 213, 191, 175, 178, 168, 194, 179, 182, 165, 184, 190, 199, 160, 197, 192, 208, 182, 200, 212, 211, 195, 201, 177, 209, 166, 209, 217, 204, 200, 184, 190, 203, 200, 216, 203, 214, 198, 212, 170, 196, 176, 167, 196, 207, 178, 209, 176, 194, 166, 214, 182, 205, 182, 206, 197, 226, 188, 207, 168, 211, 183, 207, 185, 198, 190, 222, 188, 192, 164, 208, 160, 188, 176, 215, 184, 190, 196, 194, 144, 191, 181, 185, 183, 178, 216, 202, 198, 231, 199, 208, 212, 185, 210, 201, 196, 215, 246, 220, 172, 221, 213, 217, 172, 182, 209, 207, 176, 198, 209, 207, 153, 186, 194, 209, 156, 186, 201, 190, 180, 185, 205, 221, 173, 218, 207, 221, 186, 195, 201, 220, 170, 223, 204, 224, 204, 190, 178, 171, 239, 194, 192, 185, 219, 205, 188, 171, 208, 220, 189, 189, 199, 214, 167, 166, 202, 188, 175, 136, 225, 185, 165, 153, 222, 215, 182, 163, 199, 194, 226, 189, 207, 192, 214, 195, 225, 219, 210, 177, 205, 204, 213, 225, 194, 176, 193, 202, 173, 197, 163, 185, 236, 202, 197, 187, 199, 200, 184, 176, 211, 187, 209, 196, 229, 182, 210, 179, 205, 170, 190, 174, 200, 203, 211, 189, 184, 202, 187, 198, 198, 183, 179, 155, 215, 190, 200, 162, 183, 173, 195, 188, 198, 194, 220, 159, 214, 181, 222, 223, 207, 200, 225, 218, 194, 181, 226, 206, 175, 188, 200, 180, 207, 199, 169, 212, 198, 179, 240, 175, 169, 173, 187, 204, 177, 194, 153, 144, 195, 197, 182, 146, 174, 203, 161, 158, 237, 198, 200, 174, 226, 180, 192, 187, 190, 205, 191, 167, 209, 211, 212, 198, 239, 197, 200, 193, 185, 187, 173, 167, 205, 168, 178, 187, 162, 175, 179, 174, 202, 194, 201, 194, 230, 207, 192, 202, 237, 201, 174, 170, 230, 192, 226, 204, 236, 194, 214, 212, 210, 188, 198, 175, 221, 195, 218, 169, 200, 165, 209, 154, 207, 183, 212, 192, 205, 213, 204, 185, 195, 179, 208, 188, 236, 174, 235, 192, 207, 191, 209, 197, 200, 167, 209, 173, 182, 174, 225, 206, 212, 163, 214, 173, 195, 180, 202, 182, 196, 199, 227, 203, 223, 174, 205, 204, 208, 193, 257, 213, 247, 187, 252, 227]
+2017-04-19 00:47:04,432 INFO  LocalitySensitiveHashTest:153 Total 100000 / Max 257 / Min 136
+2017-04-19 00:47:04,432 INFO  LocalitySensitiveHash:76 LSH with 3 hashes, querying partitions with up to 3 bits differing
+2017-04-19 00:47:04,448 INFO  LocalitySensitiveHash:105 Chose 3 random hash vectors
+2017-04-19 00:47:04,847 INFO  LocalitySensitiveHashTest:150 [12654, 12442, 12519, 12318, 12458, 12409, 12720, 12480]
+2017-04-19 00:47:04,847 INFO  LocalitySensitiveHashTest:153 Total 100000 / Max 12720 / Min 12318
+2017-04-19 00:47:04,847 INFO  LocalitySensitiveHash:76 LSH with 7 hashes, querying partitions with up to 1 bits differing
+2017-04-19 00:47:04,890 INFO  LocalitySensitiveHash:105 Chose 7 random hash vectors
+2017-04-19 00:47:05,315 INFO  LocalitySensitiveHashTest:150 [820, 807, 854, 857, 878, 817, 919, 870, 847, 866, 949, 900, 835, 887, 943, 971, 879, 848, 733, 785, 830, 860, 772, 723, 824, 854, 726, 769, 825, 898, 855, 851, 672, 659, 723, 694, 622, 609, 748, 748, 620, 655, 687, 783, 670, 618, 753, 761, 780, 774, 759, 735, 768, 824, 794, 721, 717, 765, 726, 734, 718, 716, 680, 753, 765, 717, 744, 700, 759, 722, 762, 694, 785, 751, 785, 755, 733, 746, 837, 753, 770, 716, 668, 618, 725, 709, 608, 635, 794, 703, 666, 612, 732, 753, 691, 593, 814, 819, 910, 847, 848, 809, 895, 845, 798, 786, 898, 877, 745, 732, 827, 886, 939, 907, 901, 832, 929, 846, 847, 830, 830, 815, 790, 820, 841, 863, 789, 846]
+2017-04-19 00:47:05,315 INFO  LocalitySensitiveHashTest:153 Total 100000 / Max 971 / Min 593
+2017-04-19 00:47:05,316 INFO  LocalitySensitiveHash:76 LSH with 0 hashes, querying partitions with up to 0 bits differing
+2017-04-19 00:47:05,316 INFO  LocalitySensitiveHash:105 Chose 0 random hash vectors
+2017-04-19 00:47:05,695 INFO  LocalitySensitiveHashTest:150 [100000]
+2017-04-19 00:47:05,695 INFO  LocalitySensitiveHashTest:153 Total 100000 / Max 100000 / Min 100000
+2017-04-19 00:47:05,695 INFO  LocalitySensitiveHash:76 LSH with 4 hashes, querying partitions with up to 0 bits differing
+2017-04-19 00:47:05,721 INFO  LocalitySensitiveHash:105 Chose 4 random hash vectors
+2017-04-19 00:47:06,126 INFO  LocalitySensitiveHashTest:150 [6439, 6247, 6292, 6068, 6359, 6196, 6345, 6066, 6215, 6195, 6227, 6250, 6099, 6213, 6375, 6414]
+2017-04-19 00:47:06,126 INFO  LocalitySensitiveHashTest:153 Total 100000 / Max 6439 / Min 6066
+2017-04-19 00:47:06,126 INFO  LocalitySensitiveHash:76 LSH with 0 hashes, querying partitions with up to 0 bits differing
+2017-04-19 00:47:06,127 INFO  LocalitySensitiveHash:105 Chose 0 random hash vectors
+2017-04-19 00:47:06,223 INFO  LocalitySensitiveHashTest:150 [100000]
+2017-04-19 00:47:06,224 INFO  LocalitySensitiveHashTest:153 Total 100000 / Max 100000 / Min 100000
+2017-04-19 00:47:06,224 INFO  LocalitySensitiveHash:76 LSH with 4 hashes, querying partitions with up to 0 bits differing
+2017-04-19 00:47:06,230 INFO  LocalitySensitiveHash:105 Chose 4 random hash vectors
+2017-04-19 00:47:06,335 INFO  LocalitySensitiveHashTest:150 [6343, 6015, 6375, 6234, 6236, 6158, 6233, 6325, 6360, 6283, 6149, 6099, 6207, 6538, 6179, 6266]
+2017-04-19 00:47:06,336 INFO  LocalitySensitiveHashTest:153 Total 100000 / Max 6538 / Min 6015
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.587 sec - in com.cloudera.oryx.app.serving.als.model.LocalitySensitiveHashTest
+Running com.cloudera.oryx.app.serving.als.model.ALSServingModelManagerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.cloudera.oryx.app.serving.als.model.ALSServingModelManagerTest
+Running com.cloudera.oryx.app.serving.als.model.TopNConsumerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.cloudera.oryx.app.serving.als.model.TopNConsumerTest
+Running com.cloudera.oryx.app.serving.als.MostSurprisingTest
+2017-04-19 00:47:06,385 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:06,397 INFO  Reflections:232 Reflections took 10 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:06,430 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:06,441 INFO  Reflections:232 Reflections took 10 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:06,506 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:06,518 INFO  Reflections:232 Reflections took 11 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:06,565 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:06,577 INFO  Reflections:232 Reflections took 11 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:06,622 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:06,633 INFO  Reflections:232 Reflections took 10 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.296 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.MostSurprisingTest
+testNoArg(com.cloudera.oryx.app.serving.als.MostSurprisingTest)  Time elapsed: 0.057 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.MostSurprisingTest.testNoArg(MostSurprisingTest.java:31)
+
+testHowMany(com.cloudera.oryx.app.serving.als.MostSurprisingTest)  Time elapsed: 0.042 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.MostSurprisingTest.testHowMany(MostSurprisingTest.java:51)
+
+testMostSurprising(com.cloudera.oryx.app.serving.als.MostSurprisingTest)  Time elapsed: 0.079 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.MostSurprisingTest.testMostSurprising(MostSurprisingTest.java:37)
+
+testOffset(com.cloudera.oryx.app.serving.als.MostSurprisingTest)  Time elapsed: 0.061 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.MostSurprisingTest.testOffset(MostSurprisingTest.java:58)
+
+testMostSurprisingCSV(com.cloudera.oryx.app.serving.als.MostSurprisingTest)  Time elapsed: 0.057 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.MostSurprisingTest.testMostSurprisingCSV(MostSurprisingTest.java:45)
+
+Running com.cloudera.oryx.app.serving.als.ReadOnlyTest
+2017-04-19 00:47:06,806 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:06,818 INFO  Reflections:232 Reflections took 11 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:06,897 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:06,916 INFO  Reflections:232 Reflections took 18 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.169 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.ReadOnlyTest
+testNoPreference(com.cloudera.oryx.app.serving.als.ReadOnlyTest)  Time elapsed: 0.073 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<403> but was:<500>
+	at com.cloudera.oryx.app.serving.als.ReadOnlyTest.testNoPreference(ReadOnlyTest.java:38)
+
+testNoIngest(com.cloudera.oryx.app.serving.als.ReadOnlyTest)  Time elapsed: 0.096 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<403> but was:<500>
+	at com.cloudera.oryx.app.serving.als.ReadOnlyTest.testNoIngest(ReadOnlyTest.java:32)
+
+Running com.cloudera.oryx.app.serving.als.SimilarityTest
+2017-04-19 00:47:07,082 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:07,092 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:07,284 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:07,309 INFO  Reflections:232 Reflections took 11 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:07,518 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:07,555 INFO  Reflections:232 Reflections took 32 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:07,684 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:07,729 INFO  Reflections:232 Reflections took 34 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:07,932 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:07,953 INFO  Reflections:232 Reflections took 17 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:08,119 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:08,145 INFO  Reflections:232 Reflections took 25 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:08,336 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:08,358 INFO  Reflections:232 Reflections took 20 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:08,443 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:08,453 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:08,529 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:08,559 INFO  Reflections:232 Reflections took 26 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 9, Failures: 0, Errors: 9, Skipped: 0, Time elapsed: 1.619 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.SimilarityTest
+testSimilarityCSV(com.cloudera.oryx.app.serving.als.SimilarityTest)  Time elapsed: 0.156 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.SimilarityTest.testSimilarityCSV(SimilarityTest.java:60)
+
+testTooMany(com.cloudera.oryx.app.serving.als.SimilarityTest)  Time elapsed: 0.209 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.SimilarityTest.testTooMany(SimilarityTest.java:76)
+
+testNoArg(com.cloudera.oryx.app.serving.als.SimilarityTest)  Time elapsed: 0.26 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.SimilarityTest.testNoArg(SimilarityTest.java:31)
+
+testBadHowMany(com.cloudera.oryx.app.serving.als.SimilarityTest)  Time elapsed: 0.166 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.SimilarityTest.testBadHowMany(SimilarityTest.java:66)
+
+testRescorer(com.cloudera.oryx.app.serving.als.SimilarityTest)  Time elapsed: 0.215 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.SimilarityTest.testRescorer(SimilarityTest.java:83)
+
+testHowMany(com.cloudera.oryx.app.serving.als.SimilarityTest)  Time elapsed: 0.192 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.SimilarityTest.testHowMany(SimilarityTest.java:45)
+
+testSimilarItems(com.cloudera.oryx.app.serving.als.SimilarityTest)  Time elapsed: 0.212 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.SimilarityTest.testSimilarItems(SimilarityTest.java:37)
+
+testOffset(com.cloudera.oryx.app.serving.als.SimilarityTest)  Time elapsed: 0.094 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.SimilarityTest.testOffset(SimilarityTest.java:52)
+
+testBadOffset(com.cloudera.oryx.app.serving.als.SimilarityTest)  Time elapsed: 0.111 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.SimilarityTest.testBadOffset(SimilarityTest.java:71)
+
+Running com.cloudera.oryx.app.serving.als.MostActiveUsersTest
+2017-04-19 00:47:08,691 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:08,702 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:08,730 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:08,740 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:08,770 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:08,780 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.MostActiveUsersTest
+testRescorer(com.cloudera.oryx.app.serving.als.MostActiveUsersTest)  Time elapsed: 0.002 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.MostActiveUsersTest.testRescorer(MostActiveUsersTest.java:46)
+
+testMostPopular(com.cloudera.oryx.app.serving.als.MostActiveUsersTest)  Time elapsed: 0.001 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.MostActiveUsersTest.testMostPopular(MostActiveUsersTest.java:31)
+
+testMostPopularCSV(com.cloudera.oryx.app.serving.als.MostActiveUsersTest)  Time elapsed: 0.002 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.MostActiveUsersTest.testMostPopularCSV(MostActiveUsersTest.java:39)
+
+Running com.cloudera.oryx.app.serving.als.PopularRepresentativeItemsTest
+2017-04-19 00:47:08,810 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:08,820 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:08,917 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:08,947 INFO  Reflections:232 Reflections took 28 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.PopularRepresentativeItemsTest
+testPopularRepresentativeItems(com.cloudera.oryx.app.serving.als.PopularRepresentativeItemsTest)  Time elapsed: 0 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.PopularRepresentativeItemsTest.testPopularRepresentativeItems(PopularRepresentativeItemsTest.java:32)
+
+testPopularRepresentativeItemsCSV(com.cloudera.oryx.app.serving.als.PopularRepresentativeItemsTest)  Time elapsed: 0.001 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.PopularRepresentativeItemsTest.testPopularRepresentativeItemsCSV(PopularRepresentativeItemsTest.java:41)
+
+Running com.cloudera.oryx.app.serving.als.ReadyTest
+2017-04-19 00:47:09,033 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:09,053 INFO  Reflections:232 Reflections took 15 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:09,177 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:09,200 INFO  Reflections:232 Reflections took 21 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.214 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.ReadyTest
+testGet(com.cloudera.oryx.app.serving.als.ReadyTest)  Time elapsed: 0.063 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<500>
+	at com.cloudera.oryx.app.serving.als.ReadyTest.testGet(ReadyTest.java:28)
+
+testHead(com.cloudera.oryx.app.serving.als.ReadyTest)  Time elapsed: 0.15 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<500>
+	at com.cloudera.oryx.app.serving.als.ReadyTest.testHead(ReadyTest.java:34)
+
+Running com.cloudera.oryx.app.serving.als.PreferenceTest
+2017-04-19 00:47:09,369 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:09,388 INFO  Reflections:232 Reflections took 17 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:09,443 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:09,453 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:09,484 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:09,494 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:09,552 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:09,562 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:09,673 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:09,683 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.438 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.PreferenceTest
+testPostWithBadItemValue(com.cloudera.oryx.app.serving.als.PreferenceTest)  Time elapsed: 0.148 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<400> but was:<500>
+	at com.cloudera.oryx.app.serving.als.PreferenceTest.testPostWithBadItemValue(PreferenceTest.java:49)
+
+testPostCSV(com.cloudera.oryx.app.serving.als.PreferenceTest)  Time elapsed: 0.06 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.als.PreferenceTest.checkResponse(PreferenceTest.java:69)
+	at com.cloudera.oryx.app.serving.als.PreferenceTest.testPostCSV(PreferenceTest.java:56)
+
+testPostWithEmptyItemValue(com.cloudera.oryx.app.serving.als.PreferenceTest)  Time elapsed: 0.04 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.als.PreferenceTest.checkResponse(PreferenceTest.java:69)
+	at com.cloudera.oryx.app.serving.als.PreferenceTest.testPostWithEmptyItemValue(PreferenceTest.java:43)
+
+testDelete(com.cloudera.oryx.app.serving.als.PreferenceTest)  Time elapsed: 0.067 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.als.PreferenceTest.checkResponse(PreferenceTest.java:69)
+	at com.cloudera.oryx.app.serving.als.PreferenceTest.testDelete(PreferenceTest.java:62)
+
+testPostJson(com.cloudera.oryx.app.serving.als.PreferenceTest)  Time elapsed: 0.123 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.als.PreferenceTest.checkResponse(PreferenceTest.java:69)
+	at com.cloudera.oryx.app.serving.als.PreferenceTest.testPostJson(PreferenceTest.java:37)
+
+Running com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest
+2017-04-19 00:47:09,744 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:09,771 INFO  Reflections:232 Reflections took 22 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:09,832 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:09,848 INFO  Reflections:232 Reflections took 15 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:09,906 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:09,939 INFO  Reflections:232 Reflections took 29 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:10,014 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:10,026 INFO  Reflections:232 Reflections took 10 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:10,146 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:10,173 INFO  Reflections:232 Reflections took 27 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:10,257 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:10,281 INFO  Reflections:232 Reflections took 21 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.464 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest
+testEstimateForAnonymous(com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest)  Time elapsed: 0.001 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest.testEstimateForAnonymous(EstimateForAnonymousTest.java:29)
+
+testEstimateForAnonymousCSV(com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest)  Time elapsed: 0.022 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest.testEstimateForAnonymousCSV(EstimateForAnonymousTest.java:50)
+
+testBadRequest(com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest)  Time elapsed: 0.095 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest.testBadRequest(EstimateForAnonymousTest.java:56)
+
+testEstimateForAnonymousWithUnknown(com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest)  Time elapsed: 0.145 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest.testEstimateForAnonymousWithUnknown(EstimateForAnonymousTest.java:36)
+
+testEstimateForAnonymousWithAllUnknown(com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest)  Time elapsed: 0.092 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest.testEstimateForAnonymousWithAllUnknown(EstimateForAnonymousTest.java:43)
+
+testUnknownUser(com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest)  Time elapsed: 0.103 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest.testUnknownUser(EstimateForAnonymousTest.java:61)
+
+Running com.cloudera.oryx.app.serving.als.BecauseTest
+2017-04-19 00:47:10,460 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:10,496 INFO  Reflections:232 Reflections took 35 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:10,580 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:10,603 INFO  Reflections:232 Reflections took 14 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:10,698 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:10,727 INFO  Reflections:232 Reflections took 28 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:10,893 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:10,903 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:11,007 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:11,026 INFO  Reflections:232 Reflections took 18 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.656 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.BecauseTest
+testNoArg(com.cloudera.oryx.app.serving.als.BecauseTest)  Time elapsed: 0.104 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.BecauseTest.testNoArg(BecauseTest.java:46)
+
+testBecause(com.cloudera.oryx.app.serving.als.BecauseTest)  Time elapsed: 0.118 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.BecauseTest.testBecause(BecauseTest.java:32)
+
+testBecauseCSV(com.cloudera.oryx.app.serving.als.BecauseTest)  Time elapsed: 0.114 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.BecauseTest.testBecauseCSV(BecauseTest.java:40)
+
+testHowMany(com.cloudera.oryx.app.serving.als.BecauseTest)  Time elapsed: 0.175 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.BecauseTest.testHowMany(BecauseTest.java:51)
+
+testOffset(com.cloudera.oryx.app.serving.als.BecauseTest)  Time elapsed: 0.144 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.BecauseTest.testOffset(BecauseTest.java:58)
+
+Running com.cloudera.oryx.app.serving.als.SimilarityToItemTest
+2017-04-19 00:47:11,193 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:11,210 INFO  Reflections:232 Reflections took 16 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:11,310 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:11,342 INFO  Reflections:232 Reflections took 21 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:11,458 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:11,468 INFO  Reflections:232 Reflections took 10 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:11,537 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:11,556 INFO  Reflections:232 Reflections took 18 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.349 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.SimilarityToItemTest
+testZeroSimilarityToItem(com.cloudera.oryx.app.serving.als.SimilarityToItemTest)  Time elapsed: 0.007 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.SimilarityToItemTest.testZeroSimilarityToItem(SimilarityToItemTest.java:50)
+
+testNoArg(com.cloudera.oryx.app.serving.als.SimilarityToItemTest)  Time elapsed: 0.128 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.SimilarityToItemTest.testNoArg(SimilarityToItemTest.java:29)
+
+testSimilarityToItemCSV(com.cloudera.oryx.app.serving.als.SimilarityToItemTest)  Time elapsed: 0.128 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.SimilarityToItemTest.testSimilarityToItemCSV(SimilarityToItemTest.java:43)
+
+testSimilarityToItem(com.cloudera.oryx.app.serving.als.SimilarityToItemTest)  Time elapsed: 0.086 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.SimilarityToItemTest.testSimilarityToItem(SimilarityToItemTest.java:35)
+
+Running com.cloudera.oryx.app.serving.als.MostPopularItemsTest
+2017-04-19 00:47:11,653 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:11,663 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:11,809 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:11,829 INFO  Reflections:232 Reflections took 19 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:11,896 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:11,907 INFO  Reflections:232 Reflections took 10 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.296 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.MostPopularItemsTest
+testRescorer(com.cloudera.oryx.app.serving.als.MostPopularItemsTest)  Time elapsed: 0.055 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.MostPopularItemsTest.testRescorer(MostPopularItemsTest.java:47)
+
+testMostPopular(com.cloudera.oryx.app.serving.als.MostPopularItemsTest)  Time elapsed: 0.158 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.MostPopularItemsTest.testMostPopular(MostPopularItemsTest.java:32)
+
+testMostPopularCSV(com.cloudera.oryx.app.serving.als.MostPopularItemsTest)  Time elapsed: 0.083 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.MostPopularItemsTest.testMostPopularCSV(MostPopularItemsTest.java:40)
+
+Running com.cloudera.oryx.app.serving.als.RecommendToManyTest
+2017-04-19 00:47:11,980 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,007 INFO  Reflections:232 Reflections took 25 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:12,137 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,147 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:12,268 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,291 INFO  Reflections:232 Reflections took 19 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:12,351 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,369 INFO  Reflections:232 Reflections took 12 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:12,434 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,453 INFO  Reflections:232 Reflections took 18 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:12,523 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,545 INFO  Reflections:232 Reflections took 21 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:12,592 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,612 INFO  Reflections:232 Reflections took 19 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:12,670 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,680 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:12,791 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,801 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:12,841 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,854 INFO  Reflections:232 Reflections took 12 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 10, Failures: 0, Errors: 10, Skipped: 0, Time elapsed: 0.81 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.RecommendToManyTest
+testRecommendToManyCSV(com.cloudera.oryx.app.serving.als.RecommendToManyTest)  Time elapsed: 0.001 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToManyTest.testRecommendToManyCSV(RecommendToManyTest.java:92)
+
+testTooMany(com.cloudera.oryx.app.serving.als.RecommendToManyTest)  Time elapsed: 0.096 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendToManyTest.testTooMany(RecommendToManyTest.java:66)
+
+testConsiderKnownItems(com.cloudera.oryx.app.serving.als.RecommendToManyTest)  Time elapsed: 0.138 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToManyTest.testConsiderKnownItems(RecommendToManyTest.java:77)
+
+testNoArg(com.cloudera.oryx.app.serving.als.RecommendToManyTest)  Time elapsed: 0.079 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.NotFoundException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendToManyTest.testNoArg(RecommendToManyTest.java:41)
+
+testBadHowMany(com.cloudera.oryx.app.serving.als.RecommendToManyTest)  Time elapsed: 0.083 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendToManyTest.testBadHowMany(RecommendToManyTest.java:53)
+
+testRescorer(com.cloudera.oryx.app.serving.als.RecommendToManyTest)  Time elapsed: 0.087 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToManyTest.testRescorer(RecommendToManyTest.java:100)
+
+testHowMany(com.cloudera.oryx.app.serving.als.RecommendToManyTest)  Time elapsed: 0.076 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToManyTest.testHowMany(RecommendToManyTest.java:46)
+
+testOffset(com.cloudera.oryx.app.serving.als.RecommendToManyTest)  Time elapsed: 0.064 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToManyTest.testOffset(RecommendToManyTest.java:58)
+
+testRecommendToMany(com.cloudera.oryx.app.serving.als.RecommendToManyTest)  Time elapsed: 0.119 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.RecommendToManyTest.testRecommendToMany(RecommendToManyTest.java:33)
+
+testBadOffset(com.cloudera.oryx.app.serving.als.RecommendToManyTest)  Time elapsed: 0.057 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<javax.ws.rs.BadRequestException> but was<javax.ws.rs.InternalServerErrorException>
+	at com.cloudera.oryx.app.serving.als.RecommendToManyTest.testBadOffset(RecommendToManyTest.java:71)
+
+Running com.cloudera.oryx.app.serving.als.AllItemIDsTest
+2017-04-19 00:47:12,885 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,894 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:12,964 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.als,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:12,974 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.als.AllItemIDsTest
+testAllItemIDs(com.cloudera.oryx.app.serving.als.AllItemIDsTest)  Time elapsed: 0.001 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.AllItemIDsTest.testAllItemIDs(AllItemIDsTest.java:31)
+
+testAllItemIDsCSV(com.cloudera.oryx.app.serving.als.AllItemIDsTest)  Time elapsed: 0.001 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.als.AllItemIDsTest.testAllItemIDsCSV(AllItemIDsTest.java:40)
+
+Running com.cloudera.oryx.app.serving.kmeans.DistanceToNearestTest
+2017-04-19 00:47:13,028 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:13,038 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:13,088 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:13,111 INFO  Reflections:232 Reflections took 22 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.kmeans.DistanceToNearestTest
+testDistance(com.cloudera.oryx.app.serving.kmeans.DistanceToNearestTest)  Time elapsed: 0 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.kmeans.DistanceToNearestTest.testDistance(DistanceToNearestTest.java:30)
+
+testDistance2(com.cloudera.oryx.app.serving.kmeans.DistanceToNearestTest)  Time elapsed: 0.001 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.kmeans.DistanceToNearestTest.testDistance2(DistanceToNearestTest.java:36)
+
+Running com.cloudera.oryx.app.serving.kmeans.ConsoleTest
+2017-04-19 00:47:13,227 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:13,289 INFO  Reflections:232 Reflections took 61 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.kmeans.ConsoleTest
+testConsole(com.cloudera.oryx.app.serving.kmeans.ConsoleTest)  Time elapsed: 0.014 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<public> but was:<null>
+	at com.cloudera.oryx.app.serving.kmeans.ConsoleTest.testConsole(ConsoleTest.java:29)
+
+Running com.cloudera.oryx.app.serving.kmeans.ReadOnlyTest
+2017-04-19 00:47:13,339 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:13,361 INFO  Reflections:232 Reflections took 21 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.kmeans.ReadOnlyTest
+testNoAdd(com.cloudera.oryx.app.serving.kmeans.ReadOnlyTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<403> but was:<500>
+	at com.cloudera.oryx.app.serving.kmeans.ReadOnlyTest.testNoAdd(ReadOnlyTest.java:32)
+
+Running com.cloudera.oryx.app.serving.kmeans.ReadyTest
+2017-04-19 00:47:13,503 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:13,544 INFO  Reflections:232 Reflections took 35 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:13,619 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:13,651 INFO  Reflections:232 Reflections took 25 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.253 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.kmeans.ReadyTest
+testGet(com.cloudera.oryx.app.serving.kmeans.ReadyTest)  Time elapsed: 0.144 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<500>
+	at com.cloudera.oryx.app.serving.kmeans.ReadyTest.testGet(ReadyTest.java:28)
+
+testHead(com.cloudera.oryx.app.serving.kmeans.ReadyTest)  Time elapsed: 0.109 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<500>
+	at com.cloudera.oryx.app.serving.kmeans.ReadyTest.testHead(ReadyTest.java:34)
+
+Running com.cloudera.oryx.app.serving.kmeans.AssignTest
+2017-04-19 00:47:13,741 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:13,753 INFO  Reflections:232 Reflections took 11 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:13,781 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:13,791 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:13,876 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:13,890 INFO  Reflections:232 Reflections took 13 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:13,942 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:13,953 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 4, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 0.26 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.kmeans.AssignTest
+testFormAssign(com.cloudera.oryx.app.serving.kmeans.AssignTest)  Time elapsed: 0.059 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<500>
+	at com.cloudera.oryx.app.serving.kmeans.AssignTest.checkResponse(AssignTest.java:61)
+	at com.cloudera.oryx.app.serving.kmeans.AssignTest.testFormAssign(AssignTest.java:57)
+
+testAssign2(com.cloudera.oryx.app.serving.kmeans.AssignTest)  Time elapsed: 0.04 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.kmeans.AssignTest.testAssign2(AssignTest.java:44)
+
+testAssignPost(com.cloudera.oryx.app.serving.kmeans.AssignTest)  Time elapsed: 0.113 sec  <<< FAILURE!
+org.junit.ComparisonFailure:
+expected:<[4
+4
+]> but was:<[<html><head><title>Grizzly 2.3.28</title><style><!--div.header {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#003300;font-size:22px;-moz-border-radius-topleft: 10px;border-top-left-radius: 10px;-moz-border-radius-topright: 10px;border-top-right-radius: 10px;padding-left: 5px}div.body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:#FFFFCC;font-size:16px;padding-top:10px;padding-bottom:10px;padding-left:10px}div.footer {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#666633;font-size:14px;-moz-border-radius-bottomleft: 10px;border-bottom-left-radius: 10px;-moz-border-radius-bottomright: 10px;border-bottom-right-radius: 10px;padding-left: 5px}BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}B {font-family:Tahoma,Arial,sans-serif;color:black;}A {color : black;}HR {color : #999966;}--></style> </head><body><div class="header">Internal Error</div><div class="body"><b>com.google.common.collect.Sets$SetView.iterator()Lcom/google/common/collect/UnmodifiableIterator;</b><pre>     1: org.reflections.Reflections.expandSuperTypes(Reflections.java:380)
+     2: org.reflections.Reflections.<init>(Reflections.java:126)
+     3: org.reflections.Reflections.<init>(Reflections.java:168)
+     4: org.reflections.Reflections.<init>(Reflections.java:141)
+     5: com.cloudera.oryx.lambda.serving.OryxApplication.doGetClasses(OryxApplication.java:69)
+     6: com.cloudera.oryx.lambda.serving.OryxApplication.getClasses(OryxApplication.java:57)
+     7: org.glassfish.jersey.server.ResourceConfig$RuntimeConfig$3.run(ResourceConfig.java:1234)
+     8: org.glassfish.jersey.internal.Errors$2.call(Errors.java:289)
+     9: org.glassfish.jersey.internal.Errors$2.call(Errors.java:286)
+    10: org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        ... 18 more</pre>Please see the log for more detail.</div><div class="footer">Grizzly 2.3.28</div></body></html>]>
+	at com.cloudera.oryx.app.serving.kmeans.AssignTest.testAssignPost(AssignTest.java:52)
+
+testAssign(com.cloudera.oryx.app.serving.kmeans.AssignTest)  Time elapsed: 0.047 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.kmeans.AssignTest.testAssign(AssignTest.java:38)
+
+Running com.cloudera.oryx.app.serving.kmeans.AddTest
+2017-04-19 00:47:14,031 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:14,056 INFO  Reflections:232 Reflections took 24 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:14,152 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:14,180 INFO  Reflections:232 Reflections took 18 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:14,251 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.clustering,com.cloudera.oryx.app.serving.kmeans,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:14,261 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.208 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.kmeans.AddTest
+testSimpleAdd(com.cloudera.oryx.app.serving.kmeans.AddTest)  Time elapsed: 0.007 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.kmeans.AddTest.checkResponse(AddTest.java:58)
+	at com.cloudera.oryx.app.serving.kmeans.AddTest.testSimpleAdd(AddTest.java:40)
+
+testFormAdd(com.cloudera.oryx.app.serving.kmeans.AddTest)  Time elapsed: 0.133 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.kmeans.AddTest.checkResponse(AddTest.java:58)
+	at com.cloudera.oryx.app.serving.kmeans.AddTest.testFormAdd(AddTest.java:45)
+
+testURIAdd(com.cloudera.oryx.app.serving.kmeans.AddTest)  Time elapsed: 0.067 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.kmeans.AddTest.testURIAdd(AddTest.java:51)
+
+Running com.cloudera.oryx.app.serving.rdf.TrainTest
+2017-04-19 00:47:14,392 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:14,423 INFO  Reflections:232 Reflections took 22 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:14,464 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:14,474 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:14,540 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:14,550 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.235 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.rdf.TrainTest
+testSimpleTrain(com.cloudera.oryx.app.serving.rdf.TrainTest)  Time elapsed: 0.114 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.rdf.TrainTest.checkResponse(TrainTest.java:60)
+	at com.cloudera.oryx.app.serving.rdf.TrainTest.testSimpleTrain(TrainTest.java:41)
+
+testFormTrain(com.cloudera.oryx.app.serving.rdf.TrainTest)  Time elapsed: 0.043 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.rdf.TrainTest.checkResponse(TrainTest.java:60)
+	at com.cloudera.oryx.app.serving.rdf.TrainTest.testFormTrain(TrainTest.java:46)
+
+testURITrain(com.cloudera.oryx.app.serving.rdf.TrainTest)  Time elapsed: 0.078 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<204> but was:<500>
+	at com.cloudera.oryx.app.serving.rdf.TrainTest.testURITrain(TrainTest.java:53)
+
+Running com.cloudera.oryx.app.serving.rdf.ConsoleTest
+2017-04-19 00:47:14,638 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:14,683 INFO  Reflections:232 Reflections took 44 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.rdf.ConsoleTest
+testConsole(com.cloudera.oryx.app.serving.rdf.ConsoleTest)  Time elapsed: 0.017 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<public> but was:<null>
+	at com.cloudera.oryx.app.serving.rdf.ConsoleTest.testConsole(ConsoleTest.java:29)
+
+Running com.cloudera.oryx.app.serving.rdf.FeatureImportanceTest
+2017-04-19 00:47:14,762 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:14,772 INFO  Reflections:232 Reflections took 9 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:14,822 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:14,841 INFO  Reflections:232 Reflections took 18 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.116 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.rdf.FeatureImportanceTest
+testAllImportance(com.cloudera.oryx.app.serving.rdf.FeatureImportanceTest)  Time elapsed: 0.059 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.rdf.FeatureImportanceTest.testAllImportance(FeatureImportanceTest.java:44)
+
+testImportance(com.cloudera.oryx.app.serving.rdf.FeatureImportanceTest)  Time elapsed: 0.057 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.rdf.FeatureImportanceTest.testImportance(FeatureImportanceTest.java:33)
+
+Running com.cloudera.oryx.app.serving.rdf.ReadOnlyTest
+2017-04-19 00:47:14,898 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:14,915 INFO  Reflections:232 Reflections took 15 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.rdf.ReadOnlyTest
+testNoTrain(com.cloudera.oryx.app.serving.rdf.ReadOnlyTest)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<403> but was:<500>
+	at com.cloudera.oryx.app.serving.rdf.ReadOnlyTest.testNoTrain(ReadOnlyTest.java:32)
+
+Running com.cloudera.oryx.app.serving.rdf.ReadyTest
+2017-04-19 00:47:15,078 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:15,104 INFO  Reflections:232 Reflections took 25 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:15,150 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:15,164 INFO  Reflections:232 Reflections took 13 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.241 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.rdf.ReadyTest
+testGet(com.cloudera.oryx.app.serving.rdf.ReadyTest)  Time elapsed: 0.182 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<500>
+	at com.cloudera.oryx.app.serving.rdf.ReadyTest.testGet(ReadyTest.java:28)
+
+testHead(com.cloudera.oryx.app.serving.rdf.ReadyTest)  Time elapsed: 0.058 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<500>
+	at com.cloudera.oryx.app.serving.rdf.ReadyTest.testHead(ReadyTest.java:34)
+
+Running com.cloudera.oryx.app.serving.rdf.ClassificationDistributionTest
+2017-04-19 00:47:15,265 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:15,276 INFO  Reflections:232 Reflections took 10 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:15,307 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:15,319 INFO  Reflections:232 Reflections took 11 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.071 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.rdf.ClassificationDistributionTest
+testDistribution(com.cloudera.oryx.app.serving.rdf.ClassificationDistributionTest)  Time elapsed: 0.016 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.rdf.ClassificationDistributionTest.testDistribution(ClassificationDistributionTest.java:42)
+
+testDistribution2(com.cloudera.oryx.app.serving.rdf.ClassificationDistributionTest)  Time elapsed: 0.039 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.rdf.ClassificationDistributionTest.testDistribution2(ClassificationDistributionTest.java:60)
+
+Running com.cloudera.oryx.app.serving.rdf.PredictTest
+2017-04-19 00:47:15,395 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:15,420 INFO  Reflections:232 Reflections took 25 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:15,459 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:15,483 INFO  Reflections:232 Reflections took 22 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:15,543 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:15,572 INFO  Reflections:232 Reflections took 27 ms to scan 2 urls, producing 35 keys and 175 values
+2017-04-19 00:47:15,657 INFO  OryxApplication:65 Creating JAX-RS from endpoints in package(s) com.cloudera.oryx.app.serving,com.cloudera.oryx.app.serving.classreg,com.cloudera.oryx.app.serving.rdf,com.cloudera.oryx.lambda.serving
+2017-04-19 00:47:15,713 INFO  Reflections:232 Reflections took 55 ms to scan 2 urls, producing 35 keys and 175 values
+Tests run: 4, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 0.388 sec <<< FAILURE! - in com.cloudera.oryx.app.serving.rdf.PredictTest
+testFormPredict(com.cloudera.oryx.app.serving.rdf.PredictTest)  Time elapsed: 0.076 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<500>
+	at com.cloudera.oryx.app.serving.rdf.PredictTest.checkResponse(PredictTest.java:65)
+	at com.cloudera.oryx.app.serving.rdf.PredictTest.testFormPredict(PredictTest.java:52)
+
+testPredict(com.cloudera.oryx.app.serving.rdf.PredictTest)  Time elapsed: 0.083 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.rdf.PredictTest.testPredict(PredictTest.java:38)
+
+testPredict2(com.cloudera.oryx.app.serving.rdf.PredictTest)  Time elapsed: 0.084 sec  <<< ERROR!
+javax.ws.rs.InternalServerErrorException: HTTP 500 Internal Error
+	at com.cloudera.oryx.app.serving.rdf.PredictTest.testPredict2(PredictTest.java:45)
+
+testPredictPost(com.cloudera.oryx.app.serving.rdf.PredictTest)  Time elapsed: 0.144 sec  <<< FAILURE!
+org.junit.ComparisonFailure:
+expected:<[67.0
+670.0
+]> but was:<[<html><head><title>Grizzly 2.3.28</title><style><!--div.header {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#003300;font-size:22px;-moz-border-radius-topleft: 10px;border-top-left-radius: 10px;-moz-border-radius-topright: 10px;border-top-right-radius: 10px;padding-left: 5px}div.body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:#FFFFCC;font-size:16px;padding-top:10px;padding-bottom:10px;padding-left:10px}div.footer {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#666633;font-size:14px;-moz-border-radius-bottomleft: 10px;border-bottom-left-radius: 10px;-moz-border-radius-bottomright: 10px;border-bottom-right-radius: 10px;padding-left: 5px}BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}B {font-family:Tahoma,Arial,sans-serif;color:black;}A {color : black;}HR {color : #999966;}--></style> </head><body><div class="header">Internal Error</div><div class="body"><b>com.google.common.collect.Sets$SetView.iterator()Lcom/google/common/collect/UnmodifiableIterator;</b><pre>     1: org.reflections.Reflections.expandSuperTypes(Reflections.java:380)
+     2: org.reflections.Reflections.<init>(Reflections.java:126)
+     3: org.reflections.Reflections.<init>(Reflections.java:168)
+     4: org.reflections.Reflections.<init>(Reflections.java:141)
+     5: com.cloudera.oryx.lambda.serving.OryxApplication.doGetClasses(OryxApplication.java:69)
+     6: com.cloudera.oryx.lambda.serving.OryxApplication.getClasses(OryxApplication.java:57)
+     7: org.glassfish.jersey.server.ResourceConfig$RuntimeConfig$3.run(ResourceConfig.java:1234)
+     8: org.glassfish.jersey.internal.Errors$2.call(Errors.java:289)
+     9: org.glassfish.jersey.internal.Errors$2.call(Errors.java:286)
+    10: org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        ... 18 more</pre>Please see the log for more detail.</div><div class="footer">Grizzly 2.3.28</div></body></html>]>
+	at com.cloudera.oryx.app.serving.rdf.PredictTest.testPredictPost(PredictTest.java:61)
+
+
+Results :
+
+Failed tests:
+  ConsoleTest.testConsole:29 expected:<public> but was:<null>
+  IngestTest.testDeflateIngest:63->checkResponse:86 expected:<204> but was:<500>
+  IngestTest.testFormIngest:68->checkResponse:86 expected:<204> but was:<500>
+  IngestTest.testGZippedIngest:55->checkResponse:86 expected:<204> but was:<500>
+  IngestTest.testGzippedFormIngest:73->checkResponse:86 expected:<204> but was:<500>
+  IngestTest.testSimpleIngest:46->checkResponse:86 expected:<204> but was:<500>
+  IngestTest.testZippedFormIngest:78->checkResponse:86 expected:<204> but was:<500>
+  PreferenceTest.testDelete:62->checkResponse:69 expected:<204> but was:<500>
+  PreferenceTest.testPostCSV:56->checkResponse:69 expected:<204> but was:<500>
+  PreferenceTest.testPostJson:37->checkResponse:69 expected:<204> but was:<500>
+  PreferenceTest.testPostWithBadItemValue:49 expected:<400> but was:<500>
+  PreferenceTest.testPostWithEmptyItemValue:43->checkResponse:69 expected:<204> but was:<500>
+  ReadOnlyTest.testNoIngest:32 expected:<403> but was:<500>
+  ReadOnlyTest.testNoPreference:38 expected:<403> but was:<500>
+  ReadyTest.testGet:28 expected:<200> but was:<500>
+  ReadyTest.testHead:34 expected:<200> but was:<500>
+  AddTest.testFormAdd:45->checkResponse:58->AbstractServingTest.checkResponse:154 expected:<204> but was:<500>
+  AddTest.testSimpleAdd:40->checkResponse:58->AbstractServingTest.checkResponse:154 expected:<204> but was:<500>
+  AddTest.testURIAdd:51 expected:<204> but was:<500>
+  AssignTest.testAssignPost:52 expected:<[4
+4
+]> but was:<[<html><head><title>Grizzly 2.3.28</title><style><!--div.header {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#003300;font-size:22px;-moz-border-radius-topleft: 10px;border-top-left-radius: 10px;-moz-border-radius-topright: 10px;border-top-right-radius: 10px;padding-left: 5px}div.body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:#FFFFCC;font-size:16px;padding-top:10px;padding-bottom:10px;padding-left:10px}div.footer {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#666633;font-size:14px;-moz-border-radius-bottomleft: 10px;border-bottom-left-radius: 10px;-moz-border-radius-bottomright: 10px;border-bottom-right-radius: 10px;padding-left: 5px}BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}B {font-family:Tahoma,Arial,sans-serif;color:black;}A {color : black;}HR {color : #999966;}--></style> </head><body><div class="header">Internal Error</div><div class="body"><b>com.google.common.collect.Sets$SetView.iterator()Lcom/google/common/collect/UnmodifiableIterator;</b><pre>     1: org.reflections.Reflections.expandSuperTypes(Reflections.java:380)
+     2: org.reflections.Reflections.<init>(Reflections.java:126)
+     3: org.reflections.Reflections.<init>(Reflections.java:168)
+     4: org.reflections.Reflections.<init>(Reflections.java:141)
+     5: com.cloudera.oryx.lambda.serving.OryxApplication.doGetClasses(OryxApplication.java:69)
+     6: com.cloudera.oryx.lambda.serving.OryxApplication.getClasses(OryxApplication.java:57)
+     7: org.glassfish.jersey.server.ResourceConfig$RuntimeConfig$3.run(ResourceConfig.java:1234)
+     8: org.glassfish.jersey.internal.Errors$2.call(Errors.java:289)
+     9: org.glassfish.jersey.internal.Errors$2.call(Errors.java:286)
+    10: org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        ... 18 more</pre>Please see the log for more detail.</div><div class="footer">Grizzly 2.3.28</div></body></html>]>
+  AssignTest.testFormAssign:57->checkResponse:61->AbstractServingTest.checkResponse:154 expected:<200> but was:<500>
+  ConsoleTest.testConsole:29 expected:<public> but was:<null>
+  ReadOnlyTest.testNoAdd:32 expected:<403> but was:<500>
+  ReadyTest.testGet:28 expected:<200> but was:<500>
+  ReadyTest.testHead:34 expected:<200> but was:<500>
+  ConsoleTest.testConsole:29 expected:<public> but was:<null>
+  PredictTest.testFormPredict:52->checkResponse:65->AbstractServingTest.checkResponse:154 expected:<200> but was:<500>
+  PredictTest.testPredictPost:61 expected:<[67.0
+670.0
+]> but was:<[<html><head><title>Grizzly 2.3.28</title><style><!--div.header {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#003300;font-size:22px;-moz-border-radius-topleft: 10px;border-top-left-radius: 10px;-moz-border-radius-topright: 10px;border-top-right-radius: 10px;padding-left: 5px}div.body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:#FFFFCC;font-size:16px;padding-top:10px;padding-bottom:10px;padding-left:10px}div.footer {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#666633;font-size:14px;-moz-border-radius-bottomleft: 10px;border-bottom-left-radius: 10px;-moz-border-radius-bottomright: 10px;border-bottom-right-radius: 10px;padding-left: 5px}BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}B {font-family:Tahoma,Arial,sans-serif;color:black;}A {color : black;}HR {color : #999966;}--></style> </head><body><div class="header">Internal Error</div><div class="body"><b>com.google.common.collect.Sets$SetView.iterator()Lcom/google/common/collect/UnmodifiableIterator;</b><pre>     1: org.reflections.Reflections.expandSuperTypes(Reflections.java:380)
+     2: org.reflections.Reflections.<init>(Reflections.java:126)
+     3: org.reflections.Reflections.<init>(Reflections.java:168)
+     4: org.reflections.Reflections.<init>(Reflections.java:141)
+     5: com.cloudera.oryx.lambda.serving.OryxApplication.doGetClasses(OryxApplication.java:69)
+     6: com.cloudera.oryx.lambda.serving.OryxApplication.getClasses(OryxApplication.java:57)
+     7: org.glassfish.jersey.server.ResourceConfig$RuntimeConfig$3.run(ResourceConfig.java:1234)
+     8: org.glassfish.jersey.internal.Errors$2.call(Errors.java:289)
+     9: org.glassfish.jersey.internal.Errors$2.call(Errors.java:286)
+    10: org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        ... 18 more</pre>Please see the log for more detail.</div><div class="footer">Grizzly 2.3.28</div></body></html>]>
+  ReadOnlyTest.testNoTrain:32 expected:<403> but was:<500>
+  ReadyTest.testGet:28 expected:<200> but was:<500>
+  ReadyTest.testHead:34 expected:<200> but was:<500>
+  TrainTest.testFormTrain:46->checkResponse:60->AbstractServingTest.checkResponse:154 expected:<204> but was:<500>
+  TrainTest.testSimpleTrain:41->checkResponse:60->AbstractServingTest.checkResponse:154 expected:<204> but was:<500>
+  TrainTest.testURITrain:53 expected:<204> but was:<500>
+Tests in error:
+  AllItemIDsTest.testAllItemIDs:31 » InternalServerError HTTP 500 Internal Error
+  AllItemIDsTest.testAllItemIDsCSV:40 » InternalServerError HTTP 500 Internal Er...
+  AllUserIDsTest.testAllItemIDs:31 » InternalServerError HTTP 500 Internal Error
+  AllUserIDsTest.testAllUserIDsCSV:40 » InternalServerError HTTP 500 Internal Er...
+  BecauseTest.testBecause:32 » InternalServerError HTTP 500 Internal Error
+  BecauseTest.testBecauseCSV:40 » InternalServerError HTTP 500 Internal Error
+  BecauseTest.testHowMany:51->AbstractALSServingTest.testHowMany:93 » InternalServerError
+  BecauseTest.testNoArg »  Unexpected exception, expected<javax.ws.rs.NotFoundEx...
+  BecauseTest.testOffset:58->AbstractALSServingTest.testOffset:84 » InternalServerError
+  CompressedResponseTest.testDeflateResponse:42->doTestCompressedResponse:47 » InternalServerError
+  CompressedResponseTest.testGzipResponse:37->doTestCompressedResponse:47 » InternalServerError
+  EstimateForAnonymousTest.testBadRequest »  Unexpected exception, expected<java...
+  EstimateForAnonymousTest.testEstimateForAnonymous:29 » InternalServerError HTT...
+  EstimateForAnonymousTest.testEstimateForAnonymousCSV:50 » InternalServerError ...
+  EstimateForAnonymousTest.testEstimateForAnonymousWithAllUnknown:43 » InternalServerError
+  EstimateForAnonymousTest.testEstimateForAnonymousWithUnknown:36 » InternalServerError
+  EstimateForAnonymousTest.testUnknownUser »  Unexpected exception, expected<jav...
+  EstimateTest.testBadRequest »  Unexpected exception, expected<javax.ws.rs.NotF...
+  EstimateTest.testEstimate:30 » InternalServerError HTTP 500 Internal Error
+  EstimateTest.testEstimateCSV:39 » InternalServerError HTTP 500 Internal Error
+  EstimateTest.testZeroEstimate:51 » InternalServerError HTTP 500 Internal Error
+  KnownItemsTest.testEmptyItems:52 » InternalServerError HTTP 500 Internal Error
+  KnownItemsTest.testKnownItems:32 » InternalServerError HTTP 500 Internal Error
+  KnownItemsTest.testKnownItemsCSV:41 » InternalServerError HTTP 500 Internal Er...
+  MostActiveUsersTest.testMostPopular:31 » InternalServerError HTTP 500 Internal...
+  MostActiveUsersTest.testMostPopularCSV:39 » InternalServerError HTTP 500 Inter...
+  MostActiveUsersTest.testRescorer:46 » InternalServerError HTTP 500 Internal Er...
+  MostPopularItemsTest.testMostPopular:32 » InternalServerError HTTP 500 Interna...
+  MostPopularItemsTest.testMostPopularCSV:40 » InternalServerError HTTP 500 Inte...
+  MostPopularItemsTest.testRescorer:47 » InternalServerError HTTP 500 Internal E...
+  MostSurprisingTest.testHowMany:51->AbstractALSServingTest.testHowMany:93 » InternalServerError
+  MostSurprisingTest.testMostSurprising:37 » InternalServerError HTTP 500 Intern...
+  MostSurprisingTest.testMostSurprisingCSV:45 » InternalServerError HTTP 500 Int...
+  MostSurprisingTest.testNoArg »  Unexpected exception, expected<javax.ws.rs.Not...
+  MostSurprisingTest.testOffset:58->AbstractALSServingTest.testOffset:84 » InternalServerError
+  PopularRepresentativeItemsTest.testPopularRepresentativeItems:32 » InternalServerError
+  PopularRepresentativeItemsTest.testPopularRepresentativeItemsCSV:41 » InternalServerError
+  RecommendTest.testBadHowMany »  Unexpected exception, expected<javax.ws.rs.Bad...
+  RecommendTest.testBadOffset »  Unexpected exception, expected<javax.ws.rs.BadR...
+  RecommendTest.testConsiderKnownItems:78 » InternalServerError HTTP 500 Interna...
+  RecommendTest.testHowMany:47->AbstractALSServingTest.testHowMany:93 » InternalServerError
+  RecommendTest.testNoArg »  Unexpected exception, expected<javax.ws.rs.NotFound...
+  RecommendTest.testOffset:59->AbstractALSServingTest.testOffset:84 » InternalServerError
+  RecommendTest.testRecommend:33 » InternalServerError HTTP 500 Internal Error
+  RecommendTest.testRecommendCSV:41 » InternalServerError HTTP 500 Internal Erro...
+  RecommendTest.testRescorer:99 » InternalServerError HTTP 500 Internal Error
+  RecommendTest.testTooMany »  Unexpected exception, expected<javax.ws.rs.BadReq...
+  RecommendToAnonymousTest.testBadHowMany »  Unexpected exception, expected<java...
+  RecommendToAnonymousTest.testBadOffset »  Unexpected exception, expected<javax...
+  RecommendToAnonymousTest.testHowMany:58->AbstractALSServingTest.testHowMany:93 » InternalServerError
+  RecommendToAnonymousTest.testNoArg »  Unexpected exception, expected<javax.ws....
+  RecommendToAnonymousTest.testOffset:70->AbstractALSServingTest.testOffset:84 » InternalServerError
+  RecommendToAnonymousTest.testRecommendToAnonymous:33 » InternalServerError HTT...
+  RecommendToAnonymousTest.testRecommendToAnonymousCSV:41 » InternalServerError ...
+  RecommendToAnonymousTest.testRecommendToAnonymousWithAllUnknown »  Unexpected ...
+  RecommendToAnonymousTest.testRecommendToAnonymousWithUnknown:47 » InternalServerError
+  RecommendToAnonymousTest.testRescorer:95 » InternalServerError HTTP 500 Intern...
+  RecommendToAnonymousTest.testTooMany »  Unexpected exception, expected<javax.w...
+  RecommendToManyTest.testBadHowMany »  Unexpected exception, expected<javax.ws....
+  RecommendToManyTest.testBadOffset »  Unexpected exception, expected<javax.ws.r...
+  RecommendToManyTest.testConsiderKnownItems:77 » InternalServerError HTTP 500 I...
+  RecommendToManyTest.testHowMany:46->AbstractALSServingTest.testHowMany:93 » InternalServerError
+  RecommendToManyTest.testNoArg »  Unexpected exception, expected<javax.ws.rs.No...
+  RecommendToManyTest.testOffset:58->AbstractALSServingTest.testOffset:84 » InternalServerError
+  RecommendToManyTest.testRecommendToMany:33 » InternalServerError HTTP 500 Inte...
+  RecommendToManyTest.testRecommendToManyCSV:92 » InternalServerError HTTP 500 I...
+  RecommendToManyTest.testRescorer:100 » InternalServerError HTTP 500 Internal E...
+  RecommendToManyTest.testTooMany »  Unexpected exception, expected<javax.ws.rs....
+  RecommendWithContextTest.testBadArg »  Unexpected exception, expected<javax.ws...
+  RecommendWithContextTest.testBadHowMany »  Unexpected exception, expected<java...
+  RecommendWithContextTest.testBadOffset »  Unexpected exception, expected<javax...
+  RecommendWithContextTest.testHowMany:47->AbstractALSServingTest.testHowMany:93 » InternalServerError
+  RecommendWithContextTest.testNoArg »  Unexpected exception, expected<javax.ws....
+  RecommendWithContextTest.testOffset:59->AbstractALSServingTest.testOffset:84 » InternalServerError
+  RecommendWithContextTest.testRecommend:33 » InternalServerError HTTP 500 Inter...
+  RecommendWithContextTest.testRecommendCSV:41 » InternalServerError HTTP 500 In...
+  RecommendWithContextTest.testRecommendWithContext:115 » InternalServerError HT...
+  RecommendWithContextTest.testRecommendWithContextCSV:123 » InternalServerError
+  RecommendWithContextTest.testRecommendWithContextWithAllUnknown:135 » InternalServerError
+  RecommendWithContextTest.testRecommendWithContextWithUnknown:129 » InternalServerError
+  RecommendWithContextTest.testRescorer:106 » InternalServerError HTTP 500 Inter...
+  RecommendWithContextTest.testTooMany »  Unexpected exception, expected<javax.w...
+  SimilarityTest.testBadHowMany »  Unexpected exception, expected<javax.ws.rs.Ba...
+  SimilarityTest.testBadOffset »  Unexpected exception, expected<javax.ws.rs.Bad...
+  SimilarityTest.testHowMany:45->AbstractALSServingTest.testHowMany:93 » InternalServerError
+  SimilarityTest.testNoArg »  Unexpected exception, expected<javax.ws.rs.NotFoun...
+  SimilarityTest.testOffset:52->AbstractALSServingTest.testOffset:84 » InternalServerError
+  SimilarityTest.testRescorer:83 » InternalServerError HTTP 500 Internal Error
+  SimilarityTest.testSimilarItems:37 » InternalServerError HTTP 500 Internal Err...
+  SimilarityTest.testSimilarityCSV:60 » InternalServerError HTTP 500 Internal Er...
+  SimilarityTest.testTooMany »  Unexpected exception, expected<javax.ws.rs.BadRe...
+  SimilarityToItemTest.testNoArg »  Unexpected exception, expected<javax.ws.rs.N...
+  SimilarityToItemTest.testSimilarityToItem:35 » InternalServerError HTTP 500 In...
+  SimilarityToItemTest.testSimilarityToItemCSV:43 » InternalServerError HTTP 500...
+  SimilarityToItemTest.testZeroSimilarityToItem:50 » InternalServerError HTTP 50...
+  AssignTest.testAssign:38 » InternalServerError HTTP 500 Internal Error
+  AssignTest.testAssign2:44 » InternalServerError HTTP 500 Internal Error
+  DistanceToNearestTest.testDistance:30 » InternalServerError HTTP 500 Internal ...
+  DistanceToNearestTest.testDistance2:36 » InternalServerError HTTP 500 Internal...
+  ClassificationDistributionTest.testDistribution:42 » InternalServerError HTTP ...
+  ClassificationDistributionTest.testDistribution2:60 » InternalServerError HTTP...
+  FeatureImportanceTest.testAllImportance:44 » InternalServerError HTTP 500 Inte...
+  FeatureImportanceTest.testImportance:33 » InternalServerError HTTP 500 Interna...
+  PredictTest.testPredict:38 » InternalServerError HTTP 500 Internal Error
+  PredictTest.testPredict2:45 » InternalServerError HTTP 500 Internal Error
+
+Tests run: 158, Failures: 34, Errors: 105, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO]
+[INFO] Oryx ............................................... SUCCESS [  2.245 s]
+[INFO] API ................................................ SUCCESS [ 15.146 s]
+[INFO] Common ............................................. SUCCESS [ 33.263 s]
+[INFO] Kafka Utilities .................................... SUCCESS [  0.623 s]
+[INFO] Lambda ............................................. SUCCESS [  1.710 s]
+[INFO] Lambda Serving ..................................... SUCCESS [  7.023 s]
+[INFO] ML ................................................. SUCCESS [  2.591 s]
+[INFO] Apps: API .......................................... SUCCESS [  1.185 s]
+[INFO] Apps: Common ....................................... SUCCESS [  7.039 s]
+[INFO] Apps: Spark MLlib .................................. SUCCESS [  2.367 s]
+[INFO] Apps: Oryx ......................................... SUCCESS [  1.392 s]
+[INFO] Apps: Oryx (Serving) ............................... FAILURE [01:36 min]
+[INFO] Example ............................................ SKIPPED
+[INFO] Batch Layer ........................................ SKIPPED
+[INFO] Speed Layer ........................................ SKIPPED
+[INFO] Serving Layer ...................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:51 min
+[INFO] Finished at: 2017-04-19T00:47:16+02:00
+[INFO] Final Memory: 102M/1539M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project oryx-app-serving: There are test failures.
+[ERROR]
+[ERROR] Please refer to /root/workspace/OryxProject/oryx/223328603/app/oryx-app-serving/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :oryx-app-serving
