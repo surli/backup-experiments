@@ -1,14 +1,41 @@
 {
-  "bugRepo": "apache/jackrabbit-oak",
+  "totalNumberSkippingTests": 206,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 1,
     "CloneRepository": 29,
     "ResolveDependency": 17,
     "TestProject": 1806,
     "BuildProject": 214
   },
-  "buildid": 223271295,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 0,
   "repo": "apache/jackrabbit-oak",
-  "bugCommit": "https://github.com/apache/jackrabbit-oak/compare/be82b58f91a5...25214e7e51e7"
+  "bugCommit": "https://github.com/apache/jackrabbit-oak/compare/be82b58f91a5...25214e7e51e7",
+  "failingModule": "/root/workspace/apache/jackrabbit-oak/223271295/oak-pojosr",
+  "buildid": 223271295,
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 8259,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.jackrabbit.oak.run.osgi.LuceneSupportTest",
+      "failingMethods": [
+        "org.apache.jackrabbit.oak.run.osgi.LuceneSupportTest#fullTextSearch"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "RetryLoop failed, condition is false after 30 seconds:null",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
+  "bugRepo": "apache/jackrabbit-oak"
 }
