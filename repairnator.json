@@ -1,14 +1,40 @@
 {
-  "bugRepo": "jamesagnew/hapi-fhir",
+  "totalNumberSkippingTests": 3,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 0,
     "CloneRepository": 113,
     "ResolveDependency": 81,
     "TestProject": 166,
     "BuildProject": 255
   },
-  "buildid": 222944456,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 1,
   "repo": "jamesagnew/hapi-fhir",
-  "bugCommit": "https://github.com/jamesagnew/hapi-fhir/compare/9201692c704d...e9a1069c9d08"
+  "bugCommit": "https://github.com/jamesagnew/hapi-fhir/compare/9201692c704d...e9a1069c9d08",
+  "failingModule": "/root/workspace/jamesagnew/hapi-fhir/222944456/hapi-fhir-structures-dstu",
+  "buildid": 222944456,
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.StackOverflowError"
+  ],
+  "totalNumberRunningTests": 706,
+  "failing-test-cases": [
+    {
+      "className": "ca.uhn.fhir.parser.XmlParserTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "ca.uhn.fhir.parser.XmlParserTest#testLoadAndEncodeDeclaredExtensions"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.StackOverflowError",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ],
+  "bugRepo": "jamesagnew/hapi-fhir"
 }
