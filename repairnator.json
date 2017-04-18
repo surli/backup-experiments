@@ -1,19 +1,46 @@
 {
+  "pr-base-commit-id": "1f341e340719dcefc8c724242752bb4a51619743",
+  "pr-head-commit-id": "8a10173196bd636f0aa10ce6d5b93775f61e6ec9",
+  "totalNumberSkippingTests": 0,
+  "pr-remote-repo": "artem-fedorov/performance-plugin",
+  "error-types": [
+    "junit.framework.AssertionFailedError"
+  ],
+  "totalNumberFailingTests": 1,
+  "buildid": 223106342,
+  "totalNumberErroringTests": 0,
+  "is-pr": "true",
+  "totalNumberRunningTests": 144,
+  "pr-head-commit-id-url": "https://github.com/artem-fedorov/performance-plugin/commit/8a10173196bd636f0aa10ce6d5b93775f61e6ec9",
+  "pr-id": 98,
+  "repo": "jenkinsci/performance-plugin",
+  "failing-test-cases": [
+    {
+      "className": "hudson.plugins.performance.build.PerformanceTestBuildTest",
+      "failingMethods": [
+        "hudson.plugins.performance.build.PerformanceTestBuildTest#testFlow"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.AssertionFailedError",
+          "failureDetail": "\nDump performance logger:\nPerformance logger: Checking bzt installed on your machine.\njava.io.IOException: Cannot run program \"bzt\" (in directory \"/tmp/1492536333501-0\"): error\u003d2, No such file or directory\n at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)\n at hudson.Proc$LocalProc.\u003cinit\u003e(Proc.java:244)\n at hudson.Proc$LocalProc.\u003cinit\u003e(Proc.java:216)\n at hudson.Launcher$LocalLauncher.launch(Launcher.java:803)\n at hudson.Launcher$ProcStarter.start(Launcher.java:381)\n at hudson.plugins.performance.build.PerformanceTestBuild.runCmd(PerformanceTestBuild.java:168)\n at hudson.plugins.performance.build.PerformanceTestBuild.perform(PerformanceTestBuild.java:84)\n at hudson.plugins.performance.build.PerformanceTestBuildTest.testFlow(PerformanceTestBuildTest.java:34)\n at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n at java.lang.reflect.Method.invoke(Method.java:498)\n at junit.framework.TestCase.runTest(TestCase.java:176)\n at org.jvnet.hudson.test.HudsonTestCase.runTest(HudsonTestCase.java:453)\n at junit.framework.TestCase.runBare(TestCase.java:141)\n at org.jvnet.hudson.test.HudsonTestCase.runBare(HudsonTestCase.java:287)\n at junit.framework.TestResult$1.protect(TestResult.java:122)\n at junit.framework.TestResult.runProtected(TestResult.java:142)\n at junit.framework.TestResult.run(TestResult.java:125)\n at junit.framework.TestCase.run(TestCase.java:129)\n at junit.framework.TestSuite.runTest(TestSuite.java:255)\n at junit.framework.TestSuite.run(TestSuite.java:250)\n at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:84)\n at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)\n at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)\n at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)\n at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)\n at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)\n at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)\n at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)\nCaused by: java.io.IOException: error\u003d2, No such file or directory\n at java.lang.UNIXProcess.forkAndExec(Native Method)\n at java.lang.UNIXProcess.\u003cinit\u003e(UNIXProcess.java:247)\n at java.lang.ProcessImpl.start(ProcessImpl.java:134)\n at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)\n ... 29 more\nPerformance logger: You have not bzt on your machine. Next step is checking virtualenv.\njava.io.IOException: Cannot run program \"virtualenv\" (in directory \"/tmp/1492536333501-0\"): error\u003d2, No such file or directory\n at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)\n at hudson.Proc$LocalProc.\u003cinit\u003e(Proc.java:244)\n at hudson.Proc$LocalProc.\u003cinit\u003e(Proc.java:216)\n at hudson.Launcher$LocalLauncher.launch(Launcher.java:803)\n at hudson.Launcher$ProcStarter.start(Launcher.java:381)\n at hudson.plugins.performance.build.PerformanceTestBuild.runCmd(PerformanceTestBuild.java:168)\n at hudson.plugins.performance.build.PerformanceTestBuild.perform(PerformanceTestBuild.java:88)\n at hudson.plugins.performance.build.PerformanceTestBuildTest.testFlow(PerformanceTestBuildTest.java:34)\n at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n at java.lang.reflect.Method.invoke(Method.java:498)\n at junit.framework.TestCase.runTest(TestCase.java:176)\n at org.jvnet.hudson.test.HudsonTestCase.runTest(HudsonTestCase.java:453)\n at junit.framework.TestCase.runBare(TestCase.java:141)\n at org.jvnet.hudson.test.HudsonTestCase.runBare(HudsonTestCase.java:287)\n at junit.framework.TestResult$1.protect(TestResult.java:122)\n at junit.framework.TestResult.runProtected(TestResult.java:142)\n at junit.framework.TestResult.run(TestResult.java:125)\n at junit.framework.TestCase.run(TestCase.java:129)\n at junit.framework.TestSuite.runTest(TestSuite.java:255)\n at junit.framework.TestSuite.run(TestSuite.java:250)\n at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:84)\n at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)\n at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)\n at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)\n at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)\n at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)\n at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)\n at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)\nCaused by: java.io.IOException: error\u003d2, No such file or directory\n at java.lang.UNIXProcess.forkAndExec(Native Method)\n at java.lang.UNIXProcess.\u003cinit\u003e(UNIXProcess.java:247)\n at java.lang.ProcessImpl.start(ProcessImpl.java:134)\n at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)\n ... 29 more\n expected:\u003cSUCCESS\u003e but was:\u003cFAILURE\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 3,
+    "": 0,
     "CloneRepository": 9,
     "ResolveDependency": 500,
     "TestProject": 356,
     "BuildProject": 133
   },
   "workspace": "./workspace",
-  "pr-remote-repo": "artem-fedorov/performance-plugin",
-  "pr-head-commit-id": "8a10173196bd636f0aa10ce6d5b93775f61e6ec9",
-  "pr-id": 98,
-  "repo": "jenkinsci/performance-plugin",
-  "pr-head-commit-id-url": "https://github.com/artem-fedorov/performance-plugin/commit/8a10173196bd636f0aa10ce6d5b93775f61e6ec9",
-  "is-pr": "true",
-  "buildid": 223106342,
   "pr-base-commit-id-url": "https://github.com/jenkinsci/performance-plugin/commit/1f341e340719dcefc8c724242752bb4a51619743",
-  "pr-base-commit-id": "1f341e340719dcefc8c724242752bb4a51619743"
+  "failingModule": "/root/workspace/jenkinsci/performance-plugin/223106342"
 }
