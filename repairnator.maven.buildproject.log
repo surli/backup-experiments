@@ -1,0 +1,1148 @@
+[INFO] Scanning for projects...
+[WARNING] The POM for org.jenkins-ci.tools:maven-hpi-plugin:jar:1.120 is missing, no dependency information available
+[WARNING] Failed to build parent project for org.jenkins-ci.plugins:performance:hpi:2.3-SNAPSHOT
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Performance Plugin 2.3-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-hpi-plugin:1.120:validate (default-validate) @ performance ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:display-info (display-info) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-4/extra-enforcer-rules-1.0-beta-4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-4/extra-enforcer-rules-1.0-beta-4.pom (7 KB at 17.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/mojo/mojo-parent/38/mojo-parent-38.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/mojo/mojo-parent/38/mojo-parent-38.pom (33 KB at 81.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/enforcer/enforcer-api/1.3.1/enforcer-api-1.3.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/enforcer/enforcer-api/1.3.1/enforcer-api-1.3.1.pom (3 KB at 9.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/enforcer/enforcer-rules/1.3.1/enforcer-rules-1.3.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/enforcer/enforcer-rules/1.3.1/enforcer-rules-1.3.1.pom (4 KB at 12.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom (2 KB at 4.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom (2 KB at 4.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-4/extra-enforcer-rules-1.0-beta-4.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.jar (13 KB at 32.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/mojo/extra-enforcer-rules/1.0-beta-4/extra-enforcer-rules-1.0-beta-4.jar (33 KB at 69.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.jar (86 KB at 175.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.jar (87 KB at 170.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.jar (119 KB at 206.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.jar (35 KB at 40.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.jar (48 KB at 55.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.jar (29 KB at 32.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-10/doxia-sink-api-1.0-alpha-10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.jar (57 KB at 59.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.jar (21 KB at 17.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar (10 KB at 8.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.jar (156 KB at 136.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-10/doxia-sink-api-1.0-alpha-10.jar (10 KB at 8.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/enforcer/enforcer-api/1.3.1/enforcer-api-1.3.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.jar (14 KB at 10.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/enforcer/enforcer-rules/1.3.1/enforcer-rules-1.3.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.jar (11 KB at 7.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/enforcer/enforcer-api/1.3.1/enforcer-api-1.3.1.jar (10 KB at 6.6 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.jar (37 KB at 23.9 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/enforcer/enforcer-rules/1.3.1/enforcer-rules-1.3.1.jar (86 KB at 47.4 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.jar (262 KB at 144.8 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar (276 KB at 130.9 KB/sec)
+[INFO] Maven Version: 3.3.9
+[INFO] JDK Version: 1.8.0_121 normalized as: 1.8.0-121
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 3.16.0-4-amd64
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (display-info) @ performance ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-localizer-plugin:1.23:generate (default) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.7.0/ant-1.7.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.7.0/ant-1.7.0.pom (10 KB at 26.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-parent/1.7.0/ant-parent-1.7.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-parent/1.7.0/ant-parent-1.7.0.pom (5 KB at 14.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.pom (3 KB at 8.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom (17 KB at 41.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.7.0/ant-1.7.0.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar (12 KB at 37.9 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.jar (160 KB at 272.0 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar (309 KB at 454.9 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.7.0/ant-1.7.0.jar (1260 KB at 1459.5 KB/sec)
+[INFO]
+[INFO] >>> maven-javadoc-plugin:2.10.1:javadoc (default) > generate-sources @ performance >>>
+[INFO]
+[INFO] --- maven-hpi-plugin:1.120:validate (default-validate) @ performance ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:display-info (display-info) @ performance ---
+[INFO] Maven Version: 3.3.9
+[INFO] JDK Version: 1.8.0_121 normalized as: 1.8.0-121
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 3.16.0-4-amd64
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (display-info) @ performance ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-localizer-plugin:1.23:generate (default) @ performance ---
+[INFO]
+[INFO] <<< maven-javadoc-plugin:2.10.1:javadoc (default) < generate-sources @ performance <<<
+[INFO]
+[INFO] --- maven-javadoc-plugin:2.10.1:javadoc (default) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom (4 KB at 11.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom (5 KB at 15.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom (7 KB at 22.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom (2 KB at 6.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom (2 KB at 5.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom (2 KB at 6.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom (2 KB at 4.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom (3 KB at 9.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom (2 KB at 5.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom (3 KB at 9.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom (1018 B at 3.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-invoker/2.0.9/maven-invoker-2.0.9.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-invoker/2.0.9/maven-invoker-2.0.9.pom (6 KB at 19.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-components/9/maven-shared-components-9.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-components/9/maven-shared-components-9.pom (4 KB at 11.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.pom (4 KB at 12.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom (3 KB at 7.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom (2 KB at 5.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom (13 KB at 41.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpclient/4.2.3/httpclient-4.2.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpclient/4.2.3/httpclient-4.2.3.pom (6 KB at 19.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpcomponents-client/4.2.3/httpcomponents-client-4.2.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpcomponents-client/4.2.3/httpcomponents-client-4.2.3.pom (15 KB at 30.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/project/6/project-6.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/project/6/project-6.pom (24 KB at 59.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpcore/4.2.2/httpcore-4.2.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpcore/4.2.2/httpcore-4.2.2.pom (6 KB at 19.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpcomponents-core/4.2.2/httpcomponents-core-4.2.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpcomponents-core/4.2.2/httpcomponents-core-4.2.2.pom (12 KB at 38.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/log4j/log4j/1.2.14/log4j-1.2.14.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/log4j/log4j/1.2.14/log4j-1.2.14.pom (3 KB at 7.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.pom (18 KB at 45.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-archiver/2.5/plexus-archiver-2.5.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-archiver/2.5/plexus-archiver-2.5.pom (4 KB at 11.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom (4 KB at 10.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-io/2.0.12/plexus-io-2.0.12.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-io/2.0.12/plexus-io-2.0.12.pom (3 KB at 5.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.pom (12 KB at 37.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/commons/commons-parent/33/commons-parent-33.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/commons/commons-parent/33/commons-parent-33.pom (52 KB at 108.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-invoker/2.0.9/maven-invoker-2.0.9.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar (37 KB at 96.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar (22 KB at 56.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/commons-io/commons-io/2.2/commons-io-2.2.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.jar (31 KB at 80.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpclient/4.2.3/httpclient-4.2.3.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-invoker/2.0.9/maven-invoker-2.0.9.jar (28 KB at 72.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpcore/4.2.2/httpcore-4.2.2.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar (52 KB at 110.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/commons-io/commons-io/2.2/commons-io-2.2.jar (170 KB at 178.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpcore/4.2.2/httpcore-4.2.2.jar (219 KB at 210.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/log4j/log4j/1.2.14/log4j-1.2.14.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/commons-lang/commons-lang/2.4/commons-lang-2.4.jar (256 KB at 245.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/commons-codec/commons-codec/1.6/commons-codec-1.6.jar (228 KB at 202.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-archiver/2.5/plexus-archiver-2.5.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/httpcomponents/httpclient/4.2.3/httpclient-4.2.3.jar (423 KB at 346.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-io/2.0.12/plexus-io-2.0.12.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar (60 KB at 41.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.jar (176 KB at 109.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-archiver/2.5/plexus-archiver-2.5.jar (124 KB at 73.2 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-io/2.0.12/plexus-io-2.0.12.jar (60 KB at 33.0 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/log4j/log4j/1.2.14/log4j-1.2.14.jar (359 KB at 200.2 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar (357 KB at 158.0 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.jar (234 KB at 103.2 KB/sec)
+[INFO]
+Loading source files for package hudson.plugins.performance.data...
+Loading source files for package hudson.plugins.performance.dsl...
+Loading source files for package hudson.plugins.performance...
+Loading source files for package hudson.plugins.performance.cookie...
+Loading source files for package hudson.plugins.performance.parsers...
+Loading source files for package hudson.plugins.performance.details...
+Loading source files for package hudson.plugins.performance.actions...
+Loading source files for package hudson.plugins.performance.constraints...
+Loading source files for package hudson.plugins.performance.constraints.blocks...
+Loading source files for package hudson.plugins.performance.build...
+Loading source files for package hudson.plugins.performance.descriptors...
+Loading source files for package hudson.plugins.performance.reports...
+Loading source files for package hudson.plugins.performance.reports.throughput...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_121
+Building tree for all the packages and classes...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/ConstraintSettings.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/HttpSample.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/PerformanceReportPosition.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/TaurusFinalStats.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/dsl/PerfReportDSLVariable.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/dsl/PerfTestDSLVariable.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/Messages.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/PerformancePublisher.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/PerformancePublisher.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/PerformanceReportMap.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/TrendReportGraphs.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/cookie/CookieHandler.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/AbstractParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/AbstractParser.ObjectInputStreamWithClassMapping.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/IagoParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/IagoParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/IagoParser.Stats.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/JMeterCsvParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/JMeterCsvParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/JMeterParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/JMeterParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/JmeterSummarizerParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/JmeterSummarizerParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/JUnitParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/JUnitParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/ParserDetector.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/ParserFactory.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/PerformanceReportParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/TaurusParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/TaurusParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/WrkSummarizerParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/WrkSummarizerParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/WrkSummarizerParser.TimeUnit.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/GraphConfigurationDetail.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/TestSuiteReportDetail.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/TrendReportDetail.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/TrendReportDetail.Row.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/TrendReportDetail.RowIterator.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/ExternalBuildReportAction.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/PerformanceBuildAction.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/PerformanceProjectAction.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/PerformanceProjectAction.Range.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/AbsoluteConstraint.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/AbsoluteConstraint.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/AbstractConstraint.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/AbstractConstraint.Escalation.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/AbstractConstraint.Metric.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/AbstractConstraint.Operator.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/ConstraintChecker.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/ConstraintEvaluation.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/ConstraintFactory.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/RelativeConstraint.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/RelativeConstraint.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/PreviousResultsBlock.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/PreviousResultsBlock.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/TestCaseBlock.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/TestCaseBlock.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/build/PerformanceTestBuild.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/build/PerformanceTestBuild.Descriptor.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/descriptors/ConstraintDescriptor.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/descriptors/PerformanceReportParserDescriptor.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/AbstractReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/ConstraintReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/PerformanceReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/UriReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/UriReport.Sample.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/throughput/ThroughputReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/throughput/ThroughputUriReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/overview-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/build/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/build/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/build/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/cookie/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/cookie/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/cookie/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/descriptors/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/descriptors/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/descriptors/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/dsl/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/dsl/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/dsl/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/throughput/package-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/throughput/package-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/throughput/package-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/constant-values.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/serialized-form.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/class-use/ConstraintSettings.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/class-use/TaurusFinalStats.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/class-use/HttpSample.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/class-use/PerformanceReportPosition.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/dsl/class-use/PerfReportDSLVariable.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/dsl/class-use/PerfTestDSLVariable.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/class-use/Messages.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/class-use/PerformancePublisher.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/class-use/PerformancePublisher.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/class-use/PerformanceReportMap.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/class-use/TrendReportGraphs.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/cookie/class-use/CookieHandler.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/ParserDetector.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/PerformanceReportParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/TaurusParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/TaurusParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/JmeterSummarizerParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/JmeterSummarizerParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/AbstractParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/AbstractParser.ObjectInputStreamWithClassMapping.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/WrkSummarizerParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/WrkSummarizerParser.TimeUnit.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/WrkSummarizerParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/JUnitParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/JUnitParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/IagoParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/IagoParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/IagoParser.Stats.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/ParserFactory.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/JMeterParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/JMeterParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/JMeterCsvParser.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/class-use/JMeterCsvParser.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/class-use/TestSuiteReportDetail.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/class-use/TrendReportDetail.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/class-use/TrendReportDetail.RowIterator.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/class-use/TrendReportDetail.Row.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/class-use/GraphConfigurationDetail.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/class-use/PerformanceBuildAction.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/class-use/PerformanceProjectAction.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/class-use/PerformanceProjectAction.Range.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/class-use/ExternalBuildReportAction.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/AbsoluteConstraint.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/AbsoluteConstraint.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/ConstraintChecker.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/ConstraintFactory.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/ConstraintEvaluation.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/AbstractConstraint.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/AbstractConstraint.Metric.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/AbstractConstraint.Escalation.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/AbstractConstraint.Operator.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/RelativeConstraint.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/class-use/RelativeConstraint.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/class-use/TestCaseBlock.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/class-use/TestCaseBlock.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/class-use/PreviousResultsBlock.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/class-use/PreviousResultsBlock.DescriptorImpl.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/build/class-use/PerformanceTestBuild.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/build/class-use/PerformanceTestBuild.Descriptor.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/descriptors/class-use/PerformanceReportParserDescriptor.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/descriptors/class-use/ConstraintDescriptor.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/class-use/ConstraintReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/class-use/PerformanceReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/class-use/UriReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/class-use/UriReport.Sample.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/class-use/AbstractReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/throughput/class-use/ThroughputUriReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/throughput/class-use/ThroughputReport.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/actions/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/build/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/constraints/blocks/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/cookie/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/data/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/descriptors/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/details/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/dsl/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/parsers/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/package-use.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/hudson/plugins/performance/reports/throughput/package-use.html...
+Building index for all the packages and classes...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/overview-tree.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/index-all.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/deprecated-list.html...
+Building index for all classes...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/allclasses-frame.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/allclasses-noframe.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/index.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/overview-summary.html...
+Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/site/apidocs/help-doc.html...
+4 warnings
+[WARNING] Javadoc Warnings
+[WARNING] /root/workspace/jenkinsci/performance-plugin/223097269/src/main/java/hudson/plugins/performance/PerformancePublisher.java:1116: warning - @param argument "build," is not a parameter name.
+[WARNING] /root/workspace/jenkinsci/performance-plugin/223097269/src/main/java/hudson/plugins/performance/PerformanceReportMap.java:115: warning - @return tag has no arguments.
+[WARNING] /root/workspace/jenkinsci/performance-plugin/223097269/src/main/java/hudson/plugins/performance/PerformanceReportMap.java:125: warning - @return tag has no arguments.
+[WARNING] /root/workspace/jenkinsci/performance-plugin/223097269/src/main/java/hudson/plugins/performance/constraints/AbstractConstraint.java:103: warning - @return tag has no arguments.
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-filtering/1.2/maven-filtering-1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-filtering/1.2/maven-filtering-1.2.pom (7 KB at 12.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.pom (4 KB at 13.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom (889 B at 2.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom (3 KB at 9.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/spice/spice-parent/10/spice-parent-10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/spice/spice-parent/10/spice-parent-10.pom (3 KB at 9.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/forge/forge-parent/3/forge-parent-3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/forge/forge-parent/3/forge-parent-3.pom (5 KB at 15.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.pom (2 KB at 3.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom (3 KB at 9.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-filtering/1.2/maven-filtering-1.2.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 KB at 43.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (12 KB at 38.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (10 KB at 32.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-filtering/1.2/maven-filtering-1.2.jar (44 KB at 91.4 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.3/maven-shared-utils-0.3.jar (152 KB at 266.6 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar (7 KB at 11.5 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.19/plexus-interpolation-1.19.jar (61 KB at 90.7 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar (32 KB at 46.3 KB/sec)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 52 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.pom (5 KB at 16.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom (5 KB at 15.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom (4 KB at 13.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-api/2.5/plexus-compiler-api-2.5.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-api/2.5/plexus-compiler-api-2.5.pom (865 B at 2.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler/2.5/plexus-compiler-2.5.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler/2.5/plexus-compiler-2.5.pom (6 KB at 17.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-manager/2.5/plexus-compiler-manager-2.5.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-manager/2.5/plexus-compiler-manager-2.5.pom (690 B at 2.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-javac/2.5/plexus-compiler-javac-2.5.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-javac/2.5/plexus-compiler-javac-2.5.pom (769 B at 2.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compilers/2.5/plexus-compilers-2.5.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compilers/2.5/plexus-compilers-2.5.pom (2 KB at 4.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-api/2.5/plexus-compiler-api-2.5.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-manager/2.5/plexus-compiler-manager-2.5.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-manager/2.5/plexus-compiler-manager-2.5.jar (5 KB at 15.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-javac/2.5/plexus-compiler-javac-2.5.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-api/2.5/plexus-compiler-api-2.5.jar (25 KB at 65.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-container-default/1.5.5/plexus-container-default-1.5.5.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar (14 KB at 34.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-classworlds/2.2.2/plexus-classworlds-2.2.2.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.7/maven-shared-utils-0.7.jar (167 KB at 292.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-compiler-javac/2.5/plexus-compiler-javac-2.5.jar (19 KB at 28.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/log4j/log4j/1.2.12/log4j-1.2.12.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar (223 KB at 336.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-classworlds/2.2.2/plexus-classworlds-2.2.2.jar (46 KB at 53.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/google/collections/google-collections/1.0/google-collections-1.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-container-default/1.5.5/plexus-container-default-1.5.5.jar (212 KB at 200.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/junit/junit/3.8.2/junit-3.8.2.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.jar (131 KB at 116.0 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar (44 KB at 38.7 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/log4j/log4j/1.2.12/log4j-1.2.12.jar (350 KB at 266.1 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/google/collections/google-collections/1.0/google-collections-1.0.jar (625 KB at 389.9 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/junit/junit/3.8.2/junit-3.8.2.jar (118 KB at 72.9 KB/sec)
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 45 source files to /root/workspace/jenkinsci/performance-plugin/223097269/target/classes
+[INFO] /root/workspace/jenkinsci/performance-plugin/223097269/src/main/java/hudson/plugins/performance/actions/PerformanceProjectAction.java: Some input files use or override a deprecated API.
+[INFO] /root/workspace/jenkinsci/performance-plugin/223097269/src/main/java/hudson/plugins/performance/actions/PerformanceProjectAction.java: Recompile with -Xlint:deprecation for details.
+[INFO] /root/workspace/jenkinsci/performance-plugin/223097269/src/main/java/hudson/plugins/performance/PerformancePublisher.java: /root/workspace/jenkinsci/performance-plugin/223097269/src/main/java/hudson/plugins/performance/PerformancePublisher.java uses unchecked or unsafe operations.
+[INFO] /root/workspace/jenkinsci/performance-plugin/223097269/src/main/java/hudson/plugins/performance/PerformancePublisher.java: Recompile with -Xlint:unchecked for details.
+[INFO]
+[INFO] --- access-modifier-checker:1.7:enforce (default-enforce) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/kohsuke/access-modifier-annotation/1.7/access-modifier-annotation-1.7.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/kohsuke/access-modifier-annotation/1.7/access-modifier-annotation-1.7.pom (855 B at 2.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-debug-all/5.0.3/asm-debug-all-5.0.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-debug-all/5.0.3/asm-debug-all-5.0.3.pom (2 KB at 6.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-parent/5.0.3/asm-parent-5.0.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-parent/5.0.3/asm-parent-5.0.3.pom (6 KB at 18.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/kohsuke/metainf-services/metainf-services/1.1/metainf-services-1.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/kohsuke/metainf-services/metainf-services/1.1/metainf-services-1.1.pom (2 KB at 6.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/kohsuke/access-modifier-annotation/1.7/access-modifier-annotation-1.7.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/annotation-indexer/1.4/annotation-indexer-1.4.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-debug-all/5.0.3/asm-debug-all-5.0.3.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/kohsuke/metainf-services/metainf-services/1.1/metainf-services-1.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/kohsuke/metainf-services/metainf-services/1.1/metainf-services-1.1.jar (7 KB at 22.8 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/kohsuke/access-modifier-annotation/1.7/access-modifier-annotation-1.7.jar (7 KB at 23.6 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/annotation-indexer/1.4/annotation-indexer-1.4.jar (16 KB at 41.8 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-debug-all/5.0.3/asm-debug-all-5.0.3.jar (370 KB at 493.7 KB/sec)
+[INFO]
+[INFO] --- animal-sniffer-maven-plugin:1.14:check (check) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/mojo/animal-sniffer/1.14/animal-sniffer-1.14.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/mojo/animal-sniffer/1.14/animal-sniffer-1.14.pom (3 KB at 7.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-all/5.0.3/asm-all-5.0.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-all/5.0.3/asm-all-5.0.3.pom (2 KB at 6.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/mojo/java-boot-classpath-detector/1.14/java-boot-classpath-detector-1.14.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/mojo/java-boot-classpath-detector/1.14/java-boot-classpath-detector-1.14.pom (3 KB at 8.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/mojo/animal-sniffer/1.14/animal-sniffer-1.14.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-all/5.0.3/asm-all-5.0.3.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/mojo/java-boot-classpath-detector/1.14/java-boot-classpath-detector-1.14.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.5.6/plexus-utils-1.5.6.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/mojo/java-boot-classpath-detector/1.14/java-boot-classpath-detector-1.14.jar (5 KB at 17.2 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/mojo/animal-sniffer/1.14/animal-sniffer-1.14.jar (33 KB at 87.2 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.5.6/plexus-utils-1.5.6.jar (245 KB at 373.0 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-all/5.0.3/asm-all-5.0.3.jar (236 KB at 357.0 KB/sec)
+[INFO] Resolved signature org.codehaus.mojo.signature:java16 version as 1.1 from dependencyManagement
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java16:1.1
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/codehaus/mojo/signature/java16/1.1/java16-1.1.signature
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/mojo/signature/java16/1.1/java16-1.1.signature
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/mojo/signature/java16/1.1/java16-1.1.signature (584 KB at 645.7 KB/sec)
+[INFO]
+[INFO] --- maven-hpi-plugin:1.120:insert-test (default-insert-test) @ performance ---
+[INFO]
+[INFO] --- gmaven-plugin:1.5-jenkins-3:generateTestStubs (test-in-groovy) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-api/1.5-jenkins-3/gmaven-runtime-api-1.5-jenkins-3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-api/1.5-jenkins-3/gmaven-runtime-api-1.5-jenkins-3.pom (2 KB at 5.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime/1.5-jenkins-3/gmaven-runtime-1.5-jenkins-3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime/1.5-jenkins-3/gmaven-runtime-1.5-jenkins-3.pom (4 KB at 12.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/feature/gmaven-feature-api/1.5-jenkins-3/gmaven-feature-api-1.5-jenkins-3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/feature/gmaven-feature-api/1.5-jenkins-3/gmaven-feature-api-1.5-jenkins-3.pom (2 KB at 6.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/feature/gmaven-feature/1.5-jenkins-3/gmaven-feature-1.5-jenkins-3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/feature/gmaven-feature/1.5-jenkins-3/gmaven-feature-1.5-jenkins-3.pom (2 KB at 5.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-loader/1.5-jenkins-3/gmaven-runtime-loader-1.5-jenkins-3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-loader/1.5-jenkins-3/gmaven-runtime-loader-1.5-jenkins-3.pom (3 KB at 9.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10.pom (3 KB at 9.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/slf4j/slf4j-parent/1.5.10/slf4j-parent-1.5.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/slf4j/slf4j-parent/1.5.10/slf4j-parent-1.5.10.pom (9 KB at 28.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/feature/gmaven-feature-support/1.5-jenkins-3/gmaven-feature-support-1.5-jenkins-3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/feature/gmaven-feature-support/1.5-jenkins-3/gmaven-feature-support-1.5-jenkins-3.pom (2 KB at 5.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.pom (2 KB at 5.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven/2.0.10/maven-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven/2.0.10/maven-2.0.10.pom (24 KB at 61.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/gossip/gossip/1.2/gossip-1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/gossip/gossip/1.2/gossip-1.2.pom (20 KB at 48.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-support/1.5-jenkins-3/gmaven-runtime-support-1.5-jenkins-3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-support/1.5-jenkins-3/gmaven-runtime-support-1.5-jenkins-3.pom (3 KB at 7.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/gshell/gshell-io/2.4/gshell-io-2.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/gshell/gshell-io/2.4/gshell-io-2.4.pom (2 KB at 4.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/gshell/gshell/2.4/gshell-2.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/gshell/gshell/2.4/gshell-2.4.pom (18 KB at 45.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/thoughtworks/qdox/qdox/1.12/qdox-1.12.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/thoughtworks/qdox/qdox/1.12/qdox-1.12.pom (19 KB at 47.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.pom (2 KB at 4.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0.10/maven-plugin-descriptor-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0.10/maven-plugin-descriptor-2.0.10.pom (3 KB at 6.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-impl/2.0.4.1/maven-reporting-impl-2.0.4.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-impl/2.0.4.1/maven-reporting-impl-2.0.4.1.pom (3 KB at 7.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.pom (3 KB at 9.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.pom (3 KB at 7.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.pom (4 KB at 11.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.pom (2 KB at 4.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.pom (3 KB at 7.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact-manager/2.0.10/maven-artifact-manager-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact-manager/2.0.10/maven-artifact-manager-2.0.10.pom (3 KB at 8.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-repository-metadata/2.0.10/maven-repository-metadata-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-repository-metadata/2.0.10/maven-repository-metadata-2.0.10.pom (3 KB at 7.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.pom (2 KB at 6.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-core/1.0-alpha-10/doxia-core-1.0-alpha-10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-core/1.0-alpha-10/doxia-core-1.0-alpha-10.pom (3 KB at 8.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.0.4/maven-reporting-api-2.0.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.0.4/maven-reporting-api-2.0.4.pom (902 B at 3.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting/2.0.4/maven-reporting-2.0.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting/2.0.4/maven-reporting-2.0.4.pom (700 B at 2.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven/2.0.4/maven-2.0.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven/2.0.4/maven-2.0.4.pom (11 KB at 36.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-site-renderer/1.0-alpha-10/doxia-site-renderer-1.0-alpha-10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-site-renderer/1.0-alpha-10/doxia-site-renderer-1.0-alpha-10.pom (5 KB at 14.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sitetools/1.0-alpha-10/doxia-sitetools-1.0-alpha-10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sitetools/1.0-alpha-10/doxia-sitetools-1.0-alpha-10.pom (8 KB at 23.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-decoration-model/1.0-alpha-10/doxia-decoration-model-1.0-alpha-10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-decoration-model/1.0-alpha-10/doxia-decoration-model-1.0-alpha-10.pom (3 KB at 10.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-apt/1.0-alpha-10/doxia-module-apt-1.0-alpha-10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-apt/1.0-alpha-10/doxia-module-apt-1.0-alpha-10.pom (3 KB at 7.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-modules/1.0-alpha-10/doxia-modules-1.0-alpha-10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-modules/1.0-alpha-10/doxia-modules-1.0-alpha-10.pom (3 KB at 7.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-fml/1.0-alpha-10/doxia-module-fml-1.0-alpha-10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-fml/1.0-alpha-10/doxia-module-fml-1.0-alpha-10.pom (3 KB at 8.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-xdoc/1.0-alpha-10/doxia-module-xdoc-1.0-alpha-10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-xdoc/1.0-alpha-10/doxia-module-xdoc-1.0-alpha-10.pom (3 KB at 7.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-xhtml/1.0-alpha-10/doxia-module-xhtml-1.0-alpha-10.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-xhtml/1.0-alpha-10/doxia-module-xhtml-1.0-alpha-10.pom (2 KB at 5.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-api/1.5-jenkins-3/gmaven-runtime-api-1.5-jenkins-3.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/feature/gmaven-feature-api/1.5-jenkins-3/gmaven-feature-api-1.5-jenkins-3.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-loader/1.5-jenkins-3/gmaven-runtime-loader-1.5-jenkins-3.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/feature/gmaven-feature-support/1.5-jenkins-3/gmaven-feature-support-1.5-jenkins-3.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-support/1.5-jenkins-3/gmaven-runtime-support-1.5-jenkins-3.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-api/1.5-jenkins-3/gmaven-runtime-api-1.5-jenkins-3.jar (22 KB at 59.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/gshell/gshell-io/2.4/gshell-io-2.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/feature/gmaven-feature-api/1.5-jenkins-3/gmaven-feature-api-1.5-jenkins-3.jar (18 KB at 46.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-loader/1.5-jenkins-3/gmaven-runtime-loader-1.5-jenkins-3.jar (25 KB at 66.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/thoughtworks/qdox/qdox/1.12/qdox-1.12.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/feature/gmaven-feature-support/1.5-jenkins-3/gmaven-feature-support-1.5-jenkins-3.jar (14 KB at 35.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-support/1.5-jenkins-3/gmaven-runtime-support-1.5-jenkins-3.jar (79 KB at 167.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-api/2.0.10/maven-plugin-api-2.0.10.jar (13 KB at 16.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/gshell/gshell-io/2.4/gshell-io-2.4.jar (29 KB at 36.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/thoughtworks/qdox/qdox/1.12/qdox-1.12.jar (176 KB at 189.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0.10/maven-plugin-descriptor-2.0.10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.jar (49 KB at 51.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-impl/2.0.4.1/maven-reporting-impl-2.0.4.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar (221 KB at 215.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.jar (20 KB at 17.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact/2.0.10/maven-artifact-2.0.10.jar (88 KB at 69.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0.10/maven-plugin-descriptor-2.0.10.jar (39 KB at 29.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-impl/2.0.4.1/maven-reporting-impl-2.0.4.1.jar (19 KB at 13.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-project/2.0.10/maven-project-2.0.10.jar (121 KB at 75.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-settings/2.0.10/maven-settings-2.0.10.jar (50 KB at 31.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-core/1.0-alpha-10/doxia-core-1.0-alpha-10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-profile/2.0.10/maven-profile-2.0.10.jar (37 KB at 22.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.0.4/maven-reporting-api-2.0.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-registry/2.0.10/maven-plugin-registry-2.0.10.jar (30 KB at 16.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-site-renderer/1.0-alpha-10/doxia-site-renderer-1.0-alpha-10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-model/2.0.10/maven-model-2.0.10.jar (94 KB at 49.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-decoration-model/1.0-alpha-10/doxia-decoration-model-1.0-alpha-10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.0.4/maven-reporting-api-2.0.4.jar (5 KB at 2.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-apt/1.0-alpha-10/doxia-module-apt-1.0-alpha-10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-interpolation/1.1/plexus-interpolation-1.1.jar (35 KB at 17.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-fml/1.0-alpha-10/doxia-module-fml-1.0-alpha-10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-core/1.0-alpha-10/doxia-core-1.0-alpha-10.jar (54 KB at 25.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-xdoc/1.0-alpha-10/doxia-module-xdoc-1.0-alpha-10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-fml/1.0-alpha-10/doxia-module-fml-1.0-alpha-10.jar (18 KB at 7.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-xhtml/1.0-alpha-10/doxia-module-xhtml-1.0-alpha-10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-site-renderer/1.0-alpha-10/doxia-site-renderer-1.0-alpha-10.jar (45 KB at 19.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-decoration-model/1.0-alpha-10/doxia-decoration-model-1.0-alpha-10.jar (49 KB at 20.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/gossip/gossip/1.2/gossip-1.2.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-apt/1.0-alpha-10/doxia-module-apt-1.0-alpha-10.jar (46 KB at 19.2 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-xdoc/1.0-alpha-10/doxia-module-xdoc-1.0-alpha-10.jar (27 KB at 10.9 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-xhtml/1.0-alpha-10/doxia-module-xhtml-1.0-alpha-10.jar (21 KB at 8.0 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10.jar (24 KB at 8.5 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/gossip/gossip/1.2/gossip-1.2.jar (75 KB at 26.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-1.6/1.5-jenkins-3/gmaven-runtime-1.6-1.5-jenkins-3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-1.6/1.5-jenkins-3/gmaven-runtime-1.6-1.5-jenkins-3.pom (4 KB at 10.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/gossip/gossip/1.3/gossip-1.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/gossip/gossip/1.3/gossip-1.3.pom (20 KB at 49.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-all/1.6.9/groovy-all-1.6.9.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-all/1.6.9/groovy-all-1.6.9.pom (25 KB at 64.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.7.1/ant-1.7.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.7.1/ant-1.7.1.pom (10 KB at 32.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-parent/1.7.1/ant-parent-1.7.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-parent/1.7.1/ant-parent-1.7.1.pom (5 KB at 14.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.pom (3 KB at 7.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.7.1/ant-1.7.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-1.6/1.5-jenkins-3/gmaven-runtime-1.6-1.5-jenkins-3.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-all/1.6.9/groovy-all-1.6.9.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.jar (12 KB at 40.1 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/gmaven/runtime/gmaven-runtime-1.6/1.5-jenkins-3/gmaven-runtime-1.6-1.5-jenkins-3.jar (42 KB at 90.2 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.7.1/ant-1.7.1.jar (1292 KB at 1364.3 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-all/1.6.9/groovy-all-1.6.9.jar (4481 KB at 3666.7 KB/sec)
+[INFO] No sources found for Java stub generation
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ performance ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 32 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ performance ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 31 source files to /root/workspace/jenkinsci/performance-plugin/223097269/target/test-classes
+[INFO] /root/workspace/jenkinsci/performance-plugin/223097269/src/test/java/hudson/plugins/performance/parsers/IagoParserTest.java: Some input files use or override a deprecated API.
+[INFO] /root/workspace/jenkinsci/performance-plugin/223097269/src/test/java/hudson/plugins/performance/parsers/IagoParserTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] /root/workspace/jenkinsci/performance-plugin/223097269/src/test/java/hudson/plugins/performance/PerformancePublisherTest.java: Some input files use unchecked or unsafe operations.
+[INFO] /root/workspace/jenkinsci/performance-plugin/223097269/src/test/java/hudson/plugins/performance/PerformancePublisherTest.java: Recompile with -Xlint:unchecked for details.
+[INFO]
+[INFO] --- maven-hpi-plugin:1.120:test-hpl (default-test-hpl) @ performance ---
+[INFO] Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/test-classes/the.hpl
+[INFO]
+[INFO] --- maven-hpi-plugin:1.120:resolve-test-dependencies (default-resolve-test-dependencies) @ performance ---
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/workflow/workflow-aggregator/1.13/workflow-aggregator-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-aggregator/1.13/workflow-aggregator-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-aggregator/1.13/workflow-aggregator-1.13.hpi (3128 KB at 3278.4 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/workflow/workflow-api/1.13/workflow-api-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-api/1.13/workflow-api-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-api/1.13/workflow-api-1.13.hpi (47 KB at 101.4 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/workflow/workflow-basic-steps/1.13/workflow-basic-steps-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-basic-steps/1.13/workflow-basic-steps-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-basic-steps/1.13/workflow-basic-steps-1.13.hpi (88 KB at 188.8 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/workflow/workflow-cps-global-lib/1.13/workflow-cps-global-lib-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-cps-global-lib/1.13/workflow-cps-global-lib-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-cps-global-lib/1.13/workflow-cps-global-lib-1.13.hpi (224 KB at 346.1 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/workflow/workflow-cps/1.13/workflow-cps-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-cps/1.13/workflow-cps-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-cps/1.13/workflow-cps-1.13.hpi (1859 KB at 1989.5 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/workflow/workflow-durable-task-step/1.13/workflow-durable-task-step-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-durable-task-step/1.13/workflow-durable-task-step-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-durable-task-step/1.13/workflow-durable-task-step-1.13.hpi (17 KB at 43.7 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/workflow/workflow-job/1.13/workflow-job-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-job/1.13/workflow-job-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-job/1.13/workflow-job-1.13.hpi (71 KB at 150.2 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/workflow/workflow-scm-step/1.13/workflow-scm-step-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-scm-step/1.13/workflow-scm-step-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-scm-step/1.13/workflow-scm-step-1.13.hpi (230 KB at 350.0 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/workflow/workflow-step-api/1.13/workflow-step-api-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-step-api/1.13/workflow-step-api-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-step-api/1.13/workflow-step-api-1.13.hpi (54 KB at 117.7 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/workflow/workflow-support/1.13/workflow-support-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-support/1.13/workflow-support-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/workflow/workflow-support/1.13/workflow-support-1.13.hpi (425 KB at 576.5 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/credentials/1.16.1/credentials-1.16.1.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/credentials/1.16.1/credentials-1.16.1.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/credentials/1.16.1/credentials-1.16.1.hpi (397 KB at 615.3 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/durable-task/1.5/durable-task-1.5.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/durable-task/1.5/durable-task-1.5.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/durable-task/1.5/durable-task-1.5.hpi (30 KB at 81.0 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/git-client/1.11.0/git-client-1.11.0.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/git-client/1.11.0/git-client-1.11.0.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/git-client/1.11.0/git-client-1.11.0.hpi (3138 KB at 2779.2 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/git-server/1.5/git-server-1.5.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/git-server/1.5/git-server-1.5.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/git-server/1.5/git-server-1.5.hpi (32 KB at 85.9 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/mailer/1.13/mailer-1.13.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/mailer/1.13/mailer-1.13.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/mailer/1.13/mailer-1.13.hpi (110 KB at 183.4 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/script-security/1.15/script-security-1.15.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/script-security/1.15/script-security-1.15.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/script-security/1.15/script-security-1.15.hpi (165 KB at 294.4 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/plugins/ssh-credentials/1.10/ssh-credentials-1.10.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/ssh-credentials/1.10/ssh-credentials-1.10.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/plugins/ssh-credentials/1.10/ssh-credentials-1.10.hpi (74 KB at 159.9 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/ui/ace-editor/1.0.1/ace-editor-1.0.1.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/ui/ace-editor/1.0.1/ace-editor-1.0.1.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/ui/ace-editor/1.0.1/ace-editor-1.0.1.hpi (4175 KB at 3484.7 KB/sec)
+[INFO] Downloading: https://repo.eclipse.org/content/groups/releases/org/jenkins-ci/ui/jquery-detached/1.1.1/jquery-detached-1.1.1.hpi
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/ui/jquery-detached/1.1.1/jquery-detached-1.1.1.hpi
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/jenkins-ci/ui/jquery-detached/1.1.1/jquery-detached-1.1.1.hpi (202 KB at 309.6 KB/sec)
+[INFO]
+[INFO] --- gmaven-plugin:1.5-jenkins-3:testCompile (test-in-groovy) @ performance ---
+[INFO] No sources found to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.pom (8 KB at 24.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom (2 KB at 5.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom (13 KB at 39.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.pom (4 KB at 11.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.pom (4 KB at 10.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/junit/junit/4.12/junit-4.12.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar (14 KB at 36.4 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.jar (45 KB at 89.4 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.jar (192 KB at 325.1 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.jar (286 KB at 427.0 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/junit/junit/4.12/junit-4.12.jar (308 KB at 455.6 KB/sec)
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-license-plugin:1.7:process (default) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-core/2.0/maven-core-2.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-core/2.0/maven-core-2.0.pom (6 KB at 17.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-settings/2.0/maven-settings-2.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-settings/2.0/maven-settings-2.0.pom (2 KB at 4.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.pom (2 KB at 4.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.pom (2 KB at 3.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting/2.0/maven-reporting-2.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting/2.0/maven-reporting-2.0.pom (504 B at 1.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.pom (2 KB at 3.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.pom (812 B at 2.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.pom (2 KB at 4.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0/maven-plugin-descriptor-2.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0/maven-plugin-descriptor-2.0.pom (2 KB at 4.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.pom (400 B at 1.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy/1.6.5/groovy-1.6.5.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy/1.6.5/groovy-1.6.5.pom (27 KB at 68.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/antlr/antlr/2.7.7/antlr-2.7.7.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/antlr/antlr/2.7.7/antlr-2.7.7.pom (632 B at 2.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/asm/asm/2.2.3/asm-2.2.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/asm/asm/2.2.3/asm-2.2.3.pom (266 B at 0.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/asm/asm-parent/2.2.3/asm-parent-2.2.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/asm/asm-parent/2.2.3/asm-parent-2.2.3.pom (3 KB at 8.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/asm/asm-util/2.2.3/asm-util-2.2.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/asm/asm-util/2.2.3/asm-util-2.2.3.pom (411 B at 1.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/asm/asm-tree/2.2.3/asm-tree-2.2.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/asm/asm-tree/2.2.3/asm-tree-2.2.3.pom (406 B at 1.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/asm/asm-analysis/2.2.3/asm-analysis-2.2.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/asm/asm-analysis/2.2.3/asm-analysis-2.2.3.pom (419 B at 1.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-core/2.0/maven-core-2.0.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-settings/2.0/maven-settings-2.0.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-api/2.0/maven-reporting-api-2.0.jar (7 KB at 21.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.jar (10 KB at 32.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-profile/2.0/maven-profile-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-parameter-documenter/2.0/maven-plugin-parameter-documenter-2.0.jar (18 KB at 44.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-model/2.0/maven-model-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-settings/2.0/maven-settings-2.0.jar (43 KB at 86.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-core/2.0/maven-core-2.0.jar (133 KB at 234.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.jar (5 KB at 6.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-profile/2.0/maven-profile-2.0.jar (30 KB at 44.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-model/2.0/maven-model-2.0.jar (77 KB at 89.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-project/2.0/maven-project-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-error-diagnostics/2.0/maven-error-diagnostics-2.0.jar (11 KB at 10.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar (77 KB at 80.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0/maven-plugin-descriptor-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-repository-metadata/2.0/maven-repository-metadata-2.0.jar (21 KB at 20.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.jar (191 KB at 162.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-registry/2.0/maven-plugin-registry-2.0.jar (25 KB at 18.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy/1.6.5/groovy-1.6.5.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-plugin-descriptor/2.0/maven-plugin-descriptor-2.0.jar (33 KB at 24.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/antlr/antlr/2.7.7/antlr-2.7.7.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-project/2.0/maven-project-2.0.jar (103 KB at 71.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/asm/asm/2.2.3/asm-2.2.3.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact-manager/2.0/maven-artifact-manager-2.0.jar (50 KB at 34.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/asm/asm-util/2.2.3/asm-util-2.2.3.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-monitor/2.0/maven-monitor-2.0.jar (8 KB at 5.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/asm/asm-analysis/2.2.3/asm-analysis-2.2.3.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/asm/asm/2.2.3/asm-2.2.3.jar (35 KB at 18.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/asm/asm-tree/2.2.3/asm-tree-2.2.3.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/asm/asm-util/2.2.3/asm-util-2.2.3.jar (35 KB at 18.6 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/asm/asm-analysis/2.2.3/asm-analysis-2.2.3.jar (18 KB at 9.5 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/antlr/antlr/2.7.7/antlr-2.7.7.jar (435 KB at 203.5 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/asm/asm-tree/2.2.3/asm-tree-2.2.3.jar (16 KB at 7.2 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy/1.6.5/groovy-1.6.5.jar (3872 KB at 1617.0 KB/sec)
+[INFO] Generated /root/workspace/jenkinsci/performance-plugin/223097269/target/performance/WEB-INF/licenses.xml
+[INFO]
+[INFO] --- maven-hpi-plugin:1.120:hpi (default-hpi) @ performance ---
+[INFO] Generating /root/workspace/jenkinsci/performance-plugin/223097269/target/performance/META-INF/MANIFEST.MF
+[INFO] Checking for attached .jar artifact ...
+[INFO] Generating jar /root/workspace/jenkinsci/performance-plugin/223097269/target/performance.jar
+[INFO] Building jar: /root/workspace/jenkinsci/performance-plugin/223097269/target/performance.jar
+[INFO] Exploding webapp...
+[INFO] Copy webapp webResources to /root/workspace/jenkinsci/performance-plugin/223097269/target/performance
+[INFO] Assembling webapp performance in /root/workspace/jenkinsci/performance-plugin/223097269/target/performance
+[INFO] Generating hpi /root/workspace/jenkinsci/performance-plugin/223097269/target/performance.hpi
+[INFO] Building jar: /root/workspace/jenkinsci/performance-plugin/223097269/target/performance.hpi
+[INFO]
+[INFO] >>> findbugs-maven-plugin:3.0.4:check (findbugs) > :findbugs @ performance >>>
+[INFO]
+[INFO] --- findbugs-maven-plugin:3.0.4:findbugs (findbugs) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/google/code/findbugs/findbugs/3.0.1/findbugs-3.0.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/google/code/findbugs/findbugs/3.0.1/findbugs-3.0.1.pom (11 KB at 35.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/google/code/findbugs/bcel-findbugs/6.0/bcel-findbugs-6.0.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/google/code/findbugs/bcel-findbugs/6.0/bcel-findbugs-6.0.pom (4 KB at 12.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.pom (950 B at 3.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-debug-all/5.0.2/asm-debug-all-5.0.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-debug-all/5.0.2/asm-debug-all-5.0.2.pom (2 KB at 6.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.pom (3 KB at 7.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.pom (3 KB at 6.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/apple/AppleJavaExtensions/1.4/AppleJavaExtensions-1.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/apple/AppleJavaExtensions/1.4/AppleJavaExtensions-1.4.pom (6 KB at 17.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/jaxen/jaxen/1.1.6/jaxen-1.1.6.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/jaxen/jaxen/1.1.6/jaxen-1.1.6.pom (14 KB at 34.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.9.4/ant-1.9.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.9.4/ant-1.9.4.pom (10 KB at 32.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-parent/1.9.4/ant-parent-1.9.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-parent/1.9.4/ant-parent-1.9.4.pom (6 KB at 18.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.pom (3 KB at 7.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy/2.4.7/groovy-2.4.7.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy/2.4.7/groovy-2.4.7.pom (17 KB at 41.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-ant/2.4.7/groovy-ant-2.4.7.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-ant/2.4.7/groovy-ant-2.4.7.pom (17 KB at 40.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-antlr/1.9.4/ant-antlr-1.9.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-antlr/1.9.4/ant-antlr-1.9.4.pom (4 KB at 9.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-groovydoc/2.4.7/groovy-groovydoc-2.4.7.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-groovydoc/2.4.7/groovy-groovydoc-2.4.7.pom (16 KB at 39.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-templates/2.4.7/groovy-templates-2.4.7.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-templates/2.4.7/groovy-templates-2.4.7.pom (16 KB at 39.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-xml/2.4.7/groovy-xml-2.4.7.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-xml/2.4.7/groovy-xml-2.4.7.pom (16 KB at 37.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-junit/1.9.4/ant-junit-1.9.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-junit/1.9.4/ant-junit-1.9.4.pom (4 KB at 13.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.pom (5 KB at 14.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sink-api/1.1.2/doxia-sink-api-1.1.2.pom (2 KB at 5.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia/1.1.2/doxia-1.1.2.pom (18 KB at 44.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-logging-api/1.1.2/doxia-logging-api-1.1.2.pom (2 KB at 5.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-core/1.1.2/doxia-core-1.1.2.pom (4 KB at 12.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-utils/1.5.12/plexus-utils-1.5.12.pom (6 KB at 17.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-site-renderer/1.1.2/doxia-site-renderer-1.1.2.pom (6 KB at 20.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sitetools/1.1.2/doxia-sitetools-1.1.2.pom (15 KB at 49.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-decoration-model/1.1.2/doxia-decoration-model-1.1.2.pom (3 KB at 9.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-xhtml/1.1.2/doxia-module-xhtml-1.1.2.pom (2 KB at 3.9 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-modules/1.1.2/doxia-modules-1.1.2.pom (3 KB at 7.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-module-fml/1.1.2/doxia-module-fml-1.1.2.pom (6 KB at 18.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-doxia-tools/1.2.1/maven-doxia-tools-1.2.1.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-doxia-tools/1.2.1/maven-doxia-tools-1.2.1.pom (7 KB at 20.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-logging-api/1.1.3/doxia-logging-api-1.1.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-logging-api/1.1.3/doxia-logging-api-1.1.3.pom (2 KB at 5.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia/1.1.3/doxia-1.1.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia/1.1.3/doxia-1.1.3.pom (19 KB at 45.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-decoration-model/1.1.3/doxia-decoration-model-1.1.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-decoration-model/1.1.3/doxia-decoration-model-1.1.3.pom (3 KB at 9.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sitetools/1.1.3/doxia-sitetools-1.1.3.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-sitetools/1.1.3/doxia-sitetools-1.1.3.pom (16 KB at 39.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-resources/1.0-alpha-7/plexus-resources-1.0-alpha-7.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-resources/1.0-alpha-7/plexus-resources-1.0-alpha-7.pom (2 KB at 4.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-components/1.1.17/plexus-components-1.1.17.pom (6 KB at 17.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 KB at 41.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom (4 KB at 9.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/google/code/findbugs/findbugs/3.0.1/findbugs-3.0.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/google/code/findbugs/bcel-findbugs/6.0/bcel-findbugs-6.0.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-debug-all/5.0.2/asm-debug-all-5.0.2.jar
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.jar (27 KB at 67.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.jar (41 KB at 85.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/com/apple/AppleJavaExtensions/1.4/AppleJavaExtensions-1.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-debug-all/5.0.2/asm-debug-all-5.0.2.jar (372 KB at 491.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/apple/AppleJavaExtensions/1.4/AppleJavaExtensions-1.4.jar (12 KB at 15.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.9.4/ant-1.9.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/google/code/findbugs/bcel-findbugs/6.0/bcel-findbugs-6.0.jar (599 KB at 782.8 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.jar (29 KB at 37.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy/2.4.7/groovy-2.4.7.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar (18 KB at 15.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-ant/2.4.7/groovy-ant-2.4.7.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/com/google/code/findbugs/findbugs/3.0.1/findbugs-3.0.1.jar (3711 KB at 3007.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-antlr/1.9.4/ant-antlr-1.9.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar (227 KB at 157.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-groovydoc/2.4.7/groovy-groovydoc-2.4.7.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-antlr/1.9.4/ant-antlr-1.9.4.jar (12 KB at 7.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-templates/2.4.7/groovy-templates-2.4.7.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-ant/2.4.7/groovy-ant-2.4.7.jar (69 KB at 42.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/ant/ant-junit/1.9.4/ant-junit-1.9.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant/1.9.4/ant-1.9.4.jar (1972 KB at 1157.2 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-xml/2.4.7/groovy-xml-2.4.7.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-groovydoc/2.4.7/groovy-groovydoc-2.4.7.jar (133 KB at 71.7 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy/2.4.7/groovy-2.4.7.jar (4445 KB at 2240.0 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-core/1.4/doxia-core-1.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-templates/2.4.7/groovy-templates-2.4.7.jar (96 KB at 45.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-doxia-tools/1.2.1/maven-doxia-tools-1.2.1.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/ant/ant-junit/1.9.4/ant-junit-1.9.4.jar (116 KB at 52.1 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/reporting/maven-reporting-impl/2.1/maven-reporting-impl-2.1.jar (17 KB at 7.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/groovy/groovy-xml/2.4.7/groovy-xml-2.4.7.jar (211 KB at 89.4 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-doxia-tools/1.2.1/maven-doxia-tools-1.2.1.jar (43 KB at 17.6 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-resources/1.0-alpha-7/plexus-resources-1.0-alpha-7.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/doxia/doxia-core/1.4/doxia-core-1.4.jar (162 KB at 62.3 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar (24 KB at 9.2 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar (56 KB at 19.9 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/codehaus/plexus/plexus-resources/1.0-alpha-7/plexus-resources-1.0-alpha-7.jar (23 KB at 8.1 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar (85 KB at 29.7 KB/sec)
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar (9 KB at 2.9 KB/sec)
+[INFO] Fork Value is true
+     [java] Apr 18, 2017 7:18:42 PM java.util.prefs.FileSystemPreferences$1 run
+     [java] INFO: Created user preferences directory.
+     [java] Warnings generated: 80
+[INFO] Done FindBugs Analysis....
+[INFO]
+[INFO] <<< findbugs-maven-plugin:3.0.4:check (findbugs) < :findbugs @ performance <<<
+[INFO]
+[INFO] --- findbugs-maven-plugin:3.0.4:check (findbugs) @ performance ---
+[INFO] BugInstance size is 80
+[INFO] Error size is 0
+[INFO] Total bugs: 80
+[INFO] Found reliance on default encoding in hudson.plugins.performance.PerformancePublisher.perform(Run, FilePath, Launcher, TaskListener): new java.io.FileWriter(File) [hudson.plugins.performance.PerformancePublisher, hudson.plugins.performance.PerformancePublisher] At PerformancePublisher.java:[line 583]Another occurrence at PerformancePublisher.java:[line 765] DM_DEFAULT_ENCODING
+[INFO] hudson.plugins.performance.PerformancePublisher.optionType should be package protected [hudson.plugins.performance.PerformancePublisher] At PerformancePublisher.java:[line 254] MS_PKGPROTECT
+[INFO] Exception is caught when Exception is not thrown in hudson.plugins.performance.PerformancePublisher.perform(Run, FilePath, Launcher, TaskListener) [hudson.plugins.performance.PerformancePublisher, hudson.plugins.performance.PerformancePublisher] At PerformancePublisher.java:[line 674]Another occurrence at PerformancePublisher.java:[line 986] REC_CATCH_EXCEPTION
+[INFO] Exceptional return value of java.io.File.createNewFile() ignored in hudson.plugins.performance.PerformancePublisher.perform(Run, FilePath, Launcher, TaskListener) [hudson.plugins.performance.PerformancePublisher, hudson.plugins.performance.PerformancePublisher] At PerformancePublisher.java:[line 581]Another occurrence at PerformancePublisher.java:[line 763] RV_RETURN_VALUE_IGNORED_BAD_PRACTICE
+[INFO] Exceptional return value of java.io.File.mkdirs() ignored in hudson.plugins.performance.PerformancePublisher.perform(Run, FilePath, Launcher, TaskListener) [hudson.plugins.performance.PerformancePublisher, hudson.plugins.performance.PerformancePublisher] At PerformancePublisher.java:[line 577]Another occurrence at PerformancePublisher.java:[line 759] RV_RETURN_VALUE_IGNORED_BAD_PRACTICE
+[INFO] Write to static field hudson.plugins.performance.PerformancePublisher.optionType from instance method new hudson.plugins.performance.PerformancePublisher(String, int, int, String, double, double, double, double, int, boolean, String, boolean, boolean, boolean, boolean, List) [hudson.plugins.performance.PerformancePublisher] At PerformancePublisher.java:[line 335] ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD
+[INFO] Possible null pointer dereference in hudson.plugins.performance.PerformanceReportMap.parseReports(Run, TaskListener, PerformanceReportMap$PerformanceReportCollector, String) due to return value of called method [hudson.plugins.performance.PerformanceReportMap, hudson.plugins.performance.PerformanceReportMap] Method invoked at PerformanceReportMap.java:[line 300]Known null at PerformanceReportMap.java:[line 287] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] hudson.plugins.performance.PerformanceReportMap.doRespondingTimeGraph(StaplerRequest, StaplerResponse) makes inefficient use of keySet iterator instead of entrySet iterator [hudson.plugins.performance.PerformanceReportMap] At PerformanceReportMap.java:[line 198] WMI_WRONG_MAP_ITERATOR
+[INFO] hudson.plugins.performance.PerformanceReportMap.doSummarizerGraph(StaplerRequest, StaplerResponse) makes inefficient use of keySet iterator instead of entrySet iterator [hudson.plugins.performance.PerformanceReportMap] At PerformanceReportMap.java:[line 238] WMI_WRONG_MAP_ITERATOR
+[INFO] int value cast to float and then passed to Math.round in hudson.plugins.performance.actions.PerformanceProjectAction.getTrendReportData(StaplerRequest, String) [hudson.plugins.performance.actions.PerformanceProjectAction, hudson.plugins.performance.actions.PerformanceProjectAction, hudson.plugins.performance.actions.PerformanceProjectAction, hudson.plugins.performance.actions.PerformanceProjectAction, hudson.plugins.performance.actions.PerformanceProjectAction, hudson.plugins.performance.actions.PerformanceProjectAction] At PerformanceProjectAction.java:[line 783]Another occurrence at PerformanceProjectAction.java:[line 785]Another occurrence at PerformanceProjectAction.java:[line 787]Another occurrence at PerformanceProjectAction.java:[line 789]Another occurrence at PerformanceProjectAction.java:[line 791]Another occurrence at PerformanceProjectAction.java:[line 795] ICAST_INT_CAST_TO_FLOAT_PASSED_TO_ROUND
+[INFO] Possible null pointer dereference in hudson.plugins.performance.actions.PerformanceProjectAction.getPerformanceReportList() due to return value of called method [hudson.plugins.performance.actions.PerformanceProjectAction, hudson.plugins.performance.actions.PerformanceProjectAction] Dereferenced at PerformanceProjectAction.java:[line 669]Known null at PerformanceProjectAction.java:[line 669] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.actions.PerformanceProjectAction.getPerformanceReportList() due to return value of called method [hudson.plugins.performance.actions.PerformanceProjectAction, hudson.plugins.performance.actions.PerformanceProjectAction] Dereferenced at PerformanceProjectAction.java:[line 671]Known null at PerformanceProjectAction.java:[line 671] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Found reliance on default encoding in hudson.plugins.performance.build.PerformanceTestBuild.getPerformanceTestLogger(Run, PrintStream): new java.io.PrintStream(File) [hudson.plugins.performance.build.PerformanceTestBuild] At PerformanceTestBuild.java:[line 163] DM_DEFAULT_ENCODING
+[INFO] Found reliance on default encoding in hudson.plugins.performance.build.PerformanceTestBuild.printPerformanceTestLog(Run, PrintStream): new java.io.FileReader(File) [hudson.plugins.performance.build.PerformanceTestBuild] At PerformanceTestBuild.java:[line 146] DM_DEFAULT_ENCODING
+[INFO] hudson.plugins.performance.build.PerformanceTestBuild.CHECK_BZT_COMMAND should be package protected [hudson.plugins.performance.build.PerformanceTestBuild] At PerformanceTestBuild.java:[line 38] MS_PKGPROTECT
+[INFO] hudson.plugins.performance.build.PerformanceTestBuild.CHECK_VIRTUALENV_BZT_COMMAND should be package protected [hudson.plugins.performance.build.PerformanceTestBuild] At PerformanceTestBuild.java:[line 39] MS_PKGPROTECT
+[INFO] hudson.plugins.performance.build.PerformanceTestBuild.CHECK_VIRTUALENV_COMMAND should be package protected [hudson.plugins.performance.build.PerformanceTestBuild] At PerformanceTestBuild.java:[line 40] MS_PKGPROTECT
+[INFO] hudson.plugins.performance.build.PerformanceTestBuild.CREATE_LOCAL_PYTHON_COMMAND should be package protected [hudson.plugins.performance.build.PerformanceTestBuild] At PerformanceTestBuild.java:[line 41] MS_PKGPROTECT
+[INFO] hudson.plugins.performance.build.PerformanceTestBuild.INSTALL_BZT_COMMAND should be package protected [hudson.plugins.performance.build.PerformanceTestBuild] At PerformanceTestBuild.java:[line 42] MS_PKGPROTECT
+[INFO] hudson.plugins.performance.build.PerformanceTestBuild.extractDefaultReportToWorkspace(FilePath) may fail to clean up java.io.InputStream [hudson.plugins.performance.build.PerformanceTestBuild, hudson.plugins.performance.build.PerformanceTestBuild] Obligation to clean up resource created at PerformanceTestBuild.java:[line 177] is not dischargedPath continues at PerformanceTestBuild.java:[line 178] OBL_UNSATISFIED_OBLIGATION
+[INFO] Exceptional return value of java.io.File.createNewFile() ignored in hudson.plugins.performance.build.PerformanceTestBuild.getPerformanceTestLogger(Run, PrintStream) [hudson.plugins.performance.build.PerformanceTestBuild] At PerformanceTestBuild.java:[line 161] RV_RETURN_VALUE_IGNORED_BAD_PRACTICE
+[INFO] Exceptional return value of java.io.File.delete() ignored in hudson.plugins.performance.build.PerformanceTestBuild.getPerformanceTestLogger(Run, PrintStream) [hudson.plugins.performance.build.PerformanceTestBuild] At PerformanceTestBuild.java:[line 160] RV_RETURN_VALUE_IGNORED_BAD_PRACTICE
+[INFO] hudson.plugins.performance.constraints.AbsoluteConstraint defines clone() but doesn't implement Cloneable [hudson.plugins.performance.constraints.AbsoluteConstraint] At AbsoluteConstraint.java:[lines 68-70] CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.constraints.AbstractConstraint.all() due to return value of called method [hudson.plugins.performance.constraints.AbstractConstraint, hudson.plugins.performance.constraints.AbstractConstraint] Dereferenced at AbstractConstraint.java:[line 70]Known null at AbstractConstraint.java:[line 70] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.constraints.AbstractConstraint.getDescriptor() due to return value of called method [hudson.plugins.performance.constraints.AbstractConstraint, hudson.plugins.performance.constraints.AbstractConstraint] Dereferenced at AbstractConstraint.java:[line 66]Known null at AbstractConstraint.java:[line 66] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] hudson.plugins.performance.constraints.AbstractConstraint$Escalation.setSelected(boolean) unconditionally sets the field isSelected [hudson.plugins.performance.constraints.AbstractConstraint$Escalation] At AbstractConstraint.java:[line 258] ME_ENUM_FIELD_SETTER
+[INFO] hudson.plugins.performance.constraints.AbstractConstraint$Metric.setSelected(boolean) unconditionally sets the field isSelected [hudson.plugins.performance.constraints.AbstractConstraint$Metric] At AbstractConstraint.java:[line 233] ME_ENUM_FIELD_SETTER
+[INFO] hudson.plugins.performance.constraints.AbstractConstraint$Operator.setSelected(boolean) unconditionally sets the field isSelected [hudson.plugins.performance.constraints.AbstractConstraint$Operator] At AbstractConstraint.java:[line 283] ME_ENUM_FIELD_SETTER
+[INFO] hudson.plugins.performance.constraints.RelativeConstraint defines clone() but doesn't implement Cloneable [hudson.plugins.performance.constraints.RelativeConstraint] At RelativeConstraint.java:[lines 257-260] CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE
+[INFO] hudson.plugins.performance.constraints.RelativeConstraint.getTimeframeEnd() may expose internal representation by returning RelativeConstraint.timeframeEnd [hudson.plugins.performance.constraints.RelativeConstraint] At RelativeConstraint.java:[line 520] EI_EXPOSE_REP
+[INFO] hudson.plugins.performance.constraints.RelativeConstraint.getTimeframeStart() may expose internal representation by returning RelativeConstraint.timeframeStart [hudson.plugins.performance.constraints.RelativeConstraint] At RelativeConstraint.java:[line 512] EI_EXPOSE_REP
+[INFO] hudson.plugins.performance.constraints.RelativeConstraint.setTimeframeEnd(Date) may expose internal representation by storing an externally mutable object into RelativeConstraint.timeframeEnd [hudson.plugins.performance.constraints.RelativeConstraint] At RelativeConstraint.java:[line 524] EI_EXPOSE_REP2
+[INFO] hudson.plugins.performance.constraints.RelativeConstraint.setTimeframeStart(Date) may expose internal representation by storing an externally mutable object into RelativeConstraint.timeframeStart [hudson.plugins.performance.constraints.RelativeConstraint] At RelativeConstraint.java:[line 516] EI_EXPOSE_REP2
+[INFO] Possible null pointer dereference in hudson.plugins.performance.constraints.RelativeConstraint.evaluateDate(List) due to return value of called method [hudson.plugins.performance.constraints.RelativeConstraint, hudson.plugins.performance.constraints.RelativeConstraint] Dereferenced at RelativeConstraint.java:[line 421]Known null at RelativeConstraint.java:[line 421] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.constraints.RelativeConstraint.evaluatePreviousBuilds(List) due to return value of called method [hudson.plugins.performance.constraints.RelativeConstraint, hudson.plugins.performance.constraints.RelativeConstraint] Dereferenced at RelativeConstraint.java:[line 445]Known null at RelativeConstraint.java:[line 445] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.constraints.RelativeConstraint.evaluatePreviousBuilds(List) due to return value of called method [hudson.plugins.performance.constraints.RelativeConstraint, hudson.plugins.performance.constraints.RelativeConstraint] Dereferenced at RelativeConstraint.java:[line 446]Known null at RelativeConstraint.java:[line 446] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Dead store to dateString in hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl.dateCheck(String) [hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl] At RelativeConstraint.java:[line 81] DLS_DEAD_LOCAL_STORE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl.doCheckPreviousResultsString(String, AbstractProject) due to return value of called method [hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl, hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl] Dereferenced at RelativeConstraint.java:[line 136]Known null at RelativeConstraint.java:[line 136] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl.doCheckPreviousResultsString(String, AbstractProject) due to return value of called method [hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl, hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl] Dereferenced at RelativeConstraint.java:[line 138]Known null at RelativeConstraint.java:[line 138] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl.doCheckPreviousResultsString(String, AbstractProject) due to return value of called method [hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl, hudson.plugins.performance.constraints.RelativeConstraint$DescriptorImpl] Dereferenced at RelativeConstraint.java:[line 140]Known null at RelativeConstraint.java:[line 140] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] hudson.plugins.performance.data.HttpSample.getDate() may expose internal representation by returning HttpSample.date [hudson.plugins.performance.data.HttpSample] At HttpSample.java:[line 45] EI_EXPOSE_REP
+[INFO] hudson.plugins.performance.data.HttpSample.setDate(Date) may expose internal representation by storing an externally mutable object into HttpSample.date [hudson.plugins.performance.data.HttpSample] At HttpSample.java:[line 97] EI_EXPOSE_REP2
+[INFO] hudson.plugins.performance.data.HttpSample defines compareTo(HttpSample) and uses Object.equals() [hudson.plugins.performance.data.HttpSample] At HttpSample.java:[line 125] EQ_COMPARETO_USE_OBJECT_EQUALS
+[INFO] Possible null pointer dereference in hudson.plugins.performance.descriptors.ConstraintDescriptor.all() due to return value of called method [hudson.plugins.performance.descriptors.ConstraintDescriptor, hudson.plugins.performance.descriptors.ConstraintDescriptor] Dereferenced at ConstraintDescriptor.java:[line 15]Known null at ConstraintDescriptor.java:[line 15] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.descriptors.PerformanceReportParserDescriptor.all() due to return value of called method [hudson.plugins.performance.descriptors.PerformanceReportParserDescriptor, hudson.plugins.performance.descriptors.PerformanceReportParserDescriptor] Dereferenced at PerformanceReportParserDescriptor.java:[line 25]Known null at PerformanceReportParserDescriptor.java:[line 25] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Call to method of static java.text.DateFormat in hudson.plugins.performance.details.GraphConfigurationDetail.getGregorianCalendarFromString(String) [hudson.plugins.performance.details.GraphConfigurationDetail] At GraphConfigurationDetail.java:[line 365] STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE
+[INFO] Return value of java.util.List.size() ignored, but method has no side effect [hudson.plugins.performance.details.TestSuiteReportDetail] At TestSuiteReportDetail.java:[line 156] RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT
+[INFO] Found reliance on default encoding in hudson.plugins.performance.parsers.IagoParser.parse(File): new java.io.FileReader(File) [hudson.plugins.performance.parsers.IagoParser] At IagoParser.java:[line 73] DM_DEFAULT_ENCODING
+[INFO] hudson.plugins.performance.parsers.IagoParser$Stats.addValidationError(String, long) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead [hudson.plugins.performance.parsers.IagoParser$Stats] At IagoParser.java:[line 220] DM_NUMBER_CTOR
+[INFO] Boxing/unboxing to parse a primitive hudson.plugins.performance.parsers.JMeterCsvParser.getSample(String) [hudson.plugins.performance.parsers.JMeterCsvParser] At JMeterCsvParser.java:[line 130] DM_BOXED_PRIMITIVE_FOR_PARSING
+[INFO] Boxing/unboxing to parse a primitive hudson.plugins.performance.parsers.JMeterCsvParser.parseTimestamp(String) [hudson.plugins.performance.parsers.JMeterCsvParser] At JMeterCsvParser.java:[line 152] DM_BOXED_PRIMITIVE_FOR_PARSING
+[INFO] Found reliance on default encoding in hudson.plugins.performance.parsers.JMeterCsvParser.parse(File): new java.io.FileReader(File) [hudson.plugins.performance.parsers.JMeterCsvParser] At JMeterCsvParser.java:[line 56] DM_DEFAULT_ENCODING
+[INFO] hudson.plugins.performance.parsers.JMeterCsvParser.DATE_FORMATS should be package protected [hudson.plugins.performance.parsers.JMeterCsvParser] At JMeterCsvParser.java:[line 140] MS_PKGPROTECT
+[INFO] Found reliance on default encoding in hudson.plugins.performance.parsers.JMeterParser.isXmlFile(File): new java.io.FileReader(File) [hudson.plugins.performance.parsers.JMeterParser] At JMeterParser.java:[line 66] DM_DEFAULT_ENCODING
+[INFO] Redundant nullcheck of firstLine, which is known to be non-null in hudson.plugins.performance.parsers.JMeterParser.isXmlFile(File) [hudson.plugins.performance.parsers.JMeterParser] Redundant null check at JMeterParser.java:[line 70] RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE
+[INFO] Boxing/unboxing to parse a primitive hudson.plugins.performance.parsers.JMeterParser$1.startElement(String, String, String, Attributes) [hudson.plugins.performance.parsers.JMeterParser$1, hudson.plugins.performance.parsers.JMeterParser$1] At JMeterParser.java:[line 120]Another occurrence at JMeterParser.java:[line 128] DM_BOXED_PRIMITIVE_FOR_PARSING
+[INFO] Found reliance on default encoding in hudson.plugins.performance.parsers.JmeterSummarizerParser.parse(File): new java.util.Scanner(File) [hudson.plugins.performance.parsers.JmeterSummarizerParser] At JmeterSummarizerParser.java:[line 50] DM_DEFAULT_ENCODING
+[INFO] Found reliance on default encoding in hudson.plugins.performance.parsers.ParserDetector.detect(String): new java.io.FileReader(File) [hudson.plugins.performance.parsers.ParserDetector] At ParserDetector.java:[line 21] DM_DEFAULT_ENCODING
+[INFO] hudson.plugins.performance.parsers.ParserFactory.defaultGlobPatterns is a mutable collection which should be package protected [hudson.plugins.performance.parsers.ParserFactory] At ParserFactory.java:[line 15] MS_MUTABLE_COLLECTION_PKGPROTECT
+[INFO] Possible null pointer dereference in hudson.plugins.performance.parsers.PerformanceReportParser.all() due to return value of called method [hudson.plugins.performance.parsers.PerformanceReportParser, hudson.plugins.performance.parsers.PerformanceReportParser] Dereferenced at PerformanceReportParser.java:[line 58]Known null at PerformanceReportParser.java:[line 58] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.parsers.PerformanceReportParser.getDescriptor() due to return value of called method [hudson.plugins.performance.parsers.PerformanceReportParser, hudson.plugins.performance.parsers.PerformanceReportParser] Dereferenced at PerformanceReportParser.java:[line 42]Known null at PerformanceReportParser.java:[line 41] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Boxing/unboxing to parse a primitive hudson.plugins.performance.parsers.TaurusParser.getTaurusFinalStats(Element) [hudson.plugins.performance.parsers.TaurusParser, hudson.plugins.performance.parsers.TaurusParser] At TaurusParser.java:[line 82]Another occurrence at TaurusParser.java:[line 83] DM_BOXED_PRIMITIVE_FOR_PARSING
+[INFO] Boxing/unboxing to parse a primitive hudson.plugins.performance.parsers.TaurusParser.getTaurusFinalStats(Element) [hudson.plugins.performance.parsers.TaurusParser, hudson.plugins.performance.parsers.TaurusParser] At TaurusParser.java:[line 81]Another occurrence at TaurusParser.java:[line 84] DM_BOXED_PRIMITIVE_FOR_PARSING
+[INFO] Found reliance on default encoding in hudson.plugins.performance.parsers.WrkSummarizerParser.parse(File): new java.util.Scanner(File) [hudson.plugins.performance.parsers.WrkSummarizerParser] At WrkSummarizerParser.java:[line 81] DM_DEFAULT_ENCODING
+[INFO] Found reliance on default encoding in hudson.plugins.performance.reports.ConstraintReport.writeResultsToFile(): String.getBytes() [hudson.plugins.performance.reports.ConstraintReport] At ConstraintReport.java:[line 264] DM_DEFAULT_ENCODING
+[INFO] Possible null pointer dereference in hudson.plugins.performance.reports.ConstraintReport.createMetaData(ArrayList, Run) due to return value of called method [hudson.plugins.performance.reports.ConstraintReport, hudson.plugins.performance.reports.ConstraintReport] Dereferenced at ConstraintReport.java:[line 120]Known null at ConstraintReport.java:[line 120] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Possible null pointer dereference in hudson.plugins.performance.reports.ConstraintReport.createMetaData(ArrayList, Run) due to return value of called method [hudson.plugins.performance.reports.ConstraintReport, hudson.plugins.performance.reports.ConstraintReport] Dereferenced at ConstraintReport.java:[line 123]Known null at ConstraintReport.java:[line 123] NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+[INFO] Exceptional return value of java.io.File.createNewFile() ignored in hudson.plugins.performance.reports.ConstraintReport.writeResultsToFile() [hudson.plugins.performance.reports.ConstraintReport] At ConstraintReport.java:[line 260] RV_RETURN_VALUE_IGNORED_BAD_PRACTICE
+[INFO] Exceptional return value of java.io.File.mkdirs() ignored in hudson.plugins.performance.reports.ConstraintReport.writeResultsToFile() [hudson.plugins.performance.reports.ConstraintReport] At ConstraintReport.java:[line 259] RV_RETURN_VALUE_IGNORED_BAD_PRACTICE
+[INFO] hudson.plugins.performance.reports.PerformanceReport defines compareTo(PerformanceReport) and uses Object.equals() [hudson.plugins.performance.reports.PerformanceReport] At PerformanceReport.java:[lines 179-182] EQ_COMPARETO_USE_OBJECT_EQUALS
+[INFO] Boxed value is unboxed and then immediately reboxed in hudson.plugins.performance.reports.UriReport.getMax() [hudson.plugins.performance.reports.UriReport] At UriReport.java:[line 274] BX_UNBOXING_IMMEDIATELY_REBOXED
+[INFO] Boxed value is unboxed and then immediately reboxed in hudson.plugins.performance.reports.UriReport.getMin() [hudson.plugins.performance.reports.UriReport] At UriReport.java:[line 282] BX_UNBOXING_IMMEDIATELY_REBOXED
+[INFO] hudson.plugins.performance.reports.UriReport.getEnd() may expose internal representation by returning UriReport.end [hudson.plugins.performance.reports.UriReport] At UriReport.java:[line 391] EI_EXPOSE_REP
+[INFO] hudson.plugins.performance.reports.UriReport.getStart() may expose internal representation by returning UriReport.start [hudson.plugins.performance.reports.UriReport] At UriReport.java:[line 387] EI_EXPOSE_REP
+[INFO] hudson.plugins.performance.reports.UriReport defines compareTo(UriReport) and uses Object.equals() [hudson.plugins.performance.reports.UriReport] At UriReport.java:[lines 171-174] EQ_COMPARETO_USE_OBJECT_EQUALS
+[INFO] The field hudson.plugins.performance.reports.UriReport.durationsIO is transient but isn't set by deserialization [hudson.plugins.performance.reports.UriReport] In UriReport.java SE_TRANSIENT_FIELD_NOT_RESTORED
+[INFO] The field hudson.plugins.performance.reports.UriReport.durationsSortedBySize is transient but isn't set by deserialization [hudson.plugins.performance.reports.UriReport] In UriReport.java SE_TRANSIENT_FIELD_NOT_RESTORED
+[INFO] hudson.plugins.performance.reports.UriReport$Sample.getDate() may expose internal representation by returning UriReport$Sample.date [hudson.plugins.performance.reports.UriReport$Sample] At UriReport.java:[line 413] EI_EXPOSE_REP
+[INFO] new hudson.plugins.performance.reports.UriReport$Sample(String, Date, long) may expose internal representation by storing an externally mutable object into UriReport$Sample.date [hudson.plugins.performance.reports.UriReport$Sample] At UriReport.java:[line 404] EI_EXPOSE_REP2
+[INFO] hudson.plugins.performance.reports.UriReport$Sample defines compareTo(UriReport$Sample) and uses Object.equals() [hudson.plugins.performance.reports.UriReport$Sample] At UriReport.java:[lines 424-430] EQ_COMPARETO_USE_OBJECT_EQUALS
+[INFO]
+
+
+To see bug detail using the Findbugs GUI, use the following command "mvn findbugs:gui"
+
+
+
+[INFO]
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ performance ---
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom (4 KB at 12.5 KB/sec)
+[INFO] Downloading: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.jar
+[INFO] Downloaded: http://repo.jenkins-ci.org/public/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.jar (152 KB at 266.3 KB/sec)
+[INFO] Installing /root/workspace/jenkinsci/performance-plugin/223097269/target/performance.hpi to /root/./workspace/jenkinsci/performance-plugin/223097269/.m2/org/jenkins-ci/plugins/performance/2.3-SNAPSHOT/performance-2.3-SNAPSHOT.hpi
+[INFO] Installing /root/workspace/jenkinsci/performance-plugin/223097269/pom.xml to /root/./workspace/jenkinsci/performance-plugin/223097269/.m2/org/jenkins-ci/plugins/performance/2.3-SNAPSHOT/performance-2.3-SNAPSHOT.pom
+[INFO] Installing /root/workspace/jenkinsci/performance-plugin/223097269/target/performance.jar to /root/./workspace/jenkinsci/performance-plugin/223097269/.m2/org/jenkins-ci/plugins/performance/2.3-SNAPSHOT/performance-2.3-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:02 min
+[INFO] Finished at: 2017-04-18T19:18:54+02:00
+[INFO] Final Memory: 80M/826M
+[INFO] ------------------------------------------------------------------------
