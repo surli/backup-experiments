@@ -1,14 +1,1214 @@
 {
-  "bugRepo": "OryxProject/oryx",
+  "totalNumberSkippingTests": 1,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 0,
     "CloneRepository": 5,
     "ResolveDependency": 114,
     "TestProject": 175,
     "BuildProject": 288
   },
-  "buildid": 223328603,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 105,
   "repo": "OryxProject/oryx",
-  "bugCommit": "https://github.com/OryxProject/oryx/compare/d831f54249e5...eeb62ee4f003"
+  "bugCommit": "https://github.com/OryxProject/oryx/compare/d831f54249e5...eeb62ee4f003",
+  "failingModule": "/root/workspace/OryxProject/oryx/223328603/app/oryx-app-serving",
+  "buildid": 223328603,
+  "totalNumberFailingTests": 34,
+  "error-types": [
+    "javax.ws.rs.InternalServerErrorException",
+    "java.lang.AssertionError",
+    "java.lang.Exception",
+    "org.junit.ComparisonFailure"
+  ],
+  "totalNumberRunningTests": 392,
+  "failing-test-cases": [
+    {
+      "className": "com.cloudera.oryx.app.serving.als.KnownItemsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.KnownItemsTest#testEmptyItems",
+        "com.cloudera.oryx.app.serving.als.KnownItemsTest#testKnownItemsCSV",
+        "com.cloudera.oryx.app.serving.als.KnownItemsTest#testKnownItems"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.CompressedResponseTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.CompressedResponseTest#testGzipResponse",
+        "com.cloudera.oryx.app.serving.als.CompressedResponseTest#testDeflateResponse"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest#testEstimateForAnonymous",
+        "com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest#testEstimateForAnonymousWithUnknown",
+        "com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest#testUnknownUser",
+        "com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest#testBadRequest",
+        "com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest#testEstimateForAnonymousWithAllUnknown",
+        "com.cloudera.oryx.app.serving.als.EstimateForAnonymousTest#testEstimateForAnonymousCSV"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 6
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.MostSurprisingTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.MostSurprisingTest#testNoArg",
+        "com.cloudera.oryx.app.serving.als.MostSurprisingTest#testOffset",
+        "com.cloudera.oryx.app.serving.als.MostSurprisingTest#testHowMany",
+        "com.cloudera.oryx.app.serving.als.MostSurprisingTest#testMostSurprisingCSV",
+        "com.cloudera.oryx.app.serving.als.MostSurprisingTest#testMostSurprising"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 5
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.ConsoleTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.als.ConsoleTest#testConsole"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cpublic\u003e but was:\u003cnull\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.kmeans.ReadyTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.kmeans.ReadyTest#testHead",
+        "com.cloudera.oryx.app.serving.kmeans.ReadyTest#testGet"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c200\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c200\u003e but was:\u003c500\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.RecommendWithContextTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testRecommendWithContextWithUnknown",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testRecommendWithContext",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testBadHowMany",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testRecommendCSV",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testTooMany",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testHowMany",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testBadArg",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testNoArg",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testRescorer",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testRecommendWithContextWithAllUnknown",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testBadOffset",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testRecommendWithContextCSV",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testOffset",
+        "com.cloudera.oryx.app.serving.als.RecommendWithContextTest#testRecommend"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 14
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.ReadOnlyTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.als.ReadOnlyTest#testNoPreference",
+        "com.cloudera.oryx.app.serving.als.ReadOnlyTest#testNoIngest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c403\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c403\u003e but was:\u003c500\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.kmeans.AddTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.kmeans.AddTest#testSimpleAdd",
+        "com.cloudera.oryx.app.serving.kmeans.AddTest#testFormAdd",
+        "com.cloudera.oryx.app.serving.kmeans.AddTest#testURIAdd"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testRecommendToAnonymousWithAllUnknown",
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testOffset",
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testHowMany",
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testNoArg",
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testBadOffset",
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testRecommendToAnonymous",
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testRecommendToAnonymousCSV",
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testBadHowMany",
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testRecommendToAnonymousWithUnknown",
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testTooMany",
+        "com.cloudera.oryx.app.serving.als.RecommendToAnonymousTest#testRescorer"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 11
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.BecauseTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.BecauseTest#testHowMany",
+        "com.cloudera.oryx.app.serving.als.BecauseTest#testBecause",
+        "com.cloudera.oryx.app.serving.als.BecauseTest#testBecauseCSV",
+        "com.cloudera.oryx.app.serving.als.BecauseTest#testNoArg",
+        "com.cloudera.oryx.app.serving.als.BecauseTest#testOffset"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 5
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.rdf.FeatureImportanceTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.rdf.FeatureImportanceTest#testImportance",
+        "com.cloudera.oryx.app.serving.rdf.FeatureImportanceTest#testAllImportance"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.AllItemIDsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.AllItemIDsTest#testAllItemIDs",
+        "com.cloudera.oryx.app.serving.als.AllItemIDsTest#testAllItemIDsCSV"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.rdf.ReadyTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.rdf.ReadyTest#testHead",
+        "com.cloudera.oryx.app.serving.rdf.ReadyTest#testGet"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c200\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c200\u003e but was:\u003c500\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.kmeans.ReadOnlyTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.kmeans.ReadOnlyTest#testNoAdd"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c403\u003e but was:\u003c500\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.rdf.ConsoleTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.rdf.ConsoleTest#testConsole"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cpublic\u003e but was:\u003cnull\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.ReadyTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.als.ReadyTest#testGet",
+        "com.cloudera.oryx.app.serving.als.ReadyTest#testHead"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c200\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c200\u003e but was:\u003c500\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.SimilarityTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.SimilarityTest#testBadHowMany",
+        "com.cloudera.oryx.app.serving.als.SimilarityTest#testHowMany",
+        "com.cloudera.oryx.app.serving.als.SimilarityTest#testOffset",
+        "com.cloudera.oryx.app.serving.als.SimilarityTest#testBadOffset",
+        "com.cloudera.oryx.app.serving.als.SimilarityTest#testSimilarityCSV",
+        "com.cloudera.oryx.app.serving.als.SimilarityTest#testTooMany",
+        "com.cloudera.oryx.app.serving.als.SimilarityTest#testRescorer",
+        "com.cloudera.oryx.app.serving.als.SimilarityTest#testNoArg",
+        "com.cloudera.oryx.app.serving.als.SimilarityTest#testSimilarItems"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 9
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.kmeans.AssignTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.kmeans.AssignTest#testFormAssign",
+        "com.cloudera.oryx.app.serving.kmeans.AssignTest#testAssignPost"
+      ],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.kmeans.AssignTest#testAssign2",
+        "com.cloudera.oryx.app.serving.kmeans.AssignTest#testAssign"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c200\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[4\n4\n]\u003e but was:\u003c[\u003chtml\u003e\u003chead\u003e\u003ctitle\u003eGrizzly 2.3.28\u003c/title\u003e\u003cstyle\u003e\u003c!--div.header {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#003300;font-size:22px;-moz-border-radius-topleft: 10px;border-top-left-radius: 10px;-moz-border-radius-topright: 10px;border-top-right-radius: 10px;padding-left: 5px}div.body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:#FFFFCC;font-size:16px;padding-top:10px;padding-bottom:10px;padding-left:10px}div.footer {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#666633;font-size:14px;-moz-border-radius-bottomleft: 10px;border-bottom-left-radius: 10px;-moz-border-radius-bottomright: 10px;border-bottom-right-radius: 10px;padding-left: 5px}BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}B {font-family:Tahoma,Arial,sans-serif;color:black;}A {color : black;}HR {color : #999966;}--\u003e\u003c/style\u003e \u003c/head\u003e\u003cbody\u003e\u003cdiv class\u003d\"header\"\u003eInternal Error\u003c/div\u003e\u003cdiv class\u003d\"body\"\u003e\u003cb\u003ecom.google.common.collect.Sets$SetView.iterator()Lcom/google/common/collect/UnmodifiableIterator;\u003c/b\u003e\u003cpre\u003e     1: org.reflections.Reflections.expandSuperTypes(Reflections.java:380)\n     2: org.reflections.Reflections.\u003cinit\u003e(Reflections.java:126)\n     3: org.reflections.Reflections.\u003cinit\u003e(Reflections.java:168)\n     4: org.reflections.Reflections.\u003cinit\u003e(Reflections.java:141)\n     5: com.cloudera.oryx.lambda.serving.OryxApplication.doGetClasses(OryxApplication.java:69)\n     6: com.cloudera.oryx.lambda.serving.OryxApplication.getClasses(OryxApplication.java:57)\n     7: org.glassfish.jersey.server.ResourceConfig$RuntimeConfig$3.run(ResourceConfig.java:1234)\n     8: org.glassfish.jersey.internal.Errors$2.call(Errors.java:289)\n     9: org.glassfish.jersey.internal.Errors$2.call(Errors.java:286)\n    10: org.glassfish.jersey.internal.Errors.process(Errors.java:315)\n        ... 18 more\u003c/pre\u003ePlease see the log for more detail.\u003c/div\u003e\u003cdiv class\u003d\"footer\"\u003eGrizzly 2.3.28\u003c/div\u003e\u003c/body\u003e\u003c/html\u003e]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.AllUserIDsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.AllUserIDsTest#testAllItemIDs",
+        "com.cloudera.oryx.app.serving.als.AllUserIDsTest#testAllUserIDsCSV"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.rdf.PredictTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.rdf.PredictTest#testFormPredict",
+        "com.cloudera.oryx.app.serving.rdf.PredictTest#testPredictPost"
+      ],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.rdf.PredictTest#testPredict",
+        "com.cloudera.oryx.app.serving.rdf.PredictTest#testPredict2"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c200\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[67.0\n670.0\n]\u003e but was:\u003c[\u003chtml\u003e\u003chead\u003e\u003ctitle\u003eGrizzly 2.3.28\u003c/title\u003e\u003cstyle\u003e\u003c!--div.header {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#003300;font-size:22px;-moz-border-radius-topleft: 10px;border-top-left-radius: 10px;-moz-border-radius-topright: 10px;border-top-right-radius: 10px;padding-left: 5px}div.body {font-family:Tahoma,Arial,sans-serif;color:black;background-color:#FFFFCC;font-size:16px;padding-top:10px;padding-bottom:10px;padding-left:10px}div.footer {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#666633;font-size:14px;-moz-border-radius-bottomleft: 10px;border-bottom-left-radius: 10px;-moz-border-radius-bottomright: 10px;border-bottom-right-radius: 10px;padding-left: 5px}BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}B {font-family:Tahoma,Arial,sans-serif;color:black;}A {color : black;}HR {color : #999966;}--\u003e\u003c/style\u003e \u003c/head\u003e\u003cbody\u003e\u003cdiv class\u003d\"header\"\u003eInternal Error\u003c/div\u003e\u003cdiv class\u003d\"body\"\u003e\u003cb\u003ecom.google.common.collect.Sets$SetView.iterator()Lcom/google/common/collect/UnmodifiableIterator;\u003c/b\u003e\u003cpre\u003e     1: org.reflections.Reflections.expandSuperTypes(Reflections.java:380)\n     2: org.reflections.Reflections.\u003cinit\u003e(Reflections.java:126)\n     3: org.reflections.Reflections.\u003cinit\u003e(Reflections.java:168)\n     4: org.reflections.Reflections.\u003cinit\u003e(Reflections.java:141)\n     5: com.cloudera.oryx.lambda.serving.OryxApplication.doGetClasses(OryxApplication.java:69)\n     6: com.cloudera.oryx.lambda.serving.OryxApplication.getClasses(OryxApplication.java:57)\n     7: org.glassfish.jersey.server.ResourceConfig$RuntimeConfig$3.run(ResourceConfig.java:1234)\n     8: org.glassfish.jersey.internal.Errors$2.call(Errors.java:289)\n     9: org.glassfish.jersey.internal.Errors$2.call(Errors.java:286)\n    10: org.glassfish.jersey.internal.Errors.process(Errors.java:315)\n        ... 18 more\u003c/pre\u003ePlease see the log for more detail.\u003c/div\u003e\u003cdiv class\u003d\"footer\"\u003eGrizzly 2.3.28\u003c/div\u003e\u003c/body\u003e\u003c/html\u003e]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.IngestTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.als.IngestTest#testFormIngest",
+        "com.cloudera.oryx.app.serving.als.IngestTest#testGZippedIngest",
+        "com.cloudera.oryx.app.serving.als.IngestTest#testDeflateIngest",
+        "com.cloudera.oryx.app.serving.als.IngestTest#testSimpleIngest",
+        "com.cloudera.oryx.app.serving.als.IngestTest#testZippedFormIngest",
+        "com.cloudera.oryx.app.serving.als.IngestTest#testGzippedFormIngest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 6,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.MostActiveUsersTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.MostActiveUsersTest#testRescorer",
+        "com.cloudera.oryx.app.serving.als.MostActiveUsersTest#testMostPopularCSV",
+        "com.cloudera.oryx.app.serving.als.MostActiveUsersTest#testMostPopular"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.RecommendTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.RecommendTest#testOffset",
+        "com.cloudera.oryx.app.serving.als.RecommendTest#testNoArg",
+        "com.cloudera.oryx.app.serving.als.RecommendTest#testHowMany",
+        "com.cloudera.oryx.app.serving.als.RecommendTest#testBadOffset",
+        "com.cloudera.oryx.app.serving.als.RecommendTest#testRecommendCSV",
+        "com.cloudera.oryx.app.serving.als.RecommendTest#testTooMany",
+        "com.cloudera.oryx.app.serving.als.RecommendTest#testConsiderKnownItems",
+        "com.cloudera.oryx.app.serving.als.RecommendTest#testBadHowMany",
+        "com.cloudera.oryx.app.serving.als.RecommendTest#testRecommend",
+        "com.cloudera.oryx.app.serving.als.RecommendTest#testRescorer"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 10
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.rdf.TrainTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.rdf.TrainTest#testFormTrain",
+        "com.cloudera.oryx.app.serving.rdf.TrainTest#testSimpleTrain",
+        "com.cloudera.oryx.app.serving.rdf.TrainTest#testURITrain"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.rdf.ReadOnlyTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.rdf.ReadOnlyTest#testNoTrain"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c403\u003e but was:\u003c500\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.PopularRepresentativeItemsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.PopularRepresentativeItemsTest#testPopularRepresentativeItems",
+        "com.cloudera.oryx.app.serving.als.PopularRepresentativeItemsTest#testPopularRepresentativeItemsCSV"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.kmeans.DistanceToNearestTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.kmeans.DistanceToNearestTest#testDistance2",
+        "com.cloudera.oryx.app.serving.kmeans.DistanceToNearestTest#testDistance"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.EstimateTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.EstimateTest#testZeroEstimate",
+        "com.cloudera.oryx.app.serving.als.EstimateTest#testEstimate",
+        "com.cloudera.oryx.app.serving.als.EstimateTest#testEstimateCSV",
+        "com.cloudera.oryx.app.serving.als.EstimateTest#testBadRequest"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.kmeans.ConsoleTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.kmeans.ConsoleTest#testConsole"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cpublic\u003e but was:\u003cnull\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.rdf.ClassificationDistributionTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.rdf.ClassificationDistributionTest#testDistribution2",
+        "com.cloudera.oryx.app.serving.rdf.ClassificationDistributionTest#testDistribution"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.SimilarityToItemTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.SimilarityToItemTest#testNoArg",
+        "com.cloudera.oryx.app.serving.als.SimilarityToItemTest#testSimilarityToItemCSV",
+        "com.cloudera.oryx.app.serving.als.SimilarityToItemTest#testZeroSimilarityToItem",
+        "com.cloudera.oryx.app.serving.als.SimilarityToItemTest#testSimilarityToItem"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.MostPopularItemsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.MostPopularItemsTest#testRescorer",
+        "com.cloudera.oryx.app.serving.als.MostPopularItemsTest#testMostPopular",
+        "com.cloudera.oryx.app.serving.als.MostPopularItemsTest#testMostPopularCSV"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.RecommendToManyTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.cloudera.oryx.app.serving.als.RecommendToManyTest#testNoArg",
+        "com.cloudera.oryx.app.serving.als.RecommendToManyTest#testBadOffset",
+        "com.cloudera.oryx.app.serving.als.RecommendToManyTest#testTooMany",
+        "com.cloudera.oryx.app.serving.als.RecommendToManyTest#testBadHowMany",
+        "com.cloudera.oryx.app.serving.als.RecommendToManyTest#testHowMany",
+        "com.cloudera.oryx.app.serving.als.RecommendToManyTest#testRescorer",
+        "com.cloudera.oryx.app.serving.als.RecommendToManyTest#testRecommendToMany",
+        "com.cloudera.oryx.app.serving.als.RecommendToManyTest#testOffset",
+        "com.cloudera.oryx.app.serving.als.RecommendToManyTest#testRecommendToManyCSV",
+        "com.cloudera.oryx.app.serving.als.RecommendToManyTest#testConsiderKnownItems"
+      ],
+      "failures": [
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.NotFoundException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "javax.ws.rs.InternalServerErrorException",
+          "failureDetail": "HTTP 500 Internal Error",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjavax.ws.rs.BadRequestException\u003e but was\u003cjavax.ws.rs.InternalServerErrorException\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 10
+    },
+    {
+      "className": "com.cloudera.oryx.app.serving.als.PreferenceTest",
+      "failingMethods": [
+        "com.cloudera.oryx.app.serving.als.PreferenceTest#testPostJson",
+        "com.cloudera.oryx.app.serving.als.PreferenceTest#testPostWithEmptyItemValue",
+        "com.cloudera.oryx.app.serving.als.PreferenceTest#testPostWithBadItemValue",
+        "com.cloudera.oryx.app.serving.als.PreferenceTest#testPostCSV",
+        "com.cloudera.oryx.app.serving.als.PreferenceTest#testDelete"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c400\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c204\u003e but was:\u003c500\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    }
+  ],
+  "bugRepo": "OryxProject/oryx"
 }
