@@ -6,7 +6,10 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.codec.binary.Base64;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 
 @JsonInclude(Include.NON_DEFAULT)
 public class Attachments {
