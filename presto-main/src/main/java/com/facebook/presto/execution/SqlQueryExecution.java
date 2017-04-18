@@ -107,6 +107,7 @@ public final class SqlQueryExecution
     private final ExecutionPolicy executionPolicy;
     private final List<Expression> parameters;
     private final SplitSchedulerStats schedulerStats;
+    private final WarningSink warningSink;
 
     public SqlQueryExecution(QueryId queryId,
             String query,
@@ -129,7 +130,8 @@ public final class SqlQueryExecution
             QueryExplainer queryExplainer,
             ExecutionPolicy executionPolicy,
             List<Expression> parameters,
-            SplitSchedulerStats schedulerStats)
+            SplitSchedulerStats schedulerStats,
+            WarningSink warningSink)
     {
         try (SetThreadName ignored = new SetThreadName("Query-%s", queryId)) {
             this.statement = requireNonNull(statement, "statement is null");
@@ -147,6 +149,7 @@ public final class SqlQueryExecution
             this.queryExplainer = requireNonNull(queryExplainer, "queryExplainer is null");
             this.parameters = requireNonNull(parameters);
             this.schedulerStats = requireNonNull(schedulerStats, "schedulerStats is null");
+            this.warningSink = requireNonNull(warningSink, "warningSink is null");
 
             checkArgument(scheduleSplitBatchSize > 0, "scheduleSplitBatchSize must be greater than 0");
             this.scheduleSplitBatchSize = scheduleSplitBatchSize;
@@ -155,7 +158,7 @@ public final class SqlQueryExecution
             requireNonNull(query, "query is null");
             requireNonNull(session, "session is null");
             requireNonNull(self, "self is null");
-            this.stateMachine = QueryStateMachine.begin(queryId, query, session, self, false, transactionManager, accessControl, queryExecutor, metadata);
+            this.stateMachine = QueryStateMachine.begin(queryId, query, session, self, false, transactionManager, accessControl, queryExecutor, metadata, warningSink);
 
             // when the query finishes cache the final query info, and clear the reference to the output stage
             stateMachine.addStateChangeListener(state -> {
@@ -292,14 +295,14 @@ public final class SqlQueryExecution
         long analysisStart = System.nanoTime();
 
         // analyze query
-        Analyzer analyzer = new Analyzer(stateMachine.getSession(), metadata, sqlParser, accessControl, Optional.of(queryExplainer), parameters);
+        Analyzer analyzer = new Analyzer(stateMachine.getSession(), metadata, sqlParser, accessControl, Optional.of(queryExplainer), parameters, warningSink);
         Analysis analysis = analyzer.analyze(statement);
 
         stateMachine.setUpdateType(analysis.getUpdateType());
 
         // plan query
         PlanNodeIdAllocator idAllocator = new PlanNodeIdAllocator();
-        LogicalPlanner logicalPlanner = new LogicalPlanner(stateMachine.getSession(), planOptimizers, idAllocator, metadata, sqlParser);
+        LogicalPlanner logicalPlanner = new LogicalPlanner(stateMachine.getSession(), planOptimizers, idAllocator, metadata, sqlParser, warningSink);
         Plan plan = logicalPlanner.plan(analysis);
 
         // extract inputs
@@ -607,7 +610,7 @@ public final class SqlQueryExecution
         }
 
         @Override
-        public SqlQueryExecution createQueryExecution(QueryId queryId, String query, Session session, Statement statement, List<Expression> parameters)
+        public SqlQueryExecution createQueryExecution(QueryId queryId, String query, Session session, Statement statement, List<Expression> parameters, WarningSink warningSink)
         {
             String executionPolicyName = SystemSessionProperties.getExecutionPolicy(session);
             ExecutionPolicy executionPolicy = executionPolicies.get(executionPolicyName);
@@ -635,7 +638,8 @@ public final class SqlQueryExecution
                     queryExplainer,
                     executionPolicy,
                     parameters,
-                    schedulerStats);
+                    schedulerStats,
+                    warningSink);
         }
     }
 }

@@ -14,6 +14,8 @@
 package com.facebook.presto.sql.analyzer;
 
 import com.facebook.presto.Session;
+import com.facebook.presto.execution.BlackholeWarningSink;
+import com.facebook.presto.execution.WarningSink;
 import com.facebook.presto.metadata.FunctionRegistry;
 import com.facebook.presto.metadata.Metadata;
 import com.facebook.presto.metadata.OperatorNotFoundException;
@@ -1430,7 +1432,7 @@ public class ExpressionAnalyzer
         // expressions at this point can not have sub queries so deny all access checks
         // in the future, we will need a full access controller here to verify access to functions
         Analysis analysis = new Analysis(null, parameters, isDescribe);
-        ExpressionAnalyzer analyzer = create(analysis, session, metadata, sqlParser, new DenyAllAccessControl(), types);
+        ExpressionAnalyzer analyzer = create(analysis, session, metadata, sqlParser, new DenyAllAccessControl(), types, BlackholeWarningSink.getInstance());
         for (Expression expression : expressions) {
             analyzer.analyze(expression, Scope.builder().withRelationType(tupleDescriptor).build());
         }
@@ -1454,9 +1456,10 @@ public class ExpressionAnalyzer
             SqlParser sqlParser,
             Scope scope,
             Analysis analysis,
-            Expression expression)
+            Expression expression,
+            WarningSink warningSink)
     {
-        ExpressionAnalyzer analyzer = create(analysis, session, metadata, sqlParser, accessControl, ImmutableMap.of());
+        ExpressionAnalyzer analyzer = create(analysis, session, metadata, sqlParser, accessControl, ImmutableMap.of(), warningSink);
         analyzer.analyze(expression, scope);
 
         IdentityLinkedHashMap<Expression, Type> expressionTypes = analyzer.getExpressionTypes();
@@ -1487,9 +1490,10 @@ public class ExpressionAnalyzer
             Session session,
             Metadata metadata,
             SqlParser sqlParser,
-            AccessControl accessControl)
+            AccessControl accessControl,
+            WarningSink warningSink)
     {
-        return create(analysis, session, metadata, sqlParser, accessControl, ImmutableMap.of());
+        return create(analysis, session, metadata, sqlParser, accessControl, ImmutableMap.of(), warningSink);
     }
 
     public static ExpressionAnalyzer create(
@@ -1498,12 +1502,13 @@ public class ExpressionAnalyzer
             Metadata metadata,
             SqlParser sqlParser,
             AccessControl accessControl,
-            Map<Symbol, Type> types)
+            Map<Symbol, Type> types,
+            WarningSink warningSink)
     {
         return new ExpressionAnalyzer(
                 metadata.getFunctionRegistry(),
                 metadata.getTypeManager(),
-                node -> new StatementAnalyzer(analysis, metadata, sqlParser, accessControl, session),
+                node -> new StatementAnalyzer(analysis, metadata, sqlParser, accessControl, session, warningSink),
                 session,
                 types,
                 analysis.getParameters(),

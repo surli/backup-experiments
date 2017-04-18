@@ -11,13 +11,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.facebook.presto.spi;
+package com.facebook.presto.execution;
 
-public enum ErrorType
+import com.facebook.presto.client.QueryError;
+import com.google.common.collect.ImmutableList;
+
+import java.util.List;
+
+public class BlackholeWarningSink
+        implements WarningSink
 {
-    USER_ERROR,
-    INTERNAL_ERROR,
-    INSUFFICIENT_RESOURCES,
-    EXTERNAL,
-    WARNING
+    private static final WarningSink INSTANCE = new BlackholeWarningSink();
+
+    public static WarningSink getInstance()
+    {
+        return INSTANCE;
+    }
+
+    @Override
+    public void addWarning(QueryError warning)
+    {
+    }
+
+    @Override
+    public List<QueryError> getWarnings()
+    {
+        return ImmutableList.of();
+    }
 }
