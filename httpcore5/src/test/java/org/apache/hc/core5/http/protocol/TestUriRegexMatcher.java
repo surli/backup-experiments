@@ -30,7 +30,7 @@ package org.apache.hc.core5.http.protocol;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestUriPatternMatcher {
+public class TestUriRegexMatcher {
 
     @Test
     public void testRegisterUnregister() throws Exception {
@@ -38,7 +38,7 @@ public class TestUriPatternMatcher {
         final Object h2 = new Object();
         final Object h3 = new Object();
 
-        final LookupRegistry<Object> matcher = new UriPatternMatcher<>();
+        final LookupRegistry<Object> matcher = new UriRegexMatcher<>();
         matcher.register("/h1", h1);
         matcher.register("/h2", h2);
         matcher.register("/h3", h3);
@@ -60,24 +60,56 @@ public class TestUriPatternMatcher {
         Assert.assertNull(h);
     }
 
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testRegisterNull() throws Exception {
-        final LookupRegistry<Object> matcher = new UriPatternMatcher<>();
+        final LookupRegistry<Object> matcher = new UriRegexMatcher<>();
         matcher.register(null, null);
     }
 
     @Test
-    public void testWildCardMatching1() throws Exception {
+    public void testWildCardMatching1a() throws Exception {
         final Object h1 = new Object();
         final Object h2 = new Object();
         final Object h3 = new Object();
         final Object def = new Object();
 
-        final LookupRegistry<Object> matcher = new UriPatternMatcher<>();
-        matcher.register("*", def);
-        matcher.register("/one/*", h1);
-        matcher.register("/one/two/*", h2);
-        matcher.register("/one/two/three/*", h3);
+        final LookupRegistry<Object> matcher = new UriRegexMatcher<>();
+        matcher.register(".*", def);
+        matcher.register("/one/.*", h1);
+        matcher.register("/one/two/.*", h2);
+        matcher.register("/one/two/three/.*", h3);
+
+        Object h;
+
+        h = matcher.lookup("/one/request");
+        Assert.assertNotNull(h);
+        Assert.assertTrue(def == h);
+
+        h = matcher.lookup("/one/two/request");
+        Assert.assertNotNull(h);
+        Assert.assertTrue(def == h);
+
+        h = matcher.lookup("/one/two/three/request");
+        Assert.assertNotNull(h);
+        Assert.assertTrue(def == h);
+
+        h = matcher.lookup("default/request");
+        Assert.assertNotNull(h);
+        Assert.assertTrue(def == h);
+    }
+
+    @Test
+    public void testWildCardMatching1b() throws Exception {
+        final Object h1 = new Object();
+        final Object h2 = new Object();
+        final Object h3 = new Object();
+        final Object def = new Object();
+
+        final LookupRegistry<Object> matcher = new UriRegexMatcher<>();
+        matcher.register("/one/two/three/.*", h3);
+        matcher.register("/one/two/.*", h2);
+        matcher.register("/one/.*", h1);
+        matcher.register(".*", def);
 
         Object h;
 
@@ -99,15 +131,41 @@ public class TestUriPatternMatcher {
     }
 
     @Test
-    public void testWildCardMatching2() throws Exception {
+    public void testWildCardMatching2a() throws Exception {
         final Object h1 = new Object();
         final Object h2 = new Object();
         final Object def = new Object();
 
-        final LookupRegistry<Object> matcher = new UriPatternMatcher<>();
-        matcher.register("*", def);
-        matcher.register("*.view", h1);
-        matcher.register("*.form", h2);
+        final LookupRegistry<Object> matcher = new UriRegexMatcher<>();
+        matcher.register(".*", def);
+        matcher.register(".*\\.view", h1);
+        matcher.register(".*\\.form", h2);
+
+        Object h;
+
+        h = matcher.lookup("/that.view");
+        Assert.assertNotNull(h);
+        Assert.assertTrue(def == h);
+
+        h = matcher.lookup("/that.form");
+        Assert.assertNotNull(h);
+        Assert.assertTrue(def == h);
+
+        h = matcher.lookup("/whatever");
+        Assert.assertNotNull(h);
+        Assert.assertTrue(def == h);
+    }
+
+    @Test
+    public void testWildCardMatching2b() throws Exception {
+        final Object h1 = new Object();
+        final Object h2 = new Object();
+        final Object def = new Object();
+
+        final LookupRegistry<Object> matcher = new UriRegexMatcher<>();
+        matcher.register(".*\\.form", h2);
+        matcher.register(".*\\.view", h1);
+        matcher.register(".*", def);
 
         Object h;
 
@@ -129,24 +187,24 @@ public class TestUriPatternMatcher {
         final Object h1 = new Object();
         final Object h2 = new Object();
 
-        final LookupRegistry<Object> matcher = new UriPatternMatcher<>();
-        matcher.register("/ma*", h1);
-        matcher.register("*tch", h2);
+        final LookupRegistry<Object> matcher = new UriRegexMatcher<>();
+        matcher.register("/ma.*", h1);
+        matcher.register(".*tch", h2);
 
         final Object h = matcher.lookup("/match");
         Assert.assertNotNull(h);
         Assert.assertTrue(h1 == h);
     }
 
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testRegisterInvalidInput() throws Exception {
-        final LookupRegistry<Object> matcher = new UriPatternMatcher<>();
+        final LookupRegistry<Object> matcher = new UriRegexMatcher<>();
         matcher.register(null, null);
     }
 
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testLookupInvalidInput() throws Exception {
-        final LookupRegistry<Object> matcher = new UriPatternMatcher<>();
+        final LookupRegistry<Object> matcher = new UriRegexMatcher<>();
         matcher.lookup(null);
     }
 
