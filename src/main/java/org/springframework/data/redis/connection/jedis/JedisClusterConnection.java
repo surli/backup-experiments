@@ -3572,7 +3572,7 @@ public class JedisClusterConnection implements RedisClusterConnection {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.springframework.data.redis.connection.HyperLogLogCommands#pfAdd(byte[], byte[][])
+	 * @see org.springframework.data.redis.connection.RedisHyperLogLogCommands#pfAdd(byte[], byte[][])
 	 */
 	@Override
 	public Long pfAdd(byte[] key, byte[]... values) {
@@ -3586,7 +3586,7 @@ public class JedisClusterConnection implements RedisClusterConnection {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.springframework.data.redis.connection.HyperLogLogCommands#pfCount(byte[][])
+	 * @see org.springframework.data.redis.connection.RedisHyperLogLogCommands#pfCount(byte[][])
 	 */
 	@Override
 	public Long pfCount(byte[]... keys) {
@@ -3605,7 +3605,7 @@ public class JedisClusterConnection implements RedisClusterConnection {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.springframework.data.redis.connection.HyperLogLogCommands#pfMerge(byte[], byte[][])
+	 * @see org.springframework.data.redis.connection.RedisHyperLogLogCommands#pfMerge(byte[], byte[][])
 	 */
 	@Override
 	public void pfMerge(byte[] destinationKey, byte[]... sourceKeys) {

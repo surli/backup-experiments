@@ -29,6 +29,24 @@ import org.springframework.dao.DataAccessException;
  */
 public interface RedisConnection extends RedisCommands {
 
+	default RedisKeyCommands keyCommands() {
+		return this;
+	}
+
+	default RedisStringCommands stringCommands() {return this;}
+
+	default RedisListCommands listCommands() { return this; }
+
+	default RedisSetCommands setCommands() {return this;}
+
+	default RedisZSetCommands zSetCommands() { return this; }
+
+	default RedisHashCommands hashCommands() { return this; }
+
+	default RedisGeoCommands geoCommands() {return this;}
+
+	default RedisHyperLogLogCommands hyperLogLogCommands() {return this;}
+
 	/**
 	 * Closes (or quits) the connection.
 	 * 
