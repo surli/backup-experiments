@@ -1,14 +1,41 @@
 {
-  "bugRepo": "dangdangdotcom/elastic-job",
+  "totalNumberSkippingTests": 1,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 0,
     "CloneRepository": 8,
     "ResolveDependency": 22,
     "TestProject": 35,
     "BuildProject": 196
   },
-  "buildid": 223039125,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 0,
   "repo": "dangdangdotcom/elastic-job",
-  "bugCommit": "https://github.com/dangdangdotcom/elastic-job/compare/b4c722307f34...99f0c89fdc70"
+  "bugCommit": "https://github.com/dangdangdotcom/elastic-job/compare/b4c722307f34...99f0c89fdc70",
+  "failingModule": "/root/workspace/dangdangdotcom/elastic-job/223039125/elastic-job-lite/elastic-job-lite-core",
+  "buildid": 223039125,
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "org.mockito.exceptions.verification.NeverWantedButInvoked"
+  ],
+  "totalNumberRunningTests": 503,
+  "failing-test-cases": [
+    {
+      "className": "com.dangdang.ddframe.job.lite.internal.failover.FailoverServiceTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.job.lite.internal.failover.FailoverServiceTest#assertGetLocalFailoverItemsIfShutdown"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.mockito.exceptions.verification.NeverWantedButInvoked",
+          "failureDetail": "\njobNodeStorage.getJobNodeChildrenKeys(\n    \"sharding\"\n);\nNever wanted here:\n-\u003e at com.dangdang.ddframe.job.lite.internal.storage.JobNodeStorage.getJobNodeChildrenKeys(JobNodeStorage.java:92)\nBut invoked here:\n-\u003e at com.dangdang.ddframe.job.lite.internal.failover.FailoverService.getLocalFailoverItems(FailoverService.java:103)\n",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
+  "bugRepo": "dangdangdotcom/elastic-job"
 }
