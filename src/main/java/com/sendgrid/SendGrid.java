@@ -1,5 +1,7 @@
 package com.sendgrid;
 
+import com.sendgrid.helpers.mail.objects.ContentType;
+
 import org.apache.http.impl.client.CloseableHttpClient;
 
 import java.io.IOException;
@@ -78,10 +80,10 @@ public class SendGrid {
     public void initializeSendGrid() {
         this.host = "api.sendgrid.com";
         this.version = "v3";
-        this.requestHeaders = new HashMap<String, String>();
+        this.requestHeaders = new HashMap<>();
         this.requestHeaders.put("Authorization", "Bearer " + this.apiKey);
         this.requestHeaders.put("User-agent", USER_AGENT);
-        this.requestHeaders.put("Accept", "application/json");
+        this.requestHeaders.put("Accept", ContentType.APPLICATION_JSON);
     }
 
     public String getLibraryVersion() {
@@ -122,7 +124,7 @@ public class SendGrid {
      * Class makeCall makes the call to the SendGrid API, override this method for testing.
      */
     public Response makeCall(Request request) throws IOException {
-        return client.api(request);
+        return this.client.api(request);
     }
 
     /**
