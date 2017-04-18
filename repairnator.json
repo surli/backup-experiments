@@ -1,14 +1,41 @@
 {
-  "bugRepo": "apache/jackrabbit-oak",
+  "totalNumberSkippingTests": 8,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 0,
     "CloneRepository": 23,
     "ResolveDependency": 18,
     "TestProject": 49,
     "BuildProject": 219
   },
-  "buildid": 223208940,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 0,
   "repo": "apache/jackrabbit-oak",
-  "bugCommit": "https://github.com/apache/jackrabbit-oak/compare/2634dbde9aed...d5337f0e262a"
+  "bugCommit": "https://github.com/apache/jackrabbit-oak/compare/2634dbde9aed...d5337f0e262a",
+  "failingModule": "/root/workspace/apache/jackrabbit-oak/223208940/oak-blob-plugins",
+  "buildid": 223208940,
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 583,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.jackrabbit.oak.plugins.blob.CompositeDataStoreCacheTest",
+      "failingMethods": [
+        "org.apache.jackrabbit.oak.plugins.blob.CompositeDataStoreCacheTest#concurrentGetFromStagedAndCached"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c2\u003e but was:\u003c1\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
+  "bugRepo": "apache/jackrabbit-oak"
 }
