@@ -24,10 +24,10 @@ import org.apache.nifi.action.component.details.FlowChangeRemoteProcessGroupDeta
 import org.apache.nifi.action.details.ActionDetails;
 import org.apache.nifi.action.details.ConfigureDetails;
 import org.apache.nifi.action.details.FlowChangeConfigureDetails;
+import org.apache.nifi.authorization.user.NiFiUser;
 import org.apache.nifi.authorization.user.NiFiUserUtils;
 import org.apache.nifi.groups.RemoteProcessGroup;
 import org.apache.nifi.remote.RemoteGroupPort;
-import org.apache.nifi.authorization.user.NiFiUser;
 import org.apache.nifi.util.StringUtils;
 import org.apache.nifi.web.api.dto.RemoteProcessGroupDTO;
 import org.apache.nifi.web.api.dto.RemoteProcessGroupPortDTO;
@@ -94,7 +94,13 @@ public class RemoteProcessGroupAuditor extends NiFiAuditor {
                     .setConvertName(PORT_NAME_CONVERT),
             new ConfigurationRecorder<RemoteGroupPort, RemoteProcessGroupPortDTO>("Compressed",
                     dto -> dto.getUseCompression() != null, RemoteGroupPort::isUseCompression)
-                    .setConvertName(PORT_NAME_CONVERT)
+                    .setConvertName(PORT_NAME_CONVERT),
+            new ConfigurationRecorder<RemoteGroupPort, RemoteProcessGroupPortDTO>("Batch Count",
+                    dto -> dto.getBatchCount() != null, RemoteGroupPort::getBatchCount),
+            new ConfigurationRecorder<RemoteGroupPort, RemoteProcessGroupPortDTO>("Batch Size",
+                    dto -> dto.getBatchSize() != null, RemoteGroupPort::getBatchSize),
+            new ConfigurationRecorder<RemoteGroupPort, RemoteProcessGroupPortDTO>("Batch Duration",
+                    dto -> dto.getBatchDuration() != null, RemoteGroupPort::getBatchDuration)
     );
 
     /**
