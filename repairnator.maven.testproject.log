@@ -1,0 +1,200 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 14 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 14 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] biojava
+[INFO] biojava-core
+[INFO] biojava-alignment
+[INFO] biojava-structure
+[INFO] biojava-structure-gui
+[INFO] biojava-sequencing
+[INFO] biojava-genome
+[INFO] biojava-modfinder
+[INFO] biojava-ws
+[INFO] biojava-protein-disorder
+[INFO] biojava-aa-prop
+[INFO] biojava-survival
+[INFO] biojava-ontology
+[INFO] biojava-integrationtest
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building biojava 5.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-java) @ biojava ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ biojava ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building biojava-core 5.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-java) @ biojava-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ biojava-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ biojava-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 24 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ biojava-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ biojava-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 19 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ biojava-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ biojava-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 10.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 108.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 1022.9 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.biojava.nbio.core.search.io.SearchIOTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.862 sec - in org.biojava.nbio.core.search.io.SearchIOTest
+Running org.biojava.nbio.core.search.io.HspTest
+getAlignment
+hashCode
+equals
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.859 sec - in org.biojava.nbio.core.search.io.HspTest
+Running org.biojava.nbio.core.search.io.blast.BlastXMLParserTest
+createObjects
+getFileExtensions
+setFile
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 1.82 sec - in org.biojava.nbio.core.search.io.blast.BlastXMLParserTest
+Running org.biojava.nbio.core.search.io.blast.BlastTabularParserTest
+createObjects
+getFileExtensions
+setFile
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.878 sec - in org.biojava.nbio.core.search.io.blast.BlastTabularParserTest
+Running org.biojava.nbio.core.alignment.SimpleSequencePairTest
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.831 sec - in org.biojava.nbio.core.alignment.SimpleSequencePairTest
+Running org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.763 sec - in org.biojava.nbio.core.alignment.SimpleAlignedSequenceTest
+Running org.biojava.nbio.core.alignment.SimpleProfileTest
+Tests run: 54, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.648 sec - in org.biojava.nbio.core.alignment.SimpleProfileTest
+Running org.biojava.nbio.core.fasta.TestFASTAReader
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.541 sec <<< FAILURE! - in org.biojava.nbio.core.fasta.TestFASTAReader
+testProcess1v2(org.biojava.nbio.core.fasta.TestFASTAReader)  Time elapsed: 0.478 sec  <<< FAILURE!
+java.lang.AssertionError:
+
+Expected: is not null
+     but: was null
+	at org.biojava.nbio.core.fasta.TestFASTAReader.testProcess1v2(TestFASTAReader.java:62)
+
+testProcess1(org.biojava.nbio.core.fasta.TestFASTAReader)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError:
+
+Expected: is not null
+     but: was null
+	at org.biojava.nbio.core.fasta.TestFASTAReader.testProcess1(TestFASTAReader.java:46)
+
+Running org.biojava.nbio.core.TestAmbiguityCompoundSet
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.852 sec - in org.biojava.nbio.core.TestAmbiguityCompoundSet
+Running org.biojava.nbio.core.sequence.EditSequenceTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.815 sec - in org.biojava.nbio.core.sequence.EditSequenceTest
+Running org.biojava.nbio.core.sequence.JoiningSequenceReaderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.701 sec - in org.biojava.nbio.core.sequence.JoiningSequenceReaderTest
+Running org.biojava.nbio.core.sequence.DNATest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.983 sec - in org.biojava.nbio.core.sequence.DNATest
+Running org.biojava.nbio.core.sequence.io.GenbankCookbookTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.995 sec - in org.biojava.nbio.core.sequence.io.GenbankCookbookTest
+Running org.biojava.nbio.core.sequence.io.GenericFastaHeaderParserTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.609 sec - in org.biojava.nbio.core.sequence.io.GenericFastaHeaderParserTest
+Running org.biojava.nbio.core.sequence.io.FastaReaderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.638 sec - in org.biojava.nbio.core.sequence.io.FastaReaderTest
+Running org.biojava.nbio.core.sequence.io.FastaWriterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.567 sec - in org.biojava.nbio.core.sequence.io.FastaWriterTest
+Running org.biojava.nbio.core.sequence.io.GenbankWriterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.594 sec - in org.biojava.nbio.core.sequence.io.GenbankWriterTest
+Running org.biojava.nbio.core.sequence.io.GenbankReaderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.741 sec - in org.biojava.nbio.core.sequence.io.GenbankReaderTest
+Running org.biojava.nbio.core.sequence.io.CasePreservingProteinSequenceCreatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.569 sec - in org.biojava.nbio.core.sequence.io.CasePreservingProteinSequenceCreatorTest
+Running org.biojava.nbio.core.sequence.compound.AmbiguityDNACompoundTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.727 sec - in org.biojava.nbio.core.sequence.compound.AmbiguityDNACompoundTest
+Running org.biojava.nbio.core.sequence.TranslationTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.041 sec - in org.biojava.nbio.core.sequence.TranslationTest
+Running org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.148 sec - in org.biojava.nbio.core.sequence.loader.GenbankProxySequenceReaderTest
+Running org.biojava.nbio.core.sequence.loader.SimpleGenbankProxySequenceReaderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.569 sec - in org.biojava.nbio.core.sequence.loader.SimpleGenbankProxySequenceReaderTest
+Running org.biojava.nbio.core.sequence.location.LocationParserTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.098 sec - in org.biojava.nbio.core.sequence.location.LocationParserTest
+Running org.biojava.nbio.core.sequence.location.InsdcParserTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.719 sec - in org.biojava.nbio.core.sequence.location.InsdcParserTest
+Running org.biojava.nbio.core.sequence.location.LocationTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.672 sec - in org.biojava.nbio.core.sequence.location.LocationTest
+Running org.biojava.nbio.core.sequence.location.TargetedLocationParserTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.522 sec - in org.biojava.nbio.core.sequence.location.TargetedLocationParserTest
+Running org.biojava.nbio.core.sequence.MultipleSequenceAlignmentTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.704 sec - in org.biojava.nbio.core.sequence.MultipleSequenceAlignmentTest
+Running org.biojava.nbio.core.sequence.SequenceViewTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.502 sec - in org.biojava.nbio.core.sequence.SequenceViewTest
+Running org.biojava.nbio.core.sequence.TestSequenceEquals
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.497 sec - in org.biojava.nbio.core.sequence.TestSequenceEquals
+
+Results :
+
+Failed tests:
+  TestFASTAReader.testProcess1:46
+Expected: is not null
+     but: was null
+  TestFASTAReader.testProcess1v2:62
+Expected: is not null
+     but: was null
+
+Tests run: 231, Failures: 2, Errors: 0, Skipped: 6
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO]
+[INFO] biojava ............................................ SUCCESS [  0.229 s]
+[INFO] biojava-core ....................................... FAILURE [01:09 min]
+[INFO] biojava-alignment .................................. SKIPPED
+[INFO] biojava-structure .................................. SKIPPED
+[INFO] biojava-structure-gui .............................. SKIPPED
+[INFO] biojava-sequencing ................................. SKIPPED
+[INFO] biojava-genome ..................................... SKIPPED
+[INFO] biojava-modfinder .................................. SKIPPED
+[INFO] biojava-ws ......................................... SKIPPED
+[INFO] biojava-protein-disorder ........................... SKIPPED
+[INFO] biojava-aa-prop .................................... SKIPPED
+[INFO] biojava-survival ................................... SKIPPED
+[INFO] biojava-ontology ................................... SKIPPED
+[INFO] biojava-integrationtest ............................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:11 min
+[INFO] Finished at: 2017-04-20T01:54:07+02:00
+[INFO] Final Memory: 19M/301M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project biojava-core: There are test failures.
+[ERROR]
+[ERROR] Please refer to /root/workspace/biojava/biojava/223716672/biojava-core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :biojava-core
