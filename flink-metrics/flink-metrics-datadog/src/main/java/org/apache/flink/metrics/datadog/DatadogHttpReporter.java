@@ -41,8 +41,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 
 /**
- * Abbr: dghttp
- *
  * Metric Reporter for Datadog
  *
  * Variables in metrics scope will be sent to Datadog as tags
