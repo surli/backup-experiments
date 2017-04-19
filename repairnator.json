@@ -1,19 +1,72 @@
 {
+  "pr-base-commit-id": "220a870a1ece8c6cff589321de13e99850748e92",
+  "pr-head-commit-id": "24deafc5db8953d64f01fd97cbade294e554a348",
+  "totalNumberSkippingTests": 64,
+  "pr-remote-repo": "pvillard31/nifi",
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException:"
+  ],
+  "totalNumberFailingTests": 1,
+  "buildid": 223314291,
+  "totalNumberErroringTests": 3,
+  "is-pr": "true",
+  "totalNumberRunningTests": 2411,
+  "pr-head-commit-id-url": "https://github.com/pvillard31/nifi/commit/24deafc5db8953d64f01fd97cbade294e554a348",
+  "pr-id": 1608,
+  "repo": "apache/nifi",
+  "failing-test-cases": [
+    {
+      "className": "org.apache.nifi.processors.standard.TestListDatabaseTables",
+      "failingMethods": [
+        "org.apache.nifi.processors.standard.TestListDatabaseTables#testListTablesMultipleRefresh"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c2\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.nifi.processors.standard.TestGetFile",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnreadableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnwritableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithInaccessibleDir"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 4,
+    "": 1,
     "CloneRepository": 25,
     "ResolveDependency": 25,
     "TestProject": 1029,
     "BuildProject": 723
   },
   "workspace": "./workspace",
-  "pr-remote-repo": "pvillard31/nifi",
-  "pr-head-commit-id": "24deafc5db8953d64f01fd97cbade294e554a348",
-  "pr-id": 1608,
-  "repo": "apache/nifi",
-  "pr-head-commit-id-url": "https://github.com/pvillard31/nifi/commit/24deafc5db8953d64f01fd97cbade294e554a348",
-  "is-pr": "true",
-  "buildid": 223314291,
   "pr-base-commit-id-url": "https://github.com/apache/nifi/commit/220a870a1ece8c6cff589321de13e99850748e92",
-  "pr-base-commit-id": "220a870a1ece8c6cff589321de13e99850748e92"
+  "failingModule": "/root/workspace/apache/nifi/223314291/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors"
 }
