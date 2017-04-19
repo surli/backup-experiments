@@ -57,7 +57,7 @@ public class DatadogHttpReporter implements MetricReporter, CharacterFilter, Sch
 	private List<String> configTags;
 
 	public static final String API_KEY = "apikey";
-	public static final String TAGS = "configTags";
+	public static final String TAGS = "tags";
 
 	@Override
 	public void notifyOfAddedMetric(Metric metric, String metricName, MetricGroup group) {
