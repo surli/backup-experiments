@@ -1,0 +1,48 @@
+nopolinfo #0
+location: FailureLocation{className='com.facebook.presto.sql.planner.TestLogicalPlanner', failingMethods=[com.facebook.presto.sql.planner.TestLogicalPlanner#testCorrelatedSubqueries, com.facebook.presto.sql.planner.TestLogicalPlanner#testDistinctLimitOverInequalityJoin, com.facebook.presto.sql.planner.TestLogicalPlanner#testRemoveUnreferencedScalarInputApplyNodes, com.facebook.presto.sql.planner.TestLogicalPlanner#testSameQualifiedSubqueryIsAppliedOnlyOnce, com.facebook.presto.sql.planner.TestLogicalPlanner#testSubqueryPruning, com.facebook.presto.sql.planner.TestLogicalPlanner#testUncorrelatedSubqueries, com.facebook.presto.sql.planner.TestLogicalPlanner#testSameScalarSubqueryIsAppliedOnlyOnce, com.facebook.presto.sql.planner.TestLogicalPlanner#testSameInSubqueryIsAppliedOnlyOnce, com.facebook.presto.sql.planner.TestLogicalPlanner#testDoubleNestedCorrelatedSubqueries], erroringMethods=[], failures=[FailureType{failureName='java.lang.ClassCastException', failureDetail='com.facebook.presto.sql.planner.plan.EnforceSingleRowNode cannot be cast to com.facebook.presto.sql.planner.plan.ProjectNode', isError=false}, FailureType{failureName='java.lang.ClassCastException', failureDetail='com.facebook.presto.sql.planner.plan.ProjectNode cannot be cast to com.facebook.presto.sql.planner.plan.LimitNode', isError=false}, FailureType{failureName='java.lang.ClassCastException', failureDetail='com.facebook.presto.sql.planner.plan.EnforceSingleRowNode cannot be cast to com.facebook.presto.sql.planner.plan.ProjectNode', isError=false}, FailureType{failureName='java.lang.AssertionError', failureDetail='Invalid SQL: SELECT (SELECT 1)', isError=false}, FailureType{failureName='java.lang.AssertionError', failureDetail='Invalid SQL: SELECT * FROM orders o1 JOIN orders o2 ON o1.orderkey IN (SELECT 1) AND (o1.orderkey IN (SELECT 1) OR o1.orderkey IN (SELECT 1))', isError=false}, FailureType{failureName='java.lang.AssertionError', failureDetail='Invalid SQL: SELECT * FROM orders o1 JOIN orders o2 ON o1.orderkey <= ALL(SELECT 1) AND (o1.orderkey <= ALL(SELECT 1) OR o1.orderkey <= ALL(SELECT 1))', isError=false}, FailureType{failureName='java.lang.AssertionError', failureDetail='Invalid SQL: SELECT * FROM orders WHERE CAST(orderkey AS INTEGER) = (SELECT 1) AND custkey = (SELECT 2) AND CAST(custkey as REAL) != (SELECT 1)', isError=false}, FailureType{failureName='java.lang.AssertionError', failureDetail='Invalid SQL: SELECT COUNT(*) FROM (SELECT EXISTS(SELECT orderkey FROM lineitem WHERE orderkey % 2 = 0) FROM orders)', isError=false}, FailureType{failureName='java.lang.ClassCastException', failureDetail='com.facebook.presto.sql.planner.plan.TableScanNode cannot be cast to com.facebook.presto.sql.planner.plan.ProjectNode', isError=false}], nbFailures=9, nbErrors=0}
+status: NOPATCH
+dateEnd: Wed Apr 19 18:00:00 CEST 2017
+allocatedtime: 120minutes 
+passingTime: 1minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/prestodb/presto/223548341/presto-main/src/main/java], projectClasspath='[Ljava.net.URL;@126be319', projectTests=[com.facebook.presto.sql.planner.TestLogicalPlanner], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #1
+location: FailureLocation{className='com.facebook.presto.sql.planner.iterative.rule.test.TestSwapAdjacentWindowsByPartitionsOrder', failingMethods=[com.facebook.presto.sql.planner.iterative.rule.test.TestSwapAdjacentWindowsByPartitionsOrder#doesNotFireOnPlanWithoutWindowFunctions], erroringMethods=[], failures=[FailureType{failureName='java.lang.ClassCastException', failureDetail='com.facebook.presto.sql.planner.plan.ValuesNode cannot be cast to com.facebook.presto.sql.planner.plan.WindowNode', isError=false}], nbFailures=1, nbErrors=0}
+status: NOPATCH
+dateEnd: Wed Apr 19 18:00:45 CEST 2017
+allocatedtime: 119minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/prestodb/presto/223548341/presto-main/src/main/java], projectClasspath='[Ljava.net.URL;@21a8998c', projectTests=[com.facebook.presto.sql.planner.iterative.rule.test.TestSwapAdjacentWindowsByPartitionsOrder], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #2
+location: FailureLocation{className='com.facebook.presto.sql.planner.iterative.rule.TestTransformExistsApplyToScalarApply', failingMethods=[com.facebook.presto.sql.planner.iterative.rule.TestTransformExistsApplyToScalarApply#testDoesNotFire], erroringMethods=[], failures=[FailureType{failureName='java.lang.ClassCastException', failureDetail='com.facebook.presto.sql.planner.plan.ValuesNode cannot be cast to com.facebook.presto.sql.planner.plan.ApplyNode', isError=false}], nbFailures=1, nbErrors=0}
+status: NOPATCH
+dateEnd: Wed Apr 19 18:01:27 CEST 2017
+allocatedtime: 119minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/prestodb/presto/223548341/presto-main/src/main/java], projectClasspath='[Ljava.net.URL;@12696f2e', projectTests=[com.facebook.presto.sql.planner.iterative.rule.TestTransformExistsApplyToScalarApply], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
