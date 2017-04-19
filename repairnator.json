@@ -1,19 +1,85 @@
 {
+  "pr-base-commit-id": "3f77482bfb13385967cbc9c0241a3111c00c13ac",
+  "pr-head-commit-id": "07175c4a71b096c95573688d936dc4970d6f9b23",
+  "totalNumberSkippingTests": 0,
+  "pr-remote-repo": "rongrong/presto",
+  "error-types": [
+    "java.lang.AssertionError",
+    "com.facebook.presto.spi.PrestoException"
+  ],
+  "totalNumberFailingTests": 4,
+  "buildid": 223321787,
+  "totalNumberErroringTests": 0,
+  "is-pr": "true",
+  "totalNumberRunningTests": 3044,
+  "pr-head-commit-id-url": "https://github.com/rongrong/presto/commit/07175c4a71b096c95573688d936dc4970d6f9b23",
+  "pr-id": 7821,
+  "repo": "prestodb/presto",
+  "failing-test-cases": [
+    {
+      "className": "com.facebook.presto.spiller.TestFileSingleStreamSpillerFactory",
+      "failingMethods": [
+        "com.facebook.presto.spiller.TestFileSingleStreamSpillerFactory#testDistributesSpillOverPaths"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "com.facebook.presto.spi.PrestoException",
+          "failureDetail": "No free space available for spill",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.facebook.presto.server.TestQueryStateInfo",
+      "failingMethods": [
+        "com.facebook.presto.server.TestQueryStateInfo#testQueryStateInfo"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected [0] but found [1]",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.facebook.presto.spiller.TestBinaryFileSpiller",
+      "failingMethods": [
+        "com.facebook.presto.spiller.TestBinaryFileSpiller#testFileVarbinarySpiller",
+        "com.facebook.presto.spiller.TestBinaryFileSpiller#testFileSpiller"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "com.facebook.presto.spi.PrestoException",
+          "failureDetail": "No free space available for spill",
+          "isError": false
+        },
+        {
+          "failureName": "com.facebook.presto.spi.PrestoException",
+          "failureDetail": "No free space available for spill",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 4,
+    "": 1,
     "CloneRepository": 31,
     "ResolveDependency": 135,
     "TestProject": 603,
     "BuildProject": 742
   },
   "workspace": "./workspace",
-  "pr-remote-repo": "rongrong/presto",
-  "pr-head-commit-id": "07175c4a71b096c95573688d936dc4970d6f9b23",
-  "pr-id": 7821,
-  "repo": "prestodb/presto",
-  "pr-head-commit-id-url": "https://github.com/rongrong/presto/commit/07175c4a71b096c95573688d936dc4970d6f9b23",
-  "is-pr": "true",
-  "buildid": 223321787,
   "pr-base-commit-id-url": "https://github.com/prestodb/presto/commit/3f77482bfb13385967cbc9c0241a3111c00c13ac",
-  "pr-base-commit-id": "3f77482bfb13385967cbc9c0241a3111c00c13ac"
+  "failingModule": "/root/workspace/prestodb/presto/223321787/presto-main"
 }
