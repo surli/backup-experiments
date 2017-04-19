@@ -408,12 +408,15 @@ public class KinesisDataFetcher<T> {
 	 */
 	public void shutdownFetcher() {
 		running = false;
-		mainThread.interrupt(); // the main thread may be sleeping for the discovery interval
-
+		if (mainThread != null) {
+			mainThread.interrupt(); // the main thread may be sleeping for the discovery interval
+		}
 		if (LOG.isInfoEnabled()) {
 			LOG.info("Shutting down the shard consumer threads of subtask {} ...", indexOfThisConsumerSubtask);
 		}
-		shardConsumersExecutor.shutdownNow();
+		if (shardConsumersExecutor != null) {
+			shardConsumersExecutor.shutdownNow();
+		}
 	}
 
 	/** After calling {@link KinesisDataFetcher#shutdownFetcher()}, this can be called to await the fetcher shutdown */
