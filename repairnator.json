@@ -1,14 +1,69 @@
 {
-  "bugRepo": "jnr/jnr-posix",
+  "totalNumberSkippingTests": 0,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 0,
     "CloneRepository": 4,
     "ResolveDependency": 9,
     "TestProject": 12,
     "BuildProject": 14
   },
-  "buildid": 223623723,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 0,
   "repo": "jnr/jnr-posix",
-  "bugCommit": "https://github.com/jnr/jnr-posix/compare/6f355807e4ed...f3f5ce8f817e"
+  "bugCommit": "https://github.com/jnr/jnr-posix/compare/6f355807e4ed...f3f5ce8f817e",
+  "failingModule": "/root/workspace/jnr/jnr-posix/223623723",
+  "buildid": 223623723,
+  "totalNumberFailingTests": 4,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 88,
+  "failing-test-cases": [
+    {
+      "className": "jnr.posix.FileTest",
+      "failingMethods": [
+        "jnr.posix.FileTest#accessTest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "access:  expected:\u003c-1\u003e but was:\u003c0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jnr.posix.ProcessTest",
+      "failingMethods": [
+        "jnr.posix.ProcessTest#testGetRLimit",
+        "jnr.posix.ProcessTest#testGetRLimitPreallocatedRlimit",
+        "jnr.posix.ProcessTest#testGetRLimitPointer"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Bad soft limit for number of processes",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Bad soft limit for number of processes",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Bad soft limit for number of processes",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    }
+  ],
+  "bugRepo": "jnr/jnr-posix"
 }
