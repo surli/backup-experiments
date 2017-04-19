@@ -385,7 +385,7 @@ class JoinITCase(
         "FROM" +
         " (SELECT cnt FROM (SELECT COUNT(*) AS cnt FROM B) WHERE cnt < 0) " +
         "LEFT JOIN A " +
-        "ON cnt > a"
+        "ON cnt = a"
 
     val ds1 = CollectionDataSets.get5TupleDataSet(env).toTable(tEnv).as('a, 'b, 'c, 'd, 'e)
     val ds2 = CollectionDataSets.getSmall3TupleDataSet(env).toTable(tEnv)
@@ -409,7 +409,7 @@ class JoinITCase(
         "FROM" +
         " (SELECT cnt FROM (SELECT COUNT(*) AS cnt FROM B) WHERE cnt < 0) " +
         "RIGHT JOIN A " +
-        "ON a < cnt"
+        "ON a = cnt"
 
     val ds1 = CollectionDataSets.get5TupleDataSet(env).toTable(tEnv).as('a, 'b, 'c, 'd, 'e)
     val ds2 = CollectionDataSets.getSmall3TupleDataSet(env).toTable(tEnv)
@@ -439,7 +439,7 @@ class JoinITCase(
         "FROM" +
         " (SELECT COUNT(*) AS cnt FROM A) " +
         "LEFT JOIN B " +
-        "ON cnt > a"
+        "ON cnt = a"
 
     val ds1 = CollectionDataSets.get5TupleDataSet(env).toTable(tEnv).as('a, 'b, 'c, 'd, 'e)
     val ds2 = CollectionDataSets.getSmall3TupleDataSet(env).toTable(tEnv)as('a, 'b, 'c)
@@ -448,8 +448,8 @@ class JoinITCase(
 
     val result = tEnv.sql(sqlQuery)
     val expected = Seq(
-      "1,3", "2,3", "2,3", "3,null", "3,null",
-      "3,null", "4,null", "4,null", "4,null",
+      "1,null", "2,null", "2,null", "3,3", "3,3",
+      "3,3", "4,null", "4,null", "4,null",
       "4,null", "5,null", "5,null", "5,null",
       "5,null", "5,null").mkString("\n")
 
@@ -467,7 +467,7 @@ class JoinITCase(
         "FROM" +
         " (SELECT COUNT(*) AS cnt FROM B) " +
         "RIGHT JOIN A " +
-        "ON cnt > a"
+        "ON cnt = a"
 
     val ds1 = CollectionDataSets.get5TupleDataSet(env).toTable(tEnv).as('a, 'b, 'c, 'd, 'e)
     val ds2 = CollectionDataSets.getSmall3TupleDataSet(env).toTable(tEnv)
@@ -476,8 +476,8 @@ class JoinITCase(
 
     val result = tEnv.sql(sqlQuery)
     val expected = Seq(
-      "1,3", "2,3", "2,3", "3,null", "3,null",
-      "3,null", "4,null", "4,null", "4,null",
+      "1,null", "2,null", "2,null", "3,3", "3,3",
+      "3,3", "4,null", "4,null", "4,null",
       "4,null", "5,null", "5,null", "5,null",
       "5,null", "5,null").mkString("\n")
 
@@ -495,7 +495,7 @@ class JoinITCase(
         "FROM" +
         " A " +
         "LEFT JOIN (SELECT cnt FROM (SELECT COUNT(*) AS cnt FROM B) WHERE cnt < 0) " +
-        "ON cnt > a"
+        "ON cnt = a"
 
     val ds1 = CollectionDataSets.get5TupleDataSet(env).toTable(tEnv)
     val ds2 = CollectionDataSets.getSmall3TupleDataSet(env).toTable(tEnv).as('a, 'b, 'c)
@@ -521,7 +521,7 @@ class JoinITCase(
         "FROM A " +
         "RIGHT JOIN" +
         " (SELECT cnt FROM (SELECT COUNT(*) AS cnt FROM B) WHERE cnt < 0) " +
-        "ON cnt > a"
+        "ON cnt = a"
 
     val ds1 = CollectionDataSets.get5TupleDataSet(env).toTable(tEnv)
     val ds2 = CollectionDataSets.getSmall3TupleDataSet(env).toTable(tEnv).as('a, 'b, 'c)
@@ -545,7 +545,7 @@ class JoinITCase(
         "FROM" +
         " A " +
         "LEFT JOIN (SELECT COUNT(*) AS cnt FROM B) " +
-        "ON cnt < a"
+        "ON cnt = a"
 
     val ds1 = CollectionDataSets.get5TupleDataSet(env).toTable(tEnv).as('a, 'b, 'c, 'd, 'e)
     val ds2 = CollectionDataSets.getSmall3TupleDataSet(env).toTable(tEnv)
@@ -555,10 +555,10 @@ class JoinITCase(
     val result = tEnv.sql(sqlQuery)
 
     val expected = Seq(
-      "1,null", "2,null", "2,null", "3,null", "3,null",
-      "3,null", "4,3", "4,3", "4,3",
-      "4,3", "5,3", "5,3", "5,3",
-      "5,3", "5,3").mkString("\n")
+      "1,null", "2,null", "2,null", "3,3", "3,3",
+      "3,3", "4,null", "4,null", "4,null",
+      "4,null", "5,null", "5,null", "5,null",
+      "5,null", "5,null").mkString("\n")
 
     val results = result.toDataSet[Row].collect()
 
@@ -574,7 +574,7 @@ class JoinITCase(
         "FROM" +
         " A " +
         "RIGHT JOIN (SELECT COUNT(*) AS cnt FROM B) " +
-        "ON cnt > a"
+        "ON cnt = a"
 
     val ds1 = CollectionDataSets.get5TupleDataSet(env).toTable(tEnv).as('a, 'b, 'c, 'd, 'e)
     val ds2 = CollectionDataSets.getSmall3TupleDataSet(env).toTable(tEnv)
@@ -583,7 +583,7 @@ class JoinITCase(
 
     val result = tEnv.sql(sqlQuery)
     val expected = Seq(
-      "1,3", "2,3", "2,3").mkString("\n")
+      "3,3", "3,3", "3,3").mkString("\n")
 
     val results = result.toDataSet[Row].collect()
 
@@ -598,7 +598,7 @@ class JoinITCase(
       "SELECT  a,cnt, cnt2 " +
         "FROM t1 " +
         "LEFT JOIN (SELECT COUNT(*) AS cnt,COUNT(*) AS cnt2 FROM t2 ) AS x " +
-        "ON a > cnt"
+        "ON a = cnt"
 
     val ds1 = CollectionDataSets.get5TupleDataSet(env).toTable(tEnv).as('a, 'b, 'c, 'd, 'e)
     val ds2 = CollectionDataSets.getSmall3TupleDataSet(env).toTable(tEnv)
@@ -609,9 +609,9 @@ class JoinITCase(
     val expected = Seq(
       "1,null,null",
       "2,null,null", "2,null,null",
-      "3,null,null", "3,null,null", "3,null,null",
-      "4,3,3", "4,3,3", "4,3,3", "4,3,3",
-      "5,3,3", "5,3,3", "5,3,3", "5,3,3", "5,3,3").mkString("\n")
+      "3,3,3", "3,3,3", "3,3,3",
+      "4,null,null", "4,null,null", "4,null,null", "4,null,null",
+      "5,null,null", "5,null,null", "5,null,null", "5,null,null", "5,null,null").mkString("\n")
 
     val results = result.toDataSet[Row].collect()
     TestBaseUtils.compareResultAsText(results.asJava, expected)
