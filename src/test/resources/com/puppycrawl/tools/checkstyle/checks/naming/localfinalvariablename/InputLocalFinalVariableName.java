@@ -188,6 +188,26 @@ final class InputLocalFinalVariableName
           enough talk */
     }
 
+    // check for try-with-resources
+    void method() throws Exception {
+        final String fileName = "Test";
+        try (BufferedReader bR = new BufferedReader(new InputStreamReader(
+                new FileInputStream(fileName),"UTF-8"))) {
+        } finally {
+
+        }
+    }
+
+    void method2() throws Exception {
+       new java.util.Comparator() {
+           @Override
+           public int compare(Object objFirst, Object objSecond) {
+               final Object finObjectInAnonimousClass;
+               return -1;
+           }
+       };
+    }
+
     /**
      * @see to lazy to document all args. Testing excessive # args
      **/

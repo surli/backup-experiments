@@ -95,6 +95,7 @@ public class LocalFinalVariableNameCheckTest
         final int[] expected = {
             TokenTypes.VARIABLE_DEF,
             TokenTypes.PARAMETER_DEF,
+            TokenTypes.RESOURCE,
         };
         assertArrayEquals(expected, actual);
     }
