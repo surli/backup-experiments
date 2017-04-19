@@ -1,4 +1,4 @@
-package com.puppycrawl.tools.checkstyle.checks.whitespace;
+package com.puppycrawl.tools.checkstyle.checks.whitespace.parenpad;
 
 public class InputParenPadWithSpace
 {
@@ -11,7 +11,7 @@ public class InputParenPadWithSpace
     {
         super ();
     }
-    
+
     public void enhancedFor ()
     {
         int[] i = new int[2];

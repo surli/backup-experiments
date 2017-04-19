@@ -1,10 +1,10 @@
-package com.puppycrawl.tools.checkstyle.checks.whitespace;
+package com.puppycrawl.tools.checkstyle.checks.whitespace.parenpad;
 
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
 
-public class InputParenPad
+public class InputParenPadLeftRightAndNoSpace
 {
     class ParenPadNoSpace  {
         ParenPadNoSpace() {
@@ -129,7 +129,7 @@ public class InputParenPad
 enum MyEnum {
     SOME_CONSTANT( ) {
         int i = (int) (2 * (4 / 2)
-                ); 
+                );
     };
 
     public void myMethod() {
