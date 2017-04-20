@@ -1238,6 +1238,82 @@ public class MaterializationTest {
               + "    EnumerableTableScan(table=[[hr, m0]])"));
   }
 
+  @Test public void testJoinAggregateMaterializationAggregateFuncs1() {
+    // This test relies on FK-UK relationship
+    checkMaterialize(
+      "select \"empid\", \"depts\".\"deptno\", count(*) as c, sum(\"empid\") as s\n"
+          + "from \"emps\" join \"depts\" using (\"deptno\")\n"
+          + "group by \"empid\", \"depts\".\"deptno\"",
+      "select \"deptno\" from \"emps\" group by \"deptno\"",
+      JdbcTest.HR_MODEL,
+      CalciteAssert.checkResultContains(
+          "EnumerableAggregate(group=[{1}])\n"
+              + "  EnumerableTableScan(table=[[hr, m0]])"));
+  }
+
+  @Test public void testJoinAggregateMaterializationAggregateFuncs2() {
+    checkMaterialize(
+      "select \"empid\", \"emps\".\"deptno\", count(*) as c, sum(\"empid\") as s\n"
+          + "from \"emps\" join \"depts\" using (\"deptno\")\n"
+          + "group by \"empid\", \"emps\".\"deptno\"",
+      "select \"depts\".\"deptno\", count(*) as c, sum(\"empid\") as s\n"
+          + "from \"emps\" join \"depts\" using (\"deptno\")\n"
+          + "group by \"depts\".\"deptno\"",
+      JdbcTest.HR_MODEL,
+      CalciteAssert.checkResultContains(
+          "EnumerableAggregate(group=[{1}], C=[$SUM0($2)], S=[$SUM0($3)])\n"
+              + "  EnumerableTableScan(table=[[hr, m0]])"));
+  }
+
+  @Test public void testJoinAggregateMaterializationAggregateFuncs3() {
+    // This test relies on FK-UK relationship
+    checkMaterialize(
+      "select \"empid\", \"depts\".\"deptno\", count(*) as c, sum(\"empid\") as s\n"
+          + "from \"emps\" join \"depts\" using (\"deptno\")\n"
+          + "group by \"empid\", \"depts\".\"deptno\"",
+      "select \"deptno\", \"empid\", sum(\"empid\") as s, count(*) as c\n"
+          + "from \"emps\" group by \"empid\", \"deptno\"",
+      JdbcTest.HR_MODEL,
+      CalciteAssert.checkResultContains(
+          "EnumerableCalc(expr#0..3=[{inputs}], deptno=[$t1], empid=[$t0], "
+              + "S=[$t3], C=[$t2])\n"
+              + "  EnumerableTableScan(table=[[hr, m0]])"));
+  }
+
+  @Test public void testJoinAggregateMaterializationAggregateFuncs4() {
+    checkMaterialize(
+      "select \"empid\", \"emps\".\"deptno\", count(*) as c, sum(\"empid\") as s\n"
+          + "from \"emps\" join \"depts\" using (\"deptno\")\n"
+          + "where \"emps\".\"deptno\" >= 10 group by \"empid\", \"emps\".\"deptno\"",
+      "select \"depts\".\"deptno\", sum(\"empid\") as s\n"
+          + "from \"emps\" join \"depts\" using (\"deptno\")\n"
+          + "where \"emps\".\"deptno\" > 10 group by \"depts\".\"deptno\"",
+      JdbcTest.HR_MODEL,
+      CalciteAssert.checkResultContains(
+          "EnumerableAggregate(group=[{1}], S=[$SUM0($3)])\n"
+              + "  EnumerableCalc(expr#0..3=[{inputs}], expr#4=[10], expr#5=[>($t1, $t4)], "
+              + "proj#0..3=[{exprs}], $condition=[$t5])\n"
+              + "    EnumerableTableScan(table=[[hr, m0]])"));
+  }
+
+  @Test public void testJoinAggregateMaterializationAggregateFuncs5() {
+    checkMaterialize(
+      "select \"empid\", \"depts\".\"deptno\", count(*) + 1 as c, sum(\"empid\") as s\n"
+          + "from \"emps\" join \"depts\" using (\"deptno\")\n"
+          + "where \"depts\".\"deptno\" >= 10 group by \"empid\", \"depts\".\"deptno\"",
+      "select \"depts\".\"deptno\", sum(\"empid\") + 1 as s\n"
+          + "from \"emps\" join \"depts\" using (\"deptno\")\n"
+          + "where \"depts\".\"deptno\" > 10 group by \"depts\".\"deptno\"",
+      JdbcTest.HR_MODEL,
+      CalciteAssert.checkResultContains(
+          "EnumerableCalc(expr#0..1=[{inputs}], expr#2=[1], expr#3=[+($t1, $t2)], "
+              + "deptno=[$t0], S=[$t3])\n"
+              + "  EnumerableAggregate(group=[{1}], agg#0=[$SUM0($3)])\n"
+              + "    EnumerableCalc(expr#0..3=[{inputs}], expr#4=[10], expr#5=[>($t1, $t4)], "
+              + "proj#0..3=[{exprs}], $condition=[$t5])\n"
+              + "      EnumerableTableScan(table=[[hr, m0]])"));
+  }
+
   @Test public void testJoinMaterialization4() {
     checkMaterialize(
       "select \"empid\" \"deptno\" from \"emps\"\n"
@@ -1248,6 +1324,73 @@ public class MaterializationTest {
       CalciteAssert.checkResultContains(
           "EnumerableCalc(expr#0=[{inputs}], expr#1=[CAST($t0):INTEGER NOT NULL], expr#2=[1], "
               + "expr#3=[=($t1, $t2)], deptno=[$t0], $condition=[$t3])\n"
+              + "  EnumerableTableScan(table=[[hr, m0]])"));
+  }
+
+  @Test public void testJoinMaterializationUKFK1() {
+    checkMaterialize(
+      "select \"a\".\"empid\" \"deptno\" from\n"
+          + "(select * from \"emps\" where \"empid\" = 1) \"a\"\n"
+          + "join \"depts\" using (\"deptno\")\n"
+          + "join \"dependents\" using (\"empid\")",
+      "select \"a\".\"empid\" from \n"
+          + "(select * from \"emps\" where \"empid\" = 1) \"a\"\n"
+          + "join \"dependents\" using (\"empid\")\n",
+      JdbcTest.HR_MODEL,
+      CalciteAssert.checkResultContains(
+          "PLAN=EnumerableTableScan(table=[[hr, m0]])"));
+  }
+
+  @Test public void testJoinMaterializationUKFK2() {
+    checkMaterialize(
+      "select \"a\".\"empid\", \"a\".\"deptno\" from\n"
+          + "(select * from \"emps\" where \"empid\" = 1) \"a\"\n"
+          + "join \"depts\" using (\"deptno\")\n"
+          + "join \"dependents\" using (\"empid\")",
+      "select \"a\".\"empid\" from \n"
+          + "(select * from \"emps\" where \"empid\" = 1) \"a\"\n"
+          + "join \"dependents\" using (\"empid\")\n",
+      JdbcTest.HR_MODEL,
+      CalciteAssert.checkResultContains(
+          "EnumerableCalc(expr#0..1=[{inputs}], empid=[$t0])\n"
+              + "  EnumerableTableScan(table=[[hr, m0]])"));
+  }
+
+  @Test public void testJoinMaterializationUKFK3() {
+    checkNoMaterialize(
+      "select \"a\".\"empid\", \"a\".\"deptno\" from\n"
+          + "(select * from \"emps\" where \"empid\" = 1) \"a\"\n"
+          + "join \"depts\" using (\"deptno\")\n"
+          + "join \"dependents\" using (\"empid\")",
+      "select \"a\".\"name\" from \n"
+          + "(select * from \"emps\" where \"empid\" = 1) \"a\"\n"
+          + "join \"dependents\" using (\"empid\")\n",
+      JdbcTest.HR_MODEL);
+  }
+
+  @Test public void testJoinMaterializationUKFK4() {
+    checkMaterialize(
+      "select \"empid\" \"deptno\" from\n"
+          + "(select * from \"emps\" where \"empid\" = 1)\n"
+          + "join \"depts\" using (\"deptno\")",
+      "select \"empid\" from \"emps\" where \"empid\" = 1\n",
+      JdbcTest.HR_MODEL,
+      CalciteAssert.checkResultContains(
+          "PLAN=EnumerableTableScan(table=[[hr, m0]])"));
+  }
+
+  @Test public void testJoinMaterializationUKFK5() {
+    checkMaterialize(
+      "select \"emps\".\"empid\", \"emps\".\"deptno\" from \"emps\"\n"
+          + "join \"depts\" using (\"deptno\")\n"
+          + "join \"dependents\" using (\"empid\")"
+          + "where \"emps\".\"empid\" = 1",
+      "select \"emps\".\"empid\" from \"emps\"\n"
+          + "join \"dependents\" using (\"empid\")\n"
+          + "where \"emps\".\"empid\" = 1",
+      JdbcTest.HR_MODEL,
+      CalciteAssert.checkResultContains(
+          "EnumerableCalc(expr#0..1=[{inputs}], empid=[$t0])\n"
               + "  EnumerableTableScan(table=[[hr, m0]])"));
   }
 

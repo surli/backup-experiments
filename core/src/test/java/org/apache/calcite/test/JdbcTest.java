@@ -49,6 +49,8 @@ import org.apache.calcite.plan.RelOptUtil;
 import org.apache.calcite.prepare.CalcitePrepareImpl;
 import org.apache.calcite.prepare.Prepare;
 import org.apache.calcite.rel.RelNode;
+import org.apache.calcite.rel.RelReferentialConstraint;
+import org.apache.calcite.rel.RelReferentialConstraintImpl;
 import org.apache.calcite.rel.core.TableModify;
 import org.apache.calcite.rel.logical.LogicalTableModify;
 import org.apache.calcite.rel.rules.IntersectToDistinctRule;
@@ -96,6 +98,7 @@ import org.apache.calcite.util.Pair;
 import org.apache.calcite.util.Smalls;
 import org.apache.calcite.util.TryThreadLocal;
 import org.apache.calcite.util.Util;
+import org.apache.calcite.util.mapping.IntPair;
 
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
@@ -6694,11 +6697,11 @@ public class JdbcTest {
       new Employee(110, 10, "Theodore", 11500, 250),
     };
     public final Department[] depts = {
-      new Department(10, "Sales", Arrays.asList(emps[0], emps[2]),
+      new Department(10, "Sales", Arrays.asList(emps[0], emps[2], emps[3]),
           new Location(-122, 38)),
       new Department(30, "Marketing", Collections.<Employee>emptyList(),
           new Location(0, 52)),
-      new Department(40, "HR", Collections.singletonList(emps[1]), null),
+      new Department(20, "HR", Collections.singletonList(emps[1]), null),
     };
     public final Dependent[] dependents = {
       new Dependent(10, "Michael"),
@@ -6708,6 +6711,11 @@ public class JdbcTest {
       new Dependent(10, "San Francisco"),
       new Dependent(20, "San Diego"),
     };
+
+    public final RelReferentialConstraint rcs0 =
+        RelReferentialConstraintImpl.of(
+            ImmutableList.of("hr", "emps"), ImmutableList.of("hr", "depts"),
+            ImmutableList.of(IntPair.of(1, 0)));
 
     public QueryableTable foo(int count) {
       return Smalls.generateStrings(count);
