@@ -1,0 +1,636 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphAware Elasticsearch Integration for Neo4j 3.1.3.45.8-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ neo4j-to-elasticsearch ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ neo4j-to-elasticsearch ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:copy (copy-model) @ neo4j-to-elasticsearch ---
+[INFO] Configured Artifact: org.apache.lucene:lucene-core:5.5.0:jar
+[INFO] Configured Artifact: com.graphaware.integration.es:elasticsearch-tests-integration:jar-with-dependencies:2.3.0.1:jar
+[INFO] Configured Artifact: log4j:log4j:1.2.17:jar
+[INFO] Copying lucene-core-5.5.0.jar to /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/lucene-core-5.5.0.jar
+[INFO] Copying elasticsearch-tests-integration-2.3.0.1-jar-with-dependencies.jar to /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/elasticsearch-tests-integration-2.3.0.1-jar-with-dependencies.jar
+[INFO] Copying log4j-1.2.17.jar to /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/log4j-1.2.17.jar
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ neo4j-to-elasticsearch ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 20 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ neo4j-to-elasticsearch ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ neo4j-to-elasticsearch ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 8.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 113.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 1083.1 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Running com.graphaware.module.es.ElasticSearchModuleEndToEndSimpleMappingTest
+2017-04-20 02:10:36.149+0200 INFO  Elasticsearch classpath: /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib
+2017-04-20 02:10:36.153+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/lucene-core-5.5.0.jar
+2017-04-20 02:10:36.154+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/log4j-1.2.17.jar
+2017-04-20 02:10:36.155+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/elasticsearch-tests-integration-2.3.0.1-jar-with-dependencies.jar
+02:10:36.246 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Waiting for ElasticSearch embedded server...
+----------------------------------------
+Cluster Name: elasticsearch-cluster-runner
+Base Path:    /tmp/es-cluster3101365237001017013
+Num Of Node:  1
+----------------------------------------
+Creating /tmp/es-cluster3101365237001017013/config/node_1
+Creating /tmp/es-cluster3101365237001017013/logs/node_1
+Creating /tmp/es-cluster3101365237001017013/data/node_1
+Creating /tmp/es-cluster3101365237001017013/work/node_1
+Node Name:      Node 1
+HTTP Port:      9201
+Transport Port: 9301
+Data Directory: /tmp/es-cluster3101365237001017013/data/node_1
+Log Directory:  /tmp/es-cluster3101365237001017013/logs/node_1
+----------------------------------------
+[2017-04-20 02:10:36,703][INFO ][org.elasticsearch.node   ] [Node 1] version[2.3.0], pid[239], build[8371be8/2016-03-29T07:54:48Z]
+[2017-04-20 02:10:36,704][INFO ][org.elasticsearch.node   ] [Node 1] initializing ...
+[2017-04-20 02:10:36,709][INFO ][org.elasticsearch.plugins] [Node 1] modules [], plugins [], sites []
+[2017-04-20 02:10:36,734][INFO ][org.elasticsearch.env    ] [Node 1] using [1] data paths, mounts [[/ (rootfs)]], net usable_space [2.4gb], net total_space [60.2gb], spins? [unknown], types [rootfs]
+[2017-04-20 02:10:36,738][INFO ][org.elasticsearch.env    ] [Node 1] heap size [1.7gb], compressed ordinary object pointers [true]
+[2017-04-20 02:10:38,153][INFO ][org.elasticsearch.node   ] [Node 1] initialized
+[2017-04-20 02:10:38,154][INFO ][org.elasticsearch.node   ] [Node 1] starting ...
+[2017-04-20 02:10:38,204][INFO ][org.elasticsearch.transport] [Node 1] publish_address {127.0.0.1:9301}, bound_addresses {[::1]:9301}, {127.0.0.1:9301}
+[2017-04-20 02:10:38,208][INFO ][org.elasticsearch.discovery] [Node 1] elasticsearch-cluster-runner/xMUIVqvIRGOR1X4R8QVkNA
+[2017-04-20 02:10:41,240][INFO ][org.elasticsearch.cluster.service] [Node 1] new_master {Node 1}{xMUIVqvIRGOR1X4R8QVkNA}{127.0.0.1}{127.0.0.1:9301}{master=true}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-04-20 02:10:41,253][INFO ][org.elasticsearch.http   ] [Node 1] publish_address {127.0.0.1:9201}, bound_addresses {[::1]:9201}, {127.0.0.1:9201}
+[2017-04-20 02:10:41,253][INFO ][org.elasticsearch.node   ] [Node 1] started
+[2017-04-20 02:10:41,371][INFO ][org.elasticsearch.gateway] [Node 1] recovered [0] indices into cluster_state
+02:10:41.374 [pool-1-thread-1] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Embedded ElasticSearch started ...
+02:10:41.375 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Finished waiting.
+2017-04-20 00:10:44.065+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime enabled, bootstrapping...
+2017-04-20 00:10:44.084+0000 INFO  [c.g.r.b.RuntimeKernelExtension] Bootstrapping module with order 1, ID UIDM, using com.graphaware.module.uuid.UuidBootstrapper
+2017-04-20 00:10:44.179+0000 INFO  [c.g.r.b.RuntimeKernelExtension] Bootstrapping module with order 2, ID ES, using com.graphaware.module.es.ElasticSearchModuleBootstrapper
+2017-04-20 00:10:44.195+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime bootstrapped, starting the Runtime...
+2017-04-20 00:10:44.730+0000 INFO  [c.g.s.f.b.GraphAwareServerBootstrapper] started
+2017-04-20 02:10:44.929+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:10:44.932+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:10:45.001+0200 INFO  Using default GSON instance
+2017-04-20 02:10:45.001+0200 INFO  Node Discovery disabled...
+2017-04-20 02:10:45.002+0200 INFO  Idle connection reaping disabled...
+[2017-04-20 02:10:45,195][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:10:46,159][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-relationship] creating index, cause [api], templates [], shards [5]/[1], mappings []
+2017-04-20 00:10:46.523+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime automatically started.
+[2017-04-20 02:10:46,929][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[neo4j-index-relationship][3], [neo4j-index-relationship][4]] ...]).
+[2017-04-20 02:10:51,068][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [Company]
+[2017-04-20 02:10:51,146][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-relationship] create_mapping [WORKS_FOR]
+[2017-04-20 02:10:51,150][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [Person]
+2017-04-20 02:10:52.293+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:10:52.294+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:10:52.296+0200 INFO  Using default GSON instance
+2017-04-20 02:10:52.296+0200 INFO  Node Discovery disabled...
+2017-04-20 02:10:52.296+0200 INFO  Idle connection reaping disabled...
+{"_index":"neo4j-index-node","_type":"Person","_id":"cfbaedd0-255d-11e7-9263-0242ac110008","_version":2,"found":true,"_source":{"name":"Michal","age":"31"}}
+[2017-04-20 02:10:52,321][INFO ][org.elasticsearch.node   ] [Node 1] stopping ...
+[2017-04-20 02:10:53,323][INFO ][org.elasticsearch.node   ] [Node 1] stopped
+[2017-04-20 02:10:53,324][INFO ][org.elasticsearch.node   ] [Node 1] closing ...
+[2017-04-20 02:10:53,328][INFO ][org.elasticsearch.node   ] [Node 1] closed
+Closed all nodes.
+Deleted /tmp/es-cluster3101365237001017013
+2017-04-20 00:10:53.517+0000 INFO  [c.g.s.f.b.GraphAwareServerBootstrapper] stopped
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.73 sec - in com.graphaware.module.es.ElasticSearchModuleEndToEndSimpleMappingTest
+Running com.graphaware.module.es.ElasticSearchModuleJsonMappingTest
+2017-04-20 02:10:53.560+0200 INFO  Elasticsearch classpath: /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib
+2017-04-20 02:10:53.560+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/lucene-core-5.5.0.jar
+2017-04-20 02:10:53.560+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/log4j-1.2.17.jar
+2017-04-20 02:10:53.560+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/elasticsearch-tests-integration-2.3.0.1-jar-with-dependencies.jar
+02:10:53.604 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Waiting for ElasticSearch embedded server...
+----------------------------------------
+Cluster Name: elasticsearch-cluster-runner
+Base Path:    /tmp/es-cluster2778958075871108465
+Num Of Node:  1
+----------------------------------------
+Creating /tmp/es-cluster2778958075871108465/config/node_1
+Creating /tmp/es-cluster2778958075871108465/logs/node_1
+Creating /tmp/es-cluster2778958075871108465/data/node_1
+Creating /tmp/es-cluster2778958075871108465/work/node_1
+Node Name:      Node 1
+HTTP Port:      9201
+Transport Port: 9301
+Data Directory: /tmp/es-cluster2778958075871108465/data/node_1
+Log Directory:  /tmp/es-cluster2778958075871108465/logs/node_1
+----------------------------------------
+[2017-04-20 02:10:53,849][INFO ][org.elasticsearch.node   ] [Node 1] version[2.3.0], pid[239], build[8371be8/2016-03-29T07:54:48Z]
+[2017-04-20 02:10:53,849][INFO ][org.elasticsearch.node   ] [Node 1] initializing ...
+[2017-04-20 02:10:53,854][INFO ][org.elasticsearch.plugins] [Node 1] modules [], plugins [], sites []
+[2017-04-20 02:10:53,870][INFO ][org.elasticsearch.env    ] [Node 1] using [1] data paths, mounts [[/ (rootfs)]], net usable_space [2.4gb], net total_space [60.2gb], spins? [unknown], types [rootfs]
+[2017-04-20 02:10:53,870][INFO ][org.elasticsearch.env    ] [Node 1] heap size [1.7gb], compressed ordinary object pointers [true]
+[2017-04-20 02:10:55,170][INFO ][org.elasticsearch.node   ] [Node 1] initialized
+[2017-04-20 02:10:55,170][INFO ][org.elasticsearch.node   ] [Node 1] starting ...
+[2017-04-20 02:10:55,213][INFO ][org.elasticsearch.transport] [Node 1] publish_address {127.0.0.1:9301}, bound_addresses {[::1]:9301}, {127.0.0.1:9301}
+[2017-04-20 02:10:55,217][INFO ][org.elasticsearch.discovery] [Node 1] elasticsearch-cluster-runner/gB6KrPNpSQOr-aUw6CIusg
+[2017-04-20 02:10:58,247][INFO ][org.elasticsearch.cluster.service] [Node 1] new_master {Node 1}{gB6KrPNpSQOr-aUw6CIusg}{127.0.0.1}{127.0.0.1:9301}{master=true}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-04-20 02:10:58,265][INFO ][org.elasticsearch.http   ] [Node 1] publish_address {127.0.0.1:9201}, bound_addresses {[::1]:9201}, {127.0.0.1:9201}
+[2017-04-20 02:10:58,265][INFO ][org.elasticsearch.node   ] [Node 1] started
+[2017-04-20 02:10:58,367][INFO ][org.elasticsearch.gateway] [Node 1] recovered [0] indices into cluster_state
+02:10:58.371 [pool-9-thread-1] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Embedded ElasticSearch started ...
+02:10:58.372 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Finished waiting.
+2017-04-20 02:10:58.374+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:10:58.374+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:10:58.375+0200 INFO  Using default GSON instance
+2017-04-20 02:10:58.375+0200 INFO  Node Discovery disabled...
+2017-04-20 02:10:58.375+0200 INFO  Idle connection reaping disabled...
+2017-04-20 00:10:58.487+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime disabled.
+2017-04-20 00:10:59.868+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime disabled.
+2017-04-20 02:11:00.098+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:00.099+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:00.100+0200 INFO  Using default GSON instance
+2017-04-20 02:11:00.100+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:00.100+0200 INFO  Idle connection reaping disabled...
+[2017-04-20 02:11:00,403][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [default-index-relationship] creating index, cause [auto(bulk api)], templates [], shards [5]/[1], mappings [workers]
+[2017-04-20 02:11:01,118][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [default-index-node] creating index, cause [auto(bulk api)], templates [], shards [5]/[1], mappings [persons]
+[2017-04-20 02:11:01,382][WARN ][rest.suppressed          ] /default-index-node/persons/d575e8b0-255d-11e7-9263-0242ac110008 Params: {index=default-index-node, id=d575e8b0-255d-11e7-9263-0242ac110008, type=persons}
+NoShardAvailableActionException[No shard available for [get [default-index-node][persons][d575e8b0-255d-11e7-9263-0242ac110008]: routing [null]]]; nested: RemoteTransportException[[Node 1][127.0.0.1:9301][indices:data/read/get[s]]]; nested: ShardNotFoundException[no such shard];
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction$AsyncSingleAction.perform(TransportSingleShardAction.java:199)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction$AsyncSingleAction.onFailure(TransportSingleShardAction.java:186)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction$AsyncSingleAction.access$1300(TransportSingleShardAction.java:115)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction$AsyncSingleAction$2.handleException(TransportSingleShardAction.java:240)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.processException(TransportService.java:855)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.sendResponse(TransportService.java:833)
+	at org.elasticsearch.transport.TransportService$4.onFailure(TransportService.java:387)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:39)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: RemoteTransportException[[Node 1][127.0.0.1:9301][indices:data/read/get[s]]]; nested: ShardNotFoundException[no such shard];
+Caused by: [default-index-node][[default-index-node][2]] ShardNotFoundException[no such shard]
+	at org.elasticsearch.index.IndexService.shardSafe(IndexService.java:197)
+	at org.elasticsearch.action.get.TransportGetAction.shardOperation(TransportGetAction.java:95)
+	at org.elasticsearch.action.get.TransportGetAction.shardOperation(TransportGetAction.java:44)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction$ShardTransportHandler.messageReceived(TransportSingleShardAction.java:282)
+	at org.elasticsearch.action.support.single.shard.TransportSingleShardAction$ShardTransportHandler.messageReceived(TransportSingleShardAction.java:275)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+{"error":{"root_cause":[{"type":"shard_not_found_exception","reason":"no such shard","shard":"2","index":"default-index-node"}],"type":"no_shard_available_action_exception","reason":"No shard available for [get [default-index-node][persons][d575e8b0-255d-11e7-9263-0242ac110008]: routing [null]]","caused_by":{"type":"shard_not_found_exception","reason":"no such shard","shard":"2","index":"default-index-node"}},"status":503}
+[2017-04-20 02:11:02,069][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[default-index-relationship][4], [default-index-node][4]] ...]).
+[2017-04-20 02:11:02,177][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [default-index-node] update_mapping [persons]
+[2017-04-20 02:11:02,242][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [default-index-relationship] update_mapping [workers]
+[2017-04-20 02:11:02,523][INFO ][org.elasticsearch.node   ] [Node 1] stopping ...
+[2017-04-20 02:11:03,362][INFO ][org.elasticsearch.node   ] [Node 1] stopped
+[2017-04-20 02:11:03,362][INFO ][org.elasticsearch.node   ] [Node 1] closing ...
+[2017-04-20 02:11:03,366][INFO ][org.elasticsearch.node   ] [Node 1] closed
+Closed all nodes.
+Deleted /tmp/es-cluster2778958075871108465
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.047 sec <<< FAILURE! - in com.graphaware.module.es.ElasticSearchModuleJsonMappingTest
+overallTest(com.graphaware.module.es.ElasticSearchModuleJsonMappingTest)  Time elapsed: 10.045 sec  <<< FAILURE!
+java.lang.AssertionError: {"root_cause":[{"type":"shard_not_found_exception","reason":"no such shard","shard":"2","index":"default-index-node"}],"type":"no_shard_available_action_exception","reason":"No shard available for [get [default-index-node][persons][d575e8b0-255d-11e7-9263-0242ac110008]: routing [null]]","caused_by":{"type":"shard_not_found_exception","reason":"no such shard","shard":"2","index":"default-index-node"}}
+	at com.graphaware.module.es.ElasticSearchModuleJsonMappingTest.lambda$verifyEsReplicationForNodeWithLabels$16(ElasticSearchModuleJsonMappingTest.java:725)
+	at com.graphaware.module.es.ElasticSearchModuleJsonMappingTest.verifyEsReplicationForNodeWithLabels(ElasticSearchModuleJsonMappingTest.java:724)
+	at com.graphaware.module.es.ElasticSearchModuleJsonMappingTest.testBasicJsonMappingReplication(ElasticSearchModuleJsonMappingTest.java:130)
+	at com.graphaware.module.es.ElasticSearchModuleJsonMappingTest.overallTest(ElasticSearchModuleJsonMappingTest.java:53)
+
+Running com.graphaware.module.es.ElasticSearchModuleEndToEndTest
+2017-04-20 02:11:03.616+0200 INFO  Elasticsearch classpath: /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib
+2017-04-20 02:11:03.620+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/lucene-core-5.5.0.jar
+2017-04-20 02:11:03.621+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/log4j-1.2.17.jar
+2017-04-20 02:11:03.621+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/elasticsearch-tests-integration-2.3.0.1-jar-with-dependencies.jar
+02:11:03.668 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Waiting for ElasticSearch embedded server...
+----------------------------------------
+Cluster Name: elasticsearch-cluster-runner
+Base Path:    /tmp/es-cluster2497813579053300470
+Num Of Node:  1
+----------------------------------------
+Creating /tmp/es-cluster2497813579053300470/config/node_1
+Creating /tmp/es-cluster2497813579053300470/logs/node_1
+Creating /tmp/es-cluster2497813579053300470/data/node_1
+Creating /tmp/es-cluster2497813579053300470/work/node_1
+Node Name:      Node 1
+HTTP Port:      9201
+Transport Port: 9301
+Data Directory: /tmp/es-cluster2497813579053300470/data/node_1
+Log Directory:  /tmp/es-cluster2497813579053300470/logs/node_1
+----------------------------------------
+[2017-04-20 02:11:03,902][INFO ][org.elasticsearch.node   ] [Node 1] version[2.3.0], pid[239], build[8371be8/2016-03-29T07:54:48Z]
+[2017-04-20 02:11:03,902][INFO ][org.elasticsearch.node   ] [Node 1] initializing ...
+[2017-04-20 02:11:03,906][INFO ][org.elasticsearch.plugins] [Node 1] modules [], plugins [], sites []
+[2017-04-20 02:11:03,921][INFO ][org.elasticsearch.env    ] [Node 1] using [1] data paths, mounts [[/ (rootfs)]], net usable_space [2.4gb], net total_space [60.2gb], spins? [unknown], types [rootfs]
+[2017-04-20 02:11:03,921][INFO ][org.elasticsearch.env    ] [Node 1] heap size [1.7gb], compressed ordinary object pointers [true]
+[2017-04-20 02:11:05,194][INFO ][org.elasticsearch.node   ] [Node 1] initialized
+[2017-04-20 02:11:05,194][INFO ][org.elasticsearch.node   ] [Node 1] starting ...
+[2017-04-20 02:11:05,236][INFO ][org.elasticsearch.transport] [Node 1] publish_address {127.0.0.1:9301}, bound_addresses {[::1]:9301}, {127.0.0.1:9301}
+[2017-04-20 02:11:05,240][INFO ][org.elasticsearch.discovery] [Node 1] elasticsearch-cluster-runner/bReIJIDLRni1sAetqxI8TQ
+[2017-04-20 02:11:08,271][INFO ][org.elasticsearch.cluster.service] [Node 1] new_master {Node 1}{bReIJIDLRni1sAetqxI8TQ}{127.0.0.1}{127.0.0.1:9301}{master=true}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-04-20 02:11:08,282][INFO ][org.elasticsearch.http   ] [Node 1] publish_address {127.0.0.1:9201}, bound_addresses {[::1]:9201}, {127.0.0.1:9201}
+[2017-04-20 02:11:08,283][INFO ][org.elasticsearch.node   ] [Node 1] started
+[2017-04-20 02:11:08,375][INFO ][org.elasticsearch.gateway] [Node 1] recovered [0] indices into cluster_state
+02:11:08.378 [pool-16-thread-1] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Embedded ElasticSearch started ...
+02:11:08.379 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Finished waiting.
+2017-04-20 00:11:08.911+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime enabled, bootstrapping...
+2017-04-20 00:11:08.911+0000 INFO  [c.g.r.b.RuntimeKernelExtension] Bootstrapping module with order 1, ID UIDM, using com.graphaware.module.uuid.UuidBootstrapper
+2017-04-20 00:11:08.912+0000 INFO  [c.g.r.b.RuntimeKernelExtension] Bootstrapping module with order 2, ID ES, using com.graphaware.module.es.ElasticSearchModuleBootstrapper
+2017-04-20 00:11:08.913+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime bootstrapped, starting the Runtime...
+2017-04-20 00:11:08.919+0000 INFO  [c.g.s.f.b.GraphAwareServerBootstrapper] started
+2017-04-20 02:11:09.139+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:09.139+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:09.140+0200 INFO  Using default GSON instance
+2017-04-20 02:11:09.140+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:09.140+0200 INFO  Idle connection reaping disabled...
+[2017-04-20 02:11:09,293][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:11:10,336][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-relationship] creating index, cause [api], templates [], shards [5]/[1], mappings []
+2017-04-20 00:11:10.744+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime automatically started.
+[2017-04-20 02:11:11,174][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[neo4j-index-relationship][4], [neo4j-index-relationship][4]] ...]).
+[2017-04-20 02:11:12,387][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-relationship] create_mapping [WORKS_FOR]
+[2017-04-20 02:11:12,418][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [Company]
+[2017-04-20 02:11:12,558][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [Person]
+2017-04-20 02:11:13.373+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:13.373+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:13.374+0200 INFO  Using default GSON instance
+2017-04-20 02:11:13.374+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:13.374+0200 INFO  Idle connection reaping disabled...
+[2017-04-20 02:11:13,387][INFO ][org.elasticsearch.node   ] [Node 1] stopping ...
+[2017-04-20 02:11:14,861][INFO ][org.elasticsearch.node   ] [Node 1] stopped
+[2017-04-20 02:11:14,861][INFO ][org.elasticsearch.node   ] [Node 1] closing ...
+[2017-04-20 02:11:14,867][INFO ][org.elasticsearch.node   ] [Node 1] closed
+Closed all nodes.
+Deleted /tmp/es-cluster2497813579053300470
+2017-04-20 00:11:15.337+0000 INFO  [c.g.s.f.b.GraphAwareServerBootstrapper] stopped
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.729 sec - in com.graphaware.module.es.ElasticSearchModuleEndToEndTest
+Running com.graphaware.module.es.ElasticSearchModuleDefaultMappingTest
+2017-04-20 02:11:15.385+0200 INFO  Elasticsearch classpath: /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib
+2017-04-20 02:11:15.386+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/lucene-core-5.5.0.jar
+2017-04-20 02:11:15.386+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/log4j-1.2.17.jar
+2017-04-20 02:11:15.386+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/elasticsearch-tests-integration-2.3.0.1-jar-with-dependencies.jar
+02:11:15.451 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Waiting for ElasticSearch embedded server...
+----------------------------------------
+Cluster Name: elasticsearch-cluster-runner
+Base Path:    /tmp/es-cluster5762248209679913382
+Num Of Node:  1
+----------------------------------------
+Creating /tmp/es-cluster5762248209679913382/config/node_1
+Creating /tmp/es-cluster5762248209679913382/logs/node_1
+Creating /tmp/es-cluster5762248209679913382/data/node_1
+Creating /tmp/es-cluster5762248209679913382/work/node_1
+Node Name:      Node 1
+HTTP Port:      9201
+Transport Port: 9301
+Data Directory: /tmp/es-cluster5762248209679913382/data/node_1
+Log Directory:  /tmp/es-cluster5762248209679913382/logs/node_1
+----------------------------------------
+[2017-04-20 02:11:15,802][INFO ][org.elasticsearch.node   ] [Node 1] version[2.3.0], pid[239], build[8371be8/2016-03-29T07:54:48Z]
+[2017-04-20 02:11:15,802][INFO ][org.elasticsearch.node   ] [Node 1] initializing ...
+[2017-04-20 02:11:15,808][INFO ][org.elasticsearch.plugins] [Node 1] modules [], plugins [], sites []
+[2017-04-20 02:11:15,826][INFO ][org.elasticsearch.env    ] [Node 1] using [1] data paths, mounts [[/ (rootfs)]], net usable_space [2.4gb], net total_space [60.2gb], spins? [unknown], types [rootfs]
+[2017-04-20 02:11:15,826][INFO ][org.elasticsearch.env    ] [Node 1] heap size [1.7gb], compressed ordinary object pointers [true]
+[2017-04-20 02:11:17,580][INFO ][org.elasticsearch.node   ] [Node 1] initialized
+[2017-04-20 02:11:17,580][INFO ][org.elasticsearch.node   ] [Node 1] starting ...
+[2017-04-20 02:11:17,622][INFO ][org.elasticsearch.transport] [Node 1] publish_address {127.0.0.1:9301}, bound_addresses {[::1]:9301}, {127.0.0.1:9301}
+[2017-04-20 02:11:17,626][INFO ][org.elasticsearch.discovery] [Node 1] elasticsearch-cluster-runner/_JoF7yZFTcW5gWp1Fy9HXQ
+[2017-04-20 02:11:20,650][INFO ][org.elasticsearch.cluster.service] [Node 1] new_master {Node 1}{_JoF7yZFTcW5gWp1Fy9HXQ}{127.0.0.1}{127.0.0.1:9301}{master=true}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-04-20 02:11:20,659][INFO ][org.elasticsearch.http   ] [Node 1] publish_address {127.0.0.1:9201}, bound_addresses {[::1]:9201}, {127.0.0.1:9201}
+[2017-04-20 02:11:20,659][INFO ][org.elasticsearch.node   ] [Node 1] started
+[2017-04-20 02:11:20,755][INFO ][org.elasticsearch.gateway] [Node 1] recovered [0] indices into cluster_state
+02:11:20.758 [pool-22-thread-1] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Embedded ElasticSearch started ...
+02:11:20.758 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Finished waiting.
+2017-04-20 00:11:21.124+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime enabled, bootstrapping...
+2017-04-20 00:11:21.125+0000 INFO  [c.g.r.b.RuntimeKernelExtension] Bootstrapping module with order 1, ID UIDM, using com.graphaware.module.uuid.UuidBootstrapper
+2017-04-20 00:11:21.125+0000 INFO  [c.g.r.b.RuntimeKernelExtension] Bootstrapping module with order 2, ID ES, using com.graphaware.module.es.ElasticSearchModuleBootstrapper
+2017-04-20 00:11:21.131+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime bootstrapped, starting the Runtime...
+2017-04-20 00:11:21.136+0000 INFO  [c.g.s.f.b.GraphAwareServerBootstrapper] started
+2017-04-20 02:11:21.358+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:21.358+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:21.359+0200 INFO  Using default GSON instance
+2017-04-20 02:11:21.359+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:21.359+0200 INFO  Idle connection reaping disabled...
+[2017-04-20 02:11:21,490][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [different-index-name-node] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:11:22,300][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[different-index-name-node][4]] ...]).
+[2017-04-20 02:11:22,366][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [different-index-name-relationship] creating index, cause [api], templates [], shards [5]/[1], mappings []
+2017-04-20 00:11:22.732+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime automatically started.
+[2017-04-20 02:11:23,087][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[different-index-name-relationship][4]] ...]).
+[2017-04-20 02:11:23,924][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [different-index-name-node] create_mapping [Person]
+[2017-04-20 02:11:23,961][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [different-index-name-relationship] create_mapping [WORKS_FOR]
+e37f81a0-255d-11e7-9263-0242ac110008
+2017-04-20 02:11:25.732+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:25.732+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:25.737+0200 INFO  Using default GSON instance
+2017-04-20 02:11:25.739+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:25.739+0200 INFO  Idle connection reaping disabled...
+{"_index":"different-index-name-node","_type":"Person","_id":"e37f81a0-255d-11e7-9263-0242ac110008","_version":1,"found":true,"_source":{"name":"Michal"}}
+[2017-04-20 02:11:25,762][INFO ][org.elasticsearch.node   ] [Node 1] stopping ...
+[2017-04-20 02:11:26,713][INFO ][org.elasticsearch.node   ] [Node 1] stopped
+[2017-04-20 02:11:26,713][INFO ][org.elasticsearch.node   ] [Node 1] closing ...
+[2017-04-20 02:11:26,716][INFO ][org.elasticsearch.node   ] [Node 1] closed
+Closed all nodes.
+Deleted /tmp/es-cluster5762248209679913382
+2017-04-20 00:11:27.021+0000 INFO  [c.g.s.f.b.GraphAwareServerBootstrapper] stopped
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.675 sec - in com.graphaware.module.es.ElasticSearchModuleDefaultMappingTest
+Running com.graphaware.module.es.ElasticSearchModuleDeclarativeTest
+2017-04-20 02:11:27.065+0200 INFO  Elasticsearch classpath: /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib
+2017-04-20 02:11:27.065+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/lucene-core-5.5.0.jar
+2017-04-20 02:11:27.066+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/log4j-1.2.17.jar
+2017-04-20 02:11:27.066+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/elasticsearch-tests-integration-2.3.0.1-jar-with-dependencies.jar
+02:11:27.111 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Waiting for ElasticSearch embedded server...
+----------------------------------------
+Cluster Name: elasticsearch-cluster-runner
+Base Path:    /tmp/es-cluster806210737040366179
+Num Of Node:  1
+----------------------------------------
+Creating /tmp/es-cluster806210737040366179/config/node_1
+Creating /tmp/es-cluster806210737040366179/logs/node_1
+Creating /tmp/es-cluster806210737040366179/data/node_1
+Creating /tmp/es-cluster806210737040366179/work/node_1
+Node Name:      Node 1
+HTTP Port:      9201
+Transport Port: 9301
+Data Directory: /tmp/es-cluster806210737040366179/data/node_1
+Log Directory:  /tmp/es-cluster806210737040366179/logs/node_1
+----------------------------------------
+[2017-04-20 02:11:27,368][INFO ][org.elasticsearch.node   ] [Node 1] version[2.3.0], pid[239], build[8371be8/2016-03-29T07:54:48Z]
+[2017-04-20 02:11:27,369][INFO ][org.elasticsearch.node   ] [Node 1] initializing ...
+[2017-04-20 02:11:27,373][INFO ][org.elasticsearch.plugins] [Node 1] modules [], plugins [], sites []
+[2017-04-20 02:11:27,389][INFO ][org.elasticsearch.env    ] [Node 1] using [1] data paths, mounts [[/ (rootfs)]], net usable_space [2.4gb], net total_space [60.2gb], spins? [unknown], types [rootfs]
+[2017-04-20 02:11:27,389][INFO ][org.elasticsearch.env    ] [Node 1] heap size [1.7gb], compressed ordinary object pointers [true]
+[2017-04-20 02:11:28,770][INFO ][org.elasticsearch.node   ] [Node 1] initialized
+[2017-04-20 02:11:28,770][INFO ][org.elasticsearch.node   ] [Node 1] starting ...
+[2017-04-20 02:11:28,812][INFO ][org.elasticsearch.transport] [Node 1] publish_address {127.0.0.1:9301}, bound_addresses {[::1]:9301}, {127.0.0.1:9301}
+[2017-04-20 02:11:28,816][INFO ][org.elasticsearch.discovery] [Node 1] elasticsearch-cluster-runner/Ka12z3UXSLOciKqvqhYdtQ
+[2017-04-20 02:11:31,842][INFO ][org.elasticsearch.cluster.service] [Node 1] new_master {Node 1}{Ka12z3UXSLOciKqvqhYdtQ}{127.0.0.1}{127.0.0.1:9301}{master=true}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-04-20 02:11:31,881][INFO ][org.elasticsearch.http   ] [Node 1] publish_address {127.0.0.1:9201}, bound_addresses {[::1]:9201}, {127.0.0.1:9201}
+[2017-04-20 02:11:31,885][INFO ][org.elasticsearch.node   ] [Node 1] started
+[2017-04-20 02:11:31,932][INFO ][org.elasticsearch.gateway] [Node 1] recovered [0] indices into cluster_state
+02:11:31.935 [pool-28-thread-1] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Embedded ElasticSearch started ...
+02:11:31.935 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Finished waiting.
+2017-04-20 02:11:31.937+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:31.938+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:31.939+0200 INFO  Using default GSON instance
+2017-04-20 02:11:31.939+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:31.939+0200 INFO  Idle connection reaping disabled...
+2017-04-20 00:11:32.043+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime disabled.
+2017-04-20 00:11:34.314+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime enabled, bootstrapping...
+2017-04-20 00:11:34.314+0000 INFO  [c.g.r.b.RuntimeKernelExtension] Bootstrapping module with order 1, ID UIDM, using com.graphaware.module.uuid.UuidBootstrapper
+2017-04-20 00:11:34.315+0000 INFO  [c.g.r.b.RuntimeKernelExtension] Bootstrapping module with order 2, ID ES, using com.graphaware.module.es.ElasticSearchModuleBootstrapper
+2017-04-20 00:11:34.315+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime bootstrapped, starting the Runtime...
+2017-04-20 02:11:34.549+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:34.549+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:34.550+0200 INFO  Using default GSON instance
+2017-04-20 02:11:34.550+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:34.550+0200 INFO  Idle connection reaping disabled...
+[2017-04-20 02:11:34,675][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:11:34,930][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-relationship] creating index, cause [api], templates [], shards [5]/[1], mappings []
+2017-04-20 00:11:35.054+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime automatically started.
+[2017-04-20 02:11:36,405][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [Person]
+[2017-04-20 02:11:36,512][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[neo4j-index-node][4]] ...]).
+[2017-04-20 02:11:36,577][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-relationship] create_mapping [WORKS_FOR]
+[2017-04-20 02:11:36,581][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [Company]
+[2017-04-20 02:11:36,946][INFO ][org.elasticsearch.node   ] [Node 1] stopping ...
+[2017-04-20 02:11:38,085][INFO ][org.elasticsearch.node   ] [Node 1] stopped
+[2017-04-20 02:11:38,085][INFO ][org.elasticsearch.node   ] [Node 1] closing ...
+[2017-04-20 02:11:38,090][INFO ][org.elasticsearch.node   ] [Node 1] closed
+Closed all nodes.
+Deleted /tmp/es-cluster806210737040366179
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 11.335 sec <<< FAILURE! - in com.graphaware.module.es.ElasticSearchModuleDeclarativeTest
+overAllTest(com.graphaware.module.es.ElasticSearchModuleDeclarativeTest)  Time elapsed: 11.33 sec  <<< FAILURE!
+java.lang.AssertionError: 404 Not Found
+	at com.graphaware.module.es.ElasticSearchModuleDeclarativeTest.dataShouldBeCorrectlyReplicatedWithDefaultConfigEmptyDatabaseAndNoFailures(ElasticSearchModuleDeclarativeTest.java:100)
+	at com.graphaware.module.es.ElasticSearchModuleDeclarativeTest.overAllTest(ElasticSearchModuleDeclarativeTest.java:60)
+
+Running com.graphaware.module.es.ElasticSearchModuleProgrammaticTest
+2017-04-20 00:11:38.526+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime disabled.
+2017-04-20 02:11:38.539+0200 INFO  Elasticsearch classpath: /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib
+2017-04-20 02:11:38.540+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/lucene-core-5.5.0.jar
+2017-04-20 02:11:38.540+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/log4j-1.2.17.jar
+2017-04-20 02:11:38.540+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/elasticsearch-tests-integration-2.3.0.1-jar-with-dependencies.jar
+02:11:38.585 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Waiting for ElasticSearch embedded server...
+----------------------------------------
+Cluster Name: elasticsearch-cluster-runner
+Base Path:    /tmp/es-cluster3264669350712730483
+Num Of Node:  1
+----------------------------------------
+Creating /tmp/es-cluster3264669350712730483/config/node_1
+Creating /tmp/es-cluster3264669350712730483/logs/node_1
+Creating /tmp/es-cluster3264669350712730483/data/node_1
+Creating /tmp/es-cluster3264669350712730483/work/node_1
+Node Name:      Node 1
+HTTP Port:      9201
+Transport Port: 9301
+Data Directory: /tmp/es-cluster3264669350712730483/data/node_1
+Log Directory:  /tmp/es-cluster3264669350712730483/logs/node_1
+----------------------------------------
+[2017-04-20 02:11:38,835][INFO ][org.elasticsearch.node   ] [Node 1] version[2.3.0], pid[239], build[8371be8/2016-03-29T07:54:48Z]
+[2017-04-20 02:11:38,836][INFO ][org.elasticsearch.node   ] [Node 1] initializing ...
+[2017-04-20 02:11:38,840][INFO ][org.elasticsearch.plugins] [Node 1] modules [], plugins [], sites []
+[2017-04-20 02:11:38,856][INFO ][org.elasticsearch.env    ] [Node 1] using [1] data paths, mounts [[/ (rootfs)]], net usable_space [2.4gb], net total_space [60.2gb], spins? [unknown], types [rootfs]
+[2017-04-20 02:11:38,856][INFO ][org.elasticsearch.env    ] [Node 1] heap size [1.7gb], compressed ordinary object pointers [true]
+[2017-04-20 02:11:40,225][INFO ][org.elasticsearch.node   ] [Node 1] initialized
+[2017-04-20 02:11:40,225][INFO ][org.elasticsearch.node   ] [Node 1] starting ...
+[2017-04-20 02:11:40,269][INFO ][org.elasticsearch.transport] [Node 1] publish_address {127.0.0.1:9301}, bound_addresses {[::1]:9301}, {127.0.0.1:9301}
+[2017-04-20 02:11:40,273][INFO ][org.elasticsearch.discovery] [Node 1] elasticsearch-cluster-runner/E723FKqARDicrZYMRuryrg
+[2017-04-20 02:11:43,297][INFO ][org.elasticsearch.cluster.service] [Node 1] new_master {Node 1}{E723FKqARDicrZYMRuryrg}{127.0.0.1}{127.0.0.1:9301}{master=true}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-04-20 02:11:43,308][INFO ][org.elasticsearch.http   ] [Node 1] publish_address {127.0.0.1:9201}, bound_addresses {[::1]:9201}, {127.0.0.1:9201}
+[2017-04-20 02:11:43,308][INFO ][org.elasticsearch.node   ] [Node 1] started
+[2017-04-20 02:11:43,375][INFO ][org.elasticsearch.gateway] [Node 1] recovered [0] indices into cluster_state
+02:11:43.379 [pool-34-thread-1] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Embedded ElasticSearch started ...
+02:11:43.379 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Finished waiting.
+2017-04-20 02:11:43.381+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:43.382+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:43.382+0200 INFO  Using default GSON instance
+2017-04-20 02:11:43.382+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:43.382+0200 INFO  Idle connection reaping disabled...
+2017-04-20 00:11:43.490+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime disabled.
+2017-04-20 00:11:45.052+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime disabled.
+2017-04-20 02:11:45.280+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:45.280+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:45.281+0200 INFO  Using default GSON instance
+2017-04-20 02:11:45.281+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:45.281+0200 INFO  Idle connection reaping disabled...
+[2017-04-20 02:11:45,407][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:11:46,245][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[neo4j-index-node][4]] ...]).
+[2017-04-20 02:11:46,315][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-relationship] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:11:47,007][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[neo4j-index-relationship][4]] ...]).
+[2017-04-20 02:11:47,062][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [Company]
+[2017-04-20 02:11:47,069][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [Person]
+2017-04-20 00:11:49.076+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime disabled.
+2017-04-20 02:11:49.200+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:49.200+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:49.201+0200 INFO  Using default GSON instance
+2017-04-20 02:11:49.201+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:49.201+0200 INFO  Idle connection reaping disabled...
+[2017-04-20 02:11:49,212][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [different-index-name-node] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:11:49,832][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[different-index-name-node][4]] ...]).
+[2017-04-20 02:11:49,903][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [different-index-name-relationship] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:11:50,644][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[different-index-name-relationship][4]] ...]).
+[2017-04-20 02:11:50,709][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [different-index-name-node] create_mapping [Person]
+[2017-04-20 02:11:50,901][INFO ][org.elasticsearch.node   ] [Node 1] stopping ...
+[2017-04-20 02:11:52,334][INFO ][org.elasticsearch.node   ] [Node 1] stopped
+[2017-04-20 02:11:52,335][INFO ][org.elasticsearch.node   ] [Node 1] closing ...
+[2017-04-20 02:11:52,339][INFO ][org.elasticsearch.node   ] [Node 1] closed
+Closed all nodes.
+Deleted /tmp/es-cluster3264669350712730483
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 14.226 sec <<< FAILURE! - in com.graphaware.module.es.ElasticSearchModuleProgrammaticTest
+overallTest(com.graphaware.module.es.ElasticSearchModuleProgrammaticTest)  Time elapsed: 14.226 sec  <<< FAILURE!
+java.lang.AssertionError: 404 Not Found
+	at com.graphaware.module.es.ElasticSearchModuleProgrammaticTest.dataShouldBeCorrectlyReplicatedWithCustomConfigEmptyDatabaseAndNoFailures(ElasticSearchModuleProgrammaticTest.java:140)
+	at com.graphaware.module.es.ElasticSearchModuleProgrammaticTest.overallTest(ElasticSearchModuleProgrammaticTest.java:64)
+
+Running com.graphaware.module.es.ElasticSearchModuleAdvancedMappingTest
+2017-04-20 02:11:52.641+0200 INFO  Elasticsearch classpath: /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib
+2017-04-20 02:11:52.642+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/lucene-core-5.5.0.jar
+2017-04-20 02:11:52.642+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/log4j-1.2.17.jar
+2017-04-20 02:11:52.642+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/elasticsearch-tests-integration-2.3.0.1-jar-with-dependencies.jar
+02:11:52.691 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Waiting for ElasticSearch embedded server...
+----------------------------------------
+Cluster Name: elasticsearch-cluster-runner
+Base Path:    /tmp/es-cluster1669543840398853570
+Num Of Node:  1
+----------------------------------------
+Creating /tmp/es-cluster1669543840398853570/config/node_1
+Creating /tmp/es-cluster1669543840398853570/logs/node_1
+Creating /tmp/es-cluster1669543840398853570/data/node_1
+Creating /tmp/es-cluster1669543840398853570/work/node_1
+Node Name:      Node 1
+HTTP Port:      9201
+Transport Port: 9301
+Data Directory: /tmp/es-cluster1669543840398853570/data/node_1
+Log Directory:  /tmp/es-cluster1669543840398853570/logs/node_1
+----------------------------------------
+[2017-04-20 02:11:52,957][INFO ][org.elasticsearch.node   ] [Node 1] version[2.3.0], pid[239], build[8371be8/2016-03-29T07:54:48Z]
+[2017-04-20 02:11:52,958][INFO ][org.elasticsearch.node   ] [Node 1] initializing ...
+[2017-04-20 02:11:52,963][INFO ][org.elasticsearch.plugins] [Node 1] modules [], plugins [], sites []
+[2017-04-20 02:11:52,980][INFO ][org.elasticsearch.env    ] [Node 1] using [1] data paths, mounts [[/ (rootfs)]], net usable_space [2.4gb], net total_space [60.2gb], spins? [unknown], types [rootfs]
+[2017-04-20 02:11:52,980][INFO ][org.elasticsearch.env    ] [Node 1] heap size [1.7gb], compressed ordinary object pointers [true]
+[2017-04-20 02:11:54,403][INFO ][org.elasticsearch.node   ] [Node 1] initialized
+[2017-04-20 02:11:54,403][INFO ][org.elasticsearch.node   ] [Node 1] starting ...
+[2017-04-20 02:11:54,445][INFO ][org.elasticsearch.transport] [Node 1] publish_address {127.0.0.1:9301}, bound_addresses {[::1]:9301}, {127.0.0.1:9301}
+[2017-04-20 02:11:54,449][INFO ][org.elasticsearch.discovery] [Node 1] elasticsearch-cluster-runner/R5YlturSTbOkO8mO1miuxA
+[2017-04-20 02:11:57,473][INFO ][org.elasticsearch.cluster.service] [Node 1] new_master {Node 1}{R5YlturSTbOkO8mO1miuxA}{127.0.0.1}{127.0.0.1:9301}{master=true}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-04-20 02:11:57,484][INFO ][org.elasticsearch.http   ] [Node 1] publish_address {127.0.0.1:9201}, bound_addresses {[::1]:9201}, {127.0.0.1:9201}
+[2017-04-20 02:11:57,484][INFO ][org.elasticsearch.node   ] [Node 1] started
+[2017-04-20 02:11:57,550][INFO ][org.elasticsearch.gateway] [Node 1] recovered [0] indices into cluster_state
+02:11:57.553 [pool-45-thread-1] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Embedded ElasticSearch started ...
+02:11:57.553 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Finished waiting.
+2017-04-20 02:11:57.555+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:57.555+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:57.556+0200 INFO  Using default GSON instance
+2017-04-20 02:11:57.556+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:57.556+0200 INFO  Idle connection reaping disabled...
+2017-04-20 00:11:57.662+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime disabled.
+2017-04-20 02:11:57.876+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:11:57.876+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:11:57.877+0200 INFO  Using default GSON instance
+2017-04-20 02:11:57.877+0200 INFO  Node Discovery disabled...
+2017-04-20 02:11:57.877+0200 INFO  Idle connection reaping disabled...
+[2017-04-20 02:11:58,035][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:11:58,900][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [node]
+[2017-04-20 02:11:59,043][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[neo4j-index-node][4]] ...]).
+[2017-04-20 02:11:59,102][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-relationship] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:11:59,772][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-relationship] create_mapping [relationship]
+[2017-04-20 02:11:59,916][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[neo4j-index-relationship][4]] ...]).
+[2017-04-20 02:11:59,979][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] update_mapping [node]
+[2017-04-20 02:12:00,448][INFO ][org.elasticsearch.node   ] [Node 1] stopping ...
+[2017-04-20 02:12:00,826][INFO ][org.elasticsearch.node   ] [Node 1] stopped
+[2017-04-20 02:12:00,826][INFO ][org.elasticsearch.node   ] [Node 1] closing ...
+[2017-04-20 02:12:00,829][INFO ][org.elasticsearch.node   ] [Node 1] closed
+Closed all nodes.
+Deleted /tmp/es-cluster1669543840398853570
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.347 sec - in com.graphaware.module.es.ElasticSearchModuleAdvancedMappingTest
+Running com.graphaware.module.es.ElasticSearchModuleArrayTest
+2017-04-20 02:12:01.001+0200 INFO  Elasticsearch classpath: /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib
+2017-04-20 02:12:01.001+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/lucene-core-5.5.0.jar
+2017-04-20 02:12:01.001+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/log4j-1.2.17.jar
+2017-04-20 02:12:01.001+0200 INFO  /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/extlib/elasticsearch-tests-integration-2.3.0.1-jar-with-dependencies.jar
+02:12:01.048 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Waiting for ElasticSearch embedded server...
+----------------------------------------
+Cluster Name: elasticsearch-cluster-runner
+Base Path:    /tmp/es-cluster370003172319190855
+Num Of Node:  1
+----------------------------------------
+Creating /tmp/es-cluster370003172319190855/config/node_1
+Creating /tmp/es-cluster370003172319190855/logs/node_1
+Creating /tmp/es-cluster370003172319190855/data/node_1
+Creating /tmp/es-cluster370003172319190855/work/node_1
+Node Name:      Node 1
+HTTP Port:      9201
+Transport Port: 9301
+Data Directory: /tmp/es-cluster370003172319190855/data/node_1
+Log Directory:  /tmp/es-cluster370003172319190855/logs/node_1
+----------------------------------------
+[2017-04-20 02:12:01,289][INFO ][org.elasticsearch.node   ] [Node 1] version[2.3.0], pid[239], build[8371be8/2016-03-29T07:54:48Z]
+[2017-04-20 02:12:01,290][INFO ][org.elasticsearch.node   ] [Node 1] initializing ...
+[2017-04-20 02:12:01,294][INFO ][org.elasticsearch.plugins] [Node 1] modules [], plugins [], sites []
+[2017-04-20 02:12:01,309][INFO ][org.elasticsearch.env    ] [Node 1] using [1] data paths, mounts [[/ (rootfs)]], net usable_space [2.4gb], net total_space [60.2gb], spins? [unknown], types [rootfs]
+[2017-04-20 02:12:01,309][INFO ][org.elasticsearch.env    ] [Node 1] heap size [1.7gb], compressed ordinary object pointers [true]
+[2017-04-20 02:12:02,620][INFO ][org.elasticsearch.node   ] [Node 1] initialized
+[2017-04-20 02:12:02,620][INFO ][org.elasticsearch.node   ] [Node 1] starting ...
+[2017-04-20 02:12:02,663][INFO ][org.elasticsearch.transport] [Node 1] publish_address {127.0.0.1:9301}, bound_addresses {[::1]:9301}, {127.0.0.1:9301}
+[2017-04-20 02:12:02,667][INFO ][org.elasticsearch.discovery] [Node 1] elasticsearch-cluster-runner/oqYgyrcgROiEi-eTYWfbfA
+[2017-04-20 02:12:05,698][INFO ][org.elasticsearch.cluster.service] [Node 1] new_master {Node 1}{oqYgyrcgROiEi-eTYWfbfA}{127.0.0.1}{127.0.0.1:9301}{master=true}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-04-20 02:12:05,712][INFO ][org.elasticsearch.http   ] [Node 1] publish_address {127.0.0.1:9201}, bound_addresses {[::1]:9201}, {127.0.0.1:9201}
+[2017-04-20 02:12:05,712][INFO ][org.elasticsearch.node   ] [Node 1] started
+[2017-04-20 02:12:05,805][INFO ][org.elasticsearch.gateway] [Node 1] recovered [0] indices into cluster_state
+02:12:05.808 [pool-51-thread-1] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Embedded ElasticSearch started ...
+02:12:05.809 [main] INFO  c.g.i.e.t.ElasticSearchClusterRunnerWrapper - Finished waiting.
+2017-04-20 02:12:05.811+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:12:05.811+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:12:05.812+0200 INFO  Using default GSON instance
+2017-04-20 02:12:05.812+0200 INFO  Node Discovery disabled...
+2017-04-20 02:12:05.812+0200 INFO  Idle connection reaping disabled...
+2017-04-20 00:12:05.914+0000 INFO  [c.g.r.b.RuntimeKernelExtension] GraphAware Runtime disabled.
+2017-04-20 02:12:06.129+0200 INFO  Setting server pool to a list of 1 servers: [http://localhost:9201]
+2017-04-20 02:12:06.129+0200 INFO  Using multi thread/connection supporting pooling connection manager
+2017-04-20 02:12:06.130+0200 INFO  Using default GSON instance
+2017-04-20 02:12:06.130+0200 INFO  Node Discovery disabled...
+2017-04-20 02:12:06.130+0200 INFO  Idle connection reaping disabled...
+[2017-04-20 02:12:06,307][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:12:07,243][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[neo4j-index-node][4]] ...]).
+[2017-04-20 02:12:07,316][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-relationship] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2017-04-20 02:12:08,039][INFO ][org.elasticsearch.cluster.routing.allocation] [Node 1] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[neo4j-index-relationship][4]] ...]).
+[2017-04-20 02:12:08,139][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [Person]
+[2017-04-20 02:12:08,148][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [Company]
+[2017-04-20 02:12:08,888][INFO ][org.elasticsearch.cluster.metadata] [Node 1] [neo4j-index-node] create_mapping [LabelWithList]
+[2017-04-20 02:12:09,912][INFO ][org.elasticsearch.node   ] [Node 1] stopping ...
+[2017-04-20 02:12:10,805][INFO ][org.elasticsearch.node   ] [Node 1] stopped
+[2017-04-20 02:12:10,806][INFO ][org.elasticsearch.node   ] [Node 1] closing ...
+[2017-04-20 02:12:10,810][INFO ][org.elasticsearch.node   ] [Node 1] closed
+Closed all nodes.
+Deleted /tmp/es-cluster370003172319190855
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.144 sec - in com.graphaware.module.es.ElasticSearchModuleArrayTest
+
+Results :
+
+Failed tests: 
+  ElasticSearchModuleDeclarativeTest.overAllTest:60->dataShouldBeCorrectlyReplicatedWithDefaultConfigEmptyDatabaseAndNoFailures:100->ElasticSearchModuleIntegrationTest.verifyEsReplication:92 404 Not Found
+  ElasticSearchModuleJsonMappingTest.overallTest:53->testBasicJsonMappingReplication:130->verifyEsReplicationForNodeWithLabels:724->lambda$verifyEsReplicationForNodeWithLabels$16:725 {"root_cause":[{"type":"shard_not_found_exception","reason":"no such shard","shard":"2","index":"default-index-node"}],"type":"no_shard_available_action_exception","reason":"No shard available for [get [default-index-node][persons][d575e8b0-255d-11e7-9263-0242ac110008]: routing [null]]","caused_by":{"type":"shard_not_found_exception","reason":"no such shard","shard":"2","index":"default-index-node"}}
+  ElasticSearchModuleProgrammaticTest.overallTest:64->dataShouldBeCorrectlyReplicatedWithCustomConfigEmptyDatabaseAndNoFailures:140->ElasticSearchModuleIntegrationTest.verifyEsReplication:100 404 Not Found
+
+Tests run: 8, Failures: 3, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:39 min
+[INFO] Finished at: 2017-04-20T02:12:11+02:00
+[INFO] Final Memory: 35M/505M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project neo4j-to-elasticsearch: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/graphaware/neo4j-to-elasticsearch/223694874/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
