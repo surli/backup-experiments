@@ -1,19 +1,46 @@
 {
+  "pr-base-commit-id": "b85c29855a714cae446f61c8a7b2ccaac747722b",
+  "pr-head-commit-id": "15dec336e88444832b1846e0090c6645c13fc851",
+  "totalNumberSkippingTests": 0,
+  "pr-remote-repo": "brad4d/closure-compiler",
+  "error-types": [
+    "junit.framework.AssertionFailedError"
+  ],
+  "totalNumberFailingTests": 1,
+  "buildid": 224126745,
+  "totalNumberErroringTests": 0,
+  "is-pr": "true",
+  "totalNumberRunningTests": 11651,
+  "pr-head-commit-id-url": "https://github.com/brad4d/closure-compiler/commit/15dec336e88444832b1846e0090c6645c13fc851",
+  "pr-id": 2447,
+  "repo": "google/closure-compiler",
+  "failing-test-cases": [
+    {
+      "className": "com.google.javascript.jscomp.InlineFunctionsTest",
+      "failingMethods": [
+        "com.google.javascript.jscomp.InlineFunctionsTest#testKeepIifeWithThisArgInGlobalScope"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.AssertionFailedError",
+          "failureDetail": "\nExpected: (function(global){global.something\u003d1})(this)\nResult:   {this.something\u003d1}\nNode tree inequality:\nExpected tree:\nROOT\n    SCRIPT 1 [length: 50] [source_file: expected0] [input_id: InputId: expected0] [feature_set: FeatureSet{number\u003d3}]\n        EXPR_RESULT 1 [length: 50] [source_file: expected0]\n            CALL 1 [length: 49] [free_call: 1] [source_file: expected0]\n                FUNCTION  1 [length: 41] [source_file: expected0]\n                    NAME  1 [length: 41] [source_file: expected0]\n                    PARAM_LIST 1 [length: 8] [source_file: expected0]\n                        NAME global 1 [length: 6] [source_file: expected0]\n                    BLOCK 1 [length: 25] [source_file: expected0]\n                        EXPR_RESULT 1 [length: 21] [source_file: expected0]\n                            ASSIGN 1 [length: 20] [source_file: expected0]\n                                GETPROP 1 [length: 16] [source_file: expected0]\n                                    NAME global 1 [length: 6] [source_file: expected0]\n                                    STRING something 1 [length: 9] [source_file: expected0]\n                                NUMBER 1.0 1 [length: 1] [source_file: expected0]\n                THIS 1 [length: 4] [source_file: expected0]\n\n\nActual tree:\nROOT\n    SCRIPT 1 [length: 50] [source_file: testcode] [input_id: InputId: testcode] [change_time: 4] [feature_set: FeatureSet{number\u003d3}]\n        BLOCK 1 [length: 25] [source_file: testcode]\n            EXPR_RESULT 1 [length: 21] [source_file: testcode]\n                ASSIGN 1 [length: 20] [source_file: testcode]\n                    GETPROP 1 [length: 16] [source_file: testcode]\n                        THIS 1 [length: 4] [source_file: testcode]\n                        STRING something 1 [length: 9] [source_file: testcode]\n                    NUMBER 1.0 1 [length: 1] [source_file: testcode]\n\n\nExpected subtree: EXPR_RESULT 1 [length: 50] [source_file: expected0]\n    CALL 1 [length: 49] [free_call: 1] [source_file: expected0]\n        FUNCTION  1 [length: 41] [source_file: expected0]\n            NAME  1 [length: 41] [source_file: expected0]\n            PARAM_LIST 1 [length: 8] [source_file: expected0]\n                NAME global 1 [length: 6] [source_file: expected0]\n            BLOCK 1 [length: 25] [source_file: expected0]\n                EXPR_RESULT 1 [length: 21] [source_file: expected0]\n                    ASSIGN 1 [length: 20] [source_file: expected0]\n                        GETPROP 1 [length: 16] [source_file: expected0]\n                            NAME global 1 [length: 6] [source_file: expected0]\n                            STRING something 1 [length: 9] [source_file: expected0]\n                        NUMBER 1.0 1 [length: 1] [source_file: expected0]\n        THIS 1 [length: 4] [source_file: expected0]\n\n\nActual subtree: BLOCK 1 [length: 25] [source_file: testcode]\n    EXPR_RESULT 1 [length: 21] [source_file: testcode]\n        ASSIGN 1 [length: 20] [source_file: testcode]\n            GETPROP 1 [length: 16] [source_file: testcode]\n                THIS 1 [length: 4] [source_file: testcode]\n                STRING something 1 [length: 9] [source_file: testcode]\n            NUMBER 1.0 1 [length: 1] [source_file: testcode]\n",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 2,
     "CloneRepository": 37,
     "ResolveDependency": 21,
     "TestProject": 152,
-    "BuildProject": 195
+    "BuildProject": 195,
+    "GatherTestInformation": 0
   },
   "workspace": "./workspace",
-  "pr-remote-repo": "brad4d/closure-compiler",
-  "pr-head-commit-id": "15dec336e88444832b1846e0090c6645c13fc851",
-  "pr-id": 2447,
-  "repo": "google/closure-compiler",
-  "pr-head-commit-id-url": "https://github.com/brad4d/closure-compiler/commit/15dec336e88444832b1846e0090c6645c13fc851",
-  "is-pr": "true",
-  "buildid": 224126745,
   "pr-base-commit-id-url": "https://github.com/google/closure-compiler/commit/b85c29855a714cae446f61c8a7b2ccaac747722b",
-  "pr-base-commit-id": "b85c29855a714cae446f61c8a7b2ccaac747722b"
+  "failingModule": "/root/workspace/google/closure-compiler/224126745"
 }
