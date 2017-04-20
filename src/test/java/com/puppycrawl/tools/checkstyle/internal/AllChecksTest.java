@@ -539,11 +539,12 @@ public class AllChecksTest extends BaseCheckTestSupport {
      */
     private static boolean isSubset(int[] array, int... arrayToCheckIn) {
         Arrays.sort(arrayToCheckIn);
+        boolean result = true;
         for (final int element : array) {
             if (Arrays.binarySearch(arrayToCheckIn, element) < 0) {
-                return false;
+                result = false;
             }
         }
-        return true;
+        return result;
     }
 }
