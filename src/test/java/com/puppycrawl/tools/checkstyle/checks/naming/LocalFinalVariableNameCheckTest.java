@@ -95,7 +95,23 @@ public class LocalFinalVariableNameCheckTest
         final int[] expected = {
             TokenTypes.VARIABLE_DEF,
             TokenTypes.PARAMETER_DEF,
+            TokenTypes.RESOURCE,
         };
         assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testTryWithResources() throws Exception {
+        final DefaultConfiguration checkConfig =
+            createCheckConfig(LocalFinalVariableNameCheck.class);
+        checkConfig.addAttribute("format", "[A-Z]+");
+
+        final String pattern = "[A-Z]+";
+
+        final String[] expected = {
+            "18:30: " + getCheckMessage(MSG_INVALID_PATTERN, "br", pattern),
+            "29:29: " + getCheckMessage(MSG_INVALID_PATTERN, "br", pattern),
+        };
+        verify(checkConfig, getPath("InputLocalFinalVariableNameTryResources.java"), expected);
     }
 }
