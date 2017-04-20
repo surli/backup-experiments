@@ -45,7 +45,7 @@ public class FileTruststoreProviderFactory implements TruststoreProviderFactory 
     @Override
     public void init(Config.Scope config) {
 
-        String storepath = config.get("file");
+        String storepath = "/home/pedroigor/development/workspace/jboss/keycloak/keycloak/testsuite/integration-arquillian/tests/base/src/test/resources/keystore/keycloak.truststore";
         String pass = config.get("password");
         String policy = config.get("hostname-verification-policy");
         Boolean disabled = config.getBoolean("disabled", null);
