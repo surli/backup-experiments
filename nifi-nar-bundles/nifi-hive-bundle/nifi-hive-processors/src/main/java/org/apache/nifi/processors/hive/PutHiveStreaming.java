@@ -52,6 +52,7 @@ import org.apache.nifi.processor.ProcessorInitializationContext;
 import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
 import org.apache.nifi.processor.util.StandardValidators;
+import org.apache.nifi.processor.util.pattern.DiscontinuedException;
 import org.apache.nifi.processor.util.pattern.ErrorTypes;
 import org.apache.nifi.processor.util.pattern.ExceptionHandler;
 import org.apache.nifi.processor.util.pattern.RollbackOnFailure;
@@ -536,7 +537,7 @@ public class PutHiveStreaming extends AbstractProcessor {
     }
 
     private ExceptionHandler.OnError<FunctionContext, List<HiveStreamingRecord>> onHiveRecordsError(ProcessContext context, ProcessSession session) {
-        return (fc, input, res, e) -> {
+        return RollbackOnFailure.createOnError((fc, input, res, e) -> {
 
             if (res.penalty() == ErrorTypes.Penalty.Yield) {
                 context.yield();
@@ -554,6 +555,10 @@ public class PutHiveStreaming extends AbstractProcessor {
                     abortAndCloseWriters();
                     throw new ShouldRetryException("Hive Streaming connect/write error, flow file will be penalized and routed to retry. " + e, e);
 
+                case Self:
+                    abortAndCloseWriters();
+                    break;
+
                 default:
                     abortAndCloseWriters();
                     if (e instanceof ProcessException) {
@@ -562,7 +567,7 @@ public class PutHiveStreaming extends AbstractProcessor {
                         throw new ProcessException(String.format("Error writing %s to Hive Streaming transaction due to %s", input, e), e);
                     }
             }
-        };
+        });
     }
 
     private ExceptionHandler.OnError<FunctionContext, HiveStreamingRecord> onHiveRecordError(ProcessContext context, ProcessSession session) {
@@ -762,6 +767,10 @@ public class PutHiveStreaming extends AbstractProcessor {
                     }
                 }
             });
+
+        } catch (DiscontinuedException e) {
+            // The input FlowFIle processing is discontinued.
+            getLogger().warn("Discontinued processing for {} due to {}", new Object[]{flowFile, e}, e);
 
         } catch (ShouldRetryException e) {
             // This exception is already a result of adjusting an error, so simply transfer the FlowFile to retry.

@@ -17,12 +17,15 @@
 package org.apache.nifi.processor.util.pattern;
 
 import org.apache.nifi.components.PropertyDescriptor;
+import org.apache.nifi.flowfile.FlowFile;
 import org.apache.nifi.logging.ComponentLog;
 import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
 import org.apache.nifi.processor.util.StandardValidators;
 import org.apache.nifi.processor.util.pattern.PartialFunctions.AdjustRoute;
 
+import java.util.List;
+import java.util.Map;
 import java.util.function.BiFunction;
 
 /**
@@ -46,6 +49,7 @@ public class RollbackOnFailure {
 
     private final boolean rollbackOnFailure;
     private final boolean transactional;
+    private boolean discontinue;
 
     private int processedCount = 0;
 
@@ -89,19 +93,33 @@ public class RollbackOnFailure {
             switch (t.destination()) {
 
                 case ProcessException:
+                    // If this process can rollback, then rollback it.
                     if (!c.canRollback()) {
-                        // If Exception is thrown but the processor is not transactional and processed count > 0, adjust it to failure,
-                        // in order to avoid making duplicates in target system, and also for succeeding input to be processed.
-                        adjusted = new ErrorTypes.Result(ErrorTypes.Destination.Failure, t.penalty());
+                        // If an exception is thrown but the processor is not transactional and processed count > 0, adjust it to self,
+                        // in order to stop any further processing until this input is processed successfully.
+                        // If we throw an Exception in this state, the already succeeded FlowFiles will be rollback, too.
+                        // In case the progress was made by other preceding inputs,
+                        // those successful inputs should be sent to 'success' and this input stays in incoming queue.
+                        // In case this input made some progress to external system, the partial update will be replayed again,
+                        // can cause duplicated data.
+                        c.discontinue();
+                        adjusted = new ErrorTypes.Result(ErrorTypes.Destination.Self, t.penalty());
                     }
                     break;
 
                 case Failure:
                 case Retry:
-                    if (c.isRollbackOnFailure() && c.canRollback()) {
-                        // Anything other than ProcessException
-                        adjusted = new ErrorTypes.Result(ErrorTypes.Destination.ProcessException, t.penalty());
+                    if (c.isRollbackOnFailure()) {
+                        c.discontinue();
+                        if (c.canRollback()) {
+                            // If this process can rollback, then throw ProcessException instead, in order to rollback.
+                            adjusted = new ErrorTypes.Result(ErrorTypes.Destination.ProcessException, t.penalty());
+                        } else {
+                            // If not,
+                            adjusted = new ErrorTypes.Result(ErrorTypes.Destination.Self, t.penalty());
+                        }
                     }
+                    break;
             }
 
             if (adjusted != null) {
@@ -118,20 +136,38 @@ public class RollbackOnFailure {
 
     /**
      * Create an {@link AdjustRoute} function to use with process pattern such as {@link Put} that adjust routed FlowFiles based on context.
+     * This function works as a safety net by covering cases that Processor implementation did not use ExceptionHandler and transfer FlowFiles
+     * without considering RollbackOnFailure context.
      */
     public static <FCT extends RollbackOnFailure> AdjustRoute<FCT> createAdjustRoute(Relationship ... failureRelationships) {
         return (context, session, fc, result) -> {
-            if (fc.isRollbackOnFailure() && fc.canRollback()) {
+            if (fc.isRollbackOnFailure()) {
                 // Check if route contains failure relationship.
                 for (Relationship failureRelationship : failureRelationships) {
-                    if (result.contains(failureRelationship)) {
+                    if (!result.contains(failureRelationship)) {
+                        continue;
+                    }
+                    if (fc.canRollback()) {
                         throw new ProcessException(String.format(
                                 "A FlowFile is routed to %s. Rollback session based on context rollbackOnFailure=%s, processedCount=%d, transactional=%s",
                                 failureRelationship.getName(), fc.isRollbackOnFailure(), fc.getProcessedCount(), fc.isTransactional()));
+                    } else {
+                        // Send failed FlowFiles to self.
+                        final Map<Relationship, List<FlowFile>> routedFlowFiles = result.getRoutedFlowFiles();
+                        final List<FlowFile> failedFlowFiles = routedFlowFiles.remove(failureRelationship);
+                        result.routeTo(failedFlowFiles, Relationship.SELF);
                     }
                 }
             }
         };
+    }
+
+    public static <FCT extends RollbackOnFailure, I> ExceptionHandler.OnError<FCT, I> createOnError(ExceptionHandler.OnError<FCT, I> onError) {
+        return onError.andThen((context, input, result, e) -> {
+            if (context.shouldDiscontinue()) {
+                throw new DiscontinuedException("Discontinue processing due to " + e, e);
+            }
+        });
     }
 
     public int proceed() {
@@ -152,5 +188,13 @@ public class RollbackOnFailure {
 
     public boolean canRollback() {
         return transactional || processedCount == 0;
+    }
+
+    public boolean shouldDiscontinue() {
+        return discontinue;
+    }
+
+    public void discontinue() {
+        this.discontinue = true;
     }
 }
