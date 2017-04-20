@@ -94,6 +94,11 @@ public abstract class RelOptAbstractTable implements RelOptTable {
     return false;
   }
 
+  // Override to define foreign keys
+  public List<RelOptReferentialConstraint> getReferentialConstraints() {
+    return Collections.emptyList();
+  }
+
   public RelNode toRel(ToRelContext context) {
     return LogicalTableScan.create(context.getCluster(), this);
   }

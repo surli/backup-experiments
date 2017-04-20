@@ -23,6 +23,7 @@ import org.apache.calcite.linq4j.Ord;
 import org.apache.calcite.linq4j.QueryProvider;
 import org.apache.calcite.linq4j.Queryable;
 import org.apache.calcite.linq4j.tree.Expression;
+import org.apache.calcite.plan.RelOptReferentialConstraint;
 import org.apache.calcite.plan.RelOptSchema;
 import org.apache.calcite.plan.RelOptTable;
 import org.apache.calcite.prepare.CalciteCatalogReader;
@@ -669,6 +670,8 @@ public class MockCatalogReader extends CalciteCatalogReader {
     protected final List<Map.Entry<String, RelDataType>> columnList =
         new ArrayList<>();
     protected final List<Integer> keyList = new ArrayList<>();
+    protected final List<RelOptReferentialConstraint> referentialConstraints =
+        new ArrayList<>();
     protected RelDataType rowType;
     protected List<RelCollation> collationList;
     protected final List<String> names;
@@ -857,6 +860,10 @@ public class MockCatalogReader extends CalciteCatalogReader {
     public boolean isKey(ImmutableBitSet columns) {
       return !keyList.isEmpty()
           && columns.contains(ImmutableBitSet.of(keyList));
+    }
+
+    public List<RelOptReferentialConstraint> getReferentialConstraints() {
+      return referentialConstraints;
     }
 
     public RelDataType getRowType() {
@@ -1459,6 +1466,10 @@ public class MockCatalogReader extends CalciteCatalogReader {
 
         public boolean isKey(ImmutableBitSet columns) {
           return table.isKey(columns);
+        }
+
+        public List<RelOptReferentialConstraint> getReferentialConstraints() {
+          return table.getReferentialConstraints();
         }
 
         public List<RelCollation> getCollations() {

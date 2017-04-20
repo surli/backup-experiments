@@ -21,6 +21,7 @@ import org.apache.calcite.jdbc.CalciteSchema;
 import org.apache.calcite.linq4j.tree.Expression;
 import org.apache.calcite.materialize.Lattice;
 import org.apache.calcite.plan.RelOptCluster;
+import org.apache.calcite.plan.RelOptReferentialConstraint;
 import org.apache.calcite.plan.RelOptSchema;
 import org.apache.calcite.plan.RelOptTable;
 import org.apache.calcite.rel.RelCollation;
@@ -282,6 +283,13 @@ public class RelOptTableImpl extends Prepare.AbstractPreparingTable {
       return table.getStatistic().isKey(columns);
     }
     return false;
+  }
+
+  public List<RelOptReferentialConstraint> getReferentialConstraints() {
+    if (table != null) {
+      return table.getStatistic().getReferentialConstraints();
+    }
+    return ImmutableList.of();
   }
 
   public RelDataType getRowType() {

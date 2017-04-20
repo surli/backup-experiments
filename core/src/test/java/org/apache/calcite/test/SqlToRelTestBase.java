@@ -19,6 +19,7 @@ package org.apache.calcite.test;
 import org.apache.calcite.linq4j.tree.Expression;
 import org.apache.calcite.plan.RelOptCluster;
 import org.apache.calcite.plan.RelOptPlanner;
+import org.apache.calcite.plan.RelOptReferentialConstraint;
 import org.apache.calcite.plan.RelOptSchema;
 import org.apache.calcite.plan.RelOptSchemaWithSampling;
 import org.apache.calcite.plan.RelOptTable;
@@ -398,6 +399,10 @@ public abstract class SqlToRelTestBase {
         return false;
       }
 
+      public List<RelOptReferentialConstraint> getReferentialConstraints() {
+        return ImmutableList.of();
+      }
+
       public Expression getExpression(Class clazz) {
         return null;
       }
@@ -466,6 +471,10 @@ public abstract class SqlToRelTestBase {
 
     public boolean isKey(ImmutableBitSet columns) {
       return parent.isKey(columns);
+    }
+
+    public List<RelOptReferentialConstraint> getReferentialConstraints() {
+      return parent.getReferentialConstraints();
     }
   }
 

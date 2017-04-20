@@ -44,6 +44,8 @@ import org.apache.calcite.linq4j.Queryable;
 import org.apache.calcite.linq4j.function.Function0;
 import org.apache.calcite.plan.RelOptCluster;
 import org.apache.calcite.plan.RelOptPlanner;
+import org.apache.calcite.plan.RelOptReferentialConstraint;
+import org.apache.calcite.plan.RelOptReferentialConstraintImpl;
 import org.apache.calcite.plan.RelOptTable;
 import org.apache.calcite.plan.RelOptUtil;
 import org.apache.calcite.prepare.CalcitePrepareImpl;
@@ -6694,11 +6696,11 @@ public class JdbcTest {
       new Employee(110, 10, "Theodore", 11500, 250),
     };
     public final Department[] depts = {
-      new Department(10, "Sales", Arrays.asList(emps[0], emps[2]),
+      new Department(10, "Sales", Arrays.asList(emps[0], emps[2], emps[3]),
           new Location(-122, 38)),
       new Department(30, "Marketing", Collections.<Employee>emptyList(),
           new Location(0, 52)),
-      new Department(40, "HR", Collections.singletonList(emps[1]), null),
+      new Department(20, "HR", Collections.singletonList(emps[1]), null),
     };
     public final Dependent[] dependents = {
       new Dependent(10, "Michael"),
@@ -6708,6 +6710,11 @@ public class JdbcTest {
       new Dependent(10, "San Francisco"),
       new Dependent(20, "San Diego"),
     };
+
+    public final RelOptReferentialConstraint rcs0 =
+        RelOptReferentialConstraintImpl.of(
+            ImmutableList.of("hr", "emps"), ImmutableList.of(1),
+            ImmutableList.of("hr", "depts"), ImmutableList.of(0));
 
     public QueryableTable foo(int count) {
       return Smalls.generateStrings(count);
