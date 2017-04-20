@@ -330,7 +330,13 @@ public class TestPutHiveStreaming {
                 put("favorite_number", 3);
             }
         };
-        final List<Map<String, Object>> users = Arrays.asList(user1, user2, user3);
+        Map<String, Object> user4 = new HashMap<String, Object>() {
+            {
+                put("name", "Mike");
+                put("favorite_number", 345);
+            }
+        };
+        final List<Map<String, Object>> users = Arrays.asList(user1, user2, user3, user4);
         runner.enqueue(createAvroRecord(users));
         runner.run();
 
@@ -339,7 +345,7 @@ public class TestPutHiveStreaming {
         runner.assertTransferCount(PutHiveStreaming.REL_RETRY, 0);
 
         MockFlowFile resultFlowFile = runner.getFlowFilesForRelationship(PutHiveStreaming.REL_SUCCESS).get(0);
-        assertOutputAvroRecords(Arrays.asList(user1, user3), resultFlowFile);
+        assertOutputAvroRecords(Arrays.asList(user1, user3, user4), resultFlowFile);
 
         final MockFlowFile failedFlowFile = runner.getFlowFilesForRelationship(PutHiveStreaming.REL_FAILURE).get(0);
         assertOutputAvroRecords(Arrays.asList(user2), failedFlowFile);
@@ -413,17 +419,22 @@ public class TestPutHiveStreaming {
                 put("favorite_number", 3);
             }
         };
-        runner.enqueue(createAvroRecord(Arrays.asList(user1, user2, user3)));
+        Map<String, Object> user4 = new HashMap<String, Object>() {
+            {
+                put("name", "Mike");
+                put("favorite_number", 345);
+            }
+        };
+        runner.enqueue(createAvroRecord(Arrays.asList(user1, user2, user3, user4)));
         // ProcessException should NOT be thrown, because a Hive Transaction is already committed.
         runner.run();
 
         runner.assertTransferCount(PutHiveStreaming.REL_SUCCESS, 1);
         runner.assertTransferCount(PutHiveStreaming.REL_RETRY, 0);
-        runner.assertTransferCount(PutHiveStreaming.REL_FAILURE, 1);
+        runner.assertTransferCount(PutHiveStreaming.REL_FAILURE, 0);
 
         // Assert transferred FlowFile.
         assertOutputAvroRecords(Arrays.asList(user1, user2), runner.getFlowFilesForRelationship(REL_SUCCESS).get(0));
-        assertOutputAvroRecords(Arrays.asList(user3), runner.getFlowFilesForRelationship(REL_FAILURE).get(0));
 
     }
 

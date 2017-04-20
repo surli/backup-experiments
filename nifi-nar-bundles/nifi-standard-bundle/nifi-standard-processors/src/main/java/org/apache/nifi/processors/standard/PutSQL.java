@@ -401,12 +401,12 @@ public class PutSQL extends AbstractProcessor {
                     break;
             }
         });
-        return onFlowFileError;
+        return RollbackOnFailure.createOnError(onFlowFileError);
     }
 
     private ExceptionHandler.OnError<FunctionContext, StatementFlowFileEnclosure> onBatchUpdateError(
             final ProcessContext context, final ProcessSession session, final RoutingResult result) {
-        return (c, enclosure, r, e) -> {
+        return RollbackOnFailure.createOnError((c, enclosure, r, e) -> {
 
             // If rollbackOnFailure is enabled, the error will be thrown as ProcessException instead.
             if (e instanceof BatchUpdateException && !c.isRollbackOnFailure()) {
@@ -477,7 +477,7 @@ public class PutSQL extends AbstractProcessor {
                 }
             });
             onGroupError.apply(c, enclosure, r, e);
-        };
+        });
     }
 
     @OnScheduled

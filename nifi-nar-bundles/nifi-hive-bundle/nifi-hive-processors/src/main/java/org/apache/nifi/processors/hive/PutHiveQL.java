@@ -242,7 +242,7 @@ public class PutHiveQL extends AbstractHiveQLProcessor {
                     break;
             }
         });
-        return onFlowFileError;
+        return RollbackOnFailure.createOnError(onFlowFileError);
     }
 
     @Override

@@ -24,6 +24,7 @@ import org.apache.nifi.processor.exception.ProcessException;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * Abstract Put pattern class with a generic onTrigger method structure, composed with various partial functions.
@@ -95,12 +96,24 @@ public class Put<FC, C extends AutoCloseable> {
 
             try {
                 // Execute the core function.
-                putFlowFiles(context, session, functionContext, connection, flowFiles, result);
+                try {
+                    putFlowFiles(context, session, functionContext, connection, flowFiles, result);
+                } catch (DiscontinuedException e) {
+                    // Whether it was an error or semi normal is depends on the implementation and reason why it wanted to discontinue.
+                    // So, no logging is needed here.
+                }
 
                 // Extension point to alter routes.
                 if (adjustRoute != null) {
                     adjustRoute.apply(context, session, functionContext, result);
                 }
+
+                // Remove fetched, but unprocessed FlowFiles from session.
+                final List<FlowFile> transferredFlowFiles = result.getRoutedFlowFiles().values().stream()
+                        .flatMap(List::stream).collect(Collectors.toList());
+                final List<FlowFile> unprocessedFlowFiles = flowFiles.stream()
+                        .filter(flowFile -> !transferredFlowFiles.contains(flowFile)).collect(Collectors.toList());
+                session.remove(unprocessedFlowFiles);
 
                 // OnCompleted processing.
                 if (onCompleted != null) {

@@ -102,9 +102,11 @@ public class ExceptionHandler<C> {
      * @param procedure a function that does something with the input
      * @return True if the procedure finished without issue. False if procedure threw an Exception but it was handled by {@link OnError}.
      * @throws ProcessException Thrown if the exception was not handled by {@link OnError}
+     * @throws DiscontinuedException Indicating the exception was handled by {@link OnError} but process should stop immediately
+     * without processing any further input
      */
     @SuppressWarnings("unchecked")
-    public <I> boolean execute(C context, I input, Procedure<I> procedure) throws ProcessException {
+    public <I> boolean execute(C context, I input, Procedure<I> procedure) throws ProcessException, DiscontinuedException {
         return execute(context, input, procedure, (OnError<C, I>) onError);
     }
 
@@ -116,8 +118,10 @@ public class ExceptionHandler<C> {
      * @param onError specify {@link OnError} function for this execution
      * @return True if the procedure finished without issue. False if procedure threw an Exception but it was handled by {@link OnError}.
      * @throws ProcessException Thrown if the exception was not handled by {@link OnError}
+     * @throws DiscontinuedException Indicating the exception was handled by {@link OnError} but process should stop immediately
+     * without processing any further input
      */
-    public <I> boolean execute(C context, I input, Procedure<I> procedure, OnError<C, I> onError) throws ProcessException {
+    public <I> boolean execute(C context, I input, Procedure<I> procedure, OnError<C, I> onError) throws ProcessException, DiscontinuedException {
         try {
             procedure.apply(input);
             return true;
