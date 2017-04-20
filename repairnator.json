@@ -1,14 +1,487 @@
 {
-  "bugRepo": "oVirt/ovirt-engine",
+  "totalNumberSkippingTests": 5,
   "step-durations": {
     "CheckoutBuild": 0,
+    "": 1,
     "CloneRepository": 82,
     "ResolveDependency": 28,
     "TestProject": 120,
     "BuildProject": 390
   },
-  "buildid": 223957249,
   "workspace": "./workspace",
+  "totalNumberErroringTests": 52,
   "repo": "oVirt/ovirt-engine",
-  "bugCommit": "https://github.com/oVirt/ovirt-engine/compare/f8e6065d0123...922baaacc89d"
+  "bugCommit": "https://github.com/oVirt/ovirt-engine/compare/f8e6065d0123...922baaacc89d",
+  "failingModule": "/root/workspace/oVirt/ovirt-engine/223957249/backend/manager/modules/bll",
+  "buildid": 223957249,
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.NoClassDefFoundError",
+    "java.lang.ExceptionInInitializerError"
+  ],
+  "totalNumberRunningTests": 4996,
+  "failing-test-cases": [
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.DisableGlusterHookCommandTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.DisableGlusterHookCommandTest#executeCommandWhenFailed",
+        "org.ovirt.engine.core.bll.gluster.DisableGlusterHookCommandTest#executeCommand"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.EnableGlusterHookCommandTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.EnableGlusterHookCommandTest#executeCommandWhenFailed",
+        "org.ovirt.engine.core.bll.gluster.EnableGlusterHookCommandTest#executeCommand"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest#testRefreshGlusterServicesNoChanges",
+        "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest#testRefreshGlusterServicesWhenVdsmVerbFails",
+        "org.ovirt.engine.core.bll.gluster.GlusterServiceSyncJobTest#testRefreshGlusterServicesWithChanges"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest#testCreateTasksStartedFromCLI",
+        "org.ovirt.engine.core.bll.gluster.GlusterTasksSyncJobTest#testCreateTasksStartedFromCLIWithErrors"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest#syncHooksWhenHookMissingInAllServers",
+        "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest#syncHooksWhenNewHooksFound",
+        "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest#syncHooksWhenDBInSyncWithServers",
+        "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest#syncHooksWhenHookMissingAndContentConflict",
+        "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest#syncHooksWhenHookMissingInOneServer",
+        "org.ovirt.engine.core.bll.gluster.GlusterHookSyncJobTest#syncHooksWhenHookContentConflictInOneServer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 6
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.StorageDeviceSyncJobTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.StorageDeviceSyncJobTest#testRefreshStorageDevices"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.ManageGlusterServiceCommandTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.ManageGlusterServiceCommandTest#testExecuteCommandFailsWithClusterIdForStart",
+        "org.ovirt.engine.core.bll.gluster.ManageGlusterServiceCommandTest#testExecuteCommandFailsWithClusterIdForStop",
+        "org.ovirt.engine.core.bll.gluster.ManageGlusterServiceCommandTest#testExecuteCommandByClusterIdForRestart",
+        "org.ovirt.engine.core.bll.gluster.ManageGlusterServiceCommandTest#testExecuteCommandByClusterIdForStop",
+        "org.ovirt.engine.core.bll.gluster.ManageGlusterServiceCommandTest#testExecuteCommandFailsWithClusterIdForRestart",
+        "org.ovirt.engine.core.bll.gluster.ManageGlusterServiceCommandTest#testExecuteCommandByClusterIdForStart"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 6
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.AddGlusterHookCommandTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.AddGlusterHookCommandTest#executeCommandWhenFailed",
+        "org.ovirt.engine.core.bll.gluster.AddGlusterHookCommandTest#executeCommand"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.RemoveGlusterHookCommandTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.RemoveGlusterHookCommandTest#executeCommandWhenFailed",
+        "org.ovirt.engine.core.bll.gluster.RemoveGlusterHookCommandTest#executeCommand"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#failedStopWhenAllAgentsFailed",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#statusOnWhenOneReportsOnAndOtherFailed",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#successfulStartWhenAllAgentsSuccessful",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#statusOnWhenAllReportsOn",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#failedStatusWhenOneReportsOffAndOtherFailed",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#statusOnWhenOneReportsOn",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#statusOffWhenAllReportsOff",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#failedStopWhenOneSuccessfulAndAnotherFailed",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#successfulStopWhenAllAgentsSuccessful",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#failedStatusWhenAllAgentsFailed",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#failedStartWhenAllAgentsFailed",
+        "org.ovirt.engine.core.bll.pm.ConcurrentAgentsFenceActionExecutorTest#successfulStartWhenOneSuccessfulAndAnotherFailed"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 12
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.pm.StartVdsCommandTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.pm.StartVdsCommandTest#onSuccessAudit",
+        "org.ovirt.engine.core.bll.pm.StartVdsCommandTest#onSuccessReturnValueOk"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.ExceptionInInitializerError",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.PrevalidatingMultipleActionsRunnerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.PrevalidatingMultipleActionsRunnerTest#shouldCollectReturnValuesOfCommands",
+        "org.ovirt.engine.core.bll.PrevalidatingMultipleActionsRunnerTest#shouldExecuteMoreThanOneValidCommands",
+        "org.ovirt.engine.core.bll.PrevalidatingMultipleActionsRunnerTest#shouldExecuteValidCommands",
+        "org.ovirt.engine.core.bll.PrevalidatingMultipleActionsRunnerTest#shouldExecuteNoCommandsBecauseOneFails"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.GlusterGeoRepSyncJobTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.GlusterGeoRepSyncJobTest#testRefreshStatus",
+        "org.ovirt.engine.core.bll.gluster.GlusterGeoRepSyncJobTest#testRefreshStatusNoSessions"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.storage.pool.UpdateStoragePoolCommandTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.storage.pool.UpdateStoragePoolCommandTest#syncLunsForStorageDomainsWithFailedToSyncDomains",
+        "org.ovirt.engine.core.bll.storage.pool.UpdateStoragePoolCommandTest#syncLunsForStorageDomainsAllActiveBlockDomainsWereSynced"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.ovirt.engine.core.bll.gluster.UpdateGlusterHookCommandTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.ovirt.engine.core.bll.gluster.UpdateGlusterHookCommandTest#executeCommandWhenServerIdPresent",
+        "org.ovirt.engine.core.bll.gluster.UpdateGlusterHookCommandTest#executeCommandWhenFailed",
+        "org.ovirt.engine.core.bll.gluster.UpdateGlusterHookCommandTest#executeCommandFailedWhenServerIdPresent",
+        "org.ovirt.engine.core.bll.gluster.UpdateGlusterHookCommandTest#executeCommand"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.ovirt.engine.core.utils.threadpool.ThreadPoolUtil",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    }
+  ],
+  "bugRepo": "oVirt/ovirt-engine"
 }
