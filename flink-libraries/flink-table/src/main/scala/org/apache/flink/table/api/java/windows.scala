@@ -20,7 +20,7 @@ package org.apache.flink.table.api.java
 
 import org.apache.flink.table.api.scala.PartitionedOver
 import org.apache.flink.table.api.{OverWindowPredefined, SessionWindow, SlideWithSize, TumblingWindow}
-import org.apache.flink.table.expressions.Expression
+import org.apache.flink.table.expressions.{Expression, ExpressionParser}
 
 /**
   * Helper class for creating a tumbling window. Tumbling windows are consecutive, non-overlapping
@@ -97,9 +97,9 @@ object Over {
     *
     * For batch tables, refer to a timestamp or long attribute.
     */
-  def orderBy(orderBy: Expression): OverWindowPredefined = {
+  def orderBy(orderBy: String): OverWindowPredefined = {
     val overWindow = new OverWindowPredefined
-    overWindow.orderBy = orderBy
+    overWindow.orderBy = ExpressionParser.parseExpression(orderBy)
     overWindow
   }
 
@@ -109,7 +109,7 @@ object Over {
     * @param partitionBy some partition keys.
     * @return A partitionedOver instance that only contains the orderBy method.
     */
-  def partitionBy(partitionBy: Expression*): PartitionedOver = {
-    PartitionedOver(partitionBy: _*)
+  def partitionBy(partitionBy: String*): PartitionedOver = {
+    PartitionedOver(partitionBy.map(ExpressionParser.parseExpression(_)).toArray)
   }
 }

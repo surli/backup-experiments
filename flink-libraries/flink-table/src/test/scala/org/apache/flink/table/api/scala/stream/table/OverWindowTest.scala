@@ -18,6 +18,7 @@
 package org.apache.flink.table.api.scala.stream.table
 
 import org.apache.flink.api.scala._
+import org.apache.flink.table.api.ValidationException
 import org.apache.flink.table.api.scala._
 import org.apache.flink.table.utils.TableTestUtil._
 import org.apache.flink.table.utils.{StreamTableTestUtil, TableTestBase}
@@ -27,11 +28,58 @@ class OverWindowTest extends TableTestBase {
   private val streamUtil: StreamTableTestUtil = streamTestUtil()
   val table = streamUtil.addTable[(Int, String, Long)]("MyTable", 'a, 'b, 'c)
 
+  @Test(expected = classOf[ValidationException])
+  def testOrderBy(): Unit = {
+    val result = table
+      .window(Over partitionBy 'c orderBy 'abc preceding 2.rows as 'w)
+      .select('c, 'b.count over 'w)
+    streamUtil.tEnv.optimize(result.getRelNode)
+  }
+
+  @Test(expected = classOf[ValidationException])
+  def testPrecedingAndFollowingUsingIsLiteral(): Unit = {
+    val result = table
+      .window(Over partitionBy 'c orderBy 'rowtime preceding 2 following "xx" as 'w)
+      .select('c, 'b.count over 'w)
+    streamUtil.tEnv.optimize(result.getRelNode)
+  }
+
+  @Test(expected = classOf[ValidationException])
+  def testPrecedingAndFollowingUsingSameType(): Unit = {
+    val result = table
+      .window(Over partitionBy 'c orderBy 'abc preceding 2.rows following CURRENT_RANGE as 'w)
+      .select('c, 'b.count over 'w)
+    streamUtil.tEnv.optimize(result.getRelNode)
+  }
+
+  @Test(expected = classOf[ValidationException])
+  def testPartitionBy(): Unit = {
+    val result = table
+      .window(Over partitionBy 'abc orderBy 'rowtime preceding 2.rows as 'w)
+      .select('c, 'b.count over 'w)
+    streamUtil.tEnv.optimize(result.getRelNode)
+  }
+
+  @Test(expected = classOf[ValidationException])
+  def testPrecedingValue(): Unit = {
+    val result = table
+      .window(Over orderBy 'rowtime preceding 0.rows as 'w)
+      .select('c, 'b.count over 'w)
+    streamUtil.tEnv.optimize(result.getRelNode)
+  }
+
+  @Test(expected = classOf[ValidationException])
+  def testFollowingValue(): Unit = {
+    val result = table
+      .window(Over orderBy 'rowtime preceding 1.rows following -2.rows as 'w)
+      .select('c, 'b.count over 'w)
+    streamUtil.tEnv.optimize(result.getRelNode)
+  }
+
   @Test
   def testProcTimeBoundedPartitionedRowsOver() = {
     val result = table
-      .window(
-        Over partitionBy 'c orderBy 'proctime preceding 2.rows following CURRENT_ROW as 'w)
+      .window(Over partitionBy 'c orderBy 'proctime preceding 2.rows following CURRENT_ROW as 'w)
       .select('c, 'b.count over 'w)
 
     val expected =

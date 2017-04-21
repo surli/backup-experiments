@@ -374,7 +374,13 @@ trait ImplicitExpressionOperations {
   def
   over(alias: Expression) = {
     expr match {
-      case _: Aggregation => OverCall(expr.asInstanceOf[Aggregation], alias)
+      case _: Aggregation => OverCall(
+        expr.asInstanceOf[Aggregation],
+        alias,
+        null,
+        null,
+        null,
+        null)
       case _ => throw new TableException(
         "The over method can only using with aggregation expression.")
     }

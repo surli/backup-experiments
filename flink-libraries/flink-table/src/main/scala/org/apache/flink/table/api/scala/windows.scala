@@ -18,8 +18,8 @@
 
 package org.apache.flink.table.api.scala
 
-import org.apache.flink.table.expressions.Expression
-import org.apache.flink.table.api.{SessionWindow, SlideWithSize, TumblingWindow, OverWindowPredefined}
+import org.apache.flink.table.expressions.{Expression, ExpressionParser}
+import org.apache.flink.table.api.{OverWindowPredefined, SessionWindow, SlideWithSize, TumblingWindow}
 
 /**
   * Helper object for creating a tumbling window. Tumbling windows are consecutive, non-overlapping
@@ -109,11 +109,11 @@ object Over {
     * @return A partitionedOver instance that only contains the orderBy method.
     */
   def partitionBy(partitionBy: Expression*): PartitionedOver = {
-    PartitionedOver(partitionBy: _*)
+    PartitionedOver(partitionBy.toArray)
   }
 }
 
-case class PartitionedOver(partitionBy: Expression*) {
+case class PartitionedOver(partitionBy: Array[Expression]) {
 
   /**
     * Specifies the time attribute on which rows are grouped.
@@ -125,7 +125,7 @@ case class PartitionedOver(partitionBy: Expression*) {
   def orderBy(orderBy: Expression): OverWindowPredefined = {
     val overWindow = new OverWindowPredefined
     overWindow.orderBy = orderBy
-    overWindow.partitionBy = partitionBy
+    overWindow.partitionBy = partitionBy.toSeq
     overWindow
   }
 }

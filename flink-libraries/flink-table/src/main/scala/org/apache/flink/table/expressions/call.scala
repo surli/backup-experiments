@@ -63,12 +63,14 @@ case class Call(functionName: String, args: Seq[Expression]) extends Expression 
   *
   * @param agg             over-agg expression
   * @param overWindowAlias over window alias
-  * @param overWindow      over window
   */
 case class OverCall(
     agg: Aggregation,
     overWindowAlias: Expression,
-    var overWindow: OverWindow = null) extends Expression {
+    partitionBy: Seq[Expression],
+    orderBy: Expression,
+    preceding: Expression,
+    following: Expression) extends Expression {
 
   override private[flink] def toRexNode(implicit relBuilder: RelBuilder): RexNode = {
 
@@ -89,42 +91,31 @@ case class OverCall(
       new ImmutableList.Builder[RexFieldCollation]()
 
     val sets: util.HashSet[SqlKind] = new util.HashSet[SqlKind]()
-    val orderName = overWindow.orderBy.asInstanceOf[UnresolvedFieldReference].name
+    val orderName = orderBy.asInstanceOf[UnresolvedFieldReference].name
 
     val rexNode =
       if (orderName.equalsIgnoreCase("rowtime")) {
         // for stream event-time
         relBuilder.call(EventTimeExtractor)
       }
-      else if (orderName.equalsIgnoreCase("proctime")) {
+      else {
         // for stream proc-time
         relBuilder.call(ProcTimeExtractor)
-      } else {
-        // for batch event-time
-        relBuilder.field(orderName)
       }
 
     orderKeys.add(new RexFieldCollation(rexNode, sets))
 
     val partitionKeys: util.ArrayList[RexNode] = new util.ArrayList[RexNode]()
-    overWindow.partitionBy.foreach {
+    partitionBy.foreach {
       x =>
-        val partitionKey = relBuilder.field(x.asInstanceOf[UnresolvedFieldReference].name)
-        if (!FlinkTypeFactory.toTypeInfo(partitionKey.getType).isKeyType) {
-          throw ValidationException(
-            s"expression $partitionKey cannot be used as a partition key expression " +
-            "because it's not a valid key type which must be hashable and comparable")
-        }
+        val partitionKey = relBuilder.field(x.asInstanceOf[ResolvedFieldReference].name)
         partitionKeys.add(partitionKey)
     }
 
-    val preceding = overWindow.preceding.asInstanceOf[Literal]
-    val following = overWindow.following.asInstanceOf[Literal]
-
     val isPhysical: Boolean = preceding.resultType.isInstanceOf[RowIntervalTypeInfo]
 
-    val lowerBound = createBound(relBuilder, preceding, SqlKind.PRECEDING)
-    val upperBound = createBound(relBuilder, following, SqlKind.FOLLOWING)
+    val lowerBound = createBound(relBuilder, preceding.asInstanceOf[Literal], SqlKind.PRECEDING)
+    val upperBound = createBound(relBuilder, following.asInstanceOf[Literal], SqlKind.FOLLOWING)
 
     rexBuilder.makeOver(
       relDataType,
@@ -177,39 +168,49 @@ case class OverCall(
     }
   }
 
-  override private[flink] def children: Seq[Expression] = Seq(agg)
+  override private[flink] def children: Seq[Expression] =
+    Seq(agg) ++ partitionBy ++ Seq(preceding) ++ Seq(following)
 
   override def toString = s"${this.getClass.getCanonicalName}(${overWindowAlias.toString})"
 
   override private[flink] def resultType = agg.resultType
 
   override private[flink] def validateInput(): ValidationResult = {
-    var validationResult: ValidationResult = ValidationSuccess
-    val orderName = overWindow.orderBy.asInstanceOf[UnresolvedFieldReference].name
-    if (!orderName.equalsIgnoreCase("rowtime")
-      && !orderName.equalsIgnoreCase("proctime")) {
-      validationResult = ValidationFailure(
+    val orderName = orderBy.asInstanceOf[UnresolvedFieldReference].name
+    val inValidPartitionKeys = partitionBy.filter(!_.resultType.isKeyType)
+    // partition key must be hashable and comparable"
+    if (inValidPartitionKeys.size > 0) {
+      ValidationFailure(
+        s"expression ${inValidPartitionKeys(0)} cannot be used as a partition key expression " +
+        "because it's not a valid key type which must be hashable and comparable")
+    } else if (!orderName.equalsIgnoreCase("rowtime") && !orderName.equalsIgnoreCase("proctime")) {
+      // order key must be 'proctime or 'rowtime
+      ValidationFailure(
         s"OrderBy expression must be ['rowtime] or ['proctime], but got ['${orderName}]")
-    }
-
-    if (!overWindow.preceding.asInstanceOf[Literal].resultType.getClass
-         .equals(overWindow.following.asInstanceOf[Literal].resultType.getClass)) {
-      validationResult = ValidationFailure(
+    } else if (!preceding.isInstanceOf[Literal]) {
+      // preceding must be a Literal type.
+      ValidationFailure("Proceeding must be Literal type.")
+    } else if (!following.isInstanceOf[Literal]) {
+      // following must be a Literal type.
+      ValidationFailure("Following must be Literal type.")
+    } else if (!preceding.asInstanceOf[Literal].resultType.getClass
+                .equals(following.asInstanceOf[Literal].resultType.getClass)) {
+      // preceding and following must be based on same intervals type.
+      ValidationFailure(
         "Proceeding and the following must be based on same intervals type (time or row-count).")
+    } else if (preceding.asInstanceOf[Literal].value.asInstanceOf[Long] <= 0) {
+      // preceding value must be > 0.
+      ValidationFailure(
+        s"Proceeding value is [${preceding.asInstanceOf[Literal].value}], It " +
+        s"should be bigger than 0.")
+    } else if (following.asInstanceOf[Literal].value.asInstanceOf[Long] < -1) {
+      // following value must be >= -1.(because CURRENT_RANGE = -1)
+      ValidationFailure(
+        s"Following value is [${following.asInstanceOf[Literal].value}], It " +
+        s"should be bigger than -1.")
+    } else {
+      ValidationSuccess
     }
-
-    val precedingValue = overWindow.preceding.asInstanceOf[Literal].value.asInstanceOf[Long]
-    if (precedingValue <= 0) {
-      validationResult = ValidationFailure(
-        s"Proceeding value is [${precedingValue}], It should be bigger than 0.")
-    }
-
-    val followingValue = overWindow.following.asInstanceOf[Literal].value.asInstanceOf[Long]
-    if (followingValue < -1) {
-      validationResult = ValidationFailure(
-        s"Following value is [${followingValue}], It should be bigger than -1.")
-    }
-    validationResult
   }
 }
 
