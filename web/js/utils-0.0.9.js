@@ -25,17 +25,17 @@
 
 /**
  * Spaces plugin.
- * 
+ *
  * Inserts a dummy space between line number and the text so that on copy-paste
  * the white space is preserved.
- * 
+ *
  * Internally listens on scroll events and autofills the spaces only for the visible
  * elements.
- * 
+ *
  * IMPORTANT: This plugin is strictly dependent on ascending order of lines
  * and on their attribute "name". It performs a binary search which boosts performance
  * of this plugin for really long files.
- * 
+ *
  * @author Krystof Tulinger
  */
 (function (w, $) {
@@ -77,12 +77,12 @@
             },
             handleScrollEvent: function () {
                 inner.lock = false;
-                
+
                 var myOffset = inner.$collection.first().offset() ? inner.$collection.first().offset().top : 0
                 var myHeight = inner.$collection.first().height() || 0
                 var parentOffset = inner.options.$parent.offset() ? inner.options.$parent.offset().top : 0
                 var parentHeight = inner.options.$parent.height() || 0
-                
+
                 var expectations = {
                     // the first element in viewport
                     start: Math.floor(
@@ -97,7 +97,7 @@
                                 ) + parentHeight
                             ) / myHeight
                          ),
-                    
+
                 };
 
                 var indices = {
@@ -164,7 +164,7 @@
 })(window, window.jQuery);
 
 (function(window, $) {
-   
+
     var hash = function () {
         var inner = {
             self: this,
@@ -195,14 +195,14 @@
                         if(l.length == 2) {
                             window.location.hash = "#" + Math.min(l[0], val) + "-" + Math.max(val, l[1])
                         } else if ( l.length == 1){
-                            window.location.hash = "#" + Math.min(l[0], val) + "-" + Math.max(l[0], val) 
+                            window.location.hash = "#" + Math.min(l[0], val) + "-" + Math.max(l[0], val)
                         }
                         return false
                     }
                     return true
-                })                    
+                })
             },
-            
+
             getHashParts: function (hash) {
                 if(!hash || hash == "")
                     return hash;
@@ -233,7 +233,7 @@
                 }
                 return [];
             },
-        
+
 
             reload: function(e){
                 for ( var i = 0; i < inner.highlighted.length; i ++ ) {
@@ -255,14 +255,14 @@
                                                                                   "n": lines[i] } );
                     var el = $(slc).addClass(inner.options.highlightedClass)
                     inner.highlighted.push(el)
-                }                   
+                }
             },
             format: function(format) {
                 var args = Array.prototype.slice.call(arguments, 1);
                 args = args.length > 0 ? typeof args[0] === "object" ? args[0] : args : args;
                 return format.replace(/{([a-zA-Z0-9_-]+)}/g, function(match, number) {
                   return typeof args[number] != 'undefined'
-                    ? args[number] 
+                    ? args[number]
                     : match
                   ;
                 });
@@ -273,7 +273,7 @@
             scroll: function (){
                 if(!inner.options.autoScroll)
                     return
-   
+
                 var lines = inner.getLinesParts(window.location.hash);
                 if(lines.length > 0) {
                    var line = lines[0] // first line
@@ -288,16 +288,16 @@
             tooltip: function() {
                 if(!inner.options.tooltip)
                     return
-                
-                inner.$tooltip = inner.$tooltip ? 
+
+                inner.$tooltip = inner.$tooltip ?
                                     inner.$tooltip :
                                     $("<div>Did you know? You can select a range of lines<br /> by clicking on the other while holding shift key.</div>")
                                     .appendTo($("body"))
                                     .hide()
                                     .addClass("tooltip")
                                     .addClass("diff_navigation_style")
-                
-                
+
+
                 $(inner.format(inner.options.clickSelector, {parent: inner.options.parent}))
                 .click(function(e) {
                     if(!inner.options.tooltip)
@@ -310,35 +310,35 @@
                             .stop()
                             .fadeIn()
                             .fadeOut( 5000 )
-                            .offset({ 
-                                top: $el.offset().top + 20, 
-                                left: $el.offset().left + $el.width() + 5 
+                            .offset({
+                                top: $el.offset().top + 20,
+                                left: $el.offset().left + $el.width() + 5
                             });
                    }, 300);
                    inner.options.tooltip = false;
                 })
             }
         } // inner
-        
+
         this.init = function (options) {
             if ( inner.initialized ) {
                 return this;
             }
 
             inner.options = $.extend(inner.defaults, options, {})
-            
+
             $(window).on("hashchange", inner.reload)
-            
+
             inner.reload()
-            
+
             inner.tooltip()
-            
+
             inner.bindClickHandler()
-            
+
             inner.scroll()
 
             inner.initialized = true
-            
+
             return this;
         }
     }
@@ -709,7 +709,7 @@
 
 /**
  * Intelligence window plugin.
- * 
+ *
  * Reworked to use Jquery in 2016
  */
 (function (browserWindow, document, $, $window) {
@@ -971,7 +971,7 @@
         console.log("The messagesWindow plugin requires $.window plugin")
         return;
     }
-    
+
     var messagesWindow = function () {
         this.init = function (options, context) {
             return $.messagesWindow = $window.create(options = $.extend({
@@ -1076,7 +1076,7 @@
                             return $toReturn;
                         }
                     });
-                    
+
                     $('.scopes-toggle').click(function () {
                         $window.toggle();
                         return false;
@@ -1286,6 +1286,23 @@ function init_searchable_option_list() {
                         .css('top', Math.floor(posY))
                         .css('left', Math.floor(this.$container.offset().left))
                         .css('width', selectionContainerWidth);
+            },
+            onRendered: function () {
+                /**
+                 * Has to be here because otherwise the offset()
+                 * takes the original long &lt;select&gt; box and the max-height
+                 * does not work then.
+                 */
+                $('#type').searchableOptionList({
+                    texts: {
+                        searchplaceholder: 'Click here to restrict the file type'
+                    },
+                    maxHeight: $('#type').offset().top + 'px',
+                    /**
+                     * Defined in menu.jsp just next to the original &lt;select&gt;
+                     */
+                    resultsContainer: $("#type-select-container"),
+                });
             }
         }
     };
