@@ -42,6 +42,8 @@ import org.apache.flink.optimizer.plandump.PlanJSONDumpGenerator;
 import org.apache.flink.runtime.akka.AkkaUtils;
 import org.apache.flink.runtime.akka.FlinkUntypedActor;
 import org.apache.flink.api.common.JobID;
+import org.apache.flink.runtime.clusterframework.messages.GetClusterStatus;
+import org.apache.flink.runtime.clusterframework.messages.GetClusterStatusResponse;
 import org.apache.flink.runtime.highavailability.HighAvailabilityServices;
 import org.apache.flink.runtime.jobmanager.JobManager;
 import org.apache.flink.runtime.messages.JobManagerMessages;
@@ -309,7 +311,11 @@ public class ClientTest extends TestLogger {
 
 		@Override
 		public void handleMessage(Object message) {
-			if (message instanceof JobManagerMessages.SubmitJob) {
+			if (message instanceof GetClusterStatus) {
+							getSender().tell(
+								decorateMessage(new GetClusterStatusResponse(1, 1)),
+								getSelf());
+			} else if (message instanceof JobManagerMessages.SubmitJob) {
 				JobID jid = ((JobManagerMessages.SubmitJob) message).jobGraph().getJobID();
 				getSender().tell(
 						decorateMessage(new JobManagerMessages.JobSubmitSuccess(jid)),
@@ -339,10 +345,16 @@ public class ClientTest extends TestLogger {
 
 		@Override
 		public void handleMessage(Object message) {
-			getSender().tell(
+			if (message instanceof GetClusterStatus) {
+				getSender().tell(
+					decorateMessage(new GetClusterStatusResponse(1, 1)),
+					getSelf());
+			} else {
+				getSender().tell(
 					decorateMessage(new JobManagerMessages.JobResultFailure(
 							new SerializedThrowable(new Exception("test")))),
 					getSelf());
+			}
 		}
 
 		@Override
