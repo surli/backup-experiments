@@ -1,24 +1,56 @@
 {
+  "pr-base-commit-id": "0b95ccb90a7ef10039ca9941e4297aa90b2a0615",
+  "totalNumberSkippingTests": 17,
+  "pr-head-commit-id": "17551346d6ce0207690107a59523fd7ec9256986",
+  "pr-remote-repo": "markap14/nifi",
+  "error-types": [
+    "java.io.IOException"
+  ],
+  "totalNumberFailingTests": 0,
+  "buildid": 224428593,
+  "totalNumberErroringTests": 2,
+  "freeMemory": 301043144,
+  "hostname": "repairnator",
+  "is-pr": "true",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 763,
+  "pr-head-commit-id-url": "https://github.com/markap14/nifi/commit/17551346d6ce0207690107a59523fd7ec9256986",
+  "pr-id": 1682,
+  "repo": "apache/nifi",
+  "failing-test-cases": [
+    {
+      "className": "org.apache.nifi.controller.state.providers.zookeeper.TestZooKeeperStateProvider",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.nifi.controller.state.providers.zookeeper.TestZooKeeperStateProvider#testToMap"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Failed to obtain value from ZooKeeper for component with ID 111111111-1111-1111-1111-111111111111 with exception code CONNECTIONLOSS",
+          "isError": true
+        },
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Unable to remove state for component with ID \u0027111111111-1111-1111-1111-111111111111 with exception code CONNECTIONLOSS",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 5,
     "CloneRepository": 27,
     "ResolveDependency": 25,
     "TestProject": 354,
-    "BuildProject": 767
+    "BuildProject": 767,
+    "GatherTestInformation": 26
   },
-  "totalMemory": 413663232,
-  "bugType": "only_fail",
   "workspace": "./workspace",
-  "pr-remote-repo": "markap14/nifi",
-  "pr-head-commit-id": "17551346d6ce0207690107a59523fd7ec9256986",
-  "pr-id": 1682,
-  "repo": "apache/nifi",
-  "freeMemory": 301043144,
-  "pr-head-commit-id-url": "https://github.com/markap14/nifi/commit/17551346d6ce0207690107a59523fd7ec9256986",
-  "hostname": "repairnator",
-  "is-pr": "true",
-  "buildid": 224428593,
-  "nbCPU": 4,
   "pr-base-commit-id-url": "https://github.com/apache/nifi/commit/0b95ccb90a7ef10039ca9941e4297aa90b2a0615",
-  "pr-base-commit-id": "0b95ccb90a7ef10039ca9941e4297aa90b2a0615"
+  "totalMemory": 413663232,
+  "nbCPU": 4,
+  "failingModule": "/root/workspace/apache/nifi/224428593/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-framework-core"
 }
