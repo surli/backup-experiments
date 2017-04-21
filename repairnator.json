@@ -1,24 +1,57 @@
 {
+  "pr-base-commit-id": "ad318c24fdd33ed36bea570d1ce0e42c0aef32d3",
+  "totalNumberSkippingTests": 0,
+  "pr-head-commit-id": "2ec85d7f0b3942bd343fa0ff247ee91dbdecb84c",
+  "pr-remote-repo": "Teradata/presto",
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberFailingTests": 2,
+  "buildid": 224408978,
+  "totalNumberErroringTests": 0,
+  "freeMemory": 381572664,
+  "hostname": "repairnator",
+  "is-pr": "true",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 3056,
+  "pr-head-commit-id-url": "https://github.com/Teradata/presto/commit/2ec85d7f0b3942bd343fa0ff247ee91dbdecb84c",
+  "pr-id": 7696,
+  "repo": "prestodb/presto",
+  "failing-test-cases": [
+    {
+      "className": "com.facebook.presto.sql.planner.optimizations.TestEliminateSorts",
+      "failingMethods": [
+        "com.facebook.presto.sql.planner.optimizations.TestEliminateSorts#testEliminateSorts",
+        "com.facebook.presto.sql.planner.optimizations.TestEliminateSorts#testNotEliminateSorts"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Plan does not match, expected [\n\nnode(OutputNode)\n    node(WindowNode)\n        WindowMatcher{specification\u003dSpecificationProvider{partitionBy\u003d[], orderBy\u003d[QUANTITY], orderings\u003d{QUANTITY\u003dASC_NULLS_LAST}}}\n        bind Optional.empty -\u003e row_number () \n        anyTree\n            node(TableScanNode)\n                TableScanMatcher{expectedTableName\u003dlineitem}\n                bind Optional[QUANTITY] -\u003e Column lineitem:quantity\n\n] but found [\n\n- Output[quantity, _col1] \u003d\u003e [quantity:double, row_number_1:bigint]\n        _col1 :\u003d row_number_1\n    - RemoteExchange[GATHER] \u003d\u003e quantity:double, row_number_1:bigint\n        - PartialSort[quantity ASC_NULLS_LAST] \u003d\u003e [quantity:double, row_number_1:bigint]\n            - RemoteExchange[REPARTITION] \u003d\u003e quantity:double, row_number_1:bigint\n                - Window[order by (quantity ASC_NULLS_LAST)] \u003d\u003e [quantity:double, row_number_1:bigint]\n                        row_number_1 :\u003d row_number() \n                    - RemoteExchange[GATHER] \u003d\u003e quantity:double\n                        - TableScan[local:tpch:lineitem:sf0.01, originalConstraint \u003d true] \u003d\u003e [quantity:double]\n                                quantity :\u003d tpch:quantity\n\n]",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Plan does not match, expected [\n\nanyTree\n    node(SortNode)\n        node(WindowNode)\n            WindowMatcher{specification\u003dSpecificationProvider{partitionBy\u003d[], orderBy\u003d[QUANTITY], orderings\u003d{QUANTITY\u003dASC_NULLS_LAST}}}\n            bind Optional.empty -\u003e row_number () \n            anyTree\n                node(TableScanNode)\n                    TableScanMatcher{expectedTableName\u003dlineitem}\n                    bind Optional[QUANTITY] -\u003e Column lineitem:quantity\n\n] but found [\n\n- Output[quantity, _col1] \u003d\u003e [quantity:double, row_number_1:bigint]\n        _col1 :\u003d row_number_1\n    - Project[] \u003d\u003e [quantity:double, row_number_1:bigint]\n        - RemoteExchange[GATHER] \u003d\u003e tax:double, quantity:double, row_number_1:bigint\n            - PartialSort[tax ASC_NULLS_LAST] \u003d\u003e [tax:double, quantity:double, row_number_1:bigint]\n                - RemoteExchange[REPARTITION] \u003d\u003e tax:double, quantity:double, row_number_1:bigint\n                    - Window[order by (quantity ASC_NULLS_LAST)] \u003d\u003e [quantity:double, tax:double, row_number_1:bigint]\n                            row_number_1 :\u003d row_number() \n                        - RemoteExchange[GATHER] \u003d\u003e quantity:double, tax:double\n                            - TableScan[local:tpch:lineitem:sf0.01, originalConstraint \u003d true] \u003d\u003e [quantity:double, tax:double]\n                                    quantity :\u003d tpch:quantity\n                                    tax :\u003d tpch:tax\n\n]",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 36,
     "CloneRepository": 24,
     "ResolveDependency": 143,
     "TestProject": 627,
-    "BuildProject": 729
+    "BuildProject": 729,
+    "GatherTestInformation": 3
   },
-  "totalMemory": 779616256,
-  "bugType": "only_fail",
   "workspace": "./workspace",
-  "pr-remote-repo": "Teradata/presto",
-  "pr-head-commit-id": "2ec85d7f0b3942bd343fa0ff247ee91dbdecb84c",
-  "pr-id": 7696,
-  "repo": "prestodb/presto",
-  "freeMemory": 381572664,
-  "pr-head-commit-id-url": "https://github.com/Teradata/presto/commit/2ec85d7f0b3942bd343fa0ff247ee91dbdecb84c",
-  "hostname": "repairnator",
-  "is-pr": "true",
-  "buildid": 224408978,
-  "nbCPU": 4,
   "pr-base-commit-id-url": "https://github.com/prestodb/presto/commit/ad318c24fdd33ed36bea570d1ce0e42c0aef32d3",
-  "pr-base-commit-id": "ad318c24fdd33ed36bea570d1ce0e42c0aef32d3"
+  "totalMemory": 779616256,
+  "nbCPU": 4,
+  "failingModule": "/root/workspace/prestodb/presto/224408978/presto-main"
 }
