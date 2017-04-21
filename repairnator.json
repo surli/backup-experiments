@@ -1,24 +1,67 @@
 {
+  "pr-base-commit-id": "83061ad0f34ab158b6aa7924bba1aa35695817f4",
+  "totalNumberSkippingTests": 0,
+  "pr-head-commit-id": "49baebb1bcc71bd36888cf6ff6b0223a961197e7",
+  "pr-remote-repo": "sunjincheng121/flink",
+  "error-types": [
+    "java.lang.AssertionError:",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberFailingTests": 2,
+  "buildid": 224380953,
+  "totalNumberErroringTests": 0,
+  "freeMemory": 468925416,
+  "hostname": "repairnator",
+  "is-pr": "true",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 2159,
+  "pr-head-commit-id-url": "https://github.com/sunjincheng121/flink/commit/49baebb1bcc71bd36888cf6ff6b0223a961197e7",
+  "pr-id": 3743,
+  "repo": "apache/flink",
+  "failing-test-cases": [
+    {
+      "className": "org.apache.flink.core.fs.local.LocalFileSystemTest",
+      "failingMethods": [
+        "org.apache.flink.core.fs.local.LocalFileSystemTest#testRenameFileWithNoAccess"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError:",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.flink.util.FileUtilsTest",
+      "failingMethods": [
+        "org.apache.flink.util.FileUtilsTest#testDeleteDirectory"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "this should fail with an exception",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 5,
     "CloneRepository": 34,
     "ResolveDependency": 115,
     "TestProject": 36,
-    "BuildProject": 922
+    "BuildProject": 922,
+    "GatherTestInformation": 0
   },
-  "totalMemory": 584056832,
-  "bugType": "only_fail",
   "workspace": "./workspace",
-  "pr-remote-repo": "sunjincheng121/flink",
-  "pr-head-commit-id": "49baebb1bcc71bd36888cf6ff6b0223a961197e7",
-  "pr-id": 3743,
-  "repo": "apache/flink",
-  "freeMemory": 468925416,
-  "pr-head-commit-id-url": "https://github.com/sunjincheng121/flink/commit/49baebb1bcc71bd36888cf6ff6b0223a961197e7",
-  "hostname": "repairnator",
-  "is-pr": "true",
-  "buildid": 224380953,
-  "nbCPU": 4,
   "pr-base-commit-id-url": "https://github.com/apache/flink/commit/83061ad0f34ab158b6aa7924bba1aa35695817f4",
-  "pr-base-commit-id": "83061ad0f34ab158b6aa7924bba1aa35695817f4"
+  "totalMemory": 584056832,
+  "nbCPU": 4,
+  "failingModule": "/root/workspace/apache/flink/224380953/flink-core"
 }
