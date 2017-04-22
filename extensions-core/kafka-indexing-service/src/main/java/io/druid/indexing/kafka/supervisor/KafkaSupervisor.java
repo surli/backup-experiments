@@ -1735,13 +1735,13 @@ public class KafkaSupervisor implements Supervisor
                           offsetsResponse.compute(partitionOffsets.getKey(), new BiFunction<Integer, Long, Long>()
                           {
                             @Override
-                            public Long apply(Integer key, Long exitingOffsetInMap)
+                            public Long apply(Integer key, Long existingOffsetInMap)
                             {
                               // If existing value is null use the offset returned by task
                               // otherwise use the max (makes sure max offset is taken from replicas)
-                              return exitingOffsetInMap == null
+                              return existingOffsetInMap == null
                                      ? partitionOffsets.getValue()
-                                     : Math.max(partitionOffsets.getValue(), exitingOffsetInMap);
+                                     : Math.max(partitionOffsets.getValue(), existingOffsetInMap);
                             }
                           });
                         }
@@ -1752,12 +1752,13 @@ public class KafkaSupervisor implements Supervisor
               );
             }
           }
-          Futures.successfulAsList(futures).get(2000, TimeUnit.MILLISECONDS);
+          // not using futureTimeoutInSeconds as its min value is 120 seconds and this metric is emitted every minute
+          Futures.successfulAsList(futures).get(30, TimeUnit.SECONDS);
 
           // for each partition, seek to end to get the highest offset
-          // check the offsetsResponse map to get the latest consumed offset
-          // if not partition info not present in offsetsResponse then use lastCurrentOffsets map
-          // if not present in lastCurrentOffsets fail the compute
+          // check the offsetsResponse map for the latest consumed offset
+          // if partition info not present in offsetsResponse then use lastCurrentOffsets map
+          // if not present there as well, fail the compute
 
           long lag = 0;
           for (PartitionInfo partitionInfo : partitionInfoList) {
