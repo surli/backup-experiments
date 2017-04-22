@@ -271,19 +271,19 @@ class ImportControl {
      * @param inPkg the package doing the import.
      * @return an {@link AccessResult}.
      */
-    private AccessResult localCheckAccess(final String inPkg,
-        final String forImport) {
-        for (AbstractImportRule r : rules) {
+    private AccessResult localCheckAccess(final String inPkg, final String forImport) {
+        AccessResult localCheckAccessResult = AccessResult.UNKNOWN;
+        for (AbstractImportRule importRule : rules) {
             // Check if an import rule is only meant to be applied locally.
-            if (r.isLocalOnly() && !matchesExactly(inPkg)) {
+            if (importRule.isLocalOnly() && !matchesExactly(inPkg)) {
                 continue;
             }
-            final AccessResult result = r.verifyImport(forImport);
+            final AccessResult result = importRule.verifyImport(forImport);
             if (result != AccessResult.UNKNOWN) {
-                return result;
+                localCheckAccessResult = result;
             }
         }
-        return AccessResult.UNKNOWN;
+        return localCheckAccessResult;
     }
 
     /**
