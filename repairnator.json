@@ -1,24 +1,87 @@
 {
+  "pr-base-commit-id": "723a855ab95bacb661084225af7a39b2994230e6",
+  "totalNumberSkippingTests": 62,
+  "pr-head-commit-id": "7a35b71e14d558d422ed647734b7306e69b5b150",
+  "pr-remote-repo": "jihoonson/druid",
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberFailingTests": 4,
+  "buildid": 224602844,
+  "totalNumberErroringTests": 0,
+  "freeMemory": 153972864,
+  "hostname": "repairnator",
+  "is-pr": "true",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 27420,
+  "pr-head-commit-id-url": "https://github.com/jihoonson/druid/commit/7a35b71e14d558d422ed647734b7306e69b5b150",
+  "pr-id": 4118,
+  "repo": "druid-io/druid",
+  "failing-test-cases": [
+    {
+      "className": "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest",
+      "failingMethods": [
+        "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest#testRetryAllFail",
+        "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest#testRetrySuccessAtSecondLocation"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.segment.loading.LocalDataSegmentPusherTest",
+      "failingMethods": [
+        "io.druid.segment.loading.LocalDataSegmentPusherTest#testPushCannotCreateDirectory"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected test to throw (an instance of java.io.IOException and exception with message a string containing \"Unable to create directory\")",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.query.lookup.LookupSnapshotTakerTest",
+      "failingMethods": [
+        "io.druid.query.lookup.LookupSnapshotTakerTest#testIOExceptionDuringLookupPersist"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected exception: io.druid.java.util.common.ISE",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 4,
     "CloneRepository": 34,
     "ResolveDependency": 15,
     "TestProject": 719,
-    "BuildProject": 351
+    "BuildProject": 351,
+    "GatherTestInformation": 0
   },
-  "totalMemory": 341311488,
-  "bugType": "only_fail",
   "workspace": "./workspace",
-  "pr-remote-repo": "jihoonson/druid",
-  "pr-head-commit-id": "7a35b71e14d558d422ed647734b7306e69b5b150",
-  "pr-id": 4118,
-  "repo": "druid-io/druid",
-  "freeMemory": 153972864,
-  "pr-head-commit-id-url": "https://github.com/jihoonson/druid/commit/7a35b71e14d558d422ed647734b7306e69b5b150",
-  "hostname": "repairnator",
-  "is-pr": "true",
-  "buildid": 224602844,
-  "nbCPU": 4,
   "pr-base-commit-id-url": "https://github.com/druid-io/druid/commit/723a855ab95bacb661084225af7a39b2994230e6",
-  "pr-base-commit-id": "723a855ab95bacb661084225af7a39b2994230e6"
+  "totalMemory": 341311488,
+  "nbCPU": 4,
+  "failingModule": "/root/workspace/druid-io/druid/224602844/server"
 }
