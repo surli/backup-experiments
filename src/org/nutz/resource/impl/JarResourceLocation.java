@@ -1,6 +1,5 @@
 package org.nutz.resource.impl;
 
-import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +13,6 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.regex.Pattern;
 
-import org.nutz.lang.Streams;
 import org.nutz.resource.NutResource;
 
 public class JarResourceLocation extends ResourceLocation {
@@ -39,11 +37,11 @@ public class JarResourceLocation extends ResourceLocation {
                     public InputStream getInputStream() throws IOException {
                         return new URL(uriJarPrefix(uri,"!/" + ensName)).openStream();
                     }
-                    
+
                     public int hashCode() {
                         return (id() + ":" + ensName).hashCode();
                     }
-                    
+
                     public String toString() {
                         return uriJarPrefix(uri, "!/" + ensName);
                     }
