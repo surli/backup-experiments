@@ -1,24 +1,51 @@
 {
+  "pr-base-commit-id": "723a855ab95bacb661084225af7a39b2994230e6",
+  "totalNumberSkippingTests": 0,
+  "pr-head-commit-id": "f68be6b68494cafbd19ca561523bca0c008ceebb",
+  "pr-remote-repo": "fjy/druid",
+  "error-types": [
+    "java.lang.Exception"
+  ],
+  "totalNumberFailingTests": 0,
+  "buildid": 225012908,
+  "totalNumberErroringTests": 1,
+  "freeMemory": 101119504,
+  "hostname": "repairnator",
+  "is-pr": "true",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 212,
+  "pr-head-commit-id-url": "https://github.com/fjy/druid/commit/f68be6b68494cafbd19ca561523bca0c008ceebb",
+  "pr-id": 4198,
+  "repo": "druid-io/druid",
+  "failing-test-cases": [
+    {
+      "className": "io.druid.data.input.impl.DelimitedParseSpecTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.druid.data.input.impl.DelimitedParseSpecTest#testDefaultColumnList"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.NullPointerException\u003e but was\u003cjava.lang.IllegalArgumentException\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 4,
     "CloneRepository": 28,
     "ResolveDependency": 14,
     "TestProject": 16,
-    "BuildProject": 324
+    "BuildProject": 324,
+    "GatherTestInformation": 0
   },
-  "totalMemory": 344457216,
-  "bugType": "only_fail",
   "workspace": "./workspace",
-  "pr-remote-repo": "fjy/druid",
-  "pr-head-commit-id": "f68be6b68494cafbd19ca561523bca0c008ceebb",
-  "pr-id": 4198,
-  "repo": "druid-io/druid",
-  "freeMemory": 101119504,
-  "pr-head-commit-id-url": "https://github.com/fjy/druid/commit/f68be6b68494cafbd19ca561523bca0c008ceebb",
-  "hostname": "repairnator",
-  "is-pr": "true",
-  "buildid": 225012908,
-  "nbCPU": 4,
   "pr-base-commit-id-url": "https://github.com/druid-io/druid/commit/723a855ab95bacb661084225af7a39b2994230e6",
-  "pr-base-commit-id": "723a855ab95bacb661084225af7a39b2994230e6"
+  "totalMemory": 344457216,
+  "nbCPU": 4,
+  "failingModule": "/root/workspace/druid-io/druid/225012908/api"
 }
