@@ -58,7 +58,6 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
 import static org.apache.nifi.processors.hive.PutHiveStreaming.HIVE_STREAMING_RECORD_COUNT_ATTR;
-import static org.apache.nifi.processors.hive.PutHiveStreaming.REL_FAILURE;
 import static org.apache.nifi.processors.hive.PutHiveStreaming.REL_SUCCESS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

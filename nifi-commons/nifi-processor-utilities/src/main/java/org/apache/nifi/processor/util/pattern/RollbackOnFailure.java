@@ -19,6 +19,7 @@ package org.apache.nifi.processor.util.pattern;
 import org.apache.nifi.components.PropertyDescriptor;
 import org.apache.nifi.flowfile.FlowFile;
 import org.apache.nifi.logging.ComponentLog;
+import org.apache.nifi.processor.ProcessSessionFactory;
 import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
 import org.apache.nifi.processor.util.StandardValidators;
@@ -167,6 +168,18 @@ public class RollbackOnFailure {
             if (context.shouldDiscontinue()) {
                 throw new DiscontinuedException("Discontinue processing due to " + e, e);
             }
+        });
+    }
+
+    public static <FCT extends RollbackOnFailure> void onTrigger(
+            ProcessSessionFactory sessionFactory, FCT functionContext, ComponentLog logger,
+            PartialFunctions.OnTrigger onTrigger) throws ProcessException {
+
+        PartialFunctions.onTrigger(sessionFactory, logger, onTrigger, (session, t) -> {
+            // If RollbackOnFailure is enabled, do not penalize processing FlowFiles when rollback,
+            // in order to keep those in the incoming relationship to be processed again.
+            final boolean shouldPenalize = !functionContext.isRollbackOnFailure();
+            session.rollback(shouldPenalize);
         });
     }
 

@@ -31,10 +31,11 @@ import org.apache.nifi.components.PropertyDescriptor;
 import org.apache.nifi.dbcp.DBCPService;
 import org.apache.nifi.flowfile.FlowFile;
 import org.apache.nifi.flowfile.attributes.FragmentAttributes;
-import org.apache.nifi.processor.AbstractProcessor;
+import org.apache.nifi.processor.AbstractSessionFactoryProcessor;
 import org.apache.nifi.processor.FlowFileFilter;
 import org.apache.nifi.processor.ProcessContext;
 import org.apache.nifi.processor.ProcessSession;
+import org.apache.nifi.processor.ProcessSessionFactory;
 import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
 import org.apache.nifi.processor.io.InputStreamCallback;
@@ -119,7 +120,7 @@ import static org.apache.nifi.processor.util.pattern.ExceptionHandler.createOnEr
         @WritesAttribute(attribute = "sql.generated.key", description = "If the database generated a key for an INSERT statement and the Obtain Generated Keys property is set to true, "
                 + "this attribute will be added to indicate the generated key, if possible. This feature is not supported by all database vendors.")
 })
-public class PutSQL extends AbstractProcessor {
+public class PutSQL extends AbstractSessionFactoryProcessor {
 
     static final PropertyDescriptor CONNECTION_POOL = new PropertyDescriptor.Builder()
             .name("JDBC Connection Pool")
@@ -536,15 +537,12 @@ public class PutSQL extends AbstractProcessor {
     }
 
     @Override
-    public void onTrigger(final ProcessContext context, final ProcessSession session) throws ProcessException {
-
+    public void onTrigger(ProcessContext context, ProcessSessionFactory sessionFactory) throws ProcessException {
         final Boolean rollbackOnFailure = context.getProperty(RollbackOnFailure.ROLLBACK_ON_FAILURE).asBoolean();
         final FunctionContext functionContext = new FunctionContext(rollbackOnFailure);
         functionContext.obtainKeys = context.getProperty(OBTAIN_GENERATED_KEYS).asBoolean();
-
-        process.onTrigger(context, session, functionContext);
+        RollbackOnFailure.onTrigger(sessionFactory, functionContext, getLogger(), session -> process.onTrigger(context, session, functionContext));
     }
-
 
     /**
      * Pulls a batch of FlowFiles from the incoming queues. If no FlowFiles are available, returns <code>null</code>.
