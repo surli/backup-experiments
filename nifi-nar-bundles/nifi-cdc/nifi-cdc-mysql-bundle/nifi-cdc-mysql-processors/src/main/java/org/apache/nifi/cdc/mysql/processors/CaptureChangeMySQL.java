@@ -263,6 +263,17 @@ public class CaptureChangeMySQL extends AbstractSessionFactoryProcessor {
             .addValidator(StandardValidators.BOOLEAN_VALIDATOR)
             .build();
 
+    public static final PropertyDescriptor INCLUDE_SCHEMA_CHANGES = new PropertyDescriptor.Builder()
+            .name("capture-change-mysql-include-schema-changes")
+            .displayName("Include Schema Change Events")
+            .description("Specifies whether to emit events corresponding to a schema change event (ALTER TABLE, e.g.) in the binary log. Set to true if the schema change events are "
+                    + "desired/necessary in the downstream flow, otherwise set to false, which suppresses generation of these events and can increase flow performance.")
+            .required(true)
+            .allowableValues("true", "false")
+            .defaultValue("false")
+            .addValidator(StandardValidators.BOOLEAN_VALIDATOR)
+            .build();
+
     public static final PropertyDescriptor STATE_UPDATE_INTERVAL = new PropertyDescriptor.Builder()
             .name("capture-change-mysql-state-update-interval")
             .displayName("State Update Interval")
@@ -331,6 +342,7 @@ public class CaptureChangeMySQL extends AbstractSessionFactoryProcessor {
     private volatile TableInfo currentTable = null;
     private volatile Pattern databaseNamePattern;
     private volatile Pattern tableNamePattern;
+    private volatile boolean includeSchemaChanges = false;
 
     private volatile boolean inTransaction = false;
     private volatile boolean skipTable = false;
@@ -376,6 +388,7 @@ public class CaptureChangeMySQL extends AbstractSessionFactoryProcessor {
         pds.add(CONNECT_TIMEOUT);
         pds.add(DIST_CACHE_CLIENT);
         pds.add(RETRIEVE_ALL_RECORDS);
+        pds.add(INCLUDE_SCHEMA_CHANGES);
         pds.add(STATE_UPDATE_INTERVAL);
         pds.add(INIT_SEQUENCE_ID);
         pds.add(INIT_BINLOG_FILENAME);
@@ -419,6 +432,8 @@ public class CaptureChangeMySQL extends AbstractSessionFactoryProcessor {
         stateUpdateInterval = context.getProperty(STATE_UPDATE_INTERVAL).evaluateAttributeExpressions().asTimePeriod(TimeUnit.MILLISECONDS);
 
         boolean getAllRecords = context.getProperty(RETRIEVE_ALL_RECORDS).asBoolean();
+
+        includeSchemaChanges = context.getProperty(INCLUDE_SCHEMA_CHANGES).asBoolean();
 
         // Set current binlog filename to whatever is in State, falling back to the Retrieve All Records then Initial Binlog Filename if no State variable is present
         currentBinlogFile = stateMap.get(BinlogEventInfo.BINLOG_FILENAME_KEY);
@@ -763,10 +778,14 @@ public class CaptureChangeMySQL extends AbstractSessionFactoryProcessor {
                         if (normalizedQuery.startsWith("alter table")
                                 || normalizedQuery.startsWith("alter ignore table")
                                 || normalizedQuery.startsWith("create table")
+                                || normalizedQuery.startsWith("truncate table")
                                 || normalizedQuery.startsWith("drop table")
                                 || normalizedQuery.startsWith("drop database")) {
-                            SchemaChangeEventInfo schemaChangeEvent = new SchemaChangeEventInfo(currentTable, timestamp, currentBinlogFile, currentBinlogPosition, normalizedQuery);
-                            currentSequenceId.set(schemaChangeEventWriter.writeEvent(currentSession, transitUri, schemaChangeEvent, currentSequenceId.get(), REL_SUCCESS));
+
+                            if (includeSchemaChanges) {
+                                SchemaChangeEventInfo schemaChangeEvent = new SchemaChangeEventInfo(currentTable, timestamp, currentBinlogFile, currentBinlogPosition, normalizedQuery);
+                                currentSequenceId.set(schemaChangeEventWriter.writeEvent(currentSession, transitUri, schemaChangeEvent, currentSequenceId.get(), REL_SUCCESS));
+                            }
                             // Remove all the keys from the cache that this processor added
                             if (cacheClient != null) {
                                 cacheClient.removeByPattern(this.getIdentifier() + ".*");
