@@ -1,19 +1,46 @@
 {
+  "totalNumberSkippingTests": 0,
+  "error-types": [
+    "java.util.concurrent.ExecutionException"
+  ],
+  "totalNumberFailingTests": 0,
+  "buildid": 225350466,
+  "totalNumberErroringTests": 1,
+  "freeMemory": 172108224,
+  "hostname": "repairnator",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 1124,
+  "repo": "apache/httpcore",
+  "failing-test-cases": [
+    {
+      "className": "org.apache.hc.core5.testing.nio.Http2IntegrationTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.hc.core5.testing.nio.Http2IntegrationTest#testSlowResponseProducer[HTTP]"
+      ],
+      "failures": [
+        {
+          "failureName": "java.util.concurrent.ExecutionException",
+          "failureDetail": "org.apache.hc.core5.http2.H2StreamResetException: Connection terminated by the peer",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 0,
     "CloneRepository": 8,
     "ResolveDependency": 13,
     "TestProject": 109,
-    "BuildProject": 48
+    "BuildProject": 48,
+    "GatherTestInformation": 0
   },
-  "totalMemory": 250085376,
-  "bugType": "only_fail",
-  "workspace": "./workspace",
-  "repo": "apache/httpcore",
-  "freeMemory": 172108224,
   "bugCommit": "https://github.com/apache/httpcore/compare/4c3fd51a05de...6f1173c36816",
-  "buildid": 225350466,
-  "hostname": "repairnator",
+  "workspace": "./workspace",
+  "totalMemory": 250085376,
+  "bugRepo": "apache/httpcore",
   "nbCPU": 4,
-  "bugRepo": "apache/httpcore"
+  "failingModule": "/root/workspace/apache/httpcore/225350466/httpcore5-testing"
 }
