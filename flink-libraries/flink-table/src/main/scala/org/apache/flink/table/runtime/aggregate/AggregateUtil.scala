@@ -1226,7 +1226,12 @@ object AggregateUtil {
         case unSupported: SqlAggFunction =>
           throw new TableException("unsupported Function: " + unSupported.getName)
       }
+
+      if (aggregateCall.isDistinct) {
+        aggregates(index) = new DistinctAggFunction(aggregates(index))
+      }
     }
+
 
     (aggFieldIndexes, aggregates)
   }
