@@ -17,8 +17,10 @@
 package org.apache.nifi.processor.util.pattern;
 
 import org.apache.nifi.flowfile.FlowFile;
+import org.apache.nifi.logging.ComponentLog;
 import org.apache.nifi.processor.ProcessContext;
 import org.apache.nifi.processor.ProcessSession;
+import org.apache.nifi.processor.ProcessSessionFactory;
 import org.apache.nifi.processor.exception.ProcessException;
 
 import java.util.List;
@@ -85,4 +87,36 @@ public class PartialFunctions {
                 -> session.transfer(routedFlowFiles, relationship)));
     }
 
+    @FunctionalInterface
+    public interface OnTrigger {
+        void execute(ProcessSession session) throws ProcessException;
+    }
+
+    @FunctionalInterface
+    public interface RollbackSession {
+        void rollback(ProcessSession session, Throwable t);
+    }
+
+    /**
+     * <p>This method is identical to what {@link org.apache.nifi.processor.AbstractProcessor#onTrigger(ProcessContext, ProcessSession)} does.</p>
+     * <p>Create a session from ProcessSessionFactory and execute specified onTrigger function, and commit the session if onTrigger finishes successfully.</p>
+     * <p>When an Exception is thrown during execution of the onTrigger, the session will be rollback. FlowFiles being processed will be penalized.</p>
+     */
+    public static void onTrigger(ProcessSessionFactory sessionFactory, ComponentLog logger, OnTrigger onTrigger) throws ProcessException {
+        onTrigger(sessionFactory, logger, onTrigger, (session, t) -> session.rollback(true));
+    }
+
+    public static void onTrigger(
+            ProcessSessionFactory sessionFactory, ComponentLog logger, OnTrigger onTrigger,
+            RollbackSession rollbackSession) throws ProcessException {
+        final ProcessSession session = sessionFactory.createSession();
+        try {
+            onTrigger.execute(session);
+            session.commit();
+        } catch (final Throwable t) {
+            logger.error("{} failed to process due to {}; rolling back session", new Object[]{onTrigger, t});
+            rollbackSession.rollback(session, t);
+            throw t;
+        }
+    }
 }

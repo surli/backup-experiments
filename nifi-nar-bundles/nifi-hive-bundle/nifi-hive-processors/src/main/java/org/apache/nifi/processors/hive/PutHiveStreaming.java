@@ -45,9 +45,10 @@ import org.apache.nifi.flowfile.FlowFile;
 import org.apache.nifi.hadoop.KerberosProperties;
 import org.apache.nifi.hadoop.SecurityUtil;
 import org.apache.nifi.logging.ComponentLog;
-import org.apache.nifi.processor.AbstractProcessor;
+import org.apache.nifi.processor.AbstractSessionFactoryProcessor;
 import org.apache.nifi.processor.ProcessContext;
 import org.apache.nifi.processor.ProcessSession;
+import org.apache.nifi.processor.ProcessSessionFactory;
 import org.apache.nifi.processor.ProcessorInitializationContext;
 import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
@@ -100,7 +101,7 @@ import java.util.regex.Pattern;
                 + "and 'failure' relationships, and contains the number of records from the incoming flow file written successfully and unsuccessfully, respectively.")
 })
 @RequiresInstanceClassLoading
-public class PutHiveStreaming extends AbstractProcessor {
+public class PutHiveStreaming extends AbstractSessionFactoryProcessor {
 
     // Attributes
     public static final String HIVE_STREAMING_RECORD_COUNT_ATTR = "hivestreaming.record.count";
@@ -235,9 +236,11 @@ public class PutHiveStreaming extends AbstractProcessor {
             .defaultValue("10000")
             .build();
 
-    public static final PropertyDescriptor ROLLBACK_ON_FAILURE = RollbackOnFailure.createRollbackOnFailureProperty("NOTE: Even if this is enabled, it is possible" +
-            " that a FlowFile to be routed to failure, when an error occurred after a Hive streaming transaction" +
-            " which is derived from the same input FlowFile is already committed.");
+    public static final PropertyDescriptor ROLLBACK_ON_FAILURE = RollbackOnFailure.createRollbackOnFailureProperty(
+            "NOTE: When an error occurred after a Hive streaming transaction which is derived from the same input FlowFile is already committed," +
+                    " (i.e. a FlowFile contains more records than 'Records per Transaction' and a failure occurred at the 2nd transaction or later)" +
+                    " then the succeeded records will be transferred to 'success' relationship while the original input FlowFile stays in incoming queue." +
+                    " Duplicated records can be created for the succeeded ones when the same FlowFile is processed again.");
 
     // Relationships
     public static final Relationship REL_SUCCESS = new Relationship.Builder()
@@ -374,9 +377,9 @@ public class PutHiveStreaming extends AbstractProcessor {
 
     private static class FunctionContext extends RollbackOnFailure {
 
-        private final FlowFile inputFlowFile;
-        private final AtomicReference<FlowFile> successFlowFile;
-        private final AtomicReference<FlowFile> failureFlowFile;
+        private FlowFile inputFlowFile;
+        private AtomicReference<FlowFile> successFlowFile;
+        private AtomicReference<FlowFile> failureFlowFile;
         private final DataFileWriter<GenericRecord> successAvroWriter = new DataFileWriter<>(new GenericDatumWriter<GenericRecord>());
         private final DataFileWriter<GenericRecord> failureAvroWriter = new DataFileWriter<>(new GenericDatumWriter<GenericRecord>());
 
@@ -397,12 +400,15 @@ public class PutHiveStreaming extends AbstractProcessor {
          * Once a Hive streaming transaction is committed, processor session will not be rolled back.
          * @param rollbackOnFailure whether process session should be rolled back if failed
          */
-        private FunctionContext(boolean rollbackOnFailure, FlowFile inputFlowFile, FlowFile successFlowFile, FlowFile failureFlowFile, ComponentLog logger) {
+        private FunctionContext(boolean rollbackOnFailure, ComponentLog logger) {
             super(rollbackOnFailure, false);
+            this.logger = logger;
+        }
+
+        private void setFlowFiles(FlowFile inputFlowFile, FlowFile successFlowFile, FlowFile failureFlowFile) {
             this.inputFlowFile = inputFlowFile;
             this.successFlowFile = new AtomicReference<>(successFlowFile);
             this.failureFlowFile = new AtomicReference<>(failureFlowFile);
-            this.logger = logger;
         }
 
         private void initAvroWriter(ProcessSession session, String codec, DataFileStream<GenericRecord> reader,
@@ -579,7 +585,12 @@ public class PutHiveStreaming extends AbstractProcessor {
     }
 
     @Override
-    public void onTrigger(ProcessContext context, ProcessSession session) throws ProcessException {
+    public void onTrigger(ProcessContext context, ProcessSessionFactory sessionFactory) throws ProcessException {
+        final FunctionContext functionContext = new FunctionContext(context.getProperty(ROLLBACK_ON_FAILURE).asBoolean(), getLogger());
+        RollbackOnFailure.onTrigger(sessionFactory, functionContext, getLogger(), session -> onTrigger(context, session, functionContext));
+    }
+
+    private void onTrigger(ProcessContext context, ProcessSession session, FunctionContext functionContext) throws ProcessException {
         FlowFile flowFile = session.get();
         if (flowFile == null) {
             return;
@@ -649,8 +660,7 @@ public class PutHiveStreaming extends AbstractProcessor {
         exceptionHandler.adjustError(adjustError);
 
         // Create output flow files and their Avro writers
-        final FunctionContext functionContext = new FunctionContext(context.getProperty(ROLLBACK_ON_FAILURE).asBoolean(),
-                inputFlowFile, session.create(inputFlowFile), session.create(inputFlowFile), getLogger());
+        functionContext.setFlowFiles(inputFlowFile, session.create(inputFlowFile), session.create(inputFlowFile));
 
         try {
             session.read(inputFlowFile, in -> {

@@ -19,7 +19,7 @@ package org.apache.nifi.processors.hive;
 import org.apache.nifi.components.PropertyDescriptor;
 import org.apache.nifi.dbcp.hive.HiveDBCPService;
 import org.apache.nifi.flowfile.FlowFile;
-import org.apache.nifi.processor.AbstractProcessor;
+import org.apache.nifi.processor.AbstractSessionFactoryProcessor;
 import org.apache.nifi.processor.ProcessSession;
 import org.apache.nifi.processor.io.InputStreamCallback;
 import org.apache.nifi.processor.util.StandardValidators;
@@ -45,7 +45,7 @@ import java.util.regex.Pattern;
 /**
  * An abstract base class for HiveQL processors to share common data, methods, etc.
  */
-public abstract class AbstractHiveQLProcessor extends AbstractProcessor {
+public abstract class AbstractHiveQLProcessor extends AbstractSessionFactoryProcessor {
 
     protected static final Pattern HIVEQL_TYPE_ATTRIBUTE_PATTERN = Pattern.compile("hiveql\\.args\\.(\\d+)\\.type");
     protected static final Pattern NUMBER_PATTERN = Pattern.compile("-?\\d+");

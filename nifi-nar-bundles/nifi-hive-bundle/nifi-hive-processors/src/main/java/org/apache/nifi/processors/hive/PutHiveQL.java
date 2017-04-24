@@ -30,6 +30,7 @@ import org.apache.nifi.dbcp.hive.HiveDBCPService;
 import org.apache.nifi.flowfile.FlowFile;
 import org.apache.nifi.processor.ProcessContext;
 import org.apache.nifi.processor.ProcessSession;
+import org.apache.nifi.processor.ProcessSessionFactory;
 import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
 import org.apache.nifi.processor.util.StandardValidators;
@@ -246,12 +247,11 @@ public class PutHiveQL extends AbstractHiveQLProcessor {
     }
 
     @Override
-    public void onTrigger(final ProcessContext context, final ProcessSession session) throws ProcessException {
-
+    public void onTrigger(ProcessContext context, ProcessSessionFactory sessionFactory) throws ProcessException {
         final Boolean rollbackOnFailure = context.getProperty(RollbackOnFailure.ROLLBACK_ON_FAILURE).asBoolean();
         final Charset charset = Charset.forName(context.getProperty(CHARSET).getValue());
-        final String statementDelimiter =   context.getProperty(STATEMENT_DELIMITER).getValue();
-
-        process.onTrigger(context, session, new FunctionContext(rollbackOnFailure, charset, statementDelimiter));
+        final String statementDelimiter = context.getProperty(STATEMENT_DELIMITER).getValue();
+        final FunctionContext functionContext = new FunctionContext(rollbackOnFailure, charset, statementDelimiter);
+        RollbackOnFailure.onTrigger(sessionFactory, functionContext, getLogger(), session -> process.onTrigger(context, session, functionContext));
     }
 }
