@@ -2705,6 +2705,8 @@ public class CheckpointCoordinatorTest {
 		when(executionJobVertex.getParallelism()).thenReturn(parallelism);
 		when(executionJobVertex.getMaxParallelism()).thenReturn(maxParallelism);
 		when(executionJobVertex.isMaxParallelismConfigured()).thenReturn(true);
+		when(executionJobVertex.getOperatorIDs()).thenReturn(new JobVertexID[]{jobVertexID});
+		when(executionJobVertex.getUserDefinedOperatorIDs()).thenReturn(new JobVertexID[1]);
 
 		return executionJobVertex;
 	}
@@ -2742,6 +2744,11 @@ public class CheckpointCoordinatorTest {
 		when(vertex.getCurrentExecutionAttempt()).thenReturn(exec);
 		when(vertex.getTotalNumberOfParallelSubtasks()).thenReturn(parallelism);
 		when(vertex.getMaxParallelism()).thenReturn(maxParallelism);
+
+		ExecutionJobVertex jobVertex = mock(ExecutionJobVertex.class);
+		when(jobVertex.getOperatorIDs()).thenReturn(new JobVertexID[]{jobVertexID});
+
+		when(vertex.getJobVertex()).thenReturn(jobVertex);
 
 		return vertex;
 	}

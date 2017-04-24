@@ -314,6 +314,12 @@ public class CheckpointStateRestoreTest {
 		when(vertex.getMaxParallelism()).thenReturn(vertices.length);
 		when(vertex.getJobVertexId()).thenReturn(id);
 		when(vertex.getTaskVertices()).thenReturn(vertices);
+		when(vertex.getOperatorIDs()).thenReturn(new JobVertexID[]{id});
+		when(vertex.getUserDefinedOperatorIDs()).thenReturn(new JobVertexID[]{null});
+
+		for (ExecutionVertex v : vertices) {
+			when(v.getJobVertex()).thenReturn(vertex);
+		}
 		return vertex;
 	}
 }

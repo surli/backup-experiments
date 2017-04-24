@@ -73,6 +73,7 @@ public class SavepointLoaderTest {
 		ExecutionJobVertex vertex = mock(ExecutionJobVertex.class);
 		when(vertex.getParallelism()).thenReturn(parallelism);
 		when(vertex.getMaxParallelism()).thenReturn(parallelism);
+		when(vertex.getOperatorIDs()).thenReturn(new JobVertexID[]{vertexId});
 
 		Map<JobVertexID, ExecutionJobVertex> tasks = new HashMap<>();
 		tasks.put(vertexId, vertex);
