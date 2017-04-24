@@ -1,24 +1,449 @@
 {
+  "pr-base-commit-id": "7c2f5a83c5c4416a6ec91bb8aa043cd60962ed37",
+  "totalNumberSkippingTests": 111,
+  "pr-head-commit-id": "7c6cf6f11c75d75157ad1c6cdeb13d26e3f25561",
+  "pr-remote-repo": "jcamachor/calcite",
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.reflect.InvocationTargetException",
+    "skipped",
+    "org.junit.ComparisonFailure"
+  ],
+  "totalNumberFailingTests": 24,
+  "buildid": 225223603,
+  "totalNumberErroringTests": 1,
+  "freeMemory": 103955592,
+  "hostname": "repairnator",
+  "is-pr": "true",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 4180,
+  "pr-head-commit-id-url": "https://github.com/jcamachor/calcite/commit/7c6cf6f11c75d75157ad1c6cdeb13d26e3f25561",
+  "pr-id": 414,
+  "repo": "apache/calcite",
+  "failing-test-cases": [
+    {
+      "className": "org.apache.calcite.test.MaterializationTest",
+      "failingMethods": [
+        "org.apache.calcite.test.MaterializationTest#testFilterQueryOnFilterView2",
+        "org.apache.calcite.test.MaterializationTest#testFilterQueryOnFilterView3",
+        "org.apache.calcite.test.MaterializationTest#testOrderByQueryOnProjectView",
+        "org.apache.calcite.test.MaterializationTest#testPartialUnion",
+        "org.apache.calcite.test.MaterializationTest#testAggregateProject",
+        "org.apache.calcite.test.MaterializationTest#testFilterQueryOnProjectView5",
+        "org.apache.calcite.test.MaterializationTest#testQueryOnStar",
+        "org.apache.calcite.test.MaterializationTest#testAggregateMaterializationAggregateFuncs8",
+        "org.apache.calcite.test.MaterializationTest#testOrderByQueryOnOrderByView",
+        "org.apache.calcite.test.MaterializationTest#testDifferentType",
+        "org.apache.calcite.test.MaterializationTest#testMaterializationReferencesTableInOtherSchema",
+        "org.apache.calcite.test.MaterializationTest#testSwapJoin",
+        "org.apache.calcite.test.MaterializationTest#testMultiMaterializationOnJoinQuery",
+        "org.apache.calcite.test.MaterializationTest#testNonDisjointUnion",
+        "org.apache.calcite.test.MaterializationTest#testDifferentColumnNames",
+        "org.apache.calcite.test.MaterializationTest#testJoinOnUnionMaterialization",
+        "org.apache.calcite.test.MaterializationTest#testFilterGroupQueryOnStar"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "not implemented",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "Creating mv for depts considering all its column throws exception",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: a string containing \"EnumerableCalc(expr#0..2\u003d[{inputs}], expr#3\u003d[2], expr#4\u003d[\u003d($t0, $t3)], name\u003d[$t2], E\u003d[$t1], $condition\u003d[$t4])\\n  EnumerableTableScan(table\u003d[[hr, m0]]\"\n     but: was \"PLAN\u003dEnumerableCalc(expr#0..2\u003d[{inputs}], expr#3\u003d[2], expr#4\u003d[\u003d($t0, $t3)], name\u003d[$t2], EE\u003d[$t1], $condition\u003d[$t4])\n  EnumerableTableScan(table\u003d[[hr, m0]])\n\n\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "work in progress",
+          "isError": false
+        }
+      ],
+      "nbFailures": 17,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.calcite.test.JdbcTest",
+      "failingMethods": [
+        "org.apache.calcite.test.JdbcTest#testRightJoin",
+        "org.apache.calcite.test.JdbcTest#testArrayIndexing",
+        "org.apache.calcite.test.JdbcTest#testScalarSubQueryInCase",
+        "org.apache.calcite.test.JdbcTest#testJoinJoin",
+        "org.apache.calcite.test.JdbcTest#testNotExistsCorrelated2",
+        "org.apache.calcite.test.JdbcTest#testLateral",
+        "org.apache.calcite.test.JdbcTest#testTableFunctionNonNullableMustBeLiterals",
+        "org.apache.calcite.test.JdbcTest#testScalarSubQuery",
+        "org.apache.calcite.test.JdbcTest#testNtileConstantArgs",
+        "org.apache.calcite.test.JdbcTest#testComparingIntAndString",
+        "org.apache.calcite.test.JdbcTest#testArray2",
+        "org.apache.calcite.test.JdbcTest#testFoodmartLattice",
+        "org.apache.calcite.test.JdbcTest#testNoCalcBetweenJoins",
+        "org.apache.calcite.test.JdbcTest#testCartesianJoin",
+        "org.apache.calcite.test.JdbcTest#testUnnestMultiset2",
+        "org.apache.calcite.test.JdbcTest#testWithInsideWhereExists",
+        "org.apache.calcite.test.JdbcTest#testJoinFiveWay",
+        "org.apache.calcite.test.JdbcTest#testBushy",
+        "org.apache.calcite.test.JdbcTest#testExplainJoinOrderingWithOr",
+        "org.apache.calcite.test.JdbcTest#testCloneGroupBy2Plan",
+        "org.apache.calcite.test.JdbcTest#testUnnestArrayColumn",
+        "org.apache.calcite.test.JdbcTest#testEquiThetaJoin",
+        "org.apache.calcite.test.JdbcTest#testCloneGroupBy2",
+        "org.apache.calcite.test.JdbcTest#testExplainJoin",
+        "org.apache.calcite.test.JdbcTest#testMergeJoin",
+        "org.apache.calcite.test.JdbcTest#testUnionWithSameColumnNames",
+        "org.apache.calcite.test.JdbcTest#testLeftJoin",
+        "org.apache.calcite.test.JdbcTest#testExistsCorrelated",
+        "org.apache.calcite.test.JdbcTest#testIn",
+        "org.apache.calcite.test.JdbcTest#testCloneQueries",
+        "org.apache.calcite.test.JdbcTest#testFullJoin",
+        "org.apache.calcite.test.JdbcTest#testNotExistsCorrelated",
+        "org.apache.calcite.test.JdbcTest#testCorrelatedScalarSubQuery",
+        "org.apache.calcite.test.JdbcTest#testTableFunctionCursorsInputs",
+        "org.apache.calcite.test.JdbcTest#testModelWithMaterializedView",
+        "org.apache.calcite.test.JdbcTest#testSimpleIn",
+        "org.apache.calcite.test.JdbcTest#testExplainJoin4",
+        "org.apache.calcite.test.JdbcTest#testUnnestArrayScalarArray",
+        "org.apache.calcite.test.JdbcTest#testExplainJoin3",
+        "org.apache.calcite.test.JdbcTest#testTableFunctionCursorInputs",
+        "org.apache.calcite.test.JdbcTest#testThetaJoin",
+        "org.apache.calcite.test.JdbcTest#testExplainJoin2"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...ptno\u003d10; name\u003dSales\n[]\u003e but was:\u003c...ptno\u003d10; name\u003dSales\n[empid\u003d200; deptno\u003d20; name\u003dHR\n]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"empid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000; I\u003dtrue\\nempid\u003d110; deptno\u003d10; name\u003dTheodore; salary\u003d11500.0; commission\u003d250; I\u003dtrue\\nempid\u003d150; deptno\u003d10; name\u003dSebastian; salary\u003d7000.0; commission\u003dnull; I\u003dtrue\\nempid\u003d200; deptno\u003d20; name\u003dEric; salary\u003d8000.0; commission\u003d500; I\u003dnull\"\n     but: was \"empid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000; I\u003dtrue\\nempid\u003d110; deptno\u003d10; name\u003dTheodore; salary\u003d11500.0; commission\u003d250; I\u003dtrue\\nempid\u003d150; deptno\u003d10; name\u003dSebastian; salary\u003d7000.0; commission\u003dnull; I\u003dtrue\\nempid\u003d200; deptno\u003d20; name\u003dEric; salary\u003d8000.0; commission\u003d500; I\u003dtrue\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"empid\u003d200; deptno\u003d20; name\u003dEric; salary\u003d8000.0; commission\u003d500\"\n     but: was \"\"",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"deptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d20; deptno\u003dnull\"\n     but: was \"deptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d20; deptno\u003d20\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "Have no idea how to validate that expression is constant",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "[CALCITE-685]",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...es; name\u003dBill\nempid\u003d[]150; name\u003dSales; nam...\u003e but was:\u003c...es; name\u003dBill\nempid\u003d[200; name\u003dHR; name\u003dEric\nempid\u003d]150; name\u003dSales; nam...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "extremely slow - a bit better if you disable ProjectMergeRule",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"empid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000\\nempid\u003d110; deptno\u003d10; name\u003dTheodore; salary\u003d11500.0; commission\u003d250\\nempid\u003d150; deptno\u003d10; name\u003dSebastian; salary\u003d7000.0; commission\u003dnull\"\n     but: was \"empid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000\\nempid\u003d110; deptno\u003d10; name\u003dTheodore; salary\u003d11500.0; commission\u003d250\\nempid\u003d150; deptno\u003d10; name\u003dSebastian; salary\u003d7000.0; commission\u003dnull\\nempid\u003d200; deptno\u003d20; name\u003dEric; salary\u003d8000.0; commission\u003d500\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "SQLException does not include message from nested exception",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"deptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003dnull; deptno\u003d30\\ndeptno\u003dnull; deptno\u003d40\"\n     but: was \"deptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d20; deptno\u003d20\\ndeptno\u003dnull; deptno\u003d30\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"name\u003dHR; empid\u003d200; deptno\u003d20; name0\u003dEric; salary\u003d8000.0; commission\u003d500; EXPR$1\u003d1\\nname\u003dHR; empid\u003d200; deptno\u003d20; name0\u003dEric; salary\u003d8000.0; commission\u003d500; EXPR$1\u003d2\\nname\u003dSales; empid\u003d100; deptno\u003d10; name0\u003dBill; salary\u003d10000.0; commission\u003d1000; EXPR$1\u003d1\\nname\u003dSales; empid\u003d100; deptno\u003d10; name0\u003dBill; salary\u003d10000.0; commission\u003d1000; EXPR$1\u003d2\\nname\u003dSales; empid\u003d150; deptno\u003d10; name0\u003dSebastian; salary\u003d7000.0; commission\u003dnull; EXPR$1\u003d1\\nname\u003dSales; empid\u003d150; deptno\u003d10; name0\u003dSebastian; salary\u003d7000.0; commission\u003dnull; EXPR$1\u003d2\"\n     but: was \"name\u003dHR; empid\u003d200; deptno\u003d20; name0\u003dEric; salary\u003d8000.0; commission\u003d500; EXPR$1\u003d1\\nname\u003dHR; empid\u003d200; deptno\u003d20; name0\u003dEric; salary\u003d8000.0; commission\u003d500; EXPR$1\u003d2\\nname\u003dSales; empid\u003d100; deptno\u003d10; name0\u003dBill; salary\u003d10000.0; commission\u003d1000; EXPR$1\u003d1\\nname\u003dSales; empid\u003d100; deptno\u003d10; name0\u003dBill; salary\u003d10000.0; commission\u003d1000; EXPR$1\u003d2\\nname\u003dSales; empid\u003d110; deptno\u003d10; name0\u003dTheodore; salary\u003d11500.0; commission\u003d250; EXPR$1\u003d1\\nname\u003dSales; empid\u003d110; deptno\u003d10; name0\u003dTheodore; salary\u003d11500.0; commission\u003d250; EXPR$1\u003d2\\nname\u003dSales; empid\u003d150; deptno\u003d10; name0\u003dSebastian; salary\u003d7000.0; commission\u003dnull; EXPR$1\u003d1\\nname\u003dSales; empid\u003d150; deptno\u003d10; name0\u003dSebastian; salary\u003d7000.0; commission\u003dnull; EXPR$1\u003d2\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "CannotPlanException: Node [rel#24:Subset#6.ENUMERABLE.[]] could not be implemented",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"empid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000; deptno0\u003d10; name0\u003dSales; employees\u003d[{100, 10, Bill, 10000.0, 1000}, {150, 10, Sebastian, 7000.0, null}]; location\u003d{-122, 38}\\nempid\u003d110; deptno\u003d10; name\u003dTheodore; salary\u003d11500.0; commission\u003d250; deptno0\u003d10; name0\u003dSales; employees\u003d[{100, 10, Bill, 10000.0, 1000}, {150, 10, Sebastian, 7000.0, null}]; location\u003d{-122, 38}\\nempid\u003d150; deptno\u003d10; name\u003dSebastian; salary\u003d7000.0; commission\u003dnull; deptno0\u003d10; name0\u003dSales; employees\u003d[{100, 10, Bill, 10000.0, 1000}, {150, 10, Sebastian, 7000.0, null}]; location\u003d{-122, 38}\"\n     but: was \"empid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000; deptno0\u003d10; name0\u003dSales; employees\u003d[{100, 10, Bill, 10000.0, 1000}, {150, 10, Sebastian, 7000.0, null}, {110, 10, Theodore, 11500.0, 250}]; location\u003d{-122, 38}\\nempid\u003d110; deptno\u003d10; name\u003dTheodore; salary\u003d11500.0; commission\u003d250; deptno0\u003d10; name0\u003dSales; employees\u003d[{100, 10, Bill, 10000.0, 1000}, {150, 10, Sebastian, 7000.0, null}, {110, 10, Theodore, 11500.0, 250}]; location\u003d{-122, 38}\\nempid\u003d150; deptno\u003d10; name\u003dSebastian; salary\u003d7000.0; commission\u003dnull; deptno0\u003d10; name0\u003dSales; employees\u003d[{100, 10, Bill, 10000.0, 1000}, {150, 10, Sebastian, 7000.0, null}, {110, 10, Theodore, 11500.0, 250}]; location\u003d{-122, 38}\\nempid\u003d200; deptno\u003d20; name\u003dEric; salary\u003d8000.0; commission\u003d500; deptno0\u003d20; name0\u003dHR; employees\u003d[{200, 20, Eric, 8000.0, 500}]; location\u003dnull\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "The actual and expected plan differ",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"deptno\u003d10\\ndeptno\u003d10\\ndeptno\u003d10\"\n     but: was \"deptno\u003d10\\ndeptno\u003d10\\ndeptno\u003d10\\ndeptno\u003d20\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"name\u003dHR; empid\u003d200; deptno\u003d20; name0\u003dEric; salary\u003d8000.0; commission\u003d500\\nname\u003dSales; empid\u003d100; deptno\u003d10; name0\u003dBill; salary\u003d10000.0; commission\u003d1000\\nname\u003dSales; empid\u003d150; deptno\u003d10; name0\u003dSebastian; salary\u003d7000.0; commission\u003dnull\"\n     but: was \"name\u003dHR; empid\u003d200; deptno\u003d20; name0\u003dEric; salary\u003d8000.0; commission\u003d500\\nname\u003dSales; empid\u003d100; deptno\u003d10; name0\u003dBill; salary\u003d10000.0; commission\u003d1000\\nname\u003dSales; empid\u003d110; deptno\u003d10; name0\u003dTheodore; salary\u003d11500.0; commission\u003d250\\nname\u003dSales; empid\u003d150; deptno\u003d10; name0\u003dSebastian; salary\u003d7000.0; commission\u003dnull\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "The test returns expected results. Not sure why it is disabled",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "until JdbcSchema can define materialized views",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"empid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000; deptno0\u003d30; name0\u003dMarketing; employees\u003d[]; location\u003d{0, 52}\\nempid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000; deptno0\u003d40; name0\u003dHR; employees\u003d[{200, 20, Eric, 8000.0, 500}]; location\u003dnull\\nempid\u003d110; deptno\u003d10; name\u003dTheodore; salary\u003d11500.0; commission\u003d250; deptno0\u003d30; name0\u003dMarketing; employees\u003d[]; location\u003d{0, 52}\\nempid\u003d110; deptno\u003d10; name\u003dTheodore; salary\u003d11500.0; commission\u003d250; deptno0\u003d40; name0\u003dHR; employees\u003d[{200, 20, Eric, 8000.0, 500}]; location\u003dnull\"\n     but: was \"empid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000; deptno0\u003d30; name0\u003dMarketing; employees\u003d[]; location\u003d{0, 52}\\nempid\u003d110; deptno\u003d10; name\u003dTheodore; salary\u003d11500.0; commission\u003d250; deptno0\u003d30; name0\u003dMarketing; employees\u003d[]; location\u003d{0, 52}\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "Fails with org.codehaus.commons.compiler.CompileException: Line 16, Column 112: Cannot compare types \"int\" and \"java.lang.String\"\n",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"empid\u003d100; name\u003dHR; name\u003dBill\\nempid\u003d100; name\u003dMarketing; name\u003dBill\\nempid\u003d110; name\u003dHR; name\u003dTheodore\\nempid\u003d110; name\u003dMarketing; name\u003dTheodore\\nempid\u003d150; name\u003dHR; name\u003dSebastian\\nempid\u003d150; name\u003dMarketing; name\u003dSebastian\\nempid\u003d200; name\u003dHR; name\u003dEric\\nempid\u003d200; name\u003dMarketing; name\u003dEric\"\n     but: was \"empid\u003d100; name\u003dHR; name\u003dBill\\nempid\u003d100; name\u003dMarketing; name\u003dBill\\nempid\u003d110; name\u003dHR; name\u003dTheodore\\nempid\u003d110; name\u003dMarketing; name\u003dTheodore\\nempid\u003d150; name\u003dHR; name\u003dSebastian\\nempid\u003d150; name\u003dMarketing; name\u003dSebastian\\nempid\u003d200; name\u003dMarketing; name\u003dEric\"",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"deptno\u003d10; E\u003d{100, 10, Bill, 10000.0, 1000}\\ndeptno\u003d30; E\u003dnull\\ndeptno\u003d40; E\u003d{200, 20, Eric, 8000.0, 500}\"\n     but: was \"deptno\u003d10; E\u003d{100, 10, Bill, 10000.0, 1000}\\ndeptno\u003d20; E\u003d{200, 20, Eric, 8000.0, 500}\\ndeptno\u003d30; E\u003dnull\"",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"empid\u003d100; deptno\u003d10; DNAME\u003dSales\\nempid\u003d110; deptno\u003d10; DNAME\u003dSales\\nempid\u003d150; deptno\u003d10; DNAME\u003dSales\\nempid\u003d200; deptno\u003d20; DNAME\u003dnull\"\n     but: was \"empid\u003d100; deptno\u003d10; DNAME\u003dSales\\nempid\u003d110; deptno\u003d10; DNAME\u003dSales\\nempid\u003d150; deptno\u003d10; DNAME\u003dSales\\nempid\u003d200; deptno\u003d20; DNAME\u003dHR\"",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"deptno\u003d10; name\u003dSales; employees\u003d[{100, 10, Bill, 10000.0, 1000}, {150, 10, Sebastian, 7000.0, null}]; location\u003d{-122, 38}\"\n     but: was \"deptno\u003d10; name\u003dSales; employees\u003d[{100, 10, Bill, 10000.0, 1000}, {150, 10, Sebastian, 7000.0, null}, {110, 10, Theodore, 11500.0, 250}]; location\u003d{-122, 38}\"",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"deptno\u003d10; C\u003d2\\ndeptno\u003d30; C\u003d0\\ndeptno\u003d40; C\u003d1\"\n     but: was \"deptno\u003d10; C\u003d3\\ndeptno\u003d20; C\u003d1\\ndeptno\u003d30; C\u003d0\"",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "CannotPlanException: Node [rel#18:Subset#4.ENUMERABLE.[]] could not be implemented",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"empid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000\\nempid\u003d150; deptno\u003d10; name\u003dSebastian; salary\u003d7000.0; commission\u003dnull\"\n     but: was \"empid\u003d100; deptno\u003d10; name\u003dBill; salary\u003d10000.0; commission\u003d1000\\nempid\u003d110; deptno\u003d10; name\u003dTheodore; salary\u003d11500.0; commission\u003d250\\nempid\u003d150; deptno\u003d10; name\u003dSebastian; salary\u003d7000.0; commission\u003dnull\"",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"deptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d100\\ndeptno\u003d10; deptno\u003d110\\ndeptno\u003d10; deptno\u003d150\\ndeptno\u003d20; deptno\u003d200\\ndeptno\u003d30; deptno\u003d30\\ndeptno\u003d40; deptno\u003d40\"\n     but: was \"deptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d100\\ndeptno\u003d10; deptno\u003d110\\ndeptno\u003d10; deptno\u003d150\\ndeptno\u003d20; deptno\u003d20\\ndeptno\u003d20; deptno\u003d200\\ndeptno\u003d30; deptno\u003d30\"",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"name\u003dBill; DEPTNAME\u003dSales\\nname\u003dEric; DEPTNAME\u003dDepartmentNotFound\\nname\u003dSebastian; DEPTNAME\u003dSales\\nname\u003dTheodore; DEPTNAME\u003dSales\"\n     but: was \"name\u003dBill; DEPTNAME\u003dSales\\nname\u003dEric; DEPTNAME\u003dHR\\nname\u003dSebastian; DEPTNAME\u003dSales\\nname\u003dTheodore; DEPTNAME\u003dSales\"",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"deptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d20; deptno\u003dnull\\ndeptno\u003dnull; deptno\u003d30\\ndeptno\u003dnull; deptno\u003d40\"\n     but: was \"deptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d10; deptno\u003d10\\ndeptno\u003d20; deptno\u003d20\\ndeptno\u003dnull; deptno\u003d30\"",
+          "isError": false
+        }
+      ],
+      "nbFailures": 42,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.calcite.test.QuidemTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.calcite.test.QuidemTest#test[0: quidem(sql/misc.iq)]"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.reflect.InvocationTargetException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.apache.calcite.test.enumerable.EnumerableCorrelateTest",
+      "failingMethods": [
+        "org.apache.calcite.test.enumerable.EnumerableCorrelateTest#simpleCorrelateDecorrelated",
+        "org.apache.calcite.test.enumerable.EnumerableCorrelateTest#simpleCorrelate"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"empid\u003d100; name\u003dBill\\nempid\u003d110; name\u003dTheodore\\nempid\u003d150; name\u003dSebastian\"\n     but: was \"empid\u003d100; name\u003dBill\\nempid\u003d110; name\u003dTheodore\\nempid\u003d150; name\u003dSebastian\\nempid\u003d200; name\u003dEric\"",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: \"empid\u003d100; name\u003dBill\\nempid\u003d110; name\u003dTheodore\\nempid\u003d150; name\u003dSebastian\"\n     but: was \"empid\u003d100; name\u003dBill\\nempid\u003d110; name\u003dTheodore\\nempid\u003d150; name\u003dSebastian\\nempid\u003d200; name\u003dEric\"",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 4,
     "CloneRepository": 13,
     "ResolveDependency": 32,
     "TestProject": 308,
-    "BuildProject": 90
+    "BuildProject": 90,
+    "GatherTestInformation": 0
   },
-  "totalMemory": 314572800,
-  "bugType": "only_fail",
   "workspace": "./workspace",
-  "pr-remote-repo": "jcamachor/calcite",
-  "pr-head-commit-id": "7c6cf6f11c75d75157ad1c6cdeb13d26e3f25561",
-  "pr-id": 414,
-  "repo": "apache/calcite",
-  "freeMemory": 103955592,
-  "pr-head-commit-id-url": "https://github.com/jcamachor/calcite/commit/7c6cf6f11c75d75157ad1c6cdeb13d26e3f25561",
-  "hostname": "repairnator",
-  "is-pr": "true",
-  "buildid": 225223603,
-  "nbCPU": 4,
   "pr-base-commit-id-url": "https://github.com/apache/calcite/commit/7c2f5a83c5c4416a6ec91bb8aa043cd60962ed37",
-  "pr-base-commit-id": "7c2f5a83c5c4416a6ec91bb8aa043cd60962ed37"
+  "totalMemory": 314572800,
+  "nbCPU": 4,
+  "failingModule": "/root/workspace/apache/calcite/225223603/core"
 }
