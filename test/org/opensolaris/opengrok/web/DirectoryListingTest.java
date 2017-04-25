@@ -57,7 +57,7 @@ public class DirectoryListingTest {
         String name;
         String href;
         long lastModified;
-        int size;
+        int size; // If negative, don't check it.
 
         FileEntry() {
             dateFormatter = new SimpleDateFormat("dd-MMM-yyyy");
@@ -93,18 +93,23 @@ public class DirectoryListingTest {
         }
 
         public int compareTo(Object o) {
+            int ret = -1;
+
             if (o instanceof FileEntry) {
                 FileEntry fe = (FileEntry) o;
 
                 // @todo verify all attributes!
                 if (name.compareTo(fe.name) == 0 &&
-                    href.compareTo(fe.href) == 0 &&
-                    size == fe.size) {
-
-                    return 0;
+                    href.compareTo(fe.href) == 0) {
+                    ret = 0;
+                }
+                // Negative size is not verified.
+                if (size >= 0 && size == fe.size) {
+                    ret = 0;
                 }
             }
-            return -1;
+
+            return ret;
         }
     }
 
@@ -138,7 +143,9 @@ public class DirectoryListingTest {
         hgtags.create();
 
         // Will test getSimplifiedPath() behavior for ignored directories.
-        entries[2] = new FileEntry("subdir", "subdir/", 0, 3);
+        // Use negative value for length so it is not checked as the return value
+        // of length() is unspecified for directories.
+        entries[2] = new FileEntry("subdir", "subdir/", 0, -1);
         File subdir = new File(directory, "subdir");
         subdir.mkdir();
         File SCCSdir = new File(subdir, "SCCS");
