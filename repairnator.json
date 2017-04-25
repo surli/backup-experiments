@@ -1,19 +1,72 @@
 {
+  "totalNumberSkippingTests": 75,
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException:"
+  ],
+  "totalNumberFailingTests": 1,
+  "buildid": 225632960,
+  "totalNumberErroringTests": 3,
+  "freeMemory": 302895256,
+  "hostname": "repairnator",
+  "bugType": "failing_passing",
+  "totalNumberRunningTests": 2453,
+  "repo": "apache/nifi",
+  "failing-test-cases": [
+    {
+      "className": "org.apache.nifi.processors.standard.TestListDatabaseTables",
+      "failingMethods": [
+        "org.apache.nifi.processors.standard.TestListDatabaseTables#testListTablesMultipleRefresh"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c2\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.nifi.processors.standard.TestGetFile",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnreadableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnwritableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithInaccessibleDir"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    }
+  ],
   "step-durations": {
     "CheckoutBuggyBuild": 1,
     "CloneRepository": 28,
     "ResolveDependency": 31,
     "TestProject": 1025,
-    "BuildProject": 811
+    "BuildProject": 811,
+    "GatherTestInformation": 2
   },
-  "totalMemory": 371195904,
-  "bugType": "failing_passing",
-  "workspace": "./workspace",
-  "repo": "apache/nifi",
-  "freeMemory": 302895256,
   "bugCommit": "https://github.com/apache/nifi/compare/9ed001869b48...26ca40c0d916",
-  "buildid": 225632960,
-  "hostname": "repairnator",
+  "workspace": "./workspace",
+  "totalMemory": 371195904,
+  "bugRepo": "apache/nifi",
   "nbCPU": 4,
-  "bugRepo": "apache/nifi"
+  "failingModule": "/root/workspace/apache/nifi/225632960/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors"
 }
