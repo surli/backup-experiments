@@ -27,7 +27,7 @@ public class SendGrid {
     public SendGrid(String apiKey) {
         this.apiKey = apiKey;
         this.client = new Client();
-        initializeSendGrid();
+        initializeSendGrid(apiKey);
     }
 
     /**
@@ -37,7 +37,7 @@ public class SendGrid {
     public SendGrid(String apiKey, Boolean test) {
         this.apiKey = apiKey;
         this.client = new Client(test);
-        initializeSendGrid();
+        initializeSendGrid(apiKey);
     }
 
     /**
@@ -47,7 +47,7 @@ public class SendGrid {
     public SendGrid(String apiKey, Client client) {
         this.apiKey = apiKey;
         this.client = client;
-        initializeSendGrid();
+        initializeSendGrid(apiKey);
     }
 
     /**
@@ -74,10 +74,11 @@ public class SendGrid {
     public SendGrid(String apiKey, CloseableHttpClient closeableHttpClient) {
         this.apiKey = apiKey;
         this.client = new Client(closeableHttpClient);
-        initializeSendGrid();
+        initializeSendGrid(apiKey);
     }
 
-    public void initializeSendGrid() {
+    public void initializeSendGrid(String apiKey) {
+        this.apiKey = apiKey;
         this.host = "api.sendgrid.com";
         this.version = "v3";
         this.requestHeaders = new HashMap<>();
