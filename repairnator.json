@@ -1,24 +1,153 @@
 {
+  "pr-base-commit-id": "151e90ea7403354fd2e02a394f5574feb8300f39",
+  "totalNumberSkippingTests": 14,
+  "pr-head-commit-id": "3e48ef06aa436fd85bc4fe45f8e23a60fa5a2c89",
+  "pr-remote-repo": "RokolyA94/mybatis-3",
+  "error-types": [
+    "org.apache.ibatis.exceptions.PersistenceException"
+  ],
+  "totalNumberFailingTests": 0,
+  "buildid": 225406657,
+  "totalNumberErroringTests": 8,
+  "freeMemory": 235244072,
+  "hostname": "repairnator",
+  "is-pr": "true",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 1294,
+  "pr-head-commit-id-url": "https://github.com/RokolyA94/mybatis-3/commit/3e48ef06aa436fd85bc4fe45f8e23a60fa5a2c89",
+  "pr-id": 991,
+  "repo": "mybatis/mybatis-3",
+  "failing-test-cases": [
+    {
+      "className": "org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest#testComplexPerson"
+      ],
+      "failures": [
+        {
+          "failureName": "org.apache.ibatis.exceptions.PersistenceException",
+          "failureDetail": "\n### Error querying database.  Cause: java.lang.NullPointerException\n### The error may exist in org/apache/ibatis/submitted/column_prefix/Mapper.xml\n### The error may involve org.apache.ibatis.submitted.column_prefix.Mapper.selectPersons\n### The error occurred while handling results\n### SQL: select       person.id as person_id,       person.name as person_name,       billing_address.id as b_id,       billing_address.state as b_state,       billing_address.city as b_city,       billing_address.addr_type as b_addr_type,       billing_address.caution as b_caution,       case         when billing_address.phone1_id is null           and billing_address.phone2_id is null           then false         else true       end as b_has_phone,       billing_address_state_bird.bird as b_state_bird,       billing_address_zip.state as b_zip_state,       billing_address_zip.city as b_zip_city,       billing_address_zip.zip_code as b_zip_zip_code,       shipping_address.id as s_id,       shipping_address.state as s_state,       shipping_address.city as s_city,       shipping_address.addr_type as s_addr_type,       shipping_address.caution as s_caution,       case         when shipping_address.phone1_id is null           and shipping_address.phone2_id is null           then false         else true       end as s_has_phone,       shipping_address_state_bird.bird as s_state_bird,       shipping_address_zip.state as s_zip_state,       shipping_address_zip.city as s_zip_city,       shipping_address_zip.zip_code as s_zip_zip_code,       billing_address_phone1.id as b_p1_id,       billing_address_phone1.phone as b_p1_phone,       billing_address_phone1.area_code as b_p1_area_code,       billing_address_phone2.id as b_p2_id,       billing_address_phone2.phone as b_p2_phone,       billing_address_phone2.area_code as b_p2_area_code,       shipping_address_phone1.id as s_p1_id,       shipping_address_phone1.phone as s_p1_phone,       shipping_address_phone1.area_code as s_p1_area_code,       shipping_address_phone2.id as s_p2_id,       shipping_address_phone2.phone as s_p2_phone,       shipping_address_phone2.area_code as s_p2_area_code,       person_room.room_id as person_room_id,       person_room.room_name as person_room_name,       pet.id as pet_id,       pet.name as pet_name,       pet_room.room_id as pet_room_id,       pet_room.room_name as pet_room_name     from person     left join address billing_address       on billing_address.id \u003d person.billing_address_id     left join address shipping_address       on shipping_address.id \u003d person.shipping_address_id     left join state_bird billing_address_state_bird       on billing_address_state_bird.state \u003d billing_address.state     left join state_bird shipping_address_state_bird       on shipping_address_state_bird.state \u003d shipping_address.state     left join zip shipping_address_zip       on shipping_address_zip.state \u003d shipping_address.state       and shipping_address_zip.city \u003d shipping_address.city     left join zip billing_address_zip       on billing_address_zip.state \u003d billing_address.state         and billing_address_zip.city \u003d billing_address.city     left join phone billing_address_phone1       on billing_address_phone1.id \u003d billing_address.phone1_id     left join phone billing_address_phone2       on billing_address_phone2.id \u003d billing_address.phone2_id     left join phone shipping_address_phone1       on shipping_address_phone1.id \u003d shipping_address.phone1_id     left join phone shipping_address_phone2       on shipping_address_phone2.id \u003d shipping_address.phone2_id     left join room person_room on person_room.room_id \u003d person.room_id     left join pet on pet.owner_id \u003d person.id     left join room pet_room on pet_room.room_id \u003d pet.room_id     order by person.id, pet.id\n### Cause: java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.apache.ibatis.submitted.column_prefix.ColumnPrefixNestedQueryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.ibatis.submitted.column_prefix.ColumnPrefixNestedQueryTest#testComplexPerson"
+      ],
+      "failures": [
+        {
+          "failureName": "org.apache.ibatis.exceptions.PersistenceException",
+          "failureDetail": "\n### Error querying database.  Cause: java.lang.NullPointerException\n### The error may exist in org/apache/ibatis/submitted/column_prefix/MapperNestedQuery.xml\n### The error may involve org.apache.ibatis.submitted.column_prefix.MapperNestedQuery.selectRoom\n### The error occurred while handling results\n### SQL: select       room_id,       room_name     from room     where room_id \u003d ?\n### Cause: java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.apache.ibatis.submitted.multiple_discriminator.MultipleDiscriminatorTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.ibatis.submitted.multiple_discriminator.MultipleDiscriminatorTest#testMultipleDiscriminatorLoop"
+      ],
+      "failures": [
+        {
+          "failureName": "org.apache.ibatis.exceptions.PersistenceException",
+          "failureDetail": "\n### Error querying database.  Cause: java.lang.NullPointerException\n### The error may exist in org/apache/ibatis/submitted/multiple_discriminator/Person.xml\n### The error may involve org.apache.ibatis.submitted.multiple_discriminator.PersonMapper.getLoop\n### The error occurred while handling results\n### SQL: SELECT id, firstName, lastName, jobTitle, department, personType, employeeType         FROM Person         WHERE id \u003d 3\n### Cause: java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.apache.ibatis.submitted.named_constructor_args.usesjava8.NamedConstructorArgsUseActualNameTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.ibatis.submitted.named_constructor_args.usesjava8.NamedConstructorArgsUseActualNameTest#argsByActualNamesXml"
+      ],
+      "failures": [
+        {
+          "failureName": "org.apache.ibatis.exceptions.PersistenceException",
+          "failureDetail": "\n### Error querying database.  Cause: org.apache.ibatis.reflection.ReflectionException: Error instantiating class org.apache.ibatis.submitted.named_constructor_args.User with invalid types (Integer,Object) or values (1,User1). Cause: java.lang.NoSuchMethodException: org.apache.ibatis.submitted.named_constructor_args.User.\u003cinit\u003e(java.lang.Integer, java.lang.Object)\n### The error may exist in org/apache/ibatis/submitted/named_constructor_args/usesjava8/Mapper.xml\n### The error may involve org.apache.ibatis.submitted.named_constructor_args.usesjava8.Mapper.mapConstructorWithoutParamAnnosXml\n### The error occurred while handling results\n### SQL: select * from users where id \u003d ?\n### Cause: org.apache.ibatis.reflection.ReflectionException: Error instantiating class org.apache.ibatis.submitted.named_constructor_args.User with invalid types (Integer,Object) or values (1,User1). Cause: java.lang.NoSuchMethodException: org.apache.ibatis.submitted.named_constructor_args.User.\u003cinit\u003e(java.lang.Integer, java.lang.Object)",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.apache.ibatis.submitted.named_constructor_args.NamedConstructorArgsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.ibatis.submitted.named_constructor_args.NamedConstructorArgsTest#argsWithParamAnnosXml"
+      ],
+      "failures": [
+        {
+          "failureName": "org.apache.ibatis.exceptions.PersistenceException",
+          "failureDetail": "\n### Error querying database.  Cause: org.apache.ibatis.reflection.ReflectionException: Error instantiating class org.apache.ibatis.submitted.named_constructor_args.User with invalid types (Object,String,Object) or values (1,99,User1). Cause: java.lang.NoSuchMethodException: org.apache.ibatis.submitted.named_constructor_args.User.\u003cinit\u003e(java.lang.Object, java.lang.String, java.lang.Object)\n### The error may exist in org/apache/ibatis/submitted/named_constructor_args/Mapper.xml\n### The error may involve org.apache.ibatis.submitted.named_constructor_args.Mapper.mapConstructorWithParamAnnosXml\n### The error occurred while handling results\n### SQL: select * from users where id \u003d ?\n### Cause: org.apache.ibatis.reflection.ReflectionException: Error instantiating class org.apache.ibatis.submitted.named_constructor_args.User with invalid types (Object,String,Object) or values (1,99,User1). Cause: java.lang.NoSuchMethodException: org.apache.ibatis.submitted.named_constructor_args.User.\u003cinit\u003e(java.lang.Object, java.lang.String, java.lang.Object)",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.apache.ibatis.session.SqlSessionTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.ibatis.session.SqlSessionTest#shouldSelectBlogWithPostsAndAuthorUsingJoin",
+        "org.apache.ibatis.session.SqlSessionTest#shouldSelectNestedBlogWithPostsAndAuthorUsingJoin"
+      ],
+      "failures": [
+        {
+          "failureName": "org.apache.ibatis.exceptions.PersistenceException",
+          "failureDetail": "\n### Error querying database.  Cause: java.lang.NullPointerException\n### The error may exist in org/apache/ibatis/builder/BlogMapper.xml\n### The error may involve org.apache.ibatis.domain.blog.mappers.BlogMapper.selectBlogJoinedWithPostsAndAuthor\n### The error occurred while handling results\n### SQL: select     B.id as blog_id,     B.title as blog_title,     B.author_id as blog_author_id,     A.id as author_id,     A.username as author_username,     A.password as author_password,     A.email as author_email,     A.bio as author_bio,     A.favourite_section as author_favourite_section,     P.id as post_id,     P.blog_id as post_blog_id,     P.author_id as post_author_id,     P.created_on as post_created_on,     P.section as post_section,     P.subject as post_subject,     P.draft as draft,     P.body as post_body,     C.id as comment_id,     C.post_id as comment_post_id,     C.name as comment_name,     C.comment as comment_text,     T.id as tag_id,     T.name as tag_name     from Blog B     left outer join Author A on B.author_id \u003d A.id     left outer join Post P on B.id \u003d P.blog_id     left outer join Comment C on P.id \u003d C.post_id     left outer join Post_Tag PT on PT.post_id \u003d P.id     left outer join Tag T on PT.tag_id \u003d T.id     where B.id \u003d ?\n### Cause: java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "org.apache.ibatis.exceptions.PersistenceException",
+          "failureDetail": "\n### Error querying database.  Cause: java.lang.NullPointerException\n### The error may exist in org/apache/ibatis/builder/NestedBlogMapper.xml\n### The error may involve org.apache.ibatis.domain.blog.mappers.NestedBlogMapper.selectBlogJoinedWithPostsAndAuthor\n### The error occurred while handling results\n### SQL: select     B.id as blog_id,     B.title as blog_title,     B.author_id as blog_author_id,     A.id as author_id,     A.username as author_username,     A.password as author_password,     A.email as author_email,     A.bio as author_bio,     A.favourite_section as author_favourite_section,     P.id as post_id,     P.blog_id as post_blog_id,     P.author_id as post_author_id,     P.created_on as post_created_on,     P.section as post_section,     P.subject as post_subject,     P.draft as draft,     P.body as post_body,     C.id as comment_id,     C.post_id as comment_post_id,     C.name as comment_name,     C.comment as comment_text,     T.id as tag_id,     T.name as tag_name     from Blog B     left outer join Author A on B.author_id \u003d A.id     left outer join Post P on B.id \u003d P.blog_id     left outer join Comment C on P.id \u003d C.post_id     left outer join Post_Tag PT on PT.post_id \u003d P.id     left outer join Tag T on PT.tag_id \u003d T.id     where B.id \u003d ?\n### Cause: java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.apache.ibatis.submitted.column_prefix.ColumnPrefixAutoMappingTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.ibatis.submitted.column_prefix.ColumnPrefixAutoMappingTest#testComplexPerson"
+      ],
+      "failures": [
+        {
+          "failureName": "org.apache.ibatis.exceptions.PersistenceException",
+          "failureDetail": "\n### Error querying database.  Cause: java.lang.NullPointerException\n### The error may exist in org/apache/ibatis/submitted/column_prefix/MapperAutoMapping.xml\n### The error may involve org.apache.ibatis.submitted.column_prefix.MapperAutoMapping.selectPersons\n### The error occurred while handling results\n### SQL: select       person.id as person_id,       person.name as person_name,       billing_address.id as b_id,       billing_address.state as b_state,       billing_address.city as b_city,       billing_address.addr_type as b_addr_type,       billing_address.caution as b_caution,       case         when billing_address.phone1_id is null           and billing_address.phone2_id is null           then false         else true       end as b_has_phone,       billing_address_state_bird.bird as b_state_bird,       billing_address_zip.state as b_zip_state,       billing_address_zip.city as b_zip_city,       billing_address_zip.zip_code as b_zip_zip_code,       shipping_address.id as s_id,       shipping_address.state as s_state,       shipping_address.city as s_city,       shipping_address.addr_type as s_addr_type,       shipping_address.caution as s_caution,       case         when shipping_address.phone1_id is null           and shipping_address.phone2_id is null           then false         else true       end as s_has_phone,       shipping_address_state_bird.bird as s_state_bird,       shipping_address_zip.state as s_zip_state,       shipping_address_zip.city as s_zip_city,       shipping_address_zip.zip_code as s_zip_zip_code,       billing_address_phone1.id as b_p1_id,       billing_address_phone1.phone as b_p1_phone,       billing_address_phone1.area_code as b_p1_area_code,       billing_address_phone2.id as b_p2_id,       billing_address_phone2.phone as b_p2_phone,       billing_address_phone2.area_code as b_p2_area_code,       shipping_address_phone1.id as s_p1_id,       shipping_address_phone1.phone as s_p1_phone,       shipping_address_phone1.area_code as s_p1_area_code,       shipping_address_phone2.id as s_p2_id,       shipping_address_phone2.phone as s_p2_phone,       shipping_address_phone2.area_code as s_p2_area_code,       person_room.room_id as person_room_id,       person_room.room_name as person_room_name,       pet.id as pet_id,       pet.name as pet_name,       pet_room.room_id as pet_room_id,       pet_room.room_name as pet_room_name     from person     left join address billing_address       on billing_address.id \u003d person.billing_address_id     left join address shipping_address       on shipping_address.id \u003d person.shipping_address_id     left join state_bird billing_address_state_bird       on billing_address_state_bird.state \u003d billing_address.state     left join state_bird shipping_address_state_bird       on shipping_address_state_bird.state \u003d shipping_address.state     left join zip shipping_address_zip       on shipping_address_zip.state \u003d shipping_address.state       and shipping_address_zip.city \u003d shipping_address.city     left join zip billing_address_zip       on billing_address_zip.state \u003d billing_address.state         and billing_address_zip.city \u003d billing_address.city     left join phone billing_address_phone1       on billing_address_phone1.id \u003d billing_address.phone1_id     left join phone billing_address_phone2       on billing_address_phone2.id \u003d billing_address.phone2_id     left join phone shipping_address_phone1       on shipping_address_phone1.id \u003d shipping_address.phone1_id     left join phone shipping_address_phone2       on shipping_address_phone2.id \u003d shipping_address.phone2_id     left join room person_room on person_room.room_id \u003d person.room_id     left join pet on pet.owner_id \u003d person.id     left join room pet_room on pet_room.room_id \u003d pet.room_id     order by person.id, pet.id\n### Cause: java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 2,
     "CloneRepository": 30,
     "ResolveDependency": 11,
     "TestProject": 181,
-    "BuildProject": 33
+    "BuildProject": 33,
+    "GatherTestInformation": 0
   },
-  "totalMemory": 641728512,
-  "bugType": "only_fail",
   "workspace": "./workspace",
-  "pr-remote-repo": "RokolyA94/mybatis-3",
-  "pr-head-commit-id": "3e48ef06aa436fd85bc4fe45f8e23a60fa5a2c89",
-  "pr-id": 991,
-  "repo": "mybatis/mybatis-3",
-  "freeMemory": 235244072,
-  "pr-head-commit-id-url": "https://github.com/RokolyA94/mybatis-3/commit/3e48ef06aa436fd85bc4fe45f8e23a60fa5a2c89",
-  "hostname": "repairnator",
-  "is-pr": "true",
-  "buildid": 225406657,
-  "nbCPU": 4,
   "pr-base-commit-id-url": "https://github.com/mybatis/mybatis-3/commit/151e90ea7403354fd2e02a394f5574feb8300f39",
-  "pr-base-commit-id": "151e90ea7403354fd2e02a394f5574feb8300f39"
+  "totalMemory": 641728512,
+  "nbCPU": 4,
+  "failingModule": "/root/workspace/mybatis/mybatis-3/225406657"
 }
