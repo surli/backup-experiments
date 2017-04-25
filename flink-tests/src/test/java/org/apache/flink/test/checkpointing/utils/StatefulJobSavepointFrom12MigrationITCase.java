@@ -64,7 +64,7 @@ import org.junit.Test;
  * <p>The tests will time out if they don't see the required number of successful checks within
  * a time limit.
  */
-public class StatefulUDFSavepointFrom12MigrationITCase extends SavepointMigrationTestBase {
+public class StatefulJobSavepointFrom12MigrationITCase extends SavepointMigrationTestBase {
 	private static final int NUM_SOURCE_ELEMENTS = 4;
 
 	/**
