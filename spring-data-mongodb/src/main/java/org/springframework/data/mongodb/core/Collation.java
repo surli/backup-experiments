@@ -51,6 +51,15 @@ public class Collation {
 	}
 
 	/**
+	 * Create new {@link Collation} using simple binary comparison.
+	 *
+	 * @return
+	 */
+	public static Collation binary() {
+		return of("simple");
+	}
+
+	/**
 	 * Create new {@link Collation} with locale set to {{@link java.util.Locale#getLanguage()}} and
 	 * {@link java.util.Locale#getVariant()}.
 	 *

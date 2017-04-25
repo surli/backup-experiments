@@ -116,38 +116,48 @@ abstract class IndexConverters {
 			}
 
 			if (indexOptions.containsKey("collation")) {
-
-				com.mongodb.client.model.Collation.Builder collationBuilder = Collation.builder();
-				Document collation = indexOptions.get("collation", Document.class);
-
-				collationBuilder.locale(collation.getString("locale"));
-				if (collation.containsKey("caseLevel")) {
-					collationBuilder.caseLevel(collation.getBoolean("caseLevel"));
-				}
-				if (collation.containsKey("caseFirst")) {
-					collationBuilder.collationCaseFirst(CollationCaseFirst.fromString(collation.getString("caseFirst")));
-				}
-				if (collation.containsKey("strength")) {
-					collationBuilder.collationStrength(CollationStrength.fromInt(collation.getInteger("strength")));
-				}
-				if (collation.containsKey("numericOrdering")) {
-					collationBuilder.numericOrdering(collation.getBoolean("numericOrdering"));
-				}
-				if (collation.containsKey("alternate")) {
-					collationBuilder.collationAlternate(CollationAlternate.fromString(collation.getString("alternate")));
-				}
-				if (collation.containsKey("maxVariable")) {
-					collationBuilder.collationMaxVariable(CollationMaxVariable.fromString(collation.getString("maxVariable")));
-				}
-				if (collation.containsKey("backwards")) {
-					collationBuilder.backwards(collation.getBoolean("backwards"));
-				}
-
-				ops = ops.collation(collationBuilder.build());
+				ops = ops.collation(fromDocument(indexOptions.get("collation", Document.class)));
 			}
 
 			return ops;
 		};
+	}
+
+	public static Collation fromDocument(Document source) {
+
+		if (source == null) {
+			return null;
+		}
+
+		com.mongodb.client.model.Collation.Builder collationBuilder = Collation.builder();
+
+		collationBuilder.locale(source.getString("locale"));
+		if (source.containsKey("caseLevel")) {
+			collationBuilder.caseLevel(source.getBoolean("caseLevel"));
+		}
+		if (source.containsKey("caseFirst")) {
+			collationBuilder.collationCaseFirst(CollationCaseFirst.fromString(source.getString("caseFirst")));
+		}
+		if (source.containsKey("strength")) {
+			collationBuilder.collationStrength(CollationStrength.fromInt(source.getInteger("strength")));
+		}
+		if (source.containsKey("numericOrdering")) {
+			collationBuilder.numericOrdering(source.getBoolean("numericOrdering"));
+		}
+		if (source.containsKey("alternate")) {
+			collationBuilder.collationAlternate(CollationAlternate.fromString(source.getString("alternate")));
+		}
+		if (source.containsKey("maxVariable")) {
+			collationBuilder.collationMaxVariable(CollationMaxVariable.fromString(source.getString("maxVariable")));
+		}
+		if (source.containsKey("backwards")) {
+			collationBuilder.backwards(source.getBoolean("backwards"));
+		}
+		if (source.containsKey("normalization")) {
+			collationBuilder.normalization(source.getBoolean("normalization"));
+		}
+
+		return collationBuilder.build();
 	}
 
 	private static Converter<Document, IndexInfo> getDocumentIndexInfoConverter() {

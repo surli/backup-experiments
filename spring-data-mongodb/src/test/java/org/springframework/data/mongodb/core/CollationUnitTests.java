@@ -20,9 +20,9 @@ import static org.assertj.core.api.Assertions.*;
 import org.bson.Document;
 import org.junit.Test;
 import org.springframework.data.mongodb.core.Collation.Alternate;
+import org.springframework.data.mongodb.core.Collation.ICUCaseFirst;
 import org.springframework.data.mongodb.core.Collation.ICUComparisonLevel;
 import org.springframework.data.mongodb.core.Collation.ICULocale;
-import org.springframework.data.mongodb.core.Collation.ICUCaseFirst;
 
 /**
  * @author Christoph Strobl
@@ -37,7 +37,8 @@ public class CollationUnitTests {
 	static final Document WITH_NORMALIZATION = new Document(JUST_LOCALE).append("normalization", true);
 	static final Document WITH_BACKWARDS = new Document(JUST_LOCALE).append("backwards", true);
 	static final Document WITH_NUMERIC_ORDERING = new Document(JUST_LOCALE).append("numericOrdering", true);
-	static final Document WITH_CASE_FIRST_UPPER = new Document(JUST_LOCALE).append("strength", 3).append("caseFirst", "upper");
+	static final Document WITH_CASE_FIRST_UPPER = new Document(JUST_LOCALE).append("strength", 3).append("caseFirst",
+			"upper");
 	static final Document WITH_ALTERNATE_SHIFTED = new Document(JUST_LOCALE).append("alternate", "shifted");
 	static final Document WITH_ALTERNATE_SHIFTED_MAX_VARIABLE_PUNCT = new Document(WITH_ALTERNATE_SHIFTED)
 			.append("maxVariable", "punct");
@@ -72,7 +73,8 @@ public class CollationUnitTests {
 
 	@Test // DATAMONGO-1518
 	public void withStrenghPrimary() {
-		assertThat(Collation.of("en_US").strength(ICUComparisonLevel.primary()).toDocument()).isEqualTo(WITH_STRENGTH_PRIMARY);
+		assertThat(Collation.of("en_US").strength(ICUComparisonLevel.primary()).toDocument())
+				.isEqualTo(WITH_STRENGTH_PRIMARY);
 	}
 
 	@Test // DATAMONGO-1518
@@ -161,15 +163,14 @@ public class CollationUnitTests {
 	@Test // DATAMONGO-1518
 	public void allTheThings() {
 
-		assertThat(Collation.of(ICULocale.of("de_AT").variant("phonebook")).strength(ICUComparisonLevel.primary().includeCase())
-				.normalizationEnabled().backwardDiacriticSort().numericOrderingEnabled()
-				.alternate(Alternate.shifted().punct()).toDocument()).isEqualTo(ALL_THE_THINGS);
+		assertThat(Collation.of(ICULocale.of("de_AT").variant("phonebook"))
+				.strength(ICUComparisonLevel.primary().includeCase()).normalizationEnabled().backwardDiacriticSort()
+				.numericOrderingEnabled().alternate(Alternate.shifted().punct()).toDocument()).isEqualTo(ALL_THE_THINGS);
 	}
 
 	@Test // DATAMONGO-1518
 	public void allTheThingsFromDocument() {
 		assertThat(Collation.from(ALL_THE_THINGS).toDocument()).isEqualTo(ALL_THE_THINGS);
-
 	}
 
 }

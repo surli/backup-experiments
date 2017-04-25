@@ -1806,9 +1806,14 @@ public class MongoTemplate implements MongoOperations, ApplicationContextAware, 
 					co.maxDocuments(((Number) collectionOptions.get("max")).longValue());
 				}
 
+				if(collectionOptions.containsKey("collation")) {
+					co.collation(IndexConverters.fromDocument(collectionOptions.get("collation", Document.class)));
+				}
+
 				db.createCollection(collectionName, co);
 
 				MongoCollection<Document> coll = db.getCollection(collectionName, Document.class);
+
 				// TODO: Emit a collection created event
 				if (LOGGER.isDebugEnabled()) {
 					LOGGER.debug("Created collection [{}]", coll.getNamespace().getCollectionName());
@@ -1895,6 +1900,7 @@ public class MongoTemplate implements MongoOperations, ApplicationContextAware, 
 	}
 
 	protected Document convertToDocument(CollectionOptions collectionOptions) {
+
 		Document document = new Document();
 		if (collectionOptions != null) {
 			if (collectionOptions.getCapped() != null) {
@@ -1906,6 +1912,8 @@ public class MongoTemplate implements MongoOperations, ApplicationContextAware, 
 			if (collectionOptions.getMaxDocuments() != null) {
 				document.put("max", collectionOptions.getMaxDocuments().intValue());
 			}
+
+			collectionOptions.getCollation().ifPresent(val -> document.append("collation", val.toDocument()));
 		}
 		return document;
 	}
