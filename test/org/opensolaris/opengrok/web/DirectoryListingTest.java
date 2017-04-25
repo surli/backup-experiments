@@ -274,7 +274,11 @@ public class DirectoryListingTest {
         entry.name = getFilename(nl.item(1));
         entry.href = getHref(nl.item(1));
         entry.lastModified = getLastModified(nl.item(3));
-        entry.size = getSize(nl.item(4));
+        try {
+            entry.size = getSize(nl.item(4));
+        } catch (Exception e) {
+            entry.size = -1;
+        }
 
         // Try to look it up in the list of files.
         for (int ii = 0; ii < entries.length; ++ii) {
