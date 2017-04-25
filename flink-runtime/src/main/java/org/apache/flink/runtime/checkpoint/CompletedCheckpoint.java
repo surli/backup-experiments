@@ -22,6 +22,7 @@ import org.apache.flink.annotation.VisibleForTesting;
 import org.apache.flink.api.common.JobID;
 import org.apache.flink.runtime.jobgraph.JobStatus;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.state.SharedStateRegistry;
 import org.apache.flink.runtime.state.StateUtil;
 import org.apache.flink.runtime.state.StreamStateHandle;
@@ -90,7 +91,7 @@ public class CompletedCheckpoint implements Serializable {
 	private final long duration;
 
 	/** States of the different task groups belonging to this checkpoint */
-	private final Map<JobVertexID, TaskState> taskStates;
+	private final Map<OperatorID, TaskState> taskStates;
 
 	/** Properties for this checkpoint. */
 	private final CheckpointProperties props;
@@ -115,7 +116,7 @@ public class CompletedCheckpoint implements Serializable {
 			long checkpointID,
 			long timestamp,
 			long completionTimestamp,
-			Map<JobVertexID, TaskState> taskStates) {
+			Map<OperatorID, TaskState> taskStates) {
 
 		this(job, checkpointID, timestamp, completionTimestamp, taskStates,
 				CheckpointProperties.forStandardCheckpoint());
@@ -126,7 +127,7 @@ public class CompletedCheckpoint implements Serializable {
 			long checkpointID,
 			long timestamp,
 			long completionTimestamp,
-			Map<JobVertexID, TaskState> taskStates,
+			Map<OperatorID, TaskState> taskStates,
 			CheckpointProperties props) {
 
 		this(job, checkpointID, timestamp, completionTimestamp, taskStates, props, null, null);
@@ -137,7 +138,7 @@ public class CompletedCheckpoint implements Serializable {
 			long checkpointID,
 			long timestamp,
 			long completionTimestamp,
-			Map<JobVertexID, TaskState> taskStates,
+			Map<OperatorID, TaskState> taskStates,
 			CheckpointProperties props,
 			@Nullable StreamStateHandle externalizedMetadata,
 			@Nullable String externalPointer) {
@@ -227,7 +228,7 @@ public class CompletedCheckpoint implements Serializable {
 		return result;
 	}
 
-	public Map<JobVertexID, TaskState> getTaskStates() {
+	public Map<OperatorID, TaskState> getOperatorStates() {
 		return taskStates;
 	}
 

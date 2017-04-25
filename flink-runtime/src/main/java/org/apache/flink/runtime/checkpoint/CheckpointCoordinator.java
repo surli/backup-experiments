@@ -35,6 +35,7 @@ import org.apache.flink.runtime.executiongraph.ExecutionVertex;
 import org.apache.flink.runtime.executiongraph.JobStatusListener;
 import org.apache.flink.runtime.jobgraph.JobStatus;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.jobgraph.tasks.ExternalizedCheckpointSettings;
 import org.apache.flink.runtime.messages.checkpoint.AcknowledgeCheckpoint;
 import org.apache.flink.runtime.messages.checkpoint.DeclineCheckpoint;
@@ -839,7 +840,7 @@ public class CheckpointCoordinator {
 		if (LOG.isDebugEnabled()) {
 			StringBuilder builder = new StringBuilder();
 			builder.append("Checkpoint state: ");
-			for (TaskState state : completedCheckpoint.getTaskStates().values()) {
+			for (TaskState state : completedCheckpoint.getOperatorStates().values()) {
 				builder.append(state);
 				builder.append(", ");
 			}
@@ -963,12 +964,12 @@ public class CheckpointCoordinator {
 
 			LOG.info("Restoring from latest valid checkpoint: {}.", latest);
 
-			final Map<JobVertexID, TaskState> taskStates = latest.getTaskStates();
+			final Map<OperatorID, TaskState> taskStates = latest.getOperatorStates();
 
-			// find out whether we will restore on the operator level (from a SavepointV2/PendingCheckpoint) or on the
-			// task level (from a SavepointV1)
+			// find out whether we will restore on the operator or task level
+			// we will restore on the operator level if every task state contains the state for exactly one operator
 			boolean restoreOnOperatorLevel = true;
-			for (Map.Entry<JobVertexID, TaskState> taskGroupStateEntry : taskStates.entrySet()) {
+			for (Map.Entry<OperatorID, TaskState> taskGroupStateEntry : taskStates.entrySet()) {
 				if (taskGroupStateEntry.getValue().getChainLength() != 1) {
 					restoreOnOperatorLevel = false;
 					break;

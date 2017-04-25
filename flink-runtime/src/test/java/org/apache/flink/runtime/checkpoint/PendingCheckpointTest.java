@@ -25,19 +25,17 @@ import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 import org.apache.flink.runtime.executiongraph.ExecutionJobVertex;
 import org.apache.flink.runtime.executiongraph.ExecutionVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
-import org.apache.flink.runtime.state.SharedStateHandle;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.state.SharedStateRegistry;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.ArrayDeque;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Queue;
@@ -51,9 +49,7 @@ import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyLong;
 import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.powermock.api.mockito.PowerMockito.when;
@@ -65,7 +61,7 @@ public class PendingCheckpointTest {
 
 	static {
 		ExecutionJobVertex jobVertex = mock(ExecutionJobVertex.class);
-		when(jobVertex.getOperatorIDs()).thenReturn(new JobVertexID[]{new JobVertexID()});
+		when(jobVertex.getOperatorIDs()).thenReturn(new OperatorID[]{new OperatorID()});
 
 		ExecutionVertex vertex = mock(ExecutionVertex.class);
 		when(vertex.getMaxParallelism()).thenReturn(128);
@@ -316,7 +312,7 @@ public class PendingCheckpointTest {
 	public void testNullSubtaskStateLeadsToStatelessTask() throws Exception {
 		PendingCheckpoint pending = createPendingCheckpoint(CheckpointProperties.forStandardCheckpoint(), null);
 		pending.acknowledgeTask(ATTEMPT_ID, null, mock(CheckpointMetrics.class));
-		Assert.assertTrue(pending.getTaskStates().isEmpty());
+		Assert.assertTrue(pending.getOperatorStates().isEmpty());
 	}
 
 	/**
@@ -329,7 +325,7 @@ public class PendingCheckpointTest {
 	public void testNonNullSubtaskStateLeadsToStatefulTask() throws Exception {
 		PendingCheckpoint pending = createPendingCheckpoint(CheckpointProperties.forStandardCheckpoint(), null);
 		pending.acknowledgeTask(ATTEMPT_ID, mock(SubtaskState.class), mock(CheckpointMetrics.class));
-		Assert.assertFalse(pending.getTaskStates().isEmpty());
+		Assert.assertFalse(pending.getOperatorStates().isEmpty());
 	}
 
 	@Test
@@ -373,7 +369,7 @@ public class PendingCheckpointTest {
 
 	@SuppressWarnings("unchecked")
 	static void setTaskState(PendingCheckpoint pending, TaskState state) throws NoSuchFieldException, IllegalAccessException {
-		Field field = PendingCheckpoint.class.getDeclaredField("taskStates");
+		Field field = PendingCheckpoint.class.getDeclaredField("operatorStates");
 		field.setAccessible(true);
 		Map<JobVertexID, TaskState> taskStates = (Map<JobVertexID, TaskState>) field.get(pending);
 

@@ -23,6 +23,7 @@ import org.apache.flink.runtime.checkpoint.CompletedCheckpoint;
 import org.apache.flink.runtime.checkpoint.TaskState;
 import org.apache.flink.runtime.executiongraph.ExecutionJobVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -53,15 +54,15 @@ public class SavepointLoaderTest {
 
 		int parallelism = 128128;
 		long checkpointId = Integer.MAX_VALUE + 123123L;
-		JobVertexID vertexId = new JobVertexID();
+		OperatorID vertexId = new OperatorID();
 
 		TaskState state = mock(TaskState.class);
 		when(state.getParallelism()).thenReturn(parallelism);
-		when(state.getJobVertexID()).thenReturn(vertexId);
+		when(state.getTaskID()).thenReturn(vertexId);
 		when(state.getMaxParallelism()).thenReturn(parallelism);
 		when(state.getChainLength()).thenReturn(1);
 
-		Map<JobVertexID, TaskState> taskStates = new HashMap<>();
+		Map<OperatorID, TaskState> taskStates = new HashMap<>();
 		taskStates.put(vertexId, state);
 
 		JobID jobId = new JobID();
@@ -73,10 +74,10 @@ public class SavepointLoaderTest {
 		ExecutionJobVertex vertex = mock(ExecutionJobVertex.class);
 		when(vertex.getParallelism()).thenReturn(parallelism);
 		when(vertex.getMaxParallelism()).thenReturn(parallelism);
-		when(vertex.getOperatorIDs()).thenReturn(new JobVertexID[]{vertexId});
+		when(vertex.getOperatorIDs()).thenReturn(new OperatorID[]{new OperatorID(vertexId)});
 
 		Map<JobVertexID, ExecutionJobVertex> tasks = new HashMap<>();
-		tasks.put(vertexId, vertex);
+		tasks.put(new JobVertexID(vertexId), vertex);
 
 		ClassLoader ucl = Thread.currentThread().getContextClassLoader();
 
@@ -98,7 +99,7 @@ public class SavepointLoaderTest {
 		}
 
 		// 3) Load and validate: missing vertex
-		assertNotNull(tasks.remove(vertexId));
+		assertNotNull(tasks.remove(new JobVertexID(vertexId)));
 
 		try {
 			SavepointLoader.loadAndValidateSavepoint(jobId, tasks, path, ucl, false);

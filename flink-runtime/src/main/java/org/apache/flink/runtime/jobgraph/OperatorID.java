@@ -23,28 +23,28 @@ import org.apache.flink.util.AbstractID;
 import javax.xml.bind.DatatypeConverter;
 
 /**
- * A class for statistically unique job vertex IDs.
+ * A class for statistically unique operator IDs.
  */
-public class JobVertexID extends AbstractID {
-	
+public class OperatorID extends AbstractID {
+
 	private static final long serialVersionUID = 1L;
-	
-	public JobVertexID() {
+
+	public OperatorID() {
 		super();
 	}
-	public JobVertexID(byte[] bytes) {
+	public OperatorID(byte[] bytes) {
 		super(bytes);
 	}
 
-	public JobVertexID(long lowerPart, long upperPart) {
+	public OperatorID(long lowerPart, long upperPart) {
 		super(lowerPart, upperPart);
 	}
 
-	public JobVertexID(AbstractID id) {
+	public OperatorID(AbstractID id) {
 		super(id);
 	}
 
-	public static JobVertexID fromHexString(String hexString) {
-		return new JobVertexID(DatatypeConverter.parseHexBinary(hexString));
+	public static OperatorID fromHexString(String hexString) {
+		return new OperatorID(DatatypeConverter.parseHexBinary(hexString));
 	}
 }

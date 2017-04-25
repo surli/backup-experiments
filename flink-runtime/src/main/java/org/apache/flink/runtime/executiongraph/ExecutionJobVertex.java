@@ -41,6 +41,7 @@ import org.apache.flink.runtime.jobgraph.JobEdge;
 import org.apache.flink.runtime.jobgraph.JobVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.configuration.JobManagerOptions;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.jobmanager.scheduler.CoLocationGroup;
 import org.apache.flink.runtime.jobmanager.scheduler.SlotSharingGroup;
 import org.apache.flink.runtime.state.KeyGroupRangeAssignment;
@@ -78,14 +79,14 @@ public class ExecutionJobVertex implements AccessExecutionJobVertex, Archiveable
 	 *    C    E
 	 * This is the same order that operators are stored in the {@code StreamTask}.
 	 */
-	private final JobVertexID[] operatorIDs;
+	private final OperatorID[] operatorIDs;
 
 	/**
 	 * The alternative IDs of all operators contained in this execution job vertex.
 	 *
 	 * The ID's are in the same order as {@link ExecutionJobVertex#operatorIDs}.
 	 */
-	private final JobVertexID[] userDefinedOperatorIds;
+	private final OperatorID[] userDefinedOperatorIds;
 	
 	private final ExecutionVertex[] taskVertices;
 
@@ -157,10 +158,10 @@ public class ExecutionJobVertex implements AccessExecutionJobVertex, Archiveable
 		this.serializedTaskInformation = null;
 
 		this.taskVertices = new ExecutionVertex[numTaskVertices];
-		List<JobVertexID> opIDs = jobVertex.getOperatorIDs();
-		this.operatorIDs = opIDs.toArray(new JobVertexID[opIDs.size()]);
-		List<JobVertexID> userDefinedOpIDs = jobVertex.getUserDefinedOperatorIDs();
-		this.userDefinedOperatorIds = userDefinedOpIDs.toArray(new JobVertexID[userDefinedOpIDs.size()]);
+		List<OperatorID> opIDs = jobVertex.getOperatorIDs();
+		this.operatorIDs = opIDs.toArray(new OperatorID[opIDs.size()]);
+		List<OperatorID> userDefinedOpIDs = jobVertex.getUserDefinedOperatorIDs();
+		this.userDefinedOperatorIds = userDefinedOpIDs.toArray(new OperatorID[userDefinedOpIDs.size()]);
 		
 		this.inputs = new ArrayList<>(jobVertex.getInputs().size());
 		
@@ -241,7 +242,7 @@ public class ExecutionJobVertex implements AccessExecutionJobVertex, Archiveable
 	 *
 	 * @return array containing the IDs of all contained operators
 	 */
-	public JobVertexID[] getOperatorIDs() {
+	public OperatorID[] getOperatorIDs() {
 		return operatorIDs;
 	}
 
@@ -250,7 +251,7 @@ public class ExecutionJobVertex implements AccessExecutionJobVertex, Archiveable
 	 *
 	 * @return array containing alternative the IDs of all contained operators
 	 */
-	public JobVertexID[] getUserDefinedOperatorIDs() {
+	public OperatorID[] getUserDefinedOperatorIDs() {
 		return userDefinedOperatorIds;
 	}
 
@@ -746,10 +747,10 @@ public class ExecutionJobVertex implements AccessExecutionJobVertex, Archiveable
 		}
 	}
 
-	public static Map<JobVertexID, ExecutionJobVertex> includeLegacyJobVertexIDs(
-			Map<JobVertexID, ExecutionJobVertex> tasks) {
+	public static Map<OperatorID, ExecutionJobVertex> includeLegacyJobVertexIDs(
+			Map<OperatorID, ExecutionJobVertex> tasks) {
 
-		Map<JobVertexID, ExecutionJobVertex> expanded = new HashMap<>(2 * tasks.size());
+		Map<OperatorID, ExecutionJobVertex> expanded = new HashMap<>(2 * tasks.size());
 		// first include all new ids
 		expanded.putAll(tasks);
 
@@ -758,13 +759,13 @@ public class ExecutionJobVertex implements AccessExecutionJobVertex, Archiveable
 			if (null != executionJobVertex) {
 				JobVertex jobVertex = executionJobVertex.getJobVertex();
 				if (null != jobVertex) {
-					List<JobVertexID> alternativeIds = jobVertex.getIdAlternatives();
-					for (JobVertexID jobVertexID : alternativeIds) {
+					List<OperatorID> alternativeIds = jobVertex.getIdAlternatives();
+					for (OperatorID jobVertexID : alternativeIds) {
 						ExecutionJobVertex old = expanded.put(jobVertexID, executionJobVertex);
 						Preconditions.checkState(null == old || old.equals(executionJobVertex),
 								"Ambiguous jobvertex id detected during expansion to legacy ids.");
 					}
-					for (JobVertexID operatorID : jobVertex.getUserDefinedOperatorIDs()) {
+					for (OperatorID operatorID : jobVertex.getUserDefinedOperatorIDs()) {
 						if (operatorID != null) {
 							expanded.put(operatorID, executionJobVertex);
 						}

@@ -25,6 +25,7 @@ import org.apache.flink.runtime.executiongraph.restart.RestartStrategy;
 import org.apache.flink.runtime.instance.SlotProvider;
 import org.apache.flink.runtime.jobgraph.JobVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.jobgraph.tasks.AbstractInvokable;
 import org.apache.flink.util.SerializedValue;
 import org.junit.Assert;
@@ -44,10 +45,10 @@ public class LegacyJobVertexIdTest {
 	@Test
 	public void testIntroduceLegacyJobVertexIds() throws Exception {
 		JobVertexID defaultId = new JobVertexID();
-		JobVertexID legacyId1 = new JobVertexID();
-		JobVertexID legacyId2 = new JobVertexID();
+		OperatorID legacyId1 = new OperatorID();
+		OperatorID legacyId2 = new OperatorID();
 
-		JobVertex jobVertex = new JobVertex("test", defaultId, Arrays.asList(legacyId1, legacyId2), new ArrayList<JobVertexID>(), new ArrayList<JobVertexID>());
+		JobVertex jobVertex = new JobVertex("test", defaultId, Arrays.asList(legacyId1, legacyId2), new ArrayList<OperatorID>(), new ArrayList<OperatorID>());
 		jobVertex.setInvokableClass(AbstractInvokable.class);
 
 		ExecutionGraph executionGraph = new ExecutionGraph(
@@ -64,17 +65,17 @@ public class LegacyJobVertexIdTest {
 		ExecutionJobVertex executionJobVertex =
 				new ExecutionJobVertex(executionGraph, jobVertex, 1, Time.seconds(1));
 
-		Map<JobVertexID, ExecutionJobVertex> idToVertex = new HashMap<>();
-		idToVertex.put(executionJobVertex.getJobVertexId(), executionJobVertex);
+		Map<OperatorID, ExecutionJobVertex> idToVertex = new HashMap<>();
+		idToVertex.put(new OperatorID(executionJobVertex.getJobVertexId()), executionJobVertex);
 
-		Assert.assertEquals(executionJobVertex, idToVertex.get(defaultId));
+		Assert.assertEquals(executionJobVertex, idToVertex.get(new OperatorID(defaultId)));
 		Assert.assertNull(idToVertex.get(legacyId1));
 		Assert.assertNull(idToVertex.get(legacyId2));
 
 		idToVertex = ExecutionJobVertex.includeLegacyJobVertexIDs(idToVertex);
 
 		Assert.assertEquals(3, idToVertex.size());
-		Assert.assertEquals(executionJobVertex, idToVertex.get(defaultId));
+		Assert.assertEquals(executionJobVertex, idToVertex.get(new OperatorID(defaultId)));
 		Assert.assertEquals(executionJobVertex, idToVertex.get(legacyId1));
 		Assert.assertEquals(executionJobVertex, idToVertex.get(legacyId2));
 	}

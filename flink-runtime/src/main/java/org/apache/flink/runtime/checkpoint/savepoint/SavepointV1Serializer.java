@@ -21,7 +21,7 @@ package org.apache.flink.runtime.checkpoint.savepoint;
 import org.apache.flink.core.fs.Path;
 import org.apache.flink.runtime.checkpoint.SubtaskState;
 import org.apache.flink.runtime.checkpoint.TaskState;
-import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.state.ChainedStateHandle;
 import org.apache.flink.runtime.state.KeyGroupRange;
 import org.apache.flink.runtime.state.KeyGroupRangeOffsets;
@@ -72,8 +72,8 @@ class SavepointV1Serializer implements SavepointSerializer<SavepointV1> {
 
 			for (TaskState taskState : savepoint.getTaskStates()) {
 				// Vertex ID
-				dos.writeLong(taskState.getJobVertexID().getLowerPart());
-				dos.writeLong(taskState.getJobVertexID().getUpperPart());
+				dos.writeLong(taskState.getTaskID().getLowerPart());
+				dos.writeLong(taskState.getTaskID().getUpperPart());
 
 				// Parallelism
 				int parallelism = taskState.getParallelism();
@@ -103,7 +103,7 @@ class SavepointV1Serializer implements SavepointSerializer<SavepointV1> {
 		List<TaskState> taskStates = new ArrayList<>(numTaskStates);
 
 		for (int i = 0; i < numTaskStates; i++) {
-			JobVertexID jobVertexId = new JobVertexID(dis.readLong(), dis.readLong());
+			OperatorID jobVertexId = new OperatorID(dis.readLong(), dis.readLong());
 			int parallelism = dis.readInt();
 			int maxParallelism = dis.readInt();
 			int chainLength = dis.readInt();

@@ -34,6 +34,7 @@ import org.apache.flink.runtime.executiongraph.ExecutionJobVertex;
 import org.apache.flink.runtime.executiongraph.ExecutionVertex;
 import org.apache.flink.runtime.jobgraph.JobStatus;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.jobgraph.tasks.ExternalizedCheckpointSettings;
 import org.apache.flink.runtime.messages.checkpoint.AcknowledgeCheckpoint;
 import org.apache.flink.runtime.messages.checkpoint.DeclineCheckpoint;
@@ -169,8 +170,8 @@ public class CheckpointCoordinatorTest {
 			final ExecutionAttemptID triggerAttemptID1 = new ExecutionAttemptID();
 			final ExecutionAttemptID triggerAttemptID2 = new ExecutionAttemptID();
 			ExecutionVertex triggerVertex1 = mockExecutionVertex(triggerAttemptID1);
-			JobVertexID jobVertexID2 = new JobVertexID();
-			ExecutionVertex triggerVertex2 = mockExecutionVertex(triggerAttemptID2, jobVertexID2 , new JobVertexID[]{jobVertexID2}, 1, 1, ExecutionState.FINISHED);
+			OperatorID jobVertexID2 = new OperatorID();
+			ExecutionVertex triggerVertex2 = mockExecutionVertex(triggerAttemptID2, jobVertexID2 , new OperatorID[]{jobVertexID2}, 1, 1, ExecutionState.FINISHED);
 
 			// create some mock Execution vertices that need to ack the checkpoint
 			final ExecutionAttemptID ackAttemptID1 = new ExecutionAttemptID();
@@ -319,7 +320,7 @@ public class CheckpointCoordinatorTest {
 			assertEquals(jid, checkpoint.getJobId());
 			assertEquals(2, checkpoint.getNumberOfNonAcknowledgedTasks());
 			assertEquals(0, checkpoint.getNumberOfAcknowledgedTasks());
-			assertEquals(0, checkpoint.getTaskStates().size());
+			assertEquals(0, checkpoint.getOperatorStates().size());
 			assertFalse(checkpoint.isDiscarded());
 			assertFalse(checkpoint.isFullyAcknowledged());
 
@@ -428,7 +429,7 @@ public class CheckpointCoordinatorTest {
 			assertEquals(jid, checkpoint1.getJobId());
 			assertEquals(2, checkpoint1.getNumberOfNonAcknowledgedTasks());
 			assertEquals(0, checkpoint1.getNumberOfAcknowledgedTasks());
-			assertEquals(0, checkpoint1.getTaskStates().size());
+			assertEquals(0, checkpoint1.getOperatorStates().size());
 			assertFalse(checkpoint1.isDiscarded());
 			assertFalse(checkpoint1.isFullyAcknowledged());
 
@@ -438,7 +439,7 @@ public class CheckpointCoordinatorTest {
 			assertEquals(jid, checkpoint2.getJobId());
 			assertEquals(2, checkpoint2.getNumberOfNonAcknowledgedTasks());
 			assertEquals(0, checkpoint2.getNumberOfAcknowledgedTasks());
-			assertEquals(0, checkpoint2.getTaskStates().size());
+			assertEquals(0, checkpoint2.getOperatorStates().size());
 			assertFalse(checkpoint2.isDiscarded());
 			assertFalse(checkpoint2.isFullyAcknowledged());
 
@@ -473,7 +474,7 @@ public class CheckpointCoordinatorTest {
 			assertEquals(jid, checkpointNew.getJobId());
 			assertEquals(2, checkpointNew.getNumberOfNonAcknowledgedTasks());
 			assertEquals(0, checkpointNew.getNumberOfAcknowledgedTasks());
-			assertEquals(0, checkpointNew.getTaskStates().size());
+			assertEquals(0, checkpointNew.getOperatorStates().size());
 			assertFalse(checkpointNew.isDiscarded());
 			assertFalse(checkpointNew.isFullyAcknowledged());
 			assertNotEquals(checkpoint1.getCheckpointId(), checkpointNew.getCheckpointId());
@@ -541,7 +542,7 @@ public class CheckpointCoordinatorTest {
 			assertEquals(jid, checkpoint.getJobId());
 			assertEquals(2, checkpoint.getNumberOfNonAcknowledgedTasks());
 			assertEquals(0, checkpoint.getNumberOfAcknowledgedTasks());
-			assertEquals(0, checkpoint.getTaskStates().size());
+			assertEquals(0, checkpoint.getOperatorStates().size());
 			assertFalse(checkpoint.isDiscarded());
 			assertFalse(checkpoint.isFullyAcknowledged());
 
@@ -598,7 +599,7 @@ public class CheckpointCoordinatorTest {
 			assertEquals(jid, success.getJobId());
 			assertEquals(timestamp, success.getTimestamp());
 			assertEquals(checkpoint.getCheckpointId(), success.getCheckpointID());
-			assertEquals(2, success.getTaskStates().size());
+			assertEquals(2, success.getOperatorStates().size());
 
 			// ---------------
 			// trigger another checkpoint and see that this one replaces the other checkpoint
@@ -618,7 +619,7 @@ public class CheckpointCoordinatorTest {
 			assertEquals(jid, successNew.getJobId());
 			assertEquals(timestampNew, successNew.getTimestamp());
 			assertEquals(checkpointIdNew, successNew.getCheckpointID());
-			assertTrue(successNew.getTaskStates().isEmpty());
+			assertTrue(successNew.getOperatorStates().isEmpty());
 
 			// validate that the subtask states in old savepoint have unregister their shared states
 			{
@@ -758,13 +759,13 @@ public class CheckpointCoordinatorTest {
 			assertEquals(checkpointId1, sc1.getCheckpointID());
 			assertEquals(timestamp1, sc1.getTimestamp());
 			assertEquals(jid, sc1.getJobId());
-			assertTrue(sc1.getTaskStates().isEmpty());
+			assertTrue(sc1.getOperatorStates().isEmpty());
 
 			CompletedCheckpoint sc2 = scs.get(1);
 			assertEquals(checkpointId2, sc2.getCheckpointID());
 			assertEquals(timestamp2, sc2.getTimestamp());
 			assertEquals(jid, sc2.getJobId());
-			assertTrue(sc2.getTaskStates().isEmpty());
+			assertTrue(sc2.getOperatorStates().isEmpty());
 
 			coord.shutdown(JobStatus.FINISHED);
 		}
@@ -898,7 +899,7 @@ public class CheckpointCoordinatorTest {
 			assertEquals(checkpointId2, success.getCheckpointID());
 			assertEquals(timestamp2, success.getTimestamp());
 			assertEquals(jid, success.getJobId());
-			assertEquals(3, success.getTaskStates().size());
+			assertEquals(3, success.getOperatorStates().size());
 
 			// the first confirm message should be out
 			verify(commitVertex.getCurrentExecutionAttempt(), times(1)).notifyCheckpointComplete(eq(checkpointId2), eq(timestamp2));
@@ -1413,7 +1414,7 @@ public class CheckpointCoordinatorTest {
 		assertEquals(jid, pending.getJobId());
 		assertEquals(2, pending.getNumberOfNonAcknowledgedTasks());
 		assertEquals(0, pending.getNumberOfAcknowledgedTasks());
-		assertEquals(0, pending.getTaskStates().size());
+		assertEquals(0, pending.getOperatorStates().size());
 		assertFalse(pending.isDiscarded());
 		assertFalse(pending.isFullyAcknowledged());
 		assertFalse(pending.canBeSubsumed());
@@ -1463,7 +1464,7 @@ public class CheckpointCoordinatorTest {
 		assertEquals(jid, success.getJobId());
 		assertEquals(timestamp, success.getTimestamp());
 		assertEquals(pending.getCheckpointId(), success.getCheckpointID());
-		assertEquals(2, success.getTaskStates().size());
+		assertEquals(2, success.getOperatorStates().size());
 
 		// ---------------
 		// trigger another checkpoint and see that this one replaces the other checkpoint
@@ -1483,7 +1484,7 @@ public class CheckpointCoordinatorTest {
 		assertEquals(jid, successNew.getJobId());
 		assertEquals(timestampNew, successNew.getTimestamp());
 		assertEquals(checkpointIdNew, successNew.getCheckpointID());
-		assertTrue(successNew.getTaskStates().isEmpty());
+		assertTrue(successNew.getOperatorStates().isEmpty());
 		assertTrue(savepointFuture.isDone());
 
 		// validate that the first savepoint does not discard its private states.
@@ -1920,8 +1921,8 @@ public class CheckpointCoordinatorTest {
 		final JobID jid = new JobID();
 		final long timestamp = System.currentTimeMillis();
 
-		final JobVertexID jobVertexID1 = new JobVertexID();
-		final JobVertexID jobVertexID2 = new JobVertexID();
+		final OperatorID jobVertexID1 = new OperatorID();
+		final OperatorID jobVertexID2 = new OperatorID();
 		int parallelism1 = 3;
 		int parallelism2 = 2;
 		int maxParallelism1 = 42;
@@ -2006,7 +2007,7 @@ public class CheckpointCoordinatorTest {
 
 		// All shared states should be unregistered once the store is shut down
 		for (CompletedCheckpoint completedCheckpoint : completedCheckpoints) {
-			for (TaskState taskState : completedCheckpoint.getTaskStates().values()) {
+			for (TaskState taskState : completedCheckpoint.getOperatorStates().values()) {
 				for (SubtaskState subtaskState : taskState.getStates()) {
 					verify(subtaskState, times(1)).unregisterSharedStates(any(SharedStateRegistry.class));
 				}
@@ -2016,14 +2017,14 @@ public class CheckpointCoordinatorTest {
 		// restore the store
 		Map<JobVertexID, ExecutionJobVertex> tasks = new HashMap<>();
 
-		tasks.put(jobVertexID1, jobVertex1);
-		tasks.put(jobVertexID2, jobVertex2);
+		tasks.put(new JobVertexID(jobVertexID1), jobVertex1);
+		tasks.put(new JobVertexID(jobVertexID2), jobVertex2);
 
 		coord.restoreLatestCheckpointedState(tasks, true, false);
 
 		// validate that all shared states are registered again after the recovery.
 		for (CompletedCheckpoint completedCheckpoint : completedCheckpoints) {
-			for (TaskState taskState : completedCheckpoint.getTaskStates().values()) {
+			for (TaskState taskState : completedCheckpoint.getOperatorStates().values()) {
 				for (SubtaskState subtaskState : taskState.getStates()) {
 					verify(subtaskState, times(2)).registerSharedStates(any(SharedStateRegistry.class));
 				}
@@ -2046,8 +2047,8 @@ public class CheckpointCoordinatorTest {
 		final JobID jid = new JobID();
 		final long timestamp = System.currentTimeMillis();
 
-		final JobVertexID jobVertexID1 = new JobVertexID();
-		final JobVertexID jobVertexID2 = new JobVertexID();
+		final OperatorID jobVertexID1 = new OperatorID();
+		final OperatorID jobVertexID2 = new OperatorID();
 		int parallelism1 = 3;
 		int parallelism2 = 2;
 		int maxParallelism1 = 42;
@@ -2143,8 +2144,8 @@ public class CheckpointCoordinatorTest {
 			parallelism2,
 			newMaxParallelism2);
 
-		tasks.put(jobVertexID1, newJobVertex1);
-		tasks.put(jobVertexID2, newJobVertex2);
+		tasks.put(new JobVertexID(jobVertexID1), newJobVertex1);
+		tasks.put(new JobVertexID(jobVertexID2), newJobVertex2);
 
 		coord.restoreLatestCheckpointedState(tasks, true, false);
 
@@ -2162,8 +2163,8 @@ public class CheckpointCoordinatorTest {
 		final JobID jid = new JobID();
 		final long timestamp = System.currentTimeMillis();
 
-		final JobVertexID jobVertexID1 = new JobVertexID();
-		final JobVertexID jobVertexID2 = new JobVertexID();
+		final OperatorID jobVertexID1 = new OperatorID();
+		final OperatorID jobVertexID2 = new OperatorID();
 		int parallelism1 = 3;
 		int parallelism2 = 2;
 		int maxParallelism1 = 42;
@@ -2267,8 +2268,8 @@ public class CheckpointCoordinatorTest {
 			newParallelism2,
 			maxParallelism2);
 
-		tasks.put(jobVertexID1, newJobVertex1);
-		tasks.put(jobVertexID2, newJobVertex2);
+		tasks.put(new JobVertexID(jobVertexID1), newJobVertex1);
+		tasks.put(new JobVertexID(jobVertexID2), newJobVertex2);
 
 		coord.restoreLatestCheckpointedState(tasks, true, false);
 
@@ -2312,8 +2313,8 @@ public class CheckpointCoordinatorTest {
 		final JobID jid = new JobID();
 		final long timestamp = System.currentTimeMillis();
 
-		final JobVertexID jobVertexID1 = new JobVertexID();
-		final JobVertexID jobVertexID2 = new JobVertexID();
+		final OperatorID jobVertexID1 = new OperatorID();
+		final OperatorID jobVertexID2 = new OperatorID();
 		int parallelism1 = 3;
 		int parallelism2 = scaleOut ? 2 : 13;
 
@@ -2428,8 +2429,8 @@ public class CheckpointCoordinatorTest {
 				newParallelism2,
 				maxParallelism2);
 
-		tasks.put(jobVertexID1, newJobVertex1);
-		tasks.put(jobVertexID2, newJobVertex2);
+		tasks.put(new JobVertexID(jobVertexID1), newJobVertex1);
+		tasks.put(new JobVertexID(jobVertexID2), newJobVertex2);
 		coord.restoreLatestCheckpointedState(tasks, true, false);
 
 		// verify the restored state
@@ -2483,23 +2484,23 @@ public class CheckpointCoordinatorTest {
 		 * [operator1,operator2] * parallelism1 -> [operator3,operator4] * parallelism2
 		 *
 		 */
-		JobVertexID operatorID1 = new JobVertexID();
-		JobVertexID operatorID2 = new JobVertexID();
+		OperatorID operatorID1 = new OperatorID();
+		OperatorID operatorID2 = new OperatorID();
 		int parallelism1 = 10;
 		int maxParallelism1 = 64;
 
-		JobVertexID operatorID3 = new JobVertexID();
-		JobVertexID operatorID4 = new JobVertexID();
+		OperatorID operatorID3 = new OperatorID();
+		OperatorID operatorID4 = new OperatorID();
 		int parallelism2 = 10;
 		int maxParallelism2 = 64;
 
 		List<KeyGroupRange> keyGroupPartitions2 =
 			StateAssignmentOperationUtils.createKeyGroupPartitions(maxParallelism2, parallelism2);
 
-		Map<JobVertexID, TaskState> taskStates = new HashMap<>();
+		Map<OperatorID, TaskState> taskStates = new HashMap<>();
 
 		//prepare vertex1 state
-		for (JobVertexID operatorID : Lists.newArrayList(operatorID1, operatorID2)) {
+		for (OperatorID operatorID : Lists.newArrayList(operatorID1, operatorID2)) {
 			TaskState taskState = new TaskState(operatorID, parallelism1, maxParallelism1, 1);
 			taskStates.put(operatorID, taskState);
 			for (int index = 0; index < taskState.getParallelism(); index++) {
@@ -2520,7 +2521,7 @@ public class CheckpointCoordinatorTest {
 		List<List<ChainedStateHandle<OperatorStateHandle>>> expectedManagedOperatorStates = new ArrayList<>();
 		List<List<ChainedStateHandle<OperatorStateHandle>>> expectedRawOperatorStates = new ArrayList<>();
 		//prepare vertex2 state
-		for (JobVertexID operatorID : Lists.newArrayList(operatorID3, operatorID4)) {
+		for (OperatorID operatorID : Lists.newArrayList(operatorID3, operatorID4)) {
 			TaskState taskState = new TaskState(operatorID, parallelism2, maxParallelism2, 1);
 			taskStates.put(operatorID, taskState);
 			List<ChainedStateHandle<OperatorStateHandle>> expectedManagedOperatorState = new ArrayList<>();
@@ -2554,10 +2555,10 @@ public class CheckpointCoordinatorTest {
 		 *
 		 * [operator5,operator1,operator2] * newParallelism1 -> [operator3, operator6] * newParallelism2
 		 */
-		JobVertexID operatorID5 = new JobVertexID();
+		OperatorID operatorID5 = new OperatorID();
 		int newParallelism1 = 10;
 
-		JobVertexID operatorID6 = new JobVertexID();
+		OperatorID operatorID6 = new OperatorID();
 		int newParallelism2 = parallelism2;
 
 		if (scaleType == 0) {
@@ -2571,20 +2572,20 @@ public class CheckpointCoordinatorTest {
 
 		final ExecutionJobVertex newJobVertex1 = mockExecutionJobVertex(
 			operatorID5,
-			new JobVertexID[]{operatorID2, operatorID1, operatorID5},
+			new OperatorID[]{operatorID2, operatorID1, operatorID5},
 			newParallelism1,
 			maxParallelism1);
 
 		final ExecutionJobVertex newJobVertex2 = mockExecutionJobVertex(
 			operatorID3,
-			new JobVertexID[]{operatorID6, operatorID3},
+			new OperatorID[]{operatorID6, operatorID3},
 			newParallelism2,
 			maxParallelism2);
 
 		Map<JobVertexID, ExecutionJobVertex> tasks = new HashMap<>();
 
-		tasks.put(operatorID5, newJobVertex1);
-		tasks.put(operatorID3, newJobVertex2);
+		tasks.put(new JobVertexID(operatorID5), newJobVertex1);
+		tasks.put(new JobVertexID(operatorID3), newJobVertex2);
 
 		JobID jobID = new JobID();
 		StandaloneCompletedCheckpointStore standaloneCompletedCheckpointStore =
@@ -2814,7 +2815,7 @@ public class CheckpointCoordinatorTest {
 	// ------------------------------------------------------------------------
 
 	public static KeyGroupsStateHandle generateKeyGroupState(
-			JobVertexID jobVertexID,
+			OperatorID jobVertexID,
 			KeyGroupRange keyGroupPartition, boolean rawState) throws IOException {
 
 		List<Integer> testStatesLists = new ArrayList<>(keyGroupPartition.getNumberOfKeyGroups());
@@ -2887,7 +2888,7 @@ public class CheckpointCoordinatorTest {
 	}
 
 	public static ChainedStateHandle<StreamStateHandle> generateStateForVertex(
-			JobVertexID jobVertexID,
+			OperatorID jobVertexID,
 			int index) throws IOException {
 
 		Random random = new Random(jobVertexID.hashCode() + index);
@@ -2902,7 +2903,7 @@ public class CheckpointCoordinatorTest {
 	}
 
 	public static ChainedStateHandle<OperatorStateHandle> generateChainedPartitionableStateHandle(
-			JobVertexID jobVertexID,
+			OperatorID jobVertexID,
 			int index,
 			int namedStates,
 			int partitionsPerState,
@@ -2961,21 +2962,21 @@ public class CheckpointCoordinatorTest {
 	}
 
 	static ExecutionJobVertex mockExecutionJobVertex(
-			JobVertexID jobVertexID,
+			OperatorID jobVertexID,
 			int parallelism,
 			int maxParallelism) {
 
 		return mockExecutionJobVertex(
 			jobVertexID,
-			new JobVertexID[]{jobVertexID},
+			new OperatorID[]{new OperatorID(jobVertexID)},
 			parallelism,
 			maxParallelism
 		);
 	}
 
 	static ExecutionJobVertex mockExecutionJobVertex(
-		JobVertexID jobVertexID,
-		JobVertexID[] operatorIDs,
+		OperatorID jobVertexID,
+		OperatorID[] operatorIDs,
 		int parallelism,
 		int maxParallelism) {
 		final ExecutionJobVertex executionJobVertex = mock(ExecutionJobVertex.class);
@@ -2994,23 +2995,23 @@ public class CheckpointCoordinatorTest {
 			when(executionVertices[i].getParallelSubtaskIndex()).thenReturn(i);
 		}
 
-		when(executionJobVertex.getJobVertexId()).thenReturn(jobVertexID);
+		when(executionJobVertex.getJobVertexId()).thenReturn(new JobVertexID(jobVertexID));
 		when(executionJobVertex.getTaskVertices()).thenReturn(executionVertices);
 		when(executionJobVertex.getParallelism()).thenReturn(parallelism);
 		when(executionJobVertex.getMaxParallelism()).thenReturn(maxParallelism);
 		when(executionJobVertex.isMaxParallelismConfigured()).thenReturn(true);
 		when(executionJobVertex.getOperatorIDs()).thenReturn(operatorIDs);
-		when(executionJobVertex.getUserDefinedOperatorIDs()).thenReturn(new JobVertexID[operatorIDs.length]);
+		when(executionJobVertex.getUserDefinedOperatorIDs()).thenReturn(new OperatorID[operatorIDs.length]);
 
 		return executionJobVertex;
 	}
 
 	static ExecutionVertex mockExecutionVertex(ExecutionAttemptID attemptID) {
-		JobVertexID jobVertexID = new JobVertexID();
+		OperatorID jobVertexID = new OperatorID();
 		return mockExecutionVertex(
 			attemptID,
 			jobVertexID,
-			new JobVertexID[]{jobVertexID},
+			new OperatorID[]{new OperatorID(jobVertexID)},
 			1,
 			1,
 			ExecutionState.RUNNING);
@@ -3018,8 +3019,8 @@ public class CheckpointCoordinatorTest {
 
 	private static ExecutionVertex mockExecutionVertex(
 		ExecutionAttemptID attemptID,
-		JobVertexID jobVertexID,
-		JobVertexID[] operatorIDs,
+		OperatorID jobVertexID,
+		OperatorID[] operatorIDs,
 		int parallelism,
 		int maxParallelism,
 		ExecutionState state,
@@ -3037,7 +3038,7 @@ public class CheckpointCoordinatorTest {
 		when(exec.getAttemptId()).thenReturn(attemptID);
 		when(exec.getState()).thenReturn(state, successiveStates);
 
-		when(vertex.getJobvertexId()).thenReturn(jobVertexID);
+		when(vertex.getJobvertexId()).thenReturn(new JobVertexID(jobVertexID));
 		when(vertex.getCurrentExecutionAttempt()).thenReturn(exec);
 		when(vertex.getTotalNumberOfParallelSubtasks()).thenReturn(parallelism);
 		when(vertex.getMaxParallelism()).thenReturn(maxParallelism);
@@ -3051,7 +3052,7 @@ public class CheckpointCoordinatorTest {
 	}
 
 	static SubtaskState mockSubtaskState(
-		JobVertexID jobVertexID,
+		OperatorID jobVertexID,
 		int index,
 		KeyGroupRange keyGroupRange) throws IOException {
 
@@ -3071,7 +3072,7 @@ public class CheckpointCoordinatorTest {
 	}
 
 	public static void verifyStateRestore(
-			JobVertexID jobVertexID, ExecutionJobVertex executionJobVertex,
+			OperatorID jobVertexID, ExecutionJobVertex executionJobVertex,
 			List<KeyGroupRange> keyGroupPartitions) throws Exception {
 
 		for (int i = 0; i < executionJobVertex.getParallelism(); i++) {
@@ -3440,7 +3441,7 @@ public class CheckpointCoordinatorTest {
 			Executors.directExecutor());
 
 		store.addCheckpoint(
-			new CompletedCheckpoint(new JobID(), 0, 0, 0, Collections.<JobVertexID, TaskState>emptyMap()));
+			new CompletedCheckpoint(new JobID(), 0, 0, 0, Collections.<OperatorID, TaskState>emptyMap()));
 
 		CheckpointStatsTracker tracker = mock(CheckpointStatsTracker.class);
 		coord.setCheckpointStatsTracker(tracker);

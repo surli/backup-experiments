@@ -22,6 +22,7 @@ import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.runtime.executiongraph.Execution;
 import org.apache.flink.runtime.executiongraph.ExecutionJobVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.state.ChainedStateHandle;
 import org.apache.flink.runtime.state.KeyGroupRange;
 import org.apache.flink.runtime.state.KeyGroupsStateHandle;
@@ -51,13 +52,13 @@ public class StateAssignmentOperationV2 {
 
 	private final Logger logger;
 	private final Map<JobVertexID, ExecutionJobVertex> tasks;
-	private final Map<JobVertexID, TaskState> taskStates;
+	private final Map<OperatorID, TaskState> taskStates;
 	private final boolean allowNonRestoredState;
 
 	public StateAssignmentOperationV2(
 			Logger logger,
 			Map<JobVertexID, ExecutionJobVertex> tasks,
-			Map<JobVertexID, TaskState> taskStates,
+			Map<OperatorID, TaskState> taskStates,
 			boolean allowNonRestoredState) {
 
 		this.logger = Preconditions.checkNotNull(logger);
@@ -67,23 +68,23 @@ public class StateAssignmentOperationV2 {
 	}
 
 	public boolean assignStates() throws Exception {
-		Map<JobVertexID, TaskState> localStates = new HashMap<>(taskStates);
+		Map<OperatorID, TaskState> localStates = new HashMap<>(taskStates);
 		Map<JobVertexID, ExecutionJobVertex> localTasks = this.tasks;
 
-		Set<JobVertexID> allOperatorIDs = new HashSet<>();
+		Set<OperatorID> allOperatorIDs = new HashSet<>();
 		for (ExecutionJobVertex executionJobVertex : tasks.values()) {
 			allOperatorIDs.addAll(Lists.newArrayList(executionJobVertex.getOperatorIDs()));
 		}
-		for (Map.Entry<JobVertexID, TaskState> taskGroupStateEntry : taskStates.entrySet()) {
+		for (Map.Entry<OperatorID, TaskState> taskGroupStateEntry : taskStates.entrySet()) {
 			TaskState taskState = taskGroupStateEntry.getValue();
 			//----------------------------------------find operator for state---------------------------------------------
 
 			if (!allOperatorIDs.contains(taskGroupStateEntry.getKey())) {
 				if (allowNonRestoredState) {
-					logger.info("Skipped checkpoint state for operator {}.", taskState.getJobVertexID());
+					logger.info("Skipped checkpoint state for operator {}.", taskState.getTaskID());
 					continue;
 				} else {
-					throw new IllegalStateException("There is no operator for the state " + taskState.getJobVertexID());
+					throw new IllegalStateException("There is no operator for the state " + taskState.getTaskID());
 				}
 			}
 		}
@@ -92,12 +93,12 @@ public class StateAssignmentOperationV2 {
 			final ExecutionJobVertex executionJobVertex = task.getValue();
 
 			// find the states of all operators belonging to this task
-			JobVertexID[] operatorIDs = executionJobVertex.getOperatorIDs();
-			JobVertexID[] altOperatorIDs = executionJobVertex.getUserDefinedOperatorIDs();
+			OperatorID[] operatorIDs = executionJobVertex.getOperatorIDs();
+			OperatorID[] altOperatorIDs = executionJobVertex.getUserDefinedOperatorIDs();
 			List<TaskState> operatorStates = new ArrayList<>();
 			boolean statelessTask = true;
 			for (int x = 0; x < operatorIDs.length; x++) {
-				JobVertexID operatorID = altOperatorIDs[x] == null
+				OperatorID operatorID = altOperatorIDs[x] == null
 					? operatorIDs[x]
 					: altOperatorIDs[x];
 
@@ -125,7 +126,7 @@ public class StateAssignmentOperationV2 {
 
 	private void assignAttemptState(ExecutionJobVertex executionJobVertex, List<TaskState> operatorStates) {
 
-		JobVertexID[] operatorIDs = executionJobVertex.getOperatorIDs();
+		OperatorID[] operatorIDs = executionJobVertex.getOperatorIDs();
 
 		//1. first compute the new parallelism
 		checkParallelismPreconditions(operatorStates, executionJobVertex);

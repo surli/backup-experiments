@@ -43,6 +43,7 @@ import org.apache.flink.runtime.jobgraph.JobEdge;
 import org.apache.flink.runtime.jobgraph.JobGraph;
 import org.apache.flink.runtime.jobgraph.JobVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.jobgraph.ScheduleMode;
 import org.apache.flink.runtime.jobgraph.tasks.AbstractInvokable;
 import org.apache.flink.runtime.jobgraph.tasks.ExternalizedCheckpointSettings;
@@ -329,21 +330,21 @@ public class StreamingJobGraphGenerator {
 
 		JobVertexID jobVertexId = new JobVertexID(hash);
 
-		List<JobVertexID> legacyJobVertexIds = new ArrayList<>(legacyHashes.size());
+		List<OperatorID> legacyJobVertexIds = new ArrayList<>(legacyHashes.size());
 		for (Map<Integer, byte[]> legacyHash : legacyHashes) {
 			hash = legacyHash.get(streamNodeId);
 			if (null != hash) {
-				legacyJobVertexIds.add(new JobVertexID(hash));
+				legacyJobVertexIds.add(new OperatorID(hash));
 			}
 		}
 
 		List<Tuple2<byte[], byte[]>> chainedOperators = chainedOperatorHashes.get(streamNodeId);
-		List<JobVertexID> chainedOperatorVertexIds = new ArrayList<>();
-		List<JobVertexID> userDefinedChainedOperatorVertexIds = new ArrayList<>();
+		List<OperatorID> chainedOperatorVertexIds = new ArrayList<>();
+		List<OperatorID> userDefinedChainedOperatorVertexIds = new ArrayList<>();
 		if (chainedOperators != null) {
 			for (Tuple2<byte[], byte[]> chainedOperator : chainedOperators) {
-				chainedOperatorVertexIds.add(new JobVertexID(chainedOperator.f0));
-				userDefinedChainedOperatorVertexIds.add(chainedOperator.f1 != null ? new JobVertexID(chainedOperator.f1) : null);
+				chainedOperatorVertexIds.add(new OperatorID(chainedOperator.f0));
+				userDefinedChainedOperatorVertexIds.add(chainedOperator.f1 != null ? new OperatorID(chainedOperator.f1) : null);
 			}
 		}
 

@@ -21,7 +21,7 @@ package org.apache.flink.runtime.checkpoint.savepoint;
 import org.apache.flink.configuration.ConfigConstants;
 import org.apache.flink.runtime.checkpoint.SubtaskState;
 import org.apache.flink.runtime.checkpoint.TaskState;
-import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.state.ChainedStateHandle;
 import org.apache.flink.runtime.state.KeyGroupRangeOffsets;
 import org.apache.flink.runtime.state.KeyGroupsStateHandle;
@@ -77,7 +77,7 @@ public class SavepointV1Test {
 
 			int chainLength = 1 + random.nextInt(8);
 
-			TaskState taskState = new TaskState(new JobVertexID(), numSubtasksPerTask, 128, chainLength);
+			TaskState taskState = new TaskState(new OperatorID(), numSubtasksPerTask, 128, chainLength);
 
 			int noNonPartitionableStateAtIndex = random.nextInt(chainLength);
 			int noOperatorStateBackendAtIndex = random.nextInt(chainLength);

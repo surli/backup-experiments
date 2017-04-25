@@ -24,6 +24,7 @@ import org.apache.flink.runtime.checkpoint.SubtaskState;
 import org.apache.flink.runtime.executiongraph.Execution;
 import org.apache.flink.runtime.executiongraph.ExecutionJobVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.state.ChainedStateHandle;
 import org.apache.flink.runtime.state.KeyGroupRange;
 import org.apache.flink.runtime.state.KeyGroupsStateHandle;
@@ -38,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -55,13 +57,13 @@ public class StateAssignmentOperation {
 
 	private final Logger logger;
 	private final Map<JobVertexID, ExecutionJobVertex> tasks;
-	private final Map<JobVertexID, org.apache.flink.runtime.checkpoint.TaskState> taskStates;
+	private final Map<OperatorID, org.apache.flink.runtime.checkpoint.TaskState> taskStates;
 	private final boolean allowNonRestoredState;
 
 	public StateAssignmentOperation(
 			Logger logger,
 			Map<JobVertexID, ExecutionJobVertex> tasks,
-			Map<JobVertexID, org.apache.flink.runtime.checkpoint.TaskState> taskStates,
+			Map<OperatorID, org.apache.flink.runtime.checkpoint.TaskState> taskStates,
 			boolean allowNonRestoredState) {
 
 		this.logger = Preconditions.checkNotNull(logger);
@@ -75,9 +77,12 @@ public class StateAssignmentOperation {
 		// this tracks if we find missing node hash ids and already use secondary mappings
 		boolean expandedToLegacyIds = false;
 
-		Map<JobVertexID, ExecutionJobVertex> localTasks = this.tasks;
+		Map<OperatorID, ExecutionJobVertex> localTasks = new HashMap<>();
+		for (Map.Entry<JobVertexID, ExecutionJobVertex> task : tasks.entrySet()) {
+			localTasks.put(new OperatorID(task.getKey()), task.getValue());
+		}
 
-		for (Map.Entry<JobVertexID, org.apache.flink.runtime.checkpoint.TaskState> taskGroupStateEntry : taskStates.entrySet()) {
+		for (Map.Entry<OperatorID, org.apache.flink.runtime.checkpoint.TaskState> taskGroupStateEntry : taskStates.entrySet()) {
 
 			org.apache.flink.runtime.checkpoint.TaskState taskState = taskGroupStateEntry.getValue();
 
@@ -96,7 +101,7 @@ public class StateAssignmentOperation {
 
 			if (executionJobVertex == null) {
 				if (allowNonRestoredState) {
-					logger.info("Skipped checkpoint state for operator {}.", taskState.getJobVertexID());
+					logger.info("Skipped checkpoint state for operator {}.", taskState.getTaskID());
 					continue;
 				} else {
 					throw new IllegalStateException("There is no execution job vertex for the job" +

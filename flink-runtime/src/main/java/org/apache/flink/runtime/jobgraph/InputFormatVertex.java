@@ -39,7 +39,7 @@ public class InputFormatVertex extends JobVertex {
 		super(name, id);
 	}
 
-	public InputFormatVertex(String name, JobVertexID id, List<JobVertexID> alternativeIds, List<JobVertexID> operatorIds, List<JobVertexID> alternativeOperatorIds) {
+	public InputFormatVertex(String name, JobVertexID id, List<OperatorID> alternativeIds, List<OperatorID> operatorIds, List<OperatorID> alternativeOperatorIds) {
 		super(name, id, alternativeIds, operatorIds, alternativeOperatorIds);
 	}
 	

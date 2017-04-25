@@ -25,6 +25,7 @@ import org.apache.flink.runtime.checkpoint.CompletedCheckpoint;
 import org.apache.flink.runtime.checkpoint.TaskState;
 import org.apache.flink.runtime.executiongraph.ExecutionJobVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.state.StreamStateHandle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,7 +58,7 @@ public class SavepointLoader {
 	 */
 	public static CompletedCheckpoint loadAndValidateSavepoint(
 			JobID jobId,
-			Map<JobVertexID, ExecutionJobVertex> tasks,
+			Map<JobVertexID, ExecutionJobVertex> graphTasks,
 			String savepointPath,
 			ClassLoader classLoader,
 			boolean allowNonRestoredState) throws IOException {
@@ -69,29 +70,28 @@ public class SavepointLoader {
 		final Savepoint savepoint = savepointAndHandle.f0;
 		final StreamStateHandle metadataHandle = savepointAndHandle.f1;
 
-		final Map<JobVertexID, TaskState> taskStates = new HashMap<>(savepoint.getTaskStates().size());
+		final Map<OperatorID, TaskState> taskStates = new HashMap<>(savepoint.getTaskStates().size());
 
 		boolean expandedToLegacyIds = false;
 
-		// include mapping from operator to task
-		Map<JobVertexID, ExecutionJobVertex> operatorToTaskMap = new HashMap<>();
-		for (Map.Entry<JobVertexID, ExecutionJobVertex> task : tasks.entrySet()) {
-			for (JobVertexID operatorID : task.getValue().getOperatorIDs()) {
-				operatorToTaskMap.put(operatorID, task.getValue());
+		// generate mapping from operator to task
+		Map<OperatorID, ExecutionJobVertex> tasks = new HashMap<>();
+		for (Map.Entry<JobVertexID, ExecutionJobVertex> task : graphTasks.entrySet()) {
+			for (OperatorID operatorID : task.getValue().getOperatorIDs()) {
+				tasks.put(operatorID, task.getValue());
 			}
 		}
-		tasks = operatorToTaskMap;
 
 		// (2) validate it (parallelism, etc)
 		for (TaskState taskState : savepoint.getTaskStates()) {
 
-			ExecutionJobVertex executionJobVertex = tasks.get(taskState.getJobVertexID());
+			ExecutionJobVertex executionJobVertex = tasks.get(taskState.getTaskID());
 
 			// on the first time we can not find the execution job vertex for an id, we also consider alternative ids,
 			// for example as generated from older flink versions, to provide backwards compatibility.
 			if (executionJobVertex == null && !expandedToLegacyIds) {
 				tasks = ExecutionJobVertex.includeLegacyJobVertexIDs(tasks);
-				executionJobVertex = tasks.get(taskState.getJobVertexID());
+				executionJobVertex = tasks.get(taskState.getTaskID());
 				expandedToLegacyIds = true;
 				LOG.info("Could not find ExecutionJobVertex. Including legacy JobVertexIDs in search.");
 			}
@@ -100,7 +100,7 @@ public class SavepointLoader {
 
 				if (executionJobVertex.getMaxParallelism() == taskState.getMaxParallelism()
 						|| !executionJobVertex.isMaxParallelismConfigured()) {
-					taskStates.put(taskState.getJobVertexID(), taskState);
+					taskStates.put(taskState.getTaskID(), taskState);
 				} else {
 					String msg = String.format("Failed to rollback to savepoint %s. " +
 									"Max parallelism mismatch between savepoint state and new program. " +
@@ -108,21 +108,21 @@ public class SavepointLoader {
 									"max parallelism %d. This indicates that the program has been changed " +
 									"in a non-compatible way after the savepoint.",
 							savepoint,
-							taskState.getJobVertexID(),
+							taskState.getTaskID(),
 							taskState.getMaxParallelism(),
 							executionJobVertex.getMaxParallelism());
 
 					throw new IllegalStateException(msg);
 				}
 			} else if (allowNonRestoredState) {
-				LOG.info("Skipping savepoint state for operator {}.", taskState.getJobVertexID());
+				LOG.info("Skipping savepoint state for operator {}.", taskState.getTaskID());
 			} else {
 				String msg = String.format("Failed to rollback to savepoint %s. " +
 								"Cannot map savepoint state for operator %s to the new program, " +
 								"because the operator is not available in the new program. If " +
 								"you want to allow to skip this, you can set the --allowNonRestoredState " +
 								"option on the CLI.",
-						savepointPath, taskState.getJobVertexID());
+						savepointPath, taskState.getTaskID());
 
 				throw new IllegalStateException(msg);
 			}

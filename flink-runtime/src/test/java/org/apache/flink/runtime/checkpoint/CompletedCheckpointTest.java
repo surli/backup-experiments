@@ -23,7 +23,7 @@ import org.apache.flink.core.fs.Path;
 import org.apache.flink.core.testutils.CommonTestUtils;
 import org.apache.flink.runtime.jobgraph.JobStatus;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
-import org.apache.flink.runtime.state.SharedStateHandle;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.state.SharedStateRegistry;
 import org.apache.flink.runtime.state.filesystem.FileStateHandle;
 import org.junit.Rule;
@@ -32,12 +32,10 @@ import org.junit.rules.TemporaryFolder;
 import org.mockito.Mockito;
 
 import java.io.File;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -56,8 +54,8 @@ public class CompletedCheckpointTest {
 		assertEquals(true, file.exists());
 
 		TaskState state = mock(TaskState.class);
-		Map<JobVertexID, TaskState> taskStates = new HashMap<>();
-		taskStates.put(new JobVertexID(), state);
+		Map<OperatorID, TaskState> taskStates = new HashMap<>();
+		taskStates.put(new OperatorID(), state);
 
 		// Verify discard call is forwarded to state
 		CompletedCheckpoint checkpoint = new CompletedCheckpoint(
@@ -76,8 +74,8 @@ public class CompletedCheckpointTest {
 	@Test
 	public void testCleanUpOnSubsume() throws Exception {
 		TaskState state = mock(TaskState.class);
-		Map<JobVertexID, TaskState> taskStates = new HashMap<>();
-		taskStates.put(new JobVertexID(), state);
+		Map<OperatorID, TaskState> taskStates = new HashMap<>();
+		taskStates.put(new OperatorID(), state);
 
 		boolean discardSubsumed = true;
 		CheckpointProperties props = new CheckpointProperties(false, false, discardSubsumed, true, true, true, true);
@@ -108,8 +106,8 @@ public class CompletedCheckpointTest {
 		};
 
 		TaskState state = mock(TaskState.class);
-		Map<JobVertexID, TaskState> taskStates = new HashMap<>();
-		taskStates.put(new JobVertexID(), state);
+		Map<OperatorID, TaskState> taskStates = new HashMap<>();
+		taskStates.put(new OperatorID(), state);
 
 		for (JobStatus status : terminalStates) {
 			Mockito.reset(state);
@@ -146,8 +144,8 @@ public class CompletedCheckpointTest {
 	@Test
 	public void testCompletedCheckpointStatsCallbacks() throws Exception {
 		TaskState state = mock(TaskState.class);
-		Map<JobVertexID, TaskState> taskStates = new HashMap<>();
-		taskStates.put(new JobVertexID(), state);
+		Map<OperatorID, TaskState> taskStates = new HashMap<>();
+		taskStates.put(new OperatorID(), state);
 
 		CompletedCheckpoint completed = new CompletedCheckpoint(
 			new JobID(),

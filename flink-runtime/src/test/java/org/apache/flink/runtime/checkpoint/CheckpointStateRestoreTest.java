@@ -26,6 +26,7 @@ import org.apache.flink.runtime.executiongraph.ExecutionAttemptID;
 import org.apache.flink.runtime.executiongraph.ExecutionJobVertex;
 import org.apache.flink.runtime.executiongraph.ExecutionVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.jobgraph.tasks.ExternalizedCheckpointSettings;
 import org.apache.flink.runtime.messages.checkpoint.AcknowledgeCheckpoint;
 import org.apache.flink.runtime.state.ChainedStateHandle;
@@ -243,14 +244,14 @@ public class CheckpointStateRestoreTest {
 				.generateChainedStateHandle(new SerializableObject());
 
 		// --- (2) Checkpoint misses state for a jobVertex (should work) ---
-		Map<JobVertexID, TaskState> checkpointTaskStates = new HashMap<>();
+		Map<OperatorID, TaskState> checkpointTaskStates = new HashMap<>();
 		{
-			TaskState taskState = new TaskState(jobVertexId1, 3, 3, 1);
+			TaskState taskState = new TaskState(new OperatorID(jobVertexId1), 3, 3, 1);
 			taskState.putState(0, new SubtaskState(serializedState, null, null, null, null));
 			taskState.putState(1, new SubtaskState(serializedState, null, null, null, null));
 			taskState.putState(2, new SubtaskState(serializedState, null, null, null, null));
 
-			checkpointTaskStates.put(jobVertexId1, taskState);
+			checkpointTaskStates.put(new OperatorID(jobVertexId1), taskState);
 		}
 		CompletedCheckpoint checkpoint = new CompletedCheckpoint(new JobID(), 0, 1, 2, new HashMap<>(checkpointTaskStates));
 
@@ -264,10 +265,10 @@ public class CheckpointStateRestoreTest {
 
 		// There is no task for this
 		{
-			TaskState taskState = new TaskState(jobVertexId1, 1, 1, 1);
+			TaskState taskState = new TaskState(new OperatorID(newJobVertexID), 1, 1, 1);
 			taskState.putState(0, new SubtaskState(serializedState, null, null, null, null));
 
-			checkpointTaskStates.put(newJobVertexID, taskState);
+			checkpointTaskStates.put(new OperatorID(newJobVertexID), taskState);
 		}
 
 		checkpoint = new CompletedCheckpoint(new JobID(), 1, 2, 3, new HashMap<>(checkpointTaskStates));
@@ -314,8 +315,8 @@ public class CheckpointStateRestoreTest {
 		when(vertex.getMaxParallelism()).thenReturn(vertices.length);
 		when(vertex.getJobVertexId()).thenReturn(id);
 		when(vertex.getTaskVertices()).thenReturn(vertices);
-		when(vertex.getOperatorIDs()).thenReturn(new JobVertexID[]{id});
-		when(vertex.getUserDefinedOperatorIDs()).thenReturn(new JobVertexID[]{null});
+		when(vertex.getOperatorIDs()).thenReturn(new OperatorID[]{new OperatorID(id)});
+		when(vertex.getUserDefinedOperatorIDs()).thenReturn(new OperatorID[]{null});
 
 		for (ExecutionVertex v : vertices) {
 			when(v.getJobVertex()).thenReturn(vertex);

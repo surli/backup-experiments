@@ -20,9 +20,9 @@ package org.apache.flink.runtime.checkpoint;
 
 import org.apache.flink.api.common.JobID;
 import org.apache.flink.runtime.jobgraph.JobStatus;
-import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.state.KeyGroupRange;
 import org.apache.flink.runtime.state.SharedStateRegistry;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.util.TestLogger;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -105,7 +105,7 @@ public abstract class CompletedCheckpointStoreTest extends TestLogger {
 		assertEquals(1, checkpoints.getNumberOfRetainedCheckpoints());
 
 		for (int i = 1; i < expected.length; i++) {
-			Collection<TaskState> taskStates = expected[i - 1].getTaskStates().values();
+			Collection<TaskState> taskStates = expected[i - 1].getOperatorStates().values();
 
 			checkpoints.addCheckpoint(expected[i]);
 
@@ -209,9 +209,9 @@ public abstract class CompletedCheckpointStoreTest extends TestLogger {
 	protected TestCompletedCheckpoint createCheckpoint(int id, int numberOfStates, CheckpointProperties props)
 			throws IOException {
 
-		JobVertexID jvid = new JobVertexID();
+		OperatorID jvid = new OperatorID();
 
-		Map<JobVertexID, TaskState> taskGroupStates = new HashMap<>();
+		Map<OperatorID, TaskState> taskGroupStates = new HashMap<>();
 		TaskState taskState = new TaskState(jvid, numberOfStates, numberOfStates, 1);
 		taskGroupStates.put(jvid, taskState);
 
@@ -270,7 +270,7 @@ public abstract class CompletedCheckpointStoreTest extends TestLogger {
 			JobID jobId,
 			long checkpointId,
 			long timestamp,
-			Map<JobVertexID, TaskState> taskGroupStates,
+			Map<OperatorID, TaskState> taskGroupStates,
 			CheckpointProperties props) {
 
 			super(jobId, checkpointId, timestamp, Long.MAX_VALUE, taskGroupStates, props);

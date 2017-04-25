@@ -318,10 +318,10 @@ public class SavepointITCase extends TestLogger {
 			// Verify that all tasks, which are part of the savepoint
 			// have a matching task deployment descriptor.
 			for (TaskState taskState : savepoint.getTaskStates()) {
-				Collection<TaskDeploymentDescriptor> taskTdds = tdds.get(taskState.getJobVertexID());
+				Collection<TaskDeploymentDescriptor> taskTdds = tdds.get(new JobVertexID(taskState.getTaskID()));
 
 				errMsg = "Missing task for savepoint state for operator "
-					+ taskState.getJobVertexID() + ".";
+					+ taskState.getTaskID() + ".";
 				assertTrue(errMsg, taskTdds.size() > 0);
 
 				assertEquals(taskState.getNumberCollectedStates(), taskTdds.size());

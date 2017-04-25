@@ -18,9 +18,9 @@
 
 package org.apache.flink.runtime.checkpoint;
 
-import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.state.CompositeStateHandle;
 import org.apache.flink.runtime.state.SharedStateRegistry;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.util.Preconditions;
 
 import java.util.Collection;
@@ -39,7 +39,7 @@ public class TaskState implements CompositeStateHandle {
 
 	private static final long serialVersionUID = -4845578005863201810L;
 
-	private final JobVertexID jobVertexID;
+	private final OperatorID taskID;
 
 	/** handles to non-partitioned states, subtaskindex -> subtaskstate */
 	private final Map<Integer, SubtaskState> subtaskStates;
@@ -54,13 +54,13 @@ public class TaskState implements CompositeStateHandle {
 	/** length of the operator chain */
 	private final int chainLength;
 
-	public TaskState(JobVertexID jobVertexID, int parallelism, int maxParallelism, int chainLength) {
+	public TaskState(OperatorID taskID, int parallelism, int maxParallelism, int chainLength) {
 		Preconditions.checkArgument(
 				parallelism <= maxParallelism,
 				"Parallelism " + parallelism + " is not smaller or equal to max parallelism " + maxParallelism + ".");
 		Preconditions.checkArgument(chainLength > 0, "There has to be at least one operator in the operator chain.");
 
-		this.jobVertexID = jobVertexID;
+		this.taskID = taskID;
 
 		this.subtaskStates = new HashMap<>(parallelism);
 
@@ -69,8 +69,8 @@ public class TaskState implements CompositeStateHandle {
 		this.chainLength = chainLength;
 	}
 
-	public JobVertexID getJobVertexID() {
-		return jobVertexID;
+	public OperatorID getTaskID() {
+		return taskID;
 	}
 
 	public void putState(int subtaskIndex, SubtaskState subtaskState) {
@@ -162,7 +162,7 @@ public class TaskState implements CompositeStateHandle {
 		if (obj instanceof TaskState) {
 			TaskState other = (TaskState) obj;
 
-			return jobVertexID.equals(other.jobVertexID)
+			return taskID.equals(other.taskID)
 					&& parallelism == other.parallelism
 					&& subtaskStates.equals(other.subtaskStates);
 		} else {
@@ -172,7 +172,7 @@ public class TaskState implements CompositeStateHandle {
 
 	@Override
 	public int hashCode() {
-		return parallelism + 31 * Objects.hash(jobVertexID, subtaskStates);
+		return parallelism + 31 * Objects.hash(taskID, subtaskStates);
 	}
 
 	public Map<Integer, SubtaskState> getSubtaskStates() {
@@ -184,7 +184,7 @@ public class TaskState implements CompositeStateHandle {
 		// KvStates are always null in 1.1. Don't print this as it might
 		// confuse users that don't care about how we store it internally.
 		return "TaskState(" +
-			"jobVertexID: " + jobVertexID +
+			"taskID: " + taskID +
 			", parallelism: " + parallelism +
 			", sub task states: " + subtaskStates.size() +
 			", total size (bytes): " + getStateSize() +

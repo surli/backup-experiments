@@ -36,6 +36,7 @@ import org.apache.flink.migration.util.SerializedValue;
 import org.apache.flink.runtime.checkpoint.savepoint.SavepointSerializer;
 import org.apache.flink.runtime.checkpoint.savepoint.SavepointV1;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
+import org.apache.flink.runtime.jobgraph.OperatorID;
 import org.apache.flink.runtime.state.ChainedStateHandle;
 import org.apache.flink.runtime.state.CheckpointStreamFactory;
 import org.apache.flink.runtime.state.KeyGroupRangeOffsets;
@@ -190,7 +191,7 @@ public class SavepointV0Serializer implements SavepointSerializer<SavepointV1> {
 
 		org.apache.flink.runtime.checkpoint.TaskState newTaskState =
 				new org.apache.flink.runtime.checkpoint.TaskState(
-						jobVertexID,
+						new OperatorID(jobVertexID),
 						parallelism,
 						parallelism,
 						chainLength);

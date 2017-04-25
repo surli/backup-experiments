@@ -54,7 +54,7 @@ public class StandaloneCompletedCheckpointStoreTest extends CompletedCheckpointS
 	public void testShutdownDiscardsCheckpoints() throws Exception {
 		AbstractCompletedCheckpointStore store = createCompletedCheckpoints(1);
 		TestCompletedCheckpoint checkpoint = createCheckpoint(0);
-		Collection<TaskState> taskStates = checkpoint.getTaskStates().values();
+		Collection<TaskState> taskStates = checkpoint.getOperatorStates().values();
 
 		store.addCheckpoint(checkpoint);
 		assertEquals(1, store.getNumberOfRetainedCheckpoints());
@@ -74,7 +74,7 @@ public class StandaloneCompletedCheckpointStoreTest extends CompletedCheckpointS
 	public void testSuspendDiscardsCheckpoints() throws Exception {
 		AbstractCompletedCheckpointStore store = createCompletedCheckpoints(1);
 		TestCompletedCheckpoint checkpoint = createCheckpoint(0);
-		Collection<TaskState> taskStates = checkpoint.getTaskStates().values();
+		Collection<TaskState> taskStates = checkpoint.getOperatorStates().values();
 
 		store.addCheckpoint(checkpoint);
 		assertEquals(1, store.getNumberOfRetainedCheckpoints());
@@ -99,7 +99,7 @@ public class StandaloneCompletedCheckpointStoreTest extends CompletedCheckpointS
 		for (long i = 0; i <= numCheckpointsToRetain; ++i) {
 			CompletedCheckpoint checkpointToAdd = mock(CompletedCheckpoint.class);
 			doReturn(i).when(checkpointToAdd).getCheckpointID();
-			doReturn(Collections.emptyMap()).when(checkpointToAdd).getTaskStates();
+			doReturn(Collections.emptyMap()).when(checkpointToAdd).getOperatorStates();
 			doThrow(new IOException()).when(checkpointToAdd).discardOnSubsume(any(SharedStateRegistry.class));
 			
 			try {
