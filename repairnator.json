@@ -1,24 +1,77 @@
 {
+  "pr-base-commit-id": "995c7ce2fa5799bd2bbcc09c205dc823b2b405d5",
+  "totalNumberSkippingTests": 75,
+  "pr-head-commit-id": "447c1128e0e2ef48a77f8d6e7ff7369f12de7054",
+  "pr-remote-repo": "trixpan/nifi",
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException:"
+  ],
+  "totalNumberFailingTests": 1,
+  "buildid": 225580626,
+  "totalNumberErroringTests": 3,
+  "freeMemory": 167947784,
+  "hostname": "repairnator",
+  "is-pr": "true",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 2453,
+  "pr-head-commit-id-url": "https://github.com/trixpan/nifi/commit/447c1128e0e2ef48a77f8d6e7ff7369f12de7054",
+  "pr-id": 1692,
+  "repo": "apache/nifi",
+  "failing-test-cases": [
+    {
+      "className": "org.apache.nifi.processors.standard.TestListDatabaseTables",
+      "failingMethods": [
+        "org.apache.nifi.processors.standard.TestListDatabaseTables#testListTablesMultipleRefresh"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c2\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.nifi.processors.standard.TestGetFile",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnreadableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithUnwritableDir",
+        "org.apache.nifi.processors.standard.TestGetFile#testWithInaccessibleDir"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 4,
     "CloneRepository": 23,
     "ResolveDependency": 31,
     "TestProject": 1062,
-    "BuildProject": 1021
+    "BuildProject": 1021,
+    "GatherTestInformation": 8
   },
-  "totalMemory": 396361728,
-  "bugType": "only_fail",
   "workspace": "./workspace",
-  "pr-remote-repo": "trixpan/nifi",
-  "pr-head-commit-id": "447c1128e0e2ef48a77f8d6e7ff7369f12de7054",
-  "pr-id": 1692,
-  "repo": "apache/nifi",
-  "freeMemory": 167947784,
-  "pr-head-commit-id-url": "https://github.com/trixpan/nifi/commit/447c1128e0e2ef48a77f8d6e7ff7369f12de7054",
-  "hostname": "repairnator",
-  "is-pr": "true",
-  "buildid": 225580626,
-  "nbCPU": 4,
   "pr-base-commit-id-url": "https://github.com/apache/nifi/commit/995c7ce2fa5799bd2bbcc09c205dc823b2b405d5",
-  "pr-base-commit-id": "995c7ce2fa5799bd2bbcc09c205dc823b2b405d5"
+  "totalMemory": 396361728,
+  "nbCPU": 4,
+  "failingModule": "/root/workspace/apache/nifi/225580626/nifi-nar-bundles/nifi-standard-bundle/nifi-standard-processors"
 }
