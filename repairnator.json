@@ -1,24 +1,69 @@
 {
+  "pr-base-commit-id": "0468c1ac13d0eb0a33aecfe8984ab6d119ee7c24",
+  "totalNumberSkippingTests": 0,
+  "pr-head-commit-id": "020f4afb7fcd86f861fdff37a7cb404f01a1f1dd",
+  "pr-remote-repo": "prmathur-microsoft/paho.mqtt.java",
+  "error-types": [
+    "java.lang.Exception"
+  ],
+  "totalNumberFailingTests": 0,
+  "buildid": 225393506,
+  "totalNumberErroringTests": 4,
+  "freeMemory": 117146368,
+  "hostname": "repairnator",
+  "is-pr": "true",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 58,
+  "pr-head-commit-id-url": "https://github.com/prmathur-microsoft/paho.mqtt.java/commit/020f4afb7fcd86f861fdff37a7cb404f01a1f1dd",
+  "pr-id": 361,
+  "repo": "eclipse/paho.mqtt.java",
+  "failing-test-cases": [
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest#testManyMessageBufferAndDeliver",
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest#testDeleteOldestBufferedMessages",
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest#testNoDeleteOldestBufferedMessages",
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest#testPersistBufferedMessages"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "test timed out after 60000 milliseconds",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "test timed out after 60000 milliseconds",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "test timed out after 60000 milliseconds",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "test timed out after 60000 milliseconds",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    }
+  ],
   "step-durations": {
     "CheckoutBuild": 2,
     "CloneRepository": 2,
     "ResolveDependency": 259,
     "TestProject": 935,
-    "BuildProject": 185
+    "BuildProject": 185,
+    "GatherTestInformation": 0
   },
-  "totalMemory": 190840832,
-  "bugType": "only_fail",
   "workspace": "./workspace",
-  "pr-remote-repo": "prmathur-microsoft/paho.mqtt.java",
-  "pr-head-commit-id": "020f4afb7fcd86f861fdff37a7cb404f01a1f1dd",
-  "pr-id": 361,
-  "repo": "eclipse/paho.mqtt.java",
-  "freeMemory": 117146368,
-  "pr-head-commit-id-url": "https://github.com/prmathur-microsoft/paho.mqtt.java/commit/020f4afb7fcd86f861fdff37a7cb404f01a1f1dd",
-  "hostname": "repairnator",
-  "is-pr": "true",
-  "buildid": 225393506,
-  "nbCPU": 4,
   "pr-base-commit-id-url": "https://github.com/eclipse/paho.mqtt.java/commit/0468c1ac13d0eb0a33aecfe8984ab6d119ee7c24",
-  "pr-base-commit-id": "0468c1ac13d0eb0a33aecfe8984ab6d119ee7c24"
+  "totalMemory": 190840832,
+  "nbCPU": 4,
+  "failingModule": "/root/workspace/eclipse/paho.mqtt.java/225393506/org.eclipse.paho.client.mqttv3.test"
 }
