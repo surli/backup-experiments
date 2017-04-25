@@ -16,11 +16,16 @@ package com.facebook.presto.type;
 import com.facebook.presto.operator.scalar.AbstractTestFunctions;
 import org.testng.annotations.Test;
 
+import java.util.stream.Stream;
+
 import static com.facebook.presto.operator.scalar.CharacterStringCasts.varcharToCharSaturatedFloorCast;
 import static com.facebook.presto.spi.type.CharType.createCharType;
 import static com.facebook.presto.spi.type.VarcharType.VARCHAR;
 import static com.facebook.presto.spi.type.VarcharType.createVarcharType;
+import static io.airlift.slice.SliceUtf8.codePointToUtf8;
 import static io.airlift.slice.Slices.utf8Slice;
+import static io.airlift.slice.Slices.wrappedBuffer;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.testng.Assert.assertEquals;
 
 public class TestCharacterStringCasts
@@ -61,9 +66,103 @@ public class TestCharacterStringCasts
     @Test
     public void testVarcharToCharSaturatedFloorCast()
     {
-        assertEquals(varcharToCharSaturatedFloorCast(10L, utf8Slice("1234567890")), utf8Slice("1234567890"));
-        assertEquals(varcharToCharSaturatedFloorCast(10L, utf8Slice("123456789")), utf8Slice("12345678"));
-        assertEquals(varcharToCharSaturatedFloorCast(10L, utf8Slice("12345678901")), utf8Slice("1234567890"));
-        assertEquals(varcharToCharSaturatedFloorCast(10L, utf8Slice("")), utf8Slice(""));
+        // Encoded in UTF-8
+        byte[] nonBmpCharacter = codePointToUtf8(0x1F50D).getBytes();
+        byte[] nonBmpCharacterMinus1 = codePointToUtf8(0x1F50C).getBytes();
+        byte[] maxCodePoint = codePointToUtf8(Character.MAX_CODE_POINT).getBytes();
+        byte[] codePointBeforeSpace = codePointToUtf8(' ' - 1).getBytes();
+
+        // Truncation
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("12345")),
+                utf8Slice("1234"));
+
+        // Size fits, preserved
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("1234")),
+                utf8Slice("1234"));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                wrappedBuffer(concat(bytes("123"), nonBmpCharacter))),
+                wrappedBuffer(concat(bytes("123"), nonBmpCharacter)));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                wrappedBuffer(concat(bytes("12"), nonBmpCharacter, bytes("3")))),
+                wrappedBuffer(concat(bytes("12"), nonBmpCharacter, bytes("3"))));
+
+        // Size fits, preserved except char(4) representation has trailing spaces removed
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("123 ")),
+                utf8Slice("123"));
+
+        // Too short
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("123")),
+                utf8Slice("12"));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("12 ")),
+                utf8Slice("1"));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("1  ")),
+                utf8Slice(""));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice(" ")),
+                utf8Slice(""));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                wrappedBuffer(concat(bytes("12"), nonBmpCharacter))),
+                utf8Slice("12"));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                wrappedBuffer(concat(bytes("1"), nonBmpCharacter, bytes("3")))),
+                wrappedBuffer(concat(bytes("1"), nonBmpCharacter)));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("12\0")),
+                utf8Slice("12"));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("1\0")),
+                utf8Slice("1"));
+
+        // Smaller than any char(4)
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("\0")),
+                utf8Slice(""));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("\0\0")),
+                utf8Slice("\0"));
+        assertEquals(varcharToCharSaturatedFloorCast(
+                4L,
+                utf8Slice("")),
+                utf8Slice(""));
+    }
+
+    private byte[] bytes(String stringWithinBmp)
+    {
+        return stringWithinBmp.getBytes(UTF_8);
+    }
+
+    private byte[] concat(byte[]... buffers)
+    {
+        int resultLength = Stream.of(buffers)
+                .mapToInt(buffer -> buffer.length)
+                .sum();
+        byte[] result = new byte[resultLength];
+        int offset = 0;
+        for (byte[] buffer : buffers) {
+            System.arraycopy(buffer, 0, result, offset, buffer.length);
+            offset += buffer.length;
+        }
+        return result;
     }
 }
