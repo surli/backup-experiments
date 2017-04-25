@@ -1,0 +1,1338 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] Closure Compiler Parent
+[INFO] Closure Compiler Externs
+[INFO] Closure Compiler GWT App
+[INFO] Closure Compiler Main
+[INFO] Closure Compiler Linter
+[INFO] Closure Compiler Unshaded
+[INFO] Closure Compiler
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Closure Compiler Parent 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ closure-compiler-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.3/commons-lang-2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.3/commons-lang-2.3.pom (11 KB at 20.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.2/enforcer-api-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.2/enforcer-api-1.2.pom (3 KB at 103.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.2/enforcer-rules-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.2/enforcer-rules-1.2.pom (4 KB at 106.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.2/maven-common-artifact-filters-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.2/maven-common-artifact-filters-1.2.pom (5 KB at 129.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-plugin-testing-harness/1.1/maven-plugin-testing-harness-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-plugin-testing-harness/1.1/maven-plugin-testing-harness-1.1.pom (7 KB at 167.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/7/maven-shared-components-7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/7/maven-shared-components-7.pom (3 KB at 110.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-7/plexus-archiver-1.0-alpha-7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-7/plexus-archiver-1.0-alpha-7.pom (2 KB at 40.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.6/plexus-components-1.1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.6/plexus-components-1.1.6.pom (2 KB at 68.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.pom (8 KB at 253.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom (2 KB at 35.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom (2 KB at 40.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.0/maven-dependency-tree-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.0/maven-dependency-tree-2.0.pom (5 KB at 182.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-6/plexus-i18n-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-6/plexus-i18n-1.0-beta-6.pom (771 B at 17.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.4/plexus-components-1.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.4/plexus-components-1.1.4.pom (3 KB at 84.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-10/doxia-sink-api-1.0-alpha-10.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.3/commons-lang-2.3.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.2/enforcer-api-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar (10 KB at 366.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.2/enforcer-rules-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.2/enforcer-rules-1.2.jar (75 KB at 1079.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.2/maven-common-artifact-filters-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.2/enforcer-api-1.2.jar (10 KB at 125.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-10/doxia-sink-api-1.0-alpha-10.jar (10 KB at 116.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.0/maven-dependency-tree-2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.2/maven-common-artifact-filters-1.2.jar (31 KB at 305.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-6/plexus-i18n-1.0-beta-6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.jar (262 KB at 2255.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.0/maven-dependency-tree-2.0.jar (55 KB at 484.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.3/commons-lang-2.3.jar (240 KB at 2029.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-6/plexus-i18n-1.0-beta-6.jar (12 KB at 96.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar (276 KB at 2183.3 KB/sec)
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ closure-compiler-parent ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.pom (3 KB at 111.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom (19 KB at 649.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom (2 KB at 47.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.7/plexus-components-1.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.7/plexus-components-1.1.7.pom (5 KB at 269.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar (13 KB at 523.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar (48 KB at 1370.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar (37 KB at 1046.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar (35 KB at 930.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar (114 KB at 2269.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar (29 KB at 588.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar (56 KB at 904.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar (24 KB at 379.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar (85 KB at 1205.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar (86 KB at 1168.7 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar (12 KB at 143.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.jar (226 KB at 2419.8 KB/sec)
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/pom.xml to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-parent/1.0-SNAPSHOT/closure-compiler-parent-1.0-SNAPSHOT.pom
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Closure Compiler Externs 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ closure-compiler-externs ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-antrun-plugin:1.8:run (default) @ closure-compiler-externs ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.4/ant-1.9.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.4/ant-1.9.4.pom (10 KB at 361.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.9.4/ant-parent-1.9.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.9.4/ant-parent-1.9.4.pom (6 KB at 248.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.pom (3 KB at 76.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar (13 KB at 287.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar (48 KB at 1368.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar (66 KB at 1434.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar (26 KB at 455.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar (86 KB at 1239.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar (35 KB at 442.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar (30 KB at 353.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar (50 KB at 502.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.4/ant-1.9.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar (153 KB at 1327.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar (324 KB at 2633.7 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar (79 KB at 622.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar (18 KB at 142.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.jar (238 KB at 1615.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.9.4/ant-1.9.4.jar (1972 KB at 6730.2 KB/sec)
+[WARNING] Parameter tasks is deprecated, use target instead
+[INFO] Executing tasks
+
+main:
+      [zip] Building zip: /root/workspace/google/closure-compiler/225682817/target/classes/externs.zip
+      [zip] Building zip: /root/workspace/google/closure-compiler/225682817/externs/target/classes/externs.zip
+[INFO] Executed tasks
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ closure-compiler-externs ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom (748 B at 24.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom (4 KB at 126.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom (22 KB at 1051.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (5 KB at 201.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom (21 KB at 954.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.pom (6 KB at 277.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/30/maven-shared-components-30.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/30/maven-shared-components-30.pom (5 KB at 203.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom (2 KB at 75.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar (48 KB at 1541.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (197 KB at 2896.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.jar (37 KB at 534.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (150 KB at 2046.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (461 KB at 4798.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (145 KB at 1376.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (50 KB at 454.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 KB at 262.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 KB at 95.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (73 KB at 513.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.jar (515 KB at 3237.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 KB at 277.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (106 KB at 650.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar (5 KB at 25.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (104 KB at 621.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.jar (46 KB at 236.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.jar (51 KB at 229.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.jar (50 KB at 223.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.jar (161 KB at 711.6 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.jar (76 KB at 325.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar (242 KB at 1032.3 KB/sec)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/google/closure-compiler/225682817/externs/target/generated-resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ closure-compiler-externs ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom (4 KB at 163.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom (5 KB at 231.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom (4 KB at 188.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom (5 KB at 253.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.pom (891 B at 51.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.7/plexus-compiler-2.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.7/plexus-compiler-2.7.pom (5 KB at 267.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (3 KB at 144.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.pom (711 B at 38.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.pom (792 B at 45.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.7/plexus-compilers-2.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.7/plexus-compilers-2.7.pom (2 KB at 61.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar (37 KB at 548.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.7/plexus-compiler-api-2.7.jar (26 KB at 534.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar (14 KB at 169.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.7/plexus-compiler-javac-2.7.jar (20 KB at 322.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.7/plexus-compiler-manager-2.7.jar (5 KB at 74.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar (217 KB at 2283.5 KB/sec)
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ closure-compiler-externs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/google/closure-compiler/225682817/externs/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ closure-compiler-externs ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ closure-compiler-externs ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.pom (8 KB at 286.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom (2 KB at 83.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom (13 KB at 650.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.pom (4 KB at 142.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.pom (4 KB at 155.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.jar (45 KB at 1110.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar (223 KB at 3427.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.jar (22 KB at 305.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.jar (286 KB at 3860.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.jar (39 KB at 581.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.jar (174 KB at 1720.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar (17 KB at 158.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar (22 KB at 211.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar (13 KB at 129.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar (9 KB at 79.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar (14 KB at 112.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.jar (11 KB at 83.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.jar (192 KB at 1484.3 KB/sec)
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ closure-compiler-externs ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom (5 KB at 146.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom (5 KB at 194.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom (13 KB at 763.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom (6 KB at 247.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom (5 KB at 240.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom (13 KB at 681.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom (15 KB at 546.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom (2 KB at 93.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom (6 KB at 260.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.jar (24 KB at 481.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar (151 KB at 2513.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar (204 KB at 3919.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.jar (183 KB at 2944.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar (57 KB at 690.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar (84 KB at 1009.8 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar (98 KB at 1080.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar (416 KB at 3778.8 KB/sec)
+[INFO] Building jar: /root/workspace/google/closure-compiler/225682817/externs/target/closure-compiler-externs-1.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ closure-compiler-externs ---
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/externs/target/closure-compiler-externs-1.0-SNAPSHOT.jar to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-externs/1.0-SNAPSHOT/closure-compiler-externs-1.0-SNAPSHOT.jar
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/externs/pom.xml to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-externs/1.0-SNAPSHOT/closure-compiler-externs-1.0-SNAPSHOT.pom
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Closure Compiler GWT App 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ closure-compiler-gwt ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- gwt-maven-plugin:1.0-rc-6:enforce-encoding (default-enforce-encoding) @ closure-compiler-gwt ---
+[INFO]
+[INFO] --- gwt-maven-plugin:1.0-rc-6:add-super-sources (default-add-super-sources) @ closure-compiler-gwt ---
+[INFO]
+[INFO] --- gwt-maven-plugin:1.0-rc-6:add-test-super-sources (default-add-test-super-sources) @ closure-compiler-gwt ---
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.12:add-source (add-source) @ closure-compiler-gwt ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.pom (5 KB at 199.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.pom (5 KB at 126.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom (4 KB at 170.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom (2 KB at 66.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom (13 KB at 576.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2 KB at 106.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.pom (2 KB at 93.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/2.10/wagon-2.10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/2.10/wagon-2.10.pom (21 KB at 1001.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom (4 KB at 153.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.jar (12 KB at 208.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.jar (10 KB at 164.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.jar (13 KB at 178.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar (41 KB at 528.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.0.0/file-management-3.0.0.jar (35 KB at 453.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/3.0.0/maven-shared-io-3.0.0.jar (41 KB at 417.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10.jar (53 KB at 493.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.jar (279 KB at 2576.0 KB/sec)
+[INFO] Source directory: /root/workspace/google/closure-compiler/225682817/gen added.
+[INFO]
+[INFO] --- gwt-maven-plugin:1.0-rc-6:generate-module (default-generate-module) @ closure-compiler-gwt ---
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ closure-compiler-gwt ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 120 resources
+[INFO] skip non existing resourceDirectory /root/workspace/google/closure-compiler/225682817/src/main/super
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:copy-resources (rhino_ast-custom) @ closure-compiler-gwt ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource to /root/workspace/google/closure-compiler/225682817/target/classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ closure-compiler-gwt ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 699 source files to /root/workspace/google/closure-compiler/225682817/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 1.7
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/NodeTraversal.java:[858,40] [unchecked] unchecked cast
+[WARNING]   required: ControlFlowGraph<Node>
+  found:    Object
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/NodeTraversal.java:[880,41] [unchecked] unchecked cast
+[WARNING]   required: ControlFlowGraph<Node>
+  found:    Object
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/Node.java:[2484,32] [unchecked] unchecked cast
+[WARNING]   required: Set<String>
+  found:    Object
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1110,16] [unchecked] getType(String) in JSTypeRegistry implements <T>getType(String) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getType(String)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1122,16] [unchecked] getNativeType(JSTypeNative) in JSTypeRegistry implements <T>getNativeType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getNativeType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1128,20] [unchecked] getNativeObjectType(JSTypeNative) in JSTypeRegistry implements <T>getNativeObjectType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from ObjectType to T
+  where T is a type-variable:
+    T extends ObjectTypeI declared in method <T>getNativeObjectType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1134,22] [unchecked] getNativeFunctionType(JSTypeNative) in JSTypeRegistry implements <T>getNativeFunctionType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from FunctionType to T
+  where T is a type-variable:
+    T extends FunctionTypeI declared in method <T>getNativeFunctionType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ClosureCheckModule.java:[245,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/DataFlowAnalysis.java:[573,22] [deprecation] NodeTraversal(AbstractCompiler,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java:[221,5] [deprecation] NodeTraversal(AbstractCompiler,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java:[421,16] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/TypeCheck.java:[745,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/MemoizedScopeCreator.java:[82,20] [unchecked] createScope(Node,Scope) in MemoizedScopeCreator implements <T>createScope(Node,T) in ScopeCreator
+[WARNING]   return type requires unchecked conversion from TypedScope to T
+  where T is a type-variable:
+    T extends Scope declared in method <T>createScope(Node,T)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/dtoa/DToA.java:[607,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/dtoa/DToA.java:[614,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/dtoa/DToA.java:[1132,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/parsing/parser/Scanner.java:[879,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ant/CompileTask.java:[133,43] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/Compiler.java:[358,13] [deprecation] setUseTypesForOptimization(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2102,12] [deprecation] writeGroup(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2105,12] [deprecation] writeGroup(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2118,8] [deprecation] computeGroupSize(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2122,8] [deprecation] computeGroupSize(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2859,16] [unchecked] getType(String) in GlobalTypeInfo implements <T>getType(String) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getType(String)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2844,16] [unchecked] getNativeType(JSTypeNative) in GlobalTypeInfo implements <T>getNativeType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getNativeType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2839,16] [unchecked] getNativeObjectType(JSTypeNative) in GlobalTypeInfo implements <T>getNativeObjectType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends ObjectTypeI declared in method <T>getNativeObjectType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2834,16] [unchecked] getNativeFunctionType(JSTypeNative) in GlobalTypeInfo implements <T>getNativeFunctionType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends FunctionTypeI declared in method <T>getNativeFunctionType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[914,12] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/DefaultPassConfig.java:[1283,17] [deprecation] brokenClosureRequiresLevel in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[478,17] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[883,17] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[941,17] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1347,19] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1470,19] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1784,40] [unchecked] unchecked cast
+[WARNING]   required: StaticTypedSlot<JSType>
+  found:    StaticSlot
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1791,41] [unchecked] unchecked cast
+[WARNING]   required: StaticTypedScope<JSType>
+  found:    StaticScope
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1798,40] [unchecked] unchecked cast
+[WARNING]   required: StaticTypedSlot<JSType>
+  found:    StaticSlot
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/TypedScopeCreator.java:[216,20] [unchecked] createScope(Node,Scope) in TypedScopeCreator implements <T>createScope(Node,T) in ScopeCreator
+[WARNING]   return type requires unchecked conversion from TypedScope to T
+  where T is a type-variable:
+    T extends Scope declared in method <T>createScope(Node,T)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/AmbiguateProperties.java:[445,22] [unchecked] getAnnotation() in PropertyGraphNode implements <A>getAnnotation() in Annotatable
+[WARNING]   return type requires unchecked conversion from Annotation to A
+  where A is a type-variable:
+    A extends Annotation declared in method <A>getAnnotation()
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ChromePass.java:[114,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ChromePass.java:[334,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ExpressionDecomposer.java:[680,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/J2clClinitPrunerPass.java:[71,32] [unchecked] unchecked conversion
+[WARNING]   required: HierarchicalSet<String>
+  found:    HierarchicalSet
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/J2clClinitPrunerPass.java:[305,20] [unchecked] unchecked conversion
+[WARNING]   required: HierarchicalSet<T>
+  found:    HierarchicalSet
+  where T is a type-variable:
+    T extends Object declared in class HierarchicalSet
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CoalesceVariableNames.java:[86,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CoalesceVariableNames.java:[125,56] [unchecked] unchecked cast
+[WARNING]   required: Set<Var>
+  found:    Set<CAP#1>
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends Var from capture of ? extends Var
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CoalesceVariableNames.java:[280,23] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ControlFlowAnalysis.java:[789,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/VarCheck.java:[320,10] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ChromeCodingConvention.java:[73,6] [deprecation] AssertionFunctionSpec(String) in AssertionFunctionSpec has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CheckEventfulObjectDisposal.java:[1255,66] [unchecked] unchecked cast
+[WARNING]   required: Set<TypedVar>
+  found:    Set<CAP#1>
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends Var from capture of ? extends Var
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/transpile/TranspileResult.java:[75,65] [deprecation] encode(String) in URLEncoder has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/Es6SyntacticScopeCreator.java:[58,15] [unchecked] createScope(Node,Scope) in Es6SyntacticScopeCreator implements <T>createScope(Node,T) in ScopeCreator
+[WARNING]   return type requires unchecked conversion from Scope to T
+  where T is a type-variable:
+    T extends Scope declared in method <T>createScope(Node,T)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/Es6SyntacticScopeCreator.java:[288,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[775,14] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[984,14] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[1015,14] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[1045,16] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/parsing/parser/util/format/SimpleFormat.java:[439,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/DartSuperAccessorsPass.java:[192,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java:[900,10] [deprecation] useSourceInfoWithoutLengthIfMissingFromForTree(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java:[1498,13] [deprecation] useSourceInfoWithoutLengthIfMissingFromForTree(Node) in Node has been deprecated
+[INFO]
+[INFO] --- gwt-maven-plugin:1.0-rc-6:import-sources (default-import-sources) @ closure-compiler-gwt ---
+[INFO] /root/workspace/google/closure-compiler/225682817/src/ already added as a resource folder; skipping.
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 879 resources
+[INFO] Copying 12 resources
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.12:add-test-source (add-test-source) @ closure-compiler-gwt ---
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/testing added.
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/testing added.
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/refactoring/testing added.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ closure-compiler-gwt ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/google/closure-compiler/225682817/src/test/resources
+[INFO] skip non existing resourceDirectory /root/workspace/google/closure-compiler/225682817/src/test/super
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ closure-compiler-gwt ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 344 source files to /root/workspace/google/closure-compiler/225682817/target/test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 1.7
+/root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/Es6CompilerTestCase.java:[324,41] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CoalesceVariableNamesTest.java:[47,21] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/rhino/NodeTest.java:[471,7] [deprecation] useSourceInfoWithoutLengthIfMissingFrom(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/rhino/NodeTest.java:[478,7] [deprecation] useSourceInfoWithoutLengthIfMissingFrom(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[775,64] [deprecation] isEqualTo(Double) in DoubleSubject has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[780,64] [deprecation] isEqualTo(Double) in DoubleSubject has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[2306,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[2962,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3352,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3364,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3476,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/SymbolTableTest.java:[314,11] [deprecation] setBrokenClosureRequiresLevel(CheckLevel) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/NodeUtilTest.java:[47,52] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/NodeTraversalTest.java:[93,22] [deprecation] NodeTraversal(AbstractCompiler,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[94,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[236,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[875,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[INFO]
+[INFO] --- gwt-maven-plugin:1.0-rc-6:import-test-sources (default-import-test-sources) @ closure-compiler-gwt ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 516 resources
+[INFO] Copying 5 resources
+[INFO] Copying 5 resources
+[INFO] Copying 2 resources
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- gwt-maven-plugin:1.0-rc-6:test (default-test) @ closure-compiler-gwt ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- gwt-maven-plugin:1.0-rc-6:compile (default-compile) @ closure-compiler-gwt ---
+[WARNING] Apr 25, 2017 10:47:16 PM java.util.prefs.FileSystemPreferences$1 run
+[WARNING] INFO: Created user preferences directory.
+[INFO] Compiling module com.google.JsComp
+[INFO]    Compiling 1 permutation
+[INFO]       Compiling permutation 0...
+[INFO]    Compile of permutations succeeded
+[INFO]    Compilation succeeded -- 80.079s
+[INFO] Linking into /root/workspace/google/closure-compiler/225682817/target/closure-compiler-gwt-1.0-SNAPSHOT/jscomp
+[INFO]    Link succeeded
+[INFO]    Linking succeeded -- 0.457s
+[INFO]
+[INFO] --- gwt-maven-plugin:1.0-rc-6:package-app (default-package-app) @ closure-compiler-gwt ---
+[INFO] Building war: /root/workspace/google/closure-compiler/225682817/target/closure-compiler-gwt-1.0-SNAPSHOT.war
+[INFO]
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ closure-compiler-gwt ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 KB at 573.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom (4 KB at 208.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.jar (152 KB at 3614.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar (228 KB at 3788.6 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.jar (234 KB at 4242.8 KB/sec)
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/target/closure-compiler-gwt-1.0-SNAPSHOT.war to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-gwt/1.0-SNAPSHOT/closure-compiler-gwt-1.0-SNAPSHOT.war
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/pom-gwt.xml to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-gwt/1.0-SNAPSHOT/closure-compiler-gwt-1.0-SNAPSHOT.pom
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Closure Compiler Main 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ closure-compiler-main ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.12:add-source (add-source) @ closure-compiler-main ---
+[INFO] Source directory: /root/workspace/google/closure-compiler/225682817/gen added.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:copy-resources (rhino_ast-custom) @ closure-compiler-main ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource to /root/workspace/google/closure-compiler/225682817/target/classes
+[INFO]
+[INFO] --- maven-bundle-plugin:3.2.0:manifest (bundle-manifest) @ closure-compiler-main ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.pom (2 KB at 38.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/3.2.0/biz.aQute.bndlib-3.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/3.2.0/biz.aQute.bndlib-3.2.0.pom (2 KB at 46.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.pom (6 KB at 198.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/felix-parent/2.1/felix-parent-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/felix-parent/2.1/felix-parent-2.1.pom (10 KB at 496.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.pom (193 B at 9.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.4/easymock-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.4/easymock-3.4.pom (8 KB at 356.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/easymock/easymock-parent/3.4/easymock-parent-3.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/easymock/easymock-parent/3.4/easymock-parent-3.4.pom (17 KB at 794.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.2/objenesis-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.2/objenesis-2.2.pom (3 KB at 134.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/2.2/objenesis-parent-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/2.2/objenesis-parent-2.2.pom (17 KB at 849.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.pom (4 KB at 177.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.pom (463 B at 26.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.0/maven-core-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.0/maven-core-2.2.0.pom (11 KB at 608.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.0/maven-plugin-parameter-documenter-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.0/maven-plugin-parameter-documenter-2.2.0.pom (2 KB at 76.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.0/maven-reporting-api-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.0/maven-reporting-api-2.2.0.pom (2 KB at 86.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.2.0/maven-reporting-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.2.0/maven-reporting-2.2.0.pom (2 KB at 58.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.0/maven-error-diagnostics-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.0/maven-error-diagnostics-2.2.0.pom (2 KB at 72.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.pom (2 KB at 64.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.0/maven-plugin-descriptor-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.0/maven-plugin-descriptor-2.2.0.pom (3 KB at 77.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.0/maven-monitor-2.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.0/maven-monitor-2.2.0.pom (2 KB at 42.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom (5 KB at 201.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom (7 KB at 234.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom (2 KB at 69.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom (2 KB at 66.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom (2 KB at 85.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom (2 KB at 47.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom (3 KB at 109.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom (4 KB at 147.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom (2 KB at 62.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom (3 KB at 114.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom (19 KB at 649.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom (1018 B at 36.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.pom (3 KB at 56.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/3.2.0/biz.aQute.bndlib-3.2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.4/easymock-3.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.2/objenesis-2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.2/objenesis-2.2.jar (52 KB at 815.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.jar (165 KB at 1933.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.jar (342 KB at 3560.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.0/maven-core-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.jar (67 KB at 617.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.0/maven-settings-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/easymock/easymock/3.4/easymock-3.4.jar (464 KB at 3765.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.0/maven-plugin-parameter-documenter-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.0/maven-core-2.2.0.jar (172 KB at 1305.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.0/maven-reporting-api-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.0/maven-settings-2.2.0.jar (48 KB at 344.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.0/maven-plugin-parameter-documenter-2.2.0.jar (22 KB at 148.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.0/maven-model-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.0/maven-reporting-api-2.2.0.jar (10 KB at 62.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.0/maven-artifact-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.0/maven-profile-2.2.0.jar (35 KB at 201.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.0/maven-repository-metadata-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.0/maven-artifact-2.2.0.jar (79 KB at 456.1 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.0/maven-model-2.2.0.jar (86 KB at 493.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.0/maven-error-diagnostics-2.2.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.0/maven-project-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar (600 KB at 3156.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.0/maven-plugin-registry-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.0/maven-repository-metadata-2.2.0.jar (26 KB at 134.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.0/maven-error-diagnostics-2.2.0.jar (13 KB at 63.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.0/maven-plugin-descriptor-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.0/maven-project-2.2.0.jar (153 KB at 712.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.0/maven-plugin-registry-2.2.0.jar (30 KB at 133.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.0/maven-monitor-2.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.0/maven-plugin-api-2.2.0.jar (13 KB at 55.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.0/maven-plugin-descriptor-2.2.0.jar (39 KB at 172.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar (22 KB at 89.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/biz/aQute/bnd/biz.aQute.bndlib/3.2.0/biz.aQute.bndlib-3.2.0.jar (2319 KB at 9165.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.0/maven-monitor-2.2.0.jar (11 KB at 40.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.0/maven-artifact-manager-2.2.0.jar (64 KB at 249.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar (57 KB at 221.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar (181 KB at 682.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar (60 KB at 217.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar (203 KB at 694.7 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar (226 KB at 759.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/jdom/jdom/1.1/jdom-1.1.jar (150 KB at 498.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar (558 KB at 1799.6 KB/sec)
+[WARNING] Ignoring project type pom - supportedProjectTypes = [jar, bundle]
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.12:add-test-source (add-test-source) @ closure-compiler-main ---
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/testing added.
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/testing added.
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/refactoring/testing added.
+[INFO]
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ closure-compiler-main ---
+[INFO]
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ closure-compiler-main ---
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/pom-main.xml to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-main/1.0-SNAPSHOT/closure-compiler-main-1.0-SNAPSHOT.pom
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Closure Compiler Linter 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ closure-compiler-linter ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.12:add-source (add-source) @ closure-compiler-linter ---
+[INFO] Source directory: /root/workspace/google/closure-compiler/225682817/gen added.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ closure-compiler-linter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 120 resources
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:copy-resources (rhino_ast-custom) @ closure-compiler-linter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource to /root/workspace/google/closure-compiler/225682817/target/classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ closure-compiler-linter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 703 source files to /root/workspace/google/closure-compiler/225682817/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 1.7
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/NodeTraversal.java:[858,40] [unchecked] unchecked cast
+[WARNING]   required: ControlFlowGraph<Node>
+  found:    Object
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/NodeTraversal.java:[880,41] [unchecked] unchecked cast
+[WARNING]   required: ControlFlowGraph<Node>
+  found:    Object
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/Node.java:[2484,32] [unchecked] unchecked cast
+[WARNING]   required: Set<String>
+  found:    Object
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1110,16] [unchecked] getType(String) in JSTypeRegistry implements <T>getType(String) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getType(String)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1122,16] [unchecked] getNativeType(JSTypeNative) in JSTypeRegistry implements <T>getNativeType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getNativeType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1128,20] [unchecked] getNativeObjectType(JSTypeNative) in JSTypeRegistry implements <T>getNativeObjectType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from ObjectType to T
+  where T is a type-variable:
+    T extends ObjectTypeI declared in method <T>getNativeObjectType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1134,22] [unchecked] getNativeFunctionType(JSTypeNative) in JSTypeRegistry implements <T>getNativeFunctionType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from FunctionType to T
+  where T is a type-variable:
+    T extends FunctionTypeI declared in method <T>getNativeFunctionType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ClosureCheckModule.java:[245,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/DataFlowAnalysis.java:[573,22] [deprecation] NodeTraversal(AbstractCompiler,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java:[221,5] [deprecation] NodeTraversal(AbstractCompiler,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java:[421,16] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/TypeCheck.java:[745,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/MemoizedScopeCreator.java:[82,20] [unchecked] createScope(Node,Scope) in MemoizedScopeCreator implements <T>createScope(Node,T) in ScopeCreator
+[WARNING]   return type requires unchecked conversion from TypedScope to T
+  where T is a type-variable:
+    T extends Scope declared in method <T>createScope(Node,T)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/dtoa/DToA.java:[607,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/dtoa/DToA.java:[614,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/dtoa/DToA.java:[1132,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/parsing/parser/Scanner.java:[879,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ant/CompileTask.java:[133,43] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/Compiler.java:[358,13] [deprecation] setUseTypesForOptimization(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2102,12] [deprecation] writeGroup(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2105,12] [deprecation] writeGroup(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2118,8] [deprecation] computeGroupSize(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2122,8] [deprecation] computeGroupSize(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2859,16] [unchecked] getType(String) in GlobalTypeInfo implements <T>getType(String) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getType(String)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2844,16] [unchecked] getNativeType(JSTypeNative) in GlobalTypeInfo implements <T>getNativeType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getNativeType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2839,16] [unchecked] getNativeObjectType(JSTypeNative) in GlobalTypeInfo implements <T>getNativeObjectType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends ObjectTypeI declared in method <T>getNativeObjectType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2834,16] [unchecked] getNativeFunctionType(JSTypeNative) in GlobalTypeInfo implements <T>getNativeFunctionType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends FunctionTypeI declared in method <T>getNativeFunctionType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[914,12] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/DefaultPassConfig.java:[1283,17] [deprecation] brokenClosureRequiresLevel in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[478,17] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[883,17] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[941,17] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1347,19] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1470,19] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1784,40] [unchecked] unchecked cast
+[WARNING]   required: StaticTypedSlot<JSType>
+  found:    StaticSlot
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1791,41] [unchecked] unchecked cast
+[WARNING]   required: StaticTypedScope<JSType>
+  found:    StaticScope
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1798,40] [unchecked] unchecked cast
+[WARNING]   required: StaticTypedSlot<JSType>
+  found:    StaticSlot
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/TypedScopeCreator.java:[216,20] [unchecked] createScope(Node,Scope) in TypedScopeCreator implements <T>createScope(Node,T) in ScopeCreator
+[WARNING]   return type requires unchecked conversion from TypedScope to T
+  where T is a type-variable:
+    T extends Scope declared in method <T>createScope(Node,T)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/AmbiguateProperties.java:[445,22] [unchecked] getAnnotation() in PropertyGraphNode implements <A>getAnnotation() in Annotatable
+[WARNING]   return type requires unchecked conversion from Annotation to A
+  where A is a type-variable:
+    A extends Annotation declared in method <A>getAnnotation()
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/transpile/TranspileResult.java:[75,65] [deprecation] encode(String) in URLEncoder has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ChromePass.java:[114,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ChromePass.java:[334,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ExpressionDecomposer.java:[680,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/J2clClinitPrunerPass.java:[71,32] [unchecked] unchecked conversion
+[WARNING]   required: HierarchicalSet<String>
+  found:    HierarchicalSet
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/J2clClinitPrunerPass.java:[305,20] [unchecked] unchecked conversion
+[WARNING]   required: HierarchicalSet<T>
+  found:    HierarchicalSet
+  where T is a type-variable:
+    T extends Object declared in class HierarchicalSet
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CoalesceVariableNames.java:[86,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CoalesceVariableNames.java:[125,56] [unchecked] unchecked cast
+[WARNING]   required: Set<Var>
+  found:    Set<CAP#1>
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends Var from capture of ? extends Var
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CoalesceVariableNames.java:[280,23] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ControlFlowAnalysis.java:[789,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/VarCheck.java:[320,10] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/transpile/TranspilerBuilder.java:[70,33] [unchecked] unchecked method invocation: constructor <init> in class CachingTranspiler is applied to given types
+[WARNING]   required: Transpiler,CacheBuilder<Object,? super TranspileResult>
+  found: Transpiler,CacheBuilder
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/transpile/TranspilerBuilder.java:[70,67] [unchecked] unchecked conversion
+[WARNING]   required: CacheBuilder<Object,? super TranspileResult>
+  found:    CacheBuilder
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ChromeCodingConvention.java:[73,6] [deprecation] AssertionFunctionSpec(String) in AssertionFunctionSpec has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CheckEventfulObjectDisposal.java:[1255,66] [unchecked] unchecked cast
+[WARNING]   required: Set<TypedVar>
+  found:    Set<CAP#1>
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends Var from capture of ? extends Var
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/Es6SyntacticScopeCreator.java:[58,15] [unchecked] createScope(Node,Scope) in Es6SyntacticScopeCreator implements <T>createScope(Node,T) in ScopeCreator
+[WARNING]   return type requires unchecked conversion from Scope to T
+  where T is a type-variable:
+    T extends Scope declared in method <T>createScope(Node,T)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/Es6SyntacticScopeCreator.java:[288,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[775,14] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[984,14] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[1015,14] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[1045,16] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/parsing/parser/util/format/SimpleFormat.java:[439,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/DartSuperAccessorsPass.java:[192,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java:[900,10] [deprecation] useSourceInfoWithoutLengthIfMissingFromForTree(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java:[1498,13] [deprecation] useSourceInfoWithoutLengthIfMissingFromForTree(Node) in Node has been deprecated
+[INFO]
+[INFO] --- maven-bundle-plugin:3.2.0:manifest (bundle-manifest) @ closure-compiler-linter ---
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.12:add-test-source (add-test-source) @ closure-compiler-linter ---
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/testing added.
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/testing added.
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/refactoring/testing added.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ closure-compiler-linter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/google/closure-compiler/225682817/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ closure-compiler-linter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 347 source files to /root/workspace/google/closure-compiler/225682817/target/test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 1.7
+/root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/Es6CompilerTestCase.java:[324,41] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CoalesceVariableNamesTest.java:[47,21] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/rhino/NodeTest.java:[471,7] [deprecation] useSourceInfoWithoutLengthIfMissingFrom(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/rhino/NodeTest.java:[478,7] [deprecation] useSourceInfoWithoutLengthIfMissingFrom(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[775,64] [deprecation] isEqualTo(Double) in DoubleSubject has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[780,64] [deprecation] isEqualTo(Double) in DoubleSubject has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[2306,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[2962,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3352,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3364,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3476,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/SymbolTableTest.java:[314,11] [deprecation] setBrokenClosureRequiresLevel(CheckLevel) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/NodeUtilTest.java:[47,52] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/NodeTraversalTest.java:[93,22] [deprecation] NodeTraversal(AbstractCompiler,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[94,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[236,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[875,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ closure-compiler-linter ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.18.1/maven-surefire-common-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.18.1/maven-surefire-common-2.18.1.pom (7 KB at 340.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.18.1/surefire-api-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.18.1/surefire-api-2.18.1.pom (3 KB at 106.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.18.1/surefire-booter-2.18.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.18.1/surefire-booter-2.18.1.pom (3 KB at 135.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.18.1/maven-surefire-common-2.18.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.18.1/surefire-booter-2.18.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.18.1/surefire-api-2.18.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.18.1/surefire-booter-2.18.1.jar (39 KB at 1390.8 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.18.1/surefire-api-2.18.1.jar (145 KB at 2675.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.18.1/maven-surefire-common-2.18.1.jar (269 KB at 4542.4 KB/sec)
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ closure-compiler-linter ---
+[INFO] Building jar: /root/workspace/google/closure-compiler/225682817/target/closure-compiler-linter-1.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- maven-shade-plugin:2.4.1:shade (default) @ closure-compiler-linter ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/5.0.2/asm-5.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/5.0.2/asm-5.0.2.pom (2 KB at 90.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.0.2/asm-parent-5.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.0.2/asm-parent-5.0.2.pom (6 KB at 315.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.pom (3 KB at 93.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.pom (3 KB at 78.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.pom (8 KB at 322.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/vafer/jdependency/1.0/jdependency-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/vafer/jdependency/1.0/jdependency-1.0.pom (11 KB at 406.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.pom (3 KB at 89.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.pom (6 KB at 267.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/11.0.2/guava-parent-11.0.2.pom (2 KB at 83.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/5.0.2/asm-5.0.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar (52 KB at 1105.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/2.2/maven-dependency-tree-2.2.jar (63 KB at 1149.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/vafer/jdependency/1.0/jdependency-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/5.0.2/asm-5.0.2.jar (52 KB at 928.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.jar (41 KB at 657.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.jar (29 KB at 393.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.jar (20 KB at 277.3 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/vafer/jdependency/1.0/jdependency-1.0.jar (22 KB at 292.8 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar (33 KB at 290.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar (240 KB at 2116.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar (1610 KB at 6028.4 KB/sec)
+[INFO] Including com.google.javascript:closure-compiler-externs:jar:1.0-SNAPSHOT in the shaded jar.
+[INFO] Including args4j:args4j:jar:2.33 in the shaded jar.
+[INFO] Including com.google.errorprone:error_prone_annotations:jar:2.0.18 in the shaded jar.
+[INFO] Including com.google.guava:guava:jar:20.0 in the shaded jar.
+[INFO] Including com.google.protobuf:protobuf-java:jar:3.0.2 in the shaded jar.
+[INFO] Including com.google.code.gson:gson:jar:2.7 in the shaded jar.
+[INFO] Including com.google.code.findbugs:jsr305:jar:3.0.1 in the shaded jar.
+[INFO] Including com.google.jsinterop:jsinterop-annotations:jar:1.0.0 in the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /root/workspace/google/closure-compiler/225682817/target/closure-compiler-linter-1.0-SNAPSHOT.jar with /root/workspace/google/closure-compiler/225682817/target/closure-compiler-linter-1.0-SNAPSHOT-shaded.jar
+[INFO] Dependency-reduced POM written at: /root/workspace/google/closure-compiler/225682817/dependency-reduced-pom.xml
+[INFO] Dependency-reduced POM written at: /root/workspace/google/closure-compiler/225682817/dependency-reduced-pom.xml
+[INFO]
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ closure-compiler-linter ---
+[INFO] Building jar: /root/workspace/google/closure-compiler/225682817/target/closure-compiler-linter-1.0-SNAPSHOT-sources.jar
+[INFO]
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ closure-compiler-linter ---
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/target/closure-compiler-linter-1.0-SNAPSHOT.jar to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-linter/1.0-SNAPSHOT/closure-compiler-linter-1.0-SNAPSHOT.jar
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/dependency-reduced-pom.xml to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-linter/1.0-SNAPSHOT/closure-compiler-linter-1.0-SNAPSHOT.pom
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/target/closure-compiler-linter-1.0-SNAPSHOT-sources.jar to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-linter/1.0-SNAPSHOT/closure-compiler-linter-1.0-SNAPSHOT-sources.jar
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Closure Compiler Unshaded 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ closure-compiler-unshaded ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.12:add-source (add-source) @ closure-compiler-unshaded ---
+[INFO] Source directory: /root/workspace/google/closure-compiler/225682817/gen added.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ closure-compiler-unshaded ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 120 resources
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:copy-resources (rhino_ast-custom) @ closure-compiler-unshaded ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource to /root/workspace/google/closure-compiler/225682817/target/classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ closure-compiler-unshaded ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 703 source files to /root/workspace/google/closure-compiler/225682817/target/classes
+[WARNING] bootstrap class path not set in conjunction with -source 1.7
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/NodeTraversal.java:[858,40] [unchecked] unchecked cast
+[WARNING]   required: ControlFlowGraph<Node>
+  found:    Object
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/NodeTraversal.java:[880,41] [unchecked] unchecked cast
+[WARNING]   required: ControlFlowGraph<Node>
+  found:    Object
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/Node.java:[2484,32] [unchecked] unchecked cast
+[WARNING]   required: Set<String>
+  found:    Object
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1110,16] [unchecked] getType(String) in JSTypeRegistry implements <T>getType(String) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getType(String)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1122,16] [unchecked] getNativeType(JSTypeNative) in JSTypeRegistry implements <T>getNativeType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getNativeType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1128,20] [unchecked] getNativeObjectType(JSTypeNative) in JSTypeRegistry implements <T>getNativeObjectType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from ObjectType to T
+  where T is a type-variable:
+    T extends ObjectTypeI declared in method <T>getNativeObjectType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java:[1134,22] [unchecked] getNativeFunctionType(JSTypeNative) in JSTypeRegistry implements <T>getNativeFunctionType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from FunctionType to T
+  where T is a type-variable:
+    T extends FunctionTypeI declared in method <T>getNativeFunctionType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ClosureCheckModule.java:[245,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/DataFlowAnalysis.java:[573,22] [deprecation] NodeTraversal(AbstractCompiler,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java:[221,5] [deprecation] NodeTraversal(AbstractCompiler,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/FlowSensitiveInlineVariables.java:[421,16] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/TypeCheck.java:[745,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/MemoizedScopeCreator.java:[82,20] [unchecked] createScope(Node,Scope) in MemoizedScopeCreator implements <T>createScope(Node,T) in ScopeCreator
+[WARNING]   return type requires unchecked conversion from TypedScope to T
+  where T is a type-variable:
+    T extends Scope declared in method <T>createScope(Node,T)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/dtoa/DToA.java:[607,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/dtoa/DToA.java:[614,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/dtoa/DToA.java:[1132,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/parsing/parser/Scanner.java:[879,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ant/CompileTask.java:[133,43] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/Compiler.java:[358,13] [deprecation] setUseTypesForOptimization(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2102,12] [deprecation] writeGroup(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2105,12] [deprecation] writeGroup(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2118,8] [deprecation] computeGroupSize(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/gen/com/google/javascript/jscomp/FunctionInformationMap.java:[2122,8] [deprecation] computeGroupSize(int,MessageLite) in CodedOutputStream has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2859,16] [unchecked] getType(String) in GlobalTypeInfo implements <T>getType(String) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getType(String)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2844,16] [unchecked] getNativeType(JSTypeNative) in GlobalTypeInfo implements <T>getNativeType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends TypeI declared in method <T>getNativeType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2839,16] [unchecked] getNativeObjectType(JSTypeNative) in GlobalTypeInfo implements <T>getNativeObjectType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends ObjectTypeI declared in method <T>getNativeObjectType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[2834,16] [unchecked] getNativeFunctionType(JSTypeNative) in GlobalTypeInfo implements <T>getNativeFunctionType(JSTypeNative) in TypeIRegistry
+[WARNING]   return type requires unchecked conversion from JSType to T
+  where T is a type-variable:
+    T extends FunctionTypeI declared in method <T>getNativeFunctionType(JSTypeNative)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/GlobalTypeInfo.java:[914,12] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/DefaultPassConfig.java:[1283,17] [deprecation] brokenClosureRequiresLevel in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[478,17] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[883,17] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[941,17] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1347,19] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1470,19] [deprecation] traverseRoots(AbstractCompiler,Callback,Node,Node) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1784,40] [unchecked] unchecked cast
+[WARNING]   required: StaticTypedSlot<JSType>
+  found:    StaticSlot
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1791,41] [unchecked] unchecked cast
+[WARNING]   required: StaticTypedScope<JSType>
+  found:    StaticScope
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/SymbolTable.java:[1798,40] [unchecked] unchecked cast
+[WARNING]   required: StaticTypedSlot<JSType>
+  found:    StaticSlot
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/TypedScopeCreator.java:[216,20] [unchecked] createScope(Node,Scope) in TypedScopeCreator implements <T>createScope(Node,T) in ScopeCreator
+[WARNING]   return type requires unchecked conversion from TypedScope to T
+  where T is a type-variable:
+    T extends Scope declared in method <T>createScope(Node,T)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/AmbiguateProperties.java:[445,22] [unchecked] getAnnotation() in PropertyGraphNode implements <A>getAnnotation() in Annotatable
+[WARNING]   return type requires unchecked conversion from Annotation to A
+  where A is a type-variable:
+    A extends Annotation declared in method <A>getAnnotation()
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/transpile/TranspileResult.java:[75,65] [deprecation] encode(String) in URLEncoder has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ChromePass.java:[114,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ChromePass.java:[334,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ExpressionDecomposer.java:[680,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/J2clClinitPrunerPass.java:[71,32] [unchecked] unchecked conversion
+[WARNING]   required: HierarchicalSet<String>
+  found:    HierarchicalSet
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/J2clClinitPrunerPass.java:[305,20] [unchecked] unchecked conversion
+[WARNING]   required: HierarchicalSet<T>
+  found:    HierarchicalSet
+  where T is a type-variable:
+    T extends Object declared in class HierarchicalSet
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CoalesceVariableNames.java:[86,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CoalesceVariableNames.java:[125,56] [unchecked] unchecked cast
+[WARNING]   required: Set<Var>
+  found:    Set<CAP#1>
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends Var from capture of ? extends Var
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CoalesceVariableNames.java:[280,23] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ControlFlowAnalysis.java:[789,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/VarCheck.java:[320,10] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/transpile/TranspilerBuilder.java:[70,33] [unchecked] unchecked method invocation: constructor <init> in class CachingTranspiler is applied to given types
+[WARNING]   required: Transpiler,CacheBuilder<Object,? super TranspileResult>
+  found: Transpiler,CacheBuilder
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/transpile/TranspilerBuilder.java:[70,67] [unchecked] unchecked conversion
+[WARNING]   required: CacheBuilder<Object,? super TranspileResult>
+  found:    CacheBuilder
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ChromeCodingConvention.java:[73,6] [deprecation] AssertionFunctionSpec(String) in AssertionFunctionSpec has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CheckEventfulObjectDisposal.java:[1255,66] [unchecked] unchecked cast
+[WARNING]   required: Set<TypedVar>
+  found:    Set<CAP#1>
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends Var from capture of ? extends Var
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/Es6SyntacticScopeCreator.java:[58,15] [unchecked] createScope(Node,Scope) in Es6SyntacticScopeCreator implements <T>createScope(Node,T) in ScopeCreator
+[WARNING]   return type requires unchecked conversion from Scope to T
+  where T is a type-variable:
+    T extends Scope declared in method <T>createScope(Node,T)
+/root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/Es6SyntacticScopeCreator.java:[288,6] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[775,14] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[984,14] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[1015,14] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/CommandLineRunner.java:[1045,16] [deprecation] CmdLineException(CmdLineParser,String) in CmdLineException has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/parsing/parser/util/format/SimpleFormat.java:[439,8] [fallthrough] possible fall-through into case
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/DartSuperAccessorsPass.java:[192,17] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java:[900,10] [deprecation] useSourceInfoWithoutLengthIfMissingFromForTree(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java:[1498,13] [deprecation] useSourceInfoWithoutLengthIfMissingFromForTree(Node) in Node has been deprecated
+[INFO]
+[INFO] --- maven-bundle-plugin:3.2.0:manifest (bundle-manifest) @ closure-compiler-unshaded ---
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.12:add-test-source (add-test-source) @ closure-compiler-unshaded ---
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/testing added.
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/testing added.
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/refactoring/testing added.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ closure-compiler-unshaded ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/google/closure-compiler/225682817/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ closure-compiler-unshaded ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 347 source files to /root/workspace/google/closure-compiler/225682817/target/test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 1.7
+/root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/Es6CompilerTestCase.java:[324,41] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CoalesceVariableNamesTest.java:[47,21] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/rhino/NodeTest.java:[471,7] [deprecation] useSourceInfoWithoutLengthIfMissingFrom(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/rhino/NodeTest.java:[478,7] [deprecation] useSourceInfoWithoutLengthIfMissingFrom(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[775,64] [deprecation] isEqualTo(Double) in DoubleSubject has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[780,64] [deprecation] isEqualTo(Double) in DoubleSubject has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[2306,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[2962,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3352,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3364,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3476,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/SymbolTableTest.java:[314,11] [deprecation] setBrokenClosureRequiresLevel(CheckLevel) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/NodeUtilTest.java:[47,52] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/NodeTraversalTest.java:[93,22] [deprecation] NodeTraversal(AbstractCompiler,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[94,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[236,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[875,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ closure-compiler-unshaded ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ closure-compiler-unshaded ---
+[INFO] Building jar: /root/workspace/google/closure-compiler/225682817/target/closure-compiler-unshaded-1.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ closure-compiler-unshaded ---
+[INFO] Building jar: /root/workspace/google/closure-compiler/225682817/target/closure-compiler-unshaded-1.0-SNAPSHOT-sources.jar
+[INFO]
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ closure-compiler-unshaded ---
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/target/closure-compiler-unshaded-1.0-SNAPSHOT.jar to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-unshaded/1.0-SNAPSHOT/closure-compiler-unshaded-1.0-SNAPSHOT.jar
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/pom-main-unshaded.xml to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-unshaded/1.0-SNAPSHOT/closure-compiler-unshaded-1.0-SNAPSHOT.pom
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/target/closure-compiler-unshaded-1.0-SNAPSHOT-sources.jar to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler-unshaded/1.0-SNAPSHOT/closure-compiler-unshaded-1.0-SNAPSHOT-sources.jar
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Closure Compiler 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ closure-compiler ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.12:add-source (add-source) @ closure-compiler ---
+[INFO] Source directory: /root/workspace/google/closure-compiler/225682817/gen added.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ closure-compiler ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 120 resources
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:copy-resources (rhino_ast-custom) @ closure-compiler ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource to /root/workspace/google/closure-compiler/225682817/target/classes
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ closure-compiler ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-bundle-plugin:3.2.0:manifest (bundle-manifest) @ closure-compiler ---
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.12:add-test-source (add-test-source) @ closure-compiler ---
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/rhino/testing added.
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/jscomp/testing added.
+[INFO] Test Source directory: /root/workspace/google/closure-compiler/225682817/src/com/google/javascript/refactoring/testing added.
+[INFO]
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ closure-compiler ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/google/closure-compiler/225682817/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ closure-compiler ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 347 source files to /root/workspace/google/closure-compiler/225682817/target/test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 1.7
+/root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/Es6CompilerTestCase.java:[324,41] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CoalesceVariableNamesTest.java:[47,21] [deprecation] traverse(AbstractCompiler,Node,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/rhino/NodeTest.java:[471,7] [deprecation] useSourceInfoWithoutLengthIfMissingFrom(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/rhino/NodeTest.java:[478,7] [deprecation] useSourceInfoWithoutLengthIfMissingFrom(Node) in Node has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[775,64] [deprecation] isEqualTo(Double) in DoubleSubject has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[780,64] [deprecation] isEqualTo(Double) in DoubleSubject has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[2306,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[2962,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3352,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3364,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/IntegrationTest.java:[3476,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/SymbolTableTest.java:[314,11] [deprecation] setBrokenClosureRequiresLevel(CheckLevel) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/NodeUtilTest.java:[47,52] [deprecation] ECMASCRIPT6 in LanguageMode has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/NodeTraversalTest.java:[93,22] [deprecation] NodeTraversal(AbstractCompiler,Callback) in NodeTraversal has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[94,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[236,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[WARNING] /root/workspace/google/closure-compiler/225682817/test/com/google/javascript/jscomp/CompilerTest.java:[875,11] [deprecation] setIdeMode(boolean) in CompilerOptions has been deprecated
+[INFO]
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ closure-compiler ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.17/maven-surefire-common-2.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.17/maven-surefire-common-2.17.pom (6 KB at 297.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.17/surefire-api-2.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.17/surefire-api-2.17.pom (3 KB at 124.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.17/surefire-booter-2.17.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.17/surefire-booter-2.17.pom (3 KB at 153.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.pom (4 KB at 169.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.17/maven-surefire-common-2.17.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.17/surefire-api-2.17.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.17/surefire-booter-2.17.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.17/surefire-booter-2.17.jar (39 KB at 613.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.jar (38 KB at 650.6 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.jar (206 KB at 2981.8 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.17/surefire-api-2.17.jar (144 KB at 2247.8 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.17/maven-surefire-common-2.17.jar (260 KB at 3599.6 KB/sec)
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ closure-compiler ---
+[INFO] Building jar: /root/workspace/google/closure-compiler/225682817/target/closure-compiler-1.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- maven-shade-plugin:2.4.1:shade (default) @ closure-compiler ---
+[INFO] Including com.google.javascript:closure-compiler-externs:jar:1.0-SNAPSHOT in the shaded jar.
+[INFO] Including args4j:args4j:jar:2.33 in the shaded jar.
+[INFO] Including com.google.errorprone:error_prone_annotations:jar:2.0.18 in the shaded jar.
+[INFO] Including com.google.guava:guava:jar:20.0 in the shaded jar.
+[INFO] Including com.google.protobuf:protobuf-java:jar:3.0.2 in the shaded jar.
+[INFO] Including com.google.code.gson:gson:jar:2.7 in the shaded jar.
+[INFO] Including com.google.code.findbugs:jsr305:jar:3.0.1 in the shaded jar.
+[INFO] Including com.google.jsinterop:jsinterop-annotations:jar:1.0.0 in the shaded jar.
+[INFO] Minimizing jar com.google.javascript:closure-compiler:jar:1.0-SNAPSHOT
+[INFO] Minimized 5621 -> 4832
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /root/workspace/google/closure-compiler/225682817/target/closure-compiler-1.0-SNAPSHOT.jar with /root/workspace/google/closure-compiler/225682817/target/closure-compiler-1.0-SNAPSHOT-shaded.jar
+[INFO] Dependency-reduced POM written at: /root/workspace/google/closure-compiler/225682817/dependency-reduced-pom.xml
+[INFO] Dependency-reduced POM written at: /root/workspace/google/closure-compiler/225682817/dependency-reduced-pom.xml
+[INFO]
+[INFO] --- maven-source-plugin:3.0.1:jar-no-fork (attach-sources) @ closure-compiler ---
+[INFO] Building jar: /root/workspace/google/closure-compiler/225682817/target/closure-compiler-1.0-SNAPSHOT-sources.jar
+[INFO]
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ closure-compiler ---
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/target/closure-compiler-1.0-SNAPSHOT.jar to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler/1.0-SNAPSHOT/closure-compiler-1.0-SNAPSHOT.jar
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/dependency-reduced-pom.xml to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler/1.0-SNAPSHOT/closure-compiler-1.0-SNAPSHOT.pom
+[INFO] Installing /root/workspace/google/closure-compiler/225682817/target/closure-compiler-1.0-SNAPSHOT-sources.jar to /root/./workspace/google/closure-compiler/225682817/.m2/com/google/javascript/closure-compiler/1.0-SNAPSHOT/closure-compiler-1.0-SNAPSHOT-sources.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO]
+[INFO] Closure Compiler Parent ............................ SUCCESS [  1.889 s]
+[INFO] Closure Compiler Externs ........................... SUCCESS [  3.059 s]
+[INFO] Closure Compiler GWT App ........................... SUCCESS [01:51 min]
+[INFO] Closure Compiler Main .............................. SUCCESS [  2.211 s]
+[INFO] Closure Compiler Linter ............................ SUCCESS [ 40.563 s]
+[INFO] Closure Compiler Unshaded .......................... SUCCESS [ 40.660 s]
+[INFO] Closure Compiler ................................... SUCCESS [ 25.016 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 03:45 min
+[INFO] Finished at: 2017-04-25T22:50:28+02:00
+[INFO] Final Memory: 37M/728M
+[INFO] ------------------------------------------------------------------------
