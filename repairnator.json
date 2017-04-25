@@ -1,19 +1,62 @@
 {
+  "totalNumberSkippingTests": 0,
+  "error-types": [
+    "java.lang.AssertionError:",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberFailingTests": 2,
+  "buildid": 225745774,
+  "totalNumberErroringTests": 0,
+  "freeMemory": 271397768,
+  "hostname": "repairnator",
+  "bugType": "only_fail",
+  "totalNumberRunningTests": 2159,
+  "repo": "apache/flink",
+  "failing-test-cases": [
+    {
+      "className": "org.apache.flink.core.fs.local.LocalFileSystemTest",
+      "failingMethods": [
+        "org.apache.flink.core.fs.local.LocalFileSystemTest#testRenameFileWithNoAccess"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError:",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.flink.util.FileUtilsTest",
+      "failingMethods": [
+        "org.apache.flink.util.FileUtilsTest#testDeleteDirectory"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "this should fail with an exception",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "step-durations": {
     "CheckoutBuggyBuild": 0,
     "CloneRepository": 43,
     "ResolveDependency": 121,
     "TestProject": 36,
-    "BuildProject": 932
+    "BuildProject": 932,
+    "GatherTestInformation": 0
   },
-  "totalMemory": 537919488,
-  "bugType": "only_fail",
-  "workspace": "./workspace",
-  "repo": "apache/flink",
-  "freeMemory": 271397768,
   "bugCommit": "https://github.com/apache/flink/compare/433a345edccd...70183647a8c9",
-  "buildid": 225745774,
-  "hostname": "repairnator",
+  "workspace": "./workspace",
+  "totalMemory": 537919488,
+  "bugRepo": "apache/flink",
   "nbCPU": 4,
-  "bugRepo": "apache/flink"
+  "failingModule": "/root/workspace/apache/flink/225745774/flink-core"
 }
