@@ -61,4 +61,33 @@ public class TestHiveDistributedQueries
 
         assertEquals(actual, expected);
     }
+
+    @Test
+    public void testPredicatePushDownToTableScan()
+            throws Exception
+    {
+        // Test not specific to Hive, but needs a connector supporting table creation
+
+        assertUpdate("CREATE TABLE test_table_with_char (a char(20))");
+        try {
+            assertUpdate("INSERT INTO test_table_with_char (a) VALUES" +
+                    "(cast('aaa' as char(20)))," +
+                    "(cast('bbb' as char(20)))," +
+                    "(cast('bbd' as char(20)))", 3);
+
+            assertQuery(
+                    "SELECT a, a < 'bbc' FROM test_table_with_char",
+                    "VALUES (cast('aaa' as char(20)), true), " +
+                            "(cast('bbb' as char(20)), true), " +
+                            "(cast('bbd' as char(20)), false)");
+
+            assertQuery(
+                    "SELECT a FROM test_table_with_char WHERE a < 'bbc'",
+                    "VALUES cast('aaa' as char(20)), " +
+                            "cast('bbb' as char(20))");
+        }
+        finally {
+            assertUpdate("DROP TABLE test_table_with_char");
+        }
+    }
 }
