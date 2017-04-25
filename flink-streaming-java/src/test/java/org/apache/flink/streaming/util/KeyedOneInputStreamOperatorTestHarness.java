@@ -25,6 +25,7 @@ import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.core.fs.FSDataInputStream;
 import org.apache.flink.runtime.checkpoint.CheckpointOptions;
 import org.apache.flink.runtime.checkpoint.StateAssignmentOperation;
+import org.apache.flink.runtime.checkpoint.StateAssignmentOperationUtils;
 import org.apache.flink.runtime.state.AbstractKeyedStateBackend;
 import org.apache.flink.runtime.state.CheckpointStreamFactory;
 import org.apache.flink.runtime.state.KeyGroupRange;
@@ -218,7 +219,7 @@ public class KeyedOneInputStreamOperatorTestHarness<K, IN, OUT>
 
 			// create a new OperatorStateHandles that only contains the state for our key-groups
 
-			List<KeyGroupRange> keyGroupPartitions = StateAssignmentOperation.createKeyGroupPartitions(
+			List<KeyGroupRange> keyGroupPartitions = StateAssignmentOperationUtils.createKeyGroupPartitions(
 					numKeyGroups,
 					numSubtasks);
 

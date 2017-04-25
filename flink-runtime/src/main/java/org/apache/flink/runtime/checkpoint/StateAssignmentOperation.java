@@ -23,7 +23,6 @@ import org.apache.flink.runtime.executiongraph.ExecutionJobVertex;
 import org.apache.flink.runtime.jobgraph.JobVertexID;
 import org.apache.flink.runtime.state.ChainedStateHandle;
 import org.apache.flink.runtime.state.KeyGroupRange;
-import org.apache.flink.runtime.state.KeyGroupRangeAssignment;
 import org.apache.flink.runtime.state.KeyGroupsStateHandle;
 import org.apache.flink.runtime.state.KeyedStateHandle;
 import org.apache.flink.runtime.state.OperatorStateHandle;
@@ -38,6 +37,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+
+import static org.apache.flink.runtime.checkpoint.StateAssignmentOperationUtils.applyRepartitioner;
+import static org.apache.flink.runtime.checkpoint.StateAssignmentOperationUtils.checkParallelismPreconditions;
+import static org.apache.flink.runtime.checkpoint.StateAssignmentOperationUtils.createKeyGroupPartitions;
 
 /**
  * This class encapsulates the operation of assigning restored state when restoring from a checkpoint.
@@ -95,52 +98,12 @@ public class StateAssignmentOperation {
 				}
 			}
 
-			checkParallelismPreconditions(taskState, executionJobVertex);
+			checkParallelismPreconditions(taskState, executionJobVertex, logger);
 
 			assignTaskStatesToOperatorInstances(taskState, executionJobVertex);
 		}
 
 		return true;
-	}
-
-	private void checkParallelismPreconditions(TaskState taskState, ExecutionJobVertex executionJobVertex) {
-		//----------------------------------------max parallelism preconditions-------------------------------------
-
-		// check that the number of key groups have not changed or if we need to override it to satisfy the restored state
-		if (taskState.getMaxParallelism() != executionJobVertex.getMaxParallelism()) {
-
-			if (!executionJobVertex.isMaxParallelismConfigured()) {
-				// if the max parallelism was not explicitly specified by the user, we derive it from the state
-
-				if (logger.isDebugEnabled()) {
-					logger.debug("Overriding maximum parallelism for JobVertex " + executionJobVertex.getJobVertexId()
-							+ " from " + executionJobVertex.getMaxParallelism() + " to " + taskState.getMaxParallelism());
-				}
-
-				executionJobVertex.setMaxParallelism(taskState.getMaxParallelism());
-			} else {
-				// if the max parallelism was explicitly specified, we complain on mismatch
-				throw new IllegalStateException("The maximum parallelism (" +
-						taskState.getMaxParallelism() + ") with which the latest " +
-						"checkpoint of the execution job vertex " + executionJobVertex +
-						" has been taken and the current maximum parallelism (" +
-						executionJobVertex.getMaxParallelism() + ") changed. This " +
-						"is currently not supported.");
-			}
-		}
-
-		//----------------------------------------parallelism preconditions-----------------------------------------
-
-		final int oldParallelism = taskState.getParallelism();
-		final int newParallelism = executionJobVertex.getParallelism();
-
-		if (taskState.hasNonPartitionedState() && (oldParallelism != newParallelism)) {
-			throw new IllegalStateException("Cannot restore the latest checkpoint because " +
-					"the operator " + executionJobVertex.getJobVertexId() + " has non-partitioned " +
-					"state and its parallelism changed. The operator " + executionJobVertex.getJobVertexId() +
-					" has parallelism " + newParallelism + " whereas the corresponding " +
-					"state object has a parallelism of " + oldParallelism);
-		}
 	}
 
 	private static void assignTaskStatesToOperatorInstances(
@@ -309,28 +272,6 @@ public class StateAssignmentOperation {
 	}
 
 	/**
-	 * Groups the available set of key groups into key group partitions. A key group partition is
-	 * the set of key groups which is assigned to the same task. Each set of the returned list
-	 * constitutes a key group partition.
-	 * <p>
-	 * <b>IMPORTANT</b>: The assignment of key groups to partitions has to be in sync with the
-	 * KeyGroupStreamPartitioner.
-	 *
-	 * @param numberKeyGroups Number of available key groups (indexed from 0 to numberKeyGroups - 1)
-	 * @param parallelism     Parallelism to generate the key group partitioning for
-	 * @return List of key group partitions
-	 */
-	public static List<KeyGroupRange> createKeyGroupPartitions(int numberKeyGroups, int parallelism) {
-		Preconditions.checkArgument(numberKeyGroups >= parallelism);
-		List<KeyGroupRange> result = new ArrayList<>(parallelism);
-
-		for (int i = 0; i < parallelism; ++i) {
-			result.add(KeyGroupRangeAssignment.computeKeyGroupRangeForOperatorIndex(numberKeyGroups, parallelism, i));
-		}
-		return result;
-	}
-
-	/**
 	 * @param chainParallelOpStates array = chain ops, array[idx] = parallel states for this chain op.
 	 * @param chainOpState the operator chain
 	 */
@@ -358,45 +299,6 @@ public class StateAssignmentOperation {
 					opParallelStatesForOneChainOp.add(operatorState);
 				}
 			}
-		}
-	}
-
-	private static List<Collection<OperatorStateHandle>> applyRepartitioner(
-			OperatorStateRepartitioner opStateRepartitioner,
-			List<OperatorStateHandle> chainOpParallelStates,
-			int oldParallelism,
-			int newParallelism) {
-
-		if (chainOpParallelStates == null) {
-			return null;
-		}
-
-		//We only redistribute if the parallelism of the operator changed from previous executions
-		if (newParallelism != oldParallelism) {
-
-			return opStateRepartitioner.repartitionState(
-					chainOpParallelStates,
-					newParallelism);
-		} else {
-			List<Collection<OperatorStateHandle>> repackStream = new ArrayList<>(newParallelism);
-			for (OperatorStateHandle operatorStateHandle : chainOpParallelStates) {
-
-				Map<String, OperatorStateHandle.StateMetaInfo> partitionOffsets =
-						operatorStateHandle.getStateNameToPartitionOffsets();
-
-				for (OperatorStateHandle.StateMetaInfo metaInfo : partitionOffsets.values()) {
-
-					// if we find any broadcast state, we cannot take the shortcut and need to go through repartitioning
-					if (OperatorStateHandle.Mode.BROADCAST.equals(metaInfo.getDistributionMode())) {
-						return opStateRepartitioner.repartitionState(
-								chainOpParallelStates,
-								newParallelism);
-					}
-				}
-
-				repackStream.add(Collections.singletonList(operatorStateHandle));
-			}
-			return repackStream;
 		}
 	}
 }

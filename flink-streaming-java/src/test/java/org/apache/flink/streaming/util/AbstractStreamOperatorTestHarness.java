@@ -20,6 +20,7 @@ package org.apache.flink.streaming.util;
 import org.apache.flink.annotation.VisibleForTesting;
 import org.apache.flink.api.common.ExecutionConfig;
 import org.apache.flink.api.common.JobID;
+import org.apache.flink.runtime.checkpoint.StateAssignmentOperationUtils;
 import org.apache.flink.util.OutputTag;
 import org.apache.flink.api.common.typeutils.TypeSerializer;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
@@ -358,7 +359,7 @@ public class AbstractStreamOperatorTestHarness<OUT> {
 
 			// create a new OperatorStateHandles that only contains the state for our key-groups
 
-			List<KeyGroupRange> keyGroupPartitions = StateAssignmentOperation.createKeyGroupPartitions(
+			List<KeyGroupRange> keyGroupPartitions = StateAssignmentOperationUtils.createKeyGroupPartitions(
 					numKeyGroups,
 					numSubtasks);
 
