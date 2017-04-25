@@ -41,6 +41,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import static org.junit.Assert.*;
+import org.opensolaris.opengrok.configuration.RuntimeEnvironment;
+import org.opensolaris.opengrok.history.RepositoryFactory;
 
 /**
  * JUnit test to test that the DirectoryListing produce the expected result
@@ -124,11 +126,27 @@ public class DirectoryListingTest {
         entries = new FileEntry[3];
         entries[0] = new FileEntry("foo.c", "foo.c", 0, 1);
         entries[1] = new FileEntry("bar.h", "bar.h", Long.MAX_VALUE, 0);
-        entries[2] = new FileEntry(".hg", ".hg", 0, 1);
+        entries[2] = null;
 
         for (FileEntry entry : entries) {
-            entry.create();
+            if (entry != null) {
+                entry.create();
+            }
         }
+        // Create the entry that will be ignored separately.
+        FileEntry hgtags = new FileEntry(".hgtags", ".hgtags", 0, 1);
+        hgtags.create();
+
+        // Will test getSimplifiedPath() behavior for ignored directories.
+        entries[2] = new FileEntry("subdir", "subdir/", 0, 3);
+        File subdir = new File(directory, "subdir");
+        subdir.mkdir();
+        File SCCSdir = new File(subdir, "SCCS");
+        SCCSdir.mkdir();
+
+        // Need to populate list of ignored entries for all repository types.
+        RuntimeEnvironment env = RuntimeEnvironment.getInstance();
+        RepositoryFactory.setIgnored(env);
     }
 
     @After
@@ -186,7 +204,15 @@ public class DirectoryListingTest {
 
         Node node = a.getFirstChild();
         assertNotNull(node);
-        assertEquals(Node.TEXT_NODE, node.getNodeType());
+        // If this is element node then it is probably a directory in which case
+        // it contains the &lt;b&gt; element.
+        if (node.getNodeType() == Node.ELEMENT_NODE) {
+            node = node.getFirstChild();
+            assertNotNull(node);
+            assertEquals(Node.TEXT_NODE, node.getNodeType());
+        } else {
+            assertEquals(Node.TEXT_NODE, node.getNodeType());
+        }
 
         return node.getNodeValue();
     }
@@ -231,6 +257,7 @@ public class DirectoryListingTest {
         FileEntry entry = new FileEntry();
         NodeList nl = element.getElementsByTagName("td");
         int len = nl.getLength();
+        // There should be 5 columns or less in the table.
         if (len < 5) {
             return;
         }
@@ -280,9 +307,9 @@ public class DirectoryListingTest {
 
         NodeList nl = document.getElementsByTagName("tr");
         int len = nl.getLength();
-        // add one extra for header and one for parent directory link
+        // Add one extra for header and one for parent directory link.
         assertEquals(entries.length + 2, len);
-        // Skip the the header and parent link
+        // Skip the the header and parent link.
         for (int i = 2; i < len; ++i) {
             validateEntry((Element) nl.item(i));
         }
