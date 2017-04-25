@@ -1,0 +1,160 @@
+nopolinfo #0
+location: FailureLocation{className='org.apache.ibatis.session.SqlSessionTest', failingMethods=[], erroringMethods=[org.apache.ibatis.session.SqlSessionTest#shouldSelectBlogWithPostsAndAuthorUsingJoin, org.apache.ibatis.session.SqlSessionTest#shouldSelectNestedBlogWithPostsAndAuthorUsingJoin], failures=[FailureType{failureName='org.apache.ibatis.exceptions.PersistenceException', failureDetail='
+### Error querying database.  Cause: java.lang.NullPointerException
+### The error may exist in org/apache/ibatis/builder/BlogMapper.xml
+### The error may involve org.apache.ibatis.domain.blog.mappers.BlogMapper.selectBlogJoinedWithPostsAndAuthor
+### The error occurred while handling results
+### SQL: select     B.id as blog_id,     B.title as blog_title,     B.author_id as blog_author_id,     A.id as author_id,     A.username as author_username,     A.password as author_password,     A.email as author_email,     A.bio as author_bio,     A.favourite_section as author_favourite_section,     P.id as post_id,     P.blog_id as post_blog_id,     P.author_id as post_author_id,     P.created_on as post_created_on,     P.section as post_section,     P.subject as post_subject,     P.draft as draft,     P.body as post_body,     C.id as comment_id,     C.post_id as comment_post_id,     C.name as comment_name,     C.comment as comment_text,     T.id as tag_id,     T.name as tag_name     from Blog B     left outer join Author A on B.author_id = A.id     left outer join Post P on B.id = P.blog_id     left outer join Comment C on P.id = C.post_id     left outer join Post_Tag PT on PT.post_id = P.id     left outer join Tag T on PT.tag_id = T.id     where B.id = ?
+### Cause: java.lang.NullPointerException', isError=true}, FailureType{failureName='org.apache.ibatis.exceptions.PersistenceException', failureDetail='
+### Error querying database.  Cause: java.lang.NullPointerException
+### The error may exist in org/apache/ibatis/builder/NestedBlogMapper.xml
+### The error may involve org.apache.ibatis.domain.blog.mappers.NestedBlogMapper.selectBlogJoinedWithPostsAndAuthor
+### The error occurred while handling results
+### SQL: select     B.id as blog_id,     B.title as blog_title,     B.author_id as blog_author_id,     A.id as author_id,     A.username as author_username,     A.password as author_password,     A.email as author_email,     A.bio as author_bio,     A.favourite_section as author_favourite_section,     P.id as post_id,     P.blog_id as post_blog_id,     P.author_id as post_author_id,     P.created_on as post_created_on,     P.section as post_section,     P.subject as post_subject,     P.draft as draft,     P.body as post_body,     C.id as comment_id,     C.post_id as comment_post_id,     C.name as comment_name,     C.comment as comment_text,     T.id as tag_id,     T.name as tag_name     from Blog B     left outer join Author A on B.author_id = A.id     left outer join Post P on B.id = P.blog_id     left outer join Comment C on P.id = C.post_id     left outer join Post_Tag PT on PT.post_id = P.id     left outer join Tag T on PT.tag_id = T.id     where B.id = ?
+### Cause: java.lang.NullPointerException', isError=true}], nbFailures=0, nbErrors=2}
+status: EXCEPTION
+dateEnd: Tue Apr 25 06:37:58 CEST 2017
+allocatedtime: 120minutes 
+passingTime: 95minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/mybatis/mybatis-3/225406657/src/main/java], projectClasspath='[Ljava.net.URL;@412c995d', projectTests=[org.apache.ibatis.session.SqlSessionTest], complianceLevel=8, outputFolder=null, json=false}
+exception: java.lang.OutOfMemoryError: unable to create new native thread
+nbStatements: 3913
+nbAngelicValues: 1031
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #1
+location: FailureLocation{className='org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest', failingMethods=[], erroringMethods=[org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest#testComplexPerson], failures=[FailureType{failureName='org.apache.ibatis.exceptions.PersistenceException', failureDetail='
+### Error querying database.  Cause: java.lang.NullPointerException
+### The error may exist in org/apache/ibatis/submitted/column_prefix/Mapper.xml
+### The error may involve org.apache.ibatis.submitted.column_prefix.Mapper.selectPersons
+### The error occurred while handling results
+### SQL: select       person.id as person_id,       person.name as person_name,       billing_address.id as b_id,       billing_address.state as b_state,       billing_address.city as b_city,       billing_address.addr_type as b_addr_type,       billing_address.caution as b_caution,       case         when billing_address.phone1_id is null           and billing_address.phone2_id is null           then false         else true       end as b_has_phone,       billing_address_state_bird.bird as b_state_bird,       billing_address_zip.state as b_zip_state,       billing_address_zip.city as b_zip_city,       billing_address_zip.zip_code as b_zip_zip_code,       shipping_address.id as s_id,       shipping_address.state as s_state,       shipping_address.city as s_city,       shipping_address.addr_type as s_addr_type,       shipping_address.caution as s_caution,       case         when shipping_address.phone1_id is null           and shipping_address.phone2_id is null           then false         else true       end as s_has_phone,       shipping_address_state_bird.bird as s_state_bird,       shipping_address_zip.state as s_zip_state,       shipping_address_zip.city as s_zip_city,       shipping_address_zip.zip_code as s_zip_zip_code,       billing_address_phone1.id as b_p1_id,       billing_address_phone1.phone as b_p1_phone,       billing_address_phone1.area_code as b_p1_area_code,       billing_address_phone2.id as b_p2_id,       billing_address_phone2.phone as b_p2_phone,       billing_address_phone2.area_code as b_p2_area_code,       shipping_address_phone1.id as s_p1_id,       shipping_address_phone1.phone as s_p1_phone,       shipping_address_phone1.area_code as s_p1_area_code,       shipping_address_phone2.id as s_p2_id,       shipping_address_phone2.phone as s_p2_phone,       shipping_address_phone2.area_code as s_p2_area_code,       person_room.room_id as person_room_id,       person_room.room_name as person_room_name,       pet.id as pet_id,       pet.name as pet_name,       pet_room.room_id as pet_room_id,       pet_room.room_name as pet_room_name     from person     left join address billing_address       on billing_address.id = person.billing_address_id     left join address shipping_address       on shipping_address.id = person.shipping_address_id     left join state_bird billing_address_state_bird       on billing_address_state_bird.state = billing_address.state     left join state_bird shipping_address_state_bird       on shipping_address_state_bird.state = shipping_address.state     left join zip shipping_address_zip       on shipping_address_zip.state = shipping_address.state       and shipping_address_zip.city = shipping_address.city     left join zip billing_address_zip       on billing_address_zip.state = billing_address.state         and billing_address_zip.city = billing_address.city     left join phone billing_address_phone1       on billing_address_phone1.id = billing_address.phone1_id     left join phone billing_address_phone2       on billing_address_phone2.id = billing_address.phone2_id     left join phone shipping_address_phone1       on shipping_address_phone1.id = shipping_address.phone1_id     left join phone shipping_address_phone2       on shipping_address_phone2.id = shipping_address.phone2_id     left join room person_room on person_room.room_id = person.room_id     left join pet on pet.owner_id = person.id     left join room pet_room on pet_room.room_id = pet.room_id     order by person.id, pet.id
+### Cause: java.lang.NullPointerException', isError=true}], nbFailures=0, nbErrors=1}
+status: EXCEPTION
+dateEnd: Tue Apr 25 06:38:04 CEST 2017
+allocatedtime: 72minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/mybatis/mybatis-3/225406657/src/main/java], projectClasspath='[Ljava.net.URL;@26865482', projectTests=[org.apache.ibatis.submitted.column_prefix.ColumnPrefixTest], complianceLevel=8, outputFolder=null, json=false}
+exception: java.lang.OutOfMemoryError: unable to create new native thread
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #2
+location: FailureLocation{className='org.apache.ibatis.submitted.column_prefix.ColumnPrefixNestedQueryTest', failingMethods=[], erroringMethods=[org.apache.ibatis.submitted.column_prefix.ColumnPrefixNestedQueryTest#testComplexPerson], failures=[FailureType{failureName='org.apache.ibatis.exceptions.PersistenceException', failureDetail='
+### Error querying database.  Cause: java.lang.NullPointerException
+### The error may exist in org/apache/ibatis/submitted/column_prefix/MapperNestedQuery.xml
+### The error may involve org.apache.ibatis.submitted.column_prefix.MapperNestedQuery.selectRoom
+### The error occurred while handling results
+### SQL: select       room_id,       room_name     from room     where room_id = ?
+### Cause: java.lang.NullPointerException', isError=true}], nbFailures=0, nbErrors=1}
+status: EXCEPTION
+dateEnd: Tue Apr 25 06:38:09 CEST 2017
+allocatedtime: 72minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/mybatis/mybatis-3/225406657/src/main/java], projectClasspath='[Ljava.net.URL;@58aa5c94', projectTests=[org.apache.ibatis.submitted.column_prefix.ColumnPrefixNestedQueryTest], complianceLevel=8, outputFolder=null, json=false}
+exception: java.lang.OutOfMemoryError: unable to create new native thread
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #3
+location: FailureLocation{className='org.apache.ibatis.submitted.multiple_discriminator.MultipleDiscriminatorTest', failingMethods=[], erroringMethods=[org.apache.ibatis.submitted.multiple_discriminator.MultipleDiscriminatorTest#testMultipleDiscriminatorLoop], failures=[FailureType{failureName='org.apache.ibatis.exceptions.PersistenceException', failureDetail='
+### Error querying database.  Cause: java.lang.NullPointerException
+### The error may exist in org/apache/ibatis/submitted/multiple_discriminator/Person.xml
+### The error may involve org.apache.ibatis.submitted.multiple_discriminator.PersonMapper.getLoop
+### The error occurred while handling results
+### SQL: SELECT id, firstName, lastName, jobTitle, department, personType, employeeType         FROM Person         WHERE id = 3
+### Cause: java.lang.NullPointerException', isError=true}], nbFailures=0, nbErrors=1}
+status: EXCEPTION
+dateEnd: Tue Apr 25 06:38:14 CEST 2017
+allocatedtime: 72minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/mybatis/mybatis-3/225406657/src/main/java], projectClasspath='[Ljava.net.URL;@37753b69', projectTests=[org.apache.ibatis.submitted.multiple_discriminator.MultipleDiscriminatorTest], complianceLevel=8, outputFolder=null, json=false}
+exception: java.lang.OutOfMemoryError: unable to create new native thread
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #4
+location: FailureLocation{className='org.apache.ibatis.submitted.named_constructor_args.usesjava8.NamedConstructorArgsUseActualNameTest', failingMethods=[], erroringMethods=[org.apache.ibatis.submitted.named_constructor_args.usesjava8.NamedConstructorArgsUseActualNameTest#argsByActualNamesXml], failures=[FailureType{failureName='org.apache.ibatis.exceptions.PersistenceException', failureDetail='
+### Error querying database.  Cause: org.apache.ibatis.reflection.ReflectionException: Error instantiating class org.apache.ibatis.submitted.named_constructor_args.User with invalid types (Integer,Object) or values (1,User1). Cause: java.lang.NoSuchMethodException: org.apache.ibatis.submitted.named_constructor_args.User.<init>(java.lang.Integer, java.lang.Object)
+### The error may exist in org/apache/ibatis/submitted/named_constructor_args/usesjava8/Mapper.xml
+### The error may involve org.apache.ibatis.submitted.named_constructor_args.usesjava8.Mapper.mapConstructorWithoutParamAnnosXml
+### The error occurred while handling results
+### SQL: select * from users where id = ?
+### Cause: org.apache.ibatis.reflection.ReflectionException: Error instantiating class org.apache.ibatis.submitted.named_constructor_args.User with invalid types (Integer,Object) or values (1,User1). Cause: java.lang.NoSuchMethodException: org.apache.ibatis.submitted.named_constructor_args.User.<init>(java.lang.Integer, java.lang.Object)', isError=true}], nbFailures=0, nbErrors=1}
+status: EXCEPTION
+dateEnd: Tue Apr 25 06:38:22 CEST 2017
+allocatedtime: 72minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/mybatis/mybatis-3/225406657/src/main/java], projectClasspath='[Ljava.net.URL;@367fbb28', projectTests=[org.apache.ibatis.submitted.named_constructor_args.usesjava8.NamedConstructorArgsUseActualNameTest], complianceLevel=8, outputFolder=null, json=false}
+exception: java.lang.OutOfMemoryError: unable to create new native thread
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #5
+location: FailureLocation{className='org.apache.ibatis.submitted.named_constructor_args.NamedConstructorArgsTest', failingMethods=[], erroringMethods=[org.apache.ibatis.submitted.named_constructor_args.NamedConstructorArgsTest#argsWithParamAnnosXml], failures=[FailureType{failureName='org.apache.ibatis.exceptions.PersistenceException', failureDetail='
+### Error querying database.  Cause: org.apache.ibatis.reflection.ReflectionException: Error instantiating class org.apache.ibatis.submitted.named_constructor_args.User with invalid types (Object,String,Object) or values (1,99,User1). Cause: java.lang.NoSuchMethodException: org.apache.ibatis.submitted.named_constructor_args.User.<init>(java.lang.Object, java.lang.String, java.lang.Object)
+### The error may exist in org/apache/ibatis/submitted/named_constructor_args/Mapper.xml
+### The error may involve org.apache.ibatis.submitted.named_constructor_args.Mapper.mapConstructorWithParamAnnosXml
+### The error occurred while handling results
+### SQL: select * from users where id = ?
+### Cause: org.apache.ibatis.reflection.ReflectionException: Error instantiating class org.apache.ibatis.submitted.named_constructor_args.User with invalid types (Object,String,Object) or values (1,99,User1). Cause: java.lang.NoSuchMethodException: org.apache.ibatis.submitted.named_constructor_args.User.<init>(java.lang.Object, java.lang.String, java.lang.Object)', isError=true}], nbFailures=0, nbErrors=1}
+status: EXCEPTION
+dateEnd: Tue Apr 25 06:38:26 CEST 2017
+allocatedtime: 72minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/mybatis/mybatis-3/225406657/src/main/java], projectClasspath='[Ljava.net.URL;@6a577564', projectTests=[org.apache.ibatis.submitted.named_constructor_args.NamedConstructorArgsTest], complianceLevel=8, outputFolder=null, json=false}
+exception: java.lang.OutOfMemoryError: unable to create new native thread
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #6
+location: FailureLocation{className='org.apache.ibatis.submitted.column_prefix.ColumnPrefixAutoMappingTest', failingMethods=[], erroringMethods=[org.apache.ibatis.submitted.column_prefix.ColumnPrefixAutoMappingTest#testComplexPerson], failures=[FailureType{failureName='org.apache.ibatis.exceptions.PersistenceException', failureDetail='
+### Error querying database.  Cause: java.lang.NullPointerException
+### The error may exist in org/apache/ibatis/submitted/column_prefix/MapperAutoMapping.xml
+### The error may involve org.apache.ibatis.submitted.column_prefix.MapperAutoMapping.selectPersons
+### The error occurred while handling results
+### SQL: select       person.id as person_id,       person.name as person_name,       billing_address.id as b_id,       billing_address.state as b_state,       billing_address.city as b_city,       billing_address.addr_type as b_addr_type,       billing_address.caution as b_caution,       case         when billing_address.phone1_id is null           and billing_address.phone2_id is null           then false         else true       end as b_has_phone,       billing_address_state_bird.bird as b_state_bird,       billing_address_zip.state as b_zip_state,       billing_address_zip.city as b_zip_city,       billing_address_zip.zip_code as b_zip_zip_code,       shipping_address.id as s_id,       shipping_address.state as s_state,       shipping_address.city as s_city,       shipping_address.addr_type as s_addr_type,       shipping_address.caution as s_caution,       case         when shipping_address.phone1_id is null           and shipping_address.phone2_id is null           then false         else true       end as s_has_phone,       shipping_address_state_bird.bird as s_state_bird,       shipping_address_zip.state as s_zip_state,       shipping_address_zip.city as s_zip_city,       shipping_address_zip.zip_code as s_zip_zip_code,       billing_address_phone1.id as b_p1_id,       billing_address_phone1.phone as b_p1_phone,       billing_address_phone1.area_code as b_p1_area_code,       billing_address_phone2.id as b_p2_id,       billing_address_phone2.phone as b_p2_phone,       billing_address_phone2.area_code as b_p2_area_code,       shipping_address_phone1.id as s_p1_id,       shipping_address_phone1.phone as s_p1_phone,       shipping_address_phone1.area_code as s_p1_area_code,       shipping_address_phone2.id as s_p2_id,       shipping_address_phone2.phone as s_p2_phone,       shipping_address_phone2.area_code as s_p2_area_code,       person_room.room_id as person_room_id,       person_room.room_name as person_room_name,       pet.id as pet_id,       pet.name as pet_name,       pet_room.room_id as pet_room_id,       pet_room.room_name as pet_room_name     from person     left join address billing_address       on billing_address.id = person.billing_address_id     left join address shipping_address       on shipping_address.id = person.shipping_address_id     left join state_bird billing_address_state_bird       on billing_address_state_bird.state = billing_address.state     left join state_bird shipping_address_state_bird       on shipping_address_state_bird.state = shipping_address.state     left join zip shipping_address_zip       on shipping_address_zip.state = shipping_address.state       and shipping_address_zip.city = shipping_address.city     left join zip billing_address_zip       on billing_address_zip.state = billing_address.state         and billing_address_zip.city = billing_address.city     left join phone billing_address_phone1       on billing_address_phone1.id = billing_address.phone1_id     left join phone billing_address_phone2       on billing_address_phone2.id = billing_address.phone2_id     left join phone shipping_address_phone1       on shipping_address_phone1.id = shipping_address.phone1_id     left join phone shipping_address_phone2       on shipping_address_phone2.id = shipping_address.phone2_id     left join room person_room on person_room.room_id = person.room_id     left join pet on pet.owner_id = person.id     left join room pet_room on pet_room.room_id = pet.room_id     order by person.id, pet.id
+### Cause: java.lang.NullPointerException', isError=true}], nbFailures=0, nbErrors=1}
+status: EXCEPTION
+dateEnd: Tue Apr 25 06:38:31 CEST 2017
+allocatedtime: 72minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/mybatis/mybatis-3/225406657/src/main/java], projectClasspath='[Ljava.net.URL;@2296ed0d', projectTests=[org.apache.ibatis.submitted.column_prefix.ColumnPrefixAutoMappingTest], complianceLevel=8, outputFolder=null, json=false}
+exception: java.lang.OutOfMemoryError: unable to create new native thread
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
