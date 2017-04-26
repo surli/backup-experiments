@@ -1,0 +1,1594 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 295 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 295 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] nifi
+[INFO] nifi-api
+[INFO] nifi-framework-api
+[INFO] nifi-commons
+[INFO] nifi-utils
+[INFO] nifi-data-provenance-utils
+[INFO] nifi-flowfile-packager
+[INFO] nifi-expression-language
+[INFO] nifi-logging-utils
+[INFO] nifi-properties
+[INFO] nifi-security-utils
+[INFO] nifi-socket-utils
+[INFO] nifi-web-utils
+[INFO] nifi-nar-bundles
+[INFO] nifi-standard-services
+[INFO] nifi-ssl-context-service-api
+[INFO] nifi-processor-utils
+[INFO] nifi-write-ahead-log
+[INFO] nifi-framework-bundle
+[INFO] nifi-framework
+[INFO] nifi-client-dto
+[INFO] nifi-site-to-site-client
+[INFO] nifi-hl7-query-language
+[INFO] nifi-hadoop-utils
+[INFO] nifi-schema-utils
+[INFO] nifi-properties-loader
+[INFO] nifi-bootstrap
+[INFO] nifi-mock
+[INFO] nifi-nar-utils
+[INFO] nifi-framework-nar-utils
+[INFO] nifi-framework-authorization
+[INFO] nifi-framework-core-api
+[INFO] nifi-runtime
+[INFO] nifi-security
+[INFO] nifi-user-actions
+[INFO] nifi-administration
+[INFO] nifi-site-to-site
+[INFO] nifi-repository-models
+[INFO] nifi-flowfile-repo-serialization
+[INFO] nifi-framework-cluster-protocol
+[INFO] nifi-framework-core
+[INFO] nifi-web
+[INFO] nifi-web-security
+[INFO] nifi-web-optimistic-locking
+[INFO] nifi-framework-cluster
+[INFO] nifi-file-authorizer
+[INFO] nifi-custom-ui-utilities
+[INFO] nifi-web-content-access
+[INFO] nifi-ui-extension
+[INFO] nifi-authorizer
+[INFO] nifi-provenance-repository-bundle
+[INFO] nifi-volatile-provenance-repository
+[INFO] nifi-web-api
+[INFO] nifi-web-error
+[INFO] nifi-web-docs
+[INFO] nifi-web-content-viewer
+[INFO] nifi-web-ui
+[INFO] nifi-documentation
+[INFO] nifi-jetty
+[INFO] nifi-resources
+[INFO] nifi-standard-prioritizers
+[INFO] nifi-framework-nar
+[INFO] nifi-distributed-cache-client-service-api
+[INFO] nifi-hadoop-bundle
+[INFO] nifi-hdfs-processors
+[INFO] nifi-load-distribution-service-api
+[INFO] nifi-http-context-map-api
+[INFO] nifi-dbcp-service-api
+[INFO] nifi-hbase-client-service-api
+[INFO] nifi-record-serialization-service-api
+[INFO] nifi-schema-registry-service-api
+[INFO] nifi-standard-services-api-nar
+[INFO] nifi-hadoop-libraries-bundle
+[INFO] nifi-hadoop-libraries-nar
+[INFO] nifi-hadoop-nar
+[INFO] nifi-jetty-bundle
+[INFO] nifi-persistent-provenance-repository
+[INFO] nifi-provenance-repository-nar
+[INFO] nifi-distributed-cache-services-bundle
+[INFO] nifi-distributed-cache-protocol
+[INFO] nifi-distributed-cache-client-service
+[INFO] nifi-ssl-context-bundle
+[INFO] nifi-ssl-context-service
+[INFO] nifi-standard-bundle
+[INFO] nifi-standard-utils
+[INFO] nifi-standard-processors
+[INFO] nifi-standard-reporting-tasks
+[INFO] nifi-standard-content-viewer
+[INFO] nifi-jolt-transform-json-ui
+[INFO] nifi-standard-nar
+[INFO] nifi-distributed-cache-server
+[INFO] nifi-distributed-cache-services-nar
+[INFO] nifi-ssl-context-service-nar
+[INFO] nifi-http-context-map-bundle
+[INFO] nifi-http-context-map
+[INFO] nifi-http-context-map-nar
+[INFO] nifi-dbcp-service-bundle
+[INFO] nifi-dbcp-service
+[INFO] nifi-dbcp-service-nar
+[INFO] nifi-hbase_1_1_2-client-service-bundle
+[INFO] nifi-hbase_1_1_2-client-service
+[INFO] nifi-hbase_1_1_2-client-service-nar
+[INFO] nifi-record-serialization-services-bundle
+[INFO] nifi-record-serialization-services
+[INFO] nifi-record-serialization-services-nar
+[INFO] nifi-update-attribute-bundle
+[INFO] nifi-update-attribute-model
+[INFO] nifi-update-attribute-processor
+[INFO] nifi-update-attribute-ui
+[INFO] nifi-update-attribute-nar
+[INFO] nifi-kafka-bundle
+[INFO] nifi-kafka-0-8-processors
+[INFO] nifi-kafka-0-9-processors
+[INFO] nifi-kafka-0-10-processors
+[INFO] nifi-kafka-0-8-nar
+[INFO] nifi-kafka-0-9-nar
+[INFO] nifi-kafka-0-10-nar
+[INFO] nifi-kite-bundle
+[INFO] nifi-kite-processors
+[INFO] nifi-kite-nar
+[INFO] nifi-solr-bundle
+[INFO] nifi-solr-processors
+[INFO] nifi-solr-nar
+[INFO] nifi-aws-bundle
+[INFO] nifi-aws-processors
+[INFO] nifi-aws-nar
+[INFO] nifi-social-media-bundle
+[INFO] nifi-twitter-processors
+[INFO] nifi-social-media-nar
+[INFO] nifi-enrich-bundle
+[INFO] nifi-enrich-processors
+[INFO] nifi-enrich-nar
+[INFO] nifi-hl7-bundle
+[INFO] nifi-hl7-processors
+[INFO] nifi-hl7-nar
+[INFO] nifi-ccda-bundle
+[INFO] nifi-ccda-processors
+[INFO] nifi-ccda-nar
+[INFO] nifi-language-translation-bundle
+[INFO] nifi-yandex-processors
+[INFO] nifi-language-translation-nar
+[INFO] nifi-mongodb-bundle
+[INFO] nifi-mongodb-processors
+[INFO] nifi-mongodb-nar
+[INFO] nifi-flume-bundle
+[INFO] nifi-flume-processors
+[INFO] nifi-flume-nar
+[INFO] nifi-hbase-bundle
+[INFO] nifi-hbase-processors
+[INFO] nifi-hbase-nar
+[INFO] nifi-ambari-bundle
+[INFO] nifi-ambari-reporting-task
+[INFO] nifi-ambari-nar
+[INFO] nifi-media-bundle
+[INFO] nifi-media-processors
+[INFO] nifi-image-viewer
+[INFO] nifi-media-nar
+[INFO] nifi-avro-bundle
+[INFO] nifi-avro-processors
+[INFO] nifi-avro-nar
+[INFO] nifi-couchbase-bundle
+[INFO] nifi-couchbase-processors
+[INFO] nifi-couchbase-nar
+[INFO] nifi-azure-bundle
+[INFO] nifi-azure-processors
+[INFO] nifi-azure-nar
+[INFO] nifi-ldap-iaa-providers-bundle
+[INFO] nifi-ldap-iaa-providers
+[INFO] nifi-ldap-iaa-providers-nar
+[INFO] nifi-kerberos-iaa-providers-bundle
+[INFO] nifi-kerberos-iaa-providers
+[INFO] nifi-kerberos-iaa-providers-nar
+[INFO] nifi-riemann-bundle
+[INFO] nifi-riemann-processors
+[INFO] nifi-riemann-nar
+[INFO] nifi-html-bundle
+[INFO] nifi-html-processors
+[INFO] nifi-html-nar
+[INFO] nifi-scripting-bundle
+[INFO] nifi-scripting-processors
+[INFO] nifi-scripting-nar
+[INFO] nifi-elasticsearch-bundle
+[INFO] nifi-elasticsearch-processors
+[INFO] nifi-elasticsearch-nar
+[INFO] nifi-elasticsearch-5-processors
+[INFO] nifi-elasticsearch-5-nar
+[INFO] nifi-amqp-bundle
+[INFO] nifi-amqp-processors
+[INFO] nifi-amqp-nar
+[INFO] nifi-splunk-bundle
+[INFO] nifi-splunk-processors
+[INFO] nifi-splunk-nar
+[INFO] nifi-jms-bundle
+[INFO] nifi-jms-cf-service
+[INFO] nifi-jms-cf-service-nar
+[INFO] nifi-jms-processors
+[INFO] nifi-jms-processors-nar
+[INFO] nifi-lumberjack-bundle
+[INFO] nifi-lumberjack-processors
+[INFO] nifi-lumberjack-nar
+[INFO] nifi-beats-bundle
+[INFO] nifi-beats-processors
+[INFO] nifi-beats-nar
+[INFO] nifi-cassandra-bundle
+[INFO] nifi-cassandra-processors
+[INFO] nifi-cassandra-nar
+[INFO] nifi-spring-bundle
+[INFO] nifi-spring-processors
+[INFO] nifi-spring-nar
+[INFO] nifi-hive-bundle
+[INFO] nifi-hive-services-api
+[INFO] nifi-hive-services-api-nar
+[INFO] nifi-hive-processors
+[INFO] nifi-hive-nar
+[INFO] nifi-site-to-site-reporting-bundle
+[INFO] nifi-site-to-site-reporting-task
+[INFO] nifi-site-to-site-reporting-nar
+[INFO] nifi-mqtt-bundle
+[INFO] nifi-mqtt-processors
+[INFO] nifi-mqtt-nar
+[INFO] nifi-evtx-bundle
+[INFO] nifi-evtx-processors
+[INFO] nifi-evtx-nar
+[INFO] nifi-slack-bundle
+[INFO] nifi-slack-processors
+[INFO] nifi-slack-nar
+[INFO] nifi-snmp-bundle
+[INFO] nifi-snmp-processors
+[INFO] nifi-snmp-nar
+[INFO] nifi-datadog-bundle
+[INFO] nifi-datadog-reporting-task
+[INFO] nifi-datadog-nar
+[INFO] nifi-windows-event-log-bundle
+[INFO] nifi-windows-event-log-processors
+[INFO] nifi-windows-event-log-nar
+[INFO] nifi-ignite-bundle
+[INFO] nifi-ignite-processors
+[INFO] nifi-ignite-nar
+[INFO] nifi-email-bundle
+[INFO] nifi-email-processors
+[INFO] nifi-email-nar
+[INFO] nifi-ranger-bundle
+[INFO] nifi-ranger-plugin
+[INFO] nifi-ranger-nar
+[INFO] nifi-ranger-resources
+[INFO] nifi-websocket-bundle
+[INFO] nifi-websocket-services-api
+[INFO] nifi-websocket-processors
+[INFO] nifi-websocket-services-api-nar
+[INFO] nifi-websocket-processors-nar
+[INFO] nifi-websocket-services-jetty
+[INFO] nifi-websocket-services-jetty-nar
+[INFO] nifi-tcp-bundle
+[INFO] nifi-tcp-processors
+[INFO] nifi-tcp-nar
+[INFO] nifi-gcp-bundle
+[INFO] nifi-gcp-processors
+[INFO] nifi-gcp-nar
+[INFO] nifi-registry-bundle
+[INFO] nifi-registry-service
+[INFO] nifi-registry-nar
+[INFO] nifi-stateful-analysis-bundle
+[INFO] nifi-stateful-analysis-processors
+[INFO] nifi-stateful-analysis-nar
+[INFO] nifi-poi-bundle
+[INFO] nifi-poi-processors
+[INFO] nifi-poi-nar
+[INFO] nifi-cdc
+[INFO] nifi-cdc-api
+[INFO] nifi-cdc-mysql-bundle
+[INFO] nifi-cdc-mysql-processors
+[INFO] nifi-cdc-mysql-nar
+[INFO] nifi-cybersecurity-bundle
+[INFO] nifi-cybersecurity-processors
+[INFO] nifi-cybersecurity-nar
+[INFO] nifi-docs
+[INFO] nifi-assembly
+[INFO] nifi-maven-archetypes
+[INFO] nifi-processor-bundle-archetype
+[INFO] nifi-service-bundle-archetype
+[INFO] nifi-external
+[INFO] nifi-spark-receiver
+[INFO] nifi-storm-spout
+[INFO] nifi-example-bundle
+[INFO] nifi-nifi-example-processors
+[INFO] nifi-example-nar
+[INFO] nifi-toolkit
+[INFO] nifi-toolkit-tls
+[INFO] nifi-toolkit-encrypt-config
+[INFO] nifi-toolkit-s2s
+[INFO] nifi-toolkit-admin
+[INFO] nifi-toolkit-zookeeper-migrator
+[INFO] nifi-toolkit-flowfile-repo
+[INFO] nifi-toolkit-assembly
+[INFO] nifi-docker
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi ---
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi ---
+[INFO] No sources to compile
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-api 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-api ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-api/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-api ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-api/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.nifi.registry.TestVariableRegistry
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 sec - in org.apache.nifi.registry.TestVariableRegistry
+Running org.apache.nifi.processor.TestDataUnit
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec - in org.apache.nifi.processor.TestDataUnit
+Running org.apache.nifi.components.TestPropertyDescriptor
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 sec - in org.apache.nifi.components.TestPropertyDescriptor
+
+Results :
+
+
+
+
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-framework-api 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-framework-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-framework-api ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-framework-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-framework-api/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-framework-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-framework-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-framework-api/src/test/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-framework-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-framework-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-framework-api ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-framework-api/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.nifi.bundle.BundleDetailsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.apache.nifi.bundle.BundleDetailsTest
+Running org.apache.nifi.bundle.BundleCoordinateTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.apache.nifi.bundle.BundleCoordinateTest
+Running org.apache.nifi.authorization.TestAccessPolicy
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in org.apache.nifi.authorization.TestAccessPolicy
+Running org.apache.nifi.authorization.TestAbstractPolicyBasedAuthorizer
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.941 sec - in org.apache.nifi.authorization.TestAbstractPolicyBasedAuthorizer
+Running org.apache.nifi.authorization.TestGroup
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.apache.nifi.authorization.TestGroup
+Running org.apache.nifi.authorization.TestUser
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.nifi.authorization.TestUser
+Running org.apache.nifi.web.TestRevision
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in org.apache.nifi.web.TestRevision
+
+Results :
+
+
+
+
+Tests run: 50, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-commons 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-commons ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-commons ---
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-commons ---
+[INFO] No sources to compile
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-utils 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-utils ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-utils ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-utils/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-utils ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Using Groovy-Eclipse compiler to compile both Java and Groovy files
+[INFO] Found location </root/./workspace/apache/nifi/226016377/.m2/org/codehaus/groovy/groovy-eclipse-batch/2.4.3-01/groovy-eclipse-batch-2.4.3-01.jar> for className <org.eclipse.jdt.internal.compiler.batch.Main>
+[INFO] no javaAgentClass seems to be set
+[INFO] Compiling in a forked process using /root/./workspace/apache/nifi/226016377/.m2/org/codehaus/groovy/groovy-eclipse-batch/2.4.3-01/groovy-eclipse-batch-2.4.3-01.jar
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-utils ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-commons/nifi-utils/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.nifi.remote.io.TestCompressionInputOutputStreams
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 sec - in org.apache.nifi.remote.io.TestCompressionInputOutputStreams
+Running org.apache.nifi.util.file.classloader.TestClassLoaderUtils
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.197 sec - in org.apache.nifi.util.file.classloader.TestClassLoaderUtils
+Running org.apache.nifi.util.file.monitor.TestSynchronousFileWatcher
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.217 sec - in org.apache.nifi.util.file.monitor.TestSynchronousFileWatcher
+Running org.apache.nifi.util.file.monitor.TestCompoundUpdateMonitor
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in org.apache.nifi.util.file.monitor.TestCompoundUpdateMonitor
+Running org.apache.nifi.util.timebuffer.TestRingBuffer
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in org.apache.nifi.util.timebuffer.TestRingBuffer
+Running org.apache.nifi.util.timebuffer.TestTimedBuffer
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.004 sec - in org.apache.nifi.util.timebuffer.TestTimedBuffer
+Running org.apache.nifi.util.validator.TestStandardValidators
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.235 sec - in org.apache.nifi.util.validator.TestStandardValidators
+Running org.apache.nifi.util.TestNaiveSearchRingBuffer
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in org.apache.nifi.util.TestNaiveSearchRingBuffer
+Running org.apache.nifi.stream.io.LimitingInputStreamTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.nifi.stream.io.LimitingInputStreamTest
+Running org.apache.nifi.stream.io.util.StreamDemarcatorTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in org.apache.nifi.stream.io.util.StreamDemarcatorTest
+Running org.apache.nifi.stream.io.util.TextLineDemarcatorTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec - in org.apache.nifi.stream.io.util.TextLineDemarcatorTest
+Running org.apache.nifi.stream.io.ByteCountingInputStreamTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.apache.nifi.stream.io.ByteCountingInputStreamTest
+Running org.apache.nifi.stream.io.TestLeakyBucketThrottler
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in org.apache.nifi.stream.io.TestLeakyBucketThrottler
+Running org.apache.nifi.processor.TestFormatUtilsGroovy
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.852 sec - in org.apache.nifi.processor.TestFormatUtilsGroovy
+Running org.apache.nifi.processor.TestFormatUtils
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.apache.nifi.processor.TestFormatUtils
+
+Results :
+
+
+
+
+Tests run: 83, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-data-provenance-utils 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-data-provenance-utils ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-data-provenance-utils ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-data-provenance-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-data-provenance-utils/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-data-provenance-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-data-provenance-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-data-provenance-utils/src/test/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-data-provenance-utils ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-data-provenance-utils ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-data-provenance-utils ---
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-flowfile-packager 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-flowfile-packager ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-flowfile-packager ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-flowfile-packager ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-flowfile-packager/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-flowfile-packager ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-flowfile-packager ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-flowfile-packager/src/test/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-flowfile-packager ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-flowfile-packager ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-flowfile-packager ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-commons/nifi-flowfile-packager/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.nifi.util.TestPackageUnpackageV3
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in org.apache.nifi.util.TestPackageUnpackageV3
+
+Results :
+
+
+
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-expression-language 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-expression-language ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- antlr3-maven-plugin:3.5.2:antlr (default) @ nifi-expression-language ---
+[INFO] ANTLR: Processing source directory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-expression-language/src/main/antlr3
+Grammar /root/workspace/apache/nifi/226016377/nifi-commons/nifi-expression-language/src/main/antlr3/org/apache/nifi/attribute/expression/language/antlr/AttributeExpressionLexer.g is up to date - build skipped
+Grammar /root/workspace/apache/nifi/226016377/nifi-commons/nifi-expression-language/src/main/antlr3/org/apache/nifi/attribute/expression/language/antlr/AttributeExpressionParser.g is up to date - build skipped
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-expression-language ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-expression-language ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-expression-language/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-expression-language ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-expression-language ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-expression-language ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-expression-language ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Using Groovy-Eclipse compiler to compile both Java and Groovy files
+[INFO] Found location </root/./workspace/apache/nifi/226016377/.m2/org/codehaus/groovy/groovy-eclipse-batch/2.4.3-01/groovy-eclipse-batch-2.4.3-01.jar> for className <org.eclipse.jdt.internal.compiler.batch.Main>
+[INFO] no javaAgentClass seems to be set
+[INFO] Compiling in a forked process using /root/./workspace/apache/nifi/226016377/.m2/org/codehaus/groovy/groovy-eclipse-batch/2.4.3-01/groovy-eclipse-batch-2.4.3-01.jar
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-expression-language ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-commons/nifi-expression-language/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.nifi.attribute.expression.language.TestValueLookup
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 sec - in org.apache.nifi.attribute.expression.language.TestValueLookup
+Running org.apache.nifi.attribute.expression.language.TestStandardPreparedQuery
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 4.15 sec - in org.apache.nifi.attribute.expression.language.TestStandardPreparedQuery
+Running org.apache.nifi.attribute.expression.language.QueryGroovyTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.492 sec - in org.apache.nifi.attribute.expression.language.QueryGroovyTest
+Running org.apache.nifi.attribute.expression.language.TestQuery
+Tests run: 99, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.245 sec - in org.apache.nifi.attribute.expression.language.TestQuery
+
+Results :
+
+
+
+
+Tests run: 109, Failures: 0, Errors: 0, Skipped: 2
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-logging-utils 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-logging-utils ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-logging-utils ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-logging-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-logging-utils/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-logging-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-logging-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-logging-utils/src/test/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-logging-utils ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-logging-utils ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-logging-utils ---
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-properties 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-properties ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-properties ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-properties ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-properties/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-properties ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-properties ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-properties ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-properties ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-properties ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-commons/nifi-properties/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.nifi.util.NiFiPropertiesTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 sec - in org.apache.nifi.util.NiFiPropertiesTest
+
+Results :
+
+
+
+
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-security-utils 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-security-utils ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-security-utils ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-security-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-security-utils/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-security-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-security-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-security-utils/src/test/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-security-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-security-utils ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Using Groovy-Eclipse compiler to compile both Java and Groovy files
+[INFO] Found location </root/./workspace/apache/nifi/226016377/.m2/org/codehaus/groovy/groovy-eclipse-batch/2.4.3-01/groovy-eclipse-batch-2.4.3-01.jar> for className <org.eclipse.jdt.internal.compiler.batch.Main>
+[INFO] no javaAgentClass seems to be set
+[INFO] Compiling in a forked process using /root/./workspace/apache/nifi/226016377/.m2/org/codehaus/groovy/groovy-eclipse-batch/2.4.3-01/groovy-eclipse-batch-2.4.3-01.jar
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-security-utils ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-commons/nifi-security-utils/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.nifi.security.util.CertificateUtilsTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.73 sec - in org.apache.nifi.security.util.CertificateUtilsTest
+Running org.apache.nifi.security.util.KeyStoreUtilsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.427 sec - in org.apache.nifi.security.util.KeyStoreUtilsTest
+
+Results :
+
+
+
+
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-socket-utils 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-socket-utils ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-socket-utils ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-socket-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-socket-utils/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-socket-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-socket-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-socket-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-socket-utils ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-socket-utils ---
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-web-utils 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-web-utils ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-web-utils ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-web-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-web-utils/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-web-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-web-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-web-utils/src/test/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-web-utils ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-web-utils ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-web-utils ---
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-nar-bundles 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-nar-bundles ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ nifi-nar-bundles ---
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/root/workspace/apache/nifi/226016377/nifi-nar-bundles' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /root/workspace/apache/nifi/226016377/nifi-nar-bundles
+[INFO] Storing buildNumber: 1cda22d at timestamp: 1493235058740
+[WARNING] Cannot get the branch information from the git repository:
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] ShortRevision tag detected. The value is '7'.
+[INFO] Executing: /bin/sh -c cd '/root/workspace/apache/nifi/226016377/nifi-nar-bundles' && 'git' 'rev-parse' '--verify' '--short=7' 'HEAD'
+[INFO] Working directory: /root/workspace/apache/nifi/226016377/nifi-nar-bundles
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-nar-bundles ---
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-nar-bundles ---
+[INFO] No sources to compile
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-standard-services 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-standard-services ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ nifi-standard-services ---
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-standard-services ---
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-standard-services ---
+[INFO] No sources to compile
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-ssl-context-service-api 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-ssl-context-service-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ nifi-ssl-context-service-api ---
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-ssl-context-service-api ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-ssl-context-service-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-service-api/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-ssl-context-service-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-ssl-context-service-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-nar-bundles/nifi-standard-services/nifi-ssl-context-service-api/src/test/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-ssl-context-service-api ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-ssl-context-service-api ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-ssl-context-service-api ---
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-processor-utils 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-processor-utils ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-processor-utils ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-processor-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-processor-utilities/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-processor-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-processor-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-processor-utilities/src/test/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-processor-utils ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-processor-utils ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-processor-utils ---
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-write-ahead-log 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-write-ahead-log ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-write-ahead-log ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-write-ahead-log ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-write-ahead-log/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-write-ahead-log ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-write-ahead-log ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-write-ahead-log/src/test/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-write-ahead-log ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-write-ahead-log ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-write-ahead-log ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-commons/nifi-write-ahead-log/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.wali.TestMinimalLockingWriteAheadLog
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 4.908 sec - in org.wali.TestMinimalLockingWriteAheadLog
+
+Results :
+
+
+
+
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 2
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-framework-bundle 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-framework-bundle ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ nifi-framework-bundle ---
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-framework-bundle ---
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-framework-bundle ---
+[INFO] No sources to compile
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-framework 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-framework ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ nifi-framework ---
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-framework ---
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-framework ---
+[INFO] No sources to compile
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-client-dto 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-client-dto ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ nifi-client-dto ---
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-client-dto ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-client-dto ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-client-dto ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-client-dto ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/src/test/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-client-dto ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-client-dto ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-client-dto ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-nar-bundles/nifi-framework-bundle/nifi-framework/nifi-client-dto/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.nifi.web.api.dto.TestRemoteProcessGroupDTO
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec - in org.apache.nifi.web.api.dto.TestRemoteProcessGroupDTO
+
+Results :
+
+
+
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-site-to-site-client 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-site-to-site-client ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-site-to-site-client ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-site-to-site-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-site-to-site-client/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-site-to-site-client ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-site-to-site-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-site-to-site-client ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-site-to-site-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-site-to-site-client ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-commons/nifi-site-to-site-client/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.nifi.remote.client.socket.TestSiteToSiteClient
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.124 sec - in org.apache.nifi.remote.client.socket.TestSiteToSiteClient
+Running org.apache.nifi.remote.client.TestSiteInfoProvider
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.539 sec - in org.apache.nifi.remote.client.TestSiteInfoProvider
+Running org.apache.nifi.remote.client.http.TestHttpClient
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.909 sec - in org.apache.nifi.remote.client.http.TestHttpClient
+Running org.apache.nifi.remote.client.TestPeerSelector
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in org.apache.nifi.remote.client.TestPeerSelector
+Running org.apache.nifi.remote.util.TestSiteToSiteRestApiClient
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.apache.nifi.remote.util.TestSiteToSiteRestApiClient
+Running org.apache.nifi.remote.protocol.socket.TestSocketClientTransaction
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 sec - in org.apache.nifi.remote.protocol.socket.TestSocketClientTransaction
+Running org.apache.nifi.remote.protocol.http.TestHttpClientTransaction
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in org.apache.nifi.remote.protocol.http.TestHttpClientTransaction
+
+Results :
+
+
+
+
+Tests run: 74, Failures: 0, Errors: 0, Skipped: 2
+
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building nifi-hl7-query-language 1.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-maven) @ nifi-hl7-query-language ---
+[INFO] Skipping Rule Enforcement.
+[INFO]
+[INFO] --- antlr3-maven-plugin:3.5.2:antlr (default) @ nifi-hl7-query-language ---
+[INFO] ANTLR: Processing source directory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-hl7-query-language/src/main/antlr3
+Grammar /root/workspace/apache/nifi/226016377/nifi-commons/nifi-hl7-query-language/src/main/antlr3/org/apache/nifi/hl7/query/antlr/HL7QueryLexer.g is up to date - build skipped
+Grammar /root/workspace/apache/nifi/226016377/nifi-commons/nifi-hl7-query-language/src/main/antlr3/org/apache/nifi/hl7/query/antlr/HL7QueryParser.g is up to date - build skipped
+[INFO]
+[INFO] --- maven-remote-resources-plugin:1.5:process (default) @ nifi-hl7-query-language ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ nifi-hl7-query-language ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/apache/nifi/226016377/nifi-commons/nifi-hl7-query-language/src/main/resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ nifi-hl7-query-language ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ nifi-hl7-query-language ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ nifi-hl7-query-language ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (groovy-tests) @ nifi-hl7-query-language ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.18:test (default-test) @ nifi-hl7-query-language ---
+[INFO] Surefire report directory: /root/workspace/apache/nifi/226016377/nifi-commons/nifi-hl7-query-language/target/surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junit4.JUnit4Provider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.nifi.hl7.query.TestHL7Query
+Tests run: 14, Failures: 12, Errors: 0, Skipped: 0, Time elapsed: 0.725 sec <<< FAILURE! - in org.apache.nifi.hl7.query.TestHL7Query
+testGreaterThanOrEqual(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.566 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testGreaterThanOrEqual(TestHL7Query.java:190)
+
+testLessThanOrEqual(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.01 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testLessThanOrEqual(TestHL7Query.java:175)
+
+testLessThan(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.01 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testLessThan(TestHL7Query.java:153)
+
+testDistinctValuesReturned(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.011 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testDistinctValuesReturned(TestHL7Query.java:220)
+
+testFieldEqualsString(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.023 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testFieldEqualsString(TestHL7Query.java:142)
+
+testSelectField(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.021 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at org.apache.nifi.hl7.query.TestHL7Query.testSelectField(TestHL7Query.java:124)
+
+testGreaterThan(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.008 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testGreaterThan(TestHL7Query.java:205)
+
+testAndWithParents(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.013 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testAndWithParents(TestHL7Query.java:228)
+
+testSelectAbnormalTestResult(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.007 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testSelectAbnormalTestResult(TestHL7Query.java:135)
+
+testIsNull(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testIsNull(TestHL7Query.java:260)
+
+testNotNull(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.023 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testNotNull(TestHL7Query.java:283)
+
+testCompareTwoFields(org.apache.nifi.hl7.query.TestHL7Query)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.apache.nifi.hl7.query.TestHL7Query.testCompareTwoFields(TestHL7Query.java:164)
+
+
+Results :
+
+Failed tests:
+  TestHL7Query.testAndWithParents:228 null
+  TestHL7Query.testCompareTwoFields:164 null
+  TestHL7Query.testDistinctValuesReturned:220 null
+  TestHL7Query.testFieldEqualsString:142 null
+  TestHL7Query.testGreaterThan:205 null
+  TestHL7Query.testGreaterThanOrEqual:190 null
+  TestHL7Query.testIsNull:260 null
+  TestHL7Query.testLessThan:153 null
+  TestHL7Query.testLessThanOrEqual:175 null
+  TestHL7Query.testNotNull:283 null
+  TestHL7Query.testSelectAbnormalTestResult:135 null
+  TestHL7Query.testSelectField:124 expected:<1> but was:<0>
+
+
+
+Tests run: 14, Failures: 12, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO]
+[INFO] nifi ............................................... SUCCESS [  1.358 s]
+[INFO] nifi-api ........................................... SUCCESS [  2.454 s]
+[INFO] nifi-framework-api ................................. SUCCESS [  1.784 s]
+[INFO] nifi-commons ....................................... SUCCESS [  0.032 s]
+[INFO] nifi-utils ......................................... SUCCESS [  8.639 s]
+[INFO] nifi-data-provenance-utils ......................... SUCCESS [  0.350 s]
+[INFO] nifi-flowfile-packager ............................. SUCCESS [  0.933 s]
+[INFO] nifi-expression-language ........................... SUCCESS [ 10.881 s]
+[INFO] nifi-logging-utils ................................. SUCCESS [  0.120 s]
+[INFO] nifi-properties .................................... SUCCESS [  0.509 s]
+[INFO] nifi-security-utils ................................ SUCCESS [ 11.057 s]
+[INFO] nifi-socket-utils .................................. SUCCESS [  0.287 s]
+[INFO] nifi-web-utils ..................................... SUCCESS [  0.248 s]
+[INFO] nifi-nar-bundles ................................... SUCCESS [  0.814 s]
+[INFO] nifi-standard-services ............................. SUCCESS [  0.017 s]
+[INFO] nifi-ssl-context-service-api ....................... SUCCESS [  0.133 s]
+[INFO] nifi-processor-utils ............................... SUCCESS [  0.390 s]
+[INFO] nifi-write-ahead-log ............................... SUCCESS [  5.356 s]
+[INFO] nifi-framework-bundle .............................. SUCCESS [  0.019 s]
+[INFO] nifi-framework ..................................... SUCCESS [  0.016 s]
+[INFO] nifi-client-dto .................................... SUCCESS [  0.524 s]
+[INFO] nifi-site-to-site-client ........................... SUCCESS [ 18.444 s]
+[INFO] nifi-hl7-query-language ............................ FAILURE [  1.491 s]
+[INFO] nifi-hadoop-utils .................................. SKIPPED
+[INFO] nifi-schema-utils .................................. SKIPPED
+[INFO] nifi-properties-loader ............................. SKIPPED
+[INFO] nifi-bootstrap ..................................... SKIPPED
+[INFO] nifi-mock .......................................... SKIPPED
+[INFO] nifi-nar-utils ..................................... SKIPPED
+[INFO] nifi-framework-nar-utils ........................... SKIPPED
+[INFO] nifi-framework-authorization ....................... SKIPPED
+[INFO] nifi-framework-core-api ............................ SKIPPED
+[INFO] nifi-runtime ....................................... SKIPPED
+[INFO] nifi-security ...................................... SKIPPED
+[INFO] nifi-user-actions .................................. SKIPPED
+[INFO] nifi-administration ................................ SKIPPED
+[INFO] nifi-site-to-site .................................. SKIPPED
+[INFO] nifi-repository-models ............................. SKIPPED
+[INFO] nifi-flowfile-repo-serialization ................... SKIPPED
+[INFO] nifi-framework-cluster-protocol .................... SKIPPED
+[INFO] nifi-framework-core ................................ SKIPPED
+[INFO] nifi-web ........................................... SKIPPED
+[INFO] nifi-web-security .................................. SKIPPED
+[INFO] nifi-web-optimistic-locking ........................ SKIPPED
+[INFO] nifi-framework-cluster ............................. SKIPPED
+[INFO] nifi-file-authorizer ............................... SKIPPED
+[INFO] nifi-custom-ui-utilities ........................... SKIPPED
+[INFO] nifi-web-content-access ............................ SKIPPED
+[INFO] nifi-ui-extension .................................. SKIPPED
+[INFO] nifi-authorizer .................................... SKIPPED
+[INFO] nifi-provenance-repository-bundle .................. SKIPPED
+[INFO] nifi-volatile-provenance-repository ................ SKIPPED
+[INFO] nifi-web-api ....................................... SKIPPED
+[INFO] nifi-web-error ..................................... SKIPPED
+[INFO] nifi-web-docs ...................................... SKIPPED
+[INFO] nifi-web-content-viewer ............................ SKIPPED
+[INFO] nifi-web-ui ........................................ SKIPPED
+[INFO] nifi-documentation ................................. SKIPPED
+[INFO] nifi-jetty ......................................... SKIPPED
+[INFO] nifi-resources ..................................... SKIPPED
+[INFO] nifi-standard-prioritizers ......................... SKIPPED
+[INFO] nifi-framework-nar ................................. SKIPPED
+[INFO] nifi-distributed-cache-client-service-api .......... SKIPPED
+[INFO] nifi-hadoop-bundle ................................. SKIPPED
+[INFO] nifi-hdfs-processors ............................... SKIPPED
+[INFO] nifi-load-distribution-service-api ................. SKIPPED
+[INFO] nifi-http-context-map-api .......................... SKIPPED
+[INFO] nifi-dbcp-service-api .............................. SKIPPED
+[INFO] nifi-hbase-client-service-api ...................... SKIPPED
+[INFO] nifi-record-serialization-service-api .............. SKIPPED
+[INFO] nifi-schema-registry-service-api ................... SKIPPED
+[INFO] nifi-standard-services-api-nar ..................... SKIPPED
+[INFO] nifi-hadoop-libraries-bundle ....................... SKIPPED
+[INFO] nifi-hadoop-libraries-nar .......................... SKIPPED
+[INFO] nifi-hadoop-nar .................................... SKIPPED
+[INFO] nifi-jetty-bundle .................................. SKIPPED
+[INFO] nifi-persistent-provenance-repository .............. SKIPPED
+[INFO] nifi-provenance-repository-nar ..................... SKIPPED
+[INFO] nifi-distributed-cache-services-bundle ............. SKIPPED
+[INFO] nifi-distributed-cache-protocol .................... SKIPPED
+[INFO] nifi-distributed-cache-client-service .............. SKIPPED
+[INFO] nifi-ssl-context-bundle ............................ SKIPPED
+[INFO] nifi-ssl-context-service ........................... SKIPPED
+[INFO] nifi-standard-bundle ............................... SKIPPED
+[INFO] nifi-standard-utils ................................ SKIPPED
+[INFO] nifi-standard-processors ........................... SKIPPED
+[INFO] nifi-standard-reporting-tasks ...................... SKIPPED
+[INFO] nifi-standard-content-viewer ....................... SKIPPED
+[INFO] nifi-jolt-transform-json-ui ........................ SKIPPED
+[INFO] nifi-standard-nar .................................. SKIPPED
+[INFO] nifi-distributed-cache-server ...................... SKIPPED
+[INFO] nifi-distributed-cache-services-nar ................ SKIPPED
+[INFO] nifi-ssl-context-service-nar ....................... SKIPPED
+[INFO] nifi-http-context-map-bundle ....................... SKIPPED
+[INFO] nifi-http-context-map .............................. SKIPPED
+[INFO] nifi-http-context-map-nar .......................... SKIPPED
+[INFO] nifi-dbcp-service-bundle ........................... SKIPPED
+[INFO] nifi-dbcp-service .................................. SKIPPED
+[INFO] nifi-dbcp-service-nar .............................. SKIPPED
+[INFO] nifi-hbase_1_1_2-client-service-bundle ............. SKIPPED
+[INFO] nifi-hbase_1_1_2-client-service .................... SKIPPED
+[INFO] nifi-hbase_1_1_2-client-service-nar ................ SKIPPED
+[INFO] nifi-record-serialization-services-bundle .......... SKIPPED
+[INFO] nifi-record-serialization-services ................. SKIPPED
+[INFO] nifi-record-serialization-services-nar ............. SKIPPED
+[INFO] nifi-update-attribute-bundle ....................... SKIPPED
+[INFO] nifi-update-attribute-model ........................ SKIPPED
+[INFO] nifi-update-attribute-processor .................... SKIPPED
+[INFO] nifi-update-attribute-ui ........................... SKIPPED
+[INFO] nifi-update-attribute-nar .......................... SKIPPED
+[INFO] nifi-kafka-bundle .................................. SKIPPED
+[INFO] nifi-kafka-0-8-processors .......................... SKIPPED
+[INFO] nifi-kafka-0-9-processors .......................... SKIPPED
+[INFO] nifi-kafka-0-10-processors ......................... SKIPPED
+[INFO] nifi-kafka-0-8-nar ................................. SKIPPED
+[INFO] nifi-kafka-0-9-nar ................................. SKIPPED
+[INFO] nifi-kafka-0-10-nar ................................ SKIPPED
+[INFO] nifi-kite-bundle ................................... SKIPPED
+[INFO] nifi-kite-processors ............................... SKIPPED
+[INFO] nifi-kite-nar ...................................... SKIPPED
+[INFO] nifi-solr-bundle ................................... SKIPPED
+[INFO] nifi-solr-processors ............................... SKIPPED
+[INFO] nifi-solr-nar ...................................... SKIPPED
+[INFO] nifi-aws-bundle .................................... SKIPPED
+[INFO] nifi-aws-processors ................................ SKIPPED
+[INFO] nifi-aws-nar ....................................... SKIPPED
+[INFO] nifi-social-media-bundle ........................... SKIPPED
+[INFO] nifi-twitter-processors ............................ SKIPPED
+[INFO] nifi-social-media-nar .............................. SKIPPED
+[INFO] nifi-enrich-bundle ................................. SKIPPED
+[INFO] nifi-enrich-processors ............................. SKIPPED
+[INFO] nifi-enrich-nar .................................... SKIPPED
+[INFO] nifi-hl7-bundle .................................... SKIPPED
+[INFO] nifi-hl7-processors ................................ SKIPPED
+[INFO] nifi-hl7-nar ....................................... SKIPPED
+[INFO] nifi-ccda-bundle ................................... SKIPPED
+[INFO] nifi-ccda-processors ............................... SKIPPED
+[INFO] nifi-ccda-nar ...................................... SKIPPED
+[INFO] nifi-language-translation-bundle ................... SKIPPED
+[INFO] nifi-yandex-processors ............................. SKIPPED
+[INFO] nifi-language-translation-nar ...................... SKIPPED
+[INFO] nifi-mongodb-bundle ................................ SKIPPED
+[INFO] nifi-mongodb-processors ............................ SKIPPED
+[INFO] nifi-mongodb-nar ................................... SKIPPED
+[INFO] nifi-flume-bundle .................................. SKIPPED
+[INFO] nifi-flume-processors .............................. SKIPPED
+[INFO] nifi-flume-nar ..................................... SKIPPED
+[INFO] nifi-hbase-bundle .................................. SKIPPED
+[INFO] nifi-hbase-processors .............................. SKIPPED
+[INFO] nifi-hbase-nar ..................................... SKIPPED
+[INFO] nifi-ambari-bundle ................................. SKIPPED
+[INFO] nifi-ambari-reporting-task ......................... SKIPPED
+[INFO] nifi-ambari-nar .................................... SKIPPED
+[INFO] nifi-media-bundle .................................. SKIPPED
+[INFO] nifi-media-processors .............................. SKIPPED
+[INFO] nifi-image-viewer .................................. SKIPPED
+[INFO] nifi-media-nar ..................................... SKIPPED
+[INFO] nifi-avro-bundle ................................... SKIPPED
+[INFO] nifi-avro-processors ............................... SKIPPED
+[INFO] nifi-avro-nar ...................................... SKIPPED
+[INFO] nifi-couchbase-bundle .............................. SKIPPED
+[INFO] nifi-couchbase-processors .......................... SKIPPED
+[INFO] nifi-couchbase-nar ................................. SKIPPED
+[INFO] nifi-azure-bundle .................................. SKIPPED
+[INFO] nifi-azure-processors .............................. SKIPPED
+[INFO] nifi-azure-nar ..................................... SKIPPED
+[INFO] nifi-ldap-iaa-providers-bundle ..................... SKIPPED
+[INFO] nifi-ldap-iaa-providers ............................ SKIPPED
+[INFO] nifi-ldap-iaa-providers-nar ........................ SKIPPED
+[INFO] nifi-kerberos-iaa-providers-bundle ................. SKIPPED
+[INFO] nifi-kerberos-iaa-providers ........................ SKIPPED
+[INFO] nifi-kerberos-iaa-providers-nar .................... SKIPPED
+[INFO] nifi-riemann-bundle ................................ SKIPPED
+[INFO] nifi-riemann-processors ............................ SKIPPED
+[INFO] nifi-riemann-nar ................................... SKIPPED
+[INFO] nifi-html-bundle ................................... SKIPPED
+[INFO] nifi-html-processors ............................... SKIPPED
+[INFO] nifi-html-nar ...................................... SKIPPED
+[INFO] nifi-scripting-bundle .............................. SKIPPED
+[INFO] nifi-scripting-processors .......................... SKIPPED
+[INFO] nifi-scripting-nar ................................. SKIPPED
+[INFO] nifi-elasticsearch-bundle .......................... SKIPPED
+[INFO] nifi-elasticsearch-processors ...................... SKIPPED
+[INFO] nifi-elasticsearch-nar ............................. SKIPPED
+[INFO] nifi-elasticsearch-5-processors .................... SKIPPED
+[INFO] nifi-elasticsearch-5-nar ........................... SKIPPED
+[INFO] nifi-amqp-bundle ................................... SKIPPED
+[INFO] nifi-amqp-processors ............................... SKIPPED
+[INFO] nifi-amqp-nar ...................................... SKIPPED
+[INFO] nifi-splunk-bundle ................................. SKIPPED
+[INFO] nifi-splunk-processors ............................. SKIPPED
+[INFO] nifi-splunk-nar .................................... SKIPPED
+[INFO] nifi-jms-bundle .................................... SKIPPED
+[INFO] nifi-jms-cf-service ................................ SKIPPED
+[INFO] nifi-jms-cf-service-nar ............................ SKIPPED
+[INFO] nifi-jms-processors ................................ SKIPPED
+[INFO] nifi-jms-processors-nar ............................ SKIPPED
+[INFO] nifi-lumberjack-bundle ............................. SKIPPED
+[INFO] nifi-lumberjack-processors ......................... SKIPPED
+[INFO] nifi-lumberjack-nar ................................ SKIPPED
+[INFO] nifi-beats-bundle .................................. SKIPPED
+[INFO] nifi-beats-processors .............................. SKIPPED
+[INFO] nifi-beats-nar ..................................... SKIPPED
+[INFO] nifi-cassandra-bundle .............................. SKIPPED
+[INFO] nifi-cassandra-processors .......................... SKIPPED
+[INFO] nifi-cassandra-nar ................................. SKIPPED
+[INFO] nifi-spring-bundle ................................. SKIPPED
+[INFO] nifi-spring-processors ............................. SKIPPED
+[INFO] nifi-spring-nar .................................... SKIPPED
+[INFO] nifi-hive-bundle ................................... SKIPPED
+[INFO] nifi-hive-services-api ............................. SKIPPED
+[INFO] nifi-hive-services-api-nar ......................... SKIPPED
+[INFO] nifi-hive-processors ............................... SKIPPED
+[INFO] nifi-hive-nar ...................................... SKIPPED
+[INFO] nifi-site-to-site-reporting-bundle ................. SKIPPED
+[INFO] nifi-site-to-site-reporting-task ................... SKIPPED
+[INFO] nifi-site-to-site-reporting-nar .................... SKIPPED
+[INFO] nifi-mqtt-bundle ................................... SKIPPED
+[INFO] nifi-mqtt-processors ............................... SKIPPED
+[INFO] nifi-mqtt-nar ...................................... SKIPPED
+[INFO] nifi-evtx-bundle ................................... SKIPPED
+[INFO] nifi-evtx-processors ............................... SKIPPED
+[INFO] nifi-evtx-nar ...................................... SKIPPED
+[INFO] nifi-slack-bundle .................................. SKIPPED
+[INFO] nifi-slack-processors .............................. SKIPPED
+[INFO] nifi-slack-nar ..................................... SKIPPED
+[INFO] nifi-snmp-bundle ................................... SKIPPED
+[INFO] nifi-snmp-processors ............................... SKIPPED
+[INFO] nifi-snmp-nar ...................................... SKIPPED
+[INFO] nifi-datadog-bundle ................................ SKIPPED
+[INFO] nifi-datadog-reporting-task ........................ SKIPPED
+[INFO] nifi-datadog-nar ................................... SKIPPED
+[INFO] nifi-windows-event-log-bundle ...................... SKIPPED
+[INFO] nifi-windows-event-log-processors .................. SKIPPED
+[INFO] nifi-windows-event-log-nar ......................... SKIPPED
+[INFO] nifi-ignite-bundle ................................. SKIPPED
+[INFO] nifi-ignite-processors ............................. SKIPPED
+[INFO] nifi-ignite-nar .................................... SKIPPED
+[INFO] nifi-email-bundle .................................. SKIPPED
+[INFO] nifi-email-processors .............................. SKIPPED
+[INFO] nifi-email-nar ..................................... SKIPPED
+[INFO] nifi-ranger-bundle ................................. SKIPPED
+[INFO] nifi-ranger-plugin ................................. SKIPPED
+[INFO] nifi-ranger-nar .................................... SKIPPED
+[INFO] nifi-ranger-resources .............................. SKIPPED
+[INFO] nifi-websocket-bundle .............................. SKIPPED
+[INFO] nifi-websocket-services-api ........................ SKIPPED
+[INFO] nifi-websocket-processors .......................... SKIPPED
+[INFO] nifi-websocket-services-api-nar .................... SKIPPED
+[INFO] nifi-websocket-processors-nar ...................... SKIPPED
+[INFO] nifi-websocket-services-jetty ...................... SKIPPED
+[INFO] nifi-websocket-services-jetty-nar .................. SKIPPED
+[INFO] nifi-tcp-bundle .................................... SKIPPED
+[INFO] nifi-tcp-processors ................................ SKIPPED
+[INFO] nifi-tcp-nar ....................................... SKIPPED
+[INFO] nifi-gcp-bundle .................................... SKIPPED
+[INFO] nifi-gcp-processors ................................ SKIPPED
+[INFO] nifi-gcp-nar ....................................... SKIPPED
+[INFO] nifi-registry-bundle ............................... SKIPPED
+[INFO] nifi-registry-service .............................. SKIPPED
+[INFO] nifi-registry-nar .................................. SKIPPED
+[INFO] nifi-stateful-analysis-bundle ...................... SKIPPED
+[INFO] nifi-stateful-analysis-processors .................. SKIPPED
+[INFO] nifi-stateful-analysis-nar ......................... SKIPPED
+[INFO] nifi-poi-bundle .................................... SKIPPED
+[INFO] nifi-poi-processors ................................ SKIPPED
+[INFO] nifi-poi-nar ....................................... SKIPPED
+[INFO] nifi-cdc ........................................... SKIPPED
+[INFO] nifi-cdc-api ....................................... SKIPPED
+[INFO] nifi-cdc-mysql-bundle .............................. SKIPPED
+[INFO] nifi-cdc-mysql-processors .......................... SKIPPED
+[INFO] nifi-cdc-mysql-nar ................................. SKIPPED
+[INFO] nifi-cybersecurity-bundle .......................... SKIPPED
+[INFO] nifi-cybersecurity-processors ...................... SKIPPED
+[INFO] nifi-cybersecurity-nar ............................. SKIPPED
+[INFO] nifi-docs .......................................... SKIPPED
+[INFO] nifi-assembly ...................................... SKIPPED
+[INFO] nifi-maven-archetypes .............................. SKIPPED
+[INFO] nifi-processor-bundle-archetype .................... SKIPPED
+[INFO] nifi-service-bundle-archetype ...................... SKIPPED
+[INFO] nifi-external ...................................... SKIPPED
+[INFO] nifi-spark-receiver ................................ SKIPPED
+[INFO] nifi-storm-spout ................................... SKIPPED
+[INFO] nifi-example-bundle ................................ SKIPPED
+[INFO] nifi-nifi-example-processors ....................... SKIPPED
+[INFO] nifi-example-nar ................................... SKIPPED
+[INFO] nifi-toolkit ....................................... SKIPPED
+[INFO] nifi-toolkit-tls ................................... SKIPPED
+[INFO] nifi-toolkit-encrypt-config ........................ SKIPPED
+[INFO] nifi-toolkit-s2s ................................... SKIPPED
+[INFO] nifi-toolkit-admin ................................. SKIPPED
+[INFO] nifi-toolkit-zookeeper-migrator .................... SKIPPED
+[INFO] nifi-toolkit-flowfile-repo ......................... SKIPPED
+[INFO] nifi-toolkit-assembly .............................. SKIPPED
+[INFO] nifi-docker ........................................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:22 min
+[INFO] Finished at: 2017-04-26T21:31:25+02:00
+[INFO] Final Memory: 197M/1083M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.18:test (default-test) on project nifi-hl7-query-language: There are test failures.
+[ERROR]
+[ERROR] Please refer to /root/workspace/apache/nifi/226016377/nifi-commons/nifi-hl7-query-language/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :nifi-hl7-query-language
