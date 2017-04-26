@@ -541,7 +541,7 @@ public class PutSQL extends AbstractSessionFactoryProcessor {
         final Boolean rollbackOnFailure = context.getProperty(RollbackOnFailure.ROLLBACK_ON_FAILURE).asBoolean();
         final FunctionContext functionContext = new FunctionContext(rollbackOnFailure);
         functionContext.obtainKeys = context.getProperty(OBTAIN_GENERATED_KEYS).asBoolean();
-        RollbackOnFailure.onTrigger(sessionFactory, functionContext, getLogger(), session -> process.onTrigger(context, session, functionContext));
+        RollbackOnFailure.onTrigger(context, sessionFactory, functionContext, getLogger(), session -> process.onTrigger(context, session, functionContext));
     }
 
     /**

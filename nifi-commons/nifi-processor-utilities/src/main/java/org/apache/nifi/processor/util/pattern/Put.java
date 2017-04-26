@@ -20,6 +20,7 @@ import org.apache.nifi.flowfile.FlowFile;
 import org.apache.nifi.logging.ComponentLog;
 import org.apache.nifi.processor.ProcessContext;
 import org.apache.nifi.processor.ProcessSession;
+import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
 
 import java.util.List;
@@ -108,12 +109,12 @@ public class Put<FC, C extends AutoCloseable> {
                     adjustRoute.apply(context, session, functionContext, result);
                 }
 
-                // Remove fetched, but unprocessed FlowFiles from session.
+                // Put fetched, but unprocessed FlowFiles back to self.
                 final List<FlowFile> transferredFlowFiles = result.getRoutedFlowFiles().values().stream()
                         .flatMap(List::stream).collect(Collectors.toList());
                 final List<FlowFile> unprocessedFlowFiles = flowFiles.stream()
                         .filter(flowFile -> !transferredFlowFiles.contains(flowFile)).collect(Collectors.toList());
-                session.remove(unprocessedFlowFiles);
+                result.routeTo(unprocessedFlowFiles, Relationship.SELF);
 
                 // OnCompleted processing.
                 if (onCompleted != null) {

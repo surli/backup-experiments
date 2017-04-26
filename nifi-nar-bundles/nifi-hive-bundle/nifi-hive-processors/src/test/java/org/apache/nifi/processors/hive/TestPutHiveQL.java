@@ -154,7 +154,7 @@ public class TestPutHiveQL {
         runner.run();
 
         // The 1st one should be routed to success, others should stay in queue.
-        runner.assertQueueNotEmpty();
+        assertEquals(3, runner.getQueueSize().getObjectCount());
         runner.assertTransferCount(PutHiveQL.REL_FAILURE, 0);
         runner.assertTransferCount(PutHiveQL.REL_SUCCESS, 1);
     }
@@ -211,6 +211,7 @@ public class TestPutHiveQL {
             assertTrue(e.getCause() instanceof ProcessException);
         }
 
+        assertEquals(3, runner.getQueueSize().getObjectCount());
         runner.assertTransferCount(PutHiveQL.REL_FAILURE, 0);
         runner.assertTransferCount(PutHiveQL.REL_SUCCESS, 0);
     }
@@ -709,6 +710,7 @@ public class TestPutHiveQL {
             assertTrue(e.getCause() instanceof ProcessException);
         }
 
+        assertEquals(1, runner.getQueueSize().getObjectCount());
         runner.assertAllFlowFilesTransferred(PutHiveQL.REL_RETRY, 0);
     }
 

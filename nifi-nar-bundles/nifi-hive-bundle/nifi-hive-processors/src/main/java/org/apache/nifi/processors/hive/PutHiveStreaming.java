@@ -588,7 +588,7 @@ public class PutHiveStreaming extends AbstractSessionFactoryProcessor {
     @Override
     public void onTrigger(ProcessContext context, ProcessSessionFactory sessionFactory) throws ProcessException {
         final FunctionContext functionContext = new FunctionContext(context.getProperty(ROLLBACK_ON_FAILURE).asBoolean(), getLogger());
-        RollbackOnFailure.onTrigger(sessionFactory, functionContext, getLogger(), session -> onTrigger(context, session, functionContext));
+        RollbackOnFailure.onTrigger(context, sessionFactory, functionContext, getLogger(), session -> onTrigger(context, session, functionContext));
     }
 
     private void onTrigger(ProcessContext context, ProcessSession session, FunctionContext functionContext) throws ProcessException {

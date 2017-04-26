@@ -102,12 +102,12 @@ public class PartialFunctions {
      * <p>Create a session from ProcessSessionFactory and execute specified onTrigger function, and commit the session if onTrigger finishes successfully.</p>
      * <p>When an Exception is thrown during execution of the onTrigger, the session will be rollback. FlowFiles being processed will be penalized.</p>
      */
-    public static void onTrigger(ProcessSessionFactory sessionFactory, ComponentLog logger, OnTrigger onTrigger) throws ProcessException {
-        onTrigger(sessionFactory, logger, onTrigger, (session, t) -> session.rollback(true));
+    public static void onTrigger(ProcessContext context, ProcessSessionFactory sessionFactory, ComponentLog logger, OnTrigger onTrigger) throws ProcessException {
+        onTrigger(context, sessionFactory, logger, onTrigger, (session, t) -> session.rollback(true));
     }
 
     public static void onTrigger(
-            ProcessSessionFactory sessionFactory, ComponentLog logger, OnTrigger onTrigger,
+            ProcessContext context, ProcessSessionFactory sessionFactory, ComponentLog logger, OnTrigger onTrigger,
             RollbackSession rollbackSession) throws ProcessException {
         final ProcessSession session = sessionFactory.createSession();
         try {

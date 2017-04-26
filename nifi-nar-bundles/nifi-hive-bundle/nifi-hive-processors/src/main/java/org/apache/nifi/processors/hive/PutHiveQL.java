@@ -252,6 +252,6 @@ public class PutHiveQL extends AbstractHiveQLProcessor {
         final Charset charset = Charset.forName(context.getProperty(CHARSET).getValue());
         final String statementDelimiter = context.getProperty(STATEMENT_DELIMITER).getValue();
         final FunctionContext functionContext = new FunctionContext(rollbackOnFailure, charset, statementDelimiter);
-        RollbackOnFailure.onTrigger(sessionFactory, functionContext, getLogger(), session -> process.onTrigger(context, session, functionContext));
+        RollbackOnFailure.onTrigger(context, sessionFactory, functionContext, getLogger(), session -> process.onTrigger(context, session, functionContext));
     }
 }
