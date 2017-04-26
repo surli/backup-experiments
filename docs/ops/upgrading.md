@@ -105,7 +105,6 @@ When upgrading an application by changing its topology, a few things need to be 
 * **Adding a stateful operator:** The state of the operator will be initialized with the default state unless it takes over the state of another operator.
 * **Removing a stateful operator:** The state of the removed operator is lost unless another operator takes it over. When starting the upgraded application, you have to explicitly agree to discard the state.
 * **Changing of input and output types of operators:** When adding a new operator before or behind an operator with internal state, you have to ensure that the input or output type of the stateful operator is not modified to preserve the data type of the internal operator state (see above for details).
-* **Changing operator chaining:** Operators can be chained together for improved performance. However, chaining can limit the ability of an application to be upgraded if a chain contains a stateful operator that is not the first operator of the chain. In such a case, it is not possible to break the chain such that the stateful operator is moved out of the chain. It is also not possible to append or inject an existing stateful operator into a chain. The chaining behavior can be changed by modifying the parallelism of a chained operator or by adding or removing explicit operator chaining instructions. 
 
 ## Upgrading the Flink Framework Version
 
