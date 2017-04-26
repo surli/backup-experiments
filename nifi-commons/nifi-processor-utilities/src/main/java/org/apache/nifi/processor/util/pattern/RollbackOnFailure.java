@@ -19,6 +19,7 @@ package org.apache.nifi.processor.util.pattern;
 import org.apache.nifi.components.PropertyDescriptor;
 import org.apache.nifi.flowfile.FlowFile;
 import org.apache.nifi.logging.ComponentLog;
+import org.apache.nifi.processor.ProcessContext;
 import org.apache.nifi.processor.ProcessSessionFactory;
 import org.apache.nifi.processor.Relationship;
 import org.apache.nifi.processor.exception.ProcessException;
@@ -76,7 +77,10 @@ public class RollbackOnFailure {
                         " By default (false), if an error occurs while processing a FlowFile, the FlowFile will be routed to" +
                         " 'failure' or 'retry' relationship based on error type, and processor can continue with next FlowFile." +
                         " Instead, you may want to rollback currently processed FlowFiles and stop further processing immediately." +
-                        " In that case, you can do so by enabling this 'Rollback On Failure' property. " + additionalDescription)
+                        " In that case, you can do so by enabling this 'Rollback On Failure' property. " +
+                        " If enabled, failed FlowFiles will stay in the input relationship without penalizing it and being processed repeatedly" +
+                        " until it gets processed successfully or removed by other means." +
+                        " It is important to set adequate 'Yield Duration' to avoid retrying too frequently." + additionalDescription)
                 .allowableValues("true", "false")
                 .addValidator(StandardValidators.BOOLEAN_VALIDATOR)
                 .defaultValue("false")
@@ -98,13 +102,15 @@ public class RollbackOnFailure {
                     if (!c.canRollback()) {
                         // If an exception is thrown but the processor is not transactional and processed count > 0, adjust it to self,
                         // in order to stop any further processing until this input is processed successfully.
-                        // If we throw an Exception in this state, the already succeeded FlowFiles will be rollback, too.
+                        // If we throw an Exception in this state, the already succeeded FlowFiles will be rolled back, too.
                         // In case the progress was made by other preceding inputs,
                         // those successful inputs should be sent to 'success' and this input stays in incoming queue.
                         // In case this input made some progress to external system, the partial update will be replayed again,
                         // can cause duplicated data.
                         c.discontinue();
-                        adjusted = new ErrorTypes.Result(ErrorTypes.Destination.Self, t.penalty());
+                        // We should not penalize a FlowFile, if we did, other FlowFiles can be fetched first.
+                        // We need to block others to be processed until this one finishes.
+                        adjusted = new ErrorTypes.Result(ErrorTypes.Destination.Self, ErrorTypes.Penalty.Yield);
                     }
                     break;
 
@@ -114,10 +120,10 @@ public class RollbackOnFailure {
                         c.discontinue();
                         if (c.canRollback()) {
                             // If this process can rollback, then throw ProcessException instead, in order to rollback.
-                            adjusted = new ErrorTypes.Result(ErrorTypes.Destination.ProcessException, t.penalty());
+                            adjusted = new ErrorTypes.Result(ErrorTypes.Destination.ProcessException, ErrorTypes.Penalty.Yield);
                         } else {
                             // If not,
-                            adjusted = new ErrorTypes.Result(ErrorTypes.Destination.Self, t.penalty());
+                            adjusted = new ErrorTypes.Result(ErrorTypes.Destination.Self, ErrorTypes.Penalty.Yield);
                         }
                     }
                     break;
@@ -172,14 +178,21 @@ public class RollbackOnFailure {
     }
 
     public static <FCT extends RollbackOnFailure> void onTrigger(
-            ProcessSessionFactory sessionFactory, FCT functionContext, ComponentLog logger,
+            ProcessContext context, ProcessSessionFactory sessionFactory, FCT functionContext, ComponentLog logger,
             PartialFunctions.OnTrigger onTrigger) throws ProcessException {
 
-        PartialFunctions.onTrigger(sessionFactory, logger, onTrigger, (session, t) -> {
+        PartialFunctions.onTrigger(context, sessionFactory, logger, onTrigger, (session, t) -> {
             // If RollbackOnFailure is enabled, do not penalize processing FlowFiles when rollback,
             // in order to keep those in the incoming relationship to be processed again.
             final boolean shouldPenalize = !functionContext.isRollbackOnFailure();
             session.rollback(shouldPenalize);
+
+            // However, keeping failed FlowFile in the incoming relationship would retry it too often.
+            // So, administratively yield the process.
+            if (functionContext.isRollbackOnFailure()) {
+                logger.warn("Administratively yielding {} after rolling back due to {}", new Object[]{context.getName(), t}, t);
+                context.yield();
+            }
         });
     }
 

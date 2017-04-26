@@ -212,7 +212,7 @@ public class SelectHiveQL extends AbstractHiveQLProcessor {
 
     @Override
     public void onTrigger(ProcessContext context, ProcessSessionFactory sessionFactory) throws ProcessException {
-        PartialFunctions.onTrigger(sessionFactory, getLogger(), session -> onTrigger(context, session));
+        PartialFunctions.onTrigger(context, sessionFactory, getLogger(), session -> onTrigger(context, session));
     }
 
     private void onTrigger(final ProcessContext context, final ProcessSession session) throws ProcessException {
