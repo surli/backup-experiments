@@ -1,17 +1,44 @@
 {
+  "totalNumberSkippingTests": 0,
   "step-durations": {
     "CheckoutBuggyBuild": 33,
     "CloneRepository": 29,
     "ResolveDependency": 146,
     "TestProject": 402,
-    "BuildProject": 582
+    "BuildProject": 582,
+    "GatherTestInformation": 2
   },
   "totalMemory": 529530880,
   "bugType": "only_fail",
   "workspace": "./workspace",
+  "totalNumberErroringTests": 0,
   "repo": "prestodb/presto",
   "freeMemory": 162078824,
+  "failingModule": "/root/workspace/prestodb/presto/225927142/presto-main",
   "buildid": 225927142,
   "hostname": "repairnator",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 3053,
+  "failing-test-cases": [
+    {
+      "className": "com.facebook.presto.sql.planner.TestDomainTranslator",
+      "failingMethods": [
+        "com.facebook.presto.sql.planner.TestDomainTranslator#testVarcharComparedToCharExpression"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "for comparison [(CAST(\"c_char\" AS varchar) \u003e\u003d CAST(\u0027123456789\u0027 AS varchar))] expected TupleDomain:{c_char\u003d[ [(12345678  , \u003cmax\u003e)] ]} but found TupleDomain:{c_char\u003d[ [(123456788􏿿, \u003cmax\u003e)] ]}",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ],
   "nbCPU": 4
 }
