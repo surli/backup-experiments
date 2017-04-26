@@ -1,17 +1,848 @@
 {
+  "totalNumberSkippingTests": 59,
   "step-durations": {
     "CheckoutBuggyBuild": 4,
     "CloneRepository": 30,
     "ResolveDependency": 11,
     "TestProject": 528,
-    "BuildProject": 345
+    "BuildProject": 345,
+    "GatherTestInformation": 1
   },
   "totalMemory": 409468928,
   "bugType": "only_fail",
   "workspace": "./workspace",
+  "totalNumberErroringTests": 0,
   "repo": "druid-io/druid",
   "freeMemory": 103934080,
+  "failingModule": "/root/workspace/druid-io/druid/225962414/processing",
   "buildid": 225962414,
   "hostname": "repairnator",
+  "totalNumberFailingTests": 160,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 26436,
+  "failing-test-cases": [
+    {
+      "className": "io.druid.query.topn.TopNQueryRunnerTest",
+      "failingMethods": [
+        "io.druid.query.topn.TopNQueryRunnerTest#testTopNWithExtractionFilter[rtIndex]",
+        "io.druid.query.topn.TopNQueryRunnerTest#testTopNWithExtractionFilterNoExistingValue[noRollupRtIndex]",
+        "io.druid.query.topn.TopNQueryRunnerTest#testTopNWithExtractionFilter[noRollupMMappedTestIndex]",
+        "io.druid.query.topn.TopNQueryRunnerTest#testTopNWithExtractionFilterNoExistingValue[mergedRealtimeIndex]",
+        "io.druid.query.topn.TopNQueryRunnerTest#testTopNWithExtractionFilterNoExistingValue[rtIndex]",
+        "io.druid.query.topn.TopNQueryRunnerTest#testTopNWithExtractionFilter[mergedRealtimeIndex]",
+        "io.druid.query.topn.TopNQueryRunnerTest#testTopNWithExtractionFilterNoExistingValue[noRollupMMappedTestIndex]",
+        "io.druid.query.topn.TopNQueryRunnerTest#testTopNWithExtractionFilter[noRollupRtIndex]",
+        "io.druid.query.topn.TopNQueryRunnerTest#testTopNWithExtractionFilter[mMappedTestIndex]",
+        "io.druid.query.topn.TopNQueryRunnerTest#testTopNWithExtractionFilterNoExistingValue[mMappedTestIndex]"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{market\u003dspot, rows\u003d18, index\u003d2231.8768157958984, addRowsIndexConstant\u003d2250.8768157958984, uniques\u003d9.019833517963864}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-04-01T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, addRowsIndexConstant\u003d2250.8768157958984, market\u003dspot, index\u003d2231.8768157958984, rows\u003d18}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003d9.019833517963864, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, null_column\u003dnull, rows\u003d1209}}]}}\u003e but was:\u003cResult{timestamp\u003d2011-01-12T00:00:00.000Z, value\u003dTopNResultValue{value\u003d[DimensionAndMetricValueExtractor{value\u003d{addRowsIndexConstant\u003d504542.5071372986, maxIndex\u003d1870.06103515625, uniques\u003dHyperLogLogCollector{initPosition\u003d0, version\u003d1, registerOffset\u003d0, numNonZeroRegisters\u003d9, maxOverflowValue\u003d0, maxOverflowRegister\u003d0}, index\u003d503332.5071372986, minIndex\u003d59.02102279663086, rows\u003d1209, null_column\u003dnull}}]}}\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 160,
+      "nbErrors": 0
+    }
+  ],
   "nbCPU": 4
 }
