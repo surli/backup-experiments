@@ -1,17 +1,44 @@
 {
+  "totalNumberSkippingTests": 49,
   "step-durations": {
     "CheckoutBuggyBuild": 4,
     "CloneRepository": 21,
     "ResolveDependency": 24,
     "TestProject": 535,
-    "BuildProject": 730
+    "BuildProject": 730,
+    "GatherTestInformation": 10
   },
   "totalMemory": 397410304,
   "bugType": "only_fail",
   "workspace": "./workspace",
+  "totalNumberErroringTests": 1,
   "repo": "apache/nifi",
   "freeMemory": 293642744,
+  "failingModule": "/root/workspace/apache/nifi/225983105/nifi-nar-bundles/nifi-provenance-repository-bundle/nifi-persistent-provenance-repository",
   "buildid": 225983105,
   "hostname": "repairnator",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.ArrayIndexOutOfBoundsException"
+  ],
+  "totalNumberRunningTests": 1312,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.nifi.provenance.store.TestWriteAheadStorePartition",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.nifi.provenance.store.TestWriteAheadStorePartition#testReindex"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.ArrayIndexOutOfBoundsException",
+          "failureDetail": "81",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ],
   "nbCPU": 4
 }
