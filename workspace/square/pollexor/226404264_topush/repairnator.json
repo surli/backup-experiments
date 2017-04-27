@@ -1,0 +1,43 @@
+{
+  "totalNumberSkippingTests": 0,
+  "totalMemory": 190840832,
+  "workspace": "./workspace",
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "square/pollexor",
+  "freeMemory": 145849904,
+  "failingModule": "/root/workspace/square/pollexor/226404264",
+  "buildid": 226404264,
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 2,
+  "error-types": [
+    "java.lang.AssertionError",
+    "org.junit.ComparisonFailure"
+  ],
+  "totalNumberRunningTests": 60,
+  "failing-test-cases": [
+    {
+      "className": "com.squareup.pollexor.ThumborUrlBuilderTest",
+      "failingMethods": [
+        "com.squareup.pollexor.ThumborUrlBuilderTest#testBuildMeta",
+        "com.squareup.pollexor.ThumborUrlBuilderTest#testSafeMetaUrlCanStillBuildUnsafe"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expecting \u003c\u0027/unsafe/meta/a.com/b.png\u0027\u003e  to start with \u003c\u0027/meta/\u0027\u003e ",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u0027/[]meta/a.com/b.png\u0027\u003e but was:\u003c\u0027/[unsafe/]meta/a.com/b.png\u0027\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    }
+  ],
+  "nbCPU": 4
+}
