@@ -1,0 +1,128 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building consul-client 0.14.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ consul-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OrbitzWorldwide/consul-client/226595875/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ consul-client ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ consul-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/OrbitzWorldwide/consul-client/226595875/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ consul-client ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ consul-client ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.orbitz.consul.CatalogTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.046 sec <<< FAILURE! - in com.orbitz.consul.CatalogTests
+com.orbitz.consul.CatalogTests  Time elapsed: 0.002 sec  <<< ERROR!
+com.orbitz.consul.ConsulException: Error connecting to Consul
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8500
+
+Running com.orbitz.consul.HealthTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in com.orbitz.consul.HealthTests
+com.orbitz.consul.HealthTests  Time elapsed: 0 sec  <<< ERROR!
+com.orbitz.consul.ConsulException: Error connecting to Consul
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8500
+
+Running com.orbitz.consul.PreparedQueryTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in com.orbitz.consul.PreparedQueryTests
+Running com.orbitz.consul.util.Base64EncodingDeserializerTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.384 sec - in com.orbitz.consul.util.Base64EncodingDeserializerTests
+Running com.orbitz.consul.util.SecondsSerDeTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec - in com.orbitz.consul.util.SecondsSerDeTests
+Running com.orbitz.consul.KeyValueTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE! - in com.orbitz.consul.KeyValueTests
+com.orbitz.consul.KeyValueTests  Time elapsed: 0 sec  <<< ERROR!
+com.orbitz.consul.ConsulException: Error connecting to Consul
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8500
+
+Running com.orbitz.consul.ServiceHealthCacheTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE! - in com.orbitz.consul.ServiceHealthCacheTests
+com.orbitz.consul.ServiceHealthCacheTests  Time elapsed: 0.002 sec  <<< ERROR!
+com.orbitz.consul.ConsulException: Error connecting to Consul
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8500
+
+Running com.orbitz.consul.LifecycleTests
+This is a Task printing a message in Thread Thread[OkHttp Dispatcher,5,main]
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.359 sec <<< FAILURE! - in com.orbitz.consul.LifecycleTests
+shouldBeDestroyableWithCustomExecutorService(com.orbitz.consul.LifecycleTests)  Time elapsed: 0.05 sec  <<< ERROR!
+com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.LifecycleTests.shouldBeDestroyableWithCustomExecutorService(LifecycleTests.java:54)
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8500
+	at com.orbitz.consul.LifecycleTests.shouldBeDestroyableWithCustomExecutorService(LifecycleTests.java:54)
+
+shouldDestroyTheExecutorServiceWhenDestroyMethodIsInvoked(com.orbitz.consul.LifecycleTests)  Time elapsed: 0.28 sec  <<< ERROR!
+com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.LifecycleTests.shouldDestroyTheExecutorServiceWhenDestroyMethodIsInvoked(LifecycleTests.java:36)
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8500
+	at com.orbitz.consul.LifecycleTests.shouldDestroyTheExecutorServiceWhenDestroyMethodIsInvoked(LifecycleTests.java:36)
+
+shouldBeDestroyable(com.orbitz.consul.LifecycleTests)  Time elapsed: 0.013 sec  <<< ERROR!
+com.orbitz.consul.ConsulException: Error connecting to Consul
+	at com.orbitz.consul.LifecycleTests.shouldBeDestroyable(LifecycleTests.java:21)
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8500
+	at com.orbitz.consul.LifecycleTests.shouldBeDestroyable(LifecycleTests.java:21)
+
+Running com.orbitz.consul.AgentTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.01 sec <<< FAILURE! - in com.orbitz.consul.AgentTests
+com.orbitz.consul.AgentTests  Time elapsed: 0 sec  <<< ERROR!
+com.orbitz.consul.ConsulException: Error connecting to Consul
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8500
+
+Running com.orbitz.consul.StatusClientTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.008 sec <<< FAILURE! - in com.orbitz.consul.StatusClientTests
+com.orbitz.consul.StatusClientTests  Time elapsed: 0 sec  <<< ERROR!
+com.orbitz.consul.ConsulException: Error connecting to Consul
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8500
+
+Running com.orbitz.consul.EventTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in com.orbitz.consul.EventTests
+com.orbitz.consul.EventTests  Time elapsed: 0.001 sec  <<< ERROR!
+com.orbitz.consul.ConsulException: Error connecting to Consul
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8500
+
+
+Results :
+
+Tests in error: 
+  AgentTests>BaseIntegrationTest.beforeClass:12 » Consul Error connecting to Con...
+  CatalogTests>BaseIntegrationTest.beforeClass:12 » Consul Error connecting to C...
+  EventTests>BaseIntegrationTest.beforeClass:12 » Consul Error connecting to Con...
+  HealthTests>BaseIntegrationTest.beforeClass:12 » Consul Error connecting to Co...
+  KeyValueTests>BaseIntegrationTest.beforeClass:12 » Consul Error connecting to ...
+  LifecycleTests.shouldBeDestroyable:21 » Consul Error connecting to Consul
+  LifecycleTests.shouldBeDestroyableWithCustomExecutorService:54 » Consul Error ...
+  LifecycleTests.shouldDestroyTheExecutorServiceWhenDestroyMethodIsInvoked:36 » Consul
+  ServiceHealthCacheTests>BaseIntegrationTest.beforeClass:12 » Consul Error conn...
+  StatusClientTests>BaseIntegrationTest.beforeClass:12 » Consul Error connecting...
+
+Tests run: 15, Failures: 0, Errors: 10, Skipped: 1
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.255 s
+[INFO] Finished at: 2017-04-28T04:39:11+02:00
+[INFO] Final Memory: 14M/304M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project consul-client: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/OrbitzWorldwide/consul-client/226595875/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
