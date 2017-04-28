@@ -1,0 +1,171 @@
+2017-04-29 01:02:00,117 [main] INFO  edu.internet2.middleware.grouper.misc.GrouperCheckConfig  - grouper-2.3.0.jar, Implementation-Version: 2.3.0
+2017-04-29 01:02:00,118 [main] INFO  edu.internet2.middleware.grouper.misc.GrouperCheckConfig  - grouper-2.3.0.jar, Implementation-Title: grouper
+2017-04-29 01:02:00,118 [main] INFO  edu.internet2.middleware.grouper.misc.GrouperCheckConfig  - grouper-2.3.0.jar, Implementation-Vendor: grouper.internet2.edu
+2017-04-29 01:02:00,119 [main] INFO  edu.internet2.middleware.grouper.misc.GrouperCheckConfig  - grouper-2.3.0.jar, Archiver-Version: Plexus Archiver
+2017-04-29 01:02:00,119 [main] INFO  edu.internet2.middleware.grouper.misc.GrouperCheckConfig  - grouper-2.3.0.jar, Built-By: mchyzer
+2017-04-29 01:02:00,119 [main] INFO  edu.internet2.middleware.grouper.misc.GrouperCheckConfig  - grouper-2.3.0.jar, Build-Jdk: 1.7.0_13
+2017-04-29 01:02:00,119 [main] INFO  edu.internet2.middleware.grouper.misc.GrouperCheckConfig  - grouper-2.3.0.jar, Created-By: Apache Maven 3.3.3
+2017-04-29 01:02:00,119 [main] INFO  edu.internet2.middleware.grouper.misc.GrouperCheckConfig  - grouper-2.3.0.jar, Manifest-Version: 1.0
+2017-04-29 01:02:00,119 [main] INFO  edu.internet2.middleware.grouper.misc.GrouperCheckConfig  - grouper-2.3.0.jar, Main-Class: edu.internet2.middleware.grouper.app.gsh.GrouperShell
+2017-04-29 01:02:00,243 [main] INFO  edu.internet2.middleware.subject.provider.JDBCSourceAdapter  - Data Source initialized.
+2017-04-29 01:02:00,488 [main] INFO  edu.internet2.middleware.subject.provider.JDBCSourceAdapter  - JDBC driver loaded.
+2017-04-29 01:02:00,488 [main] INFO  edu.internet2.middleware.subject.provider.JDBCSourceAdapter2  - Data Source initialized.
+2017-04-29 01:02:00,490 [main] WARN  edu.internet2.middleware.grouper.misc.GrouperStartup  - Grouper starting up: version: 2.3.0, build date: null, env: <no label configured>
+2017-04-29 01:02:00,495 [main] INFO  edu.internet2.middleware.grouper.util.GrouperUtil  - Tmp dir is set to: '/tmp'
+2017-04-29 01:02:00,917 [main] INFO  edu.internet2.middleware.grouper.cache.EhcacheController  - cache not configured explicitly: edu.internet2.middleware.grouper.externalSubjects.ExternalSubjectConfig.configCache, to override default values, configure in the resource /ehcache.xml.  Default values are:maxElementsInMemory: 50, eternal: false, timeToIdleSeconds: 300, timeToLiveSeconds: 300, overFlowToDisk: false
+2017-04-29 01:02:00,917 [main] INFO  edu.internet2.middleware.grouper.cache.EhcacheController  - cache not configured explicitly: edu.internet2.middleware.grouper.externalSubjects.ExternalSubjectConfig.autoaddConfigCache, to override default values, configure in the resource /ehcache.xml.  Default values are:maxElementsInMemory: 50, eternal: false, timeToIdleSeconds: 300, timeToLiveSeconds: 300, overFlowToDisk: false
+2017-04-29 01:02:00,927 [main] INFO  edu.internet2.middleware.subject.provider.JDBCSourceAdapter2  - Data Source initialized.
+2017-04-29 01:02:01,167 [main] ERROR edu.internet2.middleware.grouper.misc.GrouperCheckConfig  - Error connecting to the database with credentials from grouper.hibernate.properties, url: jdbc:mysql://localhost:3306/grouper, driver: com.mysql.jdbc.Driver, user: root
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at edu.internet2.middleware.grouper.misc.GrouperCheckConfig.checkDatabase(GrouperCheckConfig.java:807)
+	at edu.internet2.middleware.grouper.misc.GrouperCheckConfig.checkGrouperDb(GrouperCheckConfig.java:695)
+	at edu.internet2.middleware.grouper.misc.GrouperStartup.startup(GrouperStartup.java:246)
+	at edu.internet2.middleware.grouper.subj.SubjectResolverFactory.getInstance(SubjectResolverFactory.java:58)
+	at edu.internet2.middleware.grouper.SubjectFinder.getResolver(SubjectFinder.java:878)
+	at edu.internet2.middleware.grouper.SubjectFinder.findRootSubject(SubjectFinder.java:863)
+	at edu.internet2.middleware.grouper.GrouperSession.startRootSession(GrouperSession.java:427)
+	at edu.internet2.middleware.grouper.GrouperSession.startRootSession(GrouperSession.java:445)
+	at org.apache.airavata.grouper.resource.ResourceServiceImpl.createResource(ResourceServiceImpl.java:50)
+	at org.apache.airavata.grouper.GroupManagerImpl.createResource(GroupManagerImpl.java:54)
+	at org.apache.airavata.api.server.handler.AiravataServerHandler.createProject(AiravataServerHandler.java:607)
+	at org.apache.airavata.api.server.handler.AiravataServerHandlerTest.testExperiment(AiravataServerHandlerTest.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 52 more
+2017-04-29 01:02:01,172 [main] INFO  edu.internet2.middleware.grouper.cache.EhcacheController  - cache not configured explicitly: edu.internet2.middleware.grouper.GroupTypeFinder.typeCache, to override default values, configure in the resource /ehcache.xml.  Default values are:maxElementsInMemory: 10000, eternal: false, timeToIdleSeconds: 600, timeToLiveSeconds: 600, overFlowToDisk: false
+2017-04-29 01:02:01,173 [main] INFO  edu.internet2.middleware.grouper.cache.EhcacheController  - cache not configured explicitly: edu.internet2.middleware.grouper.GroupTypeFinder.legacyAttributes, to override default values, configure in the resource /ehcache.xml.  Default values are:maxElementsInMemory: 10000, eternal: false, timeToIdleSeconds: 600, timeToLiveSeconds: 600, overFlowToDisk: false
+2017-04-29 01:02:01,173 [main] INFO  edu.internet2.middleware.grouper.cache.EhcacheController  - cache not configured explicitly: edu.internet2.middleware.grouper.GroupTypeFinder.fieldIdToTypeIdCache, to override default values, configure in the resource /ehcache.xml.  Default values are:maxElementsInMemory: 10000, eternal: false, timeToIdleSeconds: 600, timeToLiveSeconds: 600, overFlowToDisk: false
+2017-04-29 01:02:01,227 [main] INFO  edu.internet2.middleware.grouper.ddl.GrouperDdlUtils  - Ddl db name is: 'MySQL'
+2017-04-29 01:02:01,235 [main] ERROR edu.internet2.middleware.grouper.misc.GrouperStartup  - Couldnt startup grouper: Problems with db: DB: user: root, url: jdbc:mysql://localhost:3306/grouper, driver: com.mysql.jdbc.Driver
+java.lang.RuntimeException: Problems with db: DB: user: root, url: jdbc:mysql://localhost:3306/grouper, driver: com.mysql.jdbc.Driver
+	at edu.internet2.middleware.grouper.app.loader.db.GrouperLoaderDb.connection(GrouperLoaderDb.java:57)
+	at edu.internet2.middleware.grouper.ddl.GrouperDdlUtils.bootstrapHelper(GrouperDdlUtils.java:436)
+	at edu.internet2.middleware.grouper.ddl.GrouperDdlUtils.bootstrap(GrouperDdlUtils.java:340)
+	at edu.internet2.middleware.grouper.misc.GrouperStartup.startup(GrouperStartup.java:251)
+	at edu.internet2.middleware.grouper.subj.SubjectResolverFactory.getInstance(SubjectResolverFactory.java:58)
+	at edu.internet2.middleware.grouper.SubjectFinder.getResolver(SubjectFinder.java:878)
+	at edu.internet2.middleware.grouper.SubjectFinder.findRootSubject(SubjectFinder.java:863)
+	at edu.internet2.middleware.grouper.GrouperSession.startRootSession(GrouperSession.java:427)
+	at edu.internet2.middleware.grouper.GrouperSession.startRootSession(GrouperSession.java:445)
+	at org.apache.airavata.grouper.resource.ResourceServiceImpl.createResource(ResourceServiceImpl.java:50)
+	at org.apache.airavata.grouper.GroupManagerImpl.createResource(GroupManagerImpl.java:54)
+	at org.apache.airavata.api.server.handler.AiravataServerHandler.createProject(AiravataServerHandler.java:607)
+	at org.apache.airavata.api.server.handler.AiravataServerHandlerTest.testExperiment(AiravataServerHandlerTest.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at edu.internet2.middleware.grouper.app.loader.db.GrouperLoaderDb.connection(GrouperLoaderDb.java:54)
+	... 38 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 53 more
