@@ -1,0 +1,59 @@
+{
+  "totalNumberSkippingTests": 0,
+  "totalMemory": 526385152,
+  "workspace": "./workspace",
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "prestodb/presto",
+  "freeMemory": 205537288,
+  "failingModule": "/root/workspace/prestodb/presto/226884583/presto-main",
+  "buildid": 226884583,
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 3,
+  "error-types": [
+    "org.testng.TestException",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 3103,
+  "failing-test-cases": [
+    {
+      "className": "com.facebook.presto.operator.TestOrderByOperator",
+      "failingMethods": [
+        "com.facebook.presto.operator.TestOrderByOperator#testMemoryLimit"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.testng.TestException",
+          "failureDetail": "\nMethod TestOrderByOperator.testMemoryLimit()[pri:0, instance:com.facebook.presto.operator.TestOrderByOperator@3cc3914a] should have thrown an exception of type class com.facebook.presto.ExceededMemoryLimitException",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.facebook.presto.sql.planner.optimizations.TestEliminateSorts",
+      "failingMethods": [
+        "com.facebook.presto.sql.planner.optimizations.TestEliminateSorts#testEliminateSorts",
+        "com.facebook.presto.sql.planner.optimizations.TestEliminateSorts#testNotEliminateSorts"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Plan does not match, expected [\n\n- node(OutputNode)\n    - node(WindowNode)\n        WindowMatcher{specification\u003dSpecificationProvider{partitionBy\u003d[], orderBy\u003d[QUANTITY], orderings\u003d{QUANTITY\u003dASC_NULLS_LAST}}}\n        bind Optional.empty -\u003e row_number () \n        - anyTree\n            - node(TableScanNode)\n                TableScanMatcher{expectedTableName\u003dlineitem}\n                bind Optional[QUANTITY] -\u003e Column lineitem:quantity\n\n] but found [\n\n- Output[quantity, _col1] \u003d\u003e [quantity:double, row_number_1:bigint]\n        _col1 :\u003d row_number_1\n    - RemoteExchange[GATHER] \u003d\u003e quantity:double, row_number_1:bigint\n        - PartialSort[quantity ASC_NULLS_LAST] \u003d\u003e [quantity:double, row_number_1:bigint]\n            - RemoteExchange[REPARTITION] \u003d\u003e quantity:double, row_number_1:bigint\n                - Window[order by (quantity ASC_NULLS_LAST)] \u003d\u003e [quantity:double, row_number_1:bigint]\n                        row_number_1 :\u003d row_number() \n                    - RemoteExchange[GATHER] \u003d\u003e quantity:double\n                        - TableScan[local:tpch:lineitem:sf0.01, originalConstraint \u003d true] \u003d\u003e [quantity:double]\n                                quantity :\u003d tpch:quantity\n\n]",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Plan does not match, expected [\n\n- anyTree\n    - node(SortNode)\n        - node(WindowNode)\n            WindowMatcher{specification\u003dSpecificationProvider{partitionBy\u003d[], orderBy\u003d[QUANTITY], orderings\u003d{QUANTITY\u003dASC_NULLS_LAST}}}\n            bind Optional.empty -\u003e row_number () \n            - anyTree\n                - node(TableScanNode)\n                    TableScanMatcher{expectedTableName\u003dlineitem}\n                    bind Optional[QUANTITY] -\u003e Column lineitem:quantity\n\n] but found [\n\n- Output[quantity, _col1] \u003d\u003e [quantity:double, row_number_1:bigint]\n        _col1 :\u003d row_number_1\n    - Project[] \u003d\u003e [quantity:double, row_number_1:bigint]\n        - RemoteExchange[GATHER] \u003d\u003e tax:double, quantity:double, row_number_1:bigint\n            - PartialSort[tax ASC_NULLS_LAST] \u003d\u003e [tax:double, quantity:double, row_number_1:bigint]\n                - RemoteExchange[REPARTITION] \u003d\u003e tax:double, quantity:double, row_number_1:bigint\n                    - Window[order by (quantity ASC_NULLS_LAST)] \u003d\u003e [quantity:double, tax:double, row_number_1:bigint]\n                            row_number_1 :\u003d row_number() \n                        - RemoteExchange[GATHER] \u003d\u003e quantity:double, tax:double\n                            - TableScan[local:tpch:lineitem:sf0.01, originalConstraint \u003d true] \u003d\u003e [quantity:double, tax:double]\n                                    quantity :\u003d tpch:quantity\n                                    tax :\u003d tpch:tax\n\n]",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    }
+  ],
+  "nbCPU": 4
+}
