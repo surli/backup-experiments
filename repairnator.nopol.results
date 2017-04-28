@@ -1,0 +1,84 @@
+nopolinfo #0
+location: FailureLocation{className='com.facebook.presto.sql.planner.optimizations.TestEliminateSorts', failingMethods=[com.facebook.presto.sql.planner.optimizations.TestEliminateSorts#testEliminateSorts, com.facebook.presto.sql.planner.optimizations.TestEliminateSorts#testNotEliminateSorts], erroringMethods=[], failures=[FailureType{failureName='java.lang.AssertionError', failureDetail='Plan does not match, expected [
+
+- node(OutputNode)
+    - node(WindowNode)
+        WindowMatcher{specification=SpecificationProvider{partitionBy=[], orderBy=[QUANTITY], orderings={QUANTITY=ASC_NULLS_LAST}}}
+        bind Optional.empty -> row_number () 
+        - anyTree
+            - node(TableScanNode)
+                TableScanMatcher{expectedTableName=lineitem}
+                bind Optional[QUANTITY] -> Column lineitem:quantity
+
+] but found [
+
+- Output[quantity, _col1] => [quantity:double, row_number_1:bigint]
+        _col1 := row_number_1
+    - RemoteExchange[GATHER] => quantity:double, row_number_1:bigint
+        - PartialSort[quantity ASC_NULLS_LAST] => [quantity:double, row_number_1:bigint]
+            - RemoteExchange[REPARTITION] => quantity:double, row_number_1:bigint
+                - Window[order by (quantity ASC_NULLS_LAST)] => [quantity:double, row_number_1:bigint]
+                        row_number_1 := row_number() 
+                    - RemoteExchange[GATHER] => quantity:double
+                        - TableScan[local:tpch:lineitem:sf0.01, originalConstraint = true] => [quantity:double]
+                                quantity := tpch:quantity
+
+]', isError=false}, FailureType{failureName='java.lang.AssertionError', failureDetail='Plan does not match, expected [
+
+- anyTree
+    - node(SortNode)
+        - node(WindowNode)
+            WindowMatcher{specification=SpecificationProvider{partitionBy=[], orderBy=[QUANTITY], orderings={QUANTITY=ASC_NULLS_LAST}}}
+            bind Optional.empty -> row_number () 
+            - anyTree
+                - node(TableScanNode)
+                    TableScanMatcher{expectedTableName=lineitem}
+                    bind Optional[QUANTITY] -> Column lineitem:quantity
+
+] but found [
+
+- Output[quantity, _col1] => [quantity:double, row_number_1:bigint]
+        _col1 := row_number_1
+    - Project[] => [quantity:double, row_number_1:bigint]
+        - RemoteExchange[GATHER] => tax:double, quantity:double, row_number_1:bigint
+            - PartialSort[tax ASC_NULLS_LAST] => [tax:double, quantity:double, row_number_1:bigint]
+                - RemoteExchange[REPARTITION] => tax:double, quantity:double, row_number_1:bigint
+                    - Window[order by (quantity ASC_NULLS_LAST)] => [quantity:double, tax:double, row_number_1:bigint]
+                            row_number_1 := row_number() 
+                        - RemoteExchange[GATHER] => quantity:double, tax:double
+                            - TableScan[local:tpch:lineitem:sf0.01, originalConstraint = true] => [quantity:double, tax:double]
+                                    quantity := tpch:quantity
+                                    tax := tpch:tax
+
+]', isError=false}], nbFailures=2, nbErrors=0}
+status: NOPATCH
+dateEnd: Fri Apr 28 22:46:17 CEST 2017
+allocatedtime: 120minutes 
+passingTime: 1minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/prestodb/presto/226884583/presto-main/src/main/java], projectClasspath='[Ljava.net.URL;@54da32dc', projectTests=[com.facebook.presto.sql.planner.optimizations.TestEliminateSorts], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
+nopolinfo #1
+location: FailureLocation{className='com.facebook.presto.operator.TestOrderByOperator', failingMethods=[com.facebook.presto.operator.TestOrderByOperator#testMemoryLimit], erroringMethods=[], failures=[FailureType{failureName='org.testng.TestException', failureDetail='
+Method TestOrderByOperator.testMemoryLimit()[pri:0, instance:com.facebook.presto.operator.TestOrderByOperator@3cc3914a] should have thrown an exception of type class com.facebook.presto.ExceededMemoryLimitException', isError=false}], nbFailures=1, nbErrors=0}
+status: NOPATCH
+dateEnd: Fri Apr 28 22:47:00 CEST 2017
+allocatedtime: 119minutes 
+passingTime: 0minutes 
+nb patches: 0
+nopol context: Config{synthesisDepth=3, collectStaticMethods=true, collectStaticFields=false, collectLiterals=false, onlyOneSynthesisResult=false, sortExpressions=true, maxLineInvocationPerTest=250, timeoutMethodInvocation=2000, dataCollectionTimeoutInSecondForSynthesis=900, addWeight=0.19478, subWeight=0.04554, mulWeight=0.0102, divWeight=0.00613, andWeight=0.10597, orWeight=0.05708, eqWeight=0.22798, nEqWeight=0.0, lessEqWeight=0.0255, lessWeight=0.0947, methodCallWeight=0.1, fieldAccessWeight=0.08099, constantWeight=0.14232, variableWeight=0.05195, mode=REPAIR, type=COND_THEN_PRE, synthesis=DYNAMOTH, oracle=ANGELIC, solver=Z3, solverPath='./z3_for_linux', projectSources=[/root/workspace/prestodb/presto/226884583/presto-main/src/main/java], projectClasspath='[Ljava.net.URL;@173158e8', projectTests=[com.facebook.presto.operator.TestOrderByOperator], complianceLevel=8, outputFolder=null, json=false}
+exception: null
+nbStatements: 0
+nbAngelicValues: 0
+ignoreStatus: NOTHING_TO_IGNORE
+----------
+
+
+
