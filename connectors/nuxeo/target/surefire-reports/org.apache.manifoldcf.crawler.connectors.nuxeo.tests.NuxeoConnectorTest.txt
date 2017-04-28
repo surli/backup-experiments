@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.manifoldcf.crawler.connectors.nuxeo.tests.NuxeoConnectorTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.496 sec <<< FAILURE! - in org.apache.manifoldcf.crawler.connectors.nuxeo.tests.NuxeoConnectorTest
+mockSimpleIngestion(org.apache.manifoldcf.crawler.connectors.nuxeo.tests.NuxeoConnectorTest)  Time elapsed: 0.015 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.apache.manifoldcf.crawler.connectors.nuxeo.NuxeoRepositoryConnector.getUrl(NuxeoRepositoryConnector.java:364)
+	at org.apache.manifoldcf.crawler.connectors.nuxeo.NuxeoRepositoryConnector.processDocumentInternal(NuxeoRepositoryConnector.java:619)
+	at org.apache.manifoldcf.crawler.connectors.nuxeo.NuxeoRepositoryConnector.processDocument(NuxeoRepositoryConnector.java:549)
+	at org.apache.manifoldcf.crawler.connectors.nuxeo.NuxeoRepositoryConnector.processDocuments(NuxeoRepositoryConnector.java:515)
+	at org.apache.manifoldcf.crawler.connectors.nuxeo.tests.NuxeoConnectorTest.mockSimpleIngestion(NuxeoConnectorTest.java:171)
+
+checkMockInjection(org.apache.manifoldcf.crawler.connectors.nuxeo.tests.NuxeoConnectorTest)  Time elapsed: 0.005 sec  <<< ERROR!
+org.apache.manifoldcf.core.interfaces.ManifoldCFException: Parameter protocol required but not set
+	at org.apache.manifoldcf.crawler.connectors.nuxeo.NuxeoRepositoryConnector.initNuxeoClient(NuxeoRepositoryConnector.java:322)
+	at org.apache.manifoldcf.crawler.connectors.nuxeo.NuxeoRepositoryConnector.check(NuxeoRepositoryConnector.java:303)
+	at org.apache.manifoldcf.crawler.connectors.nuxeo.tests.NuxeoConnectorTest.checkMockInjection(NuxeoConnectorTest.java:68)
+

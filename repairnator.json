@@ -1,0 +1,60 @@
+{
+  "totalNumberSkippingTests": 2,
+  "totalMemory": 381157376,
+  "bugType": "only_fail",
+  "workspace": "./workspace",
+  "totalNumberErroringTests": 3,
+  "repo": "apache/manifoldcf",
+  "freeMemory": 295630712,
+  "bugCommit": "https://github.com/apache/manifoldcf/compare/CONNECTORS-1290-2",
+  "failingModule": "/root/workspace/apache/manifoldcf/226925585/connectors/nuxeo",
+  "buildid": 226925585,
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "org.apache.manifoldcf.core.interfaces.ManifoldCFException",
+    "java.lang.NullPointerException:"
+  ],
+  "totalNumberRunningTests": 90,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.manifoldcf.authorities.nuxeo.tests.NuxeoAuthorityTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.manifoldcf.authorities.nuxeo.tests.NuxeoAuthorityTest#check"
+      ],
+      "failures": [
+        {
+          "failureName": "org.apache.manifoldcf.core.interfaces.ManifoldCFException",
+          "failureDetail": "Parameter protocol required but not set",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.apache.manifoldcf.crawler.connectors.nuxeo.tests.NuxeoConnectorTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.manifoldcf.crawler.connectors.nuxeo.tests.NuxeoConnectorTest#mockSimpleIngestion",
+        "org.apache.manifoldcf.crawler.connectors.nuxeo.tests.NuxeoConnectorTest#checkMockInjection"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "org.apache.manifoldcf.core.interfaces.ManifoldCFException",
+          "failureDetail": "Parameter protocol required but not set",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    }
+  ],
+  "nbCPU": 4,
+  "bugRepo": "apache/manifoldcf"
+}
