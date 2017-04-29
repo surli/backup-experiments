@@ -1,0 +1,38 @@
+{
+  "totalNumberSkippingTests": 0,
+  "totalMemory": 221249536,
+  "bugType": "only_fail",
+  "workspace": "./workspace",
+  "totalNumberErroringTests": 1,
+  "repo": "javaee-samples/javaee7-samples",
+  "freeMemory": 190853792,
+  "bugCommit": "https://github.com/javaee-samples/javaee7-samples/compare/d6271c5fadfd...8e288ab39332",
+  "failingModule": "/root/workspace/javaee-samples/javaee7-samples/226822512/batch/chunk-csv-database",
+  "buildid": 226822512,
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "com.sun.jersey.api.container.ContainerException"
+  ],
+  "totalNumberRunningTests": 3,
+  "failing-test-cases": [
+    {
+      "className": "org.javaee7.batch.chunk.csv.database.BatchCSVDatabaseTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.javaee7.batch.chunk.csv.database.BatchCSVDatabaseTest#org.javaee7.batch.chunk.csv.database.BatchCSVDatabaseTest"
+      ],
+      "failures": [
+        {
+          "failureName": "com.sun.jersey.api.container.ContainerException",
+          "failureDetail": "exit_code: FAILURE, message: Error occurred during deployment: Exception while preparing the app : Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.6.4.qualifier): org.eclipse.persistence.exceptions.DatabaseException Internal Exception: java.sql.SQLException: Error in allocating a connection. Cause: Connection could not be allocated because: java.net.ConnectException : Error connecting to server localhost on port 1527 with message Connection refused (Connection refused). Error Code: 0. Please see server.log for more details. [status: CLIENT_ERROR reason: Bad Request]",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ],
+  "nbCPU": 4,
+  "bugRepo": "javaee-samples/javaee7-samples"
+}
