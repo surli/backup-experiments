@@ -1,0 +1,93 @@
+{
+  "totalNumberSkippingTests": 0,
+  "totalMemory": 191365120,
+  "bugType": "failing_passing",
+  "workspace": "./workspace",
+  "totalNumberErroringTests": 5,
+  "repo": "twitter/GraphJet",
+  "freeMemory": 145696376,
+  "bugCommit": "https://github.com/twitter/GraphJet/compare/af50b2c34aff...05c963ec6de8",
+  "failingModule": "/root/workspace/twitter/GraphJet/228803374/graphjet-core",
+  "buildid": 228803374,
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.ArrayIndexOutOfBoundsException",
+    "java.lang.ClassCastException"
+  ],
+  "totalNumberRunningTests": 103,
+  "failing-test-cases": [
+    {
+      "className": "com.twitter.graphjet.directed.OutIndexedPowerLawMultiSegmentDirectedGraphTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.twitter.graphjet.directed.OutIndexedPowerLawMultiSegmentDirectedGraphTest#testBasicGraph"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.ArrayIndexOutOfBoundsException",
+          "failureDetail": "-1",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.twitter.graphjet.bipartite.MultiSegmentLeftIndexedPowerLawBipartiteGraphTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.twitter.graphjet.bipartite.MultiSegmentLeftIndexedPowerLawBipartiteGraphTest#testMultiSegmentConstruction"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.ArrayIndexOutOfBoundsException",
+          "failureDetail": "-1",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.twitter.graphjet.bipartite.MultiSegmentPowerLawBipartiteGraphTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.twitter.graphjet.bipartite.MultiSegmentPowerLawBipartiteGraphTest#testMemoryRecycling",
+        "com.twitter.graphjet.bipartite.MultiSegmentPowerLawBipartiteGraphTest#testMultiSegmentConstruction"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.ArrayIndexOutOfBoundsException",
+          "failureDetail": "-1",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.ArrayIndexOutOfBoundsException",
+          "failureDetail": "-1",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.twitter.graphjet.bipartite.segment.InternalIdToLongIteratorTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.twitter.graphjet.bipartite.segment.InternalIdToLongIteratorTest#testInternalIdToLongIterator"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.ClassCastException",
+          "failureDetail": "it.unimi.dsi.fastutil.ints.IntArrayList$1 cannot be cast to com.twitter.graphjet.bipartite.api.EdgeMetadataIntIterator",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ],
+  "nbCPU": 4,
+  "bugRepo": "twitter/GraphJet"
+}
