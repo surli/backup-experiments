@@ -1,0 +1,15 @@
+language: java
+
+addons:
+  hostname: short-hostname
+
+jdk:
+  - openjdk6
+  - openjdk7
+  - oraclejdk7
+
+after_success:
+  - mvn jacoco:report coveralls:jacoco
+
+notifications:
+  irc: "irc.freenode.org#jbake"
