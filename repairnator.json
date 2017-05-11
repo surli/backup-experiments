@@ -1,0 +1,75 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "jnr/jnr-posix",
+  "failingModule": "/root/workspace/jnr/jnr-posix/230859189",
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 5,
+  "error-types": [
+    "java.lang.AssertionError:",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 88,
+  "failing-test-cases": [
+    {
+      "className": "jnr.posix.SignalTest",
+      "failingMethods": [
+        "jnr.posix.SignalTest#testJavaSignal"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError:",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jnr.posix.FileTest",
+      "failingMethods": [
+        "jnr.posix.FileTest#accessTest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "access:  expected:\u003c-1\u003e but was:\u003c0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jnr.posix.ProcessTest",
+      "failingMethods": [
+        "jnr.posix.ProcessTest#testGetRLimit",
+        "jnr.posix.ProcessTest#testGetRLimitPreallocatedRlimit",
+        "jnr.posix.ProcessTest#testGetRLimitPointer"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Bad soft limit for number of processes",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Bad soft limit for number of processes",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Bad soft limit for number of processes",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    }
+  ]
+}
