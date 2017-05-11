@@ -1,0 +1,48 @@
+{
+  "totalNumberSkippingTests": 59,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 2,
+  "repo": "druid-io/druid",
+  "failingModule": "/root/workspace/druid-io/druid/231055679/processing",
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.RuntimeException",
+    "java.lang.Exception"
+  ],
+  "totalNumberRunningTests": 26463,
+  "failing-test-cases": [
+    {
+      "className": "io.druid.segment.data.IncrementalIndexTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.druid.segment.data.IncrementalIndexTest#testConcurrentAddRead[0]"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.Exception: test timed out after 60000 milliseconds",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.druid.granularity.QueryGranularityTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.druid.granularity.QueryGranularityTest#testDeadLock"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "test timed out after 10000 milliseconds",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
