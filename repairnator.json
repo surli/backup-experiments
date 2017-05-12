@@ -1,0 +1,38 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "twitter/GraphJet",
+  "bugCommit": "https://github.com/twitter/GraphJet/compare/db8a497b30e1...835c90530afa",
+  "failingModule": "/root/workspace/twitter/GraphJet/231338984/graphjet-core",
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 2,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 105,
+  "failing-test-cases": [
+    {
+      "className": "com.twitter.graphjet.algorithms.salsa.SalsaTest",
+      "failingMethods": [
+        "com.twitter.graphjet.algorithms.salsa.SalsaTest#testSalsaWithRandomGraph",
+        "com.twitter.graphjet.algorithms.salsa.SalsaTest#testSalsaWithLargeGraph"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[TweetRecommendationInfo{recommendation\u003d735, recommendationType\u003dTWEET, weight\u003d0.0010926365795724466, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@200}}, TweetRecommendationInfo{recommendation\u003d119, recommendationType\u003dTWEET, weight\u003d0.0010451306413301663, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@1c0}}, TweetRecommendationInfo{recommendation\u003d70, recommendationType\u003dTWEET, weight\u003d0.0010451306413301663, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@280}}]\u003e but was:\u003c[TweetRecommendationInfo{recommendation\u003d735, recommendationType\u003dTWEET, weight\u003d0.0010926365795724466, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@4e49200}}, TweetRecommendationInfo{recommendation\u003d119, recommendationType\u003dTWEET, weight\u003d0.0010451306413301663, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@84e0a080}}, TweetRecommendationInfo{recommendation\u003d70, recommendationType\u003dTWEET, weight\u003d0.0010451306413301663, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@20c004d5}}]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[TweetRecommendationInfo{recommendation\u003d704, recommendationType\u003dTWEET, weight\u003d0.0037072243346007606, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@200e}}, TweetRecommendationInfo{recommendation\u003d509, recommendationType\u003dTWEET, weight\u003d0.003326996197718631, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@204b}}, TweetRecommendationInfo{recommendation\u003d190, recommendationType\u003dTWEET, weight\u003d0.003279467680608365, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@4016}}]\u003e but was:\u003c[TweetRecommendationInfo{recommendation\u003d704, recommendationType\u003dTWEET, weight\u003d0.0037072243346007606, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@64496002}}, TweetRecommendationInfo{recommendation\u003d509, recommendationType\u003dTWEET, weight\u003d0.003326996197718631, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@10440e00}}, TweetRecommendationInfo{recommendation\u003d190, recommendationType\u003dTWEET, weight\u003d0.003279467680608365, socialProof\u003d{0\u003dcom.twitter.graphjet.datastructures.Pair@25c124dc}}]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    }
+  ]
+}
