@@ -1,0 +1,60 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "failing_passing",
+  "totalNumberErroringTests": 0,
+  "repo": "jnr/jnr-posix",
+  "bugCommit": "https://github.com/jnr/jnr-posix/compare/8d0b65940228...6335c46e7998",
+  "failingModule": "/root/workspace/jnr/jnr-posix/231276587",
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 4,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 88,
+  "failing-test-cases": [
+    {
+      "className": "jnr.posix.FileTest",
+      "failingMethods": [
+        "jnr.posix.FileTest#accessTest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "access:  expected:\u003c-1\u003e but was:\u003c0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jnr.posix.ProcessTest",
+      "failingMethods": [
+        "jnr.posix.ProcessTest#testGetRLimit",
+        "jnr.posix.ProcessTest#testGetRLimitPreallocatedRlimit",
+        "jnr.posix.ProcessTest#testGetRLimitPointer"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Bad soft limit for number of processes",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Bad soft limit for number of processes",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Bad soft limit for number of processes",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    }
+  ]
+}
