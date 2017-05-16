@@ -1,0 +1,1078 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 23 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 23 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] GraphAware Neo4j Framework Parent POM
+[INFO] GraphAware Neo4j Framework
+[INFO] GraphAware Common
+[INFO] GraphAware Tests
+[INFO] GraphAware REST API
+[INFO] GraphAware Database Writer API
+[INFO] GraphAware Runtime
+[INFO] GraphAware Transaction Executor
+[INFO] GraphAware Database Writer
+[INFO] GraphAware Transaction API
+[INFO] GraphAware Runtime
+[INFO] GraphAware Server
+[INFO] GraphAware Build
+[INFO] GraphAware Framework Build
+[INFO] GraphAware Framework Server Build
+[INFO] GraphAware Neo4j Module
+[INFO] GraphAware Node Counter
+[INFO] GraphAware Node Streaming Example
+[INFO] GraphAware Friendship Strength Counter
+[INFO] GraphAware Change Logger
+[INFO] GraphAware Friendship Strength Counter Runtime Module
+[INFO] GraphAware Neo4j Performance Test Examples
+[INFO] GraphAware Neo4j Integration Test Examples
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphAware Neo4j Framework Parent POM 3.1.4.50-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphAware Neo4j Framework 3.1.4.50-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphAware Common 3.1.4.50-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/graphaware/neo4j-framework/232769887/common/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ common ---
+[INFO] Surefire report directory: /root/workspace/graphaware/neo4j-framework/232769887/common/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (3 KB at 8.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (3 KB at 114.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 KB at 1001.6 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.graphaware.common.stopwatch.EventTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.361 sec
+Running com.graphaware.common.stopwatch.StopwatchTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.194 sec
+Running com.graphaware.common.stopwatch.PeriodTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.graphaware.common.uuid.UuidGeneratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 sec
+Running com.graphaware.common.util.ChangeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.552 sec
+Running com.graphaware.common.util.FileScannerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running com.graphaware.common.util.BoundedSortedListTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running com.graphaware.common.util.PropertyContainerUtilsTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.859 sec
+Running com.graphaware.common.util.UnorderedPairTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.graphaware.common.util.IterableUtilsTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.773 sec
+Running com.graphaware.common.util.RelationshipUtilsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.573 sec
+Running com.graphaware.common.util.ArrayUtilsTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.graphaware.common.util.DirectionUtilsTest
+2017-05-16 20:16:48.793+0000 ERROR [c.g.c.u.DirectionUtils] Provided relationship (0) does not have node (2) on either of its ends!
+2017-05-16 20:16:49.216+0000 ERROR [c.g.c.u.DirectionUtils] Provided relationship (0) does not have node (2) on either of its ends!
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.735 sec
+Running com.graphaware.common.description.predicate.UndefinedTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.graphaware.common.description.predicate.AnyTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.graphaware.common.description.predicate.OrTest
+2017-05-16 20:16:49.227+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.227+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.227+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.227+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.227+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.229+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.229+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.229+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.229+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.229+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.230+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.230+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.231+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.231+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.231+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.231+0000 WARN [c.g.c.d.p.ComparablePredicate] e cannot be compared to f
+2017-05-16 20:16:49.231+0000 WARN [c.g.c.d.p.ComparablePredicate] true cannot be compared to true
+2017-05-16 20:16:49.231+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.231+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.231+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.231+0000 WARN [c.g.c.d.p.ComparablePredicate] 123 cannot be compared to 124
+2017-05-16 20:16:49.232+0000 WARN [c.g.c.d.p.ComparablePredicate] 33 cannot be compared to 34
+2017-05-16 20:16:49.232+0000 WARN [c.g.c.d.p.ComparablePredicate] 33 cannot be compared to 34
+2017-05-16 20:16:49.232+0000 WARN [c.g.c.d.p.ComparablePredicate] 33 cannot be compared to 34
+2017-05-16 20:16:49.232+0000 WARN [c.g.c.d.p.ComparablePredicate] 3.14 cannot be compared to 3.139
+2017-05-16 20:16:49.232+0000 WARN [c.g.c.d.p.ComparablePredicate] 3.14 cannot be compared to 3
+2017-05-16 20:16:49.233+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.233+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.239+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.239+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.239+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.240+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.240+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.240+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.241+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.241+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.241+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.241+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.241+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.241+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.242+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.242+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.242+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.242+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.242+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.242+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.242+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.242+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.242+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.243+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.253+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.253+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.253+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.253+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.253+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
+Running com.graphaware.common.description.predicate.EqualToTest
+2017-05-16 20:16:49.255+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.255+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.255+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.256+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.256+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.256+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.256+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.256+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.256+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.257+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.257+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.258+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.258+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.258+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.258+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.258+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.258+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.258+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.graphaware.common.description.predicate.GreaterThanTest
+2017-05-16 20:16:49.260+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.260+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.260+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.260+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.260+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.265+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.265+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.266+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.267+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.267+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.267+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.267+0000 WARN [c.g.c.d.p.ComparablePredicate] e cannot be compared to f
+2017-05-16 20:16:49.267+0000 WARN [c.g.c.d.p.ComparablePredicate] true cannot be compared to true
+2017-05-16 20:16:49.267+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.267+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.267+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.268+0000 WARN [c.g.c.d.p.ComparablePredicate] 123 cannot be compared to 124
+2017-05-16 20:16:49.268+0000 WARN [c.g.c.d.p.ComparablePredicate] 33 cannot be compared to 34
+2017-05-16 20:16:49.268+0000 WARN [c.g.c.d.p.ComparablePredicate] 33 cannot be compared to 34
+2017-05-16 20:16:49.268+0000 WARN [c.g.c.d.p.ComparablePredicate] 33 cannot be compared to 34
+2017-05-16 20:16:49.268+0000 WARN [c.g.c.d.p.ComparablePredicate] 3.14 cannot be compared to 3.139
+2017-05-16 20:16:49.268+0000 WARN [c.g.c.d.p.ComparablePredicate] 3.14 cannot be compared to 3
+2017-05-16 20:16:49.273+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.273+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.273+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.273+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.273+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.273+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.273+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.273+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.274+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.graphaware.common.description.predicate.LessThanTest
+2017-05-16 20:16:49.276+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.276+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.276+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.280+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.281+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 2
+2017-05-16 20:16:49.281+0000 WARN [c.g.c.d.p.ComparablePredicate] 3 cannot be compared to 2
+2017-05-16 20:16:49.281+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.281+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.281+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] e cannot be compared to d
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] false cannot be compared to false
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 0
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 0
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] 1 cannot be compared to 0
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] 123 cannot be compared to 122
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] 33 cannot be compared to 32
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] 33 cannot be compared to 32
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] 33 cannot be compared to 32
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] 3.14 cannot be compared to 3.1401
+2017-05-16 20:16:49.282+0000 WARN [c.g.c.d.p.ComparablePredicate] 3.14 cannot be compared to 4
+2017-05-16 20:16:49.283+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.283+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.283+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.283+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.283+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.283+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.283+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.284+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.285+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.285+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.285+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.289+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.290+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.290+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.290+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.290+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 1
+2017-05-16 20:16:49.290+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.290+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+2017-05-16 20:16:49.290+0000 WARN [c.g.c.d.p.ComparablePredicate] 2 cannot be compared to 3
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running com.graphaware.common.description.relationship.DetachedRelationshipDescriptionImplTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.523 sec
+Running com.graphaware.common.description.relationship.LazyRelationshipDescriptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec
+Running com.graphaware.common.description.property.LiteralPropertiesDescriptionTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.476 sec
+Running com.graphaware.common.description.property.WildcardPropertiesDescriptionTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.447 sec
+Running com.graphaware.common.description.property.LazyPropertiesDescriptionTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.421 sec
+Running com.graphaware.common.representation.GraphDetachedRelationshipTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.203 sec
+Running com.graphaware.common.representation.GraphDetachedNodeTest
+{"graphId":0,"properties":{"key":"value"},"labels":["Label1, Label2"]}
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.graphaware.common.kv.GraphKeyValueStoreTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec
+Running com.graphaware.common.policy.inclusion.none.IncludeNoRelationshipsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.247 sec
+Running com.graphaware.common.policy.inclusion.none.IncludeNoNodesTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.208 sec
+Running com.graphaware.common.policy.inclusion.all.IncludeAllNodesTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.223 sec
+Running com.graphaware.common.policy.inclusion.all.IncludeAllRelationshipsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.294 sec
+Running com.graphaware.common.policy.inclusion.spel.SpelRelationshipInclusionPolicyTest
+2017-05-16 20:16:52.828+0000 ERROR [c.g.c.u.DirectionUtils] Provided relationship (com.graphaware.common.representation.AttachedRelationship@2) does not have node (com.graphaware.common.representation.AttachedNode@0) on either of its ends!
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.658 sec
+Running com.graphaware.common.policy.inclusion.spel.SpelNodeInclusionPolicyTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.241 sec
+Running com.graphaware.common.policy.inclusion.spel.SpelRelationshipPropertyInclusionPolicyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 sec
+Running com.graphaware.common.policy.inclusion.spel.SpelNodePropertyInclusionPolicyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 sec
+Running com.graphaware.common.policy.inclusion.composite.CompositePropertyContainerInclusionPolicyTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.graphaware.common.policy.inclusion.composite.CompositePropertyInclusionPolicyTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.graphaware.common.policy.IncludeNodesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec
+Running com.graphaware.common.policy.IncludeRelationshipsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 sec
+
+Results :
+
+Tests run: 196, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphAware Tests 3.1.4.50-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ tests ---
+[INFO] Surefire report directory: /root/workspace/graphaware/neo4j-framework/232769887/tests/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.graphaware.test.data.GraphgenPopulatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.446 sec
+Running com.graphaware.test.data.CypherPopulatorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.913 sec
+Running com.graphaware.test.data.CypherFilesPopulatorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.106 sec
+Running com.graphaware.test.unit.GraphUnitTest
+Nodes:
+(:Person {name: Michal})
+(:Person {name: Daniela})
+Relationships:
+(:Person {name: Michal})-[:FRIEND_OF]->(:Person {name: Daniela})
+Tests run: 49, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.498 sec
+
+Results :
+
+Tests run: 62, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphAware REST API 3.1.4.50-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/graphaware/neo4j-framework/232769887/api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/graphaware/neo4j-framework/232769887/api/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ api ---
+[INFO] Surefire report directory: /root/workspace/graphaware/neo4j-framework/232769887/api/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.graphaware.api.json.LongIdJsonNodeTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.435 sec
+Running com.graphaware.api.json.LongIdJsonRelationshipTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.762 sec
+Running com.graphaware.api.json.JsonGraphTest
+{"nodes":[{"properties":{"k1":"v1","k2":2},"labels":["L1","L2"],"id":0},{"properties":{},"labels":[],"id":1}],"relationships":[{"properties":{"k1":"v1","k2":2},"type":"R","id":0,"startNodeId":0,"endNodeId":1},{"properties":{"k1":"v2","k2":4},"type":"R2","id":1,"startNodeId":0,"endNodeId":1}]}
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.299 sec
+
+Results :
+
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphAware Database Writer API 3.1.4.50-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ writer-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/graphaware/neo4j-framework/232769887/writer-api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ writer-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ writer-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/graphaware/neo4j-framework/232769887/writer-api/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ writer-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ writer-api ---
+[INFO] No tests to run.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphAware Runtime 3.1.4.50-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ runtime-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/graphaware/neo4j-framework/232769887/runtime-api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ runtime-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ runtime-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/graphaware/neo4j-framework/232769887/runtime-api/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ runtime-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ runtime-api ---
+[INFO] No tests to run.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphAware Transaction Executor 3.1.4.50-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tx-executor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/graphaware/neo4j-framework/232769887/tx-executor/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ tx-executor ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ tx-executor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/graphaware/neo4j-framework/232769887/tx-executor/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ tx-executor ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ tx-executor ---
+[INFO] Surefire report directory: /root/workspace/graphaware/neo4j-framework/232769887/tx-executor/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.graphaware.tx.executor.batch.TransactionalInputTest
+Tests run: 4, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 9.947 sec <<< FAILURE!
+shouldReturnItemsInMultipleTransactions(com.graphaware.tx.executor.batch.TransactionalInputTest)  Time elapsed: 6.816 sec  <<< ERROR!
+org.neo4j.index.internal.gbptree.TreeInconsistencyException: Some internal problem causing out of bounds: pageId:-1
+	at org.neo4j.index.internal.gbptree.PageCursorUtil.checkOutOfBounds(PageCursorUtil.java:103)
+	at org.neo4j.index.internal.gbptree.SeekCursor.next(SeekCursor.java:519)
+	at org.neo4j.kernel.impl.index.labelscan.LabelScanValueIterator.fetchNext(LabelScanValueIterator.java:86)
+	at org.neo4j.collection.primitive.PrimitiveLongCollections$PrimitiveLongBaseIterator.hasNext(PrimitiveLongCollections.java:64)
+	at org.neo4j.collection.primitive.PrimitiveLongCollections$13.hasNext(PrimitiveLongCollections.java:734)
+	at org.neo4j.helpers.collection.ResourceClosingIterator.hasNext(ResourceClosingIterator.java:61)
+	at com.graphaware.tx.executor.input.TransactionalInput.fetchNextOrNull(TransactionalInput.java:74)
+	at org.neo4j.helpers.collection.PrefetchingIterator.peek(PrefetchingIterator.java:60)
+	at org.neo4j.helpers.collection.PrefetchingIterator.hasNext(PrefetchingIterator.java:46)
+	at com.graphaware.tx.executor.batch.TransactionalInputTest.shouldReturnItemsInMultipleTransactions(TransactionalInputTest.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+shouldReturnItemsInMultipleTransactions2(com.graphaware.tx.executor.batch.TransactionalInputTest)  Time elapsed: 1.278 sec  <<< ERROR!
+org.neo4j.index.internal.gbptree.TreeInconsistencyException: Some internal problem causing out of bounds: pageId:-1
+	at org.neo4j.index.internal.gbptree.PageCursorUtil.checkOutOfBounds(PageCursorUtil.java:103)
+	at org.neo4j.index.internal.gbptree.SeekCursor.next(SeekCursor.java:519)
+	at org.neo4j.kernel.impl.index.labelscan.LabelScanValueIterator.fetchNext(LabelScanValueIterator.java:86)
+	at org.neo4j.collection.primitive.PrimitiveLongCollections$PrimitiveLongBaseIterator.hasNext(PrimitiveLongCollections.java:64)
+	at org.neo4j.collection.primitive.PrimitiveLongCollections$13.hasNext(PrimitiveLongCollections.java:734)
+	at org.neo4j.helpers.collection.ResourceClosingIterator.hasNext(ResourceClosingIterator.java:61)
+	at com.graphaware.tx.executor.input.TransactionalInput.fetchNextOrNull(TransactionalInput.java:74)
+	at org.neo4j.helpers.collection.PrefetchingIterator.peek(PrefetchingIterator.java:60)
+	at org.neo4j.helpers.collection.PrefetchingIterator.hasNext(PrefetchingIterator.java:46)
+	at com.graphaware.tx.executor.batch.TransactionalInputTest.shouldReturnItemsInMultipleTransactions2(TransactionalInputTest.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+shouldReturnItemsInMultipleTransactions3(com.graphaware.tx.executor.batch.TransactionalInputTest)  Time elapsed: 1.53 sec  <<< ERROR!
+org.neo4j.index.internal.gbptree.TreeInconsistencyException: Some internal problem causing out of bounds: pageId:-1
+	at org.neo4j.index.internal.gbptree.PageCursorUtil.checkOutOfBounds(PageCursorUtil.java:103)
+	at org.neo4j.index.internal.gbptree.SeekCursor.next(SeekCursor.java:519)
+	at org.neo4j.kernel.impl.index.labelscan.LabelScanValueIterator.fetchNext(LabelScanValueIterator.java:86)
+	at org.neo4j.collection.primitive.PrimitiveLongCollections$PrimitiveLongBaseIterator.hasNext(PrimitiveLongCollections.java:64)
+	at org.neo4j.collection.primitive.PrimitiveLongCollections$13.hasNext(PrimitiveLongCollections.java:734)
+	at org.neo4j.helpers.collection.ResourceClosingIterator.hasNext(ResourceClosingIterator.java:61)
+	at com.graphaware.tx.executor.input.TransactionalInput.fetchNextOrNull(TransactionalInput.java:74)
+	at org.neo4j.helpers.collection.PrefetchingIterator.peek(PrefetchingIterator.java:60)
+	at org.neo4j.helpers.collection.PrefetchingIterator.hasNext(PrefetchingIterator.java:46)
+	at com.graphaware.tx.executor.batch.TransactionalInputTest.shouldReturnItemsInMultipleTransactions3(TransactionalInputTest.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.graphaware.tx.executor.batch.MultiThreadedBatchTransactionExecutorTest
+2017-05-16 20:17:32.593+0000 WARN [c.g.t.e.b.IterableInputBatchTransactionExecutor] Failed to execute 300 steps!
+2017-05-16 20:17:32.595+0000 WARN [c.g.t.e.b.IterableInputBatchTransactionExecutor] Failed to execute 200 steps!
+2017-05-16 20:17:32.602+0000 WARN [c.g.t.e.b.IterableInputBatchTransactionExecutor] Failed to execute 100 steps!
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.791 sec
+Running com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutorTest
+2017-05-16 20:17:32.838+0000 WARN [c.g.t.e.b.IterableInputBatchTransactionExecutor] Exception while producing input! Some internal problem causing out of bounds: pageId:-1
+org.neo4j.index.internal.gbptree.TreeInconsistencyException: Some internal problem causing out of bounds: pageId:-1
+	at org.neo4j.index.internal.gbptree.PageCursorUtil.checkOutOfBounds(PageCursorUtil.java:103)
+	at org.neo4j.index.internal.gbptree.SeekCursor.next(SeekCursor.java:519)
+	at org.neo4j.kernel.impl.index.labelscan.LabelScanValueIterator.fetchNext(LabelScanValueIterator.java:86)
+	at org.neo4j.collection.primitive.PrimitiveLongCollections$PrimitiveLongBaseIterator.hasNext(PrimitiveLongCollections.java:64)
+	at org.neo4j.collection.primitive.PrimitiveLongCollections$13.hasNext(PrimitiveLongCollections.java:734)
+	at org.neo4j.helpers.collection.ResourceClosingIterator.hasNext(ResourceClosingIterator.java:61)
+	at com.graphaware.tx.executor.input.TransactionalInput.fetchNextOrNull(TransactionalInput.java:74)
+	at org.neo4j.helpers.collection.PrefetchingIterator.peek(PrefetchingIterator.java:60)
+	at org.neo4j.helpers.collection.PrefetchingIterator.hasNext(PrefetchingIterator.java:46)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.lambda$populateQueue$0(IterableInputBatchTransactionExecutor.java:83)
+	at java.lang.Thread.run(Thread.java:745)
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.785 sec <<< FAILURE!
+iterorAcquiredInTransactionShouldBeProcessed(com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutorTest)  Time elapsed: 1.248 sec  <<< ERROR!
+org.neo4j.graphdb.NotFoundException: NODE[97] has no property with propertyKey="name".
+	at org.neo4j.kernel.impl.core.NodeProxy.getProperty(NodeProxy.java:470)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutorTest.iterorAcquiredInTransactionShouldBeProcessed(IterableInputBatchTransactionExecutorTest.java:143)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.neo4j.kernel.api.exceptions.PropertyNotFoundException: NODE[97] has no property with propertyKeyId=0.
+	at org.neo4j.kernel.impl.core.NodeProxy.getProperty(NodeProxy.java:461)
+	... 32 more
+
+Running com.graphaware.tx.executor.batch.DisposableBatchTransactionExecutorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.graphaware.tx.executor.batch.NoInputTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest
+2017-05-16 20:17:34.596+0000 WARN [c.g.t.e.s.SimpleTransactionExecutor] Runtime exception occurred during transaction execution. Testing exception
+java.lang.RuntimeException: Testing exception
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:124)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:112)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.lambda$processQueue$1(IterableInputBatchTransactionExecutor.java:116)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.doExecuteInTransaction(SimpleTransactionExecutor.java:69)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.executeInTransaction(SimpleTransactionExecutor.java:58)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.processQueue(IterableInputBatchTransactionExecutor.java:104)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.doExecute(IterableInputBatchTransactionExecutor.java:77)
+	at com.graphaware.tx.executor.batch.DisposableBatchTransactionExecutor.execute(DisposableBatchTransactionExecutor.java:35)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest.whenStepSometimesThrowsAnExceptionThenOnlySomeBatchesShouldBeSuccessful(NoInputBatchTransactionExecutorTest.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2017-05-16 20:17:34.598+0000 WARN [c.g.t.e.s.KeepCalmAndCarryOn] An exception occurred while executing transaction Testing exception
+java.lang.RuntimeException: Testing exception
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:124)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:112)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.lambda$processQueue$1(IterableInputBatchTransactionExecutor.java:116)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.doExecuteInTransaction(SimpleTransactionExecutor.java:69)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.executeInTransaction(SimpleTransactionExecutor.java:58)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.processQueue(IterableInputBatchTransactionExecutor.java:104)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.doExecute(IterableInputBatchTransactionExecutor.java:77)
+	at com.graphaware.tx.executor.batch.DisposableBatchTransactionExecutor.execute(DisposableBatchTransactionExecutor.java:35)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest.whenStepSometimesThrowsAnExceptionThenOnlySomeBatchesShouldBeSuccessful(NoInputBatchTransactionExecutorTest.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2017-05-16 20:17:34.603+0000 WARN [c.g.t.e.b.IterableInputBatchTransactionExecutor] Rolled back transaction for batch number 2
+2017-05-16 20:17:34.606+0000 WARN [c.g.t.e.b.IterableInputBatchTransactionExecutor] Failed to execute 3 steps!
+2017-05-16 20:17:34.788+0000 WARN [c.g.t.e.s.SimpleTransactionExecutor] Runtime exception occurred during transaction execution. Testing exception
+java.lang.RuntimeException: Testing exception
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:124)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:112)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.lambda$processQueue$1(IterableInputBatchTransactionExecutor.java:116)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.doExecuteInTransaction(SimpleTransactionExecutor.java:69)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.executeInTransaction(SimpleTransactionExecutor.java:58)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.processQueue(IterableInputBatchTransactionExecutor.java:104)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.doExecute(IterableInputBatchTransactionExecutor.java:77)
+	at com.graphaware.tx.executor.batch.DisposableBatchTransactionExecutor.execute(DisposableBatchTransactionExecutor.java:35)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest.whenStepSometimesThrowsAnExceptionThenOnlySomeBatchesShouldBeSuccessful2(NoInputBatchTransactionExecutorTest.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2017-05-16 20:17:34.789+0000 WARN [c.g.t.e.s.KeepCalmAndCarryOn] An exception occurred while executing transaction Testing exception
+java.lang.RuntimeException: Testing exception
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:124)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:112)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.lambda$processQueue$1(IterableInputBatchTransactionExecutor.java:116)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.doExecuteInTransaction(SimpleTransactionExecutor.java:69)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.executeInTransaction(SimpleTransactionExecutor.java:58)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.processQueue(IterableInputBatchTransactionExecutor.java:104)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.doExecute(IterableInputBatchTransactionExecutor.java:77)
+	at com.graphaware.tx.executor.batch.DisposableBatchTransactionExecutor.execute(DisposableBatchTransactionExecutor.java:35)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest.whenStepSometimesThrowsAnExceptionThenOnlySomeBatchesShouldBeSuccessful2(NoInputBatchTransactionExecutorTest.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2017-05-16 20:17:34.790+0000 WARN [c.g.t.e.b.IterableInputBatchTransactionExecutor] Rolled back transaction for batch number 2
+2017-05-16 20:17:34.790+0000 WARN [c.g.t.e.s.SimpleTransactionExecutor] Runtime exception occurred during transaction execution. Testing exception
+java.lang.RuntimeException: Testing exception
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:124)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:112)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.lambda$processQueue$1(IterableInputBatchTransactionExecutor.java:116)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.doExecuteInTransaction(SimpleTransactionExecutor.java:69)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.executeInTransaction(SimpleTransactionExecutor.java:58)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.processQueue(IterableInputBatchTransactionExecutor.java:104)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.doExecute(IterableInputBatchTransactionExecutor.java:77)
+	at com.graphaware.tx.executor.batch.DisposableBatchTransactionExecutor.execute(DisposableBatchTransactionExecutor.java:35)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest.whenStepSometimesThrowsAnExceptionThenOnlySomeBatchesShouldBeSuccessful2(NoInputBatchTransactionExecutorTest.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2017-05-16 20:17:34.791+0000 WARN [c.g.t.e.s.KeepCalmAndCarryOn] An exception occurred while executing transaction Testing exception
+java.lang.RuntimeException: Testing exception
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:124)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest$ExceptionThrowingUnitOfWork.execute(NoInputBatchTransactionExecutorTest.java:112)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.lambda$processQueue$1(IterableInputBatchTransactionExecutor.java:116)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.doExecuteInTransaction(SimpleTransactionExecutor.java:69)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.executeInTransaction(SimpleTransactionExecutor.java:58)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.processQueue(IterableInputBatchTransactionExecutor.java:104)
+	at com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutor.doExecute(IterableInputBatchTransactionExecutor.java:77)
+	at com.graphaware.tx.executor.batch.DisposableBatchTransactionExecutor.execute(DisposableBatchTransactionExecutor.java:35)
+	at com.graphaware.tx.executor.batch.NoInputBatchTransactionExecutorTest.whenStepSometimesThrowsAnExceptionThenOnlySomeBatchesShouldBeSuccessful2(NoInputBatchTransactionExecutorTest.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+2017-05-16 20:17:34.791+0000 WARN [c.g.t.e.b.IterableInputBatchTransactionExecutor] Rolled back transaction for batch number 4
+2017-05-16 20:17:34.892+0000 WARN [c.g.t.e.b.IterableInputBatchTransactionExecutor] Failed to execute 2 steps!
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.942 sec
+Running com.graphaware.tx.executor.single.SimpleTransactionExecutorTest
+2017-05-16 20:17:35.508+0000 WARN [c.g.t.e.s.RethrowException] An exception occurred while executing transaction Cannot delete node<0>, because it still has relationships. To delete this node, you must first delete its relationships.
+org.neo4j.graphdb.ConstraintViolationException: Cannot delete node<0>, because it still has relationships. To delete this node, you must first delete its relationships.
+	at org.neo4j.kernel.impl.coreapi.TopLevelTransaction.close(TopLevelTransaction.java:92)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.doExecuteInTransaction(SimpleTransactionExecutor.java:80)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.executeInTransaction(SimpleTransactionExecutor.java:58)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.executeInTransaction(SimpleTransactionExecutor.java:48)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutorTest.deletingNodeWithRelationshipsShouldThrowException(SimpleTransactionExecutorTest.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.neo4j.kernel.api.exceptions.ConstraintViolationTransactionFailureException: Cannot delete node<0>, because it still has relationships. To delete this node, you must first delete its relationships.
+	at org.neo4j.kernel.impl.transaction.state.IntegrityValidator.validateNodeRecord(IntegrityValidator.java:54)
+	at org.neo4j.kernel.impl.transaction.state.TransactionRecordState.extractCommands(TransactionRecordState.java:167)
+	at org.neo4j.kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine.createCommands(RecordStorageEngine.java:329)
+	at org.neo4j.kernel.impl.api.KernelTransactionImplementation.commit(KernelTransactionImplementation.java:552)
+	at org.neo4j.kernel.impl.api.KernelTransactionImplementation.closeTransaction(KernelTransactionImplementation.java:459)
+	at org.neo4j.kernel.api.KernelTransaction.close(KernelTransaction.java:138)
+	at org.neo4j.kernel.impl.coreapi.TopLevelTransaction.close(TopLevelTransaction.java:80)
+	... 36 more
+2017-05-16 20:17:36.035+0000 WARN [c.g.t.e.s.KeepCalmAndCarryOn] An exception occurred while executing transaction Cannot delete node<0>, because it still has relationships. To delete this node, you must first delete its relationships.
+org.neo4j.graphdb.ConstraintViolationException: Cannot delete node<0>, because it still has relationships. To delete this node, you must first delete its relationships.
+	at org.neo4j.kernel.impl.coreapi.TopLevelTransaction.close(TopLevelTransaction.java:92)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.doExecuteInTransaction(SimpleTransactionExecutor.java:80)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutor.executeInTransaction(SimpleTransactionExecutor.java:58)
+	at com.graphaware.tx.executor.single.SimpleTransactionExecutorTest.deletingNodeWithRelationshipsShouldNotSucceed(SimpleTransactionExecutorTest.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.neo4j.kernel.api.exceptions.ConstraintViolationTransactionFailureException: Cannot delete node<0>, because it still has relationships. To delete this node, you must first delete its relationships.
+	at org.neo4j.kernel.impl.transaction.state.IntegrityValidator.validateNodeRecord(IntegrityValidator.java:54)
+	at org.neo4j.kernel.impl.transaction.state.TransactionRecordState.extractCommands(TransactionRecordState.java:167)
+	at org.neo4j.kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine.createCommands(RecordStorageEngine.java:329)
+	at org.neo4j.kernel.impl.api.KernelTransactionImplementation.commit(KernelTransactionImplementation.java:552)
+	at org.neo4j.kernel.impl.api.KernelTransactionImplementation.closeTransaction(KernelTransactionImplementation.java:459)
+	at org.neo4j.kernel.api.KernelTransaction.close(KernelTransaction.java:138)
+	at org.neo4j.kernel.impl.coreapi.TopLevelTransaction.close(TopLevelTransaction.java:80)
+	... 34 more
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.675 sec
+
+Results :
+
+Tests in error: 
+  shouldReturnItemsInMultipleTransactions(com.graphaware.tx.executor.batch.TransactionalInputTest): Some internal problem causing out of bounds: pageId:-1
+  shouldReturnItemsInMultipleTransactions2(com.graphaware.tx.executor.batch.TransactionalInputTest): Some internal problem causing out of bounds: pageId:-1
+  shouldReturnItemsInMultipleTransactions3(com.graphaware.tx.executor.batch.TransactionalInputTest): Some internal problem causing out of bounds: pageId:-1
+  iterorAcquiredInTransactionShouldBeProcessed(com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutorTest): NODE[97] has no property with propertyKey="name".
+
+Tests run: 23, Failures: 0, Errors: 4, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] GraphAware Neo4j Framework Parent POM .............. SUCCESS [  0.058 s]
+[INFO] GraphAware Neo4j Framework ......................... SUCCESS [  0.000 s]
+[INFO] GraphAware Common .................................. SUCCESS [ 19.085 s]
+[INFO] GraphAware Tests ................................... SUCCESS [ 19.594 s]
+[INFO] GraphAware REST API ................................ SUCCESS [  7.967 s]
+[INFO] GraphAware Database Writer API ..................... SUCCESS [  0.023 s]
+[INFO] GraphAware Runtime ................................. SUCCESS [  0.033 s]
+[INFO] GraphAware Transaction Executor .................... FAILURE [ 14.654 s]
+[INFO] GraphAware Database Writer ......................... SKIPPED
+[INFO] GraphAware Transaction API ......................... SKIPPED
+[INFO] GraphAware Runtime ................................. SKIPPED
+[INFO] GraphAware Server .................................. SKIPPED
+[INFO] GraphAware Build ................................... SKIPPED
+[INFO] GraphAware Framework Build ......................... SKIPPED
+[INFO] GraphAware Framework Server Build .................. SKIPPED
+[INFO] GraphAware Neo4j Module ............................ SKIPPED
+[INFO] GraphAware Node Counter ............................ SKIPPED
+[INFO] GraphAware Node Streaming Example .................. SKIPPED
+[INFO] GraphAware Friendship Strength Counter ............. SKIPPED
+[INFO] GraphAware Change Logger ........................... SKIPPED
+[INFO] GraphAware Friendship Strength Counter Runtime Module SKIPPED
+[INFO] GraphAware Neo4j Performance Test Examples ......... SKIPPED
+[INFO] GraphAware Neo4j Integration Test Examples ......... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:02 min
+[INFO] Finished at: 2017-05-16T22:17:36+02:00
+[INFO] Final Memory: 35M/562M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project tx-executor: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/graphaware/neo4j-framework/232769887/tx-executor/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :tx-executor

@@ -1,0 +1,61 @@
+{
+  "totalNumberSkippingTests": 1,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 4,
+  "repo": "graphaware/neo4j-framework",
+  "bugCommit": "https://github.com/graphaware/neo4j-framework/compare/7f51aa692f9d...c34ceb9f4035",
+  "failingModule": "/root/workspace/graphaware/neo4j-framework/232769887/tx-executor",
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "org.neo4j.index.internal.gbptree.TreeInconsistencyException",
+    "org.neo4j.graphdb.NotFoundException"
+  ],
+  "totalNumberRunningTests": 290,
+  "failing-test-cases": [
+    {
+      "className": "com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutorTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphaware.tx.executor.batch.IterableInputBatchTransactionExecutorTest#iterorAcquiredInTransactionShouldBeProcessed"
+      ],
+      "failures": [
+        {
+          "failureName": "org.neo4j.graphdb.NotFoundException",
+          "failureDetail": "NODE[97] has no property with propertyKey\u003d\"name\".",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.graphaware.tx.executor.batch.TransactionalInputTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphaware.tx.executor.batch.TransactionalInputTest#shouldReturnItemsInMultipleTransactions",
+        "com.graphaware.tx.executor.batch.TransactionalInputTest#shouldReturnItemsInMultipleTransactions2",
+        "com.graphaware.tx.executor.batch.TransactionalInputTest#shouldReturnItemsInMultipleTransactions3"
+      ],
+      "failures": [
+        {
+          "failureName": "org.neo4j.index.internal.gbptree.TreeInconsistencyException",
+          "failureDetail": "Some internal problem causing out of bounds: pageId:-1",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.index.internal.gbptree.TreeInconsistencyException",
+          "failureDetail": "Some internal problem causing out of bounds: pageId:-1",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.index.internal.gbptree.TreeInconsistencyException",
+          "failureDetail": "Some internal problem causing out of bounds: pageId:-1",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    }
+  ]
+}
