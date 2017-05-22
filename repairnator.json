@@ -1,0 +1,121 @@
+{
+  "totalNumberSkippingTests": 6,
+  "bugType": "failing_passing",
+  "totalNumberErroringTests": 8,
+  "repo": "kermitt2/grobid",
+  "bugCommit": "https://github.com/kermitt2/grobid/compare/cf695678feec...ea1d58644cf8",
+  "failingModule": "/root/workspace/kermitt2/grobid/234871526/grobid-core",
+  "hostname": "repairnator",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "org.grobid.core.exceptions.GrobidException",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 215,
+  "failing-test-cases": [
+    {
+      "className": "org.grobid.core.test.TestReferencesParser",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.grobid.core.test.TestReferencesParser#testReferences"
+      ],
+      "failures": [
+        {
+          "failureName": "org.grobid.core.exceptions.GrobidException",
+          "failureDetail": "[PDF2XML_CONVERSION_FAILURE] PDF to XML conversion failed on pdf file ./src/test/resources/test/Wang-paperAVE2008.pdf due to: bash: /root/workspace/kermitt2/grobid/234871526/grobid-home/pdf2xml/lin-64/pdftoxml: Permission denied\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.grobid.core.engines.SegmentationTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.grobid.core.engines.SegmentationTest#testGetAllLinesFeatures_SimpleDocument_shouldWork",
+        "org.grobid.core.engines.SegmentationTest#testPrepareDocument_SimpleDocument_shouldWork"
+      ],
+      "failures": [
+        {
+          "failureName": "org.grobid.core.exceptions.GrobidException",
+          "failureDetail": "[PDF2XML_CONVERSION_FAILURE] PDF to XML conversion failed on pdf file /root/workspace/kermitt2/grobid/234871526/grobid-core/target/test-classes/org/grobid/core/engines/samplePdf.segmentation.pdf due to: bash: /root/workspace/kermitt2/grobid/234871526/grobid-home/pdf2xml/lin-64/pdftoxml: Permission denied\n",
+          "isError": true
+        },
+        {
+          "failureName": "org.grobid.core.exceptions.GrobidException",
+          "failureDetail": "[PDF2XML_CONVERSION_FAILURE] PDF to XML conversion failed on pdf file /root/workspace/kermitt2/grobid/234871526/grobid-core/target/test-classes/org/grobid/core/engines/samplePdf.segmentation.pdf ",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.grobid.core.sax.PDF2XMLSaxParserTest",
+      "failingMethods": [
+        "org.grobid.core.sax.PDF2XMLSaxParserTest#testParsing_pdf2XMLwithIMages_ShouldWork"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: is \u003c17\u003e\n     but: was \u003c0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.grobid.core.test.TestHeaderParser",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.grobid.core.test.TestHeaderParser#testTrainingHeader",
+        "org.grobid.core.test.TestHeaderParser#testSegmentationHeader",
+        "org.grobid.core.test.TestHeaderParser#testHeaderHeader"
+      ],
+      "failures": [
+        {
+          "failureName": "org.grobid.core.exceptions.GrobidException",
+          "failureDetail": "[PDF2XML_CONVERSION_FAILURE] org.grobid.core.exceptions.GrobidException: [PDF2XML_CONVERSION_FAILURE] PDF to XML conversion failed on pdf file ./src/test/resources/test/Wang-paperAVE2008.pdf ",
+          "isError": true
+        },
+        {
+          "failureName": "org.grobid.core.exceptions.GrobidException",
+          "failureDetail": "[PDF2XML_CONVERSION_FAILURE] PDF to XML conversion failed on pdf file ./src/test/resources/test/Wang-paperAVE2008.pdf ",
+          "isError": true
+        },
+        {
+          "failureName": "org.grobid.core.exceptions.GrobidException",
+          "failureDetail": "[GENERAL] An exception occurred while running Grobid.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.grobid.core.test.TestFullTextParser",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.grobid.core.test.TestFullTextParser#testFullTextTrainingParser",
+        "org.grobid.core.test.TestFullTextParser#testFullTextParser"
+      ],
+      "failures": [
+        {
+          "failureName": "org.grobid.core.exceptions.GrobidException",
+          "failureDetail": "[PDF2XML_CONVERSION_FAILURE] PDF to XML conversion failed on pdf file ./src/test/resources/test/Wang-paperAVE2008.pdf due to: bash: /root/workspace/kermitt2/grobid/234871526/grobid-home/pdf2xml/lin-64/pdftoxml: Permission denied\n",
+          "isError": true
+        },
+        {
+          "failureName": "org.grobid.core.exceptions.GrobidException",
+          "failureDetail": "[GENERAL] An exception occured while running Grobid training data generation for full text.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    }
+  ]
+}
