@@ -1,0 +1,280 @@
+[[api-guide]]
+= REST API Guide
+
+[partintro]
+--
+In this section you will learn all about the Spring Cloud Data Flow REST API.
+--
+
+[[api-guide-overview]]
+== Overview
+
+Spring Cloud Data Flow provides a  REST API allowing you to access all aspects of
+the server. In fact the Spring Cloud Data Flow Shell is a first-class consumer of
+that API.
+
+TIP: If you plan on using the REST API using Java, please also consider using the
+provided Java client (DataflowTemplate) that uses the REST API internally.
+
+[[api-guide-overview-http-verbs]]
+=== HTTP verbs
+
+Spring Cloud Data Flow tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP verbs.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PUT`
+| Used to update an existing resource, including partial updates. Also used for
+resources that imply the concept of `restarts` such as Tasks.
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[api-guide-overview-http-status-codes]]
+=== HTTP status codes
+
+RESTful note tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `201 Created`
+| A new resource has been created successfully. The resource's URI is available from the response's `Location` header
+
+| `204 No Content`
+| An update to an existing resource has been applied successfully
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information
+
+| `404 Not Found`
+| The requested resource did not exist
+
+| `409 Conflict`
+| The requested resource already exists, e.g. the task already exists or the stream
+was already being deployed
+
+| `422 Unprocessable Entity`
+| Returned in cases the Job Execution cannot be stopped or restarted
+
+|===
+
+[[api-guide-overview-headers]]
+=== Headers
+
+Every response has the following header(s):
+
+include::{snippets}/api-documentation/headers/response-headers.adoc[]
+
+[[api-guide-overview-errors]]
+=== Errors
+
+include::{snippets}/api-documentation/errors/response-fields.adoc[]
+
+[[api-guide-overview-hypermedia]]
+=== Hypermedia
+
+Spring Cloud Data Flow uses hypermedia and resources include links to other resources
+in their responses. Responses are in http://stateless.co/hal_specification.html[Hypertext Application from resource to resource Language (HAL)] format. Links can be found beneath the `_links` key. Users of the API should not create URIs themselves, instead they should use the above-described links to navigate.
+
+[[api-guide-resources]]
+== Resources
+
+[[api-guide-resources-index]]
+=== Index
+
+The index provides the entry point into Spring Cloud Data Flow's REST API.
+
+[[api-guide-resources-index-access]]
+==== Accessing the index
+
+A `GET` request is used to access the index
+
+===== Request structure
+
+include::{snippets}/api-documentation/index/http-request.adoc[]
+
+===== Example request
+
+include::{snippets}/api-documentation/index/curl-request.adoc[]
+
+===== Response structure
+
+include::{snippets}/api-documentation/index/response-fields.adoc[]
+
+===== Example response
+
+include::{snippets}/api-documentation/index/http-response.adoc[]
+
+[[api-guide-resources-index-links]]
+===== Links
+
+The main element of the index are the links as they allow you to traverse the API
+and execute the desired functionality:
+
+include::{snippets}/api-documentation/index/links.adoc[]
+
+[[resources-about]]
+=== Server Meta Information
+
+==== Retrieving information about the server
+A `GET` request will return meta information for Spring Cloud Data Flow. This includes:
+
+* Runtime Environment Information
+* Information regarding which features are enabled
+* Dependency information of Spring Cloud Data Flow Server
+* Security information
+
+===== Request structure
+
+include::{snippets}/about-documentation/get-meta-information/http-request.adoc[]
+
+===== Example request
+
+include::{snippets}/about-documentation/get-meta-information/curl-request.adoc[]
+
+===== Response structure
+
+include::{snippets}/about-documentation/get-meta-information/http-response.adoc[]
+
+=== Registered Applications
+
+[[resources-app-registry-list]]
+==== Listing Applications
+A `GET` request will list all applications known to Spring Cloud Data Flow.
+
+===== Request structure
+
+include::{snippets}/app-registry-documentation/get-applications-filtered/http-request.adoc[]
+
+===== Request parameters
+
+include::{snippets}/app-registry-documentation/get-applications-filtered/request-parameters.adoc[]
+
+===== Example request
+
+include::{snippets}/app-registry-documentation/get-applications-filtered/curl-request.adoc[]
+
+===== Response structure
+
+include::{snippets}/app-registry-documentation/get-applications-filtered/http-response.adoc[]
+
+[[api-guide-resources-stream-definitions]]
+=== Stream Definitions
+
+==== Example "stream create" request for a `ticktock` stream
+
+[source,bash]
+----
+curl -X POST -d "name=ticktock&definition=time | log" localhost:9393/streams/definitions?deploy=false
+----
+
+
+[[api-guide-resources-stream-deployments]]
+=== Stream Deployments
+
+==== Example "stream deploy" request for a `ticktock` stream
+
+[source,bash]
+----
+curl -X POST http://localhost:9393/streams/deployments/ticktock
+----
+
+=== Task Definitions
+
+==== Creating a new Task Definition
+Creating a task definition is achieved by POSTing to the task definitions endpoint.
+
+===== Request structure
+
+include::{snippets}/task-definitions-documentation/create-definition/http-request.adoc[]
+
+===== Request parameters
+
+include::{snippets}/task-definitions-documentation/create-definition/request-parameters.adoc[]
+
+===== Example request
+
+include::{snippets}/task-definitions-documentation/create-definition/curl-request.adoc[]
+
+===== Response structure
+
+include::{snippets}/task-definitions-documentation/create-definition/http-response.adoc[]
+
+
+=== Task Launch
+
+==== Launching a Task
+Launching a task is done by requesting the creation of a new Task Execution.
+
+===== Request structure
+
+include::{snippets}/task-executions-documentation/launch-task/http-request.adoc[]
+
+===== Request parameters
+
+include::{snippets}/task-executions-documentation/launch-task/request-parameters.adoc[]
+
+===== Example request
+
+include::{snippets}/task-executions-documentation/launch-task/curl-request.adoc[]
+
+===== Response structure
+
+include::{snippets}/task-executions-documentation/launch-task/http-response.adoc[]
+
+[[resources-metrics-stream-applications]]
+=== Metrics for Stream Applications
+
+This REST endpoint exposes metrics for stream applications. This REST enpoint requires
+the https://github.com/spring-cloud/spring-cloud-dataflow-metrics-collector[Metrics Collector]
+application to be running as a separate service. If not running, this endpoint will
+return an empty response.
+
+NOTE: In order to learn more about the Metrics Collector, please also refer to chapter
+<<configuration-monitoring-deployed-applications>>
+
+==== Request structure
+
+For example, a typical request may look like:
+
+include::{snippets}/metrics-for-stream-apps-without-collector-documentation/get-metrics-without-collector-running/http-request.adoc[]
+
+==== Example request
+
+include::{snippets}/metrics-for-stream-apps-without-collector-documentation/get-metrics-without-collector-running/curl-request.adoc[]
+
+==== Response structure
+
+This REST endpoint uses https://github.com/Netflix/Hystrix[Hystrix] via the
+https://github.com/spring-cloud/spring-cloud-netflix[Spring Cloud Netflix] project
+under the covers to make a proxy HTTP request to the Metrics Collector.
+
+==== Example response
+
+Therefore, the endpoint will not generate an error in case the
+Metrics Collector is not running, but rather gracefully degrade and return an
+empty response such as the following:
+
+include::{snippets}/metrics-for-stream-apps-without-collector-documentation/get-metrics-without-collector-running/http-response.adoc[]
+
+However, if metrics are being collected and the Metrics Collector is running you
+should see a response similar to the listing below. The metrics data returned in
+the listing below is based on the example stream definition created
+in chapter <<configuration-monitoring-deployed-applications>> `time | log` with
+two instances of each application deployed.
+
+include::{snippets}/metrics-for-stream-apps-documentation/get-metrics-with-collector-running/http-response.adoc[]
+
+
