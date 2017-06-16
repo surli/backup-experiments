@@ -1,0 +1,295 @@
+{
+  "totalNumberSkippingTests": 6,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "dangdangdotcom/sharding-jdbc",
+  "bugCommit": "https://github.com/dangdangdotcom/sharding-jdbc/compare/93cc8be38b23...c9795ab38a38",
+  "failingModule": "/root/workspace/dangdangdotcom/sharding-jdbc/243603888/sharding-jdbc-core",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 31,
+  "error-types": [
+    "junit.framework.ComparisonFailure",
+    "skipped"
+  ],
+  "totalNumberRunningTests": 1047,
+  "failing-test-cases": [
+    {
+      "className": "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.statement.StaticShardingBothForStatementWithSelectTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.statement.StaticShardingBothForStatementWithSelectTest#assertSelectLimitWithBindingTable",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.statement.StaticShardingBothForStatementWithSelectTest#assertSelectGlobalTableLacking",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.statement.StaticShardingBothForStatementWithSelectTest#assertSelectWithBindingTableAndConfigTable",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.statement.StaticShardingBothForStatementWithSelectTest#assertSelectGroupByWithoutGroupedColumn",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.statement.StaticShardingBothForStatementWithSelectTest#assertSelectGlobalTableWithDatabaseName"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order_item) expected:\u003c[[items_count, user_id]]\u003e but was:\u003c[[GROUP_BY_DERIVED_0, items_count]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.dangdang.ddframe.rdb.integrate.db.statement.ShardingDatabaseOnlyForStatementWithSelectTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.rdb.integrate.db.statement.ShardingDatabaseOnlyForStatementWithSelectTest#assertSelectGroupByWithoutGroupedColumn",
+        "com.dangdang.ddframe.rdb.integrate.db.statement.ShardingDatabaseOnlyForStatementWithSelectTest#assertSelectOrderByWithAlias",
+        "com.dangdang.ddframe.rdb.integrate.db.statement.ShardingDatabaseOnlyForStatementWithSelectTest#assertSelectNoShardingTable",
+        "com.dangdang.ddframe.rdb.integrate.db.statement.ShardingDatabaseOnlyForStatementWithSelectTest#assertSelectLimitWithBindingTable",
+        "com.dangdang.ddframe.rdb.integrate.db.statement.ShardingDatabaseOnlyForStatementWithSelectTest#assertSelectLimitWithBindingTableWithoutOffset"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order) expected:\u003c[[order_id], status, user_id]\u003e but was:\u003c[[ORDER_ID_ALIAS], status, user_id]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order_item) expected:\u003c[[items_count, user_id]]\u003e but was:\u003c[[GROUP_BY_DERIVED_0, items_count]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.dangdang.ddframe.rdb.integrate.tbl.pstatement.ShardingTablesOnlyForPreparedStatementWithSelectTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.rdb.integrate.tbl.pstatement.ShardingTablesOnlyForPreparedStatementWithSelectTest#assertSelectNoShardingTable",
+        "com.dangdang.ddframe.rdb.integrate.tbl.pstatement.ShardingTablesOnlyForPreparedStatementWithSelectTest#assertSelectLimitWithBindingTableWithoutOffset",
+        "com.dangdang.ddframe.rdb.integrate.tbl.pstatement.ShardingTablesOnlyForPreparedStatementWithSelectTest#assertSelectLimitWithBindingTable",
+        "com.dangdang.ddframe.rdb.integrate.tbl.pstatement.ShardingTablesOnlyForPreparedStatementWithSelectTest#assertSelectGroupByWithoutGroupedColumn",
+        "com.dangdang.ddframe.rdb.integrate.tbl.pstatement.ShardingTablesOnlyForPreparedStatementWithSelectTest#assertSelectWithBindingTableAndConfigTable"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order_item) expected:\u003c[[items_count, user_id]]\u003e but was:\u003c[[GROUP_BY_DERIVED_0, items_count]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.dangdang.ddframe.rdb.integrate.masterslave.pstatement.ShardingMasterSlaveForPStatementWithSelectTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.rdb.integrate.masterslave.pstatement.ShardingMasterSlaveForPStatementWithSelectTest#assertSelectGroupByWithoutGroupedColumn",
+        "com.dangdang.ddframe.rdb.integrate.masterslave.pstatement.ShardingMasterSlaveForPStatementWithSelectTest#assertSelectLimitWithBindingTableWithoutOffset",
+        "com.dangdang.ddframe.rdb.integrate.masterslave.pstatement.ShardingMasterSlaveForPStatementWithSelectTest#assertSelectLimitWithBindingTable"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order_item) expected:\u003c[[items_count, user_id]]\u003e but was:\u003c[[GROUP_BY_DERIVED_0, items_count]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.dangdang.ddframe.rdb.integrate.tbl.statement.ShardingTablesOnlyForStatementWithSelectTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.rdb.integrate.tbl.statement.ShardingTablesOnlyForStatementWithSelectTest#assertSelectGroupByWithoutGroupedColumn",
+        "com.dangdang.ddframe.rdb.integrate.tbl.statement.ShardingTablesOnlyForStatementWithSelectTest#assertSelectWithBindingTableAndConfigTable",
+        "com.dangdang.ddframe.rdb.integrate.tbl.statement.ShardingTablesOnlyForStatementWithSelectTest#assertSelectLimitWithBindingTable"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order_item) expected:\u003c[[items_count, user_id]]\u003e but was:\u003c[[GROUP_BY_DERIVED_0, items_count]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.dangdang.ddframe.rdb.integrate.masterslave.statement.ShardingMasterSlaveForStatementWithSelectTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.rdb.integrate.masterslave.statement.ShardingMasterSlaveForStatementWithSelectTest#assertSelectLimitWithBindingTable",
+        "com.dangdang.ddframe.rdb.integrate.masterslave.statement.ShardingMasterSlaveForStatementWithSelectTest#assertSelectGroupByWithoutGroupedColumn"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order_item) expected:\u003c[[items_count, user_id]]\u003e but was:\u003c[[GROUP_BY_DERIVED_0, items_count]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithSelectTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithSelectTest#assertSelectWithBindingTableAndConfigTable",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithSelectTest#assertSelectLimitWithBindingTable",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithSelectTest#assertSelectGroupByWithoutGroupedColumn",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithSelectTest#assertSelectLimitWithBindingTableWithoutOffset",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithSelectTest#assertSelectNoShardingTable"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order_item) expected:\u003c[[items_count, user_id]]\u003e but was:\u003c[[GROUP_BY_DERIVED_0, items_count]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.dangdang.ddframe.rdb.integrate.db.pstatement.ShardingDatabaseOnlyForPreparedStatementWithSelectTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.rdb.integrate.db.pstatement.ShardingDatabaseOnlyForPreparedStatementWithSelectTest#assertSelectLimitWithBindingTable",
+        "com.dangdang.ddframe.rdb.integrate.db.pstatement.ShardingDatabaseOnlyForPreparedStatementWithSelectTest#assertSelectGroupByWithoutGroupedColumn",
+        "com.dangdang.ddframe.rdb.integrate.db.pstatement.ShardingDatabaseOnlyForPreparedStatementWithSelectTest#assertSelectLimitWithBindingTableWithoutOffset",
+        "com.dangdang.ddframe.rdb.integrate.db.pstatement.ShardingDatabaseOnlyForPreparedStatementWithSelectTest#assertSelectOrderByWithAlias",
+        "com.dangdang.ddframe.rdb.integrate.db.pstatement.ShardingDatabaseOnlyForPreparedStatementWithSelectTest#assertSelectNoShardingTable"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order) expected:\u003c[[order_id], status, user_id]\u003e but was:\u003c[[ORDER_ID_ALIAS], status, user_id]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order_item) expected:\u003c[[items_count, user_id]]\u003e but was:\u003c[[GROUP_BY_DERIVED_0, items_count]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column count (table\u003dt_order_item, expectedColCount\u003d4, actualColCount\u003d5) expected:\u003c[item_id, []order_id, status, us...\u003e but was:\u003c[item_id, [ORDER_BY_DERIVED_0, ]order_id, status, us...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    }
+  ]
+}
