@@ -1,0 +1,87 @@
+{
+  "totalNumberSkippingTests": 6,
+  "bugType": "failing_passing",
+  "totalNumberErroringTests": 2,
+  "repo": "dangdangdotcom/sharding-jdbc",
+  "bugCommit": "https://github.com/dangdangdotcom/sharding-jdbc/compare/5ee2366b2b0e...014aa82bef56",
+  "failingModule": "/root/workspace/dangdangdotcom/sharding-jdbc/249877363/sharding-jdbc-core",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 6,
+  "error-types": [
+    "com.dangdang.ddframe.rdb.sharding.parsing.parser.exception.SQLParsingException",
+    "junit.framework.ComparisonFailure"
+  ],
+  "totalNumberRunningTests": 1048,
+  "failing-test-cases": [
+    {
+      "className": "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithGroupByTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithGroupByTest#assertSelectSum"
+      ],
+      "erroringMethods": [
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithGroupByTest#assertSelectOrderByDesc"
+      ],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "row count (table\u003dt_order) expected:\u003c1[0]\u003e but was:\u003c1[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "com.dangdang.ddframe.rdb.sharding.parsing.parser.exception.SQLParsingException",
+          "failureDetail": "SQL syntax error, expected token is \u0027AND\u0027, actual token is \u0027IDENTIFIER\u0027, literals is \u0027s\u0027.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithAggregateTest",
+      "failingMethods": [
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithAggregateTest#assertSelectMax",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithAggregateTest#assertSelectAvg",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithAggregateTest#assertSelectMin",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithAggregateTest#assertSelectSum",
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithAggregateTest#assertSelectCount"
+      ],
+      "erroringMethods": [
+        "com.dangdang.ddframe.rdb.integrate.dbtbl.statically.pstatement.StaticShardingBothForPStatementWithAggregateTest#assertSelectCountWithBindingTable"
+      ],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order) expected:\u003c[[orders_count]]\u003e but was:\u003c[[COUNT(*)]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "com.dangdang.ddframe.rdb.sharding.parsing.parser.exception.SQLParsingException",
+          "failureDetail": "SQL syntax error, expected token is \u0027AND\u0027, actual token is \u0027IDENTIFIER\u0027, literals is \u0027s\u0027.",
+          "isError": true
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order) expected:\u003c[AVG[_DERIVED_COUNT_0, AVG_DERIVED_SUM_0, user_id_avg]]\u003e but was:\u003c[AVG[(\"user_id\"), AVG_DERIVED_COUNT_0, AVG_DERIVED_SUM_0]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order) expected:\u003c[[max_user_id]]\u003e but was:\u003c[[MAX(\"user_id\")]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order) expected:\u003c[[min_user_id]]\u003e but was:\u003c[[MIN(\"user_id\")]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "column mismatch (table\u003dt_order) expected:\u003c[[user_id_sum]]\u003e but was:\u003c[[SUM(\"user_id\")]]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 1
+    }
+  ]
+}
