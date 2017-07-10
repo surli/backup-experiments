@@ -1,0 +1,280 @@
+{
+  "totalNumberSkippingTests": 1,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "IDPF/epubcheck",
+  "failingModule": "/root/workspace/IDPF/epubcheck/251827224",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 34,
+  "error-types": [
+    "junit.framework.AssertionFailedError",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 980,
+  "failing-test-cases": [
+    {
+      "className": "com.adobe.epubcheck.ocf.OCFCheckerTest",
+      "failingMethods": [
+        "com.adobe.epubcheck.ocf.OCFCheckerTest#testLoremSVG30",
+        "com.adobe.epubcheck.ocf.OCFCheckerTest#testLoremHyperlink30"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c0\u003e but was:\u003c3\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c0\u003e but was:\u003c3\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.adobe.epubcheck.test.opf_Test",
+      "failingMethods": [
+        "com.adobe.epubcheck.test.opf_Test#viewport_Test"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.AssertionFailedError",
+          "failureDetail": "Outputted json isn\u0027t as expected.  Values do not match(/checker/nError) Expected: 3 Actual: 4  The number of elements in the array do not match.(/messages) Expected: 8 Actual: 9  expected:\u003c0\u003e but was:\u003c2\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.adobe.epubcheck.test.xhtml_Test",
+      "failingMethods": [
+        "com.adobe.epubcheck.test.xhtml_Test#html5_deprecated_epub3Test",
+        "com.adobe.epubcheck.test.xhtml_Test#hyperlinksTest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.AssertionFailedError",
+          "failureDetail": "Outputted json isn\u0027t as expected.  Values do not match(/checker/nError) Expected: 7 Actual: 8  Values do not match(/messages[12]/ID) Expected: \"RSC-007\" Actual: \"RSC-005\"  Values do not match(/messages[12]/message) Expected: \"Referenced resource \u0027OPS/\u0027 could not be found in the EPUB.\" Actual: \"Error while parsing file: element \\\"svg\\\" not allowed here; expected the element end-tag, text or element \\\"ns1:switch\\\", \\\"ns1:trigger\\\", \\\"ns2:math\\\", \\\"ns3:a\\\", \\\"ns3:abbr\\\", \\\"ns3:address\\\", \\\"ns3:area\\\", \\\"ns3:article\\\", \\\"ns3:aside\\\", \\\"ns3:audio\\\", \\\"ns3:b\\\", \\\"ns3:bdi\\\", \\\"ns3:bdo\\\", \\\"ns3:blockquote\\\", \\\"ns3:br\\\", \\\"ns3:button\\\", \\\"ns3:canvas\\\", \\\"ns3:cite\\\", \\\"ns3:code\\\", \\\"ns3:command\\\", \\\"ns3:datalist\\\", \\\"ns3:del\\\", \\\"ns3:details\\\", \\\"ns3:dfn\\\", \\\"ns3:div\\\", \\\"ns3:dl\\\", \\\"ns3:em\\\", \\\"ns3:embed\\\", \\\"ns3:fieldset\\\", \\\"ns3:figure\\\", \\\"ns3:footer\\\", \\\"ns3:form\\\", \\\"ns3:h1\\\", \\\"ns3:h2\\\", \\\"ns3:h3\\\", \\\"ns3:h4\\\", \\\"ns3:h5\\\", \\\"ns3:h6\\\", \\\"ns3:header\\\", \\\"ns3:hgroup\\\", \\\"ns3:hr\\\", \\\"ns3:i\\\", \\\"ns3:iframe\\\", \\\"ns3:img\\\", \\\"ns3:input\\\", \\\"ns3:ins\\\", \\\"ns3:kbd\\\", \\\"ns3:keygen\\\", \\\"ns3:label\\\", \\\"ns3:link\\\", \\\"ns3:main\\\", \\\"ns3:map\\\", \\\"ns3:mark\\\", \\\"ns3:menu\\\", \\\"ns3:meta\\\", \\\"ns3:meter\\\", \\\"ns3:nav\\\", \\\"ns3:object\\\", \\\"ns3:ol\\\", \\\"ns3:output\\\", \\\"ns3:p\\\", \\\"ns3:pre\\\", \\\"ns3:progress\\\", \\\"ns3:q\\\", \\\"ns3:ruby\\\", \\\"ns3:s\\\", \\\"ns3:samp\\\", \\\"ns3:script\\\", \\\"ns3:section\\\", \\\"ns3:select\\\", \\\"ns3:small\\\", \\\"ns3:span\\\", \\\"ns3:strong\\\", \\\"ns3:style\\\", \\\"ns3:sub\\\", \\\"ns3:sup\\\", \\\"ns3:svg\\\", \\\"ns3:table\\\", \\\"ns3:textarea\\\", \\\"ns3:time\\\", \\\"ns3:u\\\", \\\"ns3:ul\\\", \\\"ns3:var\\\", \\\"ns3:video\\\" or \\\"ns3:wbr\\\" (with xmlns:ns1\u003d\\\"http://www.idpf.org/2007/ops\\\" xmlns:ns2\u003d\\\"http://www.w3.org/1998/Math/MathML\\\" xmlns:ns3\u003d\\\"http://www.w3.org/1999/xhtml\\\")\"  Values do not match(/messages[12]/locations[0]/path) Expected: \"OPS/links.xhtml\" Actual: \"OPS/link_target.xhtml\"  Values do not match(/messages[12]/locations[0]/line) Expected: 25 Actual: 12  Values do not match(/messages[12]/locations[0]/column) Expected: 71 Actual: 61  Values do not match(/messages[12]/locations[0]/context) Expected: \"OPS/\" Actual: null  The number of elements in the array do not match.(/messages[12]/locations) Expected: 1 Actual: 2  Values do not match(/messages[13]/ID) Expected: \"RSC-009\" Actual: \"RSC-007\"  Values do not match(/messages[13]/message) Expected: \"A fragment identifier should not be used with an img src attribute.\" Actual: \"Referenced resource \u0027OPS/\u0027 could not be found in the EPUB.\"  Values do not match(/messages[13]/locations[0]/line) Expected: 24 Actual: 25  Values do not match(/messages[13]/locations[0]/column) Expected: 108 Actual: 71  Values do not match(/messages[13]/locations[0]/context) Expected: \"OPS/images/sample.jpg#hello\" Actual: \"OPS/\"  Values do not match(/messages[14]/ID) Expected: \"RSC-012\" Actual: \"RSC-009\"  Values do not match(/messages[14]/message) Expected: \"Fragment identifier is not defined.\" Actual: \"A fragment identifier should not be used with an img src attribute.\"  Values do not match(/messages[14]/locations[0]/path) Expected: \"OPS/svg_links.xhtml\" Actual: \"OPS/links.xhtml\"  Values do not match(/messages[14]/locations[0]/line) Expected: 22 Actual: 24  Values do not match(/messages[14]/locations[0]/column) Expected: 55 Actual: 108  Values do not match(/messages[14]/locations[0]/context) Expected: \"OPS/svg_links.xhtml#oops\" Actual: \"OPS/images/sample.jpg#hello\"  Values do not match(/messages[15]/ID) Expected: \"RSC-013\" Actual: \"RSC-012\"  Values do not match(/messages[15]/message) Expected: \"Fragment identifier is used in a reference to a stylesheet resource.\" Actual: \"Fragment identifier is not defined.\"  Values do not match(/messages[15]/locations[0]/path) Expected: \"OPS/links.xhtml\" Actual: \"OPS/svg_links.xhtml\"  Values do not match(/messages[15]/locations[0]/line) Expected: 5 Actual: 22  Values do not match(/messages[15]/locations[0]/column) Expected: 67 Actual: 55  Values do not match(/messages[15]/locations[0]/context) Expected: \"OPS/style.css#frag\" Actual: \"OPS/svg_links.xhtml#oops\"  Values do not match(/messages[16]/ID) Expected: \"RSC-014\" Actual: \"RSC-013\"  Values do not match(/messages[16]/message) Expected: \"Fragment identifier defines an incompatible resource type.\" Actual: \"Fragment identifier is used in a reference to a stylesheet resource.\"  Values do not match(/messages[16]/locations[0]/line) Expected: 27 Actual: 5  Values do not match(/messages[16]/locations[0]/column) Expected: 73 Actual: 67  Values do not match(/messages[16]/locations[0]/context) Expected: \"OPS/svg_links.xhtml#redCircle\" Actual: \"OPS/style.css#frag\"  Values do not match(/messages[16]/locations[1]) Expected: {\"path\":\"OPS/links.xhtml\",\"line\":28,\"column\":75,\"context\":\"OPS/svg_links.xhtml#hex-mask\"} Actual: null  The number of elements in the array do not match.(/messages[16]/locations) Expected: 2 Actual: 1  Values do not match(/messages[17]/ID) Expected: \"RSC-015\" Actual: \"RSC-014\"  Values do not match(/messages[17]/message) Expected: \"A fragment identifier is required for svg use tag references.\" Actual: \"Fragment identifier defines an incompatible resource type.\"  Values do not match(/messages[17]/locations[0]/path) Expected: \"OPS/svg_links.xhtml\" Actual: \"OPS/links.xhtml\"  Values do not match(/messages[17]/locations[0]/line) Expected: 23 Actual: 27  Values do not match(/messages[17]/locations[0]/column) Expected: 67 Actual: 73  Values do not match(/messages[17]/locations[0]/context) Expected: \"OPS/link_target.xhtml\" Actual: \"OPS/svg_links.xhtml#redCircle\"  The number of elements in the array do not match.(/messages[17]/locations) Expected: 1 Actual: 2  Values do not match(/messages[18]/ID) Expected: \"RSC-018\" Actual: \"RSC-015\"  Values do not match(/messages[18]/severity) Expected: \"WARNING\" Actual: \"ERROR\"  Values do not match(/messages[18]/message) Expected: \"Alternative image file \u0027images/missing.png\u0027 could not be found.\" Actual: \"A fragment identifier is required for svg use tag references.\"  Values do not match(/messages[18]/locations[0]/path) Expected: \"OPS/mathMl.xhtml\" Actual: \"OPS/svg_links.xhtml\"  Values do not match(/messages[18]/locations[0]/line) Expected: 12 Actual: 23  Values do not match(/messages[18]/locations[0]/column) Expected: 137 Actual: 67  Values do not match(/messages[18]/locations[0]/context) Expected: \"altimg\" Actual: \"OPS/link_target.xhtml\"  The number of elements in the array do not match.(/messages) Expected: 19 Actual: 20  expected:\u003c0\u003e but was:\u003c47\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "junit.framework.AssertionFailedError",
+          "failureDetail": "Outputted json isn\u0027t as expected.  Values do not match(/messages[3]/message) Expected: \"Error while parsing file: element \\\"acronym\\\" not allowed here; expected the element end-tag, text or element \\\"a\\\", \\\"abbr\\\", \\\"address\\\", \\\"area\\\", \\\"article\\\", \\\"aside\\\", \\\"audio\\\", \\\"b\\\", \\\"bdi\\\", \\\"bdo\\\", \\\"blockquote\\\", \\\"br\\\", \\\"button\\\", \\\"canvas\\\", \\\"cite\\\", \\\"code\\\", \\\"command\\\", \\\"datalist\\\", \\\"del\\\", \\\"details\\\", \\\"dfn\\\", \\\"div\\\", \\\"dl\\\", \\\"em\\\", \\\"embed\\\", \\\"fieldset\\\", \\\"figure\\\", \\\"footer\\\", \\\"form\\\", \\\"h1\\\", \\\"h2\\\", \\\"h3\\\", \\\"h4\\\", \\\"h5\\\", \\\"h6\\\", \\\"header\\\", \\\"hgroup\\\", \\\"hr\\\", \\\"i\\\", \\\"iframe\\\", \\\"img\\\", \\\"input\\\", \\\"ins\\\", \\\"kbd\\\", \\\"keygen\\\", \\\"label\\\", \\\"link\\\", \\\"main\\\", \\\"map\\\", \\\"mark\\\", \\\"menu\\\", \\\"meta\\\", \\\"meter\\\", \\\"nav\\\", \\\"ns1:switch\\\", \\\"ns1:trigger\\\", \\\"ns2:math\\\", \\\"ns3:svg\\\", \\\"object\\\", \\\"ol\\\", \\\"output\\\", \\\"p\\\", \\\"pre\\\", \\\"progress\\\", \\\"q\\\", \\\"ruby\\\", \\\"s\\\", \\\"samp\\\", \\\"script\\\", \\\"section\\\", \\\"select\\\", \\\"small\\\", \\\"span\\\", \\\"strong\\\", \\\"style\\\", \\\"sub\\\", \\\"sup\\\", \\\"table\\\", \\\"textarea\\\", \\\"time\\\", \\\"u\\\", \\\"ul\\\", \\\"var\\\", \\\"video\\\" or \\\"wbr\\\" (with xmlns:ns1\u003d\\\"http://www.idpf.org/2007/ops\\\" xmlns:ns2\u003d\\\"http://www.w3.org/1998/Math/MathML\\\" xmlns:ns3\u003d\\\"http://www.w3.org/2000/svg\\\")\" Actual: \"Error while parsing file: element \\\"acronym\\\" not allowed here; expected the element end-tag, text or element \\\"a\\\", \\\"abbr\\\", \\\"address\\\", \\\"area\\\", \\\"article\\\", \\\"aside\\\", \\\"audio\\\", \\\"b\\\", \\\"bdi\\\", \\\"bdo\\\", \\\"blockquote\\\", \\\"br\\\", \\\"button\\\", \\\"canvas\\\", \\\"cite\\\", \\\"code\\\", \\\"command\\\", \\\"datalist\\\", \\\"del\\\", \\\"details\\\", \\\"dfn\\\", \\\"div\\\", \\\"dl\\\", \\\"em\\\", \\\"embed\\\", \\\"fieldset\\\", \\\"figure\\\", \\\"footer\\\", \\\"form\\\", \\\"h1\\\", \\\"h2\\\", \\\"h3\\\", \\\"h4\\\", \\\"h5\\\", \\\"h6\\\", \\\"header\\\", \\\"hgroup\\\", \\\"hr\\\", \\\"i\\\", \\\"iframe\\\", \\\"img\\\", \\\"input\\\", \\\"ins\\\", \\\"kbd\\\", \\\"keygen\\\", \\\"label\\\", \\\"link\\\", \\\"main\\\", \\\"map\\\", \\\"mark\\\", \\\"menu\\\", \\\"meta\\\", \\\"meter\\\", \\\"nav\\\", \\\"ns1:switch\\\", \\\"ns1:trigger\\\", \\\"ns2:math\\\", \\\"object\\\", \\\"ol\\\", \\\"output\\\", \\\"p\\\", \\\"pre\\\", \\\"progress\\\", \\\"q\\\", \\\"ruby\\\", \\\"s\\\", \\\"samp\\\", \\\"script\\\", \\\"section\\\", \\\"select\\\", \\\"small\\\", \\\"span\\\", \\\"strong\\\", \\\"style\\\", \\\"sub\\\", \\\"sup\\\", \\\"svg\\\", \\\"table\\\", \\\"textarea\\\", \\\"time\\\", \\\"u\\\", \\\"ul\\\", \\\"var\\\", \\\"video\\\" or \\\"wbr\\\" (with xmlns:ns1\u003d\\\"http://www.idpf.org/2007/ops\\\" xmlns:ns2\u003d\\\"http://www.w3.org/1998/Math/MathML\\\")\"  Values do not match(/messages[4]/message) Expected: \"Error while parsing file: element \\\"big\\\" not allowed here; expected the element end-tag, text or element \\\"a\\\", \\\"abbr\\\", \\\"address\\\", \\\"area\\\", \\\"article\\\", \\\"aside\\\", \\\"audio\\\", \\\"b\\\", \\\"bdi\\\", \\\"bdo\\\", \\\"blockquote\\\", \\\"br\\\", \\\"button\\\", \\\"canvas\\\", \\\"cite\\\", \\\"code\\\", \\\"command\\\", \\\"datalist\\\", \\\"del\\\", \\\"details\\\", \\\"dfn\\\", \\\"div\\\", \\\"dl\\\", \\\"em\\\", \\\"embed\\\", \\\"fieldset\\\", \\\"figure\\\", \\\"footer\\\", \\\"form\\\", \\\"h1\\\", \\\"h2\\\", \\\"h3\\\", \\\"h4\\\", \\\"h5\\\", \\\"h6\\\", \\\"header\\\", \\\"hgroup\\\", \\\"hr\\\", \\\"i\\\", \\\"iframe\\\", \\\"img\\\", \\\"input\\\", \\\"ins\\\", \\\"kbd\\\", \\\"keygen\\\", \\\"label\\\", \\\"link\\\", \\\"main\\\", \\\"map\\\", \\\"mark\\\", \\\"menu\\\", \\\"meta\\\", \\\"meter\\\", \\\"nav\\\", \\\"ns1:switch\\\", \\\"ns1:trigger\\\", \\\"ns2:math\\\", \\\"ns3:svg\\\", \\\"object\\\", \\\"ol\\\", \\\"output\\\", \\\"p\\\", \\\"pre\\\", \\\"progress\\\", \\\"q\\\", \\\"ruby\\\", \\\"s\\\", \\\"samp\\\", \\\"script\\\", \\\"section\\\", \\\"select\\\", \\\"small\\\", \\\"span\\\", \\\"strong\\\", \\\"style\\\", \\\"sub\\\", \\\"sup\\\", \\\"table\\\", \\\"textarea\\\", \\\"time\\\", \\\"u\\\", \\\"ul\\\", \\\"var\\\", \\\"video\\\" or \\\"wbr\\\" (with xmlns:ns1\u003d\\\"http://www.idpf.org/2007/ops\\\" xmlns:ns2\u003d\\\"http://www.w3.org/1998/Math/MathML\\\" xmlns:ns3\u003d\\\"http://www.w3.org/2000/svg\\\")\" Actual: \"Error while parsing file: element \\\"big\\\" not allowed here; expected the element end-tag, text or element \\\"a\\\", \\\"abbr\\\", \\\"address\\\", \\\"area\\\", \\\"article\\\", \\\"aside\\\", \\\"audio\\\", \\\"b\\\", \\\"bdi\\\", \\\"bdo\\\", \\\"blockquote\\\", \\\"br\\\", \\\"button\\\", \\\"canvas\\\", \\\"cite\\\", \\\"code\\\", \\\"command\\\", \\\"datalist\\\", \\\"del\\\", \\\"details\\\", \\\"dfn\\\", \\\"div\\\", \\\"dl\\\", \\\"em\\\", \\\"embed\\\", \\\"fieldset\\\", \\\"figure\\\", \\\"footer\\\", \\\"form\\\", \\\"h1\\\", \\\"h2\\\", \\\"h3\\\", \\\"h4\\\", \\\"h5\\\", \\\"h6\\\", \\\"header\\\", \\\"hgroup\\\", \\\"hr\\\", \\\"i\\\", \\\"iframe\\\", \\\"img\\\", \\\"input\\\", \\\"ins\\\", \\\"kbd\\\", \\\"keygen\\\", \\\"label\\\", \\\"link\\\", \\\"main\\\", \\\"map\\\", \\\"mark\\\", \\\"menu\\\", \\\"meta\\\", \\\"meter\\\", \\\"nav\\\", \\\"ns1:switch\\\", \\\"ns1:trigger\\\", \\\"ns2:math\\\", \\\"object\\\", \\\"ol\\\", \\\"output\\\", \\\"p\\\", \\\"pre\\\", \\\"progress\\\", \\\"q\\\", \\\"ruby\\\", \\\"s\\\", \\\"samp\\\", \\\"script\\\", \\\"section\\\", \\\"select\\\", \\\"small\\\", \\\"span\\\", \\\"strong\\\", \\\"style\\\", \\\"sub\\\", \\\"sup\\\", \\\"svg\\\", \\\"table\\\", \\\"textarea\\\", \\\"time\\\", \\\"u\\\", \\\"ul\\\", \\\"var\\\", \\\"video\\\" or \\\"wbr\\\" (with xmlns:ns1\u003d\\\"http://www.idpf.org/2007/ops\\\" xmlns:ns2\u003d\\\"http://www.w3.org/1998/Math/MathML\\\")\"  Values do not match(/messages[5]/message) Expected: \"Error while parsing file: element \\\"center\\\" not allowed here; expected the element end-tag, text or element \\\"a\\\", \\\"abbr\\\", \\\"address\\\", \\\"area\\\", \\\"article\\\", \\\"aside\\\", \\\"audio\\\", \\\"b\\\", \\\"bdi\\\", \\\"bdo\\\", \\\"blockquote\\\", \\\"br\\\", \\\"button\\\", \\\"canvas\\\", \\\"cite\\\", \\\"code\\\", \\\"command\\\", \\\"datalist\\\", \\\"del\\\", \\\"details\\\", \\\"dfn\\\", \\\"div\\\", \\\"dl\\\", \\\"em\\\", \\\"embed\\\", \\\"fieldset\\\", \\\"figure\\\", \\\"footer\\\", \\\"form\\\", \\\"h1\\\", \\\"h2\\\", \\\"h3\\\", \\\"h4\\\", \\\"h5\\\", \\\"h6\\\", \\\"header\\\", \\\"hgroup\\\", \\\"hr\\\", \\\"i\\\", \\\"iframe\\\", \\\"img\\\", \\\"input\\\", \\\"ins\\\", \\\"kbd\\\", \\\"keygen\\\", \\\"label\\\", \\\"link\\\", \\\"main\\\", \\\"map\\\", \\\"mark\\\", \\\"menu\\\", \\\"meta\\\", \\\"meter\\\", \\\"nav\\\", \\\"ns1:switch\\\", \\\"ns1:trigger\\\", \\\"ns2:math\\\", \\\"ns3:svg\\\", \\\"object\\\", \\\"ol\\\", \\\"output\\\", \\\"p\\\", \\\"pre\\\", \\\"progress\\\", \\\"q\\\", \\\"ruby\\\", \\\"s\\\", \\\"samp\\\", \\\"script\\\", \\\"section\\\", \\\"select\\\", \\\"small\\\", \\\"span\\\", \\\"strong\\\", \\\"style\\\", \\\"sub\\\", \\\"sup\\\", \\\"table\\\", \\\"textarea\\\", \\\"time\\\", \\\"u\\\", \\\"ul\\\", \\\"var\\\", \\\"video\\\" or \\\"wbr\\\" (with xmlns:ns1\u003d\\\"http://www.idpf.org/2007/ops\\\" xmlns:ns2\u003d\\\"http://www.w3.org/1998/Math/MathML\\\" xmlns:ns3\u003d\\\"http://www.w3.org/2000/svg\\\")\" Actual: \"Error while parsing file: element \\\"center\\\" not allowed here; expected the element end-tag, text or element \\\"a\\\", \\\"abbr\\\", \\\"address\\\", \\\"area\\\", \\\"article\\\", \\\"aside\\\", \\\"audio\\\", \\\"b\\\", \\\"bdi\\\", \\\"bdo\\\", \\\"blockquote\\\", \\\"br\\\", \\\"button\\\", \\\"canvas\\\", \\\"cite\\\", \\\"code\\\", \\\"command\\\", \\\"datalist\\\", \\\"del\\\", \\\"details\\\", \\\"dfn\\\", \\\"div\\\", \\\"dl\\\", \\\"em\\\", \\\"embed\\\", \\\"fieldset\\\", \\\"figure\\\", \\\"footer\\\", \\\"form\\\", \\\"h1\\\", \\\"h2\\\", \\\"h3\\\", \\\"h4\\\", \\\"h5\\\", \\\"h6\\\", \\\"header\\\", \\\"hgroup\\\", \\\"hr\\\", \\\"i\\\", \\\"iframe\\\", \\\"img\\\", \\\"input\\\", \\\"ins\\\", \\\"kbd\\\", \\\"keygen\\\", \\\"label\\\", \\\"link\\\", \\\"main\\\", \\\"map\\\", \\\"mark\\\", \\\"menu\\\", \\\"meta\\\", \\\"meter\\\", \\\"nav\\\", \\\"ns1:switch\\\", \\\"ns1:trigger\\\", \\\"ns2:math\\\", \\\"object\\\", \\\"ol\\\", \\\"output\\\", \\\"p\\\", \\\"pre\\\", \\\"progress\\\", \\\"q\\\", \\\"ruby\\\", \\\"s\\\", \\\"samp\\\", \\\"script\\\", \\\"section\\\", \\\"select\\\", \\\"small\\\", \\\"span\\\", \\\"strong\\\", \\\"style\\\", \\\"sub\\\", \\\"sup\\\", \\\"svg\\\", \\\"table\\\", \\\"textarea\\\", \\\"time\\\", \\\"u\\\", \\\"ul\\\", \\\"var\\\", \\\"video\\\" or \\\"wbr\\\" (with xmlns:ns1\u003d\\\"http://www.idpf.org/2007/ops\\\" xmlns:ns2\u003d\\\"http://www.w3.org/1998/Math/MathML\\\")\"  Values do not match(/messages[6]/message) Expected: \"Error while parsing file: element \\\"strike\\\" not allowed here; expected the element end-tag, text or element \\\"a\\\", \\\"abbr\\\", \\\"address\\\", \\\"area\\\", \\\"article\\\", \\\"aside\\\", \\\"audio\\\", \\\"b\\\", \\\"bdi\\\", \\\"bdo\\\", \\\"blockquote\\\", \\\"br\\\", \\\"button\\\", \\\"canvas\\\", \\\"cite\\\", \\\"code\\\", \\\"command\\\", \\\"datalist\\\", \\\"del\\\", \\\"details\\\", \\\"dfn\\\", \\\"div\\\", \\\"dl\\\", \\\"em\\\", \\\"embed\\\", \\\"fieldset\\\", \\\"figure\\\", \\\"footer\\\", \\\"form\\\", \\\"h1\\\", \\\"h2\\\", \\\"h3\\\", \\\"h4\\\", \\\"h5\\\", \\\"h6\\\", \\\"header\\\", \\\"hgroup\\\", \\\"hr\\\", \\\"i\\\", \\\"iframe\\\", \\\"img\\\", \\\"input\\\", \\\"ins\\\", \\\"kbd\\\", \\\"keygen\\\", \\\"label\\\", \\\"link\\\", \\\"main\\\", \\\"map\\\", \\\"mark\\\", \\\"menu\\\", \\\"meta\\\", \\\"meter\\\", \\\"nav\\\", \\\"ns1:switch\\\", \\\"ns1:trigger\\\", \\\"ns2:math\\\", \\\"ns3:svg\\\", \\\"object\\\", \\\"ol\\\", \\\"output\\\", \\\"p\\\", \\\"pre\\\", \\\"progress\\\", \\\"q\\\", \\\"ruby\\\", \\\"s\\\", \\\"samp\\\", \\\"script\\\", \\\"section\\\", \\\"select\\\", \\\"small\\\", \\\"span\\\", \\\"strong\\\", \\\"style\\\", \\\"sub\\\", \\\"sup\\\", \\\"table\\\", \\\"textarea\\\", \\\"time\\\", \\\"u\\\", \\\"ul\\\", \\\"var\\\", \\\"video\\\" or \\\"wbr\\\" (with xmlns:ns1\u003d\\\"http://www.idpf.org/2007/ops\\\" xmlns:ns2\u003d\\\"http://www.w3.org/1998/Math/MathML\\\" xmlns:ns3\u003d\\\"http://www.w3.org/2000/svg\\\")\" Actual: \"Error while parsing file: element \\\"strike\\\" not allowed here; expected the element end-tag, text or element \\\"a\\\", \\\"abbr\\\", \\\"address\\\", \\\"area\\\", \\\"article\\\", \\\"aside\\\", \\\"audio\\\", \\\"b\\\", \\\"bdi\\\", \\\"bdo\\\", \\\"blockquote\\\", \\\"br\\\", \\\"button\\\", \\\"canvas\\\", \\\"cite\\\", \\\"code\\\", \\\"command\\\", \\\"datalist\\\", \\\"del\\\", \\\"details\\\", \\\"dfn\\\", \\\"div\\\", \\\"dl\\\", \\\"em\\\", \\\"embed\\\", \\\"fieldset\\\", \\\"figure\\\", \\\"footer\\\", \\\"form\\\", \\\"h1\\\", \\\"h2\\\", \\\"h3\\\", \\\"h4\\\", \\\"h5\\\", \\\"h6\\\", \\\"header\\\", \\\"hgroup\\\", \\\"hr\\\", \\\"i\\\", \\\"iframe\\\", \\\"img\\\", \\\"input\\\", \\\"ins\\\", \\\"kbd\\\", \\\"keygen\\\", \\\"label\\\", \\\"link\\\", \\\"main\\\", \\\"map\\\", \\\"mark\\\", \\\"menu\\\", \\\"meta\\\", \\\"meter\\\", \\\"nav\\\", \\\"ns1:switch\\\", \\\"ns1:trigger\\\", \\\"ns2:math\\\", \\\"object\\\", \\\"ol\\\", \\\"output\\\", \\\"p\\\", \\\"pre\\\", \\\"progress\\\", \\\"q\\\", \\\"ruby\\\", \\\"s\\\", \\\"samp\\\", \\\"script\\\", \\\"section\\\", \\\"select\\\", \\\"small\\\", \\\"span\\\", \\\"strong\\\", \\\"style\\\", \\\"sub\\\", \\\"sup\\\", \\\"svg\\\", \\\"table\\\", \\\"textarea\\\", \\\"time\\\", \\\"u\\\", \\\"ul\\\", \\\"var\\\", \\\"video\\\" or \\\"wbr\\\" (with xmlns:ns1\u003d\\\"http://www.idpf.org/2007/ops\\\" xmlns:ns2\u003d\\\"http://www.w3.org/1998/Math/MathML\\\")\"  expected:\u003c0\u003e but was:\u003c4\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.adobe.epubcheck.api.Epub30CheckExpandedTest",
+      "failingMethods": [
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testValidateEPUBPLoremSvgHyperlinkNoTitle",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testFXL_WithSVGNotInSpine",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testValidateEPUB30_issue134_1",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testValidateEPUB30_svgInSpine",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testValidateEPUB30_issue134_2",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testValidateEPUB30_issue134_3",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testValidateEPUB30_svgReferenced",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testValidateEPUB30_svgCoverImage",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testFXL_WithSVG",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testFXL_WithSVG_NoViewbox",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testValidateEPUBPLoremSvgHyperlink",
+        "com.adobe.epubcheck.api.Epub30CheckExpandedTest#testValidateEPUBPLoremSvg"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[MessageId.OPF_014, MessageId.OPF_014]\u003e but was:\u003c[MessageId.RSC_005, MessageId.OPF_014, MessageId.RSC_005, MessageId.OPF_014]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[MessageId.OPF_014]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.OPF_014]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[MessageId.HTM_048]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.HTM_048]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 12,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.adobe.epubcheck.ops.OPSCheckerTest",
+      "failingMethods": [
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateXHTMLOPSSVG001",
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateXHTMLOPSSVG002",
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateXHTML_SVGLinks",
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateSVGRectInvalid",
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateSVG_Links",
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateSVGRectValid",
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateSVG_ValidStyleWithoutType_issue688",
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateSVG_Links_MisssingTitle",
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateSVGIssue219",
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateXHTML_SVGLinks_MisssingTitle",
+        "com.adobe.epubcheck.ops.OPSCheckerTest#testValidateXHTML_SVG001"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[RSC-005, RSC-005, RSC-005, RSC-005]\u003e but was:\u003c[RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[RSC-005, RSC-005, RSC-005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[RSC-005, RSC-005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[RSC-005, RSC-005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[RSC-005, RSC-005]\u003e but was:\u003c[RSC-005, RSC-005, RSC-005, RSC-005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[RSC-005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[RSC-005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[RSC-005, RSC-005, RSC-005, RSC-005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[RSC-005, RSC-005, RSC-005, RSC-005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[RSC-005, RSC-005, RSC-005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 11,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.adobe.epubcheck.api.Epub30CheckTest",
+      "failingMethods": [
+        "com.adobe.epubcheck.api.Epub30CheckTest#testValidateEPUBInvalidMp3",
+        "com.adobe.epubcheck.api.Epub30CheckTest#testValidateEPUBValidNcx",
+        "com.adobe.epubcheck.api.Epub30CheckTest#testValidateEPUBMp3",
+        "com.adobe.epubcheck.api.Epub30CheckTest#testValidateEPUBMp3WithFallback",
+        "com.adobe.epubcheck.api.Epub30CheckTest#testValidateEPUBInvalidNcx",
+        "com.adobe.epubcheck.api.Epub30CheckTest#testValidateEPUBTestSvg"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[MessageId.RSC_012, MessageId.RSC_012]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_012, MessageId.RSC_012]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[MessageId.OPF_043]\u003e but was:\u003c[MessageId.OPF_043, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The error results do not match expected:\u003c[]\u003e but was:\u003c[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 6,
+      "nbErrors": 0
+    }
+  ]
+}

@@ -1,0 +1,1866 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EpubCheck :: Validation Tool for EPUB 4.0.3-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ epubcheck ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- license-maven-plugin:1.3:add-third-party (thirdparty-licenses) @ epubcheck ---
+[INFO] Load missing file /root/workspace/IDPF/epubcheck/251827224/src/main/licenses/third-party.properties
+[INFO] Missing file /root/workspace/IDPF/epubcheck/251827224/src/main/licenses/third-party.properties is up-to-date.
+[INFO] Writing third-party file to /root/workspace/IDPF/epubcheck/251827224/target/generated-sources/license/THIRD-PARTY.txt
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ epubcheck ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources to /root/workspace/IDPF/epubcheck/251827224/target
+[INFO] Copying 239 resources
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- xml-maven-plugin:1.0:transform (default) @ epubcheck ---
+[INFO] Transforming file: /root/workspace/IDPF/epubcheck/251827224/target/generated-resources/intermediate-schema/media-overlay-30.sch
+[INFO] Transforming file: /root/workspace/IDPF/epubcheck/251827224/target/generated-resources/intermediate-schema/ocf-metadata-30.sch
+[INFO] Transforming file: /root/workspace/IDPF/epubcheck/251827224/target/generated-resources/intermediate-schema/epub-svg-30.sch
+[INFO] Transforming file: /root/workspace/IDPF/epubcheck/251827224/target/generated-resources/intermediate-schema/collection-manifest-30.sch
+[INFO] Transforming file: /root/workspace/IDPF/epubcheck/251827224/target/generated-resources/intermediate-schema/package-30.sch
+[INFO] Transforming file: /root/workspace/IDPF/epubcheck/251827224/target/generated-resources/intermediate-schema/epub-xhtml-30.sch
+[INFO] Transforming file: /root/workspace/IDPF/epubcheck/251827224/target/generated-resources/intermediate-schema/epub-nav-30.sch
+[INFO] Transforming file: /root/workspace/IDPF/epubcheck/251827224/target/generated-resources/intermediate-schema/collection-do-30.sch
+[INFO] Transformed 8 file(s).
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ epubcheck ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-bundle-plugin:2.3.7:manifest (bundle-manifest) @ epubcheck ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ epubcheck ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2844 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ epubcheck ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ epubcheck ---
+[INFO] Surefire report directory: /root/workspace/IDPF/epubcheck/251827224/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (3 KB at 3.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (3 KB at 95.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 KB at 515.1 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.adobe.epubcheck.api.Epub30CheckTest
+Tests run: 44, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 14.664 sec <<< FAILURE!
+testValidateEPUBInvalidNcx(com.adobe.epubcheck.api.Epub30CheckTest)  Time elapsed: 4.834 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[MessageId.RSC_012, MessageId.RSC_012]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_012, MessageId.RSC_012]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:70)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:65)
+	at com.adobe.epubcheck.api.Epub30CheckTest.testValidateEPUBInvalidNcx(Epub30CheckTest.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUBValidNcx(com.adobe.epubcheck.api.Epub30CheckTest)  Time elapsed: 0.078 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:70)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:65)
+	at com.adobe.epubcheck.api.Epub30CheckTest.testValidateEPUBValidNcx(Epub30CheckTest.java:69)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUBTestSvg(com.adobe.epubcheck.api.Epub30CheckTest)  Time elapsed: 0.066 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:85)
+	at com.adobe.epubcheck.api.Epub30CheckTest.testValidateEPUBTestSvg(Epub30CheckTest.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUBMp3(com.adobe.epubcheck.api.Epub30CheckTest)  Time elapsed: 0.035 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:85)
+	at com.adobe.epubcheck.api.Epub30CheckTest.testValidateEPUBMp3(Epub30CheckTest.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUBInvalidMp3(com.adobe.epubcheck.api.Epub30CheckTest)  Time elapsed: 0.032 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[MessageId.OPF_043]> but was:<[MessageId.OPF_043, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:70)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:65)
+	at com.adobe.epubcheck.api.Epub30CheckTest.testValidateEPUBInvalidMp3(Epub30CheckTest.java:82)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUBMp3WithFallback(com.adobe.epubcheck.api.Epub30CheckTest)  Time elapsed: 0.064 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:85)
+	at com.adobe.epubcheck.api.Epub30CheckTest.testValidateEPUBMp3WithFallback(Epub30CheckTest.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.adobe.epubcheck.api.Epub20CheckExpandedTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.91 sec
+Running com.adobe.epubcheck.api.Epub20CheckTest
+Spine element not found within package root document ops/manifest.opf
+Spine element not found within package root document EPUB/manifest.opf
+Spine element not found within package root document OEBPS/content.opf
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.452 sec
+Running com.adobe.epubcheck.api.Epub30CheckExpandedTest
+Tests run: 147, Failures: 12, Errors: 0, Skipped: 0, Time elapsed: 9.57 sec <<< FAILURE!
+testValidateEPUBPLoremSvg(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.028 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:85)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testValidateEPUBPLoremSvg(Epub30CheckExpandedTest.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUBPLoremSvgHyperlink(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.032 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:85)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testValidateEPUBPLoremSvgHyperlink(Epub30CheckExpandedTest.java:173)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUBPLoremSvgHyperlinkNoTitle(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.04 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:70)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:65)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testValidateEPUBPLoremSvgHyperlinkNoTitle(Epub30CheckExpandedTest.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUB30_issue134_1(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.038 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:85)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testValidateEPUB30_issue134_1(Epub30CheckExpandedTest.java:214)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUB30_issue134_2(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.04 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[MessageId.OPF_014, MessageId.OPF_014]> but was:<[MessageId.RSC_005, MessageId.OPF_014, MessageId.RSC_005, MessageId.OPF_014]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:70)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:65)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testValidateEPUB30_issue134_2(Epub30CheckExpandedTest.java:222)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUB30_issue134_3(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.04 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[MessageId.OPF_014]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.OPF_014]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:70)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:65)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testValidateEPUB30_issue134_3(Epub30CheckExpandedTest.java:230)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUB30_svgCoverImage(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.038 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:85)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testValidateEPUB30_svgCoverImage(Epub30CheckExpandedTest.java:403)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUB30_svgInSpine(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.43 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:85)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testValidateEPUB30_svgInSpine(Epub30CheckExpandedTest.java:410)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateEPUB30_svgReferenced(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.104 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:70)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:65)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testValidateEPUB30_svgReferenced(Epub30CheckExpandedTest.java:417)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testFXL_WithSVG(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.034 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:70)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:65)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testFXL_WithSVG(Epub30CheckExpandedTest.java:658)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testFXL_WithSVG_NoViewbox(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.033 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[MessageId.HTM_048]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.HTM_048]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:70)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:65)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testFXL_WithSVG_NoViewbox(Epub30CheckExpandedTest.java:664)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testFXL_WithSVGNotInSpine(com.adobe.epubcheck.api.Epub30CheckExpandedTest)  Time elapsed: 0.03 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:145)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:70)
+	at com.adobe.epubcheck.api.AbstractEpubCheckTest.testValidateDocument(AbstractEpubCheckTest.java:65)
+	at com.adobe.epubcheck.api.Epub30CheckExpandedTest.testFXL_WithSVGNotInSpine(Epub30CheckExpandedTest.java:669)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.adobe.epubcheck.opf.OPFCheckerTest
+Tests run: 126, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.875 sec
+Running com.adobe.epubcheck.opf.MetadataSetTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.adobe.epubcheck.cli.CLITest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.275 sec
+Running com.adobe.epubcheck.vocab.PropertyTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running com.adobe.epubcheck.vocab.VocabTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running com.adobe.epubcheck.vocab.PrefixParsingTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running com.adobe.epubcheck.nav.NavCheckerTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 sec
+Running com.adobe.epubcheck.overlay.OverlayCheckerTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec
+Running com.adobe.epubcheck.ops.OPSCheckerTest
+Tests run: 98, Failures: 11, Errors: 0, Skipped: 0, Time elapsed: 0.751 sec <<< FAILURE!
+testValidateSVGRectInvalid(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0.006 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[RSC-005, RSC-005, RSC-005, RSC-005]> but was:<[RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:60)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateSVGRectInvalid(OPSCheckerTest.java:158)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateSVGRectValid(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0.005 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[RSC-005, RSC-005, RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:60)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateSVGRectValid(OPSCheckerTest.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateXHTMLOPSSVG001(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0.013 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[RSC-005, RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:60)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateXHTMLOPSSVG001(OPSCheckerTest.java:250)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateXHTMLOPSSVG002(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[RSC-005, RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateXHTMLOPSSVG002(OPSCheckerTest.java:258)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateXHTML_SVG001(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0.008 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[RSC-005, RSC-005]> but was:<[RSC-005, RSC-005, RSC-005, RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:60)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateXHTML_SVG001(OPSCheckerTest.java:445)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateXHTML_SVGLinks(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0.007 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:60)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateXHTML_SVGLinks(OPSCheckerTest.java:579)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateXHTML_SVGLinks_MisssingTitle(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0.015 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:60)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateXHTML_SVGLinks_MisssingTitle(OPSCheckerTest.java:587)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateSVG_Links(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[RSC-005, RSC-005, RSC-005, RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:60)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateSVG_Links(OPSCheckerTest.java:594)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateSVG_ValidStyleWithoutType_issue688(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0.005 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[RSC-005, RSC-005, RSC-005, RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:60)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateSVG_ValidStyleWithoutType_issue688(OPSCheckerTest.java:600)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateSVG_Links_MisssingTitle(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[RSC-005, RSC-005, RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:60)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateSVG_Links_MisssingTitle(OPSCheckerTest.java:607)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testValidateSVGIssue219(com.adobe.epubcheck.ops.OPSCheckerTest)  Time elapsed: 0.037 sec  <<< FAILURE!
+java.lang.AssertionError: The error results do not match expected:<[]> but was:<[RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005]>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:135)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:90)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:66)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateDocument(OPSCheckerTest.java:60)
+	at com.adobe.epubcheck.ops.OPSCheckerTest.testValidateSVGIssue219(OPSCheckerTest.java:658)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.adobe.epubcheck.ocf.OCFFilenameCheckerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.adobe.epubcheck.ocf.OCFCheckerTest
+Tests run: 25, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.66 sec <<< FAILURE!
+testLoremSVG30(com.adobe.epubcheck.ocf.OCFCheckerTest)  Time elapsed: 0.017 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<3>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at org.junit.Assert.assertEquals(Assert.java:456)
+	at com.adobe.epubcheck.ocf.OCFCheckerTest.testLoremSVG30(OCFCheckerTest.java:254)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testLoremHyperlink30(com.adobe.epubcheck.ocf.OCFCheckerTest)  Time elapsed: 0.021 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<3>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at org.junit.Assert.assertEquals(Assert.java:456)
+	at com.adobe.epubcheck.ocf.OCFCheckerTest.testLoremHyperlink30(OCFCheckerTest.java:269)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.adobe.epubcheck.util.PathUtilTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.adobe.epubcheck.util.OPFPeekerTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec
+Running com.adobe.epubcheck.test.xhtml_Test
+Tests run: 17, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.021 sec <<< FAILURE!
+hyperlinksTest(com.adobe.epubcheck.test.xhtml_Test)  Time elapsed: 0.975 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Outputted json isn't as expected. 
+Values do not match(/checker/nError)
+Expected:
+7
+Actual:
+8
+
+Values do not match(/messages[12]/ID)
+Expected:
+"RSC-007"
+Actual:
+"RSC-005"
+
+Values do not match(/messages[12]/message)
+Expected:
+"Referenced resource 'OPS/' could not be found in the EPUB."
+Actual:
+"Error while parsing file: element \"svg\" not allowed here; expected the element end-tag, text or element \"ns1:switch\", \"ns1:trigger\", \"ns2:math\", \"ns3:a\", \"ns3:abbr\", \"ns3:address\", \"ns3:area\", \"ns3:article\", \"ns3:aside\", \"ns3:audio\", \"ns3:b\", \"ns3:bdi\", \"ns3:bdo\", \"ns3:blockquote\", \"ns3:br\", \"ns3:button\", \"ns3:canvas\", \"ns3:cite\", \"ns3:code\", \"ns3:command\", \"ns3:datalist\", \"ns3:del\", \"ns3:details\", \"ns3:dfn\", \"ns3:div\", \"ns3:dl\", \"ns3:em\", \"ns3:embed\", \"ns3:fieldset\", \"ns3:figure\", \"ns3:footer\", \"ns3:form\", \"ns3:h1\", \"ns3:h2\", \"ns3:h3\", \"ns3:h4\", \"ns3:h5\", \"ns3:h6\", \"ns3:header\", \"ns3:hgroup\", \"ns3:hr\", \"ns3:i\", \"ns3:iframe\", \"ns3:img\", \"ns3:input\", \"ns3:ins\", \"ns3:kbd\", \"ns3:keygen\", \"ns3:label\", \"ns3:link\", \"ns3:main\", \"ns3:map\", \"ns3:mark\", \"ns3:menu\", \"ns3:meta\", \"ns3:meter\", \"ns3:nav\", \"ns3:object\", \"ns3:ol\", \"ns3:output\", \"ns3:p\", \"ns3:pre\", \"ns3:progress\", \"ns3:q\", \"ns3:ruby\", \"ns3:s\", \"ns3:samp\", \"ns3:script\", \"ns3:section\", \"ns3:select\", \"ns3:small\", \"ns3:span\", \"ns3:strong\", \"ns3:style\", \"ns3:sub\", \"ns3:sup\", \"ns3:svg\", \"ns3:table\", \"ns3:textarea\", \"ns3:time\", \"ns3:u\", \"ns3:ul\", \"ns3:var\", \"ns3:video\" or \"ns3:wbr\" (with xmlns:ns1=\"http://www.idpf.org/2007/ops\" xmlns:ns2=\"http://www.w3.org/1998/Math/MathML\" xmlns:ns3=\"http://www.w3.org/1999/xhtml\")"
+
+Values do not match(/messages[12]/locations[0]/path)
+Expected:
+"OPS/links.xhtml"
+Actual:
+"OPS/link_target.xhtml"
+
+Values do not match(/messages[12]/locations[0]/line)
+Expected:
+25
+Actual:
+12
+
+Values do not match(/messages[12]/locations[0]/column)
+Expected:
+71
+Actual:
+61
+
+Values do not match(/messages[12]/locations[0]/context)
+Expected:
+"OPS/"
+Actual:
+null
+
+The number of elements in the array do not match.(/messages[12]/locations)
+Expected:
+1
+Actual:
+2
+
+Values do not match(/messages[13]/ID)
+Expected:
+"RSC-009"
+Actual:
+"RSC-007"
+
+Values do not match(/messages[13]/message)
+Expected:
+"A fragment identifier should not be used with an img src attribute."
+Actual:
+"Referenced resource 'OPS/' could not be found in the EPUB."
+
+Values do not match(/messages[13]/locations[0]/line)
+Expected:
+24
+Actual:
+25
+
+Values do not match(/messages[13]/locations[0]/column)
+Expected:
+108
+Actual:
+71
+
+Values do not match(/messages[13]/locations[0]/context)
+Expected:
+"OPS/images/sample.jpg#hello"
+Actual:
+"OPS/"
+
+Values do not match(/messages[14]/ID)
+Expected:
+"RSC-012"
+Actual:
+"RSC-009"
+
+Values do not match(/messages[14]/message)
+Expected:
+"Fragment identifier is not defined."
+Actual:
+"A fragment identifier should not be used with an img src attribute."
+
+Values do not match(/messages[14]/locations[0]/path)
+Expected:
+"OPS/svg_links.xhtml"
+Actual:
+"OPS/links.xhtml"
+
+Values do not match(/messages[14]/locations[0]/line)
+Expected:
+22
+Actual:
+24
+
+Values do not match(/messages[14]/locations[0]/column)
+Expected:
+55
+Actual:
+108
+
+Values do not match(/messages[14]/locations[0]/context)
+Expected:
+"OPS/svg_links.xhtml#oops"
+Actual:
+"OPS/images/sample.jpg#hello"
+
+Values do not match(/messages[15]/ID)
+Expected:
+"RSC-013"
+Actual:
+"RSC-012"
+
+Values do not match(/messages[15]/message)
+Expected:
+"Fragment identifier is used in a reference to a stylesheet resource."
+Actual:
+"Fragment identifier is not defined."
+
+Values do not match(/messages[15]/locations[0]/path)
+Expected:
+"OPS/links.xhtml"
+Actual:
+"OPS/svg_links.xhtml"
+
+Values do not match(/messages[15]/locations[0]/line)
+Expected:
+5
+Actual:
+22
+
+Values do not match(/messages[15]/locations[0]/column)
+Expected:
+67
+Actual:
+55
+
+Values do not match(/messages[15]/locations[0]/context)
+Expected:
+"OPS/style.css#frag"
+Actual:
+"OPS/svg_links.xhtml#oops"
+
+Values do not match(/messages[16]/ID)
+Expected:
+"RSC-014"
+Actual:
+"RSC-013"
+
+Values do not match(/messages[16]/message)
+Expected:
+"Fragment identifier defines an incompatible resource type."
+Actual:
+"Fragment identifier is used in a reference to a stylesheet resource."
+
+Values do not match(/messages[16]/locations[0]/line)
+Expected:
+27
+Actual:
+5
+
+Values do not match(/messages[16]/locations[0]/column)
+Expected:
+73
+Actual:
+67
+
+Values do not match(/messages[16]/locations[0]/context)
+Expected:
+"OPS/svg_links.xhtml#redCircle"
+Actual:
+"OPS/style.css#frag"
+
+Values do not match(/messages[16]/locations[1])
+Expected:
+{"path":"OPS/links.xhtml","line":28,"column":75,"context":"OPS/svg_links.xhtml#hex-mask"}
+Actual:
+null
+
+The number of elements in the array do not match.(/messages[16]/locations)
+Expected:
+2
+Actual:
+1
+
+Values do not match(/messages[17]/ID)
+Expected:
+"RSC-015"
+Actual:
+"RSC-014"
+
+Values do not match(/messages[17]/message)
+Expected:
+"A fragment identifier is required for svg use tag references."
+Actual:
+"Fragment identifier defines an incompatible resource type."
+
+Values do not match(/messages[17]/locations[0]/path)
+Expected:
+"OPS/svg_links.xhtml"
+Actual:
+"OPS/links.xhtml"
+
+Values do not match(/messages[17]/locations[0]/line)
+Expected:
+23
+Actual:
+27
+
+Values do not match(/messages[17]/locations[0]/column)
+Expected:
+67
+Actual:
+73
+
+Values do not match(/messages[17]/locations[0]/context)
+Expected:
+"OPS/link_target.xhtml"
+Actual:
+"OPS/svg_links.xhtml#redCircle"
+
+The number of elements in the array do not match.(/messages[17]/locations)
+Expected:
+1
+Actual:
+2
+
+Values do not match(/messages[18]/ID)
+Expected:
+"RSC-018"
+Actual:
+"RSC-015"
+
+Values do not match(/messages[18]/severity)
+Expected:
+"WARNING"
+Actual:
+"ERROR"
+
+Values do not match(/messages[18]/message)
+Expected:
+"Alternative image file 'images/missing.png' could not be found."
+Actual:
+"A fragment identifier is required for svg use tag references."
+
+Values do not match(/messages[18]/locations[0]/path)
+Expected:
+"OPS/mathMl.xhtml"
+Actual:
+"OPS/svg_links.xhtml"
+
+Values do not match(/messages[18]/locations[0]/line)
+Expected:
+12
+Actual:
+23
+
+Values do not match(/messages[18]/locations[0]/column)
+Expected:
+137
+Actual:
+67
+
+Values do not match(/messages[18]/locations[0]/context)
+Expected:
+"altimg"
+Actual:
+"OPS/link_target.xhtml"
+
+The number of elements in the array do not match.(/messages)
+Expected:
+19
+Actual:
+20
+ expected:<0> but was:<47>
+	at junit.framework.Assert.fail(Assert.java:50)
+	at junit.framework.Assert.failNotEquals(Assert.java:287)
+	at junit.framework.Assert.assertEquals(Assert.java:67)
+	at junit.framework.Assert.assertEquals(Assert.java:199)
+	at com.adobe.epubcheck.test.jsonCompare.compareJsonFiles(jsonCompare.java:26)
+	at com.adobe.epubcheck.test.common.compareJson(common.java:202)
+	at com.adobe.epubcheck.test.common.runExpTest(common.java:72)
+	at com.adobe.epubcheck.test.common.runExpTest(common.java:29)
+	at com.adobe.epubcheck.test.xhtml_Test.runXhtmlTest(xhtml_Test.java:134)
+	at com.adobe.epubcheck.test.xhtml_Test.hyperlinksTest(xhtml_Test.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+html5_deprecated_epub3Test(com.adobe.epubcheck.test.xhtml_Test)  Time elapsed: 0.066 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Outputted json isn't as expected. 
+Values do not match(/messages[3]/message)
+Expected:
+"Error while parsing file: element \"acronym\" not allowed here; expected the element end-tag, text or element \"a\", \"abbr\", \"address\", \"area\", \"article\", \"aside\", \"audio\", \"b\", \"bdi\", \"bdo\", \"blockquote\", \"br\", \"button\", \"canvas\", \"cite\", \"code\", \"command\", \"datalist\", \"del\", \"details\", \"dfn\", \"div\", \"dl\", \"em\", \"embed\", \"fieldset\", \"figure\", \"footer\", \"form\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"header\", \"hgroup\", \"hr\", \"i\", \"iframe\", \"img\", \"input\", \"ins\", \"kbd\", \"keygen\", \"label\", \"link\", \"main\", \"map\", \"mark\", \"menu\", \"meta\", \"meter\", \"nav\", \"ns1:switch\", \"ns1:trigger\", \"ns2:math\", \"ns3:svg\", \"object\", \"ol\", \"output\", \"p\", \"pre\", \"progress\", \"q\", \"ruby\", \"s\", \"samp\", \"script\", \"section\", \"select\", \"small\", \"span\", \"strong\", \"style\", \"sub\", \"sup\", \"table\", \"textarea\", \"time\", \"u\", \"ul\", \"var\", \"video\" or \"wbr\" (with xmlns:ns1=\"http://www.idpf.org/2007/ops\" xmlns:ns2=\"http://www.w3.org/1998/Math/MathML\" xmlns:ns3=\"http://www.w3.org/2000/svg\")"
+Actual:
+"Error while parsing file: element \"acronym\" not allowed here; expected the element end-tag, text or element \"a\", \"abbr\", \"address\", \"area\", \"article\", \"aside\", \"audio\", \"b\", \"bdi\", \"bdo\", \"blockquote\", \"br\", \"button\", \"canvas\", \"cite\", \"code\", \"command\", \"datalist\", \"del\", \"details\", \"dfn\", \"div\", \"dl\", \"em\", \"embed\", \"fieldset\", \"figure\", \"footer\", \"form\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"header\", \"hgroup\", \"hr\", \"i\", \"iframe\", \"img\", \"input\", \"ins\", \"kbd\", \"keygen\", \"label\", \"link\", \"main\", \"map\", \"mark\", \"menu\", \"meta\", \"meter\", \"nav\", \"ns1:switch\", \"ns1:trigger\", \"ns2:math\", \"object\", \"ol\", \"output\", \"p\", \"pre\", \"progress\", \"q\", \"ruby\", \"s\", \"samp\", \"script\", \"section\", \"select\", \"small\", \"span\", \"strong\", \"style\", \"sub\", \"sup\", \"svg\", \"table\", \"textarea\", \"time\", \"u\", \"ul\", \"var\", \"video\" or \"wbr\" (with xmlns:ns1=\"http://www.idpf.org/2007/ops\" xmlns:ns2=\"http://www.w3.org/1998/Math/MathML\")"
+
+Values do not match(/messages[4]/message)
+Expected:
+"Error while parsing file: element \"big\" not allowed here; expected the element end-tag, text or element \"a\", \"abbr\", \"address\", \"area\", \"article\", \"aside\", \"audio\", \"b\", \"bdi\", \"bdo\", \"blockquote\", \"br\", \"button\", \"canvas\", \"cite\", \"code\", \"command\", \"datalist\", \"del\", \"details\", \"dfn\", \"div\", \"dl\", \"em\", \"embed\", \"fieldset\", \"figure\", \"footer\", \"form\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"header\", \"hgroup\", \"hr\", \"i\", \"iframe\", \"img\", \"input\", \"ins\", \"kbd\", \"keygen\", \"label\", \"link\", \"main\", \"map\", \"mark\", \"menu\", \"meta\", \"meter\", \"nav\", \"ns1:switch\", \"ns1:trigger\", \"ns2:math\", \"ns3:svg\", \"object\", \"ol\", \"output\", \"p\", \"pre\", \"progress\", \"q\", \"ruby\", \"s\", \"samp\", \"script\", \"section\", \"select\", \"small\", \"span\", \"strong\", \"style\", \"sub\", \"sup\", \"table\", \"textarea\", \"time\", \"u\", \"ul\", \"var\", \"video\" or \"wbr\" (with xmlns:ns1=\"http://www.idpf.org/2007/ops\" xmlns:ns2=\"http://www.w3.org/1998/Math/MathML\" xmlns:ns3=\"http://www.w3.org/2000/svg\")"
+Actual:
+"Error while parsing file: element \"big\" not allowed here; expected the element end-tag, text or element \"a\", \"abbr\", \"address\", \"area\", \"article\", \"aside\", \"audio\", \"b\", \"bdi\", \"bdo\", \"blockquote\", \"br\", \"button\", \"canvas\", \"cite\", \"code\", \"command\", \"datalist\", \"del\", \"details\", \"dfn\", \"div\", \"dl\", \"em\", \"embed\", \"fieldset\", \"figure\", \"footer\", \"form\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"header\", \"hgroup\", \"hr\", \"i\", \"iframe\", \"img\", \"input\", \"ins\", \"kbd\", \"keygen\", \"label\", \"link\", \"main\", \"map\", \"mark\", \"menu\", \"meta\", \"meter\", \"nav\", \"ns1:switch\", \"ns1:trigger\", \"ns2:math\", \"object\", \"ol\", \"output\", \"p\", \"pre\", \"progress\", \"q\", \"ruby\", \"s\", \"samp\", \"script\", \"section\", \"select\", \"small\", \"span\", \"strong\", \"style\", \"sub\", \"sup\", \"svg\", \"table\", \"textarea\", \"time\", \"u\", \"ul\", \"var\", \"video\" or \"wbr\" (with xmlns:ns1=\"http://www.idpf.org/2007/ops\" xmlns:ns2=\"http://www.w3.org/1998/Math/MathML\")"
+
+Values do not match(/messages[5]/message)
+Expected:
+"Error while parsing file: element \"center\" not allowed here; expected the element end-tag, text or element \"a\", \"abbr\", \"address\", \"area\", \"article\", \"aside\", \"audio\", \"b\", \"bdi\", \"bdo\", \"blockquote\", \"br\", \"button\", \"canvas\", \"cite\", \"code\", \"command\", \"datalist\", \"del\", \"details\", \"dfn\", \"div\", \"dl\", \"em\", \"embed\", \"fieldset\", \"figure\", \"footer\", \"form\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"header\", \"hgroup\", \"hr\", \"i\", \"iframe\", \"img\", \"input\", \"ins\", \"kbd\", \"keygen\", \"label\", \"link\", \"main\", \"map\", \"mark\", \"menu\", \"meta\", \"meter\", \"nav\", \"ns1:switch\", \"ns1:trigger\", \"ns2:math\", \"ns3:svg\", \"object\", \"ol\", \"output\", \"p\", \"pre\", \"progress\", \"q\", \"ruby\", \"s\", \"samp\", \"script\", \"section\", \"select\", \"small\", \"span\", \"strong\", \"style\", \"sub\", \"sup\", \"table\", \"textarea\", \"time\", \"u\", \"ul\", \"var\", \"video\" or \"wbr\" (with xmlns:ns1=\"http://www.idpf.org/2007/ops\" xmlns:ns2=\"http://www.w3.org/1998/Math/MathML\" xmlns:ns3=\"http://www.w3.org/2000/svg\")"
+Actual:
+"Error while parsing file: element \"center\" not allowed here; expected the element end-tag, text or element \"a\", \"abbr\", \"address\", \"area\", \"article\", \"aside\", \"audio\", \"b\", \"bdi\", \"bdo\", \"blockquote\", \"br\", \"button\", \"canvas\", \"cite\", \"code\", \"command\", \"datalist\", \"del\", \"details\", \"dfn\", \"div\", \"dl\", \"em\", \"embed\", \"fieldset\", \"figure\", \"footer\", \"form\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"header\", \"hgroup\", \"hr\", \"i\", \"iframe\", \"img\", \"input\", \"ins\", \"kbd\", \"keygen\", \"label\", \"link\", \"main\", \"map\", \"mark\", \"menu\", \"meta\", \"meter\", \"nav\", \"ns1:switch\", \"ns1:trigger\", \"ns2:math\", \"object\", \"ol\", \"output\", \"p\", \"pre\", \"progress\", \"q\", \"ruby\", \"s\", \"samp\", \"script\", \"section\", \"select\", \"small\", \"span\", \"strong\", \"style\", \"sub\", \"sup\", \"svg\", \"table\", \"textarea\", \"time\", \"u\", \"ul\", \"var\", \"video\" or \"wbr\" (with xmlns:ns1=\"http://www.idpf.org/2007/ops\" xmlns:ns2=\"http://www.w3.org/1998/Math/MathML\")"
+
+Values do not match(/messages[6]/message)
+Expected:
+"Error while parsing file: element \"strike\" not allowed here; expected the element end-tag, text or element \"a\", \"abbr\", \"address\", \"area\", \"article\", \"aside\", \"audio\", \"b\", \"bdi\", \"bdo\", \"blockquote\", \"br\", \"button\", \"canvas\", \"cite\", \"code\", \"command\", \"datalist\", \"del\", \"details\", \"dfn\", \"div\", \"dl\", \"em\", \"embed\", \"fieldset\", \"figure\", \"footer\", \"form\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"header\", \"hgroup\", \"hr\", \"i\", \"iframe\", \"img\", \"input\", \"ins\", \"kbd\", \"keygen\", \"label\", \"link\", \"main\", \"map\", \"mark\", \"menu\", \"meta\", \"meter\", \"nav\", \"ns1:switch\", \"ns1:trigger\", \"ns2:math\", \"ns3:svg\", \"object\", \"ol\", \"output\", \"p\", \"pre\", \"progress\", \"q\", \"ruby\", \"s\", \"samp\", \"script\", \"section\", \"select\", \"small\", \"span\", \"strong\", \"style\", \"sub\", \"sup\", \"table\", \"textarea\", \"time\", \"u\", \"ul\", \"var\", \"video\" or \"wbr\" (with xmlns:ns1=\"http://www.idpf.org/2007/ops\" xmlns:ns2=\"http://www.w3.org/1998/Math/MathML\" xmlns:ns3=\"http://www.w3.org/2000/svg\")"
+Actual:
+"Error while parsing file: element \"strike\" not allowed here; expected the element end-tag, text or element \"a\", \"abbr\", \"address\", \"area\", \"article\", \"aside\", \"audio\", \"b\", \"bdi\", \"bdo\", \"blockquote\", \"br\", \"button\", \"canvas\", \"cite\", \"code\", \"command\", \"datalist\", \"del\", \"details\", \"dfn\", \"div\", \"dl\", \"em\", \"embed\", \"fieldset\", \"figure\", \"footer\", \"form\", \"h1\", \"h2\", \"h3\", \"h4\", \"h5\", \"h6\", \"header\", \"hgroup\", \"hr\", \"i\", \"iframe\", \"img\", \"input\", \"ins\", \"kbd\", \"keygen\", \"label\", \"link\", \"main\", \"map\", \"mark\", \"menu\", \"meta\", \"meter\", \"nav\", \"ns1:switch\", \"ns1:trigger\", \"ns2:math\", \"object\", \"ol\", \"output\", \"p\", \"pre\", \"progress\", \"q\", \"ruby\", \"s\", \"samp\", \"script\", \"section\", \"select\", \"small\", \"span\", \"strong\", \"style\", \"sub\", \"sup\", \"svg\", \"table\", \"textarea\", \"time\", \"u\", \"ul\", \"var\", \"video\" or \"wbr\" (with xmlns:ns1=\"http://www.idpf.org/2007/ops\" xmlns:ns2=\"http://www.w3.org/1998/Math/MathML\")"
+ expected:<0> but was:<4>
+	at junit.framework.Assert.fail(Assert.java:50)
+	at junit.framework.Assert.failNotEquals(Assert.java:287)
+	at junit.framework.Assert.assertEquals(Assert.java:67)
+	at junit.framework.Assert.assertEquals(Assert.java:199)
+	at com.adobe.epubcheck.test.jsonCompare.compareJsonFiles(jsonCompare.java:26)
+	at com.adobe.epubcheck.test.common.compareJson(common.java:202)
+	at com.adobe.epubcheck.test.common.runExpTest(common.java:72)
+	at com.adobe.epubcheck.test.common.runExpTest(common.java:29)
+	at com.adobe.epubcheck.test.xhtml_Test.runXhtmlTest(xhtml_Test.java:134)
+	at com.adobe.epubcheck.test.xhtml_Test.html5_deprecated_epub3Test(xhtml_Test.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.adobe.epubcheck.test.toc_Test
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.164 sec
+Running com.adobe.epubcheck.test.command_line_Test
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.038 sec
+Running com.adobe.epubcheck.test.api_Test
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 sec
+Running com.adobe.epubcheck.test.encryption_Test
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.679 sec
+Running com.adobe.epubcheck.test.dtBook_Test
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.252 sec
+Running com.adobe.epubcheck.test.script_Test
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.474 sec
+Running com.adobe.epubcheck.test.css_Test
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.638 sec
+Running com.adobe.epubcheck.test.opf_Test
+Tests run: 30, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.601 sec <<< FAILURE!
+viewport_Test(com.adobe.epubcheck.test.opf_Test)  Time elapsed: 0.104 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Outputted json isn't as expected. 
+Values do not match(/checker/nError)
+Expected:
+3
+Actual:
+4
+
+The number of elements in the array do not match.(/messages)
+Expected:
+8
+Actual:
+9
+ expected:<0> but was:<2>
+	at junit.framework.Assert.fail(Assert.java:50)
+	at junit.framework.Assert.failNotEquals(Assert.java:287)
+	at junit.framework.Assert.assertEquals(Assert.java:67)
+	at junit.framework.Assert.assertEquals(Assert.java:199)
+	at com.adobe.epubcheck.test.jsonCompare.compareJsonFiles(jsonCompare.java:26)
+	at com.adobe.epubcheck.test.common.compareJson(common.java:202)
+	at com.adobe.epubcheck.test.common.runExpTest(common.java:72)
+	at com.adobe.epubcheck.test.common.runExpTest(common.java:29)
+	at com.adobe.epubcheck.test.opf_Test.runOpfJsonTest(opf_Test.java:210)
+	at com.adobe.epubcheck.test.opf_Test.viewport_Test(opf_Test.java:100)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.adobe.epubcheck.test.package_Test
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.779 sec
+Running com.adobe.epubcheck.test.single_file_Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec
+Running org.idpf.epubcheck.util.css.CssScannerTest
+Tests run: 127, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec
+Running org.idpf.epubcheck.util.css.CssInputStreamTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running org.idpf.epubcheck.util.css.CssParserTest
+Tests run: 120, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 sec
+
+Results :
+
+Failed tests:   testValidateEPUBInvalidNcx(com.adobe.epubcheck.api.Epub30CheckTest): The error results do not match expected:<[MessageId.RSC_012, MessageId.RSC_012]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_012, MessageId.RSC_012]>
+  testValidateEPUBValidNcx(com.adobe.epubcheck.api.Epub30CheckTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUBTestSvg(com.adobe.epubcheck.api.Epub30CheckTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUBMp3(com.adobe.epubcheck.api.Epub30CheckTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUBInvalidMp3(com.adobe.epubcheck.api.Epub30CheckTest): The error results do not match expected:<[MessageId.OPF_043]> but was:<[MessageId.OPF_043, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUBMp3WithFallback(com.adobe.epubcheck.api.Epub30CheckTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUBPLoremSvg(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUBPLoremSvgHyperlink(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUBPLoremSvgHyperlinkNoTitle(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUB30_issue134_1(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUB30_issue134_2(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[MessageId.OPF_014, MessageId.OPF_014]> but was:<[MessageId.RSC_005, MessageId.OPF_014, MessageId.RSC_005, MessageId.OPF_014]>
+  testValidateEPUB30_issue134_3(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[MessageId.OPF_014]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.OPF_014]>
+  testValidateEPUB30_svgCoverImage(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUB30_svgInSpine(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateEPUB30_svgReferenced(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testFXL_WithSVG(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testFXL_WithSVG_NoViewbox(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[MessageId.HTM_048]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005, MessageId.HTM_048]>
+  testFXL_WithSVGNotInSpine(com.adobe.epubcheck.api.Epub30CheckExpandedTest): The error results do not match expected:<[]> but was:<[MessageId.RSC_005, MessageId.RSC_005, MessageId.RSC_005]>
+  testValidateSVGRectInvalid(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[RSC-005, RSC-005, RSC-005, RSC-005]> but was:<[RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005]>
+  testValidateSVGRectValid(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[]> but was:<[RSC-005, RSC-005, RSC-005]>
+  testValidateXHTMLOPSSVG001(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[]> but was:<[RSC-005, RSC-005]>
+  testValidateXHTMLOPSSVG002(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[]> but was:<[RSC-005, RSC-005]>
+  testValidateXHTML_SVG001(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[RSC-005, RSC-005]> but was:<[RSC-005, RSC-005, RSC-005, RSC-005]>
+  testValidateXHTML_SVGLinks(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[]> but was:<[RSC-005]>
+  testValidateXHTML_SVGLinks_MisssingTitle(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[]> but was:<[RSC-005]>
+  testValidateSVG_Links(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[]> but was:<[RSC-005, RSC-005, RSC-005, RSC-005]>
+  testValidateSVG_ValidStyleWithoutType_issue688(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[]> but was:<[RSC-005, RSC-005, RSC-005, RSC-005]>
+  testValidateSVG_Links_MisssingTitle(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[]> but was:<[RSC-005, RSC-005, RSC-005]>
+  testValidateSVGIssue219(com.adobe.epubcheck.ops.OPSCheckerTest): The error results do not match expected:<[]> but was:<[RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005, RSC-005]>
+  testLoremSVG30(com.adobe.epubcheck.ocf.OCFCheckerTest): expected:<0> but was:<3>
+  testLoremHyperlink30(com.adobe.epubcheck.ocf.OCFCheckerTest): expected:<0> but was:<3>
+  hyperlinksTest(com.adobe.epubcheck.test.xhtml_Test): Outputted json isn't as expected. (..)
+  html5_deprecated_epub3Test(com.adobe.epubcheck.test.xhtml_Test): Outputted json isn't as expected. (..)
+  viewport_Test(com.adobe.epubcheck.test.opf_Test): Outputted json isn't as expected. (..)
+
+Tests run: 980, Failures: 34, Errors: 0, Skipped: 1
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 52.151 s
+[INFO] Finished at: 2017-07-10T04:32:55+02:00
+[INFO] Final Memory: 34M/958M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project epubcheck: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/IDPF/epubcheck/251827224/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
