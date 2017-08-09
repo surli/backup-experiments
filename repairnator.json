@@ -1,0 +1,111 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "failing_passing",
+  "totalNumberErroringTests": 1,
+  "repo": "torakiki/sejda",
+  "bugCommit": "https://github.com/torakiki/sejda/compare/1c3a00652c21...402533858b09",
+  "failingModule": "/root/workspace/torakiki/sejda/256339042/sejda-sambox",
+  "hostname": "spirals-repairnator",
+  "totalNumberFailingTests": 8,
+  "error-types": [
+    "org.sejda.model.exception.TaskIOException",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 887,
+  "failing-test-cases": [
+    {
+      "className": "org.sejda.impl.sambox.JpegToPdfSamboxTaskTest",
+      "failingMethods": [
+        "org.sejda.impl.sambox.JpegToPdfSamboxTaskTest#pageSizeShouldMatchImageSize",
+        "org.sejda.impl.sambox.JpegToPdfSamboxTaskTest#testUnsupportedTiffWithAlpha",
+        "org.sejda.impl.sambox.JpegToPdfSamboxTaskTest#specificPageSize"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Task failed expected null, but was:\u003corg.sejda.model.exception.TaskNonLenientExecutionException: org.sejda.model.exception.TaskIOException: An error occurred creating PDImageXObject from file source: draft.tiff\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Task failed expected null, but was:\u003corg.sejda.model.exception.TaskNonLenientExecutionException: org.sejda.model.exception.TaskIOException: An error occurred creating PDImageXObject from file source: draft.tiff\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Task failed expected null, but was:\u003corg.sejda.model.exception.TaskNonLenientExecutionException: org.sejda.model.exception.TaskIOException: An error occurred creating PDImageXObject from file source: plpHoVU0tvx7wnax.tiff\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.sejda.impl.sambox.MergeSamboxTaskTest",
+      "failingMethods": [
+        "org.sejda.impl.sambox.MergeSamboxTaskTest#mergeImagesAndPdfs",
+        "org.sejda.impl.sambox.MergeSamboxTaskTest#normalizePageSizes_FirstPageLandscape",
+        "org.sejda.impl.sambox.MergeSamboxTaskTest#normalizePageSizes_FirstPagePortrait",
+        "org.sejda.impl.sambox.MergeSamboxTaskTest#mergeImagesWithTocAndFooter"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Wrong number of pages expected:\u003c27\u003e but was:\u003c26\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c595.0\u003e but was:\u003c419.79327\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1190.0\u003e but was:\u003c841.0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Wrong number of pages expected:\u003c4\u003e but was:\u003c3\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.sejda.impl.sambox.WatermarkSamboxTaskTest",
+      "failingMethods": [
+        "org.sejda.impl.sambox.WatermarkSamboxTaskTest#testAddingTiffImage"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Task failed expected null, but was:\u003corg.sejda.model.exception.TaskIOException: An error occurred creating PDImageXObject from file source: H5IQCxID2gpQTJQV.tiff\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.sejda.impl.sambox.component.PageImageWriterTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.sejda.impl.sambox.component.PageImageWriterTest#testTiffWithAlphaToPDXImageObject"
+      ],
+      "failures": [
+        {
+          "failureName": "org.sejda.model.exception.TaskIOException",
+          "failureDetail": "An error occurred creating PDImageXObject from file source: 1juizcxHOeDW9arS.tiff",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
