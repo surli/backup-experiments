@@ -1,0 +1,449 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 68,
+  "repo": "jwtk/jjwt",
+  "failingModule": "/root/workspace/jwtk/jjwt/257760762",
+  "hostname": "spirals-repairnator",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "org.codehaus.groovy.runtime.typehandling.GroovyCastException",
+    "groovy.lang.GroovyRuntimeException",
+    "io.jsonwebtoken.UnsupportedJwtException",
+    "java.lang.NullPointerException",
+    "org.junit.ComparisonFailure"
+  ],
+  "totalNumberRunningTests": 275,
+  "failing-test-cases": [
+    {
+      "className": "io.jsonwebtoken.impl.DefaultJwsTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.jsonwebtoken.impl.DefaultJwsTest#testToString"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.jsonwebtoken.JwtsTest",
+      "failingMethods": [
+        "io.jsonwebtoken.JwtsTest#testES256WithPrivateKeyValidation"
+      ],
+      "erroringMethods": [
+        "io.jsonwebtoken.JwtsTest#testPS384",
+        "io.jsonwebtoken.JwtsTest#testCompressedWithCustomResolver",
+        "io.jsonwebtoken.JwtsTest#testRSA384WithPrivateKeyValidation",
+        "io.jsonwebtoken.JwtsTest#testES384",
+        "io.jsonwebtoken.JwtsTest#testHS512",
+        "io.jsonwebtoken.JwtsTest#testRSA512WithPrivateKeyValidation",
+        "io.jsonwebtoken.JwtsTest#testUncompressedJwt",
+        "io.jsonwebtoken.JwtsTest#testES256",
+        "io.jsonwebtoken.JwtsTest#testHS256",
+        "io.jsonwebtoken.JwtsTest#testCompressedJwtWithDeflate",
+        "io.jsonwebtoken.JwtsTest#testES512",
+        "io.jsonwebtoken.JwtsTest#testPS512",
+        "io.jsonwebtoken.JwtsTest#testRS384",
+        "io.jsonwebtoken.JwtsTest#testHS384",
+        "io.jsonwebtoken.JwtsTest#testRS256",
+        "io.jsonwebtoken.JwtsTest#testRSA256WithPrivateKeyValidation",
+        "io.jsonwebtoken.JwtsTest#testRS512",
+        "io.jsonwebtoken.JwtsTest#testCompressStringPayloadWithDeflate",
+        "io.jsonwebtoken.JwtsTest#testCompressedJwtWithGZIP",
+        "io.jsonwebtoken.JwtsTest#testPS256"
+      ],
+      "failures": [
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the ES256 signature algorithm, but the specified signing key of type org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey may not be used to validate ES256 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the ES384 signature algorithm, but the specified signing key of type org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey may not be used to validate ES384 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the ES512 signature algorithm, but the specified signing key of type org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey may not be used to validate ES512 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the PS256 signature algorithm, but the specified signing key of type sun.security.rsa.RSAPublicKeyImpl may not be used to validate PS256 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the PS384 signature algorithm, but the specified signing key of type sun.security.rsa.RSAPublicKeyImpl may not be used to validate PS384 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the PS512 signature algorithm, but the specified signing key of type sun.security.rsa.RSAPublicKeyImpl may not be used to validate PS512 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the RS256 signature algorithm, but the specified signing key of type sun.security.rsa.RSAPublicKeyImpl may not be used to validate RS256 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the RS384 signature algorithm, but the specified signing key of type sun.security.rsa.RSAPublicKeyImpl may not be used to validate RS384 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the RS512 signature algorithm, but the specified signing key of type sun.security.rsa.RSAPublicKeyImpl may not be used to validate RS512 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the RS512 signature algorithm, but the specified signing key of type sun.security.rsa.RSAPrivateCrtKeyImpl may not be used to validate RS512 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[Key cannot be null].\u003e but was:\u003c[Elliptic Curve signature validation requires an ECPublicKey instance].\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the RS256 signature algorithm, but the specified signing key of type sun.security.rsa.RSAPrivateCrtKeyImpl may not be used to validate RS256 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the RS384 signature algorithm, but the specified signing key of type sun.security.rsa.RSAPrivateCrtKeyImpl may not be used to validate RS384 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 20
+    },
+    {
+      "className": "io.jsonwebtoken.JwtParserTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.jsonwebtoken.JwtParserTest#testParseRequireIssuer_Missing_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireCustomDate_Incorrect_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseWithInvalidSignature",
+        "io.jsonwebtoken.JwtParserTest#testParseClaimsWithSigningKeyResolverInvalidKey",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireExpiration_Success",
+        "io.jsonwebtoken.JwtParserTest#testParseClaimsJwsWithExpiredJws",
+        "io.jsonwebtoken.JwtParserTest#testParsePlaintextJwsWithSigningKeyResolverInvalidKey",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireAudience_Incorrect_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireGeneric_Incorrect_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseClaimsJwsWithPrematureJws",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireId_Incorrect_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireNotBefore_Missing_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParsePlaintextJws",
+        "io.jsonwebtoken.JwtParserTest#testParseClaimsJwsWithNumericTypes",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireId_Success",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireCustomDate_Success",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireIssuedAt_Incorrect_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireIssuedAt_Success",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireIssuedAt_Missing_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireId_Missing_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParsePlaintextJwsWithClaimsJws",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireExpirationAt_Incorrect_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParsePlaintextJwsWithSigningKeyResolverAdapter",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireNotBefore_Success",
+        "io.jsonwebtoken.JwtParserTest#testParseWithBase64EncodedSigningKey",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireSubject_Incorrect_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireCustomDate_Missing_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireIssuer_Success",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireAudience_Success",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireSubject_Success",
+        "io.jsonwebtoken.JwtParserTest#testParseClaimsJwsWithPlaintextJws",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireExpiration_Missing_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseClaimsJws",
+        "io.jsonwebtoken.JwtParserTest#testParseClaimsWithSigningKeyResolver",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireGeneric_Success",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireAudience_Missing_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireIssuer_Incorrect_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireNotBefore_Incorrect_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireedGeneric_Missing_Fail",
+        "io.jsonwebtoken.JwtParserTest#testParseRequireSubject_Missing_Fail"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The specified SigningKeyResolver implementation does not support Claims JWS signing key resolution.  Consider overriding either the resolveSigningKey(JwsHeader, Claims) method or, for HMAC algorithms, the resolveSigningKeyBytes(JwsHeader, Claims) method.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The specified SigningKeyResolver implementation does not support plaintext JWS signing key resolution.  Consider overriding either the resolveSigningKey(JwsHeader, String) method or, for HMAC algorithms, the resolveSigningKeyBytes(JwsHeader, String) method.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The specified SigningKeyResolver implementation does not support Claims JWS signing key resolution.  Consider overriding either the resolveSigningKey(JwsHeader, Claims) method or, for HMAC algorithms, the resolveSigningKeyBytes(JwsHeader, Claims) method.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The specified SigningKeyResolver implementation does not support plaintext JWS signing key resolution.  Consider overriding either the resolveSigningKey(JwsHeader, String) method or, for HMAC algorithms, the resolveSigningKeyBytes(JwsHeader, String) method.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 40
+    },
+    {
+      "className": "io.jsonwebtoken.impl.crypto.RsaSignatureValidatorTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.jsonwebtoken.impl.crypto.RsaSignatureValidatorTest#testDoVerifyWithInvalidKeyException",
+        "io.jsonwebtoken.impl.crypto.RsaSignatureValidatorTest#testConstructorWithNonRsaKey"
+      ],
+      "failures": [
+        {
+          "failureName": "org.codehaus.groovy.runtime.typehandling.GroovyCastException",
+          "failureDetail": "Cannot cast object \u0027Sun RSA public key, 1024 bits   modulus: 104902208024566096850948033967529079685875149568435238533088627441493682067972904943035931729988301890635963666588877638815107851332076967467902267158350915310443153412330275132680828092167141687907500767667514725029316474867328879549464037398375879027552099260828258904650267021922295835566009154987334315531   public exponent: 65537\u0027 with class \u0027sun.security.rsa.RSAPublicKeyImpl\u0027 to class \u0027java.util.Collection\u0027",
+          "isError": true
+        },
+        {
+          "failureName": "groovy.lang.GroovyRuntimeException",
+          "failureDetail": "Could not find matching constructor for: io.jsonwebtoken.impl.crypto.RsaSignatureValidator(io.jsonwebtoken.SignatureAlgorithm, javax.crypto.spec.SecretKeySpec)",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "io.jsonwebtoken.SigningKeyResolverAdapterTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.jsonwebtoken.SigningKeyResolverAdapterTest#testResolveClaimsSigningKeyWithRsaKey"
+      ],
+      "failures": [
+        {
+          "failureName": "io.jsonwebtoken.UnsupportedJwtException",
+          "failureDetail": "The parsed JWT indicates it was signed with the RS256 signature algorithm, but the specified signing key of type sun.security.rsa.RSAPublicKeyImpl may not be used to validate RS256 signatures.  Because the specified signing key reflects a specific and expected algorithm, and the JWT does not reflect this algorithm, it is likely that the JWT was not expected and therefore should not be trusted.  Another possibility is that the parser was configured with the incorrect signing key, but this cannot be assumed for security reasons.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.jsonwebtoken.impl.crypto.EllipticCurveSignatureValidatorTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.jsonwebtoken.impl.crypto.EllipticCurveSignatureValidatorTest#testDoVerifyWithInvalidKeyException",
+        "io.jsonwebtoken.impl.crypto.EllipticCurveSignatureValidatorTest#legacySignatureCompatTest",
+        "io.jsonwebtoken.impl.crypto.EllipticCurveSignatureValidatorTest#ecdsaSignatureComplianceTest",
+        "io.jsonwebtoken.impl.crypto.EllipticCurveSignatureValidatorTest#verifySwarmTest"
+      ],
+      "failures": [
+        {
+          "failureName": "org.codehaus.groovy.runtime.typehandling.GroovyCastException",
+          "failureDetail": "Cannot cast object \u0027EC Public Key             X: 139786fd4361c4efaeb8b2714c74139a9721e998ec3771da5b2214e01fd4036657eee54adc62bfdc4d30b24af24aae52d7e160757f6008f4de9fe1d2683fdb75747             Y: f13f304af12a13a66b5f2843f229072e63eee7e0fa16d56c32009ad0e060d85eaf4b2d6288063afa624f7f4e0ffec45aa1ef96701187d3e17e2437a70ce209b9fb \u0027 with class \u0027org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey\u0027 to class \u0027java.util.Collection\u0027",
+          "isError": true
+        },
+        {
+          "failureName": "groovy.lang.GroovyRuntimeException",
+          "failureDetail": "Could not find matching constructor for: io.jsonwebtoken.impl.crypto.EllipticCurveSignatureValidator(io.jsonwebtoken.SignatureAlgorithm, org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey)",
+          "isError": true
+        },
+        {
+          "failureName": "groovy.lang.GroovyRuntimeException",
+          "failureDetail": "Could not find matching constructor for: io.jsonwebtoken.impl.crypto.EllipticCurveSignatureValidator(io.jsonwebtoken.SignatureAlgorithm, org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey)",
+          "isError": true
+        },
+        {
+          "failureName": "groovy.lang.GroovyRuntimeException",
+          "failureDetail": "Could not find matching constructor for: io.jsonwebtoken.impl.crypto.EllipticCurveSignatureValidator(io.jsonwebtoken.SignatureAlgorithm, org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey)",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    }
+  ]
+}
