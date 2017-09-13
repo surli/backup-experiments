@@ -1,0 +1,148 @@
+{
+  "totalNumberSkippingTests": 77,
+  "bugType": "failing_passing",
+  "totalNumberErroringTests": 4,
+  "repo": "druid-io/druid",
+  "failingModule": "/root/workspace/druid-io/druid/262362643/server",
+  "hostname": "spirals-repairnator",
+  "totalNumberFailingTests": 5,
+  "error-types": [
+    "org.apache.zookeeper.KeeperException$ConnectionLossException",
+    "java.lang.AssertionError",
+    "java.lang.Exception"
+  ],
+  "totalNumberRunningTests": 76275,
+  "failing-test-cases": [
+    {
+      "className": "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest",
+      "failingMethods": [
+        "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest#testRetryAllFail",
+        "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest#testRetrySuccessAtSecondLocation"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.curator.discovery.ServiceAnnouncerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.druid.curator.discovery.ServiceAnnouncerTest#testServiceAnnouncement"
+      ],
+      "failures": [
+        {
+          "failureName": "org.apache.zookeeper.KeeperException$ConnectionLossException",
+          "failureDetail": "KeeperErrorCode \u003d ConnectionLoss for /test/druid:coordinator/eb491b69-0683-4561-95d2-28bf68ed15e4",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.druid.server.coordinator.DruidCoordinatorBalancerTest",
+      "failingMethods": [
+        "io.druid.server.coordinator.DruidCoordinatorBalancerTest#testMoveToEmptyServerBalancer"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.segment.realtime.RealtimeManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.druid.segment.realtime.RealtimeManagerTest#testQueryWithSegmentSpec"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "test timed out after 10000 milliseconds",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.druid.curator.discovery.CuratorDruidNodeAnnouncerAndDiscoveryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.druid.curator.discovery.CuratorDruidNodeAnnouncerAndDiscoveryTest#testAnnouncementAndDiscovery"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "test timed out after 10000 milliseconds",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.druid.curator.announcement.AnnouncerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.druid.curator.announcement.AnnouncerTest#testSessionKilled"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "test timed out after 60000 milliseconds",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.druid.query.lookup.LookupSnapshotTakerTest",
+      "failingMethods": [
+        "io.druid.query.lookup.LookupSnapshotTakerTest#testIOExceptionDuringLookupPersist"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected exception: io.druid.java.util.common.ISE",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.segment.loading.LocalDataSegmentPusherTest",
+      "failingMethods": [
+        "io.druid.segment.loading.LocalDataSegmentPusherTest#testPushCannotCreateDirectory"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected test to throw (an instance of java.io.IOException and exception with message a string containing \"Unable to create directory\")",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
