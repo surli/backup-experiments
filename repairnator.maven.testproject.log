@@ -1,0 +1,1606 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] graphjet
+[INFO] GraphJet Core
+[INFO] GraphJet Adapters
+[INFO] GraphJet Demo
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building graphjet 1.1.3-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphJet Core 1.1.3-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ graphjet-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/twitter/GraphJet/262443567/graphjet-core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ graphjet-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ graphjet-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/twitter/GraphJet/262443567/graphjet-core/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ graphjet-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ graphjet-core ---
+[WARNING] The parameter forkMode is deprecated since version 2.14. Use forkCount and reuseForks instead.
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 6.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 119.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 1636.7 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.twitter.graphjet.bipartite.optimizer.PowerLawEdgePoolOptimizerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.126 sec - in com.twitter.graphjet.bipartite.optimizer.PowerLawEdgePoolOptimizerTest
+Running com.twitter.graphjet.bipartite.edgepool.PowerLawDegreeEdgePoolTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.492 sec - in com.twitter.graphjet.bipartite.edgepool.PowerLawDegreeEdgePoolTest
+Running com.twitter.graphjet.bipartite.edgepool.RegularDegreeEdgePoolTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.536 sec - in com.twitter.graphjet.bipartite.edgepool.RegularDegreeEdgePoolTest
+Running com.twitter.graphjet.bipartite.edgepool.PowerLawDegreeEdgeRandomIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.228 sec - in com.twitter.graphjet.bipartite.edgepool.PowerLawDegreeEdgeRandomIteratorTest
+Running com.twitter.graphjet.bipartite.edgepool.RegularDegreeEdgeRandomIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.188 sec - in com.twitter.graphjet.bipartite.edgepool.RegularDegreeEdgeRandomIteratorTest
+Running com.twitter.graphjet.bipartite.edgepool.RegularDegreeEdgeIteratorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.199 sec - in com.twitter.graphjet.bipartite.edgepool.RegularDegreeEdgeIteratorTest
+Running com.twitter.graphjet.bipartite.edgepool.PowerLawDegreeEdgeIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.197 sec - in com.twitter.graphjet.bipartite.edgepool.PowerLawDegreeEdgeIteratorTest
+Running com.twitter.graphjet.bipartite.MultiSegmentPowerLawBipartiteGraphTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.022 sec - in com.twitter.graphjet.bipartite.MultiSegmentPowerLawBipartiteGraphTest
+Running com.twitter.graphjet.bipartite.segment.LeftIndexedBipartiteGraphSegmentTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.189 sec - in com.twitter.graphjet.bipartite.segment.LeftIndexedBipartiteGraphSegmentTest
+Running com.twitter.graphjet.bipartite.segment.LeftRegularBipartiteGraphSegmentTest
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.001 sec <<< FAILURE! - in com.twitter.graphjet.bipartite.segment.LeftRegularBipartiteGraphSegmentTest
+testConcurrentReadWrites(com.twitter.graphjet.bipartite.segment.LeftRegularBipartiteGraphSegmentTest)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<[1]> but was:<[]>
+	at com.twitter.graphjet.bipartite.segment.LeftRegularBipartiteGraphSegmentTest.testConcurrentReadWrites(LeftRegularBipartiteGraphSegmentTest.java:226)
+
+Running com.twitter.graphjet.bipartite.segment.InternalIdToLongIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.14 sec - in com.twitter.graphjet.bipartite.segment.InternalIdToLongIteratorTest
+Running com.twitter.graphjet.bipartite.MultiSegmentLeftIndexedPowerLawBipartiteGraphTest
+=== Round 0
+Total memory available to JVM (bytes): 319291392
+Free memory (bytes): 303952344
+=== Round 1
+Total memory available to JVM (bytes): 319291392
+Free memory (bytes): 250432856
+=== Round 2
+Total memory available to JVM (bytes): 319291392
+Free memory (bytes): 195130232
+=== Round 3
+Total memory available to JVM (bytes): 319291392
+Free memory (bytes): 271033776
+=== Round 4
+Total memory available to JVM (bytes): 319291392
+Free memory (bytes): 216365200
+=== Round 5
+Total memory available to JVM (bytes): 451411968
+Free memory (bytes): 428167864
+=== Round 6
+Total memory available to JVM (bytes): 451411968
+Free memory (bytes): 376538712
+=== Round 7
+Total memory available to JVM (bytes): 451411968
+Free memory (bytes): 325433880
+=== Round 8
+Total memory available to JVM (bytes): 451411968
+Free memory (bytes): 272087064
+=== Round 9
+Total memory available to JVM (bytes): 451411968
+Free memory (bytes): 220457912
+=== Round 10
+Total memory available to JVM (bytes): 451411968
+Free memory (bytes): 433012496
+=== Round 11
+Total memory available to JVM (bytes): 451411968
+Free memory (bytes): 380703272
+=== Round 12
+Total memory available to JVM (bytes): 451411968
+Free memory (bytes): 329132592
+=== Round 13
+Total memory available to JVM (bytes): 451411968
+Free memory (bytes): 280775680
+=== Round 14
+Total memory available to JVM (bytes): 451411968
+Free memory (bytes): 228990776
+=== Round 15
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 506663648
+=== Round 16
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 459405232
+=== Round 17
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 405984800
+=== Round 18
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 352735096
+=== Round 19
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 300310408
+=== Round 20
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 253051888
+=== Round 21
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 199879216
+=== Round 22
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 483030584
+=== Round 23
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 428563552
+=== Round 24
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 379641384
+=== Round 25
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 325174352
+=== Round 26
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 276722464
+=== Round 27
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 228270576
+=== Round 28
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 176319696
+=== Round 29
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 456928144
+=== Round 30
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 408351928
+=== Round 31
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 353393304
+=== Round 32
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 304976808
+=== Round 33
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 250018184
+=== Round 34
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 201601688
+=== Round 35
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 478129192
+=== Round 36
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 428023576
+=== Round 37
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 378704440
+=== Round 38
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 328367200
+=== Round 39
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 273633648
+=== Round 40
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 222772088
+=== Round 41
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 503104336
+=== Round 42
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 452684016
+=== Round 43
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 400617616
+=== Round 44
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 349148656
+=== Round 45
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 297082144
+=== Round 46
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 245613072
+=== Round 47
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 193995048
+=== Round 48
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 477268112
+=== Round 49
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 426127840
+=== Round 50
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 370997720
+=== Round 51
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 321083936
+=== Round 52
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 269886328
+=== Round 53
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 219008216
+=== Round 54
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 503313176
+=== Round 55
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 454762920
+=== Round 56
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 403591064
+=== Round 57
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 347032264
+=== Round 58
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 299268488
+=== Round 59
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 248620952
+=== Round 60
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 197973416
+=== Round 61
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 476540712
+=== Round 62
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 423330472
+=== Round 63
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 372373160
+=== Round 64
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 320891528
+=== Round 65
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 271605480
+=== Round 66
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 217870920
+=== Round 67
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 505163184
+=== Round 68
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 450659992
+=== Round 69
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 405319408
+=== Round 70
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 348548528
+=== Round 71
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 299459048
+=== Round 72
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 250893784
+=== Round 73
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 199615272
+=== Round 74
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 483019688
+=== Round 75
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 429511856
+=== Round 76
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 378018536
+=== Round 77
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 326000896
+=== Round 78
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 275114768
+=== Round 79
+Total memory available to JVM (bytes): 522190848
+Free memory (bytes): 224145768
+=== Round 80
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 505562248
+=== Round 81
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 460046672
+=== Round 82
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 408678672
+=== Round 83
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 354800080
+=== Round 84
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 302963264
+=== Round 85
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 251388608
+=== Round 86
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 199813952
+=== Round 87
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 477863352
+=== Round 88
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 425822952
+=== Round 89
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 374909512
+=== Round 90
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 322869080
+=== Round 91
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 271431320
+=== Round 92
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 220517880
+=== Round 93
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 503379640
+=== Round 94
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 456062040
+=== Round 95
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 399766600
+=== Round 96
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 351499240
+=== Round 97
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 301396760
+=== Round 98
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 250769960
+=== Round 99
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 196997240
+=== Round 100
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 481053968
+=== Round 101
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 430969088
+=== Round 102
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 376746696
+=== Round 103
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 327186136
+=== Round 104
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 272772536
+=== Round 105
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 224522776
+=== Round 106
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 502575584
+=== Round 107
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 455340736
+=== Round 108
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 400360656
+=== Round 109
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 352601488
+=== Round 110
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 302220720
+=== Round 111
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 245143360
+=== Round 112
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 197122032
+=== Round 113
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 478666320
+=== Round 114
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 430929424
+=== Round 115
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 377427984
+=== Round 116
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 325939904
+=== Round 117
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 273927504
+=== Round 118
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 223047664
+=== Round 119
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 506086816
+=== Round 120
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 460332536
+=== Round 121
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 407546960
+=== Round 122
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 353188416
+=== Round 123
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 301975904
+=== Round 124
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 249904640
+=== Round 125
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 203790888
+=== Round 126
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 477692944
+=== Round 127
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 429260744
+=== Round 128
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 379866920
+=== Round 129
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 328227240
+=== Round 130
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 275314520
+=== Round 131
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 221053240
+=== Round 132
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 504708552
+=== Round 133
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 460569448
+=== Round 134
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 407623928
+=== Round 135
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 357562168
+=== Round 136
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 306529224
+=== Round 137
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 253321544
+=== Round 138
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 202366280
+=== Round 139
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 477928784
+=== Round 140
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 426119776
+=== Round 141
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 374925296
+=== Round 142
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 326614472
+=== Round 143
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 275682152
+=== Round 144
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 224794216
+=== Round 145
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 504133912
+=== Round 146
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 460511128
+=== Round 147
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 409023544
+=== Round 148
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 356330184
+=== Round 149
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 305366920
+=== Round 150
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 253879336
+=== Round 151
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 202273944
+=== Round 152
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 477504936
+=== Round 153
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 426582512
+=== Round 154
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 378019448
+=== Round 155
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 327097048
+=== Round 156
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 276174544
+=== Round 157
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 221149776
+=== Round 158
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 504069168
+=== Round 159
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 457460928
+=== Round 160
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 406817224
+=== Round 161
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 355387144
+=== Round 162
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 303957064
+=== Round 163
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 252526984
+=== Round 164
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 201096904
+=== Round 165
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 477877480
+=== Round 166
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 429576848
+=== Round 167
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 378392568
+=== Round 168
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 327732504
+=== Round 169
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 272708072
+=== Round 170
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 223576096
+=== Round 171
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 504079560
+=== Round 172
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 457270120
+=== Round 173
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 408982560
+=== Round 174
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 355976120
+=== Round 175
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 306901976
+=== Round 176
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 255301176
+=== Round 177
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 203867592
+=== Round 178
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 476972512
+=== Round 179
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 427128792
+=== Round 180
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 380070632
+=== Round 181
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 328653952
+=== Round 182
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 272616592
+=== Round 183
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 225558432
+=== Round 184
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 504092360
+=== Round 185
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 457389992
+=== Round 186
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 403730912
+=== Round 187
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 356504224
+=== Round 188
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 301796504
+=== Round 189
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 254045496
+=== Round 190
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 202221536
+=== Round 191
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 486835040
+=== Round 192
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 435332336
+=== Round 193
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 384091792
+=== Round 194
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 332649776
+=== Round 195
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 281147072
+=== Round 196
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 229644368
+=== Round 197
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 502810080
+=== Round 198
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 455301616
+=== Round 199
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 409628272
+=== Round 200
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 358041952
+=== Round 201
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 306863248
+=== Round 202
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 255946704
+=== Round 203
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 199379344
+=== Round 204
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 485655856
+=== Round 205
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 434168976
+=== Round 206
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 382682096
+=== Round 207
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 331195216
+=== Round 208
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 279708336
+=== Round 209
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 228221456
+=== Round 210
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 502768456
+=== Round 211
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 454465976
+=== Round 212
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 403803952
+=== Round 213
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 352788016
+=== Round 214
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 301601776
+=== Round 215
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 250939856
+=== Round 216
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 199491456
+=== Round 217
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 477604432
+=== Round 218
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 426142512
+=== Round 219
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 374680592
+=== Round 220
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 323218672
+=== Round 221
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 271756728
+=== Round 222
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 221343448
+=== Round 223
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 504052024
+=== Round 224
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 456738552
+=== Round 225
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 405854752
+=== Round 226
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 356281752
+=== Round 227
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 305922272
+=== Round 228
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 254938560
+=== Round 229
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 201433160
+=== Round 230
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 486893800
+=== Round 231
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 430358840
+=== Round 232
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 382876296
+=== Round 233
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 332509992
+=== Round 234
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 280431752
+=== Round 235
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 229803288
+=== Round 236
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 502413424
+=== Round 237
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 457403464
+=== Round 238
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 405839296
+=== Round 239
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 358014320
+=== Round 240
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 306519104
+=== Round 241
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 255286048
+=== Round 242
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 203722088
+=== Round 243
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 487171216
+=== Round 244
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 429804016
+=== Round 245
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 379138944
+=== Round 246
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 332668432
+=== Round 247
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 281741200
+=== Round 248
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 227257760
+=== Round 249
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 178689968
+=== Round 250
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 459032848
+=== Round 251
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 406251744
+=== Round 252
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 358064704
+=== Round 253
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 307318576
+=== Round 254
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 255785968
+=== Round 255
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 204253360
+=== Round 256
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 477534936
+=== Round 257
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 431034952
+=== Round 258
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 373999736
+=== Round 259
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 323043032
+=== Round 260
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 277067368
+=== Round 261
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 225586344
+=== Round 262
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 504014712
+=== Round 263
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 456683608
+=== Round 264
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 405253448
+=== Round 265
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 349462072
+=== Round 266
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 300518800
+=== Round 267
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 254402992
+=== Round 268
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 197562872
+=== Round 269
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 486900256
+=== Round 270
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 430136488
+=== Round 271
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 381314248
+=== Round 272
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 332491904
+=== Round 273
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 281217456
+=== Round 274
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 224191520
+=== Round 275
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 503272520
+=== Round 276
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 457311064
+=== Round 277
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 405844248
+=== Round 278
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 350141144
+=== Round 279
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 301295928
+=== Round 280
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 249829112
+=== Round 281
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 200569792
+=== Round 282
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 481251744
+=== Round 283
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 434041248
+=== Round 284
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 383946992
+=== Round 285
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 327424392
+=== Round 286
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 279951736
+=== Round 287
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 229857480
+=== Round 288
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 178452424
+=== Round 289
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 460831256
+=== Round 290
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 409373096
+=== Round 291
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 357840016
+=== Round 292
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 306906176
+=== Round 293
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 258519016
+=== Round 294
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 207060856
+=== Round 295
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 487168096
+=== Round 296
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 430595416
+=== Round 297
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 382558376
+=== Round 298
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 327558656
+=== Round 299
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 279521616
+=== Round 300
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 230173776
+=== Round 301
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 503313656
+=== Round 302
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 457324136
+=== Round 303
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 405829256
+=== Round 304
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 349821896
+=== Round 305
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 303308056
+=== Round 306
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 255586616
+=== Round 307
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 202279800
+=== Round 308
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 486246800
+=== Round 309
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 434153960
+=== Round 310
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 379177360
+=== Round 311
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 331420976
+=== Round 312
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 281042992
+=== Round 313
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 229212312
+=== Round 314
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 178572168
+=== Round 315
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 461065392
+=== Round 316
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 409560864
+=== Round 317
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 358056336
+=== Round 318
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 303929992
+=== Round 319
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 257668456
+=== Round 320
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 205901768
+=== Round 321
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 477521984
+=== Round 322
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 431008816
+=== Round 323
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 379514608
+=== Round 324
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 328020400
+=== Round 325
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 276526192
+=== Round 326
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 225031984
+=== Round 327
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 503823336
+=== Round 328
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 456656136
+=== Round 329
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 399663336
+=== Round 330
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 352758296
+=== Round 331
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 302183016
+=== Round 332
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 249122616
+=== Round 333
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 202741896
+=== Round 334
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 480712528
+=== Round 335
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 433744096
+=== Round 336
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 378769336
+=== Round 337
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 331014424
+=== Round 338
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 280637912
+=== Round 339
+Total memory available to JVM (bytes): 521666560
+Free memory (bytes): 228284752
+=== Round 340
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 501414184
+=== Round 341
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 451028744
+=== Round 342
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 399450904
+=== Round 343
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 348016824
+=== Round 344
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 296701144
+=== Round 345
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 242446120
+=== Round 346
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 193109320
+=== Round 347
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 474816944
+=== Round 348
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 423871856
+=== Round 349
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 374609296
+=== Round 350
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 325670312
+=== Round 351
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 275359112
+=== Round 352
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 223794880
+=== Round 353
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 501760872
+=== Round 354
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 451176952
+=== Round 355
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 398076040
+=== Round 356
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 347986728
+=== Round 357
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 294361496
+=== Round 358
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 244826216
+=== Round 359
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 197096344
+=== Round 360
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 480447136
+=== Round 361
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 424272816
+=== Round 362
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 377917696
+=== Round 363
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 321743376
+=== Round 364
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 274863936
+=== Round 365
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 218165296
+=== Round 366
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 501818768
+=== Round 367
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 450948496
+=== Round 368
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 397847056
+=== Round 369
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 347763264
+=== Round 370
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 291778064
+=== Round 371
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 244578032
+=== Round 372
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 193707760
+=== Round 373
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 476032464
+=== Round 374
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 424448304
+=== Round 375
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 369934472
+=== Round 376
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 316777352
+=== Round 377
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 268438224
+=== Round 378
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 218047728
+=== Round 379
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 502014992
+=== Round 380
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 445515592
+=== Round 381
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 398585816
+=== Round 382
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 347985800
+=== Round 383
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 294811624
+=== Round 384
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 244735928
+=== Round 385
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 191120288
+=== Round 386
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 475452528
+=== Round 387
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 423889408
+=== Round 388
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 372991424
+=== Round 389
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 316709424
+=== Round 390
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 268957360
+=== Round 391
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 218477752
+=== Round 392
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 500912864
+=== Round 393
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 444356744
+=== Round 394
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 396595112
+=== Round 395
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 346736200
+=== Round 396
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 295423280
+=== Round 397
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 241226600
+=== Round 398
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 191242688
+=== Round 399
+Total memory available to JVM (bytes): 517996544
+Free memory (bytes): 470788176
+=== Round 400
+Total memory available to JVM (bytes): 517996544
+Free memory (bytes): 416040216
+=== Round 401
+Total memory available to JVM (bytes): 517996544
+Free memory (bytes): 365111096
+=== Round 402
+Total memory available to JVM (bytes): 517996544
+Free memory (bytes): 318638696
+=== Round 403
+Total memory available to JVM (bytes): 517996544
+Free memory (bytes): 267185256
+=== Round 404
+Total memory available to JVM (bytes): 517996544
+Free memory (bytes): 209815696
+=== Round 405
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 496910552
+=== Round 406
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 445390520
+=== Round 407
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 392918760
+=== Round 408
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 342806440
+=== Round 409
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 288619496
+=== Round 410
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 238245016
+=== Round 411
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 188132696
+=== Round 412
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 471624336
+=== Round 413
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 419250848
+=== Round 414
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 371224080
+=== Round 415
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 316237200
+=== Round 416
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 268472592
+=== Round 417
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 218086384
+=== Round 418
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 490236360
+=== Round 419
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 438760648
+=== Round 420
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 387284936
+=== Round 421
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 335809224
+=== Round 422
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 284595672
+=== Round 423
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 234800912
+=== Round 424
+Total memory available to JVM (bytes): 520617984
+Free memory (bytes): 183325200
+=== Round 425
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 460439760
+=== Round 426
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 410038480
+=== Round 427
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 361996640
+=== Round 428
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 306466600
+=== Round 429
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 255541000
+=== Round 430
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 209072120
+=== Round 431
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 491359000
+=== Round 432
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 437834960
+=== Round 433
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 388881184
+=== Round 434
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 336143624
+=== Round 435
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 280522304
+=== Round 436
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 234452288
+=== Round 437
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 181190408
+=== Round 438
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 456338432
+=== Round 439
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 409946544
+=== Round 440
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 362506016
+=== Round 441
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 305761416
+=== Round 442
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 258845208
+=== Round 443
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 208783080
+=== Round 444
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 490787408
+=== Round 445
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 440173696
+=== Round 446
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 380333168
+=== Round 447
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 332865376
+=== Round 448
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 282506296
+=== Round 449
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 231106104
+=== Round 450
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 502178832
+=== Round 451
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 455774944
+=== Round 452
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 405700816
+=== Round 453
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 352087136
+=== Round 454
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 305158928
+=== Round 455
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 255084800
+=== Round 456
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 201208960
+=== Round 457
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 480946632
+=== Round 458
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 434578264
+=== Round 459
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 377863064
+=== Round 460
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 331494696
+=== Round 461
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 280931768
+=== Round 462
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 227886808
+=== Round 463
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 502708544
+=== Round 464
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 455242032
+=== Round 465
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 405153920
+=== Round 466
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 351522760
+=== Round 467
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 304580568
+=== Round 468
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 254230296
+=== Round 469
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 198764016
+=== Round 470
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 476978024
+=== Round 471
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 428946264
+=== Round 472
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 373428824
+=== Round 473
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 325134904
+=== Round 474
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 274743704
+=== Round 475
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 225138984
+=== Round 476
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 504500584
+=== Round 477
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 452510584
+=== Round 478
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 401044904
+=== Round 479
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 356306984
+=== Round 480
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 305103464
+=== Round 481
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 254250400
+=== Round 482
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 199727096
+=== Round 483
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 477234920
+=== Round 484
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 425413560
+=== Round 485
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 373941480
+=== Round 486
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 322818680
+=== Round 487
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 271346600
+=== Round 488
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 219350200
+=== Round 489
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 504218288
+=== Round 490
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 455999056
+=== Round 491
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 401623616
+=== Round 492
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 353404384
+=== Round 493
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 305185152
+=== Round 494
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 249498912
+=== Round 495
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 202590480
+=== Round 496
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 480107528
+=== Round 497
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 428294328
+=== Round 498
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 378454648
+=== Round 499
+Total memory available to JVM (bytes): 521142272
+Free memory (bytes): 327304168
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.891 sec - in com.twitter.graphjet.bipartite.MultiSegmentLeftIndexedPowerLawBipartiteGraphTest
+
+Results :
+
+Failed tests: 
+  LeftRegularBipartiteGraphSegmentTest.testConcurrentReadWrites:226 expected:<[1]> but was:<[]>
+
+Tests run: 41, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] graphjet ........................................... SUCCESS [  0.212 s]
+[INFO] GraphJet Core ...................................... FAILURE [ 33.428 s]
+[INFO] GraphJet Adapters .................................. SKIPPED
+[INFO] GraphJet Demo ...................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 33.824 s
+[INFO] Finished at: 2017-09-13T22:57:45+02:00
+[INFO] Final Memory: 15M/253M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project graphjet-core: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/twitter/GraphJet/262443567/graphjet-core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :graphjet-core
