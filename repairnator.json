@@ -1,0 +1,38 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "failing_passing",
+  "totalNumberErroringTests": 2,
+  "repo": "twitter/GraphJet",
+  "bugCommit": "https://github.com/twitter/GraphJet/compare/c7506cc2566a...269d28c47659",
+  "failingModule": "/root/workspace/twitter/GraphJet/262454165/graphjet-core",
+  "hostname": "spirals-repairnator",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.OutOfMemoryError"
+  ],
+  "totalNumberRunningTests": 3,
+  "failing-test-cases": [
+    {
+      "className": "com.twitter.graphjet.bipartite.MultiSegmentPowerLawBipartiteGraphTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.twitter.graphjet.bipartite.MultiSegmentPowerLawBipartiteGraphTest#testRandomConcurrentReadWrites",
+        "com.twitter.graphjet.bipartite.MultiSegmentPowerLawBipartiteGraphTest#testRandomConcurrentReadWritesTwo"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.OutOfMemoryError",
+          "failureDetail": "unable to create new native thread",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.OutOfMemoryError",
+          "failureDetail": "unable to create new native thread",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    }
+  ]
+}
