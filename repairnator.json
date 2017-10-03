@@ -1,0 +1,54 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 1,
+  "repo": "LiveRamp/hank",
+  "failingModule": "/root/workspace/LiveRamp/hank/282893774/hank-server",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 2,
+  "error-types": [
+    "java.io.IOException",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 205,
+  "failing-test-cases": [
+    {
+      "className": "com.liveramp.hank.partition_server.TestUpdateManager",
+      "failingMethods": [
+        "com.liveramp.hank.partition_server.TestUpdateManager#testInterruptedUpdateTask"
+      ],
+      "erroringMethods": [
+        "com.liveramp.hank.partition_server.TestUpdateManager#testUpdate"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Should throw an IOException when update is interrupted.",
+          "isError": false
+        },
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Failed to complete update: 1 exceptions encountered while running partition update tasks.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.liveramp.hank.config.yaml.TestYamlRingGroupConductorConfigurator",
+      "failingMethods": [
+        "com.liveramp.hank.config.yaml.TestYamlRingGroupConductorConfigurator#testWithDomains"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}

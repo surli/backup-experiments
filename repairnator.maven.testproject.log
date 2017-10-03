@@ -1,0 +1,397 @@
+[INFO] Scanning for projects...
+[INFO] Downloading: http://repository.liveramp.com/artifactory/liveramp-repositories/com/liveramp/pom-common/1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.liveramp.com/artifactory/liveramp-repositories/com/liveramp/pom-common/1.1-SNAPSHOT/maven-metadata.xml (583 B at 0.7 KB/sec)
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] hank
+[INFO] hank-core
+[INFO] hank-client
+[INFO] hank-server
+[INFO] hank-ui
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hank 1.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildversion-plugin:1.0.1:set-properties (default) @ hank ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hank-core 1.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.liveramp.com/artifactory/liveramp-repositories/com/liveramp/commons/1.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.liveramp.com/artifactory/liveramp-repositories/com/liveramp/commons/1.1-SNAPSHOT/maven-metadata.xml (2 KB at 3.1 KB/sec)
+[INFO] 
+[INFO] --- buildversion-plugin:1.0.1:set-properties (default) @ hank-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hank-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 246 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ hank-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hank-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 23 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ hank-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ hank-core ---
+[INFO] Surefire report directory: /root/workspace/LiveRamp/hank/282893774/hank-core/target/surefire-reports
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloading: https://clojars.org/repo/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (3 KB at 21.6 KB/sec)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloading: https://clojars.org/repo/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (3 KB at 76.4 KB/sec)
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloading: https://clojars.org/repo/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 KB at 901.4 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.liveramp.hank.hasher.TestLeftPaddedIdentityHasher
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec
+Running com.liveramp.hank.hasher.TestMurmur64Hasher
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.liveramp.hank.coordinator.TestAbstractRing
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.161 sec
+Running com.liveramp.hank.coordinator.zk.TestZkRing
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.008 sec
+Running com.liveramp.hank.coordinator.zk.TestZkHost
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.671 sec
+Running com.liveramp.hank.coordinator.zk.TestZkPartitionProperties
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.243 sec
+Running com.liveramp.hank.coordinator.zk.TestZkRingGroup
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.059 sec
+Running com.liveramp.hank.coordinator.zk.TestZkDomainVersion
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.9 sec
+Running com.liveramp.hank.coordinator.zk.TestZooKeeperCoordinator
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.463 sec
+Running com.liveramp.hank.coordinator.zk.TestZkDomainGroup
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.289 sec
+Running com.liveramp.hank.coordinator.zk.TestZkDomain
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.923 sec
+Running com.liveramp.hank.config.yaml.TestYamlConfigurator
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
+Running com.liveramp.hank.partition_assigner.TestRendezVousPartitionAssigner
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec
+Running com.liveramp.hank.zookeeper.TestZooKeeperPlus
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.155 sec
+Running com.liveramp.hank.zookeeper.TestWatchedMap
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.85 sec
+Running com.liveramp.hank.zookeeper.TestWatchedLong
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.273 sec
+Running com.liveramp.hank.zookeeper.TestZkPath
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.liveramp.hank.zookeeper.TestWatchedInt
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.957 sec
+Running com.liveramp.hank.storage.echo.TestEchoReader
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.liveramp.hank.util.TestEncodingHelper
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+
+Results :
+
+Tests run: 66, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hank-client 1.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildversion-plugin:1.0.1:set-properties (default) @ hank-client ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hank-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 24 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ hank-client ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hank-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ hank-client ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ hank-client ---
+[INFO] Surefire report directory: /root/workspace/LiveRamp/hank/282893774/hank-client/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.liveramp.hank.client.TestHostConnection
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.891 sec
+Running com.liveramp.hank.client.TestHankSmartClient
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.486 sec
+Running com.liveramp.hank.client.TestHostConnectionPool
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.742 sec
+Running com.liveramp.hank.config.yaml.TestYamlHankSmartClientConfigurator
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.135 sec
+Running com.liveramp.hank.config.yaml.TestYamlSmartClientDaemonConfigurator
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
+
+Results :
+
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hank-server 1.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repository.liveramp.com/artifactory/liveramp-repositories/com/liveramp/cascading_ext/1.7-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://repository.liveramp.com/artifactory/liveramp-repositories/com/liveramp/cascading_ext/1.7-SNAPSHOT/maven-metadata.xml (2 KB at 3.3 KB/sec)
+[INFO] 
+[INFO] --- buildversion-plugin:1.0.1:set-properties (default) @ hank-server ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hank-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ hank-server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hank-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ hank-server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ hank-server ---
+[INFO] Surefire report directory: /root/workspace/LiveRamp/hank/282893774/hank-server/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.liveramp.hank.hadoop.test.TestMapStorageEngineCoordinator
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.655 sec
+Running com.liveramp.hank.hadoop.TestHadoopDomainCompactor
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.323 sec
+Running com.liveramp.hank.hadoop.TestHadoopDomainBuilder
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.866 sec
+Running com.liveramp.hank.IntegrationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.175 sec
+Running com.liveramp.hank.partition_server.TestPartitionServer
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.444 sec
+Running com.liveramp.hank.partition_server.TestUpdateManager
+Tests run: 4, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.065 sec <<< FAILURE!
+testInterruptedUpdateTask(com.liveramp.hank.partition_server.TestUpdateManager)  Time elapsed: 0.01 sec  <<< FAILURE!
+java.lang.AssertionError: Should throw an IOException when update is interrupted.
+	at org.junit.Assert.fail(Assert.java:88)
+	at com.liveramp.hank.partition_server.TestUpdateManager.testInterruptedUpdateTask(TestUpdateManager.java:348)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+testUpdate(com.liveramp.hank.partition_server.TestUpdateManager)  Time elapsed: 0.008 sec  <<< ERROR!
+java.io.IOException: Failed to complete update: 1 exceptions encountered while running partition update tasks.
+	at com.liveramp.hank.partition_server.UpdateManager.update(UpdateManager.java:461)
+	at com.liveramp.hank.partition_server.TestUpdateManager.testUpdate(TestUpdateManager.java:228)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.liveramp.hank.partition_server.TestDomainAccessor
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.liveramp.hank.partition_server.TestDoublePopulationStatisticsAggregator
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.liveramp.hank.partition_server.TestPartitionServerHandler
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.819 sec
+Running com.liveramp.hank.config.yaml.TestYamlPartitionServerConfigurator
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.liveramp.hank.config.yaml.TestYamlRingGroupConductorConfigurator
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec <<< FAILURE!
+testWithDomains(com.liveramp.hank.config.yaml.TestYamlRingGroupConductorConfigurator)  Time elapsed: 0.007 sec  <<< FAILURE!
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at com.liveramp.hank.config.yaml.TestYamlRingGroupConductorConfigurator.testWithDomains(TestYamlRingGroupConductorConfigurator.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.liveramp.hank.compression.cueball.TestGzipCueballCompressionCodec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec
+Running com.liveramp.hank.cascading.TestCascadingDomainBuilder
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 53.607 sec
+Running com.liveramp.hank.ring_group_conductor.TestRingGroupConductor
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.liveramp.hank.ring_group_conductor.TestIntegrationAutoconfigure
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.668 sec
+Running com.liveramp.hank.ring_group_conductor.TestRingGroupUpdateTransitionFunctionImpl
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.257 sec
+Running com.liveramp.hank.storage.TestHdfsPartitionRemoteFileOps
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.363 sec
+Running com.liveramp.hank.storage.cueball.TestFooter
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running com.liveramp.hank.storage.cueball.TestCueballRemoteDomainVersionDeleter
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.liveramp.hank.storage.cueball.TestCueballMerger
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.liveramp.hank.storage.cueball.TestCueballFactory
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.liveramp.hank.storage.cueball.TestHashPrefixCalculator
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running com.liveramp.hank.storage.cueball.TestCueballWriter
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.liveramp.hank.storage.cueball.TestCueballStreamBuffer
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.liveramp.hank.storage.cueball.TestCueballDeleter
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.liveramp.hank.storage.cueball.TestCueballPartitionUpdater
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec
+Running com.liveramp.hank.storage.cueball.TestCueballReader
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.liveramp.hank.storage.curly.TestCurlyReader
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.132 sec
+Running com.liveramp.hank.storage.curly.TestCurlyFastPartitionUpdater
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.liveramp.hank.storage.curly.TestCurlyRemoteDomainVersionDeleter
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec
+Running com.liveramp.hank.storage.curly.TestCurlyFactory
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec
+Running com.liveramp.hank.storage.curly.TestCurlyDeleter
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.liveramp.hank.storage.curly.TestCurlyWriter
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.liveramp.hank.storage.curly.TestAbstractCurlyPartitionUpdater
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running com.liveramp.hank.storage.curly.TestCurlyCompactingMerger
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running com.liveramp.hank.storage.curly.TestCurlyMerger
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.liveramp.hank.storage.curly.TestCurlyCompactor
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
+Running com.liveramp.hank.storage.incremental.TestIncrementalPartitionUpdater
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec
+Running com.liveramp.hank.storage.incremental.TestIncrementalRemoteDomainCleaner
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec
+
+Results :
+
+Failed tests:   testInterruptedUpdateTask(com.liveramp.hank.partition_server.TestUpdateManager): Should throw an IOException when update is interrupted.
+  testWithDomains(com.liveramp.hank.config.yaml.TestYamlRingGroupConductorConfigurator)
+
+Tests in error: 
+  testUpdate(com.liveramp.hank.partition_server.TestUpdateManager): Failed to complete update: 1 exceptions encountered while running partition update tasks.
+
+Tests run: 125, Failures: 2, Errors: 1, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] hank ............................................... SUCCESS [  4.025 s]
+[INFO] hank-core .......................................... SUCCESS [ 45.554 s]
+[INFO] hank-client ........................................ SUCCESS [ 15.850 s]
+[INFO] hank-server ........................................ FAILURE [02:12 min]
+[INFO] hank-ui ............................................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 03:20 min
+[INFO] Finished at: 2017-10-03T23:24:28+02:00
+[INFO] Final Memory: 23M/575M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project hank-server: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/LiveRamp/hank/282893774/hank-server/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :hank-server

@@ -1,0 +1,25 @@
+partition_server:
+  # add the directories that your partition server should use to store/read data
+  # NOTE: don't change these once you've started using them, since it will mess
+  # up the hash/mod partitioning over your disks. (unless you're an expert.)
+  local_data_dirs:
+    - /path/to/some/data
+  service_port: 12345
+  # change this to the name of the ring group this partition server should join
+  ring_group_name: rg1
+  partition_server_daemon:
+    num_worker_threads: 256
+    num_concurrent_get_bulk_tasks: 256
+    get_bulk_task_size: 64
+    get_timer_aggregator_window: 1000
+  update_daemon:
+    num_concurrent_updates: 1
+coordinator:
+  factory: com.liveramp.hank.coordinator.zk.ZooKeeperCoordinator$Factory
+  options:
+    # a ZooKeeper connection string that identifies your quorum
+    connect_string: localhost:2181
+    session_timeout: 2000
+    domains_root: /hank/domains
+    domain_groups_root: /hank/domain_groups
+    ring_groups_root: /hank/ring_groups
