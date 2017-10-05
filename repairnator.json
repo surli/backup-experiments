@@ -1,0 +1,68 @@
+{
+  "totalNumberSkippingTests": 32,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 4,
+  "repo": "wro4j/wro4j",
+  "failingModule": "/root/workspace/wro4j/wro4j/283843338/wro4j-maven-plugin",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "org.apache.maven.plugin.MojoExecutionException",
+    "java.lang.Exception",
+    "skipped"
+  ],
+  "totalNumberRunningTests": 1290,
+  "failing-test-cases": [
+    {
+      "className": "ro.isdc.wro.maven.plugin.TestWro4jMojo",
+      "failingMethods": [
+        "ro.isdc.wro.maven.plugin.TestWro4jMojo#shouldBeFasterWhenRunningProcessingInParallel"
+      ],
+      "erroringMethods": [
+        "ro.isdc.wro.maven.plugin.TestWro4jMojo#testInvalidMojoWithWroManagerFactorySet",
+        "ro.isdc.wro.maven.plugin.TestWro4jMojo#testMojoWithConfigurableWroManagerFactory"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003corg.apache.maven.plugin.MojoExecutionException\u003e but was\u003cro.isdc.wro.WroRuntimeException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003corg.apache.maven.plugin.MojoExecutionException\u003e but was\u003cro.isdc.wro.WroRuntimeException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 2
+    },
+    {
+      "className": "ro.isdc.wro.maven.plugin.TestJsHintMojo",
+      "failingMethods": [],
+      "erroringMethods": [
+        "ro.isdc.wro.maven.plugin.TestJsHintMojo#shouldProcessMultipleGroupsMore",
+        "ro.isdc.wro.maven.plugin.TestJsHintMojo#shouldFailWhenThereAreLinterErrorsEvenWhenIncrementBuildIsEnabled"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cro.isdc.wro.extensions.processor.support.linter.LinterException\u003e but was\u003cro.isdc.wro.WroRuntimeException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "org.apache.maven.plugin.MojoExecutionException",
+          "failureDetail": "Exception occured while processing: ro.isdc.wro.WroRuntimeException: The processor: ro.isdc.wro.maven.plugin.JsHintMojo$1@1584c019 faile while processing uri: classpath:ro/isdc/wro/maven/plugin/js/undef.js, class: ro.isdc.wro.WroRuntimeException,caused by: java.lang.RuntimeException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+(function() { var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};templates['todoStatus'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var stack1, helper;
+
+  return "<div class=\"row-fluid span5\">\n  <strong>"
+    + this.escapeExpression(((helper = (helper = helpers.remaining || (depth0 != null ? depth0.remaining : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"remaining","hash":{},"data":data}) : helper)))
+    + "</strong> items left.\n  <button id=\"remove-finished\" class=\"btn btn-inverse\">\n    <i class=\"icon-ban-circle icon-white\"></i> Clear <strong>"
+    + this.escapeExpression(((helper = (helper = helpers.finished || (depth0 != null ? depth0.finished : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"finished","hash":{},"data":data}) : helper)))
+    + "</strong> completed item"
+    + ((stack1 = helpers.unless.call(depth0,(depth0 != null ? depth0.oneFinished : depth0),{"name":"unless","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + "\n  </button>\n</div>";
+},"1":function(depth0,helpers,partials,data) {
+    return "s";
+},"useData":true} ); })();

@@ -1,0 +1,16 @@
+(function() {Ember.TEMPLATES['todoItem'] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var stack1, helper, options, buffer = '';
+
+  data.buffer.push("<div class=\"display row-fluid span5\">Fluid\n  <input type=\"checkbox\" class=\"check\" ");
+  stack1 = ((helper = (helper = helpers.done || (depth0 != null ? depth0.done : depth0)) != null ? helper : helpers.helperMissing),(options={"name":"done","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data, 0),"inverse":this.noop,"types":[],"contexts":[],"data":data}),(typeof helper === "function" ? helper.call(depth0,options) : helper));
+  if (!helpers.done) { stack1 = helpers.blockHelperMissing.call(depth0,stack1,options)}
+  if (stack1 != null) { data.buffer.push(stack1); }
+  data.buffer.push(" />\n  <label class=\"todo-content span3\">");
+  data.buffer.push(this.escapeExpression,(,((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"content","hash":{},"hashTypes":{},"hashContexts":{},"types":[],"contexts":[],"data":data}) : helper)),));
+  data.buffer.push("</label>\n  <i class=\"icon-remove-sign remove\" title=\"Remove\"></i>\n</div>\n<div class=\"edit row-fluid\">\n  <input type=\"text\" class=\"todo-edit span4\" value=\"");
+  data.buffer.push(this.escapeExpression,(,((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"content","hash":{},"hashTypes":{},"hashContexts":{},"types":[],"contexts":[],"data":data}) : helper)),));
+  data.buffer.push("\" />\n</div>");
+  return buffer;
+},"1":function(depth0,helpers,partials,data) {
+    data.buffer.push("checked=\"checked\"");
+},"useData":true})})();

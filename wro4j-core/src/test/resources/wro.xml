@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="http://www.isdc.ro/wro">
+
+	<group name="g1">
+		<js>classpath:1.js</js>
+		<css>classpath:1.css</css>
+		<group-ref>g2</group-ref>
+    <group-ref>dwr</group-ref>
+	</group>
+
+	<group name="dwr">
+		<js>http://localhost:8080/wfc/dwr/engine.js</js>
+		<js>http://localhost:8080/wfc/dwr/interface/DWRFacade.js</js>
+	</group>
+
+	<group name="g2">
+		<js>classpath:2.js</js>
+		<group-ref>g3</group-ref>
+		<css>classpath:2.css</css>
+	</group>
+
+	<group name="g3">
+		<css>classpath:3.css</css>
+		<js>classpath:3.js</js>
+	</group>
+
+</groups>
