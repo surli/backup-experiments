@@ -1,0 +1,81 @@
+{
+  "totalNumberSkippingTests": 22,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 4,
+  "repo": "geotools/geotools",
+  "failingModule": "/root/workspace/geotools/geotools/283783209/modules/plugin/coverage-multidim/netcdf",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 3,
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.IllegalArgumentException",
+    "java.lang.ClassCastException"
+  ],
+  "totalNumberRunningTests": 6441,
+  "failing-test-cases": [
+    {
+      "className": "org.geotools.coverage.io.netcdf.NetCDFStationsTest",
+      "failingMethods": [
+        "org.geotools.coverage.io.netcdf.NetCDFStationsTest#readMultipleBandsDimensionSelectingOnlyOneBand"
+      ],
+      "erroringMethods": [
+        "org.geotools.coverage.io.netcdf.NetCDFStationsTest#readMultipleBandsDimensionWithDifferentOrderAndRepeatedBandsSelection",
+        "org.geotools.coverage.io.netcdf.NetCDFStationsTest#readMultipleBandsDimensionWithDifferentOrderBandsSelection",
+        "org.geotools.coverage.io.netcdf.NetCDFStationsTest#readMultipleBandsDimension"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: is \u003ctrue\u003e\n     but: was \u003cfalse\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.IllegalArgumentException",
+          "failureDetail": "Band number 1 is not valid.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalArgumentException",
+          "failureDetail": "Band number 1 is not valid.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalArgumentException",
+          "failureDetail": "The number of provided bands names is different from the number of bands.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.geotools.coverage.io.netcdf.NetCDFMosaicReaderTest",
+      "failingMethods": [
+        "org.geotools.coverage.io.netcdf.NetCDFMosaicReaderTest#testMultiCoverage",
+        "org.geotools.coverage.io.netcdf.NetCDFMosaicReaderTest#testHeterogeneous"
+      ],
+      "erroringMethods": [
+        "org.geotools.coverage.io.netcdf.NetCDFMosaicReaderTest#testMultipleGranules"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c295.0\u003e but was:\u003c0.0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.ClassCastException",
+          "failureDetail": "java.lang.Object cannot be cast to java.lang.String",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Values should be different. Actual: 0.0",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 1
+    }
+  ]
+}
