@@ -1,0 +1,59 @@
+{
+  "totalNumberSkippingTests": 7,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 2,
+  "repo": "matsim-org/matsim",
+  "failingModule": "/root/workspace/matsim-org/matsim/284292666/contribs/matsim4urbansim",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 2,
+  "error-types": [
+    "java.lang.RuntimeException",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 1521,
+  "failing-test-cases": [
+    {
+      "className": "org.matsim.contrib.matsim4urbansim.config.InitDefaultConfigTest",
+      "failingMethods": [
+        "org.matsim.contrib.matsim4urbansim.config.InitDefaultConfigTest#testLoadDefaultMATSim4UrbanSimWithExternalConfigFile"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.matsim.contrib.matsim4urbansim.config.ConfigReadWriteOverwriteTest",
+      "failingMethods": [
+        "org.matsim.contrib.matsim4urbansim.config.ConfigReadWriteOverwriteTest#testLoadMATSim4UrbanSimConfigOnly"
+      ],
+      "erroringMethods": [
+        "org.matsim.contrib.matsim4urbansim.config.ConfigReadWriteOverwriteTest#testLoadMATSim4UrbanSimMinimalConfig",
+        "org.matsim.contrib.matsim4urbansim.config.ConfigReadWriteOverwriteTest#testExternalMATSimConfig"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "found a situation that leads to vsp-abort.  aborting ...",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "found a situation that leads to vsp-abort.  aborting ...",
+          "isError": true
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 2
+    }
+  ]
+}
