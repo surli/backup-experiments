@@ -1,0 +1,162 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "failing_passing",
+  "totalNumberErroringTests": 8,
+  "repo": "OpenGrok/OpenGrok",
+  "failingModule": "/root/workspace/OpenGrok/OpenGrok/284303799/opengrok-indexer",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 5,
+  "error-types": [
+    "org.opensolaris.opengrok.history.HistoryException",
+    "java.io.IOException",
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException"
+  ],
+  "totalNumberRunningTests": 146,
+  "failing-test-cases": [
+    {
+      "className": "org.opensolaris.opengrok.history.HistoryGuruTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.history.HistoryGuruTest#getRevision"
+      ],
+      "failures": [
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "failureDetail": "Failed to get history for: \"/tmp/source3383201017426199134opengrok/git/moved2/renamed2.c\" Exit code: 128",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.index.IndexerTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.index.IndexerTest#org.opensolaris.opengrok.index.IndexerTest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No point in running indexer tests without valid ctags",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.util.OptionParserTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.util.OptionParserTest#defaultOptionSummary"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.GitRepositoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.history.GitRepositoryTest#testRenamedHistory",
+        "org.opensolaris.opengrok.history.GitRepositoryTest#testDetermineCurrentVersion",
+        "org.opensolaris.opengrok.history.GitRepositoryTest#testRenamedSingleHistory"
+      ],
+      "failures": [
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "failureDetail": "Failed to get history for: \"/tmp/source5793306811109457463opengrok/git/moved2/renamed2.c\" Exit code: 128",
+          "isError": true
+        },
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "failureDetail": "Failed to get history for: \"/tmp/source5793306811109457463opengrok/git\" Exit code: 128",
+          "isError": true
+        },
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "fatal: unknown date format iso8601-strict\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.BitKeeperRepositoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.history.BitKeeperRepositoryTest#testGetHistoryGet",
+        "org.opensolaris.opengrok.history.BitKeeperRepositoryTest#testGetHistory",
+        "org.opensolaris.opengrok.history.BitKeeperRepositoryTest#testAnnotation"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "isError": true
+        },
+        {
+          "failureName": "java.io.IOException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.CVSRepositoryTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.history.CVSRepositoryTest#testNewBranch",
+        "org.opensolaris.opengrok.history.CVSRepositoryTest#testGetBranchNoBranch"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "cvs command \u0027[cvs, -d, /tmp/source9155564327816777966opengrok/cvs_test/cvsroot, checkout, cvsrepo]\u0027failed.\nexit code: -1\nstdout:\n\nstderr:\nnull",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "cvs command \u0027[cvs, -d, /tmp/source7427457408057013647opengrok/cvs_test/cvsroot, checkout, cvsrepo]\u0027failed.\nexit code: -1\nstdout:\n\nstderr:\nnull",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.index.IndexDatabaseTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.index.IndexDatabaseTest#org.opensolaris.opengrok.index.IndexDatabaseTest"
+      ],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.index.IndexDatabaseTest#org.opensolaris.opengrok.index.IndexDatabaseTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No ctags available",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 1
+    }
+  ]
+}
