@@ -1,0 +1,38 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "jmrozanec/cron-utils",
+  "bugCommit": "https://github.com/jmrozanec/cron-utils/compare/6ee573bd2ac8...16ac9a41cbb5",
+  "failingModule": "/root/workspace/jmrozanec/cron-utils/284655281",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 2,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 466,
+  "failing-test-cases": [
+    {
+      "className": "com.cronutils.model.time.ExecutionTimeQuartzWithDayOfYearExtensionIntegrationTest",
+      "failingMethods": [
+        "com.cronutils.model.time.ExecutionTimeQuartzWithDayOfYearExtensionIntegrationTest#testLastExecutionEveryTwoWeeksStartingWithFirstDayOfYear",
+        "com.cronutils.model.time.ExecutionTimeQuartzWithDayOfYearExtensionIntegrationTest#testNextExecutionEveryTwoWeeksStartingWithFirstDayOfYear"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c2017-10-08T00:00+02:00[Europe/Paris]\u003e but was:\u003c2017-09-24T00:00+02:00[Europe/Paris]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c2017-10-22T00:00+02:00[Europe/Paris]\u003e but was:\u003c2017-10-08T00:00+02:00[Europe/Paris]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    }
+  ]
+}
