@@ -1,0 +1,95 @@
+{
+  "totalNumberSkippingTests": 77,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "druid-io/druid",
+  "failingModule": "/root/workspace/druid-io/druid/284463034/server",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 7,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 78470,
+  "failing-test-cases": [
+    {
+      "className": "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest",
+      "failingMethods": [
+        "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest#testRetryAllFail",
+        "io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest#testRetrySuccessAtSecondLocation"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.server.coordinator.DruidCoordinatorRuleRunnerTest",
+      "failingMethods": [
+        "io.druid.server.coordinator.DruidCoordinatorRuleRunnerTest#testDropReplicantThrottle",
+        "io.druid.server.coordinator.DruidCoordinatorRuleRunnerTest#testDropTooManyInSameTier",
+        "io.druid.server.coordinator.DruidCoordinatorRuleRunnerTest#testDropServerActuallyServesSegment"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\n  Expectation failure on verify:\n    LoadQueuePeon.getSegmentsToLoad(): expected: at least 1, actual: 0",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\n  Expectation failure on verify:\n    LoadQueuePeon.getSegmentsToLoad(): expected: at least 1, actual: 0",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\n  Expectation failure on verify:\n    LoadQueuePeon.getSegmentsToLoad(): expected: at least 1, actual: 0",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.query.lookup.LookupSnapshotTakerTest",
+      "failingMethods": [
+        "io.druid.query.lookup.LookupSnapshotTakerTest#testIOExceptionDuringLookupPersist"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected exception: io.druid.java.util.common.ISE",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.druid.segment.loading.LocalDataSegmentPusherTest",
+      "failingMethods": [
+        "io.druid.segment.loading.LocalDataSegmentPusherTest#testPushCannotCreateDirectory"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected test to throw (an instance of java.io.IOException and exception with message a string containing \"Unable to create directory\")",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
