@@ -1,0 +1,75 @@
+{
+  "totalNumberSkippingTests": 4,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 4,
+  "repo": "apache/storm",
+  "failingModule": "/root/workspace/apache/storm/286057858/storm-client",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.RuntimeException",
+    "java.lang.NullPointerException",
+    "skipped"
+  ],
+  "totalNumberRunningTests": 321,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.storm.grouping.LoadAwareShuffleGroupingTest",
+      "failingMethods": [
+        "org.apache.storm.grouping.LoadAwareShuffleGroupingTest#testBenchmarkLoadAwareShuffleGroupingEvenLoadAndMultiThreaded",
+        "org.apache.storm.grouping.LoadAwareShuffleGroupingTest#testBenchmarkLoadAwareShuffleGroupingEvenLoad",
+        "org.apache.storm.grouping.LoadAwareShuffleGroupingTest#testBenchmarkLoadAwareShuffleGroupingUnevenLoad",
+        "org.apache.storm.grouping.LoadAwareShuffleGroupingTest#testBenchmarkLoadAwareShuffleGroupingUnevenLoadAndMultiThreaded"
+      ],
+      "erroringMethods": [
+        "org.apache.storm.grouping.LoadAwareShuffleGroupingTest#testLoadAwareShuffleGroupingWithEvenLoadMultiThreaded",
+        "org.apache.storm.grouping.LoadAwareShuffleGroupingTest#testShuffleLoadEven",
+        "org.apache.storm.grouping.LoadAwareShuffleGroupingTest#testLoadAwareShuffleGroupingWithEvenLoad",
+        "org.apache.storm.grouping.LoadAwareShuffleGroupingTest#testUnevenLoadOverTime"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 4
+    }
+  ]
+}
