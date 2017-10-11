@@ -1,0 +1,33 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+script: mvn -B -Dgpg.skip=true install
+
+before_install: 
+  - echo "MAVEN_OPTS='-Xmx1024m'" > ~/.mavenrc
+  - sudo apt-get install jq
+  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
+
+install: mvn -B -DskipTests=true -Dgpg.skip=true install
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "SiJm46QrEHRorVsB5U6F0rcudtOlDBdWx8okQGLxgos4cNdO3Apni8bsjNKC9m9X4fNKKK8C53W2J4xRnpj2nj1wJWlYxgJW/ONITXNxiB+ylz3V6uyxDazydJOIorU1ILHwb3xAu8ylfPtEvFMpTOXrtiSzjFqQ3Ewsya3BXHs="
+
+addons:
+  coverity_scan:
+    project:
+      name: "zolyfarkas/spf4j"
+      description: "Build submitted via Travis CI"
+    notification_email: zolyfarkas@yahoo.com
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true -Dgpg.skip=true compile"
+    branch_pattern: master
+
+after_success:
+  - export CODACY_PROJECT_TOKEN=be1763276d604a438f2a149cd04728cf
+  - java -cp ~/codacy-coverage-reporter-assembly-latest.jar com.codacy.CodacyCoverageReporter -l Java -r spf4j-jacoco-aggregate/target/site/jacoco-aggregate/jacoco.xml
