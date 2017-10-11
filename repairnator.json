@@ -1,0 +1,336 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 16,
+  "repo": "OpenGrok/OpenGrok",
+  "failingModule": "/root/workspace/OpenGrok/OpenGrok/286743581/opengrok-indexer",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 11,
+  "error-types": [
+    "org.opensolaris.opengrok.history.HistoryException",
+    "java.io.IOException",
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException"
+  ],
+  "totalNumberRunningTests": 502,
+  "failing-test-cases": [
+    {
+      "className": "org.opensolaris.opengrok.analysis.c.CAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.c.CAnalyzerFactoryTest#testScopeAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.HistoryGuruTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.history.HistoryGuruTest#testGetRevision"
+      ],
+      "failures": [
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "failureDetail": "Failed to get history for: \"/tmp/source6464266430668639645opengrok/git/moved2/renamed2.c\" Exit code: 128",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.java.JavaAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.java.JavaAnalyzerFactoryTest#testScopeAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.clojure.ClojureAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.clojure.ClojureAnalyzerFactoryTest#testScopeAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.CtagsTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.analysis.CtagsTest#org.opensolaris.opengrok.analysis.CtagsTest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No point in running ctags tests without valid ctags",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.GitRepositoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.history.GitRepositoryTest#testRenamedHistory",
+        "org.opensolaris.opengrok.history.GitRepositoryTest#testDetermineCurrentVersion",
+        "org.opensolaris.opengrok.history.GitRepositoryTest#testRenamedSingleHistory"
+      ],
+      "failures": [
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "failureDetail": "Failed to get history for: \"/tmp/source479774933872465582opengrok/git/moved2/renamed2.c\" Exit code: 128",
+          "isError": true
+        },
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "failureDetail": "Failed to get history for: \"/tmp/source479774933872465582opengrok/git\" Exit code: 128",
+          "isError": true
+        },
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "fatal: unknown date format iso8601-strict\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.BitKeeperRepositoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.history.BitKeeperRepositoryTest#testGetHistoryGet",
+        "org.opensolaris.opengrok.history.BitKeeperRepositoryTest#testGetHistory",
+        "org.opensolaris.opengrok.history.BitKeeperRepositoryTest#testAnnotation"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "isError": true
+        },
+        {
+          "failureName": "java.io.IOException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.CVSRepositoryTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.history.CVSRepositoryTest#testNewBranch",
+        "org.opensolaris.opengrok.history.CVSRepositoryTest#testGetBranchNoBranch"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "cvs command \u0027[cvs, -d, /tmp/source4892437370182378202opengrok/cvs_test/cvsroot, checkout, cvsrepo]\u0027failed.\nexit code: -1\nstdout:\n\nstderr:\nnull",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "cvs command \u0027[cvs, -d, /tmp/source7026120181165648945opengrok/cvs_test/cvsroot, checkout, cvsrepo]\u0027failed.\nexit code: -1\nstdout:\n\nstderr:\nnull",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.index.IndexDatabaseTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.index.IndexDatabaseTest#org.opensolaris.opengrok.index.IndexDatabaseTest"
+      ],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.index.IndexDatabaseTest#org.opensolaris.opengrok.index.IndexDatabaseTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No ctags available",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.JFlexXrefTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.JFlexXrefTest#testBug15890Anchor",
+        "org.opensolaris.opengrok.analysis.JFlexXrefTest#bug18586"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        },
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.opensolaris.opengrok.web.PageConfigTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.web.PageConfigTest#testGetAnnotation",
+        "org.opensolaris.opengrok.web.PageConfigTest#canProcessHistory",
+        "org.opensolaris.opengrok.web.PageConfigTest#canProcessXref",
+        "org.opensolaris.opengrok.web.PageConfigTest#testGetLatestRevisionValid",
+        "org.opensolaris.opengrok.web.PageConfigTest#testCheckSourceRootExistence4"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "This should throw an exception when the file is not readable",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003caa35c258\u003e but was:\u003cnull\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c\u003e but was:\u003cnull\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c\u003e but was:\u003cnull\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.configuration.messages.ProjectMessageTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.configuration.messages.ProjectMessageTest#testDelete"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No point in running indexer tests without valid ctags",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.csharp.CSharpAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.csharp.CSharpAnalyzerFactoryTest#testScopeAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.pascal.PascalAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.pascal.PascalAnalyzerFactoryTest#testAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.index.IndexerTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.index.IndexerTest#org.opensolaris.opengrok.index.IndexerTest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No point in running indexer tests without valid ctags",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.c.CxxAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.c.CxxAnalyzerFactoryTest#testScopeAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
