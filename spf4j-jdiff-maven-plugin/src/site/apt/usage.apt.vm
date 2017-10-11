@@ -1,0 +1,78 @@
+Maven 2 Spf4j JDiff Plugin
+
+  This plugin is used to generate an API difference report between two versions of code.  See the {{{http://www.jdiff.org/}JDiff Home Page}} for more information on JDiff.
+
+* How to Generate a JDiff Report
+
+  The API differences generated compares two or more versions of code.
+  By default the plugin will compare the latest released version with the previously released  10 versions.
+
+* Examples
+
+** Report configuration for generating JDiff for the latest 10 versions (Including the current build)
+
++-------------------
+<project>
+  ...
+    <reporting>
+      ...
+      <plugin>
+        <groupId>org.spf4j</groupId>
+        <artifactId>spf4j-jdiff-maven-plugin</artifactId>
+        <version>${project.version}</version>
+      </plugin>
+      ...
+    </reporting>
+  ...
+</project>
++-------------------
+
+** Report configuration for generating JDiff for the latest 20 versions (Including the current build)
+
++-------------------
+<project>
+  ...
+    <reporting>
+      ...
+      <plugin>
+        <groupId>org.spf4j</groupId>
+        <artifactId>spf4j-jdiff-maven-plugin</artifactId>
+        <version>${project.version}</version>
+        <configuration>
+          <maxNumberOfDiffs>20</maxNumberOfDiffs>
+        </configuration>
+      </plugin>
+      ...
+    </reporting>
+  ...
+</project>
++-------------------
+
+
+
+** Report configuration for generating JDiff between <1.0-alpha-1> and <1.0-beta-3>
+
++-------------------
+<project>
+  ...
+    <reporting>
+      ...
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jdiff-maven-plugin</artifactId>
+        <version>${project.version}</version>
+        <configuration>
+          <versionRange>[1.0-alpha-1,1.0-beta-3]</versionRange>
+        </configuration>
+      </plugin>
+      ...
+    </reporting>
+  ...
+</project>
++-------------------
+
+** Generating a diff report without maven:
+
++-------------------
+java -jar spf4j-jdiff-maven-plugin-8.3.9-uber.jar -gId org.spf4j -aId spf4j-core -fromVersion 8.3.4 -toVersion 8.3.5 -o destinationFolder
++-------------------

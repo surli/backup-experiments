@@ -1,0 +1,89 @@
+{
+  "totalNumberSkippingTests": 4,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 4,
+  "repo": "zolyfarkas/spf4j",
+  "bugCommit": "https://github.com/zolyfarkas/spf4j/compare/73559851551c...8840e4b46794",
+  "failingModule": "/root/workspace/zolyfarkas/spf4j/286712603/spf4j-core",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.net.SocketException",
+    "java.net.SocketTimeoutException",
+    "org.spf4j.concurrent.jdbc.HeartBeatError",
+    "java.lang.AssertionError",
+    "java.net.NoRouteToHostException"
+  ],
+  "totalNumberRunningTests": 238,
+  "failing-test-cases": [
+    {
+      "className": "org.spf4j.concurrent.jdbc.JdbcSemaphoreTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.spf4j.concurrent.jdbc.JdbcSemaphoreTest#testSingleProcessLock"
+      ],
+      "failures": [
+        {
+          "failureName": "org.spf4j.concurrent.jdbc.HeartBeatError",
+          "failureDetail": "org.h2.jdbc.JdbcSQLException: Invalid value \"-1589819512\" for parameter \"QUERY_TIMEOUT\"; SQL statement:\nSET QUERY_TIMEOUT ? [90008-192]",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.spf4j.io.proxy.TcpServerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.spf4j.io.proxy.TcpServerTest#testProxy",
+        "org.spf4j.io.proxy.TcpServerTest#testProxySimple"
+      ],
+      "failures": [
+        {
+          "failureName": "java.net.NoRouteToHostException",
+          "failureDetail": "No route to host (Host unreachable)",
+          "isError": true
+        },
+        {
+          "failureName": "java.net.SocketException",
+          "failureDetail": "Connection reset",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.spf4j.net.SntpClientTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.spf4j.net.SntpClientTest#test"
+      ],
+      "failures": [
+        {
+          "failureName": "java.net.SocketTimeoutException",
+          "failureDetail": "Receive timed out",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.spf4j.base.RuntimeTest",
+      "failingMethods": [
+        "org.spf4j.base.RuntimeTest#testSomeParams"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
