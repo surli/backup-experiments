@@ -1,0 +1,51 @@
+{
+  "totalNumberSkippingTests": 18,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "languagetool-org/languagetool",
+  "bugCommit": "https://github.com/languagetool-org/languagetool/compare/5617aff7ecad...c7625ae356f8",
+  "failingModule": "/root/workspace/languagetool-org/languagetool/287060565/languagetool-language-modules/de",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.AssertionError",
+    "skipped"
+  ],
+  "totalNumberRunningTests": 412,
+  "failing-test-cases": [
+    {
+      "className": "org.languagetool.rules.de.GermanSpellerRuleTest",
+      "failingMethods": [
+        "org.languagetool.rules.de.GermanSpellerRuleTest#testGetSuggestionOrder",
+        "org.languagetool.rules.de.GermanSpellerRuleTest#testMorfologikSpellerWithSpellingTxt",
+        "org.languagetool.rules.de.GermanSpellerRuleTest#testMorfologikSpeller",
+        "org.languagetool.rules.de.GermanSpellerRuleTest#testMorfologikSpeller2"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "skipped",
+          "failureDetail": "testing Morfologik directly, with hard-coded dictionary but no LT-specific code",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "testing Morfologik directly, with LT dictionary (de_DE.dict) but no LT-specific code",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Not found at position 0: \u0027übel\u0027 in: [Nebel, Hebel, übel, Bebel, Säbel, hebel, über, neben, geben, leben, Regel, eben, Bibel, Weber, gebe, Kuppel, Leber, gäbe, heben, Abel]",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "testing a potential bug in Morfologik",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    }
+  ]
+}
