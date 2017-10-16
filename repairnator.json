@@ -1,0 +1,49 @@
+{
+  "totalNumberSkippingTests": 18,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 1,
+  "repo": "languagetool-org/languagetool",
+  "bugCommit": "https://github.com/languagetool-org/languagetool/compare/6734e45cb5ac...e8429b36e516",
+  "failingModule": "/root/workspace/languagetool-org/languagetool/288792120/languagetool-language-modules/ca",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.io.IOException",
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 464,
+  "failing-test-cases": [
+    {
+      "className": "org.languagetool.rules.ca.CatalanPatternRuleTest",
+      "failingMethods": [
+        "org.languagetool.rules.ca.CatalanPatternRuleTest#testRules"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Catalan: Did not expect error in:\n  les pupil·les completament dilatades en disminueixen la capacitat\n  Analyzed token readings: [/SENT_START*] les[el/DA0FP0*,les/_GN_FP*]  [ /null*] pupil·les[pupil·la/NCFP000,pupil·les/_GN_FP]  [ /null*] completament[completament/RG,completament/RG_anteposat]  [ /null*] dilatades[dilatar/VMP00PF0,dilatades/ignore_concordance]  [ /null*] en[en/SPS00]  [ /null*] disminueixen[disminuir/VMIP3P00]  [ /null*] la[la/I,el/DA0FS0,la/_GN_FS]  [ /null*] capacitat[capacitat/NCFS000,capacitat/_GN_FS,capacitat/SENT_END]\nMatching Rule: PREP_VERB_CONJUGAT[1]",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.languagetool.tagging.disambiguation.CatalanDisambiguationRuleTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.languagetool.tagging.disambiguation.CatalanDisambiguationRuleTest#testDisambiguationRulesFromXML"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot load or parse \u0027/org/languagetool/resource/ca/disambiguation.xml\u0027",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
