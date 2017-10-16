@@ -1,0 +1,121 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Spoon Core 6.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven) @ spoon-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-bytecode-version) @ spoon-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.5.201505241946:prepare-agent (default) @ spoon-core ---
+[INFO] argLine set to -javaagent:/root/./workspace/INRIA/spoon/288628829/.m2/org/jacoco/org.jacoco.agent/0.7.5.201505241946/org.jacoco.agent-0.7.5.201505241946-runtime.jar=destfile=/root/workspace/INRIA/spoon/288628829/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spoon-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ spoon-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 516 source files to /root/workspace/INRIA/spoon/288628829/target/classes
+[WARNING] /root/workspace/INRIA/spoon/288628829/src/main/java/spoon/reflect/factory/CodeFactory.java: Some input files use unchecked or unsafe operations.
+[WARNING] /root/workspace/INRIA/spoon/288628829/src/main/java/spoon/reflect/factory/CodeFactory.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spoon-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 134 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ spoon-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ spoon-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 2.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 59.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 435.8 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running spoon.reflect.ast.AstCheckerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 71.347 sec - in spoon.reflect.ast.AstCheckerTest
+Running spoon.reflect.ast.CloneTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.682 sec - in spoon.reflect.ast.CloneTest
+Running spoon.reflect.declaration.UnknownDeclarationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.13 sec - in spoon.reflect.declaration.UnknownDeclarationTest
+Running spoon.reflect.declaration.CtTypeInformationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.584 sec - in spoon.reflect.declaration.CtTypeInformationTest
+Running spoon.reflect.visitor.CtInheritanceScannerMethodsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.369 sec - in spoon.reflect.visitor.CtInheritanceScannerMethodsTest
+Running spoon.reflect.visitor.CtScannerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.444 sec - in spoon.reflect.visitor.CtScannerTest
+Running spoon.reflect.visitor.CtInheritanceScannerTest
+Tests run: 73, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.175 sec - in spoon.reflect.visitor.CtInheritanceScannerTest
+Running spoon.reflect.visitor.CtVisitorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.042 sec - in spoon.reflect.visitor.CtVisitorTest
+Running spoon.LauncherTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.718 sec - in spoon.LauncherTest
+Running spoon.test.limits.utils.InternalTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.238 sec - in spoon.test.limits.utils.InternalTest
+Running spoon.test.parameters.ParameterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.384 sec - in spoon.test.parameters.ParameterTest
+Running spoon.test.pkg.PackageTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.659 sec - in spoon.test.pkg.PackageTest
+Running spoon.test.reference.CloneReferenceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.419 sec - in spoon.test.reference.CloneReferenceTest
+Running spoon.test.reference.VariableAccessTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.161 sec - in spoon.test.reference.VariableAccessTest
+Running spoon.test.reference.ExecutableReferenceGenericTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.997 sec - in spoon.test.reference.ExecutableReferenceGenericTest
+Running spoon.test.reference.ElasticsearchStackoverflowTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.406 sec - in spoon.test.reference.ElasticsearchStackoverflowTest
+Running spoon.test.reference.AnnotationFieldReferenceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.471 sec - in spoon.test.reference.AnnotationFieldReferenceTest
+Running spoon.test.reference.TypeReferenceTest
+Tests run: 28, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.501 sec <<< FAILURE! - in spoon.test.reference.TypeReferenceTest
+testTypeReferenceSpecifiedInClassDeclarationInNoClasspathWithGenerics(spoon.test.reference.TypeReferenceTest)  Time elapsed: 0.27 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[]Bar> but was:<[Foo]Bar>
+	at spoon.test.reference.TypeReferenceTest.testTypeReferenceSpecifiedInClassDeclarationInNoClasspathWithGenerics(TypeReferenceTest.java:371)
+
+Running spoon.test.reference.ExecutableReferenceTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.768 sec - in spoon.test.reference.ExecutableReferenceTest
+Running spoon.test.exceptions.ExceptionTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.343 sec - in spoon.test.exceptions.ExceptionTest
+Running spoon.test.prettyprinter.QualifiedThisRefTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.466 sec - in spoon.test.prettyprinter.QualifiedThisRefTest
+Running spoon.test.prettyprinter.LinesTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.047 sec - in spoon.test.prettyprinter.LinesTest
+Running spoon.test.prettyprinter.PrinterTest
+Killed
+
+Results :
+
+Failed tests: 
+  TypeReferenceTest.testTypeReferenceSpecifiedInClassDeclarationInNoClasspathWithGenerics:371 expected:<[]Bar> but was:<[Foo]Bar>
+
+Tests run: 176, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 04:16 min
+[INFO] Finished at: 2017-10-16T18:17:12+02:00
+[INFO] Final Memory: 31M/747M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project spoon-core: Execution default-test of goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test failed: The forked VM terminated without properly saying goodbye. VM crash or System.exit called?
+[ERROR] Command was /bin/sh -c cd /root/workspace/INRIA/spoon/288628829 && /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -javaagent:/root/./workspace/INRIA/spoon/288628829/.m2/org/jacoco/org.jacoco.agent/0.7.5.201505241946/org.jacoco.agent-0.7.5.201505241946-runtime.jar=destfile=/root/workspace/INRIA/spoon/288628829/target/jacoco.exec org.apache.maven.surefire.booter.ForkedBooter /root/workspace/INRIA/spoon/288628829/target/surefire/surefire7994526135416182809tmp /root/workspace/INRIA/spoon/288628829/target/surefire/surefire_05331014695925947182tmp
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
