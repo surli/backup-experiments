@@ -1,0 +1,96 @@
+{
+  "totalNumberSkippingTests": 215,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 1,
+  "repo": "apache/jackrabbit-oak",
+  "bugCommit": "https://github.com/apache/jackrabbit-oak/compare/52e2f5495130...29a1ce3b747a",
+  "failingModule": "/root/workspace/apache/jackrabbit-oak/290323364/oak-lucene",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 6,
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException"
+  ],
+  "totalNumberRunningTests": 8550,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.jackrabbit.oak.plugins.index.lucene.directory.ActiveDeletedBlobCollectorTest",
+      "failingMethods": [
+        "org.apache.jackrabbit.oak.plugins.index.lucene.directory.ActiveDeletedBlobCollectorTest#inaccessibleWorkDirGivesNoop"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Unwritable existing root folder must have NOOP active blob collector expected:\u003corg.apache.jackrabbit.oak.plugins.index.lucene.directory.ActiveDeletedBlobCollectorFactory$1@6cb43fd3\u003e but was:\u003corg.apache.jackrabbit.oak.plugins.index.lucene.directory.ActiveDeletedBlobCollectorFactory$ActiveDeletedBlobCollectorImpl@35f35c59\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.jackrabbit.oak.plugins.index.lucene.property.SynchronousPropertyIndexTest",
+      "failingMethods": [
+        "org.apache.jackrabbit.oak.plugins.index.lucene.property.SynchronousPropertyIndexTest#nodeType_mixins",
+        "org.apache.jackrabbit.oak.plugins.index.lucene.property.SynchronousPropertyIndexTest#nodeTypeIndexing"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected path /a not found, got []",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected path /a not found, got []",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.jackrabbit.oak.plugins.index.lucene.IndexDefinitionTest",
+      "failingMethods": [
+        "org.apache.jackrabbit.oak.plugins.index.lucene.IndexDefinitionTest#nodeTypeIndexedSync",
+        "org.apache.jackrabbit.oak.plugins.index.lucene.IndexDefinitionTest#nodeTypeIndexed_IgnoreAggregates"
+      ],
+      "erroringMethods": [
+        "org.apache.jackrabbit.oak.plugins.index.lucene.IndexDefinitionTest#nodeTypeIndexed"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.apache.jackrabbit.oak.plugins.index.lucene.IndexPlannerTest",
+      "failingMethods": [
+        "org.apache.jackrabbit.oak.plugins.index.lucene.IndexPlannerTest#syncNodeTypeIndex"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
