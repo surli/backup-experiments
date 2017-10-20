@@ -1,0 +1,765 @@
+{
+  "totalNumberSkippingTests": 1,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 3,
+  "repo": "graphhopper/graphhopper",
+  "bugCommit": "https://github.com/graphhopper/graphhopper/compare/8dd658c5ae48...e30938987051",
+  "failingModule": "/root/workspace/graphhopper/graphhopper/290301136/core",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 80,
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.ArrayIndexOutOfBoundsException",
+    "java.lang.IllegalArgumentException",
+    "org.junit.ComparisonFailure"
+  ],
+  "totalNumberRunningTests": 1342,
+  "failing-test-cases": [
+    {
+      "className": "com.graphhopper.reader.dem.TunnelElevationInterpolatorTest",
+      "failingMethods": [
+        "com.graphhopper.reader.dem.TunnelElevationInterpolatorTest#interpolatesElevationOfTunnelWithTwoOuterNodes",
+        "com.graphhopper.reader.dem.TunnelElevationInterpolatorTest#interpolatesElevationOfTunnelWithFourOuterNodes",
+        "com.graphhopper.reader.dem.TunnelElevationInterpolatorTest#interpolatesElevationOfTunnelWithThreeOuterNodes",
+        "com.graphhopper.reader.dem.TunnelElevationInterpolatorTest#doesNotInterpolateElevationOfTunnelWithZeroOuterNodes",
+        "com.graphhopper.reader.dem.TunnelElevationInterpolatorTest#interpolatesElevationOfTunnelWithSingleOuterNode"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[3, 1]\u003e but was:\u003c[1]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[]\u003e but was:\u003c[0]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[3, 1, 6]\u003e but was:\u003c[1]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[3, 1, 6, 8]\u003e but was:\u003c[1]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[2]\u003e but was:\u003c[0]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.storage.index.LocationIndexTreeCHTest",
+      "failingMethods": [
+        "com.graphhopper.storage.index.LocationIndexTreeCHTest#testDifferentVehicles",
+        "com.graphhopper.storage.index.LocationIndexTreeCHTest#testSearchWithFilter_issue318"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c2\u003e but was:\u003c1\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.PathTest",
+      "failingMethods": [
+        "com.graphhopper.routing.PathTest#testCalcInstructionsForDataFlagEncoder",
+        "com.graphhopper.routing.PathTest#testCalcInstructionsRoundaboutIssue353"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[At roundabout, take exit 1 onto MainStreet 1 11, Arrive at destination]\u003e but was:\u003c[Continue onto 6-10, Arrive at destination]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.util.BitUtilLittleTest",
+      "failingMethods": [
+        "com.graphhopper.util.BitUtilLittleTest#testToBitString"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...00000000000000000000[100000000000000000000000000000001]\u003e but was:\u003c...00000000000000000000[000000000000000000000000000000000]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.util.MotorcycleFlagEncoderTest",
+      "failingMethods": [
+        "com.graphhopper.routing.util.MotorcycleFlagEncoderTest#testCurvature"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "The bendiness of the straight road is smaller than the one of the curvy road",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.storage.GraphHopperStorageForDataFlagEncoderTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphhopper.storage.GraphHopperStorageForDataFlagEncoderTest#testStorageProperties"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalArgumentException",
+          "failureDetail": "entry in encoder list not supported surface",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest",
+      "failingMethods": [
+        "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest#testUnpackingOrder_Fastest",
+        "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest#testDirectedGraph",
+        "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest#testMoreComplexGraph",
+        "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest#testUnpackingOrder",
+        "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest#testFindShortcuts_Roundabout",
+        "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest#testMultiplePreparationsDifferentView",
+        "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest#testDirectedGraph3",
+        "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest#testRoundaboutUnpacking",
+        "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest#testMultiplePreparationsIdenticalView",
+        "com.graphhopper.routing.ch.PrepareContractionHierarchiesTest#testDirectedGraph2"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "node 2 is invalid. Not in [0,2)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c2\u003e but was:\u003c0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c9\u003e but was:\u003c2\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "3-\u003e2, weight:12.0 (5,4)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c60\u003e but was:\u003c46\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "node 2 is invalid. Not in [0,2)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "fastest|car expected:\u003c7\u003e but was:\u003c5\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "shortest|car expected:\u003c7\u003e but was:\u003c5\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c29\u003e but was:\u003c27\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c2\u003e but was:\u003c1\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 10,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.reader.dem.BridgeElevationInterpolatorTest",
+      "failingMethods": [
+        "com.graphhopper.reader.dem.BridgeElevationInterpolatorTest#interpolatesElevationOfPillarNodes"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[3, 1, 2, 6, 8]\u003e but was:\u003c[2]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.storage.index.Location2IDFullIndexTest",
+      "failingMethods": [
+        "com.graphhopper.storage.index.Location2IDFullIndexTest#testDifferentVehicles"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c2\u003e but was:\u003c-1\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.storage.index.Location2IDFullWithEdgesIndexTest",
+      "failingMethods": [
+        "com.graphhopper.storage.index.Location2IDFullWithEdgesIndexTest#testDifferentVehicles"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c2\u003e but was:\u003c-1\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.util.Car4WDFlagEncoderTest",
+      "failingMethods": [
+        "com.graphhopper.routing.util.Car4WDFlagEncoderTest#testSetSpeed0_issue367"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.storage.GraphHopperStorageCHTest",
+      "failingMethods": [
+        "com.graphhopper.storage.GraphHopperStorageCHTest#testShortcutCreationAndAccessForManyVehicles",
+        "com.graphhopper.storage.GraphHopperStorageCHTest#testGetWeight",
+        "com.graphhopper.storage.GraphHopperStorageCHTest#testDisconnectEdge",
+        "com.graphhopper.storage.GraphHopperStorageCHTest#testSimpleShortcutCreationAndTraversal"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[3, 4]\u003e but was:\u003c[3]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.util.DataFlagEncoderTest",
+      "failingMethods": [
+        "com.graphhopper.routing.util.DataFlagEncoderTest#testLargeMaxspeed",
+        "com.graphhopper.routing.util.DataFlagEncoderTest#testInsufficientEncoderBitLength"
+      ],
+      "erroringMethods": [
+        "com.graphhopper.routing.util.DataFlagEncoderTest#testDestinationTag"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Expected exception: java.lang.IllegalArgumentException",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.ArrayIndexOutOfBoundsException",
+          "failureDetail": "3",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c140.0\u003e but was:\u003c0.0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.graphhopper.storage.index.LocationIndexTreeTest",
+      "failingMethods": [
+        "com.graphhopper.storage.index.LocationIndexTreeTest#testSearchWithFilter_issue318",
+        "com.graphhopper.storage.index.LocationIndexTreeTest#testDifferentVehicles"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c2\u003e but was:\u003c1\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.util.BikeFlagEncoderTest",
+      "failingMethods": [
+        "com.graphhopper.routing.util.BikeFlagEncoderTest#testPriority",
+        "com.graphhopper.routing.util.BikeFlagEncoderTest#testHandleWayTagsCallsHandlePriority",
+        "com.graphhopper.routing.util.BikeFlagEncoderTest#testHandleCommonWayTags",
+        "com.graphhopper.routing.util.BikeFlagEncoderTest#testHandleWayTags",
+        "com.graphhopper.routing.util.BikeFlagEncoderTest#testHandleWayTagsInfluencedByRelation",
+        "com.graphhopper.routing.util.BikeFlagEncoderTest#testCalcPriority"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1.0\u003e but was:\u003c7.0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[small way, unpaved]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[get off the bike, unpaved]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1.0\u003e but was:\u003c7.0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[get off the bike]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c0.8571428571428571\u003e but was:\u003c6.0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 6,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.util.InstructionListTest",
+      "failingMethods": [
+        "com.graphhopper.util.InstructionListTest#testInstructionsWithTimeAndPlace"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1604120\u003e but was:\u003c1440000\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.util.GHUtilityTest",
+      "failingMethods": [
+        "com.graphhopper.util.GHUtilityTest#testCopy"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.util.RacingBikeFlagEncoderTest",
+      "failingMethods": [
+        "com.graphhopper.routing.util.RacingBikeFlagEncoderTest#testHandleWayTagsInfluencedByRelation",
+        "com.graphhopper.routing.util.RacingBikeFlagEncoderTest#testTramStations",
+        "com.graphhopper.routing.util.RacingBikeFlagEncoderTest#testHandleCommonWayTags",
+        "com.graphhopper.routing.util.RacingBikeFlagEncoderTest#testPriority",
+        "com.graphhopper.routing.util.RacingBikeFlagEncoderTest#testHandleWayTagsCallsHandlePriority"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[small way, unpaved]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1.0\u003e but was:\u003c7.0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Values should be different. Actual: 0",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[get off the bike]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c0.8571428571428571\u003e but was:\u003c6.0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.util.CarFlagEncoderTest",
+      "failingMethods": [
+        "com.graphhopper.routing.util.CarFlagEncoderTest#testSetSpeed0_issue367"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.util.Bike2WeightFlagEncoderTest",
+      "failingMethods": [
+        "com.graphhopper.routing.util.Bike2WeightFlagEncoderTest#testCalcPriority",
+        "com.graphhopper.routing.util.Bike2WeightFlagEncoderTest#testPriority",
+        "com.graphhopper.routing.util.Bike2WeightFlagEncoderTest#testHandleCommonWayTags",
+        "com.graphhopper.routing.util.Bike2WeightFlagEncoderTest#testApplyWayTags",
+        "com.graphhopper.routing.util.Bike2WeightFlagEncoderTest#testHandleWayTags",
+        "com.graphhopper.routing.util.Bike2WeightFlagEncoderTest#testHandleWayTagsInfluencedByRelation",
+        "com.graphhopper.routing.util.Bike2WeightFlagEncoderTest#testSetSpeed0_issue367",
+        "com.graphhopper.routing.util.Bike2WeightFlagEncoderTest#testHandleWayTagsCallsHandlePriority"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c10.0\u003e but was:\u003c0.0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c18.0\u003e but was:\u003c2.0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1.0\u003e but was:\u003c7.0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[small way, unpaved]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[get off the bike, unpaved]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1.0\u003e but was:\u003c7.0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[get off the bike]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c0.8571428571428571\u003e but was:\u003c6.0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 8,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.ch.DijkstraBidirectionCHTest",
+      "failingMethods": [
+        "com.graphhopper.routing.ch.DijkstraBidirectionCHTest#testBidirectional",
+        "com.graphhopper.routing.ch.DijkstraBidirectionCHTest#testDirectedGraphBug2",
+        "com.graphhopper.routing.ch.DijkstraBidirectionCHTest#testBaseGraphMultipleVehicles",
+        "com.graphhopper.routing.ch.DijkstraBidirectionCHTest#testViaEdges_BiGraph",
+        "com.graphhopper.routing.ch.DijkstraBidirectionCHTest#testMultipleVehicles_issue548",
+        "com.graphhopper.routing.ch.DijkstraBidirectionCHTest#testWithCoordinates",
+        "com.graphhopper.routing.ch.DijkstraBidirectionCHTest#testRekeyBugOfIntBinHeap",
+        "com.graphhopper.routing.ch.DijkstraBidirectionCHTest#testTwoWeightsPerEdge2",
+        "com.graphhopper.routing.ch.DijkstraBidirectionCHTest#testPathRecursiveUnpacking",
+        "com.graphhopper.routing.ch.DijkstraBidirectionCHTest#testCalcFastestPath"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[0, 4, 6, 7]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[0, 4, 6, 7, 5, 3]\u003e but was:\u003c[0, 1, 5, 3]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "distance:895.973, edges:4 expected:\u003c[0, 7, 6, 8, 3, 4]\u003e but was:\u003c[0, 7, 6, 5, 4]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[0, 1, 2, 3]\u003e but was:\u003c[0, 1, 3]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[0, 1, 5, 6, 7]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "distance:885.4188788045922, edges:5 expected:\u003c[10, 7, 6, 8, 3, 9]\u003e but was:\u003c[10, 7, 6, 5, 4, 9]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[2, 0, 1]\u003e but was:\u003c[2, 3, 1]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[34, 35, 36]\u003e but was:\u003c[34, 44, 54, 55, 56, 46, 36]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c444535.0\u003e but was:\u003c786333.1001\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 10,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.util.EncodingManagerTest",
+      "failingMethods": [
+        "com.graphhopper.routing.util.EncodingManagerTest#testCompatibilityBug",
+        "com.graphhopper.routing.util.EncodingManagerTest#testCompatibility",
+        "com.graphhopper.routing.util.EncodingManagerTest#testCombineRelations",
+        "com.graphhopper.routing.util.EncodingManagerTest#testMixBikeTypesAndRelationCombination",
+        "com.graphhopper.routing.util.EncodingManagerTest#testFullBitMask"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Values should be different. Actual: foot",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c4.0\u003e but was:\u003c0.0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.subnetwork.PrepareRoutingSubnetworksTest",
+      "failingMethods": [
+        "com.graphhopper.routing.subnetwork.PrepareRoutingSubnetworksTest#testRemoveNode",
+        "com.graphhopper.routing.subnetwork.PrepareRoutingSubnetworksTest#testRemoveSubnetworkWhenMultipleVehicles"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c9\u003e but was:\u003c7\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.weighting.GenericWeightingTest",
+      "failingMethods": [
+        "com.graphhopper.routing.weighting.GenericWeightingTest#testCalcTime",
+        "com.graphhopper.routing.weighting.GenericWeightingTest#testRoadAttributeRestriction"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c566111.0\u003e but was:\u003cInfinity\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c566111.0\u003e but was:\u003c9.223372036854776E18\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.routing.util.MountainBikeFlagEncoderTest",
+      "failingMethods": [
+        "com.graphhopper.routing.util.MountainBikeFlagEncoderTest#testHandleWayTags",
+        "com.graphhopper.routing.util.MountainBikeFlagEncoderTest#testTramStations",
+        "com.graphhopper.routing.util.MountainBikeFlagEncoderTest#testPriority",
+        "com.graphhopper.routing.util.MountainBikeFlagEncoderTest#testHandleWayTagsInfluencedByRelation",
+        "com.graphhopper.routing.util.MountainBikeFlagEncoderTest#testHandleCommonWayTags",
+        "com.graphhopper.routing.util.MountainBikeFlagEncoderTest#testHandleWayTagsCallsHandlePriority"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[small way, unpaved]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[small way, unpaved]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1.0\u003e but was:\u003c7.0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Values should be different. Actual: 0",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[get off the bike]\u003e but was:\u003c[]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c0.8571428571428571\u003e but was:\u003c6.0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 6,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.graphhopper.storage.GraphHopperStorageLMTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphhopper.storage.GraphHopperStorageLMTest#testLoad"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalArgumentException",
+          "failureDetail": "entry in encoder list not supported surface",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
