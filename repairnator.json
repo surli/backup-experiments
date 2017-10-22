@@ -1,0 +1,638 @@
+{
+  "totalNumberSkippingTests": 9,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "jhy/jsoup",
+  "failingModule": "/root/workspace/jhy/jsoup/291081944",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 84,
+  "error-types": [
+    "java.lang.AssertionError",
+    "org.junit.ComparisonFailure",
+    "skipped"
+  ],
+  "totalNumberRunningTests": 601,
+  "failing-test-cases": [
+    {
+      "className": "org.jsoup.parser.XmlTreeBuilderTest",
+      "failingMethods": [
+        "org.jsoup.parser.XmlTreeBuilderTest#testDoesNotForceSelfClosingKnownTags",
+        "org.jsoup.parser.XmlTreeBuilderTest#testDetectCharsetEncodingDeclaration",
+        "org.jsoup.parser.XmlTreeBuilderTest#testSupplyParserToConnection"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cbr\u003eone[ ]\u003cbr\u003e\u003e but was:\u003c\u003cbr\u003eone[]\u003cbr\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...oding\u003d\"ISO-8859-1\"?\u003e[ ]\u003cdata\u003eäöåéü\u003c/data\u003e\u003e but was:\u003c...oding\u003d\"ISO-8859-1\"?\u003e[]\u003cdata\u003eäöåéü\u003c/data\u003e\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.jsoup.select.SelectorTest",
+      "failingMethods": [
+        "org.jsoup.select.SelectorTest#containsData"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cscript\u003eFUNCTION[]\u003c/script\u003e\u003e but was:\u003c\u003cscript\u003eFUNCTION[ ]\u003c/script\u003e\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.jsoup.parser.TagTest",
+      "failingMethods": [
+        "org.jsoup.parser.TagTest#defaultSemantics"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.jsoup.nodes.ElementTest",
+      "failingMethods": [
+        "org.jsoup.nodes.ElementTest#moveByAppend",
+        "org.jsoup.nodes.ElementTest#testFormatHtml",
+        "org.jsoup.nodes.ElementTest#testFormatOutline",
+        "org.jsoup.nodes.ElementTest#testContainerOutput",
+        "org.jsoup.nodes.ElementTest#testAppendTo",
+        "org.jsoup.nodes.ElementTest#testChildrenElements",
+        "org.jsoup.nodes.ElementTest#testNormalizesNbspInText",
+        "org.jsoup.nodes.ElementTest#testShadowElementsAreUpdated",
+        "org.jsoup.nodes.ElementTest#elementIsNotASiblingOfItself",
+        "org.jsoup.nodes.ElementTest#testSetHtmlTitle",
+        "org.jsoup.nodes.ElementTest#testSetIndent",
+        "org.jsoup.nodes.ElementTest#testLoopedRemoveAttributes",
+        "org.jsoup.nodes.ElementTest#testNoIndentOnScriptAndStyle",
+        "org.jsoup.nodes.ElementTest#testKeepsPreTextInCode",
+        "org.jsoup.nodes.ElementTest#testInnerHtml"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...l\u003e  \u003chead\u003e   \u003ctitle\u003e[Format test\u003c/title\u003e  \u003c/head\u003e  \u003cbody\u003e   \u003cdiv\u003e    \u003cp\u003e     Hello      \u003cspan\u003e      jsoup       \u003cspan\u003eusers\u003c/span\u003e     \u003c/span\u003e    \u003c/p\u003e    \u003cp\u003eGood.]\u003c/p\u003e   \u003c/div\u003e  \u003c/bod...\u003e but was:\u003c...l\u003e  \u003chead\u003e   \u003ctitle\u003e[    Format test   \u003c/title\u003e  \u003c/head\u003e  \u003cbody\u003e   \u003cdiv\u003e    \u003cp\u003e     Hello      \u003cspan\u003e      jsoup       \u003cspan\u003eusers\u003c/span\u003e     \u003c/span\u003e    \u003c/p\u003e    \u003cp\u003e     Good.    ]\u003c/p\u003e   \u003c/div\u003e  \u003c/bod...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003ca\u003eText\u003c/a\u003e[ \u003cp\u003eTwo]\u003c/p\u003e\u003e but was:\u003c\u003ca\u003eText\u003c/a\u003e[\u003cp\u003e  Two ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[\u003ca\u003eOne\u003c/a\u003e\u003c/p\u003e \u003cp\u003eP3\u003c/p\u003e \u003cp\u003e\u003ca\u003eTwo\u003c/a\u003e\u003c/p\u003e \u003cp\u003eP4]\u003c/p\u003eThree\u003e but was:\u003c\u003cp\u003e[  \u003ca\u003eOne\u003c/a\u003e \u003c/p\u003e \u003cp\u003e  P3 \u003c/p\u003e \u003cp\u003e  \u003ca\u003eTwo\u003c/a\u003e \u003c/p\u003e \u003cp\u003e  P4 ]\u003c/p\u003eThree\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cscript\u003eone two[\u003c/script\u003e  \u003cstyle\u003ethree four]\u003c/style\u003e\u003e but was:\u003c\u003cscript\u003eone two[ \u003c/script\u003e \u003cstyle\u003ethree four ]\u003c/style\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cpre\u003e[\u003ccode\u003ecode  code\u003c/code\u003e]\u003c/pre\u003e\u003e but was:\u003c\u003cpre\u003e[  \u003ccode\u003ecode  code\u003c/code\u003e ]\u003c/pre\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...l\u003e  \u003chead\u003e   \u003ctitle\u003e[Format test\u003c/title\u003e  \u003c/head\u003e  \u003cbody\u003e   \u003cdiv\u003e    \u003cp\u003eHello \u003cspan\u003ejsoup \u003cspan\u003eusers\u003c/span\u003e\u003c/span\u003e\u003c/p\u003e    \u003cp\u003eGood.]\u003c/p\u003e   \u003c/div\u003e  \u003c/bod...\u003e but was:\u003c...l\u003e  \u003chead\u003e   \u003ctitle\u003e[    Format test   \u003c/title\u003e  \u003c/head\u003e  \u003cbody\u003e   \u003cdiv\u003e    \u003cp\u003e     Hello \u003cspan\u003ejsoup \u003cspan\u003eusers\u003c/span\u003e\u003c/span\u003e    \u003c/p\u003e    \u003cp\u003e     Good.    ]\u003c/p\u003e   \u003c/div\u003e  \u003c/bod...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003ctitle\u003e[Hello there]\u003c/title\u003e\u003e but was:\u003c\u003ctitle\u003e[  Hello there ]\u003c/title\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[Hello]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  Hello ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003ctitle\u003e[\u0026lt;i\u0026gt;bad\u0026lt;/i\u0026gt;]\u003c/title\u003e\u003e but was:\u003c\u003ctitle\u003e[  \u0026lt;i\u0026gt;bad\u0026lt;/i\u0026gt; ]\u003c/title\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[\u003ca\u003eOne\u003c/a\u003e]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  \u003ca\u003eOne\u003c/a\u003e ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c... \u003cdiv id\u003d\"2\"\u003e  Text [  \u003cp\u003eOne\u003c/p\u003e Text   \u003cp\u003eTwo]\u003c/p\u003e \u003c/div\u003e\u003e but was:\u003c... \u003cdiv id\u003d\"2\"\u003e  Text [\u003cp\u003e   One  \u003c/p\u003e Text \u003cp\u003e   Two  ]\u003c/p\u003e \u003c/div\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...ad\u003e \u003cbody\u003e \u003cdiv\u003e \u003cp\u003e[Hello there]\u003c/p\u003e \u003c/div\u003e \u003c/body\u003e ...\u003e but was:\u003c...ad\u003e \u003cbody\u003e \u003cdiv\u003e \u003cp\u003e[ Hello there ]\u003c/p\u003e \u003c/div\u003e \u003c/body\u003e ...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[You can\u0027t always get what you\u0026nbsp;want.]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  You can\u0027t always get what you\u0026nbsp;want. ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\u003cdiv class\u003d\"b\"\u003e  \u003cp\u003e[Two]\u003c/p\u003e \u003c/div\u003e\u003e but was:\u003c...\u003cdiv class\u003d\"b\"\u003e  \u003cp\u003e[   Two  ]\u003c/p\u003e \u003c/div\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[One]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  One ]\u003c/p\u003e\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 15,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.jsoup.parser.HtmlParserTest",
+      "failingMethods": [
+        "org.jsoup.parser.HtmlParserTest#emptyTdTag",
+        "org.jsoup.parser.HtmlParserTest#handlesInvalidDoctypes",
+        "org.jsoup.parser.HtmlParserTest#caseInsensitiveParseTree",
+        "org.jsoup.parser.HtmlParserTest#testHgroup",
+        "org.jsoup.parser.HtmlParserTest#handlesUnclosedFormattingElements",
+        "org.jsoup.parser.HtmlParserTest#reconstructFormattingElements",
+        "org.jsoup.parser.HtmlParserTest#testSpaceAfterTag",
+        "org.jsoup.parser.HtmlParserTest#reconstructFormattingElementsInTable",
+        "org.jsoup.parser.HtmlParserTest#testHeaderContents",
+        "org.jsoup.parser.HtmlParserTest#handlesWhatWgExpensesTableExample",
+        "org.jsoup.parser.HtmlParserTest#testSpanContents",
+        "org.jsoup.parser.HtmlParserTest#selfClosingOnNonvoidIsError",
+        "org.jsoup.parser.HtmlParserTest#parsesQuiteRoughAttributes",
+        "org.jsoup.parser.HtmlParserTest#handlesMisnestedTagsBP",
+        "org.jsoup.parser.HtmlParserTest#handlesNullInData",
+        "org.jsoup.parser.HtmlParserTest#testAFlowContents",
+        "org.jsoup.parser.HtmlParserTest#handlesMisnestedTagsBI",
+        "org.jsoup.parser.HtmlParserTest#testFontFlowContents",
+        "org.jsoup.parser.HtmlParserTest#testRelaxedTags",
+        "org.jsoup.parser.HtmlParserTest#handlesQuotesInCommentsInScripts",
+        "org.jsoup.parser.HtmlParserTest#handleNullContextInParseFragment",
+        "org.jsoup.parser.HtmlParserTest#testFragment",
+        "org.jsoup.parser.HtmlParserTest#handlesControlCodeInAttributeName",
+        "org.jsoup.parser.HtmlParserTest#handlesNestedImplicitTable",
+        "org.jsoup.parser.HtmlParserTest#caseSensitiveParseTree",
+        "org.jsoup.parser.HtmlParserTest#handlesMisnestedAInDivs",
+        "org.jsoup.parser.HtmlParserTest#handlesUnclosedAnchors",
+        "org.jsoup.parser.HtmlParserTest#handlesUnclosedTitle",
+        "org.jsoup.parser.HtmlParserTest#handles0CharacterAsText",
+        "org.jsoup.parser.HtmlParserTest#noTableDirectInTable",
+        "org.jsoup.parser.HtmlParserTest#preservesSpaceInScript",
+        "org.jsoup.parser.HtmlParserTest#selfClosingVoidIsNotAnError",
+        "org.jsoup.parser.HtmlParserTest#handlesKnownEmptyBlocks"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003ctable\u003e[ \u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eOne \u003c/td\u003e\u003ctd\u003e\u003ctable\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eTwo\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e ]\u003ctable\u003e\u003ctbody\u003e\u003ctr\u003e\u003ct...\u003e but was:\u003c\u003ctable\u003e[\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eOne \u003c/td\u003e\u003ctd\u003e\u003ctable\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eTwo\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e]\u003ctable\u003e\u003ctbody\u003e\u003ctr\u003e\u003ct...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cdiv\u003e[ ]\u003ca name\u003d\"top\"\u003e\u003c/a\u003e\u003cp...\u003e but was:\u003c\u003cdiv\u003e[]\u003ca name\u003d\"top\"\u003e\u003c/a\u003e\u003cp...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...pt\u003e One  Two  Three []\u003c/script\u003e\u003e but was:\u003c...pt\u003e One  Two  Three [ ]\u003c/script\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003ctable\u003e[ \u003ccolgroup\u003e \u003ccol\u003e \u003c/colgroup\u003e\u003ccolgroup\u003e \u003ccol\u003e \u003ccol\u003e \u003ccol\u003e \u003c/colgroup\u003e\u003cthead\u003e \u003ctr\u003e \u003cth\u003e \u003c/th\u003e\u003cth\u003e2008 \u003c/th\u003e\u003cth\u003e2007 \u003c/th\u003e\u003cth\u003e2006 \u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e \u003ctr\u003e \u003cth scope\u003d\"rowgroup\"\u003e Research and development \u003c/th\u003e\u003ctd\u003e $ 1,109 \u003c/td\u003e\u003ctd\u003e $ 782 \u003c/td\u003e\u003ctd\u003e $ 712 \u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e \u003cth scope\u003d\"row\"\u003e Percentage of net sales \u003c/th\u003e\u003ctd\u003e 3.4% \u003c/td\u003e\u003ctd\u003e 3.3% \u003c/td\u003e\u003ctd\u003e 3.7% \u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003ctbody\u003e \u003ctr\u003e \u003cth scope\u003d\"rowgroup\"\u003e Selling, general, and administrative \u003c/th\u003e\u003ctd\u003e $ 3,761 \u003c/td\u003e\u003ctd\u003e $ 2,963 \u003c/td\u003e\u003ctd\u003e $ 2,433 \u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e \u003cth scope\u003d\"row\"\u003e Percentage of net sales \u003c/th\u003e\u003ctd\u003e 11.6% \u003c/td\u003e\u003ctd\u003e 12.3% \u003c/td\u003e\u003ctd\u003e ]12.6% \u003c/td\u003e\u003c/tr\u003e\u003c/tb...\u003e but was:\u003c\u003ctable\u003e[\u003ccolgroup\u003e\u003ccol\u003e\u003c/colgroup\u003e\u003ccolgroup\u003e\u003ccol\u003e\u003ccol\u003e\u003ccol\u003e\u003c/colgroup\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e\u003c/th\u003e\u003cth\u003e2008 \u003c/th\u003e\u003cth\u003e2007 \u003c/th\u003e\u003cth\u003e2006 \u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003cth scope\u003d\"rowgroup\"\u003eResearch and development \u003c/th\u003e\u003ctd\u003e$ 1,109 \u003c/td\u003e\u003ctd\u003e$ 782 \u003c/td\u003e\u003ctd\u003e$ 712 \u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003cth scope\u003d\"row\"\u003ePercentage of net sales \u003c/th\u003e\u003ctd\u003e3.4% \u003c/td\u003e\u003ctd\u003e3.3% \u003c/td\u003e\u003ctd\u003e3.7% \u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003ctbody\u003e\u003ctr\u003e\u003cth scope\u003d\"rowgroup\"\u003eSelling, general, and administrative \u003c/th\u003e\u003ctd\u003e$ 3,761 \u003c/td\u003e\u003ctd\u003e$ 2,963 \u003c/td\u003e\u003ctd\u003e$ 2,433 \u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003cth scope\u003d\"row\"\u003ePercentage of net sales \u003c/th\u003e\u003ctd\u003e11.6% \u003c/td\u003e\u003ctd\u003e12.3% \u003c/td\u003e\u003ctd\u003e]12.6% \u003c/td\u003e\u003c/tr\u003e\u003c/tb...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...+ \u0027ipt\u003e\u0027);   // --\u003e []\u003c/script\u003e\u003e but was:\u003c...+ \u0027ipt\u003e\u0027);   // --\u003e [ ]\u003c/script\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[\u003cb class\u003d\"one\"\u003eOne \u003ci\u003eTwo \u003cb\u003eThree\u003c/b\u003e\u003c/i\u003e\u003c/b\u003e\u003c/p\u003e \u003cp\u003e\u003cb class\u003d\"one\"\u003e\u003ci\u003e\u003cb\u003eHello\u003c/b\u003e\u003c/i\u003e\u003c/b\u003e]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  \u003cb class\u003d\"one\"\u003eOne \u003ci\u003eTwo \u003cb\u003eThree\u003c/b\u003e\u003c/i\u003e\u003c/b\u003e \u003c/p\u003e \u003cp\u003e  \u003cb class\u003d\"one\"\u003e\u003ci\u003e\u003cb\u003eHello\u003c/b\u003e\u003c/i\u003e\u003c/b\u003e ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cb\u003eTwo \u003cp\u003e[Test]\u003c/p\u003e\u003c/b\u003e\u003e but was:\u003c\u003cb\u003eTwo \u003cp\u003e[   Test  ]\u003c/p\u003e\u003c/b\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cr\u003e[ \u003cx\u003e A \u003c/x\u003e \u003cy\u003e B \u003c/y\u003e ]\u003c/r\u003e\u003e but was:\u003c\u003cr\u003e[\u003cx\u003eA\u003c/x\u003e\u003cy\u003eB\u003c/y\u003e]\u003c/r\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...ad\u003e \u003cbody\u003e \u003col\u003e \u003cli\u003e[One\u003c/li\u003e \u003c/ol\u003e \u003cp\u003eTwo]\u003c/p\u003e \u003c/body\u003e \u003c/html\u003e\u003e but was:\u003c...ad\u003e \u003cbody\u003e \u003col\u003e \u003cli\u003e[ One \u003c/li\u003e \u003c/ol\u003e \u003cp\u003e Two ]\u003c/p\u003e \u003c/body\u003e \u003c/html\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003ctd\u003e[One]\u003c/td\u003e \u003ctd id\u003d\"2\"\u003e\u003c/t...\u003e but was:\u003c\u003ctd\u003e[  One ]\u003c/td\u003e \u003ctd id\u003d\"2\"\u003e\u003c/t...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cr\u003e[ \u003cX\u003e A \u003c/X\u003e \u003cy\u003e B \u003c/y\u003e ]\u003c/r\u003e\u003e but was:\u003c\u003cr\u003e[\u003cX\u003eA\u003c/X\u003e\u003cy\u003eB\u003c/y\u003e]\u003c/r\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\u003econsole.log(\u0027foo\u0027);[\u003c/script\u003e  \u003cdiv id\u003d\"somecontent\"\u003e  some content \u003c/div\u003e  \u003cscript type\u003d\"text/javascript\"\u003econsole.log(\u0027bar\u0027);]\u003c/script\u003e\u003e but was:\u003c...\u003econsole.log(\u0027foo\u0027);[ \u003c/script\u003e \u003cdiv id\u003d\"somecontent\"\u003e  some content \u003c/div\u003e \u003cscript type\u003d\"text/javascript\"\u003econsole.log(\u0027bar\u0027); ]\u003c/script\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...foo /\u003e\u003cfoo\u003eOne\u003c/foo\u003e[ ]\u003chr\u003e hr text \u003chr\u003e hr...\u003e but was:\u003c...foo /\u003e\u003cfoo\u003eOne\u003c/foo\u003e[]\u003chr\u003e hr text \u003chr\u003e hr...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...There\u003c/div\u003e now\u003c/h1\u003e[ ]\u003ch2\u003eMore \u003c/h2\u003e\u003ch3\u003eCo...\u003e but was:\u003c...There\u003c/div\u003e now\u003c/h1\u003e[]\u003ch2\u003eMore \u003c/h2\u003e\u003ch3\u003eCo...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\u003d\"1\"\u003eHello\u003c/abc_def\u003e[ ]\u003cabc-def\u003eThere\u003c/abc-...\u003e but was:\u003c...\u003d\"1\"\u003eHello\u003c/abc_def\u003e[]\u003cabc-def\u003eThere\u003c/abc-...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...llo \u003cdiv\u003ethere\u003c/div\u003e[ ]\u003cspan\u003enow\u003c/span\u003e\u003c/sp...\u003e but was:\u003c...llo \u003cdiv\u003ethere\u003c/div\u003e[]\u003cspan\u003enow\u003c/span\u003e\u003c/sp...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c0[ \u003cp\u003e0]\u003c/p\u003e\u003e but was:\u003c0[\u003cp\u003e  0 ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[\u003ca\u003eOne\u003c/a\u003e\u003ca\u003e\u003c/a\u003e\u003ca foo\u003d\"bar\"\u003eTwo\u003c/a\u003e]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  \u003ca\u003eOne\u003c/a\u003e\u003ca\u003e\u003c/a\u003e\u003ca foo\u003d\"bar\"\u003eTwo\u003c/a\u003e ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...d\u003e\u003c/head\u003e \u003cbody\u003e \u003cp\u003e[Foo]\u003c/p\u003e \u003c/body\u003e \u003c/html\u003e\u003e but was:\u003c...d\u003e\u003c/head\u003e \u003cbody\u003e \u003cp\u003e[ Foo ]\u003c/p\u003e \u003c/body\u003e \u003c/html\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[test]\u003c/p\u003e \u003cdiv\u003e\u003c/div\u003e \u003cdi...\u003e but was:\u003c\u003cp\u003e[ test ]\u003c/p\u003e \u003cdiv\u003e\u003c/div\u003e \u003cdi...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\u003e\u003ctr\u003e\u003ctd\u003e1\u003c/td\u003e\u003c/tr\u003e[ \u003ctr\u003e\u003ctd\u003e2\u003c/td\u003e\u003c/tr\u003e \u003ctr\u003e\u003ctd\u003e \u003ctable\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e3\u003c/td\u003e \u003ctd\u003e4\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e ]\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e5\u003c...\u003e but was:\u003c...\u003e\u003ctr\u003e\u003ctd\u003e1\u003c/td\u003e\u003c/tr\u003e[\u003ctr\u003e\u003ctd\u003e2\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ctable\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e3\u003c/td\u003e\u003ctd\u003e4\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e]\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e5\u003c...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[\u003cb\u003eOne\u003c/b\u003e\u003c/p\u003e \u003cb\u003e   \u003ctable\u003e   \u003ctbody\u003e    \u003ctr\u003e     \u003ctd\u003e\u003cp\u003e\u003ci\u003eThree\u003c/i\u003e\u003c/p\u003e\u003cp\u003e\u003ci\u003eFour\u003c/i\u003e\u003c/p\u003e\u003c/td\u003e    \u003c/tr\u003e   \u003c/tbody\u003e  \u003c/table\u003e \u003cp\u003eFive]\u003c/p\u003e\u003c/b\u003e\u003e but was:\u003c\u003cp\u003e[  \u003cb\u003eOne\u003c/b\u003e \u003c/p\u003e \u003cb\u003e  \u003ctable\u003e   \u003ctbody\u003e    \u003ctr\u003e     \u003ctd\u003e      \u003cp\u003e       \u003ci\u003eThree\u003c/i\u003e      \u003c/p\u003e      \u003cp\u003e       \u003ci\u003eFour\u003c/i\u003e      \u003c/p\u003e     \u003c/td\u003e    \u003c/tr\u003e   \u003c/tbody\u003e  \u003c/table\u003e  \u003cp\u003e   Five  ]\u003c/p\u003e\u003c/b\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[test\u003cbr\u003etest\u003cbr\u003e]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  test\u003cbr\u003etest\u003cbr\u003e ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...ample.com/\"\u003eLink\u003c/a\u003e[ \u003cp\u003e\u003ca href\u003d\"http://example.com/\"\u003eError link\u003c/a\u003e]\u003c/p\u003e\u003e but was:\u003c...ample.com/\"\u003eLink\u003c/a\u003e[\u003cp\u003e  \u003ca href\u003d\"http://example.com/\"\u003eError link\u003c/a\u003e ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...d\u003e\u003c/head\u003e \u003cbody\u003e \u003cp\u003e[\u003cb class\u003d\"x\"\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003e\u003cb class\u003d\"x\"\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003eX \u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/p\u003e \u003cp\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003e\u003cb class\u003d\"x\"\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003eX \u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/p\u003e \u003cp\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003e\u003cb class\u003d\"x\"\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003e\u003cb\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003eX \u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/p\u003e \u003cp\u003eX]\u003c/p\u003e \u003c/body\u003e \u003c/html\u003e\u003e but was:\u003c...d\u003e\u003c/head\u003e \u003cbody\u003e \u003cp\u003e[ \u003cb class\u003d\"x\"\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003e\u003cb class\u003d\"x\"\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003eX \u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e \u003c/p\u003e \u003cp\u003e \u003cb class\u003d\"x\"\u003e\u003cb\u003e\u003cb class\u003d\"x\"\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003eX \u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e \u003c/p\u003e \u003cp\u003e \u003cb class\u003d\"x\"\u003e\u003cb\u003e\u003cb class\u003d\"x\"\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003e\u003cb\u003e\u003cb class\u003d\"x\"\u003e\u003cb\u003eX \u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e\u003c/b\u003e \u003c/p\u003e \u003cp\u003e X ]\u003c/p\u003e \u003c/body\u003e \u003c/html\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...adline\u003c/h2\u003e\u003c/hgroup\u003e[ ]\u003chgroup\u003e\u003ch1\u003eMore\u003c/h1...\u003e but was:\u003c...adline\u003c/h2\u003e\u003c/hgroup\u003e[]\u003chgroup\u003e\u003ch1\u003eMore\u003c/h1...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...llo \u003cdiv\u003ethere\u003c/div\u003e[ ]\u003cspan\u003enow\u003c/span\u003e\u003c/fo...\u003e but was:\u003c...llo \u003cdiv\u003ethere\u003c/div\u003e[]\u003cspan\u003enow\u003c/span\u003e\u003c/fo...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[1\u003cb\u003e2\u003ci\u003e3\u003c/i\u003e\u003c/b\u003e\u003ci\u003e4\u003c/i\u003e5]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  1\u003cb\u003e2\u003ci\u003e3\u003c/i\u003e\u003c/b\u003e\u003ci\u003e4\u003c/i\u003e5 ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cb\u003e1\u003c/b\u003e[ \u003cp\u003e\u003cb\u003e2\u003c/b\u003e3]\u003c/p\u003e\u003e but was:\u003c\u003cb\u003e1\u003c/b\u003e[\u003cp\u003e  \u003cb\u003e2\u003c/b\u003e3 ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...llo \u003cdiv\u003ethere\u003c/div\u003e[ ]\u003cspan\u003enow\u003c/span\u003e\u003c/a\u003e\u003e but was:\u003c...llo \u003cdiv\u003ethere\u003c/div\u003e[]\u003cspan\u003enow\u003c/span\u003e\u003c/a\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp id\u003d\"�\"\u003e[Blah \u0026#0;]\u003c/p\u003e\u003e but was:\u003c\u003cp id\u003d\"�\"\u003e[  Blah \u0026#0; ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp \u003da\u003e[One\u003ca \u003cp\u003eSomething\u003c/a\u003e]\u003c/p\u003e \u003ca \u003cp\u003eElse\u003c/a\u003e\u003e but was:\u003c\u003cp \u003da\u003e[  One\u003ca \u003cp\u003eSomething\u003c/a\u003e ]\u003c/p\u003e \u003ca \u003cp\u003eElse\u003c/a\u003e\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 33,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.jsoup.nodes.DocumentTest",
+      "failingMethods": [
+        "org.jsoup.nodes.DocumentTest#testMetaCharsetUpdateXmlNoCharset",
+        "org.jsoup.nodes.DocumentTest#testMetaCharsetUpdateXmlUtf8",
+        "org.jsoup.nodes.DocumentTest#testHtmlAndXmlSyntax",
+        "org.jsoup.nodes.DocumentTest#testOverflowClone",
+        "org.jsoup.nodes.DocumentTest#testMetaCharsetUpdateXmlIso8859",
+        "org.jsoup.nodes.DocumentTest#parseAndHtmlOnDifferentThreads",
+        "org.jsoup.nodes.DocumentTest#testClone",
+        "org.jsoup.nodes.DocumentTest#testMetaCharsetUpdateXmlDisabledNoChanges",
+        "org.jsoup.nodes.DocumentTest#testMetaCharsetUpdateXmlDisabled",
+        "org.jsoup.nodes.DocumentTest#testOutputEncoding"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp title\u003d\"π\"\u003e[π \u0026amp; \u0026lt; \u0026gt; ]\u003c/p\u003e\u003e but was:\u003c\u003cp title\u003d\"π\"\u003e[  π \u0026amp; \u0026lt; \u0026gt;  ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\u003ctitle\u003eHello\u003c/title\u003e[ ]\u003c/head\u003e\u003cbody\u003e\u003cp\u003eOne\u003c...\u003e but was:\u003c...\u003ctitle\u003eHello\u003c/title\u003e[]\u003c/head\u003e\u003cbody\u003e\u003cp\u003eOne\u003c...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\" encoding\u003d\"UTF-8\"?\u003e[ \u003croot\u003e  node ]\u003c/root\u003e\u003e but was:\u003c...\" encoding\u003d\"UTF-8\"?\u003e[\u003croot\u003enode]\u003c/root\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003croot\u003e[  node ]\u003c/root\u003e\u003e but was:\u003c\u003croot\u003e[node]\u003c/root\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...oding\u003d\"ISO-8859-1\"?\u003e[ \u003croot\u003e  node ]\u003c/root\u003e\u003e but was:\u003c...oding\u003d\"ISO-8859-1\"?\u003e[\u003croot\u003enode]\u003c/root\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[Alrighty then it\u0027s not 💩. \u003cspan\u003eNext\u003c/span\u003e]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  Alrighty then it\u0027s not 💩. \u003cspan\u003eNext\u003c/span\u003e ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\" encoding\u003d\"UTF-8\"?\u003e[ \u003croot\u003e  node ]\u003c/root\u003e\u003e but was:\u003c...\" encoding\u003d\"UTF-8\"?\u003e[\u003croot\u003enode]\u003c/root\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...uot;\"\u003e\u0026lt;\u0026gt;\u0026amp;\"[   ]\u003cfoo /\u003ebar  \u003c/body\u003e ...\u003e but was:\u003c...uot;\"\u003e\u0026lt;\u0026gt;\u0026amp;\"[]\u003cfoo /\u003ebar  \u003c/body\u003e ...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...coding\u003d\"dontTouch\"?\u003e[ \u003croot\u003e  node ]\u003c/root\u003e\u003e but was:\u003c...coding\u003d\"dontTouch\"?\u003e[\u003croot\u003enode]\u003c/root\u003e\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 10,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.jsoup.nodes.NodeTest",
+      "failingMethods": [
+        "org.jsoup.nodes.NodeTest#before",
+        "org.jsoup.nodes.NodeTest#after",
+        "org.jsoup.nodes.NodeTest#nodeIsNotASiblingOfItself"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[One \u003cem\u003efour\u003c/em\u003e\u003cb\u003etwo\u003c/b\u003e three]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  One \u003cem\u003efour\u003c/em\u003e\u003cb\u003etwo\u003c/b\u003e three ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[One \u003cb\u003etwo\u003c/b\u003e\u003cem\u003efour\u003c/em\u003e three]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  One \u003cb\u003etwo\u003c/b\u003e\u003cem\u003efour\u003c/em\u003e three ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[One]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  One ]\u003c/p\u003e\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.jsoup.safety.CleanerTest",
+      "failingMethods": [
+        "org.jsoup.safety.CleanerTest#basicBehaviourTest",
+        "org.jsoup.safety.CleanerTest#preservesRelativeLinksIfConfigured",
+        "org.jsoup.safety.CleanerTest#handlesCustomProtocols",
+        "org.jsoup.safety.CleanerTest#testDropComments",
+        "org.jsoup.safety.CleanerTest#testDropsUnknownTags",
+        "org.jsoup.safety.CleanerTest#handlesAllPseudoTag",
+        "org.jsoup.safety.CleanerTest#testDropXmlProc",
+        "org.jsoup.safety.CleanerTest#resolvesRelativeLinks",
+        "org.jsoup.safety.CleanerTest#addsTagOnAttributesIfNotSet",
+        "org.jsoup.safety.CleanerTest#supplyOutputSettings"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\"nofollow\"\u003eDodgy\u003c/a\u003e[ ]\u003ca href\u003d\"http://nice...\u003e but was:\u003c...\"nofollow\"\u003eDodgy\u003c/a\u003e[]\u003ca href\u003d\"http://nice...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cimg\u003e[  ]\u003cimg\u003e\u003e but was:\u003c\u003cimg\u003e[]\u003cimg\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\u003d\"nofollow\"\u003eLink\u003c/a\u003e[ \u003cimg src\u003d\"/bar\"\u003e  ]\u003cimg\u003e\u003e but was:\u003c...\u003d\"nofollow\"\u003eLink\u003c/a\u003e[\u003cimg src\u003d\"/bar\"\u003e]\u003cimg\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\u003d\"nofollow\"\u003eLink\u003c/a\u003e[ ]\u003cimg src\u003d\"http://exa...\u003e but was:\u003c...\u003d\"nofollow\"\u003eLink\u003c/a\u003e[]\u003cimg src\u003d\"http://exa...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[Hello]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  Hello ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp class\u003d\"foo\"\u003e[One]\u003c/p\u003e\u003e but was:\u003c\u003cp class\u003d\"foo\"\u003e[  One ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[Test]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  Test ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[Hello]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  Hello ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp class\u003d\"foo\"\u003e[\u003ca class\u003d\"qux\"\u003elink\u003c/a\u003e]\u003c/p\u003e\u003e but was:\u003c\u003cp class\u003d\"foo\"\u003e[  \u003ca class\u003d\"qux\"\u003elink\u003c/a\u003e ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cdiv\u003e  \u003cp\u003e[ℬ]\u003c/p\u003e \u003c/div\u003e\u003e but was:\u003c\u003cdiv\u003e  \u003cp\u003e[   ℬ  ]\u003c/p\u003e \u003c/div\u003e\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 10,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.jsoup.integration.ParseTest",
+      "failingMethods": [
+        "org.jsoup.integration.ParseTest#testBaidu",
+        "org.jsoup.integration.ParseTest#testBaiduVariant"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003ctitle\u003e[百度一下，你就知道]\u003c/title\u003e\u003e but was:\u003c\u003ctitle\u003e[  百度一下，你就知道 ]\u003c/title\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003ctitle\u003e[百度一下，你就知道      ]\u003c/title\u003e\u003e but was:\u003c\u003ctitle\u003e[  百度一下，你就知道       ]\u003c/title\u003e\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.jsoup.select.ElementsTest",
+      "failingMethods": [
+        "org.jsoup.select.ElementsTest#unwrap",
+        "org.jsoup.select.ElementsTest#wrap",
+        "org.jsoup.select.ElementsTest#unwrapP",
+        "org.jsoup.select.ElementsTest#tagNameSet",
+        "org.jsoup.select.ElementsTest#unwrapKeepsSpace",
+        "org.jsoup.select.ElementsTest#html",
+        "org.jsoup.select.ElementsTest#after",
+        "org.jsoup.select.ElementsTest#wrapDiv",
+        "org.jsoup.select.ElementsTest#before"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\u003efoo\u003c/span\u003e\u003ca\u003eis\u003c/a\u003e[ ]\u003cspan\u003efoo\u003c/span\u003e\u003ca\u003ej...\u003e but was:\u003c...\u003efoo\u003c/span\u003e\u003ca\u003eis\u003c/a\u003e[]\u003cspan\u003efoo\u003c/span\u003e\u003ca\u003ej...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cdiv\u003eOne[ ]\u003ca href\u003d\"/\"\u003eTwo\u003c/a\u003e\u003c...\u003e but was:\u003c\u003cdiv\u003eOne[]\u003ca href\u003d\"/\"\u003eTwo\u003c/a\u003e\u003c...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...wo Three \u003ci\u003eFour\u003c/i\u003e[ ]Fix \u003ci\u003eSix\u003c/i\u003e\u003e but was:\u003c...wo Three \u003ci\u003eFour\u003c/i\u003e[]Fix \u003ci\u003eSix\u003c/i\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[One two three four]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  One twothree four ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[Hello\u003c/p\u003e \u003cp\u003eThere]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  Hello \u003c/p\u003e \u003cp\u003e  There ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[\u003ci\u003e\u003cb\u003eThis\u003c/b\u003e\u003c/i\u003e is \u003ci\u003e\u003cb\u003ejsoup\u003c/b\u003e\u003c/i\u003e]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  \u003ci\u003e\u003cb\u003eThis\u003c/b\u003e\u003c/i\u003e is \u003ci\u003e\u003cb\u003ejsoup\u003c/b\u003e\u003c/i\u003e ]\u003c/p\u003e\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...\u003c/a\u003e\u003cspan\u003efoo\u003c/span\u003e[ ]\u003ca\u003ejsoup\u003c/a\u003e\u003cspan\u003efo...\u003e but was:\u003c...\u003c/a\u003e\u003cspan\u003efoo\u003c/span\u003e[]\u003ca\u003ejsoup\u003c/a\u003e\u003cspan\u003efo...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...jsoup\u003c/b\u003e.\u003c/p\u003e\u003c/div\u003e[ ]\u003cdiv\u003e\u003cp\u003eHow do you l...\u003e but was:\u003c...jsoup\u003c/b\u003e.\u003c/p\u003e\u003c/div\u003e[]\u003cdiv\u003e\u003cp\u003eHow do you l...\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c\u003cp\u003e[Hello \u003cem\u003ethere\u003c/em\u003e \u003cem\u003enow\u003c/em\u003e]\u003c/p\u003e\u003e but was:\u003c\u003cp\u003e[  Hello \u003cem\u003ethere\u003c/em\u003e\u003cem\u003enow\u003c/em\u003e ]\u003c/p\u003e\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 9,
+      "nbErrors": 0
+    }
+  ]
+}
