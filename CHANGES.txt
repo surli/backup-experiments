@@ -1,0 +1,113 @@
+Luwak 1.5.0
+===========
+
+This release of luwak requires Java 8
+
+API changes:
+
+* Upgrade to lucene 6.5
+* Monitor.update() is declared as throwing an UpdateException (#106)
+
+Optimizations:
+
+* Disable bulk scoring, reducing fixed overhead for large boolean disjunctions
+* Query decomposer will recurse into DisjunctionMaxQuery (#112)
+
+New features:
+
+* HighlightingMatcher can handle exact phrase queries
+* HighlightingMatcher reports matches even if it can't actually highlight a
+  query
+* Several code cleanups contributed by Bloomberg (#100, #102, #107, #118, #119)
+* Expose hits map in HighlightsMatch (#92)
+* All lucene core queries are now handled by TermFilteredPresearcher
+* SpanRewriter can handle ConstantScoreQuery (#114)
+* SpanRewriter will attempt to rewrite unknown queries.  This allows luwak to
+  highlight queries produced by, for example, the ComplexPhraseQueryParser
+  (#136)
+
+Bug fixes:
+
+* MonitorQuery metadata checks for null values
+* InputDocument propagates position and offset gaps for multivalued fields
+  (#117)
+* SpanRewriter.rewriteBoolean() propagates minShouldMatch (#123)
+* HighlightingMatcher was only returning hits for the last doc in a batch (#134)
+* Unpositioned span terms were being incorrectly highlighted due to two-phase
+  iteration (fixed by LUCENE-7628)
+* InputDocument was not respecting omitNorms values on fields (fixed by
+  LUCENE-7696) (#135)
+
+
+Luwak 1.4.0
+===========
+
+API changes:
+
+* Upgrade to lucene 5.4.1
+
+Optimizations:
+
+* Refactored the internal query index code into its own class, for easier
+  testing
+* Avoid re-analyzing queries that have already been added
+
+New features:
+
+* Added better toString() representations of QueryMatch objects
+* Several code cleanups contributed by DevFactory
+
+Bug fixes:
+
+* Several fixes to the HighlightingMatcher span-rewrite code
+* Luwak-specific queries correctly implement equals() and hashCode(), fixing
+  some query-cache interaction bugs.
+* HighlightsMatch.Hit now implements hashCode()
+* QueryTreeAnalyzer uses a LinkedHashSet to enforce deterministic iteration
+  order over its children
+
+Luwak 1.3.0
+===========
+
+The major change here is the introduction of the batching API, allowing users to
+match several documents at once.  In general this will improve throughput at the
+expense of latency, although as always you should measure timings carefully.
+
+API changes:
+
+* Added Monitor.match(DocumentBatch, MatcherFactory) and
+  Monitor.debug(DocumentBatch, MatcherFactory) in addition to the existing
+  InputDocument methods.
+* QueryMatch now takes a document ID as well as a query ID
+* Matches<T> exposes DocumentMatches<T> objects for document in an input batch
+* Presearcher.buildQuery() now takes a QueryTermFilter rather than an
+  IndexReaderContext for filtering out terms, and a LeafReader over a batch's
+  document index rather than an InputDocument
+* Various queryindex configuration options (commit batch size, cache purge
+  frequency, whether or not to store queries, which QueryDecomposer to use) are
+  now encapsulated in a QueryIndexConfiguration object, passed to the Monitor
+  constructor.
+* Monitor state updates can now be watched by registering
+  QueryIndexUpdateListeners.  The beforeCommit() and afterCommit() methods are
+  removed.
+* Monitor.getStats() is renamed to Monitor.getQueryCacheStats()
+
+New features:
+
+* You can now configure Similarity implementations on a DocumentBatch
+* Query metadata is passed to CandidateMatcher.doMatchQuery()
+* DisjunctionMaxQuery can be highlighted
+* DisjunctionMaxQuery can be decomposed and indexed separately
+* Performance improvements: use TermsQuery for the document disjunction, and 
+  filter out non-existent query terms before they're added to the query
+* ConcurrentQueryLoader allows more efficient query loading on startup
+* WildcardNGramPresearcherComponent makes it easier to adjust its max token
+  length
+* You can choose not to store MonitorQueries in the Monitor for some memory
+  savings, by setting QueryIndexConfiguration.storeQueries(false).
+
+Bug fixes:
+
+* The slowlog was reporting nanosecond values as milliseconds
+* FieldFilterPresearcherComponent didn't work for binary terms
+* FieldFilterPresearcherComponent was breaking debug()
