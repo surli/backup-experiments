@@ -1,0 +1,111 @@
+{
+  "operators": [
+    {
+      "name": "inputOperator",
+      "class": "com.datatorrent.stram.engine.TestGeneratorInputOperator",
+      "properties": {
+        "com.datatorrent.stram.engine.TestGeneratorInputOperator":{
+          "myConfigProperty" : "myConfigPropertyValue"
+        }
+      },
+      "attributes": {
+        "MEMORY_MB" : 64,
+        "STATS_LISTENERS" : {
+          "java.util.ArrayList" : [
+            {
+              "com.datatorrent.stram.plan.logical.LogicalPlanConfigurationTest$TestStatsListener" : {
+                "intProp" : 222
+              }
+            }
+          ]
+        }
+      },
+      "ports" : [
+        { "name": "outport",
+          "attributes": {
+            "UNIFIER_LIMIT": 8,
+            "STREAM_CODEC" : {
+              "com.datatorrent.stram.plan.logical.LogicalPlanConfigurationTest$TestStreamCodec" : {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "operator1",
+      "class": "com.datatorrent.stram.engine.GenericTestOperator",
+      "properties": {
+        "com.datatorrent.stram.engine.GenericTestOperator":{
+          "myStringProperty": "myStringPropertyValue"
+        }
+
+      }
+    },
+    {
+      "name": "operator2",
+      "class": "com.datatorrent.stram.engine.GenericTestOperator"
+    },
+    {
+      "name": "operator3",
+      "class": "com.datatorrent.stram.engine.GenericTestOperator",
+      "properties": {
+        "myStringProperty": "o3StringFromJson"
+      }
+    },
+    {
+      "name": "operator4",
+      "class": "com.datatorrent.stram.engine.GenericTestOperator",
+      "properties": {
+        "com.datatorrent.stram.engine.GenericTestOperator":{
+          "myStringProperty": "overrideOperator4",
+          "booleanProperty": true
+        },
+        "stringPropertySetterOnly": "setterOnlyOperator4"
+      }
+    }
+  ],
+  "streams": [
+    {
+      "name": "n1n2",
+      "locality": "CONTAINER_LOCAL",
+      "source": {
+        "operatorName": "operator1",
+        "portName": "outport1"
+      },
+      "sinks": [
+        {
+          "operatorName": "operator2",
+          "portName": "inport1"
+        }
+      ]
+    },
+    {
+      "name": "inputStream",
+      "source": {
+        "operatorName": "inputOperator",
+        "portName": "outport"
+      },
+      "sinks": [
+        {
+          "operatorName": "operator1",
+          "portName": "inport1"
+        },
+        {
+          "operatorName": "operator3",
+          "portName": "inport1"
+        },
+        {
+          "operatorName": "operator4",
+          "portName": "inport1"
+        }
+      ]
+    }
+  ],
+  "attributes": {
+    "CONTAINER_JVM_OPTIONS" : "-Xmx16m",
+    "CONTAINER_OPTS_CONFIGURATOR" : {
+      "com.datatorrent.common.util.BasicContainerOptConfigurator" : {}
+    },
+    "STRING_CODECS" : "java.lang.Integer=com.datatorrent.api.StringCodec$Integer2String"
+  }
+}

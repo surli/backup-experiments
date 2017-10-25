@@ -1,0 +1,62 @@
+{
+  "totalNumberSkippingTests": 16,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "apache/apex-core",
+  "failingModule": "/root/workspace/apache/apex-core/292408611/engine",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 3,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 481,
+  "failing-test-cases": [
+    {
+      "className": "com.datatorrent.stram.util.LoggerUtilTest",
+      "failingMethods": [
+        "com.datatorrent.stram.util.LoggerUtilTest#testAppender"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003clog4j.appender.testAppender\u003dcom.datatorrent.stram.util.LoggerUtilTest$TestAppender,log4j.appender.testAppender.layout\u003dorg.apache.log4j.PatternLayout,log4j.appender.testAppender.layout.ConversionPattern\u003d%d %d{Z} [%t] %-5p (%F:%L) - %m%n,log4j.appender.testAppender1\u003dorg.apache.log4j.ConsoleAppender,log4j.appender.testAppender1.layout\u003dorg.apache.log4j.PatternLayout,log4j.appender.testAppender1.layout.ConversionPattern\u003d%d %d{Z} [%t] %-5p (%F:%L) - %m%n\u003e but was:\u003cnull\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.datatorrent.stram.util.LogFileInformationTest",
+      "failingMethods": [
+        "com.datatorrent.stram.util.LogFileInformationTest#testGetLogFileInformation"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.datatorrent.stram.util.VersionInfoTest",
+      "failingMethods": [
+        "com.datatorrent.stram.util.VersionInfoTest#testMavenProperties"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Version number pattern does not match: Unknown",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
