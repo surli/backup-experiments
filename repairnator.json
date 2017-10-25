@@ -1,0 +1,50 @@
+{
+  "totalNumberSkippingTests": 99,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "alibaba/dubbo",
+  "failingModule": "/root/workspace/alibaba/dubbo/292638568/dubbo-common",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 3,
+  "error-types": [
+    "java.lang.AssertionError",
+    "skipped"
+  ],
+  "totalNumberRunningTests": 730,
+  "failing-test-cases": [
+    {
+      "className": "com.alibaba.dubbo.common.utils.ConfigUtilsTest",
+      "failingMethods": [
+        "com.alibaba.dubbo.common.utils.ConfigUtilsTest#testMergeValues",
+        "com.alibaba.dubbo.common.utils.ConfigUtilsTest#testMergeValuesDelete",
+        "com.alibaba.dubbo.common.utils.ConfigUtilsTest#testMergeValues_addDefault",
+        "com.alibaba.dubbo.common.utils.ConfigUtilsTest#test_loadProperties_multiFile_notRootPath_Exception"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[json, aaa]\u003e but was:\u003c[aaa]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[dubbo, json, aaa, bbb, default.cunstom]\u003e but was:\u003c[dubbo, aaa, bbb, default.cunstom]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c[aaa, bbb, dubbo, json, zzz]\u003e but was:\u003c[aaa, bbb, dubbo, zzz]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "see http://code.alibabatech.com/jira/browse/DUBBO-133",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    }
+  ]
+}
