@@ -1,0 +1,63 @@
+{
+  "totalNumberSkippingTests": 3,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 3,
+  "repo": "matsim-org/matsim",
+  "failingModule": "/root/workspace/matsim-org/matsim/293675127/matsim",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.NoClassDefFoundError",
+    "java.lang.ExceptionInInitializerError"
+  ],
+  "totalNumberRunningTests": 1310,
+  "failing-test-cases": [
+    {
+      "className": "org.matsim.counts.CountsKMLWriterTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.matsim.counts.CountsKMLWriterTest#testKMLCreation"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.ExceptionInInitializerError",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.matsim.core.network.KmlNetworkWriterTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.matsim.core.network.KmlNetworkWriterTest#testWrite"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.matsim.vis.kml.KMZWriter",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.matsim.pt.counts.PtCountsKMLWriterTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.matsim.pt.counts.PtCountsKMLWriterTest#testPtAlightKMLCreation"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "Could not initialize class org.matsim.vis.kml.KMZWriter",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
