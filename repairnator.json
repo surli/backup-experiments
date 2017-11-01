@@ -1,0 +1,72 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "kongchen/swagger-maven-plugin",
+  "failingModule": "/root/workspace/kongchen/swagger-maven-plugin/295690748",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 6,
+  "error-types": [
+    "java.lang.AssertionError",
+    "org.apache.maven.plugin.MojoExecutionException"
+  ],
+  "totalNumberRunningTests": 32,
+  "failing-test-cases": [
+    {
+      "className": "com.github.kongchen.smp.integration.SwaggerReaderTest",
+      "failingMethods": [
+        "com.github.kongchen.smp.integration.SwaggerReaderTest#testGeneratedSwaggerSpecJson on testGeneratedSwaggerSpecJson(com.github.kongchen.smp.integration.SwaggerReaderTest)",
+        "com.github.kongchen.smp.integration.SwaggerReaderTest#testGeneratedSwaggerSpecYaml on testGeneratedSwaggerSpecYaml(com.github.kongchen.smp.integration.SwaggerReaderTest)"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.apache.maven.plugin.MojoExecutionException",
+          "failureDetail": "unknown type: [simple type, class java.lang.Long]",
+          "isError": false
+        },
+        {
+          "failureName": "org.apache.maven.plugin.MojoExecutionException",
+          "failureDetail": "unknown type: [simple type, class java.lang.Long]",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.github.kongchen.smp.integration.SpringMvcTest",
+      "failingMethods": [
+        "com.github.kongchen.smp.integration.SpringMvcTest#testSwaggerCustomReaderYaml on testSwaggerCustomReaderYaml(com.github.kongchen.smp.integration.SpringMvcTest)",
+        "com.github.kongchen.smp.integration.SpringMvcTest#testGeneratedSwaggerSpecJson on testGeneratedSwaggerSpecJson(com.github.kongchen.smp.integration.SpringMvcTest)",
+        "com.github.kongchen.smp.integration.SpringMvcTest#testSwaggerCustomReaderJson on testSwaggerCustomReaderJson(com.github.kongchen.smp.integration.SpringMvcTest)",
+        "com.github.kongchen.smp.integration.SpringMvcTest#testGeneratedSwaggerSpecYaml on testGeneratedSwaggerSpecYaml(com.github.kongchen.smp.integration.SpringMvcTest)"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "JSON documents are different: Different keys found in node \"paths./swaggerless/{petId}.get\". Expected [operationId, parameters, responses], got [operationId, parameters, responses, tags].  Extra: \"paths./swaggerless/{petId}.get.tags\" Array \"tags\" has different length. Expected 4, got 5. Array \"tags\" has different content. Missing values [], extra values [{\"name\":\"SwaggerlessResource\"}] ",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "JSON documents are different: Different keys found in node \"paths./swaggerless/{petId}.get\". Expected [operationId, parameters, responses], got [operationId, parameters, responses, tags].  Extra: \"paths./swaggerless/{petId}.get.tags\" Array \"tags\" has different length. Expected 4, got 5. Array \"tags\" has different content. Missing values [], extra values [{\"name\":\"SwaggerlessResource\"}] ",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "JSON documents are different: Different keys found in node \"paths./swaggerless/{petId}.get\". Expected [operationId, parameters, responses], got [operationId, parameters, responses, tags].  Extra: \"paths./swaggerless/{petId}.get.tags\" Array \"tags\" has different length. Expected 4, got 5. Array \"tags\" has different content. Missing values [], extra values [{\"name\":\"SwaggerlessResource\"}] ",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "JSON documents are different: Different keys found in node \"paths./swaggerless/{petId}.get\". Expected [operationId, parameters, responses], got [operationId, parameters, responses, tags].  Extra: \"paths./swaggerless/{petId}.get.tags\" Array \"tags\" has different length. Expected 4, got 5. Array \"tags\" has different content. Missing values [], extra values [{\"name\":\"SwaggerlessResource\"}] ",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    }
+  ]
+}
