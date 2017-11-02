@@ -1,0 +1,102 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 8,
+  "repo": "AmadeusITGroup/sonar-stash",
+  "failingModule": "/root/workspace/AmadeusITGroup/sonar-stash/296218895",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 3,
+  "error-types": [
+    "org.mockito.exceptions.verification.WantedButNotInvoked",
+    "java.lang.RuntimeException",
+    "java.lang.Exception",
+    "java.lang.NullPointerException"
+  ],
+  "totalNumberRunningTests": 173,
+  "failing-test-cases": [
+    {
+      "className": "org.sonar.plugins.stash.client.StashClientTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.sonar.plugins.stash.client.StashClientTest#testGetPullRequestComments",
+        "org.sonar.plugins.stash.client.StashClientTest#testGetPullRequestCommentsWithNextPage",
+        "org.sonar.plugins.stash.client.StashClientTest#testGetPullRequestCommentsWithWrongContentType",
+        "org.sonar.plugins.stash.client.StashClientTest#testGetPullRequestCommentsWithException",
+        "org.sonar.plugins.stash.client.StashClientTest#testGetPullRequestCommentsWithoutAuthor",
+        "org.sonar.plugins.stash.client.StashClientTest#testPullRequestHugePullRequestId",
+        "org.sonar.plugins.stash.client.StashClientTest#testGetPullRequestCommentsWithWrongHTTPResult",
+        "org.sonar.plugins.stash.client.StashClientTest#testGetPullRequestCommentsWithNoNextPage"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003corg.sonar.plugins.stash.exceptions.StashClientException\u003e but was\u003cjava.lang.RuntimeException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003corg.sonar.plugins.stash.exceptions.StashClientException\u003e but was\u003cjava.lang.RuntimeException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "org.sonar.plugins.stash.exceptions.StashClientException: Received response with type text/html; charset\u003dISO-8859-1 instead of JSON",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003corg.sonar.plugins.stash.exceptions.StashClientException\u003e but was\u003cjava.lang.RuntimeException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003corg.sonar.plugins.stash.exceptions.StashClientException\u003e but was\u003cjava.lang.NullPointerException\u003e",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "org.sonar.plugins.stash.exceptions.StashClientException: Received response with type text/html; charset\u003dISO-8859-1 instead of JSON",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 8
+    },
+    {
+      "className": "org.sonar.plugins.stash.StashRequestFacadeTest",
+      "failingMethods": [
+        "org.sonar.plugins.stash.StashRequestFacadeTest#testResetComments",
+        "org.sonar.plugins.stash.StashRequestFacadeTest#testResetCommentsWithNotDeletableTasks",
+        "org.sonar.plugins.stash.StashRequestFacadeTest#testResetCommentsWithNoTasks"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.mockito.exceptions.verification.WantedButNotInvoked",
+          "failureDetail": "\nWanted but not invoked:\nstashClient.deleteTaskOnComment(\u003cany\u003e);\n-\u003e at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNotDeletableTasks(StashRequestFacadeTest.java:690)\n\nHowever, there were other interactions with this mock:\n-\u003e at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNotDeletableTasks(StashRequestFacadeTest.java:688)\n",
+          "isError": false
+        },
+        {
+          "failureName": "org.mockito.exceptions.verification.WantedButNotInvoked",
+          "failureDetail": "\nWanted but not invoked:\nstashClient.deleteTaskOnComment(\u003cany\u003e);\n-\u003e at org.sonar.plugins.stash.StashRequestFacadeTest.testResetComments(StashRequestFacadeTest.java:680)\n\nHowever, there were other interactions with this mock:\n-\u003e at org.sonar.plugins.stash.StashRequestFacadeTest.testResetComments(StashRequestFacadeTest.java:678)\n",
+          "isError": false
+        },
+        {
+          "failureName": "org.mockito.exceptions.verification.WantedButNotInvoked",
+          "failureDetail": "\nWanted but not invoked:\nstashClient.deleteTaskOnComment(\u003cany\u003e);\n-\u003e at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNoTasks(StashRequestFacadeTest.java:700)\n\nHowever, there were other interactions with this mock:\n-\u003e at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNoTasks(StashRequestFacadeTest.java:698)\n",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    }
+  ]
+}
