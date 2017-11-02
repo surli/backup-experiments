@@ -1,0 +1,31 @@
+{
+  "totalNumberSkippingTests": 105,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 1,
+  "repo": "alibaba/dubbo",
+  "failingModule": "/root/workspace/alibaba/dubbo/296232347/dubbo-config/dubbo-config-spring",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "org.springframework.beans.factory.BeanCreationException"
+  ],
+  "totalNumberRunningTests": 1346,
+  "failing-test-cases": [
+    {
+      "className": "com.alibaba.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.alibaba.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessorTest#test"
+      ],
+      "failures": [
+        {
+          "failureName": "org.springframework.beans.factory.BeanCreationException",
+          "failureDetail": "Error creating bean with name \u0027com.alibaba.dubbo.config.spring.ServiceBean#0\u0027: Cannot resolve reference to bean \u0027dubbo-annotation-provider\u0027 while setting bean property \u0027application\u0027; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named \u0027dubbo-annotation-provider\u0027 available",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
