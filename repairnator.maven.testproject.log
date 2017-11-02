@@ -1,0 +1,209 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Stash 1.3.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- sonar-packaging-maven-plugin:1.17:check (default-check) @ sonar-stash-plugin ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ sonar-stash-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ sonar-stash-plugin ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ sonar-stash-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/AmadeusITGroup/sonar-stash/296218774/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ sonar-stash-plugin ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20.1:test (default-test) @ sonar-stash-plugin ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.pom (4 KB at 6.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.20.1/surefire-providers-2.20.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.20.1/surefire-providers-2.20.1.pom (3 KB at 89.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.20.1/surefire-junit4-2.20.1.jar (81 KB at 1030.1 KB/sec)
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.sonar.plugins.stash.StashRequestFacadeTest
+[ERROR] Tests run: 44, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.806 s <<< FAILURE! - in org.sonar.plugins.stash.StashRequestFacadeTest
+[ERROR] testResetCommentsWithNotDeletableTasks(org.sonar.plugins.stash.StashRequestFacadeTest)  Time elapsed: 0.036 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+stashClient.deleteTaskOnComment(<any>);
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNotDeletableTasks(StashRequestFacadeTest.java:690)
+
+However, there were other interactions with this mock:
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNotDeletableTasks(StashRequestFacadeTest.java:688)
+
+	at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNotDeletableTasks(StashRequestFacadeTest.java:690)
+
+[ERROR] testResetComments(org.sonar.plugins.stash.StashRequestFacadeTest)  Time elapsed: 0.01 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+stashClient.deleteTaskOnComment(<any>);
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetComments(StashRequestFacadeTest.java:680)
+
+However, there were other interactions with this mock:
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetComments(StashRequestFacadeTest.java:678)
+
+	at org.sonar.plugins.stash.StashRequestFacadeTest.testResetComments(StashRequestFacadeTest.java:680)
+
+[ERROR] testResetCommentsWithNoTasks(org.sonar.plugins.stash.StashRequestFacadeTest)  Time elapsed: 0.006 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+stashClient.deleteTaskOnComment(<any>);
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNoTasks(StashRequestFacadeTest.java:700)
+
+However, there were other interactions with this mock:
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNoTasks(StashRequestFacadeTest.java:698)
+
+	at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNoTasks(StashRequestFacadeTest.java:700)
+
+[INFO] Running org.sonar.plugins.stash.exceptions.StashReportExtractionExceptionTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.sonar.plugins.stash.exceptions.StashReportExtractionExceptionTest
+[INFO] Running org.sonar.plugins.stash.client.ContentTypeTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.sonar.plugins.stash.client.ContentTypeTest
+[INFO] Running org.sonar.plugins.stash.client.StashClientTest
+[ERROR] Tests run: 33, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 6.87 s <<< FAILURE! - in org.sonar.plugins.stash.client.StashClientTest
+[ERROR] testGetPullRequestCommentsWithWrongContentType(org.sonar.plugins.stash.client.StashClientTest)  Time elapsed: 0.077 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.sonar.plugins.stash.exceptions.StashClientException> but was<java.lang.RuntimeException>
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithWrongContentType(StashClientTest.java:201)
+Caused by: org.sonar.plugins.stash.exceptions.StashClientException: Received response with type application/xml instead of JSON
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithWrongContentType(StashClientTest.java:201)
+
+[ERROR] testPullRequestHugePullRequestId(org.sonar.plugins.stash.client.StashClientTest)  Time elapsed: 0.064 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.sonar.plugins.stash.client.StashClientTest.testPullRequestHugePullRequestId(StashClientTest.java:382)
+
+[ERROR] testGetPullRequestComments(org.sonar.plugins.stash.client.StashClientTest)  Time elapsed: 0.058 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestComments(StashClientTest.java:126)
+
+[ERROR] testGetPullRequestCommentsWithWrongHTTPResult(org.sonar.plugins.stash.client.StashClientTest)  Time elapsed: 0.055 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.sonar.plugins.stash.exceptions.StashClientException> but was<java.lang.RuntimeException>
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithWrongHTTPResult(StashClientTest.java:195)
+Caused by: org.sonar.plugins.stash.exceptions.StashClientException: Error response did not contain an errors object '{}'
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithWrongHTTPResult(StashClientTest.java:195)
+
+[ERROR] testGetPullRequestCommentsWithNextPage(org.sonar.plugins.stash.client.StashClientTest)  Time elapsed: 0.071 s  <<< ERROR!
+java.lang.RuntimeException: org.sonar.plugins.stash.exceptions.StashClientException: Received response with type text/html; charset=ISO-8859-1 instead of JSON
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithNextPage(StashClientTest.java:164)
+Caused by: org.sonar.plugins.stash.exceptions.StashClientException: Received response with type text/html; charset=ISO-8859-1 instead of JSON
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithNextPage(StashClientTest.java:164)
+
+[ERROR] testGetPullRequestCommentsWithException(org.sonar.plugins.stash.client.StashClientTest)  Time elapsed: 0.835 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.sonar.plugins.stash.exceptions.StashClientException> but was<java.lang.RuntimeException>
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithException(StashClientTest.java:207)
+Caused by: org.sonar.plugins.stash.exceptions.StashClientException: java.util.concurrent.TimeoutException
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithException(StashClientTest.java:207)
+Caused by: java.util.concurrent.TimeoutException
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithException(StashClientTest.java:207)
+
+[ERROR] testGetPullRequestCommentsWithoutAuthor(org.sonar.plugins.stash.client.StashClientTest)  Time elapsed: 0.033 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.sonar.plugins.stash.exceptions.StashClientException> but was<java.lang.NullPointerException>
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithoutAuthor(StashClientTest.java:139)
+
+[ERROR] testGetPullRequestCommentsWithNoNextPage(org.sonar.plugins.stash.client.StashClientTest)  Time elapsed: 0.044 s  <<< ERROR!
+java.lang.RuntimeException: org.sonar.plugins.stash.exceptions.StashClientException: Received response with type text/html; charset=ISO-8859-1 instead of JSON
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithNoNextPage(StashClientTest.java:186)
+Caused by: org.sonar.plugins.stash.exceptions.StashClientException: Received response with type text/html; charset=ISO-8859-1 instead of JSON
+	at org.sonar.plugins.stash.client.StashClientTest.testGetPullRequestCommentsWithNoNextPage(StashClientTest.java:186)
+
+[INFO] Running org.sonar.plugins.stash.StashPluginConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.sonar.plugins.stash.StashPluginConfigurationTest
+[INFO] Running org.sonar.plugins.stash.StashIssueReportingPostJobTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.131 s - in org.sonar.plugins.stash.StashIssueReportingPostJobTest
+[INFO] Running org.sonar.plugins.stash.PeekableInputStreamTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.sonar.plugins.stash.PeekableInputStreamTest
+[INFO] Running org.sonar.plugins.stash.PluginInfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.sonar.plugins.stash.PluginInfoTest
+[INFO] Running org.sonar.plugins.stash.StashPluginUtilsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.sonar.plugins.stash.StashPluginUtilsTest
+[INFO] Running org.sonar.plugins.stash.issue.StashCommentTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.sonar.plugins.stash.issue.StashCommentTest
+[INFO] Running org.sonar.plugins.stash.issue.StashDiffReportTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.sonar.plugins.stash.issue.StashDiffReportTest
+[INFO] Running org.sonar.plugins.stash.issue.StashCommentReportTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.sonar.plugins.stash.issue.StashCommentReportTest
+[INFO] Running org.sonar.plugins.stash.issue.StashTaskTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.sonar.plugins.stash.issue.StashTaskTest
+[INFO] Running org.sonar.plugins.stash.issue.StashPullRequestTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.sonar.plugins.stash.issue.StashPullRequestTest
+[INFO] Running org.sonar.plugins.stash.issue.StashUserTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.sonar.plugins.stash.issue.StashUserTest
+[INFO] Running org.sonar.plugins.stash.issue.MarkdownPrinterTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 s - in org.sonar.plugins.stash.issue.MarkdownPrinterTest
+[INFO] Running org.sonar.plugins.stash.issue.StashDiffTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.sonar.plugins.stash.issue.StashDiffTest
+[INFO] Running org.sonar.plugins.stash.issue.collector.SonarQubeCollectorTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in org.sonar.plugins.stash.issue.collector.SonarQubeCollectorTest
+[INFO] Running org.sonar.plugins.stash.issue.collector.StashCollectorTest
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.sonar.plugins.stash.issue.collector.StashCollectorTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   StashRequestFacadeTest.testResetComments:680 
+Wanted but not invoked:
+stashClient.deleteTaskOnComment(<any>);
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetComments(StashRequestFacadeTest.java:680)
+
+However, there were other interactions with this mock:
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetComments(StashRequestFacadeTest.java:678)
+
+[ERROR]   StashRequestFacadeTest.testResetCommentsWithNoTasks:700 
+Wanted but not invoked:
+stashClient.deleteTaskOnComment(<any>);
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNoTasks(StashRequestFacadeTest.java:700)
+
+However, there were other interactions with this mock:
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNoTasks(StashRequestFacadeTest.java:698)
+
+[ERROR]   StashRequestFacadeTest.testResetCommentsWithNotDeletableTasks:690 
+Wanted but not invoked:
+stashClient.deleteTaskOnComment(<any>);
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNotDeletableTasks(StashRequestFacadeTest.java:690)
+
+However, there were other interactions with this mock:
+-> at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithNotDeletableTasks(StashRequestFacadeTest.java:688)
+
+[ERROR] Errors: 
+[ERROR]   StashClientTest.testGetPullRequestComments:126 » NullPointer
+[ERROR]   StashClientTest.testGetPullRequestCommentsWithException »  Unexpected exceptio...
+[ERROR]   StashClientTest.testGetPullRequestCommentsWithNextPage:164 » Runtime org.sonar...
+[ERROR]   StashClientTest.testGetPullRequestCommentsWithNoNextPage:186 » Runtime org.son...
+[ERROR]   StashClientTest.testGetPullRequestCommentsWithWrongContentType »  Unexpected e...
+[ERROR]   StashClientTest.testGetPullRequestCommentsWithWrongHTTPResult »  Unexpected ex...
+[ERROR]   StashClientTest.testGetPullRequestCommentsWithoutAuthor »  Unexpected exceptio...
+[ERROR]   StashClientTest.testPullRequestHugePullRequestId:382 » NullPointer
+[INFO] 
+[ERROR] Tests run: 173, Failures: 3, Errors: 8, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 13.222 s
+[INFO] Finished at: 2017-11-02T13:08:32+01:00
+[INFO] Final Memory: 23M/604M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.20.1:test (default-test) on project sonar-stash-plugin: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/AmadeusITGroup/sonar-stash/296218774/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
