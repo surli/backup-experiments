@@ -1,0 +1,171 @@
+{
+  "totalNumberSkippingTests": 5,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 9,
+  "repo": "apache/storm",
+  "failingModule": "/root/workspace/apache/storm/296818356/storm-server",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 13,
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException",
+    "org.junit.ComparisonFailure"
+  ],
+  "totalNumberRunningTests": 468,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.storm.scheduler.resource.strategies.eviction.TestDefaultEvictionStrategy",
+      "failingMethods": [
+        "org.apache.storm.scheduler.resource.strategies.eviction.TestDefaultEvictionStrategy#testEvictMultipleTopologies",
+        "org.apache.storm.scheduler.resource.strategies.eviction.TestDefaultEvictionStrategy#testEvictMultipleTopologiesFromMultipleUsersInCorrectOrder",
+        "org.apache.storm.scheduler.resource.strategies.eviction.TestDefaultEvictionStrategy#testEviction",
+        "org.apache.storm.scheduler.resource.strategies.eviction.TestDefaultEvictionStrategy#testEvictTopologyFromItself",
+        "org.apache.storm.scheduler.resource.strategies.eviction.TestDefaultEvictionStrategy#testOverGuaranteeEviction"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "topology status topo-2-1450418595",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "topology status topo-2-1450418595",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "topology status topo-1-1450418595",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "topology status topo-1-1450418595",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "topology status topo-1-1450418595",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.apache.storm.scheduler.resource.strategies.scheduling.TestDefaultResourceAwareStrategy",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.storm.scheduler.resource.strategies.scheduling.TestDefaultResourceAwareStrategy#testDefaultResourceAwareStrategySharedMemory",
+        "org.apache.storm.scheduler.resource.strategies.scheduling.TestDefaultResourceAwareStrategy#testMultipleRacksWithFavoritism",
+        "org.apache.storm.scheduler.resource.strategies.scheduling.TestDefaultResourceAwareStrategy#testMultipleRacks",
+        "org.apache.storm.scheduler.resource.strategies.scheduling.TestDefaultResourceAwareStrategy#testDefaultResourceAwareStrategy"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    },
+    {
+      "className": "org.apache.storm.scheduler.resource.TestResourceAwareScheduler",
+      "failingMethods": [
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testSubmitUsersWithNoGuarantees",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testSchedulingAfterFailedScheduling",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testFaultTolerance",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testHeterogeneousCluster",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testMultipleSpoutsAndCyclicTopologies",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testMultipleUsers",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testHandlingClusterSubscription",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testTopologyWorkerMaxHeapSize"
+      ],
+      "erroringMethods": [
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testTopologyWithMultipleSpouts",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testScheduleResilience",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#sanityTestOfScheduling",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testTopologySetCpuAndMemLoad",
+        "org.apache.storm.scheduler.resource.TestResourceAwareScheduler#testResourceLimitation"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Topo scheduled?",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "topology status topo-1-1450418595",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Topo-2 scheduled?",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "topology status topo-1-1450418595",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[Running - Fully Scheduled by DefaultResourceAwareStrategy]\u003e but was:\u003c[Scheduling Attempted but topology is invalid]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "topology status topo-1-1450418595",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[Running - Fully Scheduled by DefaultResourceAwareStrategy]\u003e but was:\u003c[Scheduling Attempted but topology is invalid]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "topology status topo-12-1450418589",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 8,
+      "nbErrors": 5
+    }
+  ]
+}
