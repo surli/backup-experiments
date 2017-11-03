@@ -1,0 +1,296 @@
+{
+  "totalNumberSkippingTests": 3,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 38,
+  "repo": "spring-projects/spring-data-mongodb",
+  "bugCommit": "https://github.com/spring-projects/spring-data-mongodb/compare/e1710962f6ac...a2186a5a3663",
+  "failingModule": "/root/workspace/spring-projects/spring-data-mongodb/296858455/spring-data-mongodb",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "com.mongodb.MongoTimeoutException",
+    "java.lang.IllegalStateException",
+    "org.springframework.dao.DataAccessResourceFailureException"
+  ],
+  "totalNumberRunningTests": 576,
+  "failing-test-cases": [
+    {
+      "className": "org.springframework.data.mongodb.core.convert.MongoConvertersIntegrationTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.springframework.data.mongodb.core.convert.MongoConvertersIntegrationTests#writesUUIDBinaryCorrectly",
+        "org.springframework.data.mongodb.core.convert.MongoConvertersIntegrationTests#shouldReadBinaryType",
+        "org.springframework.data.mongodb.core.convert.MongoConvertersIntegrationTests#shouldConvertBinaryDataOnRead",
+        "org.springframework.data.mongodb.core.convert.MongoConvertersIntegrationTests#shouldConvertEmptyBinaryDataOnRead"
+      ],
+      "failures": [
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    },
+    {
+      "className": "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#firstShouldReturnFirstEntryInCollection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#existsShouldReturnTrueIfAtLeastOneElementMatchesQuery",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllByWithCollectionUsingMappingInformation",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllWithCollection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#countShouldReturnNrOfElementsInCollectionWhenNoQueryPresent",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllNearByReturningGeoResultContentAsClosedInterfaceProjection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllByWithCollection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAll",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#existsShouldReturnTrueIfAtLeastOneElementExistsInCollection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#existsShouldReturnFalseIfNoElementExistsInCollection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findByTooManyResults",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findByNoMatch",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllNearByWithCollectionAndProjection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#returnTypeIsRequiredOnSet",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllNearByReturningGeoResultContentAsOpenInterfaceProjection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#domainTypeIsRequired",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllWithProjection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findBy",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#collectionIsRequiredOnSet",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllNearBy",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#existsShouldReturnFalseWhenNoElementMatchesQuery",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllByWithClosedInterfaceProjection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllByWithOpenInterfaceProjection",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#countShouldReturnNrOfElementsMatchingQuery",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllBy",
+        "org.springframework.data.mongodb.core.ReactiveFindOperationSupportTests#findAllByWithProjection"
+      ],
+      "failures": [
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.dao.DataAccessResourceFailureException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 26
+    },
+    {
+      "className": "org.springframework.data.mongodb.core.MongoTemplateMappingTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.springframework.data.mongodb.core.MongoTemplateMappingTests#insertsEntityCorrectly2",
+        "org.springframework.data.mongodb.core.MongoTemplateMappingTests#insertsEntityCorrectly1"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Failed to load ApplicationContext",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Failed to load ApplicationContext",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.springframework.data.mongodb.monitor.MongoMonitorIntegrationTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.springframework.data.mongodb.monitor.MongoMonitorIntegrationTests#operationCounters",
+        "org.springframework.data.mongodb.monitor.MongoMonitorIntegrationTests#getHostNameShouldReturnServerNameReportedByMongo",
+        "org.springframework.data.mongodb.monitor.MongoMonitorIntegrationTests#serverInfo"
+      ],
+      "failures": [
+        {
+          "failureName": "com.mongodb.MongoTimeoutException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches ReadPreferenceServerSelector{readPreference\u003dprimary}. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "com.mongodb.MongoTimeoutException",
+          "failureDetail": "Timed out after 30000 ms while waiting for a server that matches ReadPreferenceServerSelector{readPreference\u003dprimary}. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        },
+        {
+          "failureName": "com.mongodb.MongoTimeoutException",
+          "failureDetail": "Timed out after 30000 ms while waiting to connect. Client view of cluster state is {type\u003dUNKNOWN, servers\u003d[{address\u003d127.0.0.1:27017, type\u003dUNKNOWN, state\u003dCONNECTING, exception\u003d{com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused (Connection refused)}}]",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.springframework.data.mongodb.core.NoExplicitIdTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.springframework.data.mongodb.core.NoExplicitIdTests#saveAndRetrieveTypeWithoutIdPropertyViaRepositoryFindOne",
+        "org.springframework.data.mongodb.core.NoExplicitIdTests#saveAndRetrieveTypeWithoutIdPropertyViaRepository",
+        "org.springframework.data.mongodb.core.NoExplicitIdTests#saveAndRetrieveTypeWithoutIdPropertyViaTemplate"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Failed to load ApplicationContext",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Failed to load ApplicationContext",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Failed to load ApplicationContext",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    }
+  ]
+}
