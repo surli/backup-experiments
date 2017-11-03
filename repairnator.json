@@ -1,0 +1,38 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "failing_passing",
+  "totalNumberErroringTests": 0,
+  "repo": "AmadeusITGroup/sonar-stash",
+  "bugCommit": "https://github.com/AmadeusITGroup/sonar-stash/compare/c3fa85a2d570...09a70e8a03a0",
+  "failingModule": "/root/workspace/AmadeusITGroup/sonar-stash/296762164",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 2,
+  "error-types": [
+    "org.mockito.exceptions.verification.NeverWantedButInvoked"
+  ],
+  "totalNumberRunningTests": 173,
+  "failing-test-cases": [
+    {
+      "className": "org.sonar.plugins.stash.StashRequestFacadeTest",
+      "failingMethods": [
+        "org.sonar.plugins.stash.StashRequestFacadeTest#testResetCommentsWithDifferentStashUsers",
+        "org.sonar.plugins.stash.StashRequestFacadeTest#testResetCommentsWithoutAnyComments"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.mockito.exceptions.verification.NeverWantedButInvoked",
+          "failureDetail": "\nstashClient.deletePullRequestComment(\n    org.sonar.plugins.stash.PullRequestRef@51b279c9,\n    \u003cany\u003e\n);\nNever wanted here:\n-\u003e at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithoutAnyComments(StashRequestFacadeTest.java:729)\nBut invoked here:\n-\u003e at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithoutAnyComments(StashRequestFacadeTest.java:727)\n",
+          "isError": false
+        },
+        {
+          "failureName": "org.mockito.exceptions.verification.NeverWantedButInvoked",
+          "failureDetail": "\nstashClient.deletePullRequestComment(\n    org.sonar.plugins.stash.PullRequestRef@51b279c9,\n    \u003cany\u003e\n);\nNever wanted here:\n-\u003e at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithDifferentStashUsers(StashRequestFacadeTest.java:720)\nBut invoked here:\n-\u003e at org.sonar.plugins.stash.StashRequestFacadeTest.testResetCommentsWithDifferentStashUsers(StashRequestFacadeTest.java:718)\n",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    }
+  ]
+}
