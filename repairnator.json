@@ -1,0 +1,47 @@
+{
+  "totalNumberSkippingTests": 12,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 1,
+  "repo": "CloudSlang/cloud-slang",
+  "bugCommit": "https://github.com/CloudSlang/cloud-slang/compare/1c3f73c00f14...0b1ff0d57906",
+  "failingModule": "/root/workspace/CloudSlang/cloud-slang/298576525/cloudslang-compiler",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.RuntimeException",
+    "java.lang.AssertionError",
+    "skipped"
+  ],
+  "totalNumberRunningTests": 771,
+  "failing-test-cases": [
+    {
+      "className": "io.cloudslang.lang.compiler.ExternalSlangCompilerIntegrationTest",
+      "failingMethods": [
+        "io.cloudslang.lang.compiler.ExternalSlangCompilerIntegrationTest#testCompileFlowWithPathExternalStep",
+        "io.cloudslang.lang.compiler.ExternalSlangCompilerIntegrationTest#testFlowWithExternalStepAndErrors"
+      ],
+      "erroringMethods": [
+        "io.cloudslang.lang.compiler.ExternalSlangCompilerIntegrationTest#testFlowWithExternalStep"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "For step \u0027DoNothing\u0027 syntax is illegal.\nArgument[/Library/Utility Operations/Flow Variable Manipulation/Do Nothing] violates character rules.",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: (an instance of java.lang.UnsupportedOperationException and exception with message a string containing \"CloudSlang does not support compiling external steps. To provide this functionality, you must extend all necessary classes.\")\n     but: an instance of java.lang.UnsupportedOperationException \u003cjava.lang.RuntimeException: For step \u0027step1\u0027 syntax is illegal.\nArgument[test/flow/Random Number Generator] violates character rules.\u003e is a java.lang.RuntimeException\nStacktrace was: java.lang.RuntimeException: For step \u0027step1\u0027 syntax is illegal.\nArgument[test/flow/Random Number Generator] violates character rules.\n at io.cloudslang.lang.compiler.modeller.TransformersHandler.wrapErrorMessage(TransformersHandler.java:116)\n at io.cloudslang.lang.compiler.modeller.TransformersHandler.runTransformers(TransformersHandler.java:89)\n at io.cloudslang.lang.compiler.modeller.ExecutableBuilder.compileStep(ExecutableBuilder.java:565)\n at io.cloudslang.lang.compiler.modeller.ExecutableBuilder.compileWorkFlow(ExecutableBuilder.java:498)\n at io.cloudslang.lang.compiler.modeller.ExecutableBuilder.transformToExecutable(ExecutableBuilder.java:218)\n at io.cloudslang.lang.compiler.modeller.SlangModellerImpl.createModel(SlangModellerImpl.java:43)\n at io.cloudslang.lang.compiler.SlangCompilerImpl.preCompileModel(SlangCompilerImpl.java:275)\n at io.cloudslang.lang.compiler.SlangCompilerImpl.getExecutableModellingResult(SlangCompilerImpl.java:198)\n at io.cloudslang.lang.compiler.SlangCompilerImpl.preCompileSource(SlangCompilerImpl.java:181)\n at io.cloudslang.lang.compiler.SlangCompilerImpl.getCompilationModellingResult(SlangCompilerImpl.java:125)\n at io.cloudslang.lang.compiler.SlangCompilerImpl.compileSource(SlangCompilerImpl.java:119)\n at io.cloudslang.lang.compiler.SlangCompilerImpl.compile(SlangCompilerImpl.java:87)\n at io.cloudslang.lang.compiler.SlangCompilerImpl.compile(SlangCompilerImpl.java:79)\n at io.cloudslang.lang.compiler.ExternalSlangCompilerIntegrationTest.testCompileFlowWithPathExternalStep(ExternalSlangCompilerIntegrationTest.java:96)\n at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n at java.lang.reflect.Method.invoke(Method.java:498)\n at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)\n at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)\n at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)\n at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)\n at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)\n at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)\n at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:239)\n at org.junit.rules.RunRules.evaluate(RunRules.java:20)\n at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)\n at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)\n at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)\n at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)\n at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\n at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\n at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\n at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\n at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\n at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)\n at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)\n at org.junit.runners.ParentRunner.run(ParentRunner.java:363)\n at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)\n at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)\n at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)\n at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)\n at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)\n at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)\n at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)\nCaused by: java.lang.RuntimeException: Argument[test/flow/Random Number Generator] violates character rules.\n at io.cloudslang.lang.compiler.validator.AbstractValidator.validateChars(AbstractValidator.java:95)\n at io.cloudslang.lang.compiler.validator.AbstractValidator.validateNamespaceRules(AbstractValidator.java:46)\n at io.cloudslang.lang.compiler.validator.ExecutableValidatorImpl.validateStepReferenceId(ExecutableValidatorImpl.java:92)\n at io.cloudslang.lang.compiler.modeller.transformers.DoTransformer.validateRawData(DoTransformer.java:203)\n at io.cloudslang.lang.compiler.modeller.transformers.DoTransformer.transform(DoTransformer.java:45)\n at io.cloudslang.lang.compiler.modeller.transformers.DoTransformer.transform(DoTransformer.java:84)\n at io.cloudslang.lang.compiler.modeller.transformers.DoTransformer.transform(DoTransformer.java:38)\n at io.cloudslang.lang.compiler.modeller.TransformersHandler.runTransformers(TransformersHandler.java:57)\n ... 43 more\n",
+          "isError": false
+        },
+        {
+          "failureName": "skipped",
+          "failureDetail": "skipped",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 1
+    }
+  ]
+}
