@@ -1,0 +1,133 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "phoenixnap/springmvc-raml-plugin",
+  "failingModule": "/root/workspace/phoenixnap/springmvc-raml-plugin/299532882/springmvc-raml-parser",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 8,
+  "error-types": [
+    "org.junit.ComparisonFailure"
+  ],
+  "totalNumberRunningTests": 213,
+  "failing-test-cases": [
+    {
+      "className": "com.phoenixnap.oss.ramlapisync.generation.rules.RequestBodyWithValidationTest",
+      "failingMethods": [
+        "com.phoenixnap.oss.ramlapisync.generation.rules.RequestBodyWithValidationTest#applySpring4ControllerInterfaceRule_shouldCreate_validCode"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...--------------------[  package com.gen.test;  import javax.validation.Valid; import com.gen.test.model.UpdateBaseRequest; import com.gen.test.model.UpdateBaseResponse; import org.springframework.http.ResponseEntity; import org.springframework.web.bind.annotation.RequestBody; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RestController;   /**  * No description  * (Generated with springmvc-raml-parser v.0.10.12)  *  */ @RestController @RequestMapping(\"/api/base\") public interface BaseController {       /**      * No description      *      */     @RequestMapping(value \u003d \"\", method \u003d RequestMethod.POST)     public ResponseEntity\u003cUpdateBaseResponse\u003e updateBase(         @Valid         @RequestBody         UpdateBaseRequest updateBaseRequest);  } ] \u003e but was:\u003c...--------------------[  package com.gen.test;  import javax.validation.Valid; import com.gen.test.model.UpdateBaseRequest; import com.gen.test.model.UpdateBaseResponse; import org.springframework.http.ResponseEntity; import org.springframework.validation.annotation.Validated; import org.springframework.web.bind.annotation.RequestBody; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RestController;   /**  * No description  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @RestController @Validated @RequestMapping(\"/api/base\") public interface BaseController {       /**      * No description      *       */     @RequestMapping(value \u003d \"\", method \u003d RequestMethod.POST)     public ResponseEntity\u003cUpdateBaseResponse\u003e updateBase(         @Valid         @RequestBody         UpdateBaseRequest updateBaseRequest);  }] \u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.phoenixnap.oss.ramlapisync.generation.rules.Spring4ControllerRulesHttpHeadersTest",
+      "failingMethods": [
+        "com.phoenixnap.oss.ramlapisync.generation.rules.Spring4ControllerRulesHttpHeadersTest#applySpring4ControllerInterfaceRule_shouldCreate_validCode"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...org.springframework.[web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *  */ @RestController @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {    /**   * No description   *   */  @RequestMapping(value \u003d \"\", method \u003d RequestMethod.GET)  public ResponseEntity\u003c?\u003e getBase(      @RequestHeader      HttpHeaders httpHeaders);      /**      * Get base entity by ID      *      */  @RequestMapping(value \u003d \"/{id}\", method \u003d RequestMethod.GET)     public ResponseEntity\u003cNamedResponseType\u003e getBaseById(         @PathVariable         String id,         @RequestHeader         HttpHeaders httpHeaders);      /**      * No description      *      */     @RequestMapping(value \u003d \"/{id}/elements\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getElements(         @PathVariable         String id,         @RequestParam         Long requiredQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"dummyDefault\")         String optionalQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"2\")         BigDecimal optionalQueryParam2,         @RequestHeader(name \u003d \"X-My-Header\", required \u003d false, defaultValue \u003d \"3\")         Long xMyHeader,         @RequestHeader(name \u003d \"X-Another-Header\")         String xAnotherHeader,         @RequestHeader         HttpHeaders httpHeaders);  } ] \u003e but was:\u003c...org.springframework.[validation.annotation.Validated; import org.springframework.web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @RestController @Validated @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {       /**      * No description      *       */     @RequestMapping(value \u003d \"\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getBase(         @RequestHeader         HttpHeaders httpHeaders);      /**      * Get base entity by ID      *       */     @RequestMapping(value \u003d \"/{id}\", method \u003d RequestMethod.GET)     public ResponseEntity\u003cNamedResponseType\u003e getBaseById(         @PathVariable         String id,         @RequestHeader         HttpHeaders httpHeaders);      /**      * No description      *       */     @RequestMapping(value \u003d \"/{id}/elements\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getElements(         @PathVariable         String id,         @RequestParam         Long requiredQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"dummyDefault\")         String optionalQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"2\")         BigDecimal optionalQueryParam2,         @RequestHeader(name \u003d \"X-My-Header\", required \u003d false, defaultValue \u003d \"3\")         Long xMyHeader,         @RequestHeader(name \u003d \"X-Another-Header\")         String xAnotherHeader,         @RequestHeader         HttpHeaders httpHeaders);  }] \u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.phoenixnap.oss.ramlapisync.generation.rules.Spring3ControllerRulesHttpHeadersTest",
+      "failingMethods": [
+        "com.phoenixnap.oss.ramlapisync.generation.rules.Spring3ControllerRulesHttpHeadersTest#applySpring3ControllerInterfaceRule_shouldCreate_validCode"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...org.springframework.[web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.ResponseBody;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *  */ @Controller @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {    /**   * No description   *   */  @RequestMapping(value \u003d \"\", method \u003d RequestMethod.GET)  public ResponseEntity\u003c?\u003e getBase(      @RequestHeader      HttpHeaders httpHeaders);      /**      * Get base entity by ID      *      */  @RequestMapping(value \u003d \"/{id}\", method \u003d RequestMethod.GET)  @ResponseBody     public ResponseEntity\u003cNamedResponseType\u003e getBaseById(         @PathVariable         String id,         @RequestHeader         HttpHeaders httpHeaders);      /**      * No description      *      */     @RequestMapping(value \u003d \"/{id}/elements\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getElements(         @PathVariable         String id,         @RequestParam         Long requiredQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"dummyDefault\")         String optionalQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"2\")         BigDecimal optionalQueryParam2,         @RequestHeader(name \u003d \"X-My-Header\", required \u003d false, defaultValue \u003d \"3\")         Long xMyHeader,         @RequestHeader(name \u003d \"X-Another-Header\")         String xAnotherHeader,         @RequestHeader         HttpHeaders httpHeaders);  } ] \u003e but was:\u003c...org.springframework.[validation.annotation.Validated; import org.springframework.web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.ResponseBody;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @Controller @Validated @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {       /**      * No description      *       */     @RequestMapping(value \u003d \"\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getBase(         @RequestHeader         HttpHeaders httpHeaders);      /**      * Get base entity by ID      *       */     @RequestMapping(value \u003d \"/{id}\", method \u003d RequestMethod.GET)     @ResponseBody     public ResponseEntity\u003cNamedResponseType\u003e getBaseById(         @PathVariable         String id,         @RequestHeader         HttpHeaders httpHeaders);      /**      * No description      *       */     @RequestMapping(value \u003d \"/{id}/elements\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getElements(         @PathVariable         String id,         @RequestParam         Long requiredQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"dummyDefault\")         String optionalQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"2\")         BigDecimal optionalQueryParam2,         @RequestHeader(name \u003d \"X-My-Header\", required \u003d false, defaultValue \u003d \"3\")         Long xMyHeader,         @RequestHeader(name \u003d \"X-Another-Header\")         String xAnotherHeader,         @RequestHeader         HttpHeaders httpHeaders);  }] \u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.phoenixnap.oss.ramlapisync.generation.rules.Spring4ControllerRulesTest",
+      "failingMethods": [
+        "com.phoenixnap.oss.ramlapisync.generation.rules.Spring4ControllerRulesTest#applySpring4ControllerInterfaceRule_shouldCreate_validCode",
+        "com.phoenixnap.oss.ramlapisync.generation.rules.Spring4ControllerRulesTest#applyAsyncSpring4ControllerInterfaceRule_shouldCreate_validCode"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...org.springframework.[web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *  */ @RestController @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {    /**   * No description   *   */  @RequestMapping(value \u003d \"\", method \u003d RequestMethod.GET)  public ResponseEntity\u003c?\u003e getBase();      /**      * Get base entity by ID      *      */  @RequestMapping(value \u003d \"/{id}\", method \u003d RequestMethod.GET)     public ResponseEntity\u003cNamedResponseType\u003e getBaseById(         @PathVariable         String id);      /**      * No description      *      */     @RequestMapping(value \u003d \"/{id}/elements\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getElements(         @PathVariable         String id,         @RequestParam         Long requiredQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"dummyDefault\")         String optionalQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"2\")         BigDecimal optionalQueryParam2,         @RequestHeader(name \u003d \"X-My-Header\", required \u003d false, defaultValue \u003d \"3\")         Long xMyHeader,         @RequestHeader(name \u003d \"X-Another-Header\")         String xAnotherHeader);  } ] \u003e but was:\u003c...org.springframework.[validation.annotation.Validated; import org.springframework.web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @RestController @Validated @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {       /**      * No description      *       */     @RequestMapping(value \u003d \"\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getBase();      /**      * Get base entity by ID      *       */     @RequestMapping(value \u003d \"/{id}\", method \u003d RequestMethod.GET)     public ResponseEntity\u003cNamedResponseType\u003e getBaseById(         @PathVariable         String id);      /**      * No description      *       */     @RequestMapping(value \u003d \"/{id}/elements\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getElements(         @PathVariable         String id,         @RequestParam         Long requiredQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"dummyDefault\")         String optionalQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"2\")         BigDecimal optionalQueryParam2,         @RequestHeader(name \u003d \"X-My-Header\", required \u003d false, defaultValue \u003d \"3\")         Long xMyHeader,         @RequestHeader(name \u003d \"X-Another-Header\")         String xAnotherHeader);  }] \u003e",
+          "isError": false
+        },
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...org.springframework.[web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *  */ @RestController @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {       /**      * No description      *      */     @RequestMapping(value \u003d \"\", method \u003d RequestMethod.GET)     public Callable\u003cResponseEntity\u003c?\u003e\u003e getBase();      /**      * Get base entity by ID      *      */     @RequestMapping(value \u003d \"/{id}\", method \u003d RequestMethod.GET)     public Callable\u003cResponseEntity\u003cNamedResponseType\u003e\u003e getBaseById(         @PathVariable         String id);      /**      * No description      *]      */     @Reques...\u003e but was:\u003c...org.springframework.[validation.annotation.Validated; import org.springframework.web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @RestController @Validated @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {       /**      * No description      *       */     @RequestMapping(value \u003d \"\", method \u003d RequestMethod.GET)     public Callable\u003cResponseEntity\u003c?\u003e\u003e getBase();      /**      * Get base entity by ID      *       */     @RequestMapping(value \u003d \"/{id}\", method \u003d RequestMethod.GET)     public Callable\u003cResponseEntity\u003cNamedResponseType\u003e\u003e getBaseById(         @PathVariable         String id);      /**      * No description      * ]      */     @Reques...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.phoenixnap.oss.ramlapisync.generation.rules.Spring3ControllerRulesTest",
+      "failingMethods": [
+        "com.phoenixnap.oss.ramlapisync.generation.rules.Spring3ControllerRulesTest#applySpring3ControllerInterfaceRule_shouldCreate_validCode"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...org.springframework.[web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.ResponseBody;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *  */ @Controller @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {    /**   * No description   *   */  @RequestMapping(value \u003d \"\", method \u003d RequestMethod.GET)  public ResponseEntity\u003c?\u003e getBase();      /**      * Get base entity by ID      *      */  @RequestMapping(value \u003d \"/{id}\", method \u003d RequestMethod.GET)  @ResponseBody     public ResponseEntity\u003cNamedResponseType\u003e getBaseById(         @PathVariable         String id);      /**      * No description      *      */     @RequestMapping(value \u003d \"/{id}/elements\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getElements(         @PathVariable         String id,         @RequestParam         Long requiredQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"dummyDefault\")         String optionalQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"2\")         BigDecimal optionalQueryParam2,         @RequestHeader(name \u003d \"X-My-Header\", required \u003d false, defaultValue \u003d \"3\")         Long xMyHeader,         @RequestHeader(name \u003d \"X-Another-Header\")         String xAnotherHeader);  } ] \u003e but was:\u003c...org.springframework.[validation.annotation.Validated; import org.springframework.web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.ResponseBody;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @Controller @Validated @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {       /**      * No description      *       */     @RequestMapping(value \u003d \"\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getBase();      /**      * Get base entity by ID      *       */     @RequestMapping(value \u003d \"/{id}\", method \u003d RequestMethod.GET)     @ResponseBody     public ResponseEntity\u003cNamedResponseType\u003e getBaseById(         @PathVariable         String id);      /**      * No description      *       */     @RequestMapping(value \u003d \"/{id}/elements\", method \u003d RequestMethod.GET)     public ResponseEntity\u003c?\u003e getElements(         @PathVariable         String id,         @RequestParam         Long requiredQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"dummyDefault\")         String optionalQueryParam,         @RequestParam(required \u003d false, defaultValue \u003d \"2\")         BigDecimal optionalQueryParam2,         @RequestHeader(name \u003d \"X-My-Header\", required \u003d false, defaultValue \u003d \"3\")         Long xMyHeader,         @RequestHeader(name \u003d \"X-Another-Header\")         String xAnotherHeader);  }] \u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.phoenixnap.oss.ramlapisync.generation.rules.Issue117RulesTest",
+      "failingMethods": [
+        "com.phoenixnap.oss.ramlapisync.generation.rules.Issue117RulesTest#applySpring4ControllerInterfaceRule_shouldCreate_validCode"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...org.springframework.[web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;   /**  * No description  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @RestController] @RequestMapping(val...\u003e but was:\u003c...org.springframework.[validation.annotation.Validated; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;   /**  * No description  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @RestController @Validated] @RequestMapping(val...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.phoenixnap.oss.ramlapisync.pojo.UnionTypeInterpretorTest",
+      "failingMethods": [
+        "com.phoenixnap.oss.ramlapisync.pojo.UnionTypeInterpretorTest#applySpring4ClientStubRule_shouldCreate_validCode"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...org.springframework.[web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RestController;   /**  * Api for devices  * (Generated with springmvc-raml-parser v.0.10.12)  *  */ @RestController @RequestMapping(value \u003d \"/api/devices\", produces \u003d \"application/json\") public interface ApiDeviceController {       /**      * No description      *]      */     @Reques...\u003e but was:\u003c...org.springframework.[validation.annotation.Validated; import org.springframework.web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RestController;   /**  * Api for devices  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @RestController @Validated @RequestMapping(value \u003d \"/api/devices\", produces \u003d \"application/json\") public interface ApiDeviceController {       /**      * No description      * ]      */     @Reques...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
