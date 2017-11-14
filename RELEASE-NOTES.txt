@@ -1,0 +1,161 @@
+Release Notes -- Apache Jackrabbit Oak -- Version 1.7.11
+
+Introduction
+------------
+
+Jackrabbit Oak is a scalable, high-performance hierarchical content
+repository designed for use as the foundation of modern world-class
+web sites and other demanding content applications.
+
+Apache Jackrabbit Oak 1.7.11 is an unstable release cut directly from
+Jackrabbit Oak trunk, with a focus on new features and other
+improvements. For production use we recommend the latest stable 1.6.x
+release.
+
+The Oak effort is a part of the Apache Jackrabbit project.
+Apache Jackrabbit is a project of the Apache Software Foundation.
+
+Changes in Oak 1.7.11
+---------------------
+
+Sub-task
+
+    [OAK-2382] - Move NodeStore implementations to separate modules
+
+Technical task
+
+    [OAK-5650] - RDBDocumentStore on Oracle:
+    ArrayIndexOutOfBoundsException in Oracle JDBC driver
+    [OAK-6813] - DocumentStore conditional remove: reduce set of
+    supported conditions to what the Version GC needs
+    [OAK-6857] - Lucene unique index should check path validity for
+    uniqueness constraint
+    [OAK-6863] - RDB*Store: update Oracle JDBC dependency to 12.2.0.1
+    [OAK-6903] - RDB*Store: update Tomcat JDBC pool dependency to
+    7.0.82
+    [OAK-6906] - RDB*Store: update Tomcat JDBC pool dependency to
+    8.5.23 (for branches compatible with Java 7)
+    [OAK-6907] - RDB*Store: require ojdbc 12.2.0.1 because of known
+    issues in earlier versions
+
+Bug
+
+    [OAK-5521] - CommunicationObserver and its MBeans need proper
+    synchronization
+    [OAK-6740] - Test failure: StandbyTestIT.testSyncLoop()
+    [OAK-6748] - Test failure:
+    ExternalPrivateStoreIT.testSyncBigBlob()
+    [OAK-6796] - DataStoreTestBase.testSyncBigBlob failures
+    [OAK-6829] -
+    ExternalPrivateStoreIT/ExternalSharedStoreIT.testSyncBigBlob
+    failures
+    [OAK-6861] - Warn messages when building oak-query-spi
+    [OAK-6864] - IndexUpdate should disable superseded indexes only
+    during an async cycle run
+    [OAK-6866] - Force compaction timeout logs wrong number of seconds
+    [OAK-6869] - oak-http and oak-remote use potentially vulnerable
+    versions of com.fasterxml.jackson
+    [OAK-6871] - Composite roles are not compatible with Windows
+    [OAK-6874] - Segment-Tar-Cold fixture doesn't correctly set up
+    standby blob store
+    [OAK-6875] - Lucene index: the query read limit is ignored
+    [OAK-6876] - IndexDisabler should not use NodeBuilder#isReplaced
+    [OAK-6877] - NodeBuilder#isReplaced behaves incorrectly for
+    SegmentNodeStore
+    [OAK-6885] - Add missing id field setting in CloudSolrServer
+    [OAK-6888] - Flushing the FileStore might return before data is
+    persisted
+    [OAK-6889] - Followup on OAK-6755: fix OSGi component descriptors
+    [OAK-6890] - Background threads might not be automatically
+    restarted
+    [OAK-6894] -
+    org.apache.jackrabbit.oak.segment.upgrade.UpgradeIT.offRCUpgradesSegments
+    failing
+    [OAK-6895] - Suggest directory lookup (query) isn't closed
+    [OAK-6901] - Unknown channel option 'TCP_NODELAY' for channel
+    warning in cold standby
+    [OAK-6902] - Cost estimation for path tranformable queries is
+    incorrect
+    [OAK-6909] - FileStore.compact does not persist compacted head to
+    journal
+
+Documentation
+
+    [OAK-5424] - Add documentation about revision garbage collection
+
+Improvement
+
+    [OAK-2621] - Too many reads for child nodes
+    [OAK-3878] - Avoid caching of NodeDocument while iterating in
+    BlobReferenceIterator
+    [OAK-6626] - Replace standby blob chunk size configuration with
+    feature flag
+    [OAK-6735] - Lucene Index: improved cost estimation by using
+    document count per field
+    [OAK-6775] - Suggest directory should utilize CopyOnRead if
+    available
+    [OAK-6807] - Query Recorder
+    [OAK-6859] - Schedule Revision GC in DocumentNodeStoreService
+    [OAK-6868] - Simplify setup of access tracking of the file store
+    caches
+    [OAK-6878] - Populate S3DataStore fields with the passed
+    properties in oak-upgrade
+    [OAK-6883] - The compaction estimator should take the compaction
+    type (tail vs. full) into consideration
+    [OAK-6887] - Change default value for autoCompact
+    [OAK-6896] - Log SegmentStore size at startup
+    [OAK-6908] - Change RDB default scheduling on RDB
+
+Task
+
+    [OAK-2046] - Cleaning-up double test artifacts between oak-core
+    and oak-jcr
+    [OAK-6893] - Add BasicWriteTest benchmark
+
+Wish
+
+    [OAK-1327] - Cleanup NodeStore and MK implementations
+
+In addition to the above-mentioned changes, this release contains
+all changes included up to the Apache Jackrabbit Oak 1.7.x release.
+
+For more detailed information about all the changes in this and other
+Oak releases, please see the Oak issue tracker at
+
+  https://issues.apache.org/jira/browse/OAK
+
+Release Contents
+----------------
+
+This release consists of a single source archive packaged as a zip file.
+The archive can be unpacked with the jar tool from your JDK installation.
+See the README.md file for instructions on how to build this release.
+
+The source archive is accompanied by SHA1 and MD5 checksums and a PGP
+signature that you can use to verify the authenticity of your download.
+The public key used for the PGP signature can be found at
+http://www.apache.org/dist/jackrabbit/KEYS.
+
+About Apache Jackrabbit Oak
+---------------------------
+
+Jackrabbit Oak is a scalable, high-performance hierarchical content
+repository designed for use as the foundation of modern world-class
+web sites and other demanding content applications.
+
+The Oak effort is a part of the Apache Jackrabbit project.
+Apache Jackrabbit is a project of the Apache Software Foundation.
+
+For more information, visit http://jackrabbit.apache.org/oak
+
+About The Apache Software Foundation
+------------------------------------
+
+Established in 1999, The Apache Software Foundation provides organizational,
+legal, and financial support for more than 140 freely-available,
+collaboratively-developed Open Source projects. The pragmatic Apache License
+enables individual and commercial users to easily deploy Apache software;
+the Foundation's intellectual property framework limits the legal exposure
+of its 3,800+ contributors.
+
+For more information, visit http://www.apache.org/
