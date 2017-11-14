@@ -1,0 +1,47 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "phoenixnap/springmvc-raml-plugin",
+  "failingModule": "/root/workspace/phoenixnap/springmvc-raml-plugin/301997040/springmvc-raml-parser",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 2,
+  "error-types": [
+    "org.junit.ComparisonFailure"
+  ],
+  "totalNumberRunningTests": 216,
+  "failing-test-cases": [
+    {
+      "className": "com.phoenixnap.oss.ramlapisync.generation.rules.ShortcutMappingsTest",
+      "failingMethods": [
+        "com.phoenixnap.oss.ramlapisync.generation.rules.ShortcutMappingsTest#applySpring4ControllerInterfaceWithShortcutAnnotationsRule_shouldCreate_validCode"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...org.springframework.[web.bind.annotation.DeleteMapping; import org.springframework.web.bind.annotation.GetMapping; import org.springframework.web.bind.annotation.PatchMapping; import org.springframework.web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.PostMapping; import org.springframework.web.bind.annotation.PutMapping; import org.springframework.web.bind.annotation.RequestBody; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RestController;   /**  * No description  * (Generated with springmvc-raml-parser v.0.10.12)  *  */ @RestController @RequestMapping(value \u003d \"/api/organization/persons/managers\", produces \u003d \"application/json\") public interface PersonManagerController {       /**      * No description      *      */     @GetMapping     public ResponseEntity\u003cList\u003cManager\u003e\u003e getPersonsManagers();      /**      * No description      *      */     @PostMapping     public ResponseEntity\u003cManager\u003e createPersonsManager(         @Valid         @RequestBody         Manager manager);      /**      * No description      *      */     @PatchMapping     public ResponseEntity\u003cManager\u003e modifyPersonsManagers(         @RequestBody         Manager manager);      /**      * No description      *      */     @PutMapping(\"/{id}\")     public ResponseEntity\u003c?\u003e updateById(         @PathVariable         String id,         @Valid         @RequestBody         Manager manager);      /**      * No description      *]      */     @Delete...\u003e but was:\u003c...org.springframework.[validation.annotation.Validated; import org.springframework.web.bind.annotation.DeleteMapping; import org.springframework.web.bind.annotation.GetMapping; import org.springframework.web.bind.annotation.PatchMapping; import org.springframework.web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.PostMapping; import org.springframework.web.bind.annotation.PutMapping; import org.springframework.web.bind.annotation.RequestBody; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RestController;   /**  * No description  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @RestController @Validated @RequestMapping(value \u003d \"/api/organization/persons/managers\", produces \u003d \"application/json\") public interface PersonManagerController {       /**      * No description      *       */     @GetMapping     public ResponseEntity\u003cList\u003cManager\u003e\u003e getPersonsManagers();      /**      * No description      *       */     @PostMapping     public ResponseEntity\u003cManager\u003e createPersonsManager(         @Valid         @RequestBody         Manager manager);      /**      * No description      *       */     @PatchMapping     public ResponseEntity\u003cManager\u003e modifyPersonsManagers(         @RequestBody         Manager manager);      /**      * No description      *       */     @PutMapping(\"/{id}\")     public ResponseEntity\u003c?\u003e updateById(         @PathVariable         String id,         @Valid         @RequestBody         Manager manager);      /**      * No description      * ]      */     @Delete...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.phoenixnap.oss.ramlapisync.generation.rules.Spring4ControllerRulesTest",
+      "failingMethods": [
+        "com.phoenixnap.oss.ramlapisync.generation.rules.Spring4ControllerRulesTest#applySpring4ControllerInterfaceWithShortcutMappingsRule_shouldCreate_validCode"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c...org.springframework.[web.bind.annotation.GetMapping; import org.springframework.web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *  */ @RestController @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {       /**      * No description      *      */     @GetMapping     public ResponseEntity\u003c?\u003e getBase();      /**      * Get base entity by ID      *      */     @GetMapping(\"/{id}\")     public ResponseEntity\u003cNamedResponseType\u003e getBaseById(         @PathVariable         String id);      /**      * No description      *]      */     @GetMap...\u003e but was:\u003c...org.springframework.[validation.annotation.Validated; import org.springframework.web.bind.annotation.GetMapping; import org.springframework.web.bind.annotation.PathVariable; import org.springframework.web.bind.annotation.RequestHeader; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;   /**  * The BaseController class  * (Generated with springmvc-raml-parser v.0.10.12)  *   */ @RestController @Validated @RequestMapping(value \u003d \"/api/base\", produces \u003d \"application/json\") public interface BaseController {       /**      * No description      *       */     @GetMapping     public ResponseEntity\u003c?\u003e getBase();      /**      * Get base entity by ID      *       */     @GetMapping(\"/{id}\")     public ResponseEntity\u003cNamedResponseType\u003e getBaseById(         @PathVariable         String id);      /**      * No description      * ]      */     @GetMap...\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
