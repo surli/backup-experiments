@@ -1,0 +1,93 @@
+@import colors
+
+.remove-query-param
+    color $red
+
+.table-nav-bar
+    background-color $grey-light
+    padding 10px
+
+.current-query-param
+    margin-left 10px
+
+.pagination-container
+  text-align center
+
+  ul.pagination
+    position relative
+
+.status-list
+  list-style-type none
+  padding-left 0
+
+  li
+    margin-bottom 5px
+
+  li.waiting
+    color $grey-medium
+
+.glyphicon-spin
+  -webkit-animation spin 1500ms infinite linear;
+  animation spin 1500ms infinite linear;
+
+@-webkit-keyframes spin
+  0%
+    -webkit-transform rotate(0deg)
+    transform rotate(0deg)
+
+  100%
+    -webkit-transform rotate(359deg)
+    transform rotate(359deg)
+
+@keyframes spin
+  0%
+    -webkit-transform: rotate(0deg)
+    transform rotate(0deg)
+
+  100%
+    -webkit-transform rotate(359deg)
+    transform rotate(359deg)
+
+.task-filters
+  & button.pull-right
+    margin-left 10px
+
+.request-group-navitem
+  word-wrap break-word
+
+.request-type-icon
+  padding-left: 22px
+  position: relative
+
+  &:after
+    display: inline-block
+    position: absolute
+    top: 0
+    left: 0
+    content: ' '
+    width: 16px
+    height: 16px
+    opacity: .7
+
+.request-type-icon-translucent
+  opacity: .2
+
+.request-type-icon-ON_DEMAND
+  &:after
+    background: url('../assets/static/images/icons/icon-on_demand.svg')
+
+.request-type-icon-SCHEDULED
+  &:after
+    background: url('../assets/static/images/icons/icon-scheduled.svg')
+
+.request-type-icon-SERVICE
+  &:after
+    background: url('../assets/static/images/icons/icon-service.svg')
+
+.request-type-icon-WORKER
+  &:after
+    background: url('../assets/static/images/icons/icon-worker.svg')
+
+.request-type-icon-RUN_ONCE
+  &:after
+    background: url('../assets/static/images/icons/icon-run_once.svg')
