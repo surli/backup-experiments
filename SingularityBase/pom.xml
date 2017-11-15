@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.hubspot</groupId>
+    <artifactId>Singularity</artifactId>
+    <version>0.18.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>SingularityBase</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.hubspot</groupId>
+      <artifactId>BaragonCore</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.hubspot.jackson</groupId>
+      <artifactId>jackson-datatype-protobuf</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-guava</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.mesos</groupId>
+      <artifactId>mesos</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.wordnik</groupId>
+      <artifactId>swagger-annotations</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>annotations</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-shade-plugin</artifactId>
+          <configuration combine.self="override">
+            <minimizeJar>true</minimizeJar>
+            <shadedArtifactAttached>true</shadedArtifactAttached>
+            <shadedClassifierName>shaded</shadedClassifierName>
+            <artifactSet>
+              <includes>
+                <include>com.hubspot:SingularityBase</include>
+                <include>com.google.guava:guava</include>
+              </includes>
+            </artifactSet>
+            <filters>
+              <filter>
+                <artifact>com.google.guava:guava</artifact>
+                <excludes>
+                  <exclude>com/google/common/base/Optional.class</exclude>
+                </excludes>
+              </filter>
+            </filters>
+            <relocations>
+              <relocation>
+                <pattern>org.apache.mesos</pattern>
+                <shadedPattern>com.hubspot.singularity.shaded.org.apache.mesos.oneonetwo</shadedPattern>
+              </relocation>
+            </relocations>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
+
+<!-- Local Variables:     -->
+<!-- mode: nxml           -->
+<!-- nxml-child-indent: 2 -->
+<!-- End:                 -->
