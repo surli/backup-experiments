@@ -1,0 +1,487 @@
+{
+  "totalNumberSkippingTests": 1,
+  "bugType": "failing_passing",
+  "totalNumberErroringTests": 67,
+  "repo": "graphaware/neo4j-framework",
+  "bugCommit": "https://github.com/graphaware/neo4j-framework/compare/f31274719be7...5495d65ee590",
+  "failingModule": "/root/workspace/graphaware/neo4j-framework/302450291/runtime",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "org.neo4j.kernel.lifecycle.LifecycleException",
+    "java.lang.NullPointerException"
+  ],
+  "totalNumberRunningTests": 549,
+  "failing-test-cases": [
+    {
+      "className": "com.graphaware.runtime.ProductionRuntimeTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphaware.runtime.ProductionRuntimeTest#registeredRuntimeShouldBeRetrieved",
+        "com.graphaware.runtime.ProductionRuntimeTest#usedCorruptModulesShouldBeInitialized2",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldNotBeAbleToRegisterModuleWithTheSameIdTwice",
+        "com.graphaware.runtime.ProductionRuntimeTest#shutdownShouldBeCalledBeforeShutdownOnTimerDrivenModules",
+        "com.graphaware.runtime.ProductionRuntimeTest#lastContextShouldBePresentedInNextCallAndPersisted",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldFailWhenStartIsNotCalledInOneSecond",
+        "com.graphaware.runtime.ProductionRuntimeTest#lastContextShouldBePresentedAfterRestart",
+        "com.graphaware.runtime.ProductionRuntimeTest#whenOneModuleForcesRollbackThenModulesBeforeItShouldBeAware",
+        "com.graphaware.runtime.ProductionRuntimeTest#multipleCallsToStartFrameworkHaveNoEffect",
+        "com.graphaware.runtime.ProductionRuntimeTest#changedModuleShouldNotBeReInitializedWhenNotAllowed",
+        "com.graphaware.runtime.ProductionRuntimeTest#allRegisteredInterestedTimerModulesShouldBeDelegatedToWithAdaptiveStrategy",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldNotBeAbleToRegisterTheSameModuleTwice",
+        "com.graphaware.runtime.ProductionRuntimeTest#moduleThrowingRuntimeExceptionShouldRollbackTransaction",
+        "com.graphaware.runtime.ProductionRuntimeTest#unusedCorruptModulesShouldBeRemoved",
+        "com.graphaware.runtime.ProductionRuntimeTest#allRegisteredInterestedModulesShouldBeDelegatedTo",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldWaitForRuntimeToStart",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldNotBeAllowedToCreateTwoRuntimes",
+        "com.graphaware.runtime.ProductionRuntimeTest#nothingShouldHappenWhenNoModuleWantsToRun",
+        "com.graphaware.runtime.ProductionRuntimeTest#whenOneModuleThrowsAnExceptionThenOtherModulesShouldNotBeDelegatedTo",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldThrowExceptionWhenAskedForWrongModuleType2",
+        "com.graphaware.runtime.ProductionRuntimeTest#changedModuleShouldBeReInitialized",
+        "com.graphaware.runtime.ProductionRuntimeTest#corruptMetadataShouldNotKillTimerModule",
+        "com.graphaware.runtime.ProductionRuntimeTest#forcedModuleShouldBeReInitialized",
+        "com.graphaware.runtime.ProductionRuntimeTest#moduleThrowingExceptionShouldRollbackTransaction",
+        "com.graphaware.runtime.ProductionRuntimeTest#modulesCannotBeRegisteredAfterStart",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldThrowExceptionWhenAskedForWrongModuleType",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldNotBeAbleToRegisterDifferentModulesWithSameId",
+        "com.graphaware.runtime.ProductionRuntimeTest#allRegisteredInterestedTimerModulesShouldBeDelegatedTo",
+        "com.graphaware.runtime.ProductionRuntimeTest#moduleThrowingInitExceptionShouldBeMarkedForReinitializationOnlyTheFirstTime",
+        "com.graphaware.runtime.ProductionRuntimeTest#unusedModulesShouldBeRemoved",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldNotBeAbleToRegisterSameTimerModuleTwice",
+        "com.graphaware.runtime.ProductionRuntimeTest#whenRuntimeIsNotStartedExceptionShouldBeThrown",
+        "com.graphaware.runtime.ProductionRuntimeTest#whenOneTimerModuleThrowsAnExceptionThenOtherModulesShouldStillBeDelegatedTo",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldFailWaitingForRuntimeThatHasNotBeenStarted",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldObtainModulesOfCorrectTypes",
+        "com.graphaware.runtime.ProductionRuntimeTest#sameModuleCanActAsTxAndTimerDriven",
+        "com.graphaware.runtime.ProductionRuntimeTest#usedCorruptModulesShouldBeReInitialized",
+        "com.graphaware.runtime.ProductionRuntimeTest#exceptionShouldBeThrownWhenRuntimeHasNotBeenStarted",
+        "com.graphaware.runtime.ProductionRuntimeTest#moduleAlreadyRegisteredShouldNotBeInitialized",
+        "com.graphaware.runtime.ProductionRuntimeTest#unusedTimerModulesShouldBeRemoved",
+        "com.graphaware.runtime.ProductionRuntimeTest#shutdownShouldBeCalledBeforeShutdown",
+        "com.graphaware.runtime.ProductionRuntimeTest#modulesShouldBeAwareOfRollbackAfterConstraintViolation",
+        "com.graphaware.runtime.ProductionRuntimeTest#forcedModuleShouldNotBeReInitializedWhenNotAllowed",
+        "com.graphaware.runtime.ProductionRuntimeTest#moduleRegisteredForTheFirstTimeShouldBeInitializedWhenAllowed",
+        "com.graphaware.runtime.ProductionRuntimeTest#earliestNextCallTimeShouldBeRespected",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldThrowExceptionWhenAskedForNonExistingModule",
+        "com.graphaware.runtime.ProductionRuntimeTest#registeredRuntimeShouldBeRetrieved2",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldObtainModulesOfCorrectTypesWhenIdNotSpecified",
+        "com.graphaware.runtime.ProductionRuntimeTest#moduleThrowingInitExceptionShouldBeMarkedForReinitialization",
+        "com.graphaware.runtime.ProductionRuntimeTest#moduleRegisteredForTheFirstTimeShouldNotBeInitializedWhenNotAllowed",
+        "com.graphaware.runtime.ProductionRuntimeTest#shouldStartAndStopDatabaseWriter",
+        "com.graphaware.runtime.ProductionRuntimeTest#moduleRegisteredForTheFirstTimeShouldBeInitialized"
+      ],
+      "failures": [
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@7c8689e\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@40b8158d\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@48bab2c6\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@3ec211cc\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@2c1a95a2\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@107ebdad\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@4fea095b\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@19d13d04\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@54c37dab\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@25587290\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@2b06f498\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@e0d9e3f\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@435a2c7d\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@ed1d2cf\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@69926b6e\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@73417494\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@40071890\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@47224d5d\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@4a0ee0ba\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@61d527ac\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@16b2d182\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@6a26eee6\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@38b7004d\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@6b9fc5c7\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@3881b884\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@66b3eab0\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@63ede2a0\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@6464f017\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@2487b621\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@38f3dbbf\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@7e24a2e2\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@73753326\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@4131261\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@3ca5da54\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@cce672c\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@4f1aa2bc\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@2ae07dbd\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@25093079\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@306c8e09\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@7e916dc2\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@202ba60a\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@ccea4be\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@71f86562\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@52518ee1\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@549be307\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@6cfe32cd\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@3338d706\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@329a27ae\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@a6d4547\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@37f75ebf\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@21d561c9\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@735dc133\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 53
+    },
+    {
+      "className": "com.graphaware.runtime.bootstrap.BootstrapIntegrationTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphaware.runtime.bootstrap.BootstrapIntegrationTest#modulesShouldBeDelegatedToInRandomOrderWhenOrderClashes",
+        "com.graphaware.runtime.bootstrap.BootstrapIntegrationTest#moduleShouldBeInitializedWhenRuntimeIsEnabledWithoutAnyTransactions",
+        "com.graphaware.runtime.bootstrap.BootstrapIntegrationTest#moduleShouldBeInitializedWhenRuntimeIsEnabled",
+        "com.graphaware.runtime.bootstrap.BootstrapIntegrationTest#moduleShouldBeInitializedWhenModuleIsDisabled",
+        "com.graphaware.runtime.bootstrap.BootstrapIntegrationTest#moduleShouldNotBeInitializedWhenNoConfigProvided",
+        "com.graphaware.runtime.bootstrap.BootstrapIntegrationTest#modulesShouldBeDelegatedToInCorrectOrder",
+        "com.graphaware.runtime.bootstrap.BootstrapIntegrationTest#moduleShouldBeInitializedWhenAnotherModuleIsMisConfigured"
+      ],
+      "failures": [
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@7859fc7\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@2060df8\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@7444714e\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@515b7335\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@29897daf\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@9886ec3\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@4e7e7763\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 7
+    },
+    {
+      "className": "com.graphaware.runtime.module.thirdparty.ThirdPartyIntegrationModuleTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphaware.runtime.module.thirdparty.ThirdPartyIntegrationModuleTest#modificationsShouldBeCorrectlyBuilt"
+      ],
+      "failures": [
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@fa3db48\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.graphaware.runtime.module.BeforeAfterCommitTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphaware.runtime.module.BeforeAfterCommitTest#afterCommitShouldBeCalled",
+        "com.graphaware.runtime.module.BeforeAfterCommitTest#afterRollbackShouldBeCalled"
+      ],
+      "failures": [
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@53d782b0\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@585d570e\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.graphaware.test.unit.GraphUnitTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphaware.test.unit.GraphUnitTest#equalGraphsWithRuntimeShouldPassSameGraphTestBusinessStrategies",
+        "com.graphaware.test.unit.GraphUnitTest#clearGraphWithRuntimeShouldDeleteAllNodesAndRelsButNotGraphProps"
+      ],
+      "failures": [
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@18b30951\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        },
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@516037be\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "com.graphaware.runtime.module.thirdparty.DefaultThirdPartyIntegrationModuleTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphaware.runtime.module.thirdparty.DefaultThirdPartyIntegrationModuleTest#modificationsShouldBeCorrectlyBuilt"
+      ],
+      "failures": [
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@3f35d13d\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.graphaware.runtime.module.TimerDrivenModuleHaTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.graphaware.runtime.module.TimerDrivenModuleHaTest#shouldRunInSingleMode"
+      ],
+      "failures": [
+        {
+          "failureName": "org.neo4j.kernel.lifecycle.LifecycleException",
+          "failureDetail": "Component \u0027org.neo4j.kernel.internal.KernelEventHandlers@d5d9d92\u0027 failed to transition from stopped to shutting_down. Please see the attached cause exception \"null\".",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}

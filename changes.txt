@@ -1,0 +1,189 @@
+3.3.0.51:
+    - upgrade to Neo4j 3.3.0
+
+3.2.6.51:
+    - upgrade to Neo4j 3.2.6
+
+3.2.5.51:
+    - upgrade to Neo4j 3.2.5
+
+3.2.3.51:
+    - upgrade to Neo4j 3.2.3
+
+3.2.1.51:
+    - bugfixes
+
+3.2.1.50:
+    - upgrade to Neo4j 3.2.1
+
+3.1.4.49:
+    - upgrade to Neo4j 3.1.4
+    - additional APIs in GraphUnit
+
+3.1.3.48:
+    - topology change listeners (enterprise only)
+
+3.1.3.47:
+    -critical bugfix for Causal Clusters (modules trying to initialize in FOLLOWERS)
+
+3.1.3.46:
+    -critical bugfix for Neo4j CE
+
+3.1.3.45:
+    - upgraded to Neo4j 3.1.3
+    - fixed an issue that caused slave restarts (fetching store ID too early)
+    - support for Causal Clusters
+
+3.1.0.44:
+    - upgraded to Neo4j 3.1.0
+
+3.0.7.44:
+    - upgraded to Neo4j 3.0.7
+
+3.0.6.43:
+    - upgraded to Neo4j 3.0.6
+
+3.0.4.43:
+    - bugfixes
+    - refactoring of SPEL expression support
+
+3.0.4.42:
+    - no changes
+
+3.0.4.41:
+    - no changes
+
+3.0.4.40:
+    - upgraded to Neo4j 3.0.4
+    - integration tests register procedures on classpath
+    - performance improvements in inclusion strategies
+
+3.0.3.39:
+    - upgraded to Neo4j 3.0.3
+    - overhauled stats reporting
+    - fixed a critical issue with registering runtime, which made the previous version no good
+
+3.0.2.39:
+    - upgraded to Neo4j 3.0.2
+    - dropped slf4j in favour of using neo4j logging module
+    - fix logging (issue #49)
+
+3.0.1.38:
+    - upgraded to Neo4j 3.0.1
+
+3.0.0.38:
+    - fixed a serialisation bug
+
+3.0.0.37:
+    - upgraded to Neo4j 3.0.0
+    - fixed Windows build issues
+
+2.3.3.37:
+    - upgraded Neo4j to 2.3.3
+
+2.3.2.37:
+    - upgraded Neo4j to 2.3.2
+
+2.3.1.37:
+    - removed security vulnerability (http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/)
+    - timer-driven modules are cluster-aware (know if running in master or slave)
+    - make all tests runnable even if there's a Neo4j instance running locally
+    - update to latest stable versions of dependencies
+    - fixed issue #30: module throwing an exception now always causes transaction rollback
+    - fixed issue #35: provided examples of streaming controllers
+    - make it easier and more consistent for runtime module developers to bootstrap modules
+    - overhaul of JSON API support, so that it is much more flexible
+
+2.3.1.36:
+    - removed log4j in favour of logback
+
+2.3.1.35:
+    - upgraded Neo4j to 2.3.1
+
+2.3.0.35:
+    - upgraded Neo4j to 2.3.0
+
+2.2.6.35:
+    - upgraded Neo4j to 2.2.6
+
+2.2.5.35:
+    - third-party system integration support
+
+2.2.5.34:
+    - upgraded Neo4j to 2.2.5
+    - exposed some (previously private) methods in GraphUnit
+
+2.2.4.34:
+    - upgraded Neo4j to 2.2.4
+    - upgraded Spring to 4.2.0.RELEASE
+    - improved inclusion policies to address https://github.com/graphaware/neo4j-timetree/issues/35
+
+2.2.2.33:
+    - Make perf tests more extensible
+    - Runtime modules (re)initialisation memory optimisations
+    - API overhaul for nodes and relationships returned by modules
+
+2.2.2.32:
+    - Bugfix in batch transaction executor
+    - Other minor bugfixes and improvements
+    - Fixed issues #18, #20, #21
+
+2.2.2.31:
+    - Update to Neo4j 2.2.2
+    - Fixed a bug where nodes with changed labels and no changed properties were not reported as changed
+    - Fixed a critical issue (#16) where APIs deployed as GraphAware plugins were not secured using the default Neo4j auth mechanism
+    - Fixed Spring context being properly closed when the server shuts down
+    - Fixed a minor issue with Graphgen test data populator
+
+2.2.1.30:
+    - Update to Neo4j 2.2.1
+    - TestUtils refactoring
+    - Webadmin bootstrapped in integration tests
+    - Iron out minor Maven glitches caused by last release
+
+2.2.0.30:
+    - Module POM cleanup
+
+2.2.0.29:
+    - POM reorganisation
+    - UUID generation part of the framework
+    - ability to better extend web server to support GraphAware Enterprise
+
+2.2.0.28:
+    - updated Framework to Neo4j 2.2.0
+    - completely removed transaction handling and automatic support for @Transactional
+    - removed transaction-simulating batch inserters
+    - ability to pass a config file to the database in DatabaseIntegrationTest
+    - internals improvements and bugfixes
+    - ability for GraphAware modules to participate in transactional-endpoint-managed long-running transactions
+
+2.1.7.28:
+    - update to Neo4j 2.1.7
+    - different database populators for testing
+    - native Graphgen support for populating databases
+
+2.1.6.27:
+    - input validation in GraphUnit, capability to assert empty database and to print the database contents
+    - getAvailablePort() method in TestUtils
+    - float into PropertyContainerUtils for the purposes of the Recommendation Engine Module
+
+2.1.6.26:
+    - logging exceptions that occur when using BatchWriter
+
+2.1.5.25:
+    - more flexibility in extending writers
+    - decreased log level in batch transaction executor
+
+2.1.5.24:
+    - no changes (just a bad release because of Nexus)
+
+2.1.5.23:
+    - minor bugfixes and enhancements for testing
+
+2.1.5.22:
+    - removed explicit @EnableTransactionManagement, modules have to add this themselves
+    - improved GraphUnit test failure messages
+    - improved Writer logging
+
+2.1.5.21:
+    - removed metadata node, the framework no longer pollutes the graph
