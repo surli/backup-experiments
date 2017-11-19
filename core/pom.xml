@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<!--
+
+    Copyright 2005-2017 Dozer Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.github.dozermapper</groupId>
+        <artifactId>dozer-plugins-parent</artifactId>
+        <version>6.2.0-SNAPSHOT</version>
+        <relativePath>../plugins-parent</relativePath>
+    </parent>
+
+    <artifactId>dozer-core</artifactId>
+    <packaging>bundle</packaging>
+    <name>Dozer :: Core</name>
+
+    <properties>
+        <osgi.Bundle-Activator>org.dozer.osgi.Activator</osgi.Bundle-Activator>
+        <!--
+        <osgi.additional.Import-Package>
+            org.hibernate.proxy;version="[4.2,6)";resolution:=optional,
+            javassist.util.proxy;version="[3.13,4)";resolution:=optional
+        </osgi.additional.Import-Package>
+        -->
+        <osgi.Export-Package>org.dozer.*</osgi.Export-Package>
+        <!-- ServiceLoader Capability -->
+        <osgi.Require-Capability>
+            osgi.serviceloader; filter:="(osgi.serviceloader=org.dozer.DozerModule)";cardinality:=multiple;resolution:=optional,
+            osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)";resolution:=optional
+        </osgi.Require-Capability>
+        <osgi.SPI-Consumer>*</osgi.SPI-Consumer>
+        
+        <!-- NOTE: Needs to be removed in future -->
+        <findbugs.skip>true</findbugs.skip>
+
+        <!-- ISSUE: https://youtrack.jetbrains.com/issue/IDEA-153410 -->
+        <maven-resources/>
+    </properties>
+
+    <dependencies>
+        <!-- Commons -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- EL -->
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- YAML -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.woodstox</groupId>
+            <artifactId>woodstox-core-asl</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- XML Beans -->
+        <dependency>
+            <groupId>org.apache.xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Databases -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- Other Runtimes; OSGi-->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>${project.build.directory}/generated-resources/schemagen</directory>
+                <includes>
+                    <include>bean-mapping.xsd</include>
+                </includes>
+                <targetPath>schema</targetPath>
+            </resource>
+        </resources>
+
+        <plugins>
+            <!-- Core Java Plugins; alphabetical order -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/org/dozer/vo/**</exclude>
+                        <exclude>**/net/pmonks/**</exclude>
+                        <exclude>**/schemaorg_apache_xmlbeans/**</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- Governance Plugins; alphabetical order -->
+            <!-- NOTE: Uses less strict config - should be removed in future -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <inherited>false</inherited>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.dozermapper</groupId>
+                        <artifactId>dozer-building-tools</artifactId>
+                        <version>${building-tools.version}</version>
+                        <scope>compile</scope>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <configuration combine.self="override">
+                            <configLocation>loose-checkstyle.xml</configLocation>
+                            <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
+                            <consoleOutput>true</consoleOutput>
+                            <failOnViolation>true</failOnViolation>
+                            <failsOnError>true</failsOnError>
+                            <encoding>UTF-8</encoding>
+                            <sourceDirectory>${basedir}/src</sourceDirectory>
+                        </configuration>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Testing Plugins; alphabetical order -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-test-sources</id>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>target/jaxb-sources</source>
+                                <source>target/xmlbeans-sources</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>schemagen</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>schemagen</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/java/org/dozer/builder/model/jaxb</source>
+                            </sources>
+                            <transformSchemas>
+                                <transformSchema>
+                                    <uri>http://dozermapper.github.io/schema/bean-mapping</uri>
+                                    <toFile>bean-mapping.xsd</toFile>
+                                </transformSchema>
+                            </transformSchemas>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>xjc</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/test/xsd/jaxb</source>
+                            </sources>
+                            <packageName>org.dozer.vo.jaxb.employee</packageName>
+                            <outputDirectory>target/jaxb-sources</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xmlbeans-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>xmlbeans-test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <schemaDirectory>src/test/xsd/xmlbeans</schemaDirectory>
+                    <sourceGenerationDirectory>target/xmlbeans-sources</sourceGenerationDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
