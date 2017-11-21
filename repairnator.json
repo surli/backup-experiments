@@ -1,0 +1,49 @@
+{
+  "totalNumberSkippingTests": 155,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 2,
+  "repo": "apache/jackrabbit-oak",
+  "bugCommit": "https://github.com/apache/jackrabbit-oak/compare/fa3b44d412a2...75d3d8c77906",
+  "failingModule": "/root/workspace/apache/jackrabbit-oak/305370560/oak-lucene",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.IllegalStateException",
+    "java.lang.RuntimeException"
+  ],
+  "totalNumberRunningTests": 5226,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.jackrabbit.oak.plugins.index.lucene.CopyOnWriteDirectory_Segment_Test",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.jackrabbit.oak.plugins.index.lucene.CopyOnWriteDirectory_Segment_Test#copyOnWrite"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "This builder does not exist: child-3",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.apache.jackrabbit.oak.jcr.query.FacetTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.jackrabbit.oak.jcr.query.FacetTest#testFacetsNA"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "java.lang.RuntimeException: java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
