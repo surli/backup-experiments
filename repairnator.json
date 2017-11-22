@@ -1,0 +1,93 @@
+{
+  "totalNumberSkippingTests": 2,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 6,
+  "repo": "jdbi/jdbi",
+  "bugCommit": "https://github.com/jdbi/jdbi/commit/6ed1b0f94bf8",
+  "failingModule": "/root/workspace/jdbi/jdbi/305544314/core",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "com.google.common.base.VerifyException",
+    "org.jdbi.v3.core.statement.UnableToCreateStatementException"
+  ],
+  "totalNumberRunningTests": 344,
+  "failing-test-cases": [
+    {
+      "className": "org.jdbi.v3.core.argument.TestCollectionArguments",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.jdbi.v3.core.argument.TestCollectionArguments#testBindTypeErased"
+      ],
+      "failures": [
+        {
+          "failureName": "com.google.common.base.VerifyException",
+          "failureDetail": "Process [/tmp/embedded-pg/PG-11dcc08f73460f51bbcf948559611bae/bin/initdb, -A, trust, -U, postgres, -D, /tmp/embedded-pg/d9042954-d9af-4daa-9f1f-42de29acc842, -E, UTF-8] failed\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.jdbi.v3.core.statement.TestPreparedBatchGenerateKeysPostgres",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.jdbi.v3.core.statement.TestPreparedBatchGenerateKeysPostgres#testBatchInsertWithKeyGenerationAndExplicitSeveralColumnNames",
+        "org.jdbi.v3.core.statement.TestPreparedBatchGenerateKeysPostgres#testBatchInsertWithKeyGenerationAndExplicitColumnNames"
+      ],
+      "failures": [
+        {
+          "failureName": "com.google.common.base.VerifyException",
+          "failureDetail": "Process [/tmp/embedded-pg/PG-11dcc08f73460f51bbcf948559611bae/bin/initdb, -A, trust, -U, postgres, -D, /tmp/embedded-pg/ded3742f-ad08-473a-8ecf-7bfce45f6edb, -E, UTF-8] failed\n",
+          "isError": true
+        },
+        {
+          "failureName": "com.google.common.base.VerifyException",
+          "failureDetail": "Process [/tmp/embedded-pg/PG-11dcc08f73460f51bbcf948559611bae/bin/initdb, -A, trust, -U, postgres, -D, /tmp/embedded-pg/742f2e07-c70d-48b2-a7da-b9b3584f88ce, -E, UTF-8] failed\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.jdbi.v3.core.statement.TestBindList",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.jdbi.v3.core.statement.TestBindList#testBindListWithPrefixParser"
+      ],
+      "failures": [
+        {
+          "failureName": "org.jdbi.v3.core.statement.UnableToCreateStatementException",
+          "failureDetail": "org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement \"INSERT INTO THING (ID, FOO) VALUES (:[*]__VALUES_0,:__VALUES_1) \"; expected \"), DEFAULT, NOT, EXISTS, INTERSECTS, SELECT, FROM\"; SQL statement:\ninsert into thing (id, foo) values (:__values_0,:__values_1) [42001-173] [statement:\"insert into thing (\u003ccolumns\u003e) values (\u003cvalues\u003e)\", rewritten:\"insert into thing (id, foo) values (:__values_0,:__values_1)\", parsed:\"ParsedSql{sql\u003d\u0027insert into thing (id, foo) values (:__values_0,:__values_1)\u0027, parameters\u003dParsedParameters{positional\u003dfalse, parameterNames\u003d[]}}\", arguments:{ positional:{}, named:{__values_0:3,__values_1:abc}, finder:[]}]",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.jdbi.v3.core.statement.TestBatchExceptionRewrite",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.jdbi.v3.core.statement.TestBatchExceptionRewrite#testPreparedBatch",
+        "org.jdbi.v3.core.statement.TestBatchExceptionRewrite#testSimpleBatch"
+      ],
+      "failures": [
+        {
+          "failureName": "com.google.common.base.VerifyException",
+          "failureDetail": "Process [/tmp/embedded-pg/PG-11dcc08f73460f51bbcf948559611bae/bin/initdb, -A, trust, -U, postgres, -D, /tmp/embedded-pg/5812059a-47be-44d3-9bef-afda39c79ada, -E, UTF-8] failed\n",
+          "isError": true
+        },
+        {
+          "failureName": "com.google.common.base.VerifyException",
+          "failureDetail": "Process [/tmp/embedded-pg/PG-11dcc08f73460f51bbcf948559611bae/bin/initdb, -A, trust, -U, postgres, -D, /tmp/embedded-pg/5301cc71-3c1d-48b5-8f55-49bf22ec6d77, -E, UTF-8] failed\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    }
+  ]
+}
