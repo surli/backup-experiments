@@ -1,0 +1,209 @@
+The Z Expression Language
+
+ Scope: A simple but easy to extend language for doing expression evalutions and calculations in java.
+ 
+
+ Now there are a few other components out there that do a similar job, here is what it's different (or not :-) ) about this particular implementation:
+
+  1. LGPL license
+
+  2. Asynchronous programming / coroutines (function calls can be executed asynchronously)
+
+  3. Support for deterministic functions, (aka memorization) executions will be cached for deterministic functions
+
+  4. Integer mathematical operations do not overflow.
+     Real number representation can be used seamlessly with decimal or binary representation.
+
+  5. Everything is Either<Object, Future<Object>>.
+
+   
+  6. ZEL uses the last value out principle, expressions will return the last evaluated expression.
+     There is a return keyword that can also be used but it is optional
+
+  7. Expressions are compiled providing decent execution performance. 
+     The concurrency features in Zel enable you to easier write code that takes advantage of multi core systems.
+     (Outperforms SPEL(Spring) by a few orders of magnitude, slightly slower(simple single threaded benchmarks)
+     than MVEL and Groovy, for latest results see: )
+
+  8. Implemented using javaCC
+
+ Here are some examples:
+
++-----------------------------------------------------------------------
+EX1:    // ZEL mathematical expressions in java code
+
+        Program prog = Program.compile("1+5*4/(1+1)");
+        Number result = (Number) prog.execute();
+
+EX2:    // formulas with decimal numbers can be written easer than directly in java
+        // decimal numbers are represented with BigDecimal by default in zel
+        // regular binary floating point representation can be used as well with "d" suffix.
+
+        BigDecimal result = (BigDecimal) Program.compile("use dec 128; (1.0/3) * 3 + (1 - 1.0/3*3)").execute();
+
+EX3:    // java integration, java objects are supported just like in java:
+
+        Program prog = Program.compile("a.toString().substring(0, 1 + 1)", "a");
+        String result = (String) prog.execute(100);
+
+EX4:    // fibonacci recursive definition executes in O(n)
+        // deterministic function results are automatically memorized
+        
+        func det fib (x) { fib(x-1) + fib(x-2) }
+        fib(0) = 0; // memorize result
+        fib(1) = 1; // memorize result
+        out(fib(200)) 
+
+EX5:    // Async programming.
+        // Zel function invocations are async by default.
+
+        replica = func async (x) {
+            sleep random() * 1000;
+            out(x, " finished\n");
+            return x
+        };
+        out(first(replica(1), replica(2), replica(3)), " finished first\n"); // output result of first invocation that finishes
+
+EX6:    // Explicit ASync function execution.
+        // Java method invocation are sync by default
+        // using & postfix operator you can call any function async
+        // java example:
+
+        private static class TestF {
+            public static int f(final int a, final int b) throws InterruptedException {
+                Thread.sleep(1000);
+                return a + b;
+            }
+        }
+    
+        String prog = "f(f(1, 2)&,f(3, 4)&)&"; // execute f asynchronously.
+        Number result = (Number) Program.compile(prog, "f").execute(new JavaMethodCall(TestF.class, "f"));
+
+
+
+EX7:    // Async programming, parallel PI
+        // functions can be declared to be executed sync or async
+        // currently all functions declared in ZEL are async by default
+        // except when the function result is discarded (not assigned to a variable)
+        // All other function calls are sync by default
+        // async execution can be forced with & postfix operator
+
+        func piPart(s, x) {
+            term = func sync (k) {4 * (-1 ** k) / (2d * k + 1)};
+            for i = s; i < x; i++ {
+              parts[i] = term(i) 
+            };
+
+            for result = 0, i = s; i < x; i++ {
+              result = result + parts[i] 
+            };
+            return result
+        };
+
+        pi = func (x, breakup) {
+            range = x / breakup;
+            l = breakup - 1;
+            for i = 0, result = 0, k = 0; i < l; i++ {
+              part[i] = piPart(k, k + range);
+              k = k + range
+            };
+            part[i] = piPart(k, x); // async call
+            for i = 0, result = 0; i < breakup; i = i + 1 {
+               result = result + part[i] 
+            };
+            return result
+        };
+        pi(x, 5)
+
+EX8:    // Channels!
+        // You can comunicate with channels between zel coroutines. 
+
+        ch = channel();
+        func prod(ch) { for i = 0; i < 100 ; i++ { ch.write(i) }; ch.close()};
+        func cons(ch, nr) {
+            sum = 0;
+            for v = ch.read(); v != EOF; v = ch.read() {
+                out(v, ","); sum++ 
+            };
+            out("fin(", nr, ",", sum, ")") 
+        };
+        prod(ch)&; // start producer
+        for i = 0; i < 10; i++ { cons(ch, i)& } //start consumers
+
+EX9:    // Parallel sort!
+
+        func qSortP(x, start, end) {
+          l = end - start;
+          if l < 2 {
+            return
+          };
+          pidx = start + l / 2;
+          pivot = x[pidx];
+          lm1  = end - 1;
+          x[pidx] <-> x[lm1];
+          npv = start;
+          for i = start; i < lm1; i++ {
+            if x[i] < pivot {
+              x[npv] <-> x[i];
+              npv ++
+            }
+          };
+          x[npv] <-> x[lm1];
+          qSortP(x, start, npv)&;
+          qSortP(x, npv + 1, end)&
+        };
+
+        qSortP(x, 0, x.length)
+
+  EX10: // multi-var assignement support
+
+        func minmax (arr) {
+            mi = arr[0]; ma = mi;
+            for i=1; i < arr.length; i++ {
+               v = arr[i];
+               if v > ma {
+                  ma = v
+               } else if v < mi {
+                  mi = v
+               }
+            };
+            ret {mi, ma}
+         };
+         x = {1, 2, 3, 8, 0};
+         _min, _max = minmax(x); // multi var assignement
+         out(_min, _max); 
+
+
+   EX11: /**
+          * Sleep sort implementation in ZEL :-)
+          * this takes advantage of the concurrency facilities available in ZEL.
+          * Sleep values are multiplied by 10 due to scheduler precision.
+          */
+
+        func sleepSort(x) {
+          l = x.length;
+          if l <= 0 {
+            return x
+          };
+          resChan = channel();
+          max = x[0];
+          sl = func (x, ch) {sleep x * 10; ch.write(x)};
+          sl(max, resChan)&;
+          for i = 1; i < l; i++ {
+            val = x[i]; 
+            sl(val, resChan)&;
+            if (val > max) {
+              max = val
+            }
+          };
+          sleep (max + 1) * 10;
+          resChan.close();
+          for c = resChan.read(), i = 0; c != EOF; c = resChan.read(), i++ {
+             x[i] = c
+          };
+          return x
+        };
+
+
++-----------------------------------------------------------------------
+  

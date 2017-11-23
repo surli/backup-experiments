@@ -1,0 +1,8 @@
+replica = func async (x) {
+    sleep random() * 1000;
+    out(x, " finished\n");
+    return x
+};
+val = first(replica(1), replica(2), replica(3));
+out(val , " finished first\n");
+return val

@@ -1,0 +1,16 @@
+func minmax (arr) {
+   mi = arr[0]; ma = mi;
+   for i=1; i < arr.length; i++ {
+      v = arr[i];
+      if v > ma {
+         ma = v
+      } else if v < mi {
+         mi = v
+      }
+   };
+   ret {mi, ma}
+};
+x = {1, 2, 3, 8, 0};
+_min, _max = minmax(x);
+out(_min, _max);
+ret _max
