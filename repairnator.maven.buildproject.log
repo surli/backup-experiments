@@ -1,0 +1,925 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for redis.clients:jedis:jar:2.10.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jar-plugin is missing. @ line 171, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Jedis 2.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ jedis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.3/commons-lang-2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.3/commons-lang-2.3.pom (11 KB at 22.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.0/enforcer-api-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.0/enforcer-api-1.0.pom (4 KB at 123.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.0/enforcer-rules-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.0/enforcer-rules-1.0.pom (5 KB at 115.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.2/maven-common-artifact-filters-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.2/maven-common-artifact-filters-1.2.pom (5 KB at 90.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-plugin-testing-harness/1.1/maven-plugin-testing-harness-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-plugin-testing-harness/1.1/maven-plugin-testing-harness-1.1.pom (7 KB at 229.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/7/maven-shared-components-7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/7/maven-shared-components-7.pom (3 KB at 97.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-7/plexus-archiver-1.0-alpha-7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/1.0-alpha-7/plexus-archiver-1.0-alpha-7.pom (2 KB at 37.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.6/plexus-components-1.1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.6/plexus-components-1.1.6.pom (2 KB at 59.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-8/plexus-container-default-1.0-alpha-8.pom (8 KB at 191.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom (2 KB at 50.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom (2 KB at 53.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/1.2/maven-dependency-tree-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/1.2/maven-dependency-tree-1.2.pom (4 KB at 84.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/9/maven-shared-components-9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/9/maven-shared-components-9.pom (4 KB at 67.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-6/plexus-i18n-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-6/plexus-i18n-1.0-beta-6.pom (771 B at 31.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.4/plexus-components-1.1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.4/plexus-components-1.1.4.pom (3 KB at 67.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-10/doxia-sink-api-1.0-alpha-10.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.3/commons-lang-2.3.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.0/enforcer-api-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-10/doxia-sink-api-1.0-alpha-10.jar (10 KB at 151.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.0/enforcer-rules-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar (10 KB at 125.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.2/maven-common-artifact-filters-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.2/maven-common-artifact-filters-1.2.jar (31 KB at 417.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/1.0/enforcer-api-1.0.jar (10 KB at 101.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/1.2/maven-dependency-tree-1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/1.0/enforcer-rules-1.0.jar (60 KB at 583.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-6/plexus-i18n-1.0-beta-6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-6/plexus-i18n-1.0-beta-6.jar (12 KB at 74.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-tree/1.2/maven-dependency-tree-1.2.jar (34 KB at 174.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.3/commons-lang-2.3.jar (240 KB at 998.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.jar (262 KB at 892.7 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar (276 KB at 958.5 KB/sec)
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jedis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom (7 KB at 297.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom (2 KB at 103.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom (2 KB at 66.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom (2 KB at 93.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom (2 KB at 45.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom (4 KB at 135.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom (17 KB at 606.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom (6 KB at 245.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom (889 B at 21.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom (3 KB at 103.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom (3 KB at 128.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom (5 KB at 196.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom (890 B at 24.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom (3 KB at 115.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar (13 KB at 405.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar (114 KB at 2414.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar (35 KB at 732.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar (56 KB at 1174.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar (29 KB at 513.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar (6 KB at 76.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.jar (21 KB at 256.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar (10 KB at 127.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.jar (149 KB at 1783.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar (24 KB at 265.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.jar (14 KB at 123.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.jar (37 KB at 327.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar (86 KB at 761.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar (48 KB at 416.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar (85 KB at 691.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.jar (11 KB at 76.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar (7 KB at 48.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar (43 KB at 292.3 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar (60 KB at 370.3 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar (218 KB at 1345.3 KB/sec)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/xetorthio/jedis/307022563/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ jedis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.pom (4 KB at 175.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom (4 KB at 188.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom (5 KB at 209.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom (965 B at 44.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom (5 KB at 231.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.pom (2 KB at 75.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.2.1/maven-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.2.1/maven-2.2.1.pom (22 KB at 875.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom (12 KB at 516.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom (3 KB at 92.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom (4 KB at 175.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom (2 KB at 91.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom (2 KB at 97.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom (8 KB at 386.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom (3 KB at 171.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom (3 KB at 117.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom (3 KB at 111.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom (2 KB at 55.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom (2 KB at 91.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom (2 KB at 83.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom (3 KB at 112.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom (4 KB at 126.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom (2 KB at 99.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom (3 KB at 63.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom (2 KB at 40.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom (3 KB at 111.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom (7 KB at 331.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom (9 KB at 390.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.pom (6 KB at 193.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom (3 KB at 91.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.pom (865 B at 38.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.2/plexus-compiler-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.2/plexus-compiler-2.2.pom (4 KB at 160.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom (3 KB at 149.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom (20 KB at 644.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.pom (690 B at 27.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.pom (769 B at 37.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.2/plexus-compilers-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.2/plexus-compilers-2.2.pom (2 KB at 48.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar (14 KB at 472.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.jar (33 KB at 945.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar (32 KB at 723.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.jar (151 KB at 2958.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.5.5/plexus-container-default-1.5.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.jar (206 KB at 3881.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.2/plexus-classworlds-2.2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.jar (5 KB at 79.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.jar (25 KB at 428.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.12/log4j-1.2.12.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.jar (19 KB at 289.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.5.5/plexus-container-default-1.5.5.jar (212 KB at 2580.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.2/plexus-classworlds-2.2.2.jar (46 KB at 548.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/3.8.2/junit-3.8.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar (44 KB at 489.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.jar (131 KB at 1420.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/3.8.2/junit-3.8.2.jar (118 KB at 1071.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.12/log4j-1.2.12.jar (350 KB at 2890.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar (625 KB at 4164.0 KB/sec)
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 105 source files to /root/workspace/xetorthio/jedis/307022563/target/classes
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedisCluster.java: Some input files use or override a deprecated API.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedisCluster.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java: Some input files use unchecked or unsafe operations.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-bundle-plugin:2.5.3:manifest (bundle-manifest) @ jedis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/biz/aQute/bnd/bndlib/2.3.0/bndlib-2.3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/biz/aQute/bnd/bndlib/2.3.0/bndlib-2.3.0.pom (2 KB at 73.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/biz/aQute/bnd/parent/2.3.0/parent-2.3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/biz/aQute/bnd/parent/2.3.0/parent-2.3.0.pom (5 KB at 225.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.pom (2 KB at 65.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.pom (6 KB at 273.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.1.0/org.osgi.core-4.1.0.pom (193 B at 7.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/easymock/easymock/2.4/easymock-2.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/easymock/easymock/2.4/easymock-2.4.pom (6 KB at 260.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.pom (4 KB at 145.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.pom (463 B at 23.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.pom (7 KB at 325.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.7/maven-2.0.7.pom (11 KB at 542.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.pom (2 KB at 88.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.pom (3 KB at 165.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.7/maven-plugin-parameter-documenter-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.7/maven-plugin-parameter-documenter-2.0.7.pom (2 KB at 88.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.7/maven-reporting-api-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.7/maven-reporting-api-2.0.7.pom (2 KB at 90.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.7/maven-reporting-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.7/maven-reporting-2.0.7.pom (2 KB at 66.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.pom (2 KB at 96.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.pom (2 KB at 77.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.pom (2 KB at 82.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.7/maven-error-diagnostics-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.7/maven-error-diagnostics-2.0.7.pom (2 KB at 83.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.pom (3 KB at 143.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.pom (3 KB at 128.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.pom (2 KB at 111.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.pom (2 KB at 78.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.7/maven-plugin-descriptor-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.7/maven-plugin-descriptor-2.0.7.pom (2 KB at 103.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.7/maven-monitor-2.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.7/maven-monitor-2.0.7.pom (2 KB at 61.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom (5 KB at 246.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom (3 KB at 152.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom (4 KB at 220.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom (2 KB at 49.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom (3 KB at 155.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom (19 KB at 1009.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom (1018 B at 41.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/biz/aQute/bnd/bndlib/2.3.0/bndlib-2.3.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/easymock/easymock/2.4/easymock-2.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.utils/1.6.0/org.apache.felix.utils-1.6.0.jar (67 KB at 1222.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/easymock/easymock/2.4/easymock-2.4.jar (80 KB at 1200.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/felix/org.apache.felix.bundlerepository/1.6.6/org.apache.felix.bundlerepository-1.6.6.jar (165 KB at 2134.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.jar (342 KB at 4381.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.7/maven-plugin-parameter-documenter-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.7/maven-plugin-parameter-documenter-2.0.7.jar (21 KB at 200.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.7/maven-reporting-api-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.7/maven-settings-2.0.7.jar (48 KB at 428.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.7/maven-core-2.0.7.jar (150 KB at 1276.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.7/maven-reporting-api-2.0.7.jar (10 KB at 75.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.7/maven-profile-2.0.7.jar (35 KB at 234.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/osgi/org.osgi.compendium/4.2.0/org.osgi.compendium-4.2.0.jar (600 KB at 3613.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.7/maven-error-diagnostics-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.7/maven-model-2.0.7.jar (85 KB at 502.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.7/maven-repository-metadata-2.0.7.jar (24 KB at 139.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.7/maven-artifact-2.0.7.jar (86 KB at 490.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/biz/aQute/bnd/bndlib/2.3.0/bndlib-2.3.0.jar (1744 KB at 8989.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.7/maven-plugin-descriptor-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.7/maven-error-diagnostics-2.0.7.jar (14 KB at 68.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.7/maven-plugin-api-2.0.7.jar (13 KB at 62.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.7/maven-monitor-2.0.7.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.7/maven-plugin-registry-2.0.7.jar (29 KB at 138.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.7/maven-artifact-manager-2.0.7.jar (56 KB at 249.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.7/maven-project-2.0.7.jar (114 KB at 512.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.7/maven-monitor-2.0.7.jar (11 KB at 43.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.7/maven-plugin-descriptor-2.0.7.jar (37 KB at 153.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar (22 KB at 90.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar (60 KB at 222.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar (57 KB at 194.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.10/plexus-utils-3.0.10.jar (226 KB at 725.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar (181 KB at 570.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar (203 KB at 639.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar (558 KB at 1640.8 KB/sec)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jedis ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ jedis ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 60 source files to /root/workspace/xetorthio/jedis/307022563/target/test-classes
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/test/java/redis/clients/jedis/tests/commands/AllKindOfValuesCommandsTest.java: Some input files use or override a deprecated API.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/test/java/redis/clients/jedis/tests/commands/AllKindOfValuesCommandsTest.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/test/java/redis/clients/jedis/tests/PipeliningTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/test/java/redis/clients/jedis/tests/PipeliningTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ jedis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.pom (8 KB at 223.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.pom (2 KB at 58.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.3/maven-plugin-tools-3.3.pom (13 KB at 650.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/24/maven-parent-24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/24/maven-parent-24.pom (37 KB at 1501.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/14/apache-14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/14/apache-14.pom (15 KB at 754.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.pom (4 KB at 180.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.pom (4 KB at 115.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom (24 KB at 1217.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom (4 KB at 142.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom (17 KB at 709.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom (41 KB at 1049.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar (13 KB at 389.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.19.1/surefire-booter-2.19.1.jar (45 KB at 1009.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar (79 KB at 1782.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.jar (39 KB at 816.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar (223 KB at 3712.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.19.1/maven-surefire-common-2.19.1.jar (286 KB at 3913.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar (35 KB at 442.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar (66 KB at 749.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar (30 KB at 271.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar (48 KB at 443.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar (308 KB at 2460.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar (50 KB at 391.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar (153 KB at 1090.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar (86 KB at 589.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.jar (22 KB at 143.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar (9 KB at 51.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.jar (174 KB at 1021.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar (22 KB at 128.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar (17 KB at 92.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar (26 KB at 130.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar (28 KB at 142.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.jar (11 KB at 51.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar (13 KB at 64.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar (14 KB at 58.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar (324 KB at 1408.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar (37 KB at 153.7 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar (309 KB at 1269.1 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.3/maven-plugin-annotations-3.3.jar (14 KB at 55.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.19.1/surefire-api-2.19.1.jar (192 KB at 765.9 KB/sec)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ jedis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar (37 KB at 1181.8 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar (221 KB at 5519.3 KB/sec)
+[INFO] Building jar: /root/workspace/xetorthio/jedis/307022563/target/jedis-2.10.0-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (attach-sources) > generate-sources @ jedis >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ jedis ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (attach-sources) < generate-sources @ jedis <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (attach-sources) @ jedis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.pom (4 KB at 130.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom (3 KB at 128.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom (19 KB at 908.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.7/plexus-utils-3.0.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.7/plexus-utils-3.0.7.pom (3 KB at 136.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom (2 KB at 89.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.jar (57 KB at 1962.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.jar (181 KB at 4882.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.jar (227 KB at 4716.4 KB/sec)
+[INFO] Building jar: /root/workspace/xetorthio/jedis/307022563/target/jedis-2.10.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadoc) @ jedis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.pom (2 KB at 106.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.2.1/maven-reporting-2.2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.2.1/maven-reporting-2.2.1.pom (2 KB at 82.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.pom (2 KB at 117.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1/doxia-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.1/doxia-1.1.pom (15 KB at 741.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.pom (2 KB at 76.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.pom (8 KB at 432.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/11/commons-parent-11.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/11/commons-parent-11.pom (25 KB at 1146.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/2.0.9/maven-invoker-2.0.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/2.0.9/maven-invoker-2.0.9.pom (6 KB at 256.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.pom (4 KB at 200.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom (3 KB at 124.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom (2 KB at 71.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-6/wagon-1.0-beta-6.pom (13 KB at 636.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2 KB at 100.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.pom (14 KB at 758.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom (11 KB at 633.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom (47 KB at 1846.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.2.3/httpclient-4.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.2.3/httpclient-4.2.3.pom (6 KB at 303.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.2.3/httpcomponents-client-4.2.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.2.3/httpcomponents-client-4.2.3.pom (15 KB at 750.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/6/project-6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/6/project-6.pom (24 KB at 1301.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.2.2/httpcore-4.2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.2.2/httpcore-4.2.2.pom (6 KB at 252.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.2.2/httpcomponents-core-4.2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.2.2/httpcomponents-core-4.2.2.pom (12 KB at 659.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom (18 KB at 543.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/5/commons-parent-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/5/commons-parent-5.pom (16 KB at 783.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 KB at 605.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.14/log4j-1.2.14.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.14/log4j-1.2.14.pom (3 KB at 136.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.pom (18 KB at 572.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom (5 KB at 138.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1.2/plexus-archiver-2.1.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1.2/plexus-archiver-2.1.2.pom (4 KB at 184.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.2/plexus-utils-3.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.2/plexus-utils-3.0.2.pom (3 KB at 129.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.pom (3 KB at 144.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/2.0.9/maven-invoker-2.0.9.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-invoker/2.0.9/maven-invoker-2.0.9.jar (28 KB at 952.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.jar (41 KB at 1181.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.2.3/httpclient-4.2.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.jar (31 KB at 572.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.2.2/httpcore-4.2.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar (52 KB at 911.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.4/commons-lang-2.4.jar (256 KB at 2872.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar (228 KB at 2392.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.14/log4j-1.2.14.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.jar (170 KB at 1678.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.2.2/httpcore-4.2.2.jar (219 KB at 2003.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar (60 KB at 502.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1.2/plexus-archiver-2.1.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.2.3/httpclient-4.2.3.jar (423 KB at 3109.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/log4j/log4j/1.2.14/log4j-1.2.14.jar (359 KB at 2544.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/1.12.1/qdox-1.12.1.jar (176 KB at 1186.5 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar (191 KB at 1272.1 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1.2/plexus-archiver-2.1.2.jar (181 KB at 1157.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.5/plexus-utils-3.0.5.jar (226 KB at 1300.8 KB/sec)
+[INFO] 
+Loading source files for package redis.clients.util...
+Loading source files for package redis.clients.jedis...
+Loading source files for package redis.clients.jedis.exceptions...
+Loading source files for package redis.clients.jedis.params.sortedset...
+Loading source files for package redis.clients.jedis.params...
+Loading source files for package redis.clients.jedis.params.geo...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_121
+Building tree for all the packages and classes...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/ByteArrayComparator.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/Hashing.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/IOUtils.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/JedisByteHashMap.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/JedisClusterCRC16.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/JedisClusterHashTagUtil.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/JedisURIHelper.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/KeyMergeUtil.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/MurmurHash.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/Pool.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/RedisInputStream.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/RedisOutputStream.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/SafeEncoder.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/Sharded.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/ShardInfo.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/Slowlog.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/AdvancedBinaryJedisCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/AdvancedJedisCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BasicCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BasicRedisPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryClient.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryClient.LIST_POSITION.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryJedis.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryJedis.SetFromList.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryJedisCluster.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryJedisClusterCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryJedisCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryJedisPubSub.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryRedisPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryScriptingCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryScriptingCommandsPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BinaryShardedJedis.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BitOP.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BitPosParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Builder.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/BuilderFactory.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Client.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ClusterCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ClusterPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Commands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Connection.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/DebugParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/GeoCoordinate.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/GeoRadiusResponse.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/GeoUnit.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/HostAndPort.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Jedis.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisCluster.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisCluster.Reset.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisClusterBinaryScriptingCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisClusterCommand.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisClusterConnectionHandler.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisClusterInfoCache.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisClusterScriptingCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisMonitor.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisPool.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisPoolConfig.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisPubSub.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisSentinelPool.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisSentinelPool.MasterListener.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisShardInfo.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/JedisSlotBasedConnectionHandler.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/MultiKeyBinaryCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/MultiKeyBinaryJedisClusterCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/MultiKeyBinaryRedisPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/MultiKeyCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/MultiKeyCommandsPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/MultiKeyJedisClusterCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/MultiKeyPipelineBase.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Pipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/PipelineBase.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/PipelineBlock.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Protocol.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Protocol.Command.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Protocol.Keyword.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Queable.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/RedisPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Response.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ScanParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ScanResult.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ScriptingCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ScriptingCommandsPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/SentinelCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ShardedJedis.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ShardedJedisPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ShardedJedisPool.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/SortingParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Transaction.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/TransactionBlock.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/Tuple.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ZParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/ZParams.Aggregate.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/InvalidURIException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisAskDataException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisBusyException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisClusterCrossSlotException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisClusterException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisClusterMaxRedirectionsException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisConnectionException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisDataException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisExhaustedPoolException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisMovedDataException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisNoReachableClusterNodeException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisNoScriptException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/JedisRedirectionException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/sortedset/ZAddParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/sortedset/ZIncrByParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/Params.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/geo/GeoRadiusParam.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/overview-frame.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/package-frame.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/package-summary.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/package-tree.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/package-frame.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/package-summary.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/package-tree.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/package-frame.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/package-summary.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/package-tree.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/geo/package-frame.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/geo/package-summary.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/geo/package-tree.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/sortedset/package-frame.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/sortedset/package-summary.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/sortedset/package-tree.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/package-frame.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/package-summary.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/package-tree.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/constant-values.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/serialized-form.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/RedisInputStream.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/JedisClusterHashTagUtil.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/Pool.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/MurmurHash.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/Sharded.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/RedisOutputStream.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/JedisURIHelper.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/JedisByteHashMap.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/JedisClusterCRC16.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/KeyMergeUtil.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/ByteArrayComparator.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/Slowlog.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/SafeEncoder.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/IOUtils.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/Hashing.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/class-use/ShardInfo.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/PipelineBase.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/AdvancedJedisCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryJedisCluster.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisClusterInfoCache.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Client.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BasicCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisSentinelPool.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisSentinelPool.MasterListener.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryJedis.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryJedis.SetFromList.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Response.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisClusterScriptingCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryClient.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryClient.LIST_POSITION.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ClusterCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Pipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/TransactionBlock.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BasicRedisPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ScriptingCommandsPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Queable.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/MultiKeyCommandsPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Jedis.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/MultiKeyBinaryCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Transaction.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryJedisPubSub.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisCluster.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisCluster.Reset.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ShardedJedisPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisPool.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/GeoCoordinate.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/MultiKeyCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryJedisCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ShardedJedis.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/MultiKeyJedisClusterCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/GeoUnit.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryJedisClusterCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryShardedJedis.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Protocol.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Protocol.Command.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Protocol.Keyword.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisClusterCommand.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ScanParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/GeoRadiusResponse.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/RedisPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/PipelineBlock.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Tuple.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryScriptingCommandsPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BitOP.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisSlotBasedConnectionHandler.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ScriptingCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/DebugParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/SortingParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisClusterConnectionHandler.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/MultiKeyPipelineBase.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BuilderFactory.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisPoolConfig.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/HostAndPort.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/SentinelCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Builder.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisPubSub.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/MultiKeyBinaryRedisPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisMonitor.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Commands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/AdvancedBinaryJedisCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/Connection.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisShardInfo.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ZParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ZParams.Aggregate.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryScriptingCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ShardedJedisPool.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BinaryRedisPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/BitPosParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ClusterPipeline.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/ScanResult.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/MultiKeyBinaryJedisClusterCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/class-use/JedisClusterBinaryScriptingCommands.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisConnectionException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisAskDataException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisExhaustedPoolException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisNoReachableClusterNodeException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisClusterMaxRedirectionsException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisClusterCrossSlotException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisClusterException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisDataException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisMovedDataException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/InvalidURIException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisNoScriptException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisRedirectionException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisBusyException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/class-use/JedisException.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/sortedset/class-use/ZIncrByParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/sortedset/class-use/ZAddParams.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/class-use/Params.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/geo/class-use/GeoRadiusParam.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/package-use.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/exceptions/package-use.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/package-use.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/geo/package-use.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/jedis/params/sortedset/package-use.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/redis/clients/util/package-use.html...
+Building index for all the packages and classes...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/overview-tree.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/index-all.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/deprecated-list.html...
+Building index for all classes...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/allclasses-frame.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/allclasses-noframe.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/index.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/overview-summary.html...
+Generating /root/workspace/xetorthio/jedis/307022563/target/apidocs/help-doc.html...
+44 warnings
+[WARNING] Javadoc Warnings
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:726: warning - Tag @see: can't find msetnx(byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:750: warning - Tag @see: can't find mset(byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:1163: warning - Tag @see: can't find rpush(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:1182: warning - Tag @see: can't find rpush(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2125: warning - Tag @see: can't find brpop(int, byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2239: warning - Tag @see: can't find blpop(int, byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2710: warning - Tag @see: can't find zunionstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2710: warning - Tag @see: can't find zunionstore(byte[], ZParams, byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2710: warning - Tag @see: can't find zinterstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2710: warning - Tag @see: can't find zinterstore(byte[], ZParams, byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2747: warning - Tag @see: can't find zunionstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2747: warning - Tag @see: can't find zunionstore(byte[], ZParams, byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2747: warning - Tag @see: can't find zinterstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2747: warning - Tag @see: can't find zinterstore(byte[], ZParams, byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2783: warning - Tag @see: can't find zunionstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2783: warning - Tag @see: can't find zunionstore(byte[], ZParams, byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2783: warning - Tag @see: can't find zinterstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2783: warning - Tag @see: can't find zinterstore(byte[], ZParams, byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2820: warning - Tag @see: can't find zunionstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2820: warning - Tag @see: can't find zunionstore(byte[], ZParams, byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2820: warning - Tag @see: can't find zinterstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2820: warning - Tag @see: can't find zinterstore(byte[], ZParams, byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:3098: warning - @return tag has no arguments.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:3232: warning - @return tag has no arguments.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:3252: warning - @return tag has no arguments.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:726: warning - Tag @link: can't find msetnx(byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:750: warning - Tag @link: can't find mset(byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:1648: warning - Tag @link: can't find sdiff(byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:1571: warning - Tag @link: can't find sinter(byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:1434: warning - Tag @link: can't find sinter(byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:1606: warning - Tag @link: can't find sunion(byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2783: warning - Tag @link: can't find zinterstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2783: warning - Tag @link: can't find zunionstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2820: warning - Tag @link: can't find zinterstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2820: warning - Tag @link: can't find zunionstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2710: warning - Tag @link: can't find zinterstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2710: warning - Tag @link: can't find zunionstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2747: warning - Tag @link: can't find zinterstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/BinaryJedis.java:2747: warning - Tag @link: can't find zunionstore(byte[], byte[]...) in redis.clients.jedis.BinaryJedis
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/Jedis.java:2709: warning - @return tag has no arguments.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/Jedis.java:2729: warning - @return tag has no arguments.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/Jedis.java:3047: warning - @return tag has no arguments.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/Jedis.java:3083: warning - @return tag has no arguments.
+[WARNING] /root/workspace/xetorthio/jedis/307022563/src/main/java/redis/clients/jedis/Jedis.java:3125: warning - @return tag has no arguments.
+[INFO] Building jar: /root/workspace/xetorthio/jedis/307022563/target/jedis-2.10.0-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ jedis ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom (2 KB at 54.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.7/plexus-components-1.1.7.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.7/plexus-components-1.1.7.pom (5 KB at 269.9 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar (12 KB at 643.3 KB/sec)
+[INFO] Installing /root/workspace/xetorthio/jedis/307022563/target/jedis-2.10.0-SNAPSHOT.jar to /root/./workspace/xetorthio/jedis/307022563/.m2/redis/clients/jedis/2.10.0-SNAPSHOT/jedis-2.10.0-SNAPSHOT.jar
+[INFO] Installing /root/workspace/xetorthio/jedis/307022563/pom.xml to /root/./workspace/xetorthio/jedis/307022563/.m2/redis/clients/jedis/2.10.0-SNAPSHOT/jedis-2.10.0-SNAPSHOT.pom
+[INFO] Installing /root/workspace/xetorthio/jedis/307022563/target/jedis-2.10.0-SNAPSHOT-sources.jar to /root/./workspace/xetorthio/jedis/307022563/.m2/redis/clients/jedis/2.10.0-SNAPSHOT/jedis-2.10.0-SNAPSHOT-sources.jar
+[INFO] Installing /root/workspace/xetorthio/jedis/307022563/target/jedis-2.10.0-SNAPSHOT-javadoc.jar to /root/./workspace/xetorthio/jedis/307022563/.m2/redis/clients/jedis/2.10.0-SNAPSHOT/jedis-2.10.0-SNAPSHOT-javadoc.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 33.823 s
+[INFO] Finished at: 2017-11-25T10:28:34+01:00
+[INFO] Final Memory: 33M/852M
+[INFO] ------------------------------------------------------------------------
