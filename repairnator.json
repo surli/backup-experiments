@@ -1,0 +1,65 @@
+{
+  "totalNumberSkippingTests": 1,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 3,
+  "repo": "spring-cloud/spring-cloud-stream",
+  "bugCommit": "https://github.com/spring-cloud/spring-cloud-stream/compare/acc4ecfccb9f...5b6a5b38f4e1",
+  "failingModule": "/root/workspace/spring-cloud/spring-cloud-stream/308224039/spring-cloud-stream",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.IllegalStateException",
+    "org.springframework.cloud.stream.binder.BinderException"
+  ],
+  "totalNumberRunningTests": 81,
+  "failing-test-cases": [
+    {
+      "className": "org.springframework.cloud.stream.binder.ExtendedPropertiesBinderAwareChannelResolverTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.springframework.cloud.stream.binder.ExtendedPropertiesBinderAwareChannelResolverTests#resolveChannel"
+      ],
+      "failures": [
+        {
+          "failureName": "org.springframework.cloud.stream.binder.BinderException",
+          "failureDetail": "Exception thrown while starting consumer: ",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.springframework.cloud.stream.binder.BinderAwareChannelResolverTests",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.springframework.cloud.stream.binder.BinderAwareChannelResolverTests#resolveChannel"
+      ],
+      "failures": [
+        {
+          "failureName": "org.springframework.cloud.stream.binder.BinderException",
+          "failureDetail": "Exception thrown while starting consumer: ",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.springframework.cloud.stream.interceptor.BoundChannelsInterceptedTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.springframework.cloud.stream.interceptor.BoundChannelsInterceptedTest#testBoundChannelsIntercepted"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalStateException",
+          "failureDetail": "Failed to load ApplicationContext",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}

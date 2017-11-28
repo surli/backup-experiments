@@ -1,0 +1,345 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] spring-cloud-stream-parent
+[INFO] spring-cloud-stream
+[INFO] spring-cloud-stream-binder-test
+[INFO] spring-cloud-stream-rxjava
+[INFO] spring-cloud-stream-test-support
+[INFO] spring-cloud-stream-test-support-internal
+[INFO] spring-cloud-stream-integration-tests
+[INFO] spring-cloud-stream-core-docs
+[INFO] spring-cloud-stream-reactive
+[INFO] spring-cloud-stream-schema-server
+[INFO] spring-cloud-stream-schema
+[INFO] spring-cloud-stream-build-tools
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building spring-cloud-stream-parent 2.0.0.BUILD-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ spring-cloud-stream-parent ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (checkstyle-validation) @ spring-cloud-stream-parent ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building spring-cloud-stream 2.0.0.BUILD-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ spring-cloud-stream ---
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (checkstyle-validation) @ spring-cloud-stream ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spring-cloud-stream ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ spring-cloud-stream ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spring-cloud-stream ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ spring-cloud-stream ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ spring-cloud-stream ---
+[INFO] Surefire report directory: /root/workspace/spring-cloud/spring-cloud-stream/308224039/spring-cloud-stream/target/surefire-reports
+[INFO] Downloading: https://repo.spring.io/libs-milestone-local/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloading: https://repo.spring.io/libs-release-local/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (3 KB at 28.7 KB/sec)
+[INFO] Downloading: https://repo.spring.io/libs-milestone-local/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloading: https://repo.spring.io/libs-release-local/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (3 KB at 88.2 KB/sec)
+[INFO] Downloading: https://repo.spring.io/libs-milestone-local/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloading: https://repo.spring.io/libs-release-local/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 KB at 1163.1 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.springframework.cloud.stream.converter.KryoMessageConverterTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.543 sec
+Running org.springframework.cloud.stream.partitioning.PartitionedConsumerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.853 sec
+Running org.springframework.cloud.stream.partitioning.PartitionedProducerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.701 sec
+Running org.springframework.cloud.stream.interceptor.BoundChannelsInterceptedTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.781 sec <<< FAILURE!
+testBoundChannelsIntercepted(org.springframework.cloud.stream.interceptor.BoundChannelsInterceptedTest)  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:107)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:242)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'boundChannelsInterceptedTest.Foo': Initialization of bean failed; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:591)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:502)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:758)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:751)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:387)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:138)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 31 more
+Caused by: java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Objects.java:203)
+	at java.util.Arrays$ArrayList.<init>(Arrays.java:3813)
+	at java.util.Arrays.asList(Arrays.java:3800)
+	at org.springframework.integration.handler.AbstractMessageProducingHandler.updateNotPropagatedHeaders(AbstractMessageProducingHandler.java:138)
+	at org.springframework.integration.handler.AbstractMessageProducingHandler.addNotPropagatedHeaders(AbstractMessageProducingHandler.java:185)
+	at org.springframework.cloud.stream.config.BindingServiceConfiguration$PostProcessorConfiguration$3.postProcessBeforeInitialization(BindingServiceConfiguration.java:272)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:423)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1702)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:414)
+	at org.springframework.integration.config.annotation.AbstractMethodAnnotationPostProcessor.postProcess(AbstractMethodAnnotationPostProcessor.java:180)
+	at org.springframework.integration.config.annotation.MessagingAnnotationPostProcessor.processAnnotationTypeOnMethod(MessagingAnnotationPostProcessor.java:185)
+	at org.springframework.integration.config.annotation.MessagingAnnotationPostProcessor.lambda$postProcessAfterInitialization$0(MessagingAnnotationPostProcessor.java:158)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:562)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:569)
+	at org.springframework.integration.config.annotation.MessagingAnnotationPostProcessor.postProcessAfterInitialization(MessagingAnnotationPostProcessor.java:143)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:438)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1714)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:583)
+	... 45 more
+
+Running org.springframework.cloud.stream.config.BinderConfigurationParsingTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec
+Running org.springframework.cloud.stream.config.BinderPropertiesTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.153 sec
+Running org.springframework.cloud.stream.config.SpelExpressionConverterConfigurationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.548 sec
+Running org.springframework.cloud.stream.aggregation.AggregationTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1,208.827 sec
+Running org.springframework.cloud.stream.binder.SinkBindingWithDefaultsTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.276 sec
+Running org.springframework.cloud.stream.binder.InputOutputBindingOrderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.232 sec
+Running org.springframework.cloud.stream.binder.SourceBindingWithBindingTargetsTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.008 sec
+Running org.springframework.cloud.stream.binder.SourceBindingWithGlobalPropertiesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.94 sec
+Running org.springframework.cloud.stream.binder.LifecycleBinderTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.41 sec
+Running org.springframework.cloud.stream.binder.ProcessorBindingsWithDefaultsTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.819 sec
+Running org.springframework.cloud.stream.binder.ErrorBindingTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.288 sec
+Running org.springframework.cloud.stream.binder.ExtendedPropertiesBinderAwareChannelResolverTests
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.499 sec <<< FAILURE!
+resolveChannel(org.springframework.cloud.stream.binder.ExtendedPropertiesBinderAwareChannelResolverTests)  Time elapsed: 0.577 sec  <<< ERROR!
+org.springframework.cloud.stream.binder.BinderException: Exception thrown while starting consumer: 
+	at org.springframework.cloud.stream.binder.AbstractMessageChannelBinder.doBindConsumer(AbstractMessageChannelBinder.java:280)
+	at org.springframework.cloud.stream.binder.AbstractMessageChannelBinder.doBindConsumer(AbstractMessageChannelBinder.java:63)
+	at org.springframework.cloud.stream.binder.AbstractBinder.bindConsumer(AbstractBinder.java:126)
+	at org.springframework.cloud.stream.binder.ExtendedPropertiesBinderAwareChannelResolverTests.resolveChannel(ExtendedPropertiesBinderAwareChannelResolverTests.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Objects.java:203)
+	at java.util.Arrays$ArrayList.<init>(Arrays.java:3813)
+	at java.util.Arrays.asList(Arrays.java:3800)
+	at org.springframework.integration.handler.AbstractMessageProducingHandler.updateNotPropagatedHeaders(AbstractMessageProducingHandler.java:138)
+	at org.springframework.integration.handler.AbstractMessageProducingHandler.addNotPropagatedHeaders(AbstractMessageProducingHandler.java:185)
+	at org.springframework.cloud.stream.config.BindingServiceConfiguration$PostProcessorConfiguration$3.postProcessBeforeInitialization(BindingServiceConfiguration.java:272)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:423)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1702)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:414)
+	at org.springframework.cloud.stream.binder.AbstractMessageChannelBinder.registerErrorInfrastructure(AbstractMessageChannelBinder.java:437)
+	at org.springframework.cloud.stream.binder.integration.SpringIntegrationChannelBinder.createConsumerEndpoint(SpringIntegrationChannelBinder.java:127)
+	at org.springframework.cloud.stream.binder.AbstractMessageChannelBinder.doBindConsumer(AbstractMessageChannelBinder.java:240)
+	... 33 more
+
+Running org.springframework.cloud.stream.binder.SourceBindingWithGlobalPropertiesOnlyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.232 sec
+Running org.springframework.cloud.stream.binder.BinderAwareChannelResolverTests
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.07 sec <<< FAILURE!
+resolveChannel(org.springframework.cloud.stream.binder.BinderAwareChannelResolverTests)  Time elapsed: 0.377 sec  <<< ERROR!
+org.springframework.cloud.stream.binder.BinderException: Exception thrown while starting consumer: 
+	at org.springframework.cloud.stream.binder.AbstractMessageChannelBinder.doBindConsumer(AbstractMessageChannelBinder.java:280)
+	at org.springframework.cloud.stream.binder.AbstractMessageChannelBinder.doBindConsumer(AbstractMessageChannelBinder.java:63)
+	at org.springframework.cloud.stream.binder.AbstractBinder.bindConsumer(AbstractBinder.java:126)
+	at org.springframework.cloud.stream.binder.BinderAwareChannelResolverTests.resolveChannel(BinderAwareChannelResolverTests.java:115)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Objects.java:203)
+	at java.util.Arrays$ArrayList.<init>(Arrays.java:3813)
+	at java.util.Arrays.asList(Arrays.java:3800)
+	at org.springframework.integration.handler.AbstractMessageProducingHandler.updateNotPropagatedHeaders(AbstractMessageProducingHandler.java:138)
+	at org.springframework.integration.handler.AbstractMessageProducingHandler.addNotPropagatedHeaders(AbstractMessageProducingHandler.java:185)
+	at org.springframework.cloud.stream.config.BindingServiceConfiguration$PostProcessorConfiguration$3.postProcessBeforeInitialization(BindingServiceConfiguration.java:272)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:423)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1702)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:414)
+	at org.springframework.cloud.stream.binder.AbstractMessageChannelBinder.registerErrorInfrastructure(AbstractMessageChannelBinder.java:437)
+	at org.springframework.cloud.stream.binder.integration.SpringIntegrationChannelBinder.createConsumerEndpoint(SpringIntegrationChannelBinder.java:127)
+	at org.springframework.cloud.stream.binder.AbstractMessageChannelBinder.doBindConsumer(AbstractMessageChannelBinder.java:240)
+	... 33 more
+
+Running org.springframework.cloud.stream.binder.SinkBindingWithDefaultTargetsTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.579 sec
+Running org.springframework.cloud.stream.binder.BinderFactoryConfigurationTests
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.83 sec
+Running org.springframework.cloud.stream.binder.MessageConverterTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running org.springframework.cloud.stream.binder.ProcessorBindingWithBindingTargetsTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.664 sec
+Running org.springframework.cloud.stream.binder.ArbitraryInterfaceWithBindingTargetsTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.714 sec
+Running org.springframework.cloud.stream.binder.ArbitraryInterfaceWithDefaultsTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.581 sec
+Running org.springframework.cloud.stream.binder.SourceBindingWithDefaultsTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.538 sec
+Running org.springframework.cloud.stream.binder.HealthIndicatorsConfigurationTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.469 sec
+Running org.springframework.cloud.stream.binding.BindingServiceTests
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.206 sec
+Running org.springframework.cloud.stream.binding.MessageConverterConfigurerTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.045 sec
+Running org.springframework.cloud.stream.binding.InvalidBindingConfigurationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.308 sec
+Running org.springframework.cloud.stream.binding.CustomPartitionedProducerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.896 sec
+
+Results :
+
+Tests in error: 
+  testBoundChannelsIntercepted(org.springframework.cloud.stream.interceptor.BoundChannelsInterceptedTest): Failed to load ApplicationContext
+  resolveChannel(org.springframework.cloud.stream.binder.ExtendedPropertiesBinderAwareChannelResolverTests): Exception thrown while starting consumer: 
+  resolveChannel(org.springframework.cloud.stream.binder.BinderAwareChannelResolverTests): Exception thrown while starting consumer: 
+
+Tests run: 81, Failures: 0, Errors: 3, Skipped: 1
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] spring-cloud-stream-parent ......................... SUCCESS [  1.205 s]
+[INFO] spring-cloud-stream ................................ FAILURE [21:25 min]
+[INFO] spring-cloud-stream-binder-test .................... SKIPPED
+[INFO] spring-cloud-stream-rxjava ......................... SKIPPED
+[INFO] spring-cloud-stream-test-support ................... SKIPPED
+[INFO] spring-cloud-stream-test-support-internal .......... SKIPPED
+[INFO] spring-cloud-stream-integration-tests .............. SKIPPED
+[INFO] spring-cloud-stream-core-docs ...................... SKIPPED
+[INFO] spring-cloud-stream-reactive ....................... SKIPPED
+[INFO] spring-cloud-stream-schema-server .................. SKIPPED
+[INFO] spring-cloud-stream-schema ......................... SKIPPED
+[INFO] spring-cloud-stream-build-tools .................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 21:28 min
+[INFO] Finished at: 2017-11-28T04:34:19+01:00
+[INFO] Final Memory: 42M/558M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project spring-cloud-stream: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/spring-cloud/spring-cloud-stream/308224039/spring-cloud-stream/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :spring-cloud-stream
