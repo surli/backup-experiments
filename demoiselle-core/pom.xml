@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>demoiselle-core</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Demoiselle JEE Core</name>
+	<description>
+        Contém funcionalidades comuns a todos os módulos framework.
+    </description>
+	<url>http://demoiselle.io</url>
+
+	<properties>
+		<maven.build.timestamp.format>dd/MM/yyyy HH:mm</maven.build.timestamp.format>
+		<buildNumber>${maven.build.timestamp}</buildNumber>
+	</properties>
+
+	<parent>
+		<groupId>org.demoiselle.jee</groupId>
+		<artifactId>demoiselle-parent</artifactId>
+		<version>3.0.2-SNAPSHOT</version>
+		<relativePath>../demoiselle-parent</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+		</dependency>
+
+		<!-- Configuration/Messages -->
+		<dependency>
+			<groupId>org.apache.deltaspike.core</groupId>
+			<artifactId>deltaspike-core-api</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.deltaspike.core</groupId>
+			<artifactId>deltaspike-core-impl</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+</project>
