@@ -1,0 +1,48 @@
+{
+  "totalNumberSkippingTests": 20,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "GeoWebCache/geowebcache",
+  "failingModule": "/root/workspace/GeoWebCache/geowebcache/308748140/geowebcache/wmts",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 2,
+  "error-types": [
+    "java.lang.AssertionError",
+    "org.junit.ComparisonFailure"
+  ],
+  "totalNumberRunningTests": 444,
+  "failing-test-cases": [
+    {
+      "className": "org.geowebcache.service.wmts.WMTSRestTest",
+      "failingMethods": [
+        "org.geowebcache.service.wmts.WMTSRestTest#testGetCap"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "nodeCount for XPath //wmts:ServiceMetadataURL[@xlink:href\u003d\u0027http://localhost/service/wmts?REQUEST\u003dgetcapabilities\u0026VERSION\u003d1.0.0\u0027] expected:\u003c1\u003e but was:\u003c0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.geowebcache.service.wmts.WMTSServiceTest",
+      "failingMethods": [
+        "org.geowebcache.service.wmts.WMTSServiceTest#testGetCap"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "org.junit.ComparisonFailure",
+          "failureDetail": "expected:\u003c[1]\u003e but was:\u003c[0]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
