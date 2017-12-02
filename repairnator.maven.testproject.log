@@ -1,0 +1,330 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Pushy parent
+[INFO] Pushy
+[INFO] Pushy benchmarks
+[INFO] Dropwizard Metrics listener for Pushy
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pushy parent 0.12-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pushy-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Pushy 0.12-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ pushy ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:get (get-alpn-boot) @ pushy ---
+[INFO] Resolving org.mortbay.jetty.alpn:jetty-alpn-agent:jar:2.0.5 with transitive dependencies
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ pushy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ pushy ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 54 source files to /root/workspace/relayrides/pushy/310411210/pushy/target/classes
+[WARNING] /root/workspace/relayrides/pushy/310411210/pushy/src/main/java/com/turo/pushy/apns/ApnsChannelPool.java: Some input files use unchecked or unsafe operations.
+[WARNING] /root/workspace/relayrides/pushy/310411210/pushy/src/main/java/com/turo/pushy/apns/ApnsChannelPool.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ pushy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ pushy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ pushy ---
+[INFO] Surefire report directory: /root/workspace/relayrides/pushy/310411210/pushy/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.16/surefire-junit4-2.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.16/surefire-junit4-2.16.pom (3 KB at 5.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.16/surefire-providers-2.16.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.16/surefire-providers-2.16.pom (3 KB at 89.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.16/surefire-junit4-2.16.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.16/surefire-junit4-2.16.jar (63 KB at 966.5 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+[jetty-alpn-agent] Using: alpn-boot-8.1.10.v20161026.jar
+Running com.turo.pushy.apns.ApnsClientTest
+	testRejectedNotificationMetrics(true) [0]
+	testRejectedNotificationMetrics(false) [1]
+	testSendNotificationAfterClose(true) [0]
+	testSendNotificationAfterClose(false) [1]
+	testAcceptedNotificationAndAddedConnectionMetrics(true) [0]
+	testAcceptedNotificationAndAddedConnectionMetrics(false) [1]
+	testSendNotificationWithExpiredDeviceToken(true) [0]
+	testSendNotificationWithExpiredDeviceToken(false) [1]
+	testSendManyNotifications(true) [0]
+	testSendManyNotifications(false) [1]
+	testSendNotificationWithExpiredAuthenticationToken
+	testSendNotification(true) [0]
+	testSendNotification(false) [1]
+	testRepeatedClose(true) [0]
+	testRepeatedClose(false) [1]
+	testRepeatedlySendSameNotification(true) [0]
+	testRepeatedlySendSameNotification(false) [1]
+	testApnsClientWithManagedEventLoopGroup
+	testSendNotificationToUntrustedServer(true) [0]
+	testSendNotificationToUntrustedServer(false) [1]
+	testSendManyNotificationsWithListeners(true) [0]
+	testSendManyNotificationsWithListeners(false) [1]
+	testFailedConnectionAndWriteFailureMetrics(true) [0]
+	testFailedConnectionAndWriteFailureMetrics(false) [1]
+	testSendNotificationWithInternalServerError(true) [0]
+	testSendNotificationWithInternalServerError(false) [1]
+Tests run: 26, Failures: 6, Errors: 1, Skipped: 0, Time elapsed: 40.273 sec <<< FAILURE! - in com.turo.pushy.apns.ApnsClientTest
+testApnsClientWithManagedEventLoopGroup(com.turo.pushy.apns.ApnsClientTest)  Time elapsed: 0.122 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at com.turo.pushy.apns.ApnsClient.<init>(ApnsClient.java:183)
+	at com.turo.pushy.apns.ApnsClientBuilder.build(ApnsClientBuilder.java:538)
+	at com.turo.pushy.apns.ApnsClientTest.testApnsClientWithManagedEventLoopGroup(ApnsClientTest.java:246)
+
+testSendNotificationToUntrustedServer(true) [0](com.turo.pushy.apns.ApnsClientTest)  Time elapsed: 8.011 sec  <<< FAILURE!
+java.lang.AssertionError: Clients should refuse to connect to untrusted servers due to an SSL handshake failure.
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at com.turo.pushy.apns.ApnsClientTest.testSendNotificationToUntrustedServer(ApnsClientTest.java:284)
+
+testSendNotificationToUntrustedServer(false) [1](com.turo.pushy.apns.ApnsClientTest)  Time elapsed: 8.032 sec  <<< FAILURE!
+java.lang.AssertionError: Clients should refuse to connect to untrusted servers due to an SSL handshake failure.
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at com.turo.pushy.apns.ApnsClientTest.testSendNotificationToUntrustedServer(ApnsClientTest.java:284)
+
+testFailedConnectionAndWriteFailureMetrics(true) [0](com.turo.pushy.apns.ApnsClientTest)  Time elapsed: 8.01 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<3>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at com.turo.pushy.apns.ApnsClientTest.testFailedConnectionAndWriteFailureMetrics(ApnsClientTest.java:701)
+
+testFailedConnectionAndWriteFailureMetrics(false) [1](com.turo.pushy.apns.ApnsClientTest)  Time elapsed: 8.017 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<3>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at com.turo.pushy.apns.ApnsClientTest.testFailedConnectionAndWriteFailureMetrics(ApnsClientTest.java:701)
+
+testSendNotificationWithInternalServerError(true) [0](com.turo.pushy.apns.ApnsClientTest)  Time elapsed: 0.035 sec  <<< FAILURE!
+java.lang.AssertionError: Connections should be replaced after receiving an InternalServerError. expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at com.turo.pushy.apns.ApnsClientTest.testSendNotificationWithInternalServerError(ApnsClientTest.java:604)
+
+testSendNotificationWithInternalServerError(false) [1](com.turo.pushy.apns.ApnsClientTest)  Time elapsed: 0.054 sec  <<< FAILURE!
+java.lang.AssertionError: Connections should be replaced after receiving an InternalServerError. expected:<1> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at com.turo.pushy.apns.ApnsClientTest.testSendNotificationWithInternalServerError(ApnsClientTest.java:604)
+
+Running com.turo.pushy.apns.DateAsTimeSinceEpochTypeAdapterTest
+	testSerialize
+	testDeserialize
+	testDateAsTimeSinceEpochTypeAdapterNullUnits
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.turo.pushy.apns.DateAsTimeSinceEpochTypeAdapterTest
+Running com.turo.pushy.apns.ApnsChannelPoolTest
+	testAcquireClosedChannelFromIdlePool
+	testPendingAcquisitionsDuringPoolClosure
+	testAcquireFromClosedPool
+	testAcquireConstructionFailure
+	testAcquireRelease
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.682 sec - in com.turo.pushy.apns.ApnsChannelPoolTest
+Running com.turo.pushy.apns.server.TlsAuthenticationValidatingPushNotificationHandlerTest
+	testHandleNotificationWithEmptyPayload
+	testHandleNotificationWithCollapseId
+	testHandleNotificationWithExpirationDate
+	testHandleNotificationWithNullUUID
+	testHandleNotificationWithBadDeviceToken
+	testHandleNotificationWithSpecifiedPriority
+	testHandleNotificationWithOversizedCollapseId
+	testHandleNotificationWithExpiredDeviceToken
+	testHandleNotificationWithDeviceTokenForWrongTopic
+	testHandleNotificationWithMissingDeviceToken
+	testHandleNotificationWithBadApnsId
+	testHandleNotificationWithBadPriority
+	testHandleNotificationWithMissingPayload
+	testHandleNotificationWithSpecifiedUUID
+	testHandleNotificationWithBadPath
+	testHandleNotificationWithOversizedPayload
+	testHandleNotificationWithMissingTopic
+	testHandleNotificationWithValidNotification
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in com.turo.pushy.apns.server.TlsAuthenticationValidatingPushNotificationHandlerTest
+Running com.turo.pushy.apns.server.MockApnsServerTest
+	testShutdownWithProvidedEventLoopGroup
+	testStartAndShutdown
+	testRestartWithProvidedEventLoopGroup
+	testShutdownBeforeStart
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.806 sec - in com.turo.pushy.apns.server.MockApnsServerTest
+Running com.turo.pushy.apns.server.TokenAuthenticationValidatingPushNotificationHandlerTest
+	testHandleNotificationWithWithUnrecognizedKeyId
+	testHandleNotificationWithMissingAuthenticationToken
+	testHandleNotificationWithWithTokenForWrongTopic
+	testHandleNotificationWithWithExpiredAuthenticationToken
+	testHandleNotificationWithWithBadSignature
+	testHandleNotificationWithMalformedAuthenticationToken
+	testHandleNotificationWithEmptyAuthenticationToken
+	testHandleNotificationWithBadAuthorizationHeader
+	testHandleNotificationWithEmptyPayload
+	testHandleNotificationWithCollapseId
+	testHandleNotificationWithExpirationDate
+	testHandleNotificationWithNullUUID
+	testHandleNotificationWithBadDeviceToken
+	testHandleNotificationWithSpecifiedPriority
+	testHandleNotificationWithOversizedCollapseId
+	testHandleNotificationWithExpiredDeviceToken
+	testHandleNotificationWithDeviceTokenForWrongTopic
+	testHandleNotificationWithMissingDeviceToken
+	testHandleNotificationWithBadApnsId
+	testHandleNotificationWithBadPriority
+	testHandleNotificationWithMissingPayload
+	testHandleNotificationWithSpecifiedUUID
+	testHandleNotificationWithBadPath
+	testHandleNotificationWithOversizedPayload
+	testHandleNotificationWithMissingTopic
+	testHandleNotificationWithValidNotification
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 sec - in com.turo.pushy.apns.server.TokenAuthenticationValidatingPushNotificationHandlerTest
+Running com.turo.pushy.apns.server.MockApnsServerBuilderTest
+	testSetMaxConcurrentStreams
+	testSetNegativeMaxConcurrentStreams
+	testSetServerCredentialsInputStreamInputStreamString
+	testBuildWithoutServerCredentials
+	testSetServerCredentialsFileFileString
+	testBuildWithoutHandlerFactory
+	testSetServerCredentialsX509CertificateArrayPrivateKeyString
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 sec - in com.turo.pushy.apns.server.MockApnsServerBuilderTest
+Running com.turo.pushy.apns.ApnsClientBuilderTest
+	testBuildClientWithCertificateAndUnprotectedKey
+	testBuildClientWithPasswordProtectedP12File
+	testBuildClientWithCertificateAndPasswordProtectedKey
+	testBuildClientWithPasswordProtectedP12InputStream
+	testBuildWithoutApnsServerAddress
+	testBuildClientWithNullPassword
+	testBuildWithSigningKey
+	testBuildWithClientCredentialsAndSigningCertificate
+	testBuildWithoutClientCredentials
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.337 sec - in com.turo.pushy.apns.ApnsClientBuilderTest
+Running com.turo.pushy.apns.AugmentingReflectiveChannelFactoryTest
+	testAugmentingReflectiveChannelFactoryNullAttributeKey
+	testNewChannel
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.turo.pushy.apns.AugmentingReflectiveChannelFactoryTest
+Running com.turo.pushy.apns.auth.ApnsVerificationKeyTest
+	testGetKeyId
+	testGetParams
+	testGetKey
+	testGetTeamId
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.turo.pushy.apns.auth.ApnsVerificationKeyTest
+Running com.turo.pushy.apns.auth.AuthenticationTokenTest
+	testAuthenticationTokenFromSigningKey
+	testToString
+	testVerifySignature
+	testAuthenticationTokenFromString
+	testGetIssuedAt
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in com.turo.pushy.apns.auth.AuthenticationTokenTest
+Running com.turo.pushy.apns.auth.ApnsSigningKeyTest
+	testGetKeyId
+	testGetParams
+	testGetKey
+	testGetTeamId
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.turo.pushy.apns.auth.ApnsSigningKeyTest
+Running com.turo.pushy.apns.P12UtilTest
+	testGetPrivateKeyEntryFromP12InputStream
+	testGetPrivateKeyEntryFromP12InputStreamWithMultipleKeys
+	testGetPrivateKeyEntryFromP12InputStreamWithNoKeys
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec - in com.turo.pushy.apns.P12UtilTest
+Running com.turo.pushy.apns.util.SimpleApnsPushNotificationTest
+	testSimpleApnsPushNotificationTokenTopicPayload
+	testSimpleApnsPushNotificationTokenTopicPayloadExpirationPriority
+	testSimpleApnsPushNotificationNullToken
+	testSimpleApnsPushNotificationNullTopic
+	testSimpleApnsPushNotificationTokenTopicPayloadExpirationPriorityCollapseId
+	testSimpleApnsPushNotificationTokenTopicPayloadExpiration
+	testSimpleApnsPushNotificationNullPayload
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.turo.pushy.apns.util.SimpleApnsPushNotificationTest
+Running com.turo.pushy.apns.util.ApnsPayloadBuilderTest
+	testGetSizeOfJsonEscapedUtf8Character
+	testBuildWithMaximumLength
+	testBuildWithMaximumLengthAndAlreadyFittingMessageBody
+	testSetLocalizedAlertTitle
+	testBuildMdmPayload
+	testSetCategoryName
+	testSetThreadId
+	testSetUrlArgumentsArray
+	testSetAlertTitleAndBody
+	testSetActionButtonLabel
+	testBuildWithMaximumLengthAndUnshortenablePayload
+	testSetShowActionButton
+	testSetBadgeNumber
+	testSetMutableContent
+	testSetAlertSubtitle
+	testSetLocalizedAlertBody
+	testSetAlertTitle
+	testSetLaunchImage
+	testAddCustomProperty
+	testSetContentAvailable
+	testSetAlertBody
+	testSetSoundFileName
+	testGetLengthOfJsonEscapedUtf8StringFittingSize
+	testSetLocalizedAlertSubitle
+	testSetUrlArgumentsList
+	testSetLocalizedActionButtonKey
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.787 sec - in com.turo.pushy.apns.util.ApnsPayloadBuilderTest
+Running com.turo.pushy.apns.util.TokenUtilTest
+	testSanitizeTokenString
+	testSanitizeNullTokenString
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.turo.pushy.apns.util.TokenUtilTest
+
+Results :
+
+Failed tests: 
+  ApnsClientTest.testSendNotificationToUntrustedServer:284 Clients should refuse to connect to untrusted servers due to an SSL handshake failure.
+  ApnsClientTest.testSendNotificationToUntrustedServer:284 Clients should refuse to connect to untrusted servers due to an SSL handshake failure.
+  ApnsClientTest.testFailedConnectionAndWriteFailureMetrics:701 expected:<1> but was:<3>
+  ApnsClientTest.testFailedConnectionAndWriteFailureMetrics:701 expected:<1> but was:<3>
+  ApnsClientTest.testSendNotificationWithInternalServerError:604 Connections should be replaced after receiving an InternalServerError. expected:<1> but was:<0>
+  ApnsClientTest.testSendNotificationWithInternalServerError:604 Connections should be replaced after receiving an InternalServerError. expected:<1> but was:<0>
+
+Tests in error: 
+  ApnsClientTest.testApnsClientWithManagedEventLoopGroup:246 » NullPointer
+
+Tests run: 151, Failures: 6, Errors: 1, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Pushy parent ....................................... SUCCESS [  0.556 s]
+[INFO] Pushy .............................................. FAILURE [ 57.113 s]
+[INFO] Pushy benchmarks ................................... SKIPPED
+[INFO] Dropwizard Metrics listener for Pushy .............. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 57.922 s
+[INFO] Finished at: 2017-12-02T09:08:36+01:00
+[INFO] Final Memory: 27M/478M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.16:test (default-test) on project pushy: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/relayrides/pushy/310411210/pushy/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :pushy

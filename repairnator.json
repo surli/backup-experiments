@@ -1,0 +1,68 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 1,
+  "repo": "relayrides/pushy",
+  "failingModule": "/root/workspace/relayrides/pushy/310411210/pushy",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 6,
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException:"
+  ],
+  "totalNumberRunningTests": 151,
+  "failing-test-cases": [
+    {
+      "className": "com.turo.pushy.apns.ApnsClientTest",
+      "failingMethods": [
+        "com.turo.pushy.apns.ApnsClientTest#testFailedConnectionAndWriteFailureMetrics(false) [1]",
+        "com.turo.pushy.apns.ApnsClientTest#testSendNotificationToUntrustedServer(false) [1]",
+        "com.turo.pushy.apns.ApnsClientTest#testSendNotificationWithInternalServerError(true) [0]",
+        "com.turo.pushy.apns.ApnsClientTest#testFailedConnectionAndWriteFailureMetrics(true) [0]",
+        "com.turo.pushy.apns.ApnsClientTest#testSendNotificationToUntrustedServer(true) [0]",
+        "com.turo.pushy.apns.ApnsClientTest#testSendNotificationWithInternalServerError(false) [1]"
+      ],
+      "erroringMethods": [
+        "com.turo.pushy.apns.ApnsClientTest#testApnsClientWithManagedEventLoopGroup"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException:",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Clients should refuse to connect to untrusted servers due to an SSL handshake failure.",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Clients should refuse to connect to untrusted servers due to an SSL handshake failure.",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c3\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c1\u003e but was:\u003c3\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Connections should be replaced after receiving an InternalServerError. expected:\u003c1\u003e but was:\u003c0\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Connections should be replaced after receiving an InternalServerError. expected:\u003c1\u003e but was:\u003c0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 6,
+      "nbErrors": 1
+    }
+  ]
+}
