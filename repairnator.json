@@ -1,0 +1,32 @@
+{
+  "totalNumberSkippingTests": 10,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "languagetool-org/languagetool",
+  "bugCommit": "https://github.com/languagetool-org/languagetool/compare/90d879081ae0...50d6c588a9e3",
+  "failingModule": "/root/workspace/languagetool-org/languagetool/310791131/languagetool-language-modules/en",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 291,
+  "failing-test-cases": [
+    {
+      "className": "org.languagetool.rules.en.EnglishPatternRuleTest",
+      "failingMethods": [
+        "org.languagetool.rules.en.EnglishPatternRuleTest#testRules"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "English rule DIFFERENCE_ABOUT_BETWEEN[26]:\n\"There is not big differenceaabout the week and the weekend to me.\"\nErrors expected: 1\nErrors found   : 0\nMessage: The usual preposition for \"difference\" is \"between\" not \"about\".  Revise: \u003csuggestion\u003edifference between\u003c/suggestion\u003e.\nAnalyzed token readings: [/SENT_START*] There[there/EX*,there/RB*,there/UH*,B-NP-singular|E-NP-singular]  [ /null*] is[be/VBZ,B-VP]  [ /null*] not[not/RB,O]  [ /null*] big[big/JJ,big/RB,B-ADJP]  [ /null*] differenceaabout[differenceaabout/null,B-PP]  [ /null*] the[the/DT,B-NP-singular]  [ /null*] week[week/NN,E-NP-singular]  [ /null*] and[and/CC,O]  [ /null*] the[the/DT,B-NP-singular]  [ /null*] weekend[weekend/NN,E-NP-singular]  [ /null*] to[to/IN,to/TO,B-PP]  [ /null*] me[I/PRP,B-NP-singular|E-NP-singular] .[./.*,./SENT_END*,O]\nMatches: []",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
