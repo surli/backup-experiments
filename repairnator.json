@@ -1,0 +1,48 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 2,
+  "repo": "arquillian/arquillian-extension-drone",
+  "failingModule": "/root/workspace/arquillian/arquillian-extension-drone/311286691/extension/arquillian-drone-saucelabs-extension",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "org.jboss.arquillian.container.spi.client.container.LifecycleException",
+    "java.lang.NoClassDefFoundError"
+  ],
+  "totalNumberRunningTests": 52,
+  "failing-test-cases": [
+    {
+      "className": "org.arquillian.drone.saucelabs.extension.webdriver.SauceLabsWebDriverTestCase",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.arquillian.drone.saucelabs.extension.webdriver.SauceLabsWebDriverTestCase#org.arquillian.drone.saucelabs.extension.webdriver.SauceLabsWebDriverTestCase"
+      ],
+      "failures": [
+        {
+          "failureName": "org.jboss.arquillian.container.spi.client.container.LifecycleException",
+          "failureDetail": "Could not start container",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.apache.maven.surefire.junit4.JUnit4Provider",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.maven.surefire.junit4.JUnit4Provider#org.arquillian.drone.saucelabs.extension.webdriver.LocalhostWebDriverTestCase"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "org/eclipse/jetty/util/thread/ReservedThreadExecutor",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}

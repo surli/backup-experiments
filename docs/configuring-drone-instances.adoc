@@ -1,0 +1,284 @@
+ifdef::env-github,env-browser[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+:outfilesuffix: .adoc
+endif::[]
+
+[[configuring-drone-instances]]
+== Configuring Drone Instances
+
+Drone instances are automatically configured from arquillian.xml
+descriptor file or System properties, which take precedence. You can
+eventually omit the configuration altogether, if you are happy with the
+default values. Obviously, configurations are compatible with
+<<extended-configuration-configuring-qualified-drone-instances, @Qualifier
+annotations>>, so you can create a special configuration for a method
+based life cycle browser if you will.
+
+Extension qualifier must match the value listed in configuration.
+Otherwise Drone won't pick the configuration.
+
+The different configuration options supported by Drone are:
+
+** <<default-drone-configuration, Default Drone Configuration>>
+** <<webdriver-configuration, WebDriver configuration>>
+** <<graphene-2-configuration, Graphene 2 Configuration>>
+** <<selenium-server-configuration, Selenium Server Configuration>>
+
+[[default-drone-configuration]]
+=== Default Drone Configuration
+
+Drone global configuration is applied for all supported frameworks at
+the same time. It uses `drone` extension qualifier.
+
+[source,xml]
+----
+<extension qualifier="drone">
+   <property name="instantiationTimeoutInSeconds">120</property>
+</extension>
+----
+
+[cols="1,1,8",options="header"]
+|===
+|Property Name |Default Value |Description
+
+|instantiationTimeoutInSeconds
+|60
+|Default timeout in seconds to get instance of a browser. Set to `0` if
+you want to disable the timeout altogether
+|===
+
+[[webdriver-configuration]]
+=== WebDriver configuration
+
+WebDriver uses `webdriver` qualifier.
+
+[source,xml]
+----
+<extension qualifier="webdriver">
+   <property name="browser">firefox</property>
+</extension>
+----
+
+[cols="1,1,8",options="header"]
+|===
+|Property Name |Default Value |Description
+
+|browser
+|htmlUnit
+a|Determines which browser instance is created for WebDriver testing.
+
+Following values are valid:
+
+* chrome
+* chromeHeadless or chromeheadless
+* firefox
+* htmlUnit  or htmlunit
+* internetExplorer or internetexplorer
+* opera
+* phantomjs
+* safari
+* edge
+
+|iePort
+|-
+|Default port where to connect for Internet Explorer driver
+
+|remoteAddress
+|http://localhost:4444/wd/hub
+|Default address for remote driver to connect
+
+|remoteReusable
+|false
+|The flag which indicates that remote session should be reused between
+subsequent executions - gives opportunity to reuse browser window for
+debugging and/or test execution speed-up.
+
+|reuseCookies
+|false
+|If you are using remote reusable browser, you can force it to reuse
+cookies
+
+|firefoxExtensions
+|-
+|Path or multiple paths to xpi files that will be installed into Firefox
+instance as extensions. Separate paths using space, use quotes in case
+that path contains spaces
+
+|firefox_profile
+|-
+|Path to Firefox Profile to be used instead of default one delivered with
+FirefoxDriver
+
+|firefoxUserPreferences
+|-
+|Path to Firefox user preferences. This file will be parsed and values
+will be applied to freshly created Firefox profile.
+
+|htmlUnitWebClientOptions
+|-
+|Semicolon separated list of webClientOptions for HtmlUnitDriver. e.g.
+timeout=10; javaScriptEnabled=true; throwExceptionOnScriptError=false; SSLClientProtocols=protocal1, protocal2
+
+
+|dimensions
+|-
+|Dimensions of browser window in `widthxheight` format. This will resize
+the window if supported by underlying browser. Useful for **phantomjs**,
+which by default defines a very small viewport.
+If you need the browser in fullscreen mode, use any of the following strings: "full" "fullscreen" "max"
+|===
+
+Some additional configuration parameters related to binaries can be found in http://arquillian.org/arquillian-extension-drone/#_properties_directory_names_and_support_of_latest_versions[Properties, directory names and support of latest versions]
+
+If you need to enable any
+http://code.google.com/p/selenium/wiki/DesiredCapabilities[browser
+capability], simply specify it as a property in extension configuration.
+For instance, if you are running Firefox browser and you want to change
+the binary location, you can do it via following code:
+
+[source,xml]
+----
+<extension qualifier="webdriver">
+   <property name="firefox_binary">/path/to/firefox</property>
+</extension>
+----
+
+We have enabled JavaScript for *htmlUnit* driver by default. If you want
+to disable it, configure appropriate capability to false:
+
+[source,xml]
+----
+<property name="javascriptEnabled">false</property>
+----
+
+WebDriver expects a Java Object stored in Capabilities settings for some
+of the WebDriver capabilities. Therefore, we provide a simple mappings
+to text format for some properties described in table below.
+
+[cols="2,8",options="header"]
+|===
+|Property Name |Format
+
+|loggingPrefs
+|Comma separated list of logging levels for FirefoxDriver. Use
+driver=$\{value1},profiler=$\{value2} where value is one of the
+following: SEVERE, WARNING, INFO, CONFIG, FINE, FINER or FINEST
+|===
+
+
+[[chrome-options]]
+=== Chrome options
+
+Drone provides you a possibility to set chrome options for a `chromeDriver` through your `arquillian.xml` file. You can find all possible options that can be set on this https://sites.google.com/a/chromium.org/chromedriver/capabilities[web page].
+
+The process of setting options uses a https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/chrome/ChromeOptions.html[ChromeOptions class] which means that the parameter names (used in `arquillian.xml`) are tightly coupled with the names of the set/add methods defined in the class. Drone expects that the name of each parameter consists of:
+```
+“chrome” + (name of the set/add method of ChromeOption class without first three chars)
+```
+the whole string should be in camel case. For example, in case of an option *args* which is coupled with the method https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/chrome/ChromeOptions.html#addArguments-java.util.List-[addArguments], the parameter should look like this:
+```xml
+<property name=“chromeArguments”>--first-argument --second-argument</property>
+```
+---
+**INFO**
+Please notice that there are two methods named `addArguments` in the `ChromeOptions` class, one with a parameter which is a list of strings and second one with an array of strings - Drone treats them as a one single method (for other methods it is applied analogically).
+
+---
+
+==== Value formats
+
+* In the cases, when the value can be an array or list of strings/files, you should specify all of them in one string separated by space (this is also applied for extensions as well as for encoded extensions).
+
+* It is a little bit different in the case of experimental options. These options should be provided as set of key-value pairs, so we decided to use JSON format for it (can be in multiline format) - for example:
+```xml
+<property name=“chromeExperimentalOption”>
+{
+  "perfLoggingPrefs": {
+    "traceCategories": ",blink.console,disabled-by-default-devtools.timeline,benchmark"
+  },
+  "prefs": {
+    "download.default_directory": "/usr/local/path/to/download/directory"
+  }
+}
+</property>
+```
+
+==== Debug
+
+If you struggle with passing required chrome options through the `arquillian.xml` file, you can use a parameter `chromePrintOptions` with a value `true`:
+```xml
+<property name=“chromePrintOptions”>true</property>
+```
+This ensures that Drone prints out the whole content of `ChromeOptions` in a JSON format to the standard output.
+
+=== Options for other drivers
+Similarly to Chrome options, you can also configure https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/firefox/FirefoxOptions.html[FirefoxOptions], https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/safari/SafariOptions.html[SafariOptions] and https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/opera/OperaOptions.html[OperaOptions] classes for Firefox, Safari and Opera, respectively.
+
+For example, to set GeckoDriver logger level, use:
+```xml
+<property name=“firefoxLogLevel”>SEVERE</property>
+```
+
+Or to use Safari Technology Preview, specify:
+```xml
+<property name=“safariUseTechnologyPreview”>false</property>
+```
+
+[[graphene-2-configuration]]
+=== Graphene 2 Configuration
+
+Graphene 2 reuses configuration specified for WebDriver, using
+`webdriver` qualifier. You can additionally use a
+http://arquillian.org/arquillian-graphene/#_graphene_configuration[Arquillian
+Graphene 2 configuration] to set Graphene specific configuration, such
+as default UI timeouts.
+
+[[selenium-server-configuration]]
+=== Selenium Server Configuration
+
+Selenium server is automatically started with the parameter reflecting browser that is used (path to the webdriver). For example, in case that the browser Firefox is used and with default address, then the Selenium Server instance would be started using a command:
+
+`java -Dwebdriver.gecko.driver=target/.../geckodriver -jar target/.../selenium-server-standalone-3.7.1.jar -port 4444`
+
+In case you would like to add some additional selenium server arguments to the command, you can use parameter `seleniumServerArgs` in your arquillian.xml file.
+For example, if you used these properties:
+
+[source,xml]
+----
+<property name="seleniumServerArgs">-debug true -role node -browserTimeout 1000</property>
+<property name="browser">firefox</property>
+----
+
+then the command used for starting Selenium Server instance would look like:
+
+`java -Dwebdriver.gecko.driver=target/.../geckodriver -jar target/.../selenium-server-standalone-3.7.1.jar -port 4444 -debug true -role node -browserTimeout 1000`
+
+
+[[extended-configuration-configuring-qualifierd-drone-instances]]
+== Extended Configuration: Configuring @Qualifier'd Drone Instances
+
+If you are wondering how to define configuration for `@Qualifier`
+`@Drone` instance, it's very easy. Only modification you have to do is
+to change qualifier to include - (`@Qualifier` annotation name converted
+to lowercase). For instance, if you qualified Arquillian Graphene
+instance with @MyExtraBrowser, its extension qualifier will become
+**graphene-myextrabrowser**.
+
+Arquillian Drone configures your browser using two-step process:
+
+1.  Search for the exact match of qualifier (e.g.
+`graphene-myextrabrowser`) in arquillian.xml, if found, step 2 is not
+performed.
+2.  Search for a match of base qualifier, without type safe `@Qualifier`
+(e.g. `graphene`) in arquillian.xml.
+
+Then System property are applied in the same fashion.
+
+== Skipping creation of @Drone instances
+
+In case you want to skip a creation/injection of `@Drone` instances you can use a system property `arquillian.drone.skip.creation` with a value `true`. This property is checked in a `@Before` phase, so you can modify the property during the test execution.
+
