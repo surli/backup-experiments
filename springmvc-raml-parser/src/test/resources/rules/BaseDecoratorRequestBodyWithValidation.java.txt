@@ -1,0 +1,71 @@
+-----------------------------------com.gen.test.BaseController.java-----------------------------------
+
+package com.gen.test;
+
+import javax.validation.Valid;
+import com.gen.test.model.CreateBaseRequest;
+import com.gen.test.model.CreateBaseResponse;
+import org.springframework.http.ResponseEntity;
+
+
+/**
+ * No description
+ * (Generated with springmvc-raml-parser v.${project.version})
+ *
+ */
+public interface BaseController {
+
+
+    /**
+     * No description
+     *
+     */
+    public ResponseEntity<CreateBaseResponse> createBase(
+        @Valid
+        CreateBaseRequest createBaseRequest);
+
+}
+-----------------------------------com.gen.test.BaseControllerDecorator.java-----------------------------------
+
+package com.gen.test;
+
+import javax.validation.Valid;
+import com.gen.test.model.CreateBaseRequest;
+import com.gen.test.model.CreateBaseResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+
+/**
+ * No description
+ * (Generated with springmvc-raml-parser v.${project.version})
+ *
+ */
+@RestController
+@RequestMapping("/api/base")
+@Validated
+public class BaseControllerDecorator
+    implements BaseController
+{
+
+    @Autowired
+    private BaseController baseControllerDelegate;
+
+    /**
+     * No description
+     *
+     */
+    @RequestMapping(value = "", method = RequestMethod.POST)
+    public ResponseEntity<CreateBaseResponse> createBase(
+        @Valid
+        @RequestBody
+        CreateBaseRequest createBaseRequest) {
+        return this.baseControllerDelegate.createBase(createBaseRequest);
+    }
+
+}
