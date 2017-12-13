@@ -1,0 +1,516 @@
+{
+  "totalNumberSkippingTests": 2,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 18,
+  "repo": "OpenGrok/OpenGrok",
+  "failingModule": "/root/workspace/OpenGrok/OpenGrok/315859581/opengrok-indexer",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 36,
+  "error-types": [
+    "org.opensolaris.opengrok.history.HistoryException",
+    "java.io.IOException",
+    "java.lang.AssertionError",
+    "java.lang.NullPointerException"
+  ],
+  "totalNumberRunningTests": 621,
+  "failing-test-cases": [
+    {
+      "className": "org.opensolaris.opengrok.analysis.c.CAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.c.CAnalyzerFactoryTest#testScopeAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.HistoryGuruTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.history.HistoryGuruTest#testGetRevision"
+      ],
+      "failures": [
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "failureDetail": "Failed to get history for: \"/tmp/source8070730839999167911opengrok/git/moved2/renamed2.c\" Exit code: 128",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.authorization.AuthorizationFrameworkReloadTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkReloadTest#testReloadCycle",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkReloadTest#testReloadSimple"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.java.JavaAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.java.JavaAnalyzerFactoryTest#testScopeAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.clojure.ClojureAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.clojure.ClojureAnalyzerFactoryTest#testScopeAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.CtagsTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.analysis.CtagsTest#org.opensolaris.opengrok.analysis.CtagsTest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No point in running ctags tests without valid ctags",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.GitRepositoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.history.GitRepositoryTest#testRenamedHistory",
+        "org.opensolaris.opengrok.history.GitRepositoryTest#testDetermineCurrentVersion",
+        "org.opensolaris.opengrok.history.GitRepositoryTest#testRenamedSingleHistory"
+      ],
+      "failures": [
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "failureDetail": "Failed to get history for: \"/tmp/source4810676773897894672opengrok/git/moved2/renamed2.c\" Exit code: 128",
+          "isError": true
+        },
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "failureDetail": "Failed to get history for: \"/tmp/source4810676773897894672opengrok/git\" Exit code: 128",
+          "isError": true
+        },
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "fatal: unknown date format iso8601-strict\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[7]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[9]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[27]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[17]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[29]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[19]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[13]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[15]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[31]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[5]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[33]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[8]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[28]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[18]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[12]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[34]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[14]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[36]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[26]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[4]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[20]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[6]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[10]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[32]",
+        "org.opensolaris.opengrok.authorization.AuthorizationFrameworkTest#testPluginsGeneric[22]"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[not_allowed prefix, allowed prefix] -\u003e {\nexpected \u003ctrue\u003e for entity not_allowed_project0.47162052464403414,\nexpected \u003ctrue\u003e for entity not_allowed_group_-1652169083,\nexpected \u003cfalse\u003e for entity allowed_project0.6581055985414138,\nexpected \u003cfalse\u003e for entity allowed_group_-101550141\n} \u003cfalse\u003e was \u003ctrue\u003e for entity allowed_project0.6581055985414138 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[allowed prefix, allowed prefix] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.02857134538280104,\nexpected \u003cfalse\u003e for entity not_allowed_group_1576828915,\nexpected \u003ctrue\u003e for entity allowed_project0.5178607968023955,\nexpected \u003ctrue\u003e for entity allowed_group_1105856916\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.02857134538280104 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[allowed prefix, allowed prefix] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.5376435779466041,\nexpected \u003cfalse\u003e for entity not_allowed_group_1295096958,\nexpected \u003ctrue\u003e for entity allowed_project0.6387699343295316,\nexpected \u003ctrue\u003e for entity allowed_group_-1657785694\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.5376435779466041 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[allowed prefix, not_allowed prefix] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.4922667893682695,\nexpected \u003cfalse\u003e for entity not_allowed_group_1874097015,\nexpected \u003ctrue\u003e for entity allowed_project0.38106706170182747,\nexpected \u003ctrue\u003e for entity allowed_group_1967684101\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.4922667893682695 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[allowed prefix, not_allowed prefix] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.15268157318563103,\nexpected \u003cfalse\u003e for entity not_allowed_group_-589595047,\nexpected \u003cfalse\u003e for entity allowed_project0.8120072226521491,\nexpected \u003cfalse\u003e for entity allowed_group_471478482\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.15268157318563103 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[not_allowed prefix, allowed prefix] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.7699276465932349,\nexpected \u003cfalse\u003e for entity not_allowed_group_-1299405386,\nexpected \u003cfalse\u003e for entity allowed_project0.280662155341996,\nexpected \u003cfalse\u003e for entity allowed_group_73912532\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.7699276465932349 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[load failing, allowed prefix] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.29691029707215266,\nexpected \u003cfalse\u003e for entity not_allowed_group_-1998280489,\nexpected \u003ctrue\u003e for entity allowed_project0.9001991348134294,\nexpected \u003ctrue\u003e for entity allowed_group_122956737\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.29691029707215266 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[load failing, allowed prefix] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.8548952636377826,\nexpected \u003cfalse\u003e for entity not_allowed_group_2071249300,\nexpected \u003cfalse\u003e for entity allowed_project0.25205916732131073,\nexpected \u003cfalse\u003e for entity allowed_group_1506037978\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.8548952636377826 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[load failing, load failing] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.9527681729084632,\nexpected \u003cfalse\u003e for entity not_allowed_group_2049705159,\nexpected \u003cfalse\u003e for entity allowed_project0.12209669677104351,\nexpected \u003cfalse\u003e for entity allowed_group_-1811552156\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.9527681729084632 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[load failing, load failing] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.8222500594406543,\nexpected \u003cfalse\u003e for entity not_allowed_group_-1748884645,\nexpected \u003cfalse\u003e for entity allowed_project0.7747503848019864,\nexpected \u003cfalse\u003e for entity allowed_group_-1819174578\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.8222500594406543 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[test failing, allowed prefix] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.44804823986867937,\nexpected \u003cfalse\u003e for entity not_allowed_group_-1716760255,\nexpected \u003ctrue\u003e for entity allowed_project0.42207101098434396,\nexpected \u003ctrue\u003e for entity allowed_group_-1576622984\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.44804823986867937 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[test failing, allowed prefix] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.6005003741138353,\nexpected \u003cfalse\u003e for entity not_allowed_group_2141617133,\nexpected \u003cfalse\u003e for entity allowed_project0.760396660942778,\nexpected \u003cfalse\u003e for entity allowed_group_831790743\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.6005003741138353 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[test failing, test failing] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.3798554453028593,\nexpected \u003cfalse\u003e for entity not_allowed_group_-786944573,\nexpected \u003cfalse\u003e for entity allowed_project0.026384687860517286,\nexpected \u003cfalse\u003e for entity allowed_group_310333497\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.3798554453028593 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[test failing, test failing] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.021504997770041223,\nexpected \u003cfalse\u003e for entity not_allowed_group_-408458461,\nexpected \u003cfalse\u003e for entity allowed_project0.7961459967382656,\nexpected \u003cfalse\u003e for entity allowed_group_1500680849\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.021504997770041223 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[SUFFICIENT[allowed prefix], REQUIRED[allowed prefix]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.5357076468166319,\nexpected \u003cfalse\u003e for entity not_allowed_group_-2107634099,\nexpected \u003ctrue\u003e for entity allowed_project0.04107465512513209,\nexpected \u003ctrue\u003e for entity allowed_group_1319873866\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.5357076468166319 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[REQUIRED[allowed prefix], REQUIRED[not_allowed prefix]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.4825612222026556,\nexpected \u003cfalse\u003e for entity not_allowed_group_-388739814,\nexpected \u003cfalse\u003e for entity allowed_project0.5644008359650432,\nexpected \u003cfalse\u003e for entity allowed_group_1631512629\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.4825612222026556 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[REQUISITE[allowed prefix], SUFFICIENT[allowed prefix], REQUIRED[not_allowed prefix]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.7253098509990735,\nexpected \u003cfalse\u003e for entity not_allowed_group_155516992,\nexpected \u003ctrue\u003e for entity allowed_project0.9588096253096043,\nexpected \u003ctrue\u003e for entity allowed_group_203477048\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.7253098509990735 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[SUFFICIENT[load failing], REQUIRED[allowed prefix]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.39795496959423426,\nexpected \u003cfalse\u003e for entity not_allowed_group_1011207545,\nexpected \u003ctrue\u003e for entity allowed_project0.11437108743005464,\nexpected \u003ctrue\u003e for entity allowed_group_308191130\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.39795496959423426 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[REQUIRED[load failing], SUFFICIENT[allowed prefix]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.7098022257435807,\nexpected \u003cfalse\u003e for entity not_allowed_group_1648859275,\nexpected \u003cfalse\u003e for entity allowed_project0.32100682622186383,\nexpected \u003cfalse\u003e for entity allowed_group_796321838\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.7098022257435807 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[REQUIRED[load failing], REQUIRED[allowed prefix]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.7168400450126403,\nexpected \u003cfalse\u003e for entity not_allowed_group_945582506,\nexpected \u003ctrue\u003e for entity allowed_project0.7952035222995278,\nexpected \u003ctrue\u003e for entity allowed_group_1135194446\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.7168400450126403 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[REQUIRED[load failing], REQUIRED[load failing]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.11034585461265933,\nexpected \u003cfalse\u003e for entity not_allowed_group_1804332113,\nexpected \u003cfalse\u003e for entity allowed_project0.8405756499764602,\nexpected \u003cfalse\u003e for entity allowed_group_1621753639\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.11034585461265933 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[SUFFICIENT[test failing], REQUIRED[allowed prefix]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.27369616565300936,\nexpected \u003cfalse\u003e for entity not_allowed_group_-894372807,\nexpected \u003ctrue\u003e for entity allowed_project0.9203496393152965,\nexpected \u003ctrue\u003e for entity allowed_group_1650158196\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.27369616565300936 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[REQUIRED[test failing], SUFFICIENT[allowed prefix]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.9086993541562984,\nexpected \u003cfalse\u003e for entity not_allowed_group_-1921405322,\nexpected \u003cfalse\u003e for entity allowed_project0.22348933399453863,\nexpected \u003cfalse\u003e for entity allowed_group_-2105775216\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.9086993541562984 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[REQUIRED[test failing], REQUIRED[allowed prefix]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.15956145066148864,\nexpected \u003cfalse\u003e for entity not_allowed_group_-1487096422,\nexpected \u003ctrue\u003e for entity allowed_project0.5165184081621984,\nexpected \u003ctrue\u003e for entity allowed_group_-1590400121\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.15956145066148864 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "REQUIRED[REQUIRED[test failing], REQUIRED[test failing]] -\u003e {\nexpected \u003cfalse\u003e for entity not_allowed_project0.24407587239146233,\nexpected \u003cfalse\u003e for entity not_allowed_group_182050157,\nexpected \u003cfalse\u003e for entity allowed_project0.5087319633687866,\nexpected \u003cfalse\u003e for entity allowed_group_1251300574\n} \u003cfalse\u003e was \u003ctrue\u003e for entity not_allowed_project0.24407587239146233 expected:\u003cfalse\u003e but was:\u003ctrue\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 25,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.BitKeeperRepositoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.history.BitKeeperRepositoryTest#testGetHistoryGet",
+        "org.opensolaris.opengrok.history.BitKeeperRepositoryTest#testGetHistory",
+        "org.opensolaris.opengrok.history.BitKeeperRepositoryTest#testAnnotation"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        },
+        {
+          "failureName": "org.opensolaris.opengrok.history.HistoryException",
+          "isError": true
+        },
+        {
+          "failureName": "java.io.IOException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 3
+    },
+    {
+      "className": "org.opensolaris.opengrok.history.CVSRepositoryTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.history.CVSRepositoryTest#testNewBranch",
+        "org.opensolaris.opengrok.history.CVSRepositoryTest#testGetBranchNoBranch"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "cvs command \u0027[cvs, -d, /tmp/source8667774620823029927opengrok/cvs_test/cvsroot, checkout, cvsrepo]\u0027failed.\nexit code: -1\nstdout:\n\nstderr:\nnull",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "cvs command \u0027[cvs, -d, /tmp/source4092899500504357856opengrok/cvs_test/cvsroot, checkout, cvsrepo]\u0027failed.\nexit code: -1\nstdout:\n\nstderr:\nnull",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.index.IndexDatabaseTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.index.IndexDatabaseTest#org.opensolaris.opengrok.index.IndexDatabaseTest"
+      ],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.index.IndexDatabaseTest#org.opensolaris.opengrok.index.IndexDatabaseTest"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No ctags available",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.NullPointerException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.JFlexXrefTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.JFlexXrefTest#testBug15890Anchor",
+        "org.opensolaris.opengrok.analysis.JFlexXrefTest#bug18586"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        },
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.opensolaris.opengrok.web.PageConfigTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.web.PageConfigTest#testGetAnnotation",
+        "org.opensolaris.opengrok.web.PageConfigTest#canProcessHistory",
+        "org.opensolaris.opengrok.web.PageConfigTest#canProcessXref",
+        "org.opensolaris.opengrok.web.PageConfigTest#testGetLatestRevisionValid",
+        "org.opensolaris.opengrok.web.PageConfigTest#testCheckSourceRootExistence4"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "This should throw an exception when the file is not readable",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003caa35c258\u003e but was:\u003cnull\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c\u003e but was:\u003cnull\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "expected:\u003c\u003e but was:\u003cnull\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.configuration.messages.ProjectMessageTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.configuration.messages.ProjectMessageTest#testDelete"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No point in running indexer tests without valid ctags",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.csharp.CSharpAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.csharp.CSharpAnalyzerFactoryTest#testScopeAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.pascal.PascalAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.pascal.PascalAnalyzerFactoryTest#testAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.opensolaris.opengrok.index.IndexerTest",
+      "failingMethods": [
+        "org.opensolaris.opengrok.index.IndexerTest#org.opensolaris.opengrok.index.IndexerTest"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No point in running indexer tests without valid ctags",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.opensolaris.opengrok.analysis.c.CxxAnalyzerFactoryTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.opensolaris.opengrok.analysis.c.CxxAnalyzerFactoryTest#testScopeAnalyzer"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"ctags\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
