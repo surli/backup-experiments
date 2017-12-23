@@ -1,0 +1,32 @@
+{
+  "totalNumberSkippingTests": 10,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "languagetool-org/languagetool",
+  "bugCommit": "https://github.com/languagetool-org/languagetool/compare/7a0a89a0f954...74258c30c7ea",
+  "failingModule": "/root/workspace/languagetool-org/languagetool/320644292/languagetool-language-modules/en",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 301,
+  "failing-test-cases": [
+    {
+      "className": "org.languagetool.rules.en.EnglishPatternRuleTest",
+      "failingMethods": [
+        "org.languagetool.rules.en.EnglishPatternRuleTest#testRules"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "English rule COMMA_COMPOUND_SENTENCE[1]:\n\"She purchased the car but she declined the extended warranty.\"\nErrors expected: 1\nErrors found   : 0\nMessage: Use a comma before \u0027\\2\u0027 if it connects two independent clauses (unless they are closely connected and short).\nAnalyzed token readings: [/SENT_START*] She[she/PRP*,B-NP-singular|E-NP-singular]  [ /null*] purchased[purchase/VBD,B-VP]  [ /null*] the[the/DT,B-NP-singular]  [ /null*] car[car/NN,E-NP-singular]  [ /null*] but[but/CC,O]  [ /null*] she[she/PRP,B-NP-singular|E-NP-singular]  [ /null*] declined[decline/VBD,decline/VBN,B-VP]  [ /null*] the[the/DT,B-NP-singular]  [ /null*] extended[extended/JJ,I-NP-singular]  [ /null*] warranty[warranty/NN,E-NP-singular] .[./.*,./SENT_END*,O]\nMatches: []",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
