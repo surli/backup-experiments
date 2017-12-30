@@ -1,0 +1,130 @@
+{
+  "totalNumberSkippingTests": 2,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 6,
+  "repo": "SciGraph/SciGraph",
+  "failingModule": "/root/workspace/SciGraph/SciGraph/323048596/SciGraph-services",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "org.glassfish.hk2.api.MultiException",
+    "java.awt.HeadlessException",
+    "java.lang.AssertionError",
+    "java.lang.RuntimeException"
+  ],
+  "totalNumberRunningTests": 445,
+  "failing-test-cases": [
+    {
+      "className": "io.scigraph.services.resources.GraphServiceTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.scigraph.services.resources.GraphServiceTest#io.scigraph.services.resources.GraphServiceTest"
+      ],
+      "failures": [
+        {
+          "failureName": "org.glassfish.hk2.api.MultiException",
+          "failureDetail": "A MultiException has 3 exceptions.  They are:\n1. java.lang.IllegalArgumentException: The MultiPartConfig instance we expected is not present. Have you registered the MultiPartConfigProvider class?\n2. java.lang.IllegalStateException: Unable to perform operation: create on com.sun.jersey.multipart.impl.MultiPartReaderClientSide\n3. java.lang.IllegalStateException: Unable to perform operation: create on org.glassfish.jersey.message.internal.MessageBodyFactory\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.scigraph.services.health.Neo4jHealthCheckTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.scigraph.services.health.Neo4jHealthCheckTest#whenNoNodes_unhealty"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.RuntimeException",
+          "failureDetail": "Error starting org.neo4j.test.TestGraphDatabaseFactory$TestGraphDatabaseFacadeFactory, /root/workspace/SciGraph/SciGraph/323048596/SciGraph-services/target/test-data/impermanent-db",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.scigraph.services.resources.VocabularyServiceTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.scigraph.services.resources.VocabularyServiceTest#io.scigraph.services.resources.VocabularyServiceTest"
+      ],
+      "failures": [
+        {
+          "failureName": "org.glassfish.hk2.api.MultiException",
+          "failureDetail": "A MultiException has 3 exceptions.  They are:\n1. java.lang.IllegalArgumentException: The MultiPartConfig instance we expected is not present. Have you registered the MultiPartConfigProvider class?\n2. java.lang.IllegalStateException: Unable to perform operation: create on com.sun.jersey.multipart.impl.MultiPartReaderClientSide\n3. java.lang.IllegalStateException: Unable to perform operation: create on org.glassfish.jersey.message.internal.MessageBodyFactory\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.scigraph.services.jersey.dynamic.CypherInflectorTest",
+      "failingMethods": [
+        "io.scigraph.services.jersey.dynamic.CypherInflectorTest#pathsAreReturnedCorrectly"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "\nExpected: an iterable with size \u003c1\u003e\n     but: iterable size was \u003c0\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "io.scigraph.services.resources.RefineServiceTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.scigraph.services.resources.RefineServiceTest#io.scigraph.services.resources.RefineServiceTest"
+      ],
+      "failures": [
+        {
+          "failureName": "org.glassfish.hk2.api.MultiException",
+          "failureDetail": "A MultiException has 3 exceptions.  They are:\n1. java.lang.IllegalArgumentException: The MultiPartConfig instance we expected is not present. Have you registered the MultiPartConfigProvider class?\n2. java.lang.IllegalStateException: Unable to perform operation: create on com.sun.jersey.multipart.impl.MultiPartReaderClientSide\n3. java.lang.IllegalStateException: Unable to perform operation: create on org.glassfish.jersey.message.internal.MessageBodyFactory\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.scigraph.services.jersey.writers.ImageWriterTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.scigraph.services.jersey.writers.ImageWriterTest#smoke"
+      ],
+      "failures": [
+        {
+          "failureName": "java.awt.HeadlessException",
+          "failureDetail": "\nNo X11 DISPLAY variable was set, but this program performed an operation which requires it.",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "io.scigraph.services.resources.CypherUtilServiceTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "io.scigraph.services.resources.CypherUtilServiceTest#io.scigraph.services.resources.CypherUtilServiceTest"
+      ],
+      "failures": [
+        {
+          "failureName": "org.glassfish.hk2.api.MultiException",
+          "failureDetail": "A MultiException has 3 exceptions.  They are:\n1. java.lang.IllegalArgumentException: The MultiPartConfig instance we expected is not present. Have you registered the MultiPartConfigProvider class?\n2. java.lang.IllegalStateException: Unable to perform operation: create on com.sun.jersey.multipart.impl.MultiPartReaderClientSide\n3. java.lang.IllegalStateException: Unable to perform operation: create on org.glassfish.jersey.message.internal.MessageBodyFactory\n",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
