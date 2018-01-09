@@ -1,0 +1,70 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "apache/struts",
+  "failingModule": "/root/workspace/apache/struts/326811353/core",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 4,
+  "error-types": [
+    "com.opensymphony.xwork2.inject.DependencyException",
+    "junit.framework.ComparisonFailure"
+  ],
+  "totalNumberRunningTests": 1779,
+  "failing-test-cases": [
+    {
+      "className": "com.opensymphony.xwork2.inject.ContainerImplTest",
+      "failingMethods": [
+        "com.opensymphony.xwork2.inject.ContainerImplTest#testMethodInjectorWithSecurityEnabled on instance testMethodInjectorWithSecurityEnabled",
+        "com.opensymphony.xwork2.inject.ContainerImplTest#testFieldInjectorWithSecurityEnabled on instance testFieldInjectorWithSecurityEnabled"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "com.opensymphony.xwork2.inject.DependencyException",
+          "failureDetail": "Security manager in use, could not access method: methodCheck.name(setName)",
+          "isError": false
+        },
+        {
+          "failureName": "com.opensymphony.xwork2.inject.DependencyException",
+          "failureDetail": "Security manager in use, could not access field: com.opensymphony.xwork2.inject.ContainerImplTest$FieldCheck(name)",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.opensymphony.xwork2.config.providers.EnvsValueSubstitutorTest",
+      "failingMethods": [
+        "com.opensymphony.xwork2.config.providers.EnvsValueSubstitutorTest#testSimpleValue on instance testSimpleValue"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "expected:\u003cnull\u003e but was:\u003c${env.USER}\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "com.opensymphony.xwork2.config.providers.XmlConfigurationProviderEnvsSubstitutionTest",
+      "failingMethods": [
+        "com.opensymphony.xwork2.config.providers.XmlConfigurationProviderEnvsSubstitutionTest#testSubstitution on instance testSubstitution"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "junit.framework.ComparisonFailure",
+          "failureDetail": "expected:\u003cnull\u003e but was:\u003c${env.USER}\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
