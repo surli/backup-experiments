@@ -1,0 +1,369 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 20,
+  "repo": "eclipse/paho.mqtt.java",
+  "bugCommit": "https://github.com/eclipse/paho.mqtt.java/compare/adc1160c8a2fffeffbb2eaec18d95814e41d4b5d...635a8c61e0c7f39741a9ba37e6e6dc723d7d8bf6",
+  "failingModule": "/root/workspace/eclipse/paho.mqtt.java/290027324/org.eclipse.paho.client.mqttv3.test",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 18,
+  "error-types": [
+    "org.eclipse.paho.client.mqttv3.MqttException",
+    "java.lang.AssertionError",
+    "java.lang.Exception"
+  ],
+  "totalNumberRunningTests": 52,
+  "failing-test-cases": [
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest#testManyMessageBufferAndDeliver",
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest#testDeleteOldestBufferedMessages",
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest#testNoDeleteOldestBufferedMessages",
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest#testSingleMessageBufferAndDeliver",
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest#testUnPersistBufferedMessagesOnNewClient",
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.OfflineBufferingTest#testPersistBufferedMessages"
+      ],
+      "failures": [
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Connection lost",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Connection lost",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Connection lost",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Connection lost",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 6
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.SendReceiveTest",
+      "failingMethods": [
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveTest#testQoSPreserved",
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveTest#testLargeMessage",
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveTest#testConnect",
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveTest#testRemoteConnect"
+      ],
+      "erroringMethods": [
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveTest#testMultipleClients",
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveTest#testCleanStart"
+      ],
+      "failures": [
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed:testQoSPreserved exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed:testRemoteConnect exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed to instantiate:testLargeMessage exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed:testConnect exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.Bug443142Test",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.eclipse.paho.client.mqttv3.test.Bug443142Test#testBug443142"
+      ],
+      "failures": [
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.SendReceiveAsyncCallbackTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveAsyncCallbackTest#test1"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "test timed out after 10000 milliseconds",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.automaticReconnect.AutomaticReconnectTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.AutomaticReconnectTest#testManualReconnectAfterDisconnect",
+        "org.eclipse.paho.client.mqttv3.test.automaticReconnect.AutomaticReconnectTest#testAutomaticReconnectAfterDisconnect"
+      ],
+      "failures": [
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Connection lost",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Connection lost",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.BasicTest",
+      "failingMethods": [
+        "org.eclipse.paho.client.mqttv3.test.BasicTest#testConnect"
+      ],
+      "erroringMethods": [
+        "org.eclipse.paho.client.mqttv3.test.BasicTest#testHAConnect",
+        "org.eclipse.paho.client.mqttv3.test.BasicTest#testPubSub"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Unexpected exception: Unable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.LiveTakeOverTest",
+      "failingMethods": [
+        "org.eclipse.paho.client.mqttv3.test.LiveTakeOverTest#testLiveTakeOver"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Firstclient entered an ERROR state",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.WebSocketTest",
+      "failingMethods": [
+        "org.eclipse.paho.client.mqttv3.test.WebSocketTest#testWebSocketPubSub",
+        "org.eclipse.paho.client.mqttv3.test.WebSocketTest#largePayloadTest",
+        "org.eclipse.paho.client.mqttv3.test.WebSocketTest#testBasicAuth",
+        "org.eclipse.paho.client.mqttv3.test.WebSocketTest#testWebSocketConnect"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Unexpected exception: Unable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Unexpected exception: Unable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Unexpected exception: Unable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Unexpected exception: Unable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.BasicSSLTest",
+      "failingMethods": [
+        "org.eclipse.paho.client.mqttv3.test.BasicSSLTest#testSSL",
+        "org.eclipse.paho.client.mqttv3.test.BasicSSLTest#testSSLLargeMessage"
+      ],
+      "erroringMethods": [
+        "org.eclipse.paho.client.mqttv3.test.BasicSSLTest#testSSLWorkload"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed to instantiate:testSSL exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed:testSSLLargeMessage exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.SSLSessionResumptionTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.eclipse.paho.client.mqttv3.test.SSLSessionResumptionTest#testSSLSessionInvalidated"
+      ],
+      "failures": [
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.PerSubscriptionMessageHandlerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.eclipse.paho.client.mqttv3.test.PerSubscriptionMessageHandlerTest#testSyncCleanSessionFalse",
+        "org.eclipse.paho.client.mqttv3.test.PerSubscriptionMessageHandlerTest#testAsyncCleanSessionFalse",
+        "org.eclipse.paho.client.mqttv3.test.PerSubscriptionMessageHandlerTest#testAsyncSubs1",
+        "org.eclipse.paho.client.mqttv3.test.PerSubscriptionMessageHandlerTest#testSyncSubs1"
+      ],
+      "failures": [
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        },
+        {
+          "failureName": "org.eclipse.paho.client.mqttv3.MqttException",
+          "failureDetail": "Unable to connect to server",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    },
+    {
+      "className": "org.eclipse.paho.client.mqttv3.test.SendReceiveAsyncTest",
+      "failingMethods": [
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveAsyncTest#testCleanStart",
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveAsyncTest#testLargeMessage",
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveAsyncTest#testMultipleClients",
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveAsyncTest#testVeryLargeMessageWithShortKeepAlive",
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveAsyncTest#testConnect",
+        "org.eclipse.paho.client.mqttv3.test.SendReceiveAsyncTest#testRemoteConnect"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed to instantiate:testMultipleClients exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed:testCleanStart exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed:testRemoteConnect exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed to instantiate:testLargeMessage exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed:testConnect exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Failed to instantiate:testVeryLargeMessageWithShortKeepAlive exception\u003dUnable to connect to server (32103) - java.net.ConnectException: Connection refused (Connection refused)",
+          "isError": false
+        }
+      ],
+      "nbFailures": 6,
+      "nbErrors": 0
+    }
+  ]
+}
