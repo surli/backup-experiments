@@ -1,0 +1,518 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 10 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 10 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] rome-parent
+[INFO] rome-utils
+[INFO] rome
+[INFO] rome-fetcher
+[INFO] rome-certiorem
+[INFO] rome-certiorem-webapp
+[INFO] rome-modules
+[INFO] rome-opml
+[INFO] rome-osgi-test
+[INFO] rome-propono
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building rome-parent 1.9.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building rome-utils 1.9.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ rome-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ rome-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ rome-utils ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ rome-utils ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ rome-utils ---
+[INFO] Surefire report directory: /root/workspace/rometools/rome/328733114/rome-utils/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (3 KB at 6.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (3 KB at 95.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 KB at 948.9 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.rometools.utils.StringsTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec
+Running com.rometools.utils.DoublesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.utils.ListsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.utils.AlternativesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.utils.LongsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.rometools.utils.DatesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.rometools.utils.IntegersTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+
+Results :
+
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building rome 1.9.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ rome ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ rome ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ rome ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 26 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ rome ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ rome ---
+[INFO] Surefire report directory: /root/workspace/rometools/rome/328733114/rome/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.rometools.rome.io.XmlReaderTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.481 sec
+Running com.rometools.rome.io.impl.RSS20ParserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.461 sec
+Running com.rometools.rome.io.impl.NumberParserTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running com.rometools.rome.io.XmLReaderHttpHeaderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.241 sec
+Running com.rometools.rome.unittest.TestSyndFeedAtom10Ruby
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 sec
+Running com.rometools.rome.unittest.TestOpsRSS090
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS090
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
+Running com.rometools.rome.unittest.TestOpsRSS094
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.357 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS091N
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS092
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 sec
+Running com.rometools.rome.unittest.TestSyndFeedAtom10b
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.rometools.rome.unittest.TestSyndFeedAtom03DCSyModules
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.133 sec
+Running com.rometools.rome.unittest.CloneableBeanTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.rometools.rome.unittest.TestOpsRSS092
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS091U
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec
+Running com.rometools.rome.unittest.TestXmlBomb
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS10DCMulti
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 sec
+Running com.rometools.rome.unittest.TestOpsRSS093
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS093
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 sec
+Running com.rometools.rome.unittest.TestOpsRSS10
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec
+Running com.rometools.rome.unittest.issues.Issue134Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.rometools.rome.unittest.issues.Issue158Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.139 sec
+Running com.rometools.rome.unittest.issues.Issue2Test
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 sec
+Running com.rometools.rome.unittest.issues.Issue162Test
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 sec
+Running com.rometools.rome.unittest.issues.Issue137Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.rometools.rome.unittest.issues.Issue88Test
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.rometools.rome.unittest.issues.Issue1Test
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.12 sec
+Running com.rometools.rome.unittest.issues.Issue161Test
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.132 sec
+Running com.rometools.rome.unittest.issues.Issue131Test
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running com.rometools.rome.unittest.TestSyndFeedAtom03
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
+Running com.rometools.rome.unittest.TestSyndFeedAtom10prefix
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS20
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.15 sec
+Running com.rometools.rome.unittest.TestOpsRSS091U
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS10
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS10DCSyModules
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 sec
+Running com.rometools.rome.unittest.TestDateParser
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec
+Running com.rometools.rome.unittest.TestAtomContent
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
+Running com.rometools.rome.unittest.TestSyndFeedAtom10Bray
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
+Running com.rometools.rome.unittest.TestXmlFixerReader
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec
+Running com.rometools.rome.unittest.TestSyndFeedAtom10
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 sec
+Running com.rometools.rome.unittest.TestBase64
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS094
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec
+Running com.rometools.rome.unittest.TestSyndFeedRSS092Alt
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec
+Running com.rometools.rome.unittest.TestOpsAtom10
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec
+Running com.rometools.rome.unittest.TestEqualsBean
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.rometools.rome.unittest.TestOpsAtom03
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 sec
+Running com.rometools.rome.unittest.TestOpsRSS20
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 sec
+Running com.rometools.rome.unittest.DublinCoreTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.rometools.rome.unittest.TestOpsRSS091N
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
+
+Results :
+
+Tests run: 527, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building rome-fetcher 1.9.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ rome-fetcher ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ rome-fetcher ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ rome-fetcher ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ rome-fetcher ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ rome-fetcher ---
+[INFO] Surefire report directory: /root/workspace/rometools/rome/328733114/rome-fetcher/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.rometools.fetcher.impl.HttpClientFeedFetcherTest
+16:09:38.613 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:39.124 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:39.223 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:39.381 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:39.431 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:39.501 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:39.659 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:39.715 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:39.724 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:39.795 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.631 sec
+Running com.rometools.fetcher.impl.HashMapFeedInfoCacheTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 sec
+Running com.rometools.fetcher.impl.HttpURLFeedFetcherTest
+16:09:39.938 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:40.091 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:40.127 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:40.164 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:40.195 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:40.248 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:40.272 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:40.314 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:40.322 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+16:09:40.329 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.417 sec
+Running com.rometools.fetcher.impl.DiskFeedInfoCacheTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.rometools.fetcher.impl.ResponseHandlerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+
+Results :
+
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building rome-certiorem 1.9.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ rome-certiorem ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ rome-certiorem ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ rome-certiorem ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ rome-certiorem ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ rome-certiorem ---
+[INFO] Surefire report directory: /root/workspace/rometools/rome/328733114/rome-certiorem/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.rometools.certiorem.hub.data.ram.InMemoryDAOTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.511 sec
+Running com.rometools.certiorem.hub.ControllerTest
+16:09:42.275 [main] WARN  com.rometools.fetcher.impl.AbstractFeedFetcher - Could not find fetcher.properties on classpath
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+
+Results :
+
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building rome-certiorem-webapp 1.9.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ rome-certiorem-webapp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ rome-certiorem-webapp ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ rome-certiorem-webapp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ rome-certiorem-webapp ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ rome-certiorem-webapp ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building rome-modules 1.9.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ rome-modules ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ rome-modules ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ rome-modules ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 126 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ rome-modules ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ rome-modules ---
+[INFO] Surefire report directory: /root/workspace/rometools/rome/328733114/rome-modules/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.rometools.modules.cc.types.LicenseTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.83 sec
+Running com.rometools.modules.cc.io.CCModuleGeneratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.628 sec
+Running com.rometools.modules.cc.io.ModuleParserTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.rometools.modules.thr.io.ThreadingModuleTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
+Running com.rometools.modules.photocast.io.GeneratorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 sec
+Running com.rometools.modules.georss.GeoRSSModuleTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.203 sec
+Running com.rometools.modules.ITunesGeneratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec
+Running com.rometools.modules.activitystreams.types.VerbTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.rometools.modules.yahooweather.io.WeatherModuleParserTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.264 sec
+Running com.rometools.modules.yahooweather.io.WeatherGeneratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.623 sec
+Running com.rometools.modules.wfw.WfwTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.rometools.modules.itunes.ITunesGeneratorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec
+Running com.rometools.modules.itunes.types.DurationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.rometools.modules.itunes.ITunesParserTest
+16:09:46.678 [main] WARN  com.rometools.modules.itunes.io.ITunesParser - Failed to parse duration: 00:00:00:01
+16:09:46.687 [main] WARN  com.rometools.modules.itunes.io.ITunesParser - Failed to parse duration: 
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec
+Running com.rometools.modules.opensearch.OpenSearchModuleTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.rometools.modules.sse.SSEParserTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.rometools.modules.sle.io.ModuleGeneratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.modules.sle.io.ModuleParserTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.rometools.modules.sle.GroupAndSortTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.102 sec
+Running com.rometools.modules.mediarss.GoogleTest
+Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.733 sec <<< FAILURE!
+testMediaRss15Generator(com.rometools.modules.mediarss.MediaModuleTest)  Time elapsed: 0.134 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: org.custommonkey.xmlunit.Diff
+[different] Expected number of child nodes '19' but was '20' - comparing <item...> at /rss[1]/channel[1]/item[1] to <item...> at /rss[1]/channel[1]/item[1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at org.custommonkey.xmlunit.XMLAssert.assertXMLEqual(XMLAssert.java:129)
+	at org.custommonkey.xmlunit.XMLAssert.assertXMLEqual(XMLAssert.java:117)
+	at com.rometools.modules.mediarss.MediaModuleTest.testMediaRss15Generator(MediaModuleTest.java:262)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:252)
+	at junit.framework.TestSuite.run(TestSuite.java:247)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:86)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.rometools.modules.mediarss.types.TimeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.modules.mediarss.io.MediaModuleParserTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.modules.mediarss.MediaModuleTest
+Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.399 sec <<< FAILURE!
+testMediaRss15Generator(com.rometools.modules.mediarss.MediaModuleTest)  Time elapsed: 0.015 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: org.custommonkey.xmlunit.Diff
+[different] Expected number of child nodes '19' but was '20' - comparing <item...> at /rss[1]/channel[1]/item[1] to <item...> at /rss[1]/channel[1]/item[1]
+
+	at junit.framework.Assert.fail(Assert.java:57)
+	at org.custommonkey.xmlunit.XMLAssert.assertXMLEqual(XMLAssert.java:129)
+	at org.custommonkey.xmlunit.XMLAssert.assertXMLEqual(XMLAssert.java:117)
+	at com.rometools.modules.mediarss.MediaModuleTest.testMediaRss15Generator(MediaModuleTest.java:262)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:252)
+	at junit.framework.TestSuite.run(TestSuite.java:247)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:86)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.rometools.modules.content.ContentModuleGeneratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.rometools.modules.content.ContentModuleParserTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.modules.content.ContentModuleImplTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.modules.content.ContentItemTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.modules.base.types.FloatUnitTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.modules.base.types.IntUnitTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.rometools.modules.base.io.CustomTagGeneratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.157 sec
+Running com.rometools.modules.base.io.GoogleBaseGeneratorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.546 sec
+Running com.rometools.modules.base.io.GoogleBaseParserTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
+Running com.rometools.modules.base.io.CustomTagParserTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.rometools.modules.atom.AtomLinkTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+
+Results :
+
+Failed tests:   testMediaRss15Generator(com.rometools.modules.mediarss.MediaModuleTest): org.custommonkey.xmlunit.Diff(..)
+  testMediaRss15Generator(com.rometools.modules.mediarss.MediaModuleTest): org.custommonkey.xmlunit.Diff(..)
+
+Tests run: 111, Failures: 2, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] rome-parent ........................................ SUCCESS [  0.003 s]
+[INFO] rome-utils ......................................... SUCCESS [  2.380 s]
+[INFO] rome ............................................... SUCCESS [  5.758 s]
+[INFO] rome-fetcher ....................................... SUCCESS [  2.565 s]
+[INFO] rome-certiorem ..................................... SUCCESS [  1.893 s]
+[INFO] rome-certiorem-webapp .............................. SUCCESS [  0.056 s]
+[INFO] rome-modules ....................................... FAILURE [  6.433 s]
+[INFO] rome-opml .......................................... SKIPPED
+[INFO] rome-osgi-test ..................................... SKIPPED
+[INFO] rome-propono ....................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 20.297 s
+[INFO] Finished at: 2018-01-14T16:09:48+01:00
+[INFO] Final Memory: 24M/619M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project rome-modules: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/rometools/rome/328733114/rome-modules/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :rome-modules
