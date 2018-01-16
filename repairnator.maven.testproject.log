@@ -1,0 +1,426 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fact-tools 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.2.4:revision (get-the-git-infos) @ fact-tools ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ fact-tools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 47 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ fact-tools ---
+[INFO] Compiling 14 source files to /root/workspace/fact-project/fact-tools/329541243/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ fact-tools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 58 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ fact-tools ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.14.1:test (default-test) @ fact-tools ---
+[INFO] Surefire report directory: /root/workspace/fact-project/fact-tools/329541243/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.14.1/surefire-junit4-2.14.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.14.1/surefire-junit4-2.14.1.pom (3 KB at 5.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.14.1/surefire-providers-2.14.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.14.1/surefire-providers-2.14.1.pom (3 KB at 58.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.14.1/surefire-junit4-2.14.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.14.1/surefire-junit4-2.14.1.jar (78 KB at 1158.7 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running fact.features.AddFirstArrayToSecondArrayTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec
+Running fact.features.NeighborPixelDCFTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.385 sec
+Running fact.features.muon.HoughTrafoTest
+Jan 16 2018 17:37:57 [WARN ] fact.features.source.SourcePosition: Setting source position to dummy values X: 0.0  Y: 0.0
+Jan 16 2018 17:38:15 [WARN ] fact.features.source.SourcePosition: Setting source position to dummy values X: 0.0  Y: 0.0
+Jan 16 2018 17:38:17 [INFO ] fact.features.muon.HoughTrafoTest: Moun circle to chid contains 3437880 Integer entries. Thats about 78 MebiByte
+Jan 16 2018 17:38:17 [INFO ] fact.features.muon.HoughTrafoTest: chid2circles contains 10313640 primitive integers. Thats about 78 MebiByte
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 35.991 sec
+Running fact.features.CalculateDrs4TimeCalibrationConstantsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.433 sec
+Running fact.features.MaxAmplitudeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.471 sec
+Running fact.features.BasicExtractionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.337 sec
+Running fact.features.HillasTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running fact.features.LeakageTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running fact.features.ElementWiseTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running fact.features.SizeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running fact.features.ConvolveTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running fact.features.ArgMaxTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running fact.features.SinglePulseExtractorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 sec
+Running fact.FunctionalTest
+Jan 16 2018 17:39:46 [ERROR] stream.runtime.AbstractProcess: Error occurred in process '2': Missing keys for processor fact.features.source.ReconstructSourcePositionDisp:  disp
+
+Jan 16 2018 17:39:46 [ERROR] stream.runtime.ProcessThread: java.lang.RuntimeException: Missing keys for processor fact.features.source.ReconstructSourcePositionDisp:  disp
+
+	at fact.Utils.mapContainsKeys(Utils.java:306)
+	at fact.Utils.mapContainsKeys(Utils.java:267)
+	at fact.features.source.ReconstructSourcePositionDisp.process(ReconstructSourcePositionDisp.java:34)
+	at stream.runtime.AbstractProcess.process(AbstractProcess.java:126)
+	at stream.runtime.AbstractProcess.execute(AbstractProcess.java:184)
+	at stream.runtime.ProcessThread.run(ProcessThread.java:129)
+
+Jan 16 2018 17:39:46 [ERROR] stream.runtime.ProcessContainer$3: Process DefaultProcess['2']@3cce5371 signaled an error: Missing keys for processor fact.features.source.ReconstructSourcePositionDisp:  disp
+
+Jan 16 2018 17:41:58 [WARN ] fact.filter.MovingAverage: CentralMovingAverage only supports uneven window lengths. New length is: 3
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 210.179 sec
+Running fact.extraction.AboveThresholdTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 sec
+Running fact.statistics.weighted.Weighted1dStatisticsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running fact.statistics.weighted.Weighted2dStatisticsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running fact.FactStandardAnalysisTest
+Jan 16 2018 17:42:15 [INFO ] stream.util.PropertiesHandler: Reading properties from URL classpath:/default/settings_mc.properties
+Jan 16 2018 17:42:15 [INFO ] stream.util.PropertiesHandler: Reading properties from URL classpath:/default/settings_mc.properties
+Jan 16 2018 17:42:15 [WARN ] stream.runtime.setup.ServiceFieldInjection: No service injected for optional service field 'auxService'
+Jan 16 2018 17:42:15 [INFO ] stream.runtime.ProcessContainer: Compute graph:
+
+  {
+   'sources': [
+  	{ 'id': 'fact', 'class': 'fact.io.hdureader.FITSStream' }
+     ],
+   'processes': [
+  	{ 'id': '2', 'input': 'fact', 'class': 'stream.runtime.DefaultProcess' }
+    ]
+  }
+
+Jan 16 2018 17:42:15 [INFO ] stream.run: Starting process-container...
+Jan 16 2018 17:42:29 [WARN ] fact.features.source.SourcePosition: Using zd and az values from the data item
+Jan 16 2018 17:42:29 [ERROR] stream.runtime.AbstractProcess: Error occurred in process '2': Missing keys for processor fact.io.Writer:  alpha
+alpha_off_1
+alpha_off_2
+alpha_off_3
+alpha_off_4
+alpha_off_5
+distance
+distance_off_1
+distance_off_2
+distance_off_3
+distance_off_4
+distance_off_5
+cos_delta_alpha
+cos_delta_alpha_off_1
+cos_delta_alpha_off_2
+cos_delta_alpha_off_3
+cos_delta_alpha_off_4
+cos_delta_alpha_off_5
+theta
+theta_off_1
+theta_off_2
+theta_off_3
+theta_off_4
+theta_off_5
+
+Jan 16 2018 17:42:29 [ERROR] stream.runtime.ProcessThread: java.lang.RuntimeException: Missing keys for processor fact.io.Writer:  alpha
+alpha_off_1
+alpha_off_2
+alpha_off_3
+alpha_off_4
+alpha_off_5
+distance
+distance_off_1
+distance_off_2
+distance_off_3
+distance_off_4
+distance_off_5
+cos_delta_alpha
+cos_delta_alpha_off_1
+cos_delta_alpha_off_2
+cos_delta_alpha_off_3
+cos_delta_alpha_off_4
+cos_delta_alpha_off_5
+theta
+theta_off_1
+theta_off_2
+theta_off_3
+theta_off_4
+theta_off_5
+
+	at fact.Utils.mapContainsKeys(Utils.java:306)
+	at fact.io.Writer.testKeys(Writer.java:26)
+	at fact.io.FITSWriter.process(FITSWriter.java:80)
+	at stream.runtime.AbstractProcess.process(AbstractProcess.java:126)
+	at stream.runtime.AbstractProcess.execute(AbstractProcess.java:184)
+	at stream.runtime.ProcessThread.run(ProcessThread.java:129)
+
+Jan 16 2018 17:42:29 [INFO ] stream.run: Container finished.
+Jan 16 2018 17:42:29 [ERROR] stream.runtime.ProcessContainer$3: Process DefaultProcess['2']@495ee280 signaled an error: Missing keys for processor fact.io.Writer:  alpha
+alpha_off_1
+alpha_off_2
+alpha_off_3
+alpha_off_4
+alpha_off_5
+distance
+distance_off_1
+distance_off_2
+distance_off_3
+distance_off_4
+distance_off_5
+cos_delta_alpha
+cos_delta_alpha_off_1
+cos_delta_alpha_off_2
+cos_delta_alpha_off_3
+cos_delta_alpha_off_4
+cos_delta_alpha_off_5
+theta
+theta_off_1
+theta_off_2
+theta_off_3
+theta_off_4
+theta_off_5
+
+Jan 16 2018 17:42:29 [INFO ] stream.util.PropertiesHandler: Reading properties from URL classpath:/default/settings.properties
+Jan 16 2018 17:42:29 [INFO ] stream.util.PropertiesHandler: Reading properties from URL classpath:/default/settings.properties
+Jan 16 2018 17:42:29 [INFO ] stream.runtime.ProcessContainer: Compute graph:
+
+  {
+   'sources': [
+  	{ 'id': 'fact', 'class': 'fact.io.hdureader.FITSStream' }
+     ],
+   'processes': [
+  	{ 'id': '2', 'input': 'fact', 'class': 'stream.runtime.DefaultProcess' }
+    ]
+  }
+
+Jan 16 2018 17:42:29 [INFO ] stream.run: Starting process-container...
+Jan 16 2018 17:42:44 [ERROR] stream.runtime.AbstractProcess: Error occurred in process '2': Missing keys for processor fact.io.Writer:  alpha
+alpha_off_1
+alpha_off_2
+alpha_off_3
+alpha_off_4
+alpha_off_5
+distance
+distance_off_1
+distance_off_2
+distance_off_3
+distance_off_4
+distance_off_5
+cos_delta_alpha
+cos_delta_alpha_off_1
+cos_delta_alpha_off_2
+cos_delta_alpha_off_3
+cos_delta_alpha_off_4
+cos_delta_alpha_off_5
+theta
+theta_off_1
+theta_off_2
+theta_off_3
+theta_off_4
+theta_off_5
+
+Jan 16 2018 17:42:44 [ERROR] stream.runtime.ProcessThread: java.lang.RuntimeException: Missing keys for processor fact.io.Writer:  alpha
+alpha_off_1
+alpha_off_2
+alpha_off_3
+alpha_off_4
+alpha_off_5
+distance
+distance_off_1
+distance_off_2
+distance_off_3
+distance_off_4
+distance_off_5
+cos_delta_alpha
+cos_delta_alpha_off_1
+cos_delta_alpha_off_2
+cos_delta_alpha_off_3
+cos_delta_alpha_off_4
+cos_delta_alpha_off_5
+theta
+theta_off_1
+theta_off_2
+theta_off_3
+theta_off_4
+theta_off_5
+
+	at fact.Utils.mapContainsKeys(Utils.java:306)
+	at fact.io.Writer.testKeys(Writer.java:26)
+	at fact.io.FITSWriter.process(FITSWriter.java:80)
+	at stream.runtime.AbstractProcess.process(AbstractProcess.java:126)
+	at stream.runtime.AbstractProcess.execute(AbstractProcess.java:184)
+	at stream.runtime.ProcessThread.run(ProcessThread.java:129)
+
+Jan 16 2018 17:42:44 [INFO ] stream.run: Container finished.
+Jan 16 2018 17:42:44 [ERROR] stream.runtime.ProcessContainer$3: Process DefaultProcess['2']@147a5d08 signaled an error: Missing keys for processor fact.io.Writer:  alpha
+alpha_off_1
+alpha_off_2
+alpha_off_3
+alpha_off_4
+alpha_off_5
+distance
+distance_off_1
+distance_off_2
+distance_off_3
+distance_off_4
+distance_off_5
+cos_delta_alpha
+cos_delta_alpha_off_1
+cos_delta_alpha_off_2
+cos_delta_alpha_off_3
+cos_delta_alpha_off_4
+cos_delta_alpha_off_5
+theta
+theta_off_1
+theta_off_2
+theta_off_3
+theta_off_4
+theta_off_5
+
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 28.852 sec <<< FAILURE!
+mcTest(fact.FactStandardAnalysisTest)  Time elapsed: 14.029 sec  <<< FAILURE!
+java.lang.AssertionError: Could not run examples/stdAnalysis/mc/analysis_mc.xml
+	at org.junit.Assert.fail(Assert.java:88)
+	at fact.FactStandardAnalysisTest.mcTest(FactStandardAnalysisTest.java:59)
+
+dataTest(fact.FactStandardAnalysisTest)  Time elapsed: 14.821 sec  <<< FAILURE!
+java.lang.AssertionError: Could not run examples/stdAnalysis/data/analysis.xml
+	at org.junit.Assert.fail(Assert.java:88)
+	at fact.FactStandardAnalysisTest.dataTest(FactStandardAnalysisTest.java:35)
+
+Running fact.coordinates.CameraCoordinateTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running fact.coordinates.DistanceTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running fact.coordinates.CelestialCoordinateTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 sec
+Running fact.coordinates.EquatorialCoordinateTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec
+Running fact.coordinates.HorizontalCoordinateTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running fact.datacorrection.TestInterpolatePixelArray
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running fact.datacorrection.TestInterpolateTimeseries
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running fact.services.SqliteTest
+Jan 16 2018 17:42:44 [INFO ] fact.auxservice.SqliteService$1: Building entry for service DRIVE_CONTROL_SOURCE_POSITION and key: 2014-05-20T23:45:00.560Z
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.468 sec
+Running fact.services.AuxServiceTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.279 sec
+Running fact.container.PixelSetTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running fact.io.RecursiveDirectoryStreamTest
+Jan 16 2018 17:42:46 [ERROR] fact.io.RecursiveDirectoryStream: No files could be loaded for pattern /**/*DRIVE<>?!§$%&/%_SOURCE_POSITION.fits
+Jan 16 2018 17:42:46 [INFO ] fact.io.RecursiveDirectoryStream: Loaded 4 files for streaming.
+Jan 16 2018 17:42:46 [INFO ] fact.io.RecursiveDirectoryStream: Loaded 4 files for streaming.
+Jan 16 2018 17:42:46 [INFO ] fact.io.RecursiveDirectoryStream: Loaded 4 files for streaming.
+Jan 16 2018 17:42:46 [INFO ] fact.io.RecursiveDirectoryStream: Loaded 2 files for streaming.
+Jan 16 2018 17:42:46 [ERROR] fact.io.RecursiveDirectoryStream: No files could be loaded for pattern /*DRIVE_CONTROL_SOURCE_POSITION.fits
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
+Running fact.io.CeresStreamTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.778 sec
+Running fact.io.FactEventStreamTest
+Jan 16 2018 17:43:04 [INFO ] fact.io.FactEventStreamTest: Reading serialized events from file:/root/workspace/fact-project/fact-tools/329541243/target/test-classes/fact-events.obj.gz
+Jan 16 2018 17:43:05 [INFO ] fact.io.FactEventStreamTest: EndOfStream reached.
+Jan 16 2018 17:43:05 [INFO ] fact.io.FactEventStreamTest: Reading FITS events from file:/root/workspace/fact-project/fact-tools/329541243/target/test-classes/testDataFile.fits.gz
+Jan 16 2018 17:43:09 [INFO ] fact.io.FactEventStreamTest: Read 10 events from file:/root/workspace/fact-project/fact-tools/329541243/target/test-classes/testDataFile.fits.gz
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.709 sec
+Running fact.io.GpsTimeCorrectionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running fact.io.FITSWriterTest
+Jan 16 2018 17:43:09 [INFO ] fact.io.FITSWriterTest: testFitsWriterNoItems /tmp/test_fits3385988427615289235.fits
+Jan 16 2018 17:43:09 [INFO ] fact.io.FITSWriterTest: testHeaderKeys with path /tmp/test_fitsheader3552411106322612189.fits
+Jan 16 2018 17:43:09 [INFO ] fact.io.FITSWriter: Initialising output fits file
+Jan 16 2018 17:43:09 [INFO ] fact.io.FITSWriter: Row size is 8 bytes
+Jan 16 2018 17:43:09 [WARN ] fact.io.FITSWriter: Key muchtoolong too long, truncating to muchtool
+Jan 16 2018 17:43:09 [INFO ] fact.io.FITSWriter: created bhdu with 2 columns
+Jan 16 2018 17:43:09 [INFO ] fact.io.FITSWriterTest: testFitsWriter with path /tmp/test_fits7428962909557105764.fits
+Jan 16 2018 17:43:09 [INFO ] fact.io.FITSWriter: Initialising output fits file
+Jan 16 2018 17:43:09 [INFO ] fact.io.FITSWriter: Row size is 83 bytes
+Jan 16 2018 17:43:09 [INFO ] fact.io.FITSWriter: created bhdu with 8 columns
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec
+Running fact.io.FITSStreamTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.907 sec
+Running fact.io.ListMultiStreamTest
+Jan 16 2018 17:43:18 [INFO ] fact.io.FactFileListMultiStream: Loading files.
+Jan 16 2018 17:43:18 [INFO ] fact.io.FactFileListMultiStream: Loaded 1 files for streaming.
+Jan 16 2018 17:43:23 [INFO ] fact.io.FactFileListMultiStream: Loading files.
+Jan 16 2018 17:43:23 [INFO ] fact.io.FactFileListMultiStream: Loaded 1 files for streaming.
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.362 sec
+Running fact.camera.PixelMappingTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running fact.camera.CubeCoordinateTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running fact.parameter.CoreNeighbourCleanParameterTest
+Jan 16 2018 17:43:36 [WARN ] fact.features.source.SourcePosition: Setting source position to dummy values X: 0.0  Y: 0.0
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.538 sec
+Running fact.parameter.SizeTest
+Jan 16 2018 17:43:50 [WARN ] fact.features.source.SourcePosition: Setting source position to dummy values X: 0.0  Y: 0.0
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.69 sec
+Running fact.parameter.HillasParametersTest
+Jan 16 2018 17:44:03 [WARN ] fact.features.source.SourcePosition: Setting source position to dummy values X: 0.0  Y: 0.0
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.572 sec
+Running fact.parameter.PhotonChargeParameterTest
+Jan 16 2018 17:44:17 [WARN ] fact.features.source.SourcePosition: Setting source position to dummy values X: 0.0  Y: 0.0
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.562 sec
+Running fact.parameter.AlphaTest
+Jan 16 2018 17:44:30 [WARN ] fact.features.source.SourcePosition: Setting source position to dummy values X: 0.0  Y: 0.0
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.497 sec
+Running fact.parameter.PropertiesTest
+Jan 16 2018 17:44:30 [INFO ] stream.util.PropertiesHandler: Reading properties from URL classpath:/test-settings.properties
+Jan 16 2018 17:44:30 [INFO ] stream.util.PropertiesHandler: Reading properties from URL classpath:/test-settings.properties
+Jan 16 2018 17:44:30 [INFO ] stream.runtime.ProcessContainer: Compute graph:
+
+  {
+   'sources': [
+  	{ 'id': 'rnd', 'class': 'stream.io.RandomStream' }
+     ],
+   'processes': [
+  	{ 'id': 'process-dbe298d6-2984-44f6-8fdf-8b517510a820', 'input': 'rnd', 'class': 'stream.runtime.DefaultProcess' }
+    ]
+  }
+
+Jan 16 2018 17:44:30 [INFO ] stream.run: Starting process-container...
+Jan 16 2018 17:44:31 [INFO ] stream.run: Container finished.
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec
+Running fact.utils.RemappingTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running fact.utils.LinearTimeCorrectionKernelTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running fact.utils.BFSTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running fact.utils.SanitizeKeyTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running fact.TestVersionInformation
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+
+Results :
+
+Failed tests: 
+  FactStandardAnalysisTest.mcTest:59 Could not run examples/stdAnalysis/mc/analysis_mc.xml
+  FactStandardAnalysisTest.dataTest:35 Could not run examples/stdAnalysis/data/analysis.xml
+
+Tests run: 121, Failures: 2, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 06:58 min
+[INFO] Finished at: 2018-01-16T17:44:31+01:00
+[INFO] Final Memory: 30M/371M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.14.1:test (default-test) on project fact-tools: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/fact-project/fact-tools/329541243/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
