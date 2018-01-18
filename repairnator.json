@@ -1,0 +1,31 @@
+{
+  "totalNumberSkippingTests": 5,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "apache/storm",
+  "failingModule": "/root/workspace/apache/storm/330435404/external/storm-kafka",
+  "hostname": "spirals-repairnator",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 639,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.storm.kafka.KafkaUtilsTest",
+      "failingMethods": [
+        "org.apache.storm.kafka.KafkaUtilsTest#generateTuplesWithKeyAndKeyValueScheme"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "org.apache.kafka.common.errors.TimeoutException: Failed to update metadata after 1000 ms.",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
