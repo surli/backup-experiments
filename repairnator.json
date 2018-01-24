@@ -1,0 +1,2725 @@
+{
+  "totalNumberSkippingTests": 1790,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 20,
+  "repo": "JMRI/JMRI",
+  "failingModule": "/root/workspace/JMRI/JMRI/332632662",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 283,
+  "error-types": [
+    "java.lang.AssertionError",
+    "java.lang.IllegalArgumentException",
+    "java.lang.Exception"
+  ],
+  "totalNumberRunningTests": 15329,
+  "failing-test-cases": [
+    {
+      "className": "jmri.jmrix.loconet.Ib2ThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.loconet.Ib2ThrottleTest#testDispatch_0args",
+        "jmri.jmrix.loconet.Ib2ThrottleTest#testDispose_0args",
+        "jmri.jmrix.loconet.Ib2ThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.loconet.Ib2ThrottleTest#testRelease_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.tams.TamsTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.tams.TamsTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrit.blockboss.configurexml.BlockBossLogicXmlTest",
+      "failingMethods": [
+        "jmri.jmrit.blockboss.configurexml.BlockBossLogicXmlTest#testBadSignalName",
+        "jmri.jmrit.blockboss.configurexml.BlockBossLogicXmlTest#testMissingSignalAttribute"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Ignoring a \u003csignalelement\u003e element with no signal attribute value",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: SignalHead IH1 not defined, \u003csignalelement\u003e element referring to it is ignored",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.rps.Ash1_1AlgorithmTest",
+      "failingMethods": [
+        "jmri.jmrix.rps.Ash1_1AlgorithmTest#testCalc5",
+        "jmri.jmrix.rps.Ash1_1AlgorithmTest#testCalc4_not2",
+        "jmri.jmrix.rps.Ash1_1AlgorithmTest#testCalc4_not1",
+        "jmri.jmrix.rps.Ash1_1AlgorithmTest#testCalc4_not3"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Mismatch: 4 readings, 5 receivers",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Mismatch: 3 readings, 4 receivers",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Mismatch: 3 readings, 4 receivers",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Mismatch: 3 readings, 4 receivers",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.symbolicprog.QualifierAdderTest",
+      "failingMethods": [
+        "jmri.jmrit.symbolicprog.QualifierAdderTest#testExistsProtectsEq"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Arithmetic EQ operation when watched value doesn\u0027t exist",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.symbolicprog.ValueQualifierTest",
+      "failingMethods": [
+        "jmri.jmrit.symbolicprog.ValueQualifierTest#testVariableRefEqNotExist"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Arithmetic EQ operation when watched value doesn\u0027t exist",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.acela.AcelaSignalHeadTest",
+      "failingMethods": [
+        "jmri.jmrix.acela.AcelaSignalHeadTest#testCTor",
+        "jmri.jmrix.acela.AcelaSignalHeadTest#test2stringCTor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t find new Acela Signal with name \u0027AH1\u0027",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t find new Acela Signal with name \u0027AH1\u0027",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.openlcb.OlcbThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.openlcb.OlcbThrottleTest#testDispatch_0args",
+        "jmri.jmrix.openlcb.OlcbThrottleTest#testDispose_0args",
+        "jmri.jmrix.openlcb.OlcbThrottleTest#testRelease_0args",
+        "jmri.jmrix.openlcb.OlcbThrottleTest#testNotifyPropertyChangeListener"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.loconet.Ib1ThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.loconet.Ib1ThrottleTest#testDispatch_0args",
+        "jmri.jmrix.loconet.Ib1ThrottleTest#testDispose_0args",
+        "jmri.jmrix.loconet.Ib1ThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.loconet.Ib1ThrottleTest#testRelease_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.lenz.XNetInitializationManagerTest",
+      "failingMethods": [
+        "jmri.jmrix.lenz.XNetInitializationManagerTest#testCtor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Command Station disconnected, or powered down assuming LZ100/LZV100 V3.x",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.ecos.EcosTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.ecos.EcosTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrix.AbstractThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.AbstractThrottleTest#testDispose_0args",
+        "jmri.jmrix.AbstractThrottleTest#testSendFunctionGroup1",
+        "jmri.jmrix.AbstractThrottleTest#testSendFunctionGroup3",
+        "jmri.jmrix.AbstractThrottleTest#testSendFunctionGroup2",
+        "jmri.jmrix.AbstractThrottleTest#testSendFunctionGroup5",
+        "jmri.jmrix.AbstractThrottleTest#testSendFunctionGroup4",
+        "jmri.jmrix.AbstractThrottleTest#testSetF20",
+        "jmri.jmrix.AbstractThrottleTest#testSetF22",
+        "jmri.jmrix.AbstractThrottleTest#testSetF21",
+        "jmri.jmrix.AbstractThrottleTest#testSetF7",
+        "jmri.jmrix.AbstractThrottleTest#testSetF24",
+        "jmri.jmrix.AbstractThrottleTest#testSetF8",
+        "jmri.jmrix.AbstractThrottleTest#testRelease_0args",
+        "jmri.jmrix.AbstractThrottleTest#testSetF23",
+        "jmri.jmrix.AbstractThrottleTest#testSetF9",
+        "jmri.jmrix.AbstractThrottleTest#testSetF26",
+        "jmri.jmrix.AbstractThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.AbstractThrottleTest#testSetF25",
+        "jmri.jmrix.AbstractThrottleTest#testSetF28",
+        "jmri.jmrix.AbstractThrottleTest#testSetF27",
+        "jmri.jmrix.AbstractThrottleTest#testSetF0",
+        "jmri.jmrix.AbstractThrottleTest#testSetF1",
+        "jmri.jmrix.AbstractThrottleTest#testSetF2",
+        "jmri.jmrix.AbstractThrottleTest#testSetF3",
+        "jmri.jmrix.AbstractThrottleTest#testSetF4",
+        "jmri.jmrix.AbstractThrottleTest#testSetF5",
+        "jmri.jmrix.AbstractThrottleTest#testSetF6",
+        "jmri.jmrix.AbstractThrottleTest#testSetF11",
+        "jmri.jmrix.AbstractThrottleTest#testSetF10",
+        "jmri.jmrix.AbstractThrottleTest#testSetF13",
+        "jmri.jmrix.AbstractThrottleTest#testDispatch_0args",
+        "jmri.jmrix.AbstractThrottleTest#testSetF12",
+        "jmri.jmrix.AbstractThrottleTest#testSetF15",
+        "jmri.jmrix.AbstractThrottleTest#testSetF14",
+        "jmri.jmrix.AbstractThrottleTest#testSetF17",
+        "jmri.jmrix.AbstractThrottleTest#testSetF16",
+        "jmri.jmrix.AbstractThrottleTest#testSetF19",
+        "jmri.jmrix.AbstractThrottleTest#testSetF18"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup1 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup1 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup1 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup1 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup1 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup2 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup2 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup2 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup2 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup3 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup1 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup2 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup3 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup3 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup3 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup3 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 38,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.openlcb.OlcbTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.openlcb.OlcbTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrix.acela.AcelaTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.acela.AcelaTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrix.roco.z21.Z21MessageTest",
+      "failingMethods": [
+        "jmri.jmrix.roco.z21.Z21MessageTest#testCtor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid length in call to ctor",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.logix.OBlockTest",
+      "failingMethods": [
+        "jmri.jmrit.logix.OBlockTest#testAddPortal",
+        "jmri.jmrit.logix.OBlockTest#testAddPath"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Path \"path2\" already in block OB2, cannot be added to block OB1",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Portal \"foop\" from block \"null\" to block \"null\" not in block OB0",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.withrottle.DeviceServerTest",
+      "failingMethods": [
+        "jmri.jmrit.withrottle.DeviceServerTest#testCtor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Stream creation failed (DeviceServer)",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.lenz.XNetMessageTest",
+      "failingMethods": [
+        "jmri.jmrix.lenz.XNetMessageTest#testGetTurnoutCommandMsg",
+        "jmri.jmrix.lenz.XNetMessageTest#testGetReadRegisterMsg",
+        "jmri.jmrix.lenz.XNetMessageTest#testSetAndGetOpCode",
+        "jmri.jmrix.lenz.XNetMessageTest#testGetWriteRegisterMsg",
+        "jmri.jmrix.lenz.XNetMessageTest#testCtor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: XpressNet turnout logic can\u0027t handle both THROWN and CLOSED yet",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Invalid length in ctor: 21",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: register number too large: 10",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: register number too large: 10",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Opcode invalid: 21",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.automat.AbstractAutomatonTest",
+      "failingMethods": [
+        "jmri.jmrit.automat.AbstractAutomatonTest#testWaitChangeBadPreCheck"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Precheck ignored because of mismatch in bean 0",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.lenz.XNetThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.lenz.XNetThrottleTest#sendEmergencyStop",
+        "jmri.jmrix.lenz.XNetThrottleTest#testInitSequenceNormalUnitSpeedStep128",
+        "jmri.jmrix.lenz.XNetThrottleTest#initSequenceNormalUnitSpeedStep14",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendFunctionGroup4v35",
+        "jmri.jmrix.lenz.XNetThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.lenz.XNetThrottleTest#initSequenceMUAddress28SpeedStep",
+        "jmri.jmrix.lenz.XNetThrottleTest#initSequenceDHUnitSpeedStep27",
+        "jmri.jmrix.lenz.XNetThrottleTest#setSpeedStep14",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendMomentaryFunctionGroup2",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendMomentaryFunctionGroup3",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendMomentaryFunctionGroup4",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendMomentaryFunctionGroup5",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendMomentaryFunctionGroup1",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendFunctionGroup3",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendFunctionGroup2",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendFunctionGroup1",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendFunctionStatusInformationRequest",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendFunctionGroup5",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendFunctionGroup4",
+        "jmri.jmrix.lenz.XNetThrottleTest#testDispatch_0args",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendFunctionGroup5v35",
+        "jmri.jmrix.lenz.XNetThrottleTest#testRelease_0args",
+        "jmri.jmrix.lenz.XNetThrottleTest#setSpeedStep28",
+        "jmri.jmrix.lenz.XNetThrottleTest#setSpeedStep128",
+        "jmri.jmrix.lenz.XNetThrottleTest#testDispose_0args",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendFunctionHighStatusInformationRequest",
+        "jmri.jmrix.lenz.XNetThrottleTest#setSpeedStep27",
+        "jmri.jmrix.lenz.XNetThrottleTest#setReverse",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendStatusInformationRequest",
+        "jmri.jmrix.lenz.XNetThrottleTest#testSendFunctionHighMomentaryStatusRequest",
+        "jmri.jmrix.lenz.XNetThrottleTest#initSequenceMuedUnitSpeedStep128",
+        "jmri.jmrix.lenz.XNetThrottleTest#setForward"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Command Sent to command station",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 32,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.maple.SerialAddressTest",
+      "failingMethods": [
+        "jmri.jmrix.maple.SerialAddressTest#testValidSystemNameConfig",
+        "jmri.jmrix.maple.SerialAddressTest#testValidateSystemNameFormat",
+        "jmri.jmrix.maple.SerialAddressTest#testGetBitFromSystemName",
+        "jmri.jmrix.maple.SerialAddressTest#testConstructSystemName",
+        "jmri.jmrix.maple.SerialAddressTest#testNormalizeSystemName"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: illegal address range proposed for system name - 0",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: missing numerical node address in system name: KL",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Maple hardware address out of range in system name: KL1049",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: node address field out of range in system name - KL12007",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid character in number field of system name: KL29O9",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.jmriclient.JMRIClientTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.jmriclient.JMRIClientTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrix.loconet.Pr2ThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.loconet.Pr2ThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.loconet.Pr2ThrottleTest#testDispatch_0args",
+        "jmri.jmrix.loconet.Pr2ThrottleTest#testDispose_0args",
+        "jmri.jmrix.loconet.Pr2ThrottleTest#testRelease_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.nce.configurexml.NceTurnoutManagerXmlTest",
+      "failingMethods": [
+        "jmri.jmrix.nce.configurexml.NceTurnoutManagerXmlTest#testInvalidLoad"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Invalid method called",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.rps.Ash1_0AlgorithmTest",
+      "failingMethods": [
+        "jmri.jmrix.rps.Ash1_0AlgorithmTest#testCalc5",
+        "jmri.jmrix.rps.Ash1_0AlgorithmTest#testCalc4_not2",
+        "jmri.jmrix.rps.Ash1_0AlgorithmTest#testCalc4_not1"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Mismatch: 4 readings, 5 receivers",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Mismatch: 3 readings, 4 receivers",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Mismatch: 3 readings, 4 receivers",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.secsi.SerialTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.secsi.SerialTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.NmraPacketTest",
+      "failingMethods": [
+        "jmri.NmraPacketTest#testSpeedStep28Packet",
+        "jmri.NmraPacketTest#testSpeedStep28PacketOld",
+        "jmri.NmraPacketTest#testAccDecoderPacket13"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid speed -1",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid speed -1",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid address 0",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.marklin.MarklinThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.marklin.MarklinThrottleTest#testRelease_0args",
+        "jmri.jmrix.marklin.MarklinThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.marklin.MarklinThrottleTest#testDispose_0args",
+        "jmri.jmrix.marklin.MarklinThrottleTest#testDispatch_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.maple.SerialTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.maple.SerialTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.implementation.DccConsistTest",
+      "failingMethods": [
+        "jmri.implementation.DccConsistTest#testSetConsistTypeCS"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Consist Type Not Supported",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.blockboss.BlockBossLogicTest",
+      "failingMethods": [
+        "jmri.jmrit.blockboss.BlockBossLogicTest#testSimpleBlockNoSignal"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Signal Head \"null\" was not found",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.lenz.XNetTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.lenz.XNetTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrit.roster.RosterEntryTest",
+      "failingMethods": [
+        "jmri.jmrit.roster.RosterEntryTest#testModifyDate"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unable to parse \"unparseable date\" as a date in roster entry \"test Id\".",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.tmcc.SerialTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.tmcc.SerialTurnoutManagerTest#testProvideFailure",
+        "jmri.jmrix.tmcc.SerialTurnoutManagerTest#testAsAbstractFactory"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.IllegalArgumentException",
+          "failureDetail": "Invalid system name for turnout: TT21 needed T14T",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "jmri.jmrix.cmri.serial.SerialAddressTwoSystemTest",
+      "failingMethods": [
+        "jmri.jmrix.cmri.serial.SerialAddressTwoSystemTest#testGetNodeAddressFromSystemName",
+        "jmri.jmrix.cmri.serial.SerialAddressTwoSystemTest#testIsInputBitFree",
+        "jmri.jmrix.cmri.serial.SerialAddressTwoSystemTest#testConstructSystemName",
+        "jmri.jmrix.cmri.serial.SerialAddressTwoSystemTest#testGetNodeAddressFromSystemName2",
+        "jmri.jmrix.cmri.serial.SerialAddressTwoSystemTest#testValidateSystemNameFormat",
+        "jmri.jmrix.cmri.serial.SerialAddressTwoSystemTest#testConstructSystemName2",
+        "jmri.jmrix.cmri.serial.SerialAddressTwoSystemTest#testIsOutputBitFree"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: no node address before \u0027B\u0027 in CMRI system name: K2LB7",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid bit number proposed for system name",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid bit number in free bit test",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid bit number in free bit test",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: no node address before \u0027B\u0027 in CMRI system name: CLB7",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid type character in CMRI system name: CY2005",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid bit number proposed for system name",
+          "isError": false
+        }
+      ],
+      "nbFailures": 7,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.dcc.DccTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.dcc.DccTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrix.debugthrottle.DebugThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testDispatch_0args",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testRelease_0args",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF21",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF22",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF20",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testDispose_0args",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSendFunctionGroup4",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSendFunctionGroup5",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF14",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF25",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF15",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF26",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF23",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF13",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF24",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF18",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF19",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF16",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF27",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF17",
+        "jmri.jmrix.debugthrottle.DebugThrottleTest#testSetF28"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 22,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.direct.ThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.direct.ThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.direct.ThrottleTest#testRelease_0args",
+        "jmri.jmrix.direct.ThrottleTest#testDispatch_0args",
+        "jmri.jmrix.direct.ThrottleTest#testDispose_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.loconet.SlotManagerTest",
+      "failingMethods": [
+        "jmri.jmrix.loconet.SlotManagerTest#testSendPacket"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Ops Mode Accessory Packet \u0027Send count\u0027 reduced from 9 to 8.",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.withrottle.MultiThrottleTest",
+      "failingMethods": [
+        "jmri.jmrit.withrottle.MultiThrottleTest#testCtor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Stream creation failed (DeviceServer)",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.ussctc.SignalHeadSectionTest",
+      "failingMethods": [
+        "jmri.jmrit.ussctc.SignalHeadSectionTest#testCI_BothLeftAndRightFoundClearInsteadOfRightOnly",
+        "jmri.jmrit.ussctc.SignalHeadSectionTest#testCI_BothLeftAndRightFoundClearInsteadOfStop",
+        "jmri.jmrit.ussctc.SignalHeadSectionTest#testCI_BothLeftAndRightFoundClearInsteadOfLeftOnly",
+        "jmri.jmrit.ussctc.SignalHeadSectionTest#testCI_BothLeftClearAndRightRestrictingInsteadOfStop",
+        "jmri.jmrit.ussctc.SignalHeadSectionTest#testCI_BothLeftClearAndRightRestrictingInsteadOfLeftOnly",
+        "jmri.jmrit.ussctc.SignalHeadSectionTest#testCI_BothLeftClearAndRightRestrictingInsteadOfRightOnly",
+        "jmri.jmrit.ussctc.SignalHeadSectionTest#testCI_BothLeftRestrictingAndRightClearInsteadOfLeftOnly"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Found both left and right clear: SignalHeadSection [\"IH1\", \"IH2\"],[\"IH3\", \"IH4\"]",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Found both left and right clear: SignalHeadSection [\"IH1\", \"IH2\"],[\"IH3\", \"IH4\"]",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Found both left and right clear: SignalHeadSection [\"IH1\", \"IH2\"],[\"IH3\", \"IH4\"]",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Found left at restricting and right clear: SignalHeadSection [\"IH1\", \"IH2\"],[\"IH3\", \"IH4\"]",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Found left clear and right at restricting: SignalHeadSection [\"IH1\", \"IH2\"],[\"IH3\", \"IH4\"]",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Found left clear and right at restricting: SignalHeadSection [\"IH1\", \"IH2\"],[\"IH3\", \"IH4\"]",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Found left clear and right at restricting: SignalHeadSection [\"IH1\", \"IH2\"],[\"IH3\", \"IH4\"]",
+          "isError": false
+        }
+      ],
+      "nbFailures": 7,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.implementation.SignalHeadSignalMastTest",
+      "failingMethods": [
+        "jmri.implementation.SignalHeadSignalMastTest#testOldOneNameCtorFailNoSystem",
+        "jmri.implementation.SignalHeadSignalMastTest#testAspectFail"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Did not find signal definition: notanaspect",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: attempting to set invalid aspect: Not An Aspect, I Hope on mast: user",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.managers.JmriUserPreferencesManagerTest",
+      "failingMethods": [
+        "jmri.managers.JmriUserPreferencesManagerTest#testSetPreferenceState"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: class name \"non.existant.class\" cannot be found, perhaps an expected plugin is missing?",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.BlockManagerTest",
+      "failingMethods": [
+        "jmri.BlockManagerTest#testDefaultSpeed1"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: attempting to get speed for invalid name: \u0027Faster\u0027",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.MemoryContentsTest",
+      "failingMethods": [
+        "jmri.jmrit.MemoryContentsTest#testReadFileCksumError",
+        "jmri.jmrit.MemoryContentsTest#testReadFilePageCross",
+        "jmri.jmrit.MemoryContentsTest#testReadFileRecordLengthError",
+        "jmri.jmrit.MemoryContentsTest#testReadFileRecordTypeError",
+        "jmri.jmrit.MemoryContentsTest#testReadFileRecordType02BadFile2",
+        "jmri.jmrit.MemoryContentsTest#testReadFileMalformedLine",
+        "jmri.jmrit.MemoryContentsTest#testReadFile24bitPageCross",
+        "jmri.jmrit.MemoryContentsTest#testReadFileNoEOFRecordFile",
+        "jmri.jmrit.MemoryContentsTest#testReadFileNoContentFile",
+        "jmri.jmrit.MemoryContentsTest#testReadFileRecordType02BadFile",
+        "jmri.jmrit.MemoryContentsTest#testReadSegmentsTestFile"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: No EOF Record found in file - aborting.",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Record checksum error in line 29 - computed checksum \u003d 0x1f, expected checksum \u003d 0x1e.",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: No Data Records found in file - aborting.",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Extended Segment Address Record data value 0x1000 in line 3",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Data crosses boundary which could lead to  mis-interpretation.  Aborting read at line :02FFFF000102FD",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Data record line length is incorrect for inferred addressing type and for data count field in line 7",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Error in getLocation(0x9ffff): accessed uninitialized page 9",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Data record line length is incorrect for inferred addressing type and for data count field in line 10",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unknown RECTYP 0x3 was found in line 16.  Aborting file read.",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unsupported Extended Segment Address Record data value 0x1000 in line 2",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Data crosses boundary which could lead to  mis-interpretation.  Aborting read at line :0201FFFF000709EF",
+          "isError": false
+        }
+      ],
+      "nbFailures": 11,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.tams.TamsThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.tams.TamsThrottleTest#testDispatch_0args",
+        "jmri.jmrix.tams.TamsThrottleTest#testRelease_0args",
+        "jmri.jmrix.tams.TamsThrottleTest#testDispose_0args",
+        "jmri.jmrix.tams.TamsThrottleTest#testNotifyPropertyChangeListener"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.ztc.ztc611.ZTC611XNetTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.ztc.ztc611.ZTC611XNetTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrix.loconet.LocoNetThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.loconet.LocoNetThrottleTest#testDispatch_0args",
+        "jmri.jmrix.loconet.LocoNetThrottleTest#testRelease_0args",
+        "jmri.jmrix.loconet.LocoNetThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.loconet.LocoNetThrottleTest#testDispose_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.lenz.hornbyelite.EliteXNetThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.lenz.hornbyelite.EliteXNetThrottleTest#testDispose_0args",
+        "jmri.jmrix.lenz.hornbyelite.EliteXNetThrottleTest#testRelease_0args",
+        "jmri.jmrix.lenz.hornbyelite.EliteXNetThrottleTest#testDispatch_0args",
+        "jmri.jmrix.lenz.hornbyelite.EliteXNetThrottleTest#testNotifyPropertyChangeListener"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.sprog.SprogThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.sprog.SprogThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.sprog.SprogThrottleTest#testDispose_0args",
+        "jmri.jmrix.sprog.SprogThrottleTest#testDispatch_0args",
+        "jmri.jmrix.sprog.SprogThrottleTest#testRelease_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.implementation.NmraConsistTest",
+      "failingMethods": [
+        "jmri.implementation.NmraConsistTest#testSetConsistTypeCS"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Consist Type Not Supported",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.lenz.li100.LI100XNetInitializationManagerTest",
+      "failingMethods": [
+        "jmri.jmrix.lenz.li100.LI100XNetInitializationManagerTest#testCtor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Command Station disconnected, or powered down assuming LZ100/LZV100 V3.x",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.sprog.SprogCSThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.sprog.SprogCSThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.sprog.SprogCSThrottleTest#testRelease_0args",
+        "jmri.jmrix.sprog.SprogCSThrottleTest#testDispose_0args",
+        "jmri.jmrix.sprog.SprogCSThrottleTest#testDispatch_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.roco.z21.Z21XNetThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.roco.z21.Z21XNetThrottleTest#testDispose_0args",
+        "jmri.jmrix.roco.z21.Z21XNetThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.roco.z21.Z21XNetThrottleTest#testRelease_0args",
+        "jmri.jmrix.roco.z21.Z21XNetThrottleTest#testDispatch_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.automat.SigletTest",
+      "failingMethods": [
+        "jmri.jmrit.automat.SigletTest#testNoInputNamed",
+        "jmri.jmrit.automat.SigletTest#testNoInpuUnNamed"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Siglet start invoked for \"foo\", but no inputs provided",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Siglet start invoked (without a name), but no inputs provided",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.loconet.CsOpSwAccessTest",
+      "failingMethods": [
+        "jmri.jmrix.loconet.CsOpSwAccessTest#testCommandStationRead2",
+        "jmri.jmrix.loconet.CsOpSwAccessTest#testCommandStationWriteOutOfBounds1",
+        "jmri.jmrix.loconet.CsOpSwAccessTest#testCommandStationReadOutOfBounds1",
+        "jmri.jmrix.loconet.CsOpSwAccessTest#testCmdStnOpSwWrite",
+        "jmri.jmrix.loconet.CsOpSwAccessTest#testCmdStnExtendedOpSwWrite"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Cannot program OpSw56 account LocoNet encoding limitations.",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Cannot perform Cs OpSw access of OpSw 65 account out-of-range for this command station.",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Cannot perform Cs OpSw access: parts.length\u003d2, parts[]\u003d[csOpSw, 0]",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Cannot program OpSw56 account LocoNet encoding limitations.",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Cannot perform Cs OpSw access: parts.length\u003d2, parts[]\u003d[csOpSw, 0], val\u003d1",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.symbolicprog.tabbedframe.JComponentQualifierTest",
+      "failingMethods": [
+        "jmri.jmrit.symbolicprog.tabbedframe.JComponentQualifierTest#testVariableRefEqNotExist"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Arithmetic EQ operation when watched value doesn\u0027t exist",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.tmcc.SerialTrafficControllerTest",
+      "failingMethods": [
+        "jmri.jmrix.tmcc.SerialTrafficControllerTest#testRcvReplyShort"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: return short message as 1st byte is 240",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.withrottle.MultiThrottleControllerTest",
+      "failingMethods": [
+        "jmri.jmrit.withrottle.MultiThrottleControllerTest#testCtor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Stream creation failed (DeviceServer)",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.can.cbus.CbusThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.can.cbus.CbusThrottleTest#testDispatch_0args",
+        "jmri.jmrix.can.cbus.CbusThrottleTest#testDispose_0args",
+        "jmri.jmrix.can.cbus.CbusThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.can.cbus.CbusThrottleTest#testRelease_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.ecos.EcosDccThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.ecos.EcosDccThrottleTest#testRelease_0args",
+        "jmri.jmrix.ecos.EcosDccThrottleTest#testDispose_0args",
+        "jmri.jmrix.ecos.EcosDccThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.ecos.EcosDccThrottleTest#testDispatch_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.mrc.MrcThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.mrc.MrcThrottleTest#testDispatch_0args",
+        "jmri.jmrix.mrc.MrcThrottleTest#testRelease_0args",
+        "jmri.jmrix.mrc.MrcThrottleTest#testDispose_0args",
+        "jmri.jmrix.mrc.MrcThrottleTest#testNotifyPropertyChangeListener"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.ApplicationTest",
+      "failingMethods": [
+        "jmri.ApplicationTest#testSetName"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unable to set application name java.lang.IllegalAccessException: Application name cannot be modified once set.",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.roco.z21.Z21XNetTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.roco.z21.Z21XNetTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrix.powerline.SerialTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.powerline.SerialTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.implementation.RawTurnoutOperatorTest",
+      "failingMethods": [
+        "jmri.implementation.RawTurnoutOperatorTest#testCTor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: No match against the command station for IT1, so will use the default",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.powerline.SerialAddressTest",
+      "failingMethods": [
+        "jmri.jmrix.powerline.SerialAddressTest#testValidSystemNameConfig",
+        "jmri.jmrix.powerline.SerialAddressTest#testValidateSystemNameFormat"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: address did not match any valid forms: PL2",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: address did not match any valid forms: PL4007",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.operations.rollingstock.cars.CarsTest",
+      "failingMethods": [
+        "jmri.jmrit.operations.rollingstock.cars.CarsTest#testXmlConstructor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Kernel TESTKERNEL does not exist",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.SectionTest",
+      "failingMethods": [
+        "jmri.SectionTest#warnOnBlockAddWithNoUserName"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Block IB1 does not have a user name, may not work correctly in Section TS1",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.symbolicprog.ArithmeticQualifierTest",
+      "failingMethods": [
+        "jmri.jmrit.symbolicprog.ArithmeticQualifierTest#testVariableRefEqNotExist"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Arithmetic EQ operation when watched value doesn\u0027t exist",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.InstanceManagerTest",
+      "failingMethods": [
+        "jmri.InstanceManagerTest#testDisposeInClear",
+        "jmri.InstanceManagerTest#testAutoCreateCycle",
+        "jmri.InstanceManagerTest#testDisposable"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispose called1",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispose called1",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Proceeding to initialize class jmri.InstanceManagerTest$AutoCreateCycle while already in initialization",
+          "isError": false
+        }
+      ],
+      "nbFailures": 3,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.tmcc.SerialAddressTest",
+      "failingMethods": [
+        "jmri.jmrix.tmcc.SerialAddressTest#testNormalizeSystemName",
+        "jmri.jmrix.tmcc.SerialAddressTest#testConvertSystemNameFormat",
+        "jmri.jmrix.tmcc.SerialAddressTest#testValidateSystemNameFormat",
+        "jmri.jmrix.tmcc.SerialAddressTest#testGetBitFromSystemName"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: node address field out of range in system name: TL128B7",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid character in number field system name: TL",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: node address field out of range in system name: TL128B7",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid character in number field of system name: TL29O9",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.operations.rollingstock.OperationsRollingStockTest",
+      "failingMethods": [
+        "jmri.jmrit.operations.rollingstock.OperationsRollingStockTest#testRollingStockLocation",
+        "jmri.jmrit.operations.rollingstock.OperationsRollingStockTest#testXmlConstructor"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Rolling stock (TESTROAD TESTNUMBER1) length () is not valid",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Tag 12345 Not Found",
+          "isError": false
+        }
+      ],
+      "nbFailures": 2,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.cmri.serial.SerialAddressTest",
+      "failingMethods": [
+        "jmri.jmrix.cmri.serial.SerialAddressTest#testValidateSystemNameFormat",
+        "jmri.jmrix.cmri.serial.SerialAddressTest#testIsOutputBitFree",
+        "jmri.jmrix.cmri.serial.SerialAddressTest#testIsInputBitFree",
+        "jmri.jmrix.cmri.serial.SerialAddressTest#testGetNodeAddressFromSystemName",
+        "jmri.jmrix.cmri.serial.SerialAddressTest#testConstructSystemName"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid bit number proposed for system name",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid bit number in free bit test",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid bit number in free bit test",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: no node address before \u0027B\u0027 in CMRI system name: CLB7",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid type character in CMRI system name: CY2005",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.lenz.hornbyelite.EliteXNetTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.lenz.hornbyelite.EliteXNetTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.managers.ProxyTurnoutManagerTest",
+      "failingMethods": [
+        "jmri.managers.ProxyTurnoutManagerTest#testProvideFailure"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Invalid system name for turnout: JT needed JT",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.sprog.SprogTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.sprog.SprogTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.profile.ProfileManagerTest",
+      "failingMethods": [
+        "jmri.profile.ProfileManagerTest#testSetActiveProfile_String"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Unable to set active profile.  No profile with id NonExistantId could be found.",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.dccpp.DCCppThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.dccpp.DCCppThrottleTest#testDispose_0args",
+        "jmri.jmrix.dccpp.DCCppThrottleTest#testNotifyPropertyChangeListener",
+        "jmri.jmrix.dccpp.DCCppThrottleTest#testDispatch_0args",
+        "jmri.jmrix.dccpp.DCCppThrottleTest#testRelease_0args"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.withrottle.WiFiConsistTest",
+      "failingMethods": [
+        "jmri.jmrit.withrottle.WiFiConsistTest#testSetConsistTypeCS"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Consist Type Not Supported",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.operations.setup.OperationsBackupTest",
+      "failingMethods": [
+        "jmri.jmrit.operations.setup.OperationsBackupTest#testBasicCopyBackupSetWithMissingFiles"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Only 1 file(s) found in directory /root/workspace/JMRI/JMRI/332632662/temp/operations/JUnitTest",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.secsi.SerialAddressTest",
+      "failingMethods": [
+        "jmri.jmrix.secsi.SerialAddressTest#testGetBitFromSystemName",
+        "jmri.jmrix.secsi.SerialAddressTest#testValidSystemNameConfig",
+        "jmri.jmrix.secsi.SerialAddressTest#testValidateSystemNameFormat",
+        "jmri.jmrix.secsi.SerialAddressTest#testConvertSystemNameFormat",
+        "jmri.jmrix.secsi.SerialAddressTest#testNormalizeSystemName"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: node address field out of range in system name: VL128B7",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid character in number field system name: VL",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: VL10033 invalid; bad bit number",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: node address field out of range in system name: VL128B7",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: invalid character in number field of system name: VL29O9",
+          "isError": false
+        }
+      ],
+      "nbFailures": 5,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.cmri.serial.SerialTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.cmri.serial.SerialTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrix.tmcc.SerialThrottleTest",
+      "failingMethods": [
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSetF28",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSetF27",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testDispose_0args",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSetF26",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSetF25",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSetF24",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSetF23",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSetF22",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testDispatch_0args",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSendFunctionGroup2",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSendFunctionGroup1",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testRelease_0args",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSendFunctionGroup5",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSendFunctionGroup4",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testSendFunctionGroup3",
+        "jmri.jmrix.tmcc.SerialThrottleTest#testNotifyPropertyChangeListener"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: notifyPropertyChangeListener without change",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Dispose called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup1 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup2 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: sendFunctionGroup3 needs to be implemented if invoked",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F13-F20 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Release called without knowing the original throttle listener",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Can\u0027t send F21-F28 since no command station defined",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: dispatch called without knowing the original throttle listener",
+          "isError": false
+        }
+      ],
+      "nbFailures": 16,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.lenz.LenzCommandStationTest",
+      "failingMethods": [
+        "jmri.jmrix.lenz.LenzCommandStationTest#testSendPacket"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Send Packet Called without setting traffic controller",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrit.logix.PortalTest",
+      "failingMethods": [
+        "jmri.jmrit.logix.PortalTest#testAddPath"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "No message present: Path \"path_1\" already in block OB2, cannot be added to block OB1",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    },
+    {
+      "className": "jmri.jmrix.loconet.LnTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.loconet.LnTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrix.pi.RaspberryPiTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.pi.RaspberryPiTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "jmri.jmrix.internal.InternalTurnoutManagerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "jmri.jmrix.internal.InternalTurnoutManagerTest#testProvideFailure"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.Exception",
+          "failureDetail": "Unexpected exception, expected\u003cjava.lang.IllegalArgumentException\u003e but was\u003cjava.lang.AssertionError\u003e",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
