@@ -1,0 +1,49 @@
+{
+  "totalNumberSkippingTests": 1,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 4,
+  "repo": "apache/storm",
+  "failingModule": "/root/workspace/apache/storm/197700758/storm-drpc-server",
+  "hostname": "spirals-vortex.lille.inria.fr",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.lang.NoClassDefFoundError"
+  ],
+  "totalNumberRunningTests": 354,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.storm.daemon.drpc.DRPCServerTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.storm.daemon.drpc.DRPCServerTest#testFailedHttpGet",
+        "org.apache.storm.daemon.drpc.DRPCServerTest#testGoodHttpGet",
+        "org.apache.storm.daemon.drpc.DRPCServerTest#testGoodThrift",
+        "org.apache.storm.daemon.drpc.DRPCServerTest#testFailedThrift"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "org/apache/storm/thrift/TProcessor",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "org/apache/storm/thrift/TProcessor",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "org/apache/storm/thrift/TProcessor",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.NoClassDefFoundError",
+          "failureDetail": "org/apache/storm/thrift/TProcessor",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 4
+    }
+  ]
+}
