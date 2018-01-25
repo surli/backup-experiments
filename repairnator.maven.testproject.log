@@ -1,0 +1,2740 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] elastic-job
+[INFO] elastic-job-common
+[INFO] elastic-job-common-core
+[INFO] elastic-job-common-restful
+[INFO] elastic-job-lite
+[INFO] elastic-job-lite-core
+[INFO] elastic-job-lite-lifecycle
+[INFO] elastic-job-lite-spring
+[INFO] elastic-job-lite-console
+[INFO] elastic-job-cloud
+[INFO] elastic-job-cloud-executor
+[INFO] elastic-job-cloud-scheduler
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building elastic-job 2.0.6-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ elastic-job ---
+[INFO] Skipping Rule Enforcement.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building elastic-job-common 2.0.6-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ elastic-job-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building elastic-job-common-core 2.0.6-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ elastic-job-common-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ elastic-job-common-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/elasticjob/elastic-job-lite/207694348/elastic-job-common/elastic-job-common-core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ elastic-job-common-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ elastic-job-common-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ elastic-job-common-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ elastic-job-common-core ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 4.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 69.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 1503.1 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: ignoring option UseSplitVerifier; support was removed in 8.0
+Running com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterInitFailureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.556 sec - in com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterInitFailureTest
+Running com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterQueryWithCacheTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.906 sec - in com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterQueryWithCacheTest
+Running com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterModifyTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.716 sec - in com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterModifyTest
+Running com.dangdang.ddframe.job.reg.zookeeper.ZookeeperElectionServiceTest
+[ERROR] 2018-01-25 18:55:24,536 --Curator-LeaderSelector-0-- [org.apache.curator.framework.recipes.leader.LeaderSelector] The leader threw an exception 
+java.lang.IllegalMonitorStateException: You do not own the lock: /election
+	at org.apache.curator.framework.recipes.locks.InterProcessMutex.release(InterProcessMutex.java:140) ~[curator-recipes-2.10.0.jar:na]
+	at org.apache.curator.framework.recipes.leader.LeaderSelector.doWork(LeaderSelector.java:425) [curator-recipes-2.10.0.jar:na]
+	at org.apache.curator.framework.recipes.leader.LeaderSelector.doWorkLoop(LeaderSelector.java:441) [curator-recipes-2.10.0.jar:na]
+	at org.apache.curator.framework.recipes.leader.LeaderSelector.access$100(LeaderSelector.java:64) [curator-recipes-2.10.0.jar:na]
+	at org.apache.curator.framework.recipes.leader.LeaderSelector$2.call(LeaderSelector.java:245) [curator-recipes-2.10.0.jar:na]
+	at org.apache.curator.framework.recipes.leader.LeaderSelector$2.call(LeaderSelector.java:239) [curator-recipes-2.10.0.jar:na]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_121]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_121]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_121]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_121]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_121]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.679 sec - in com.dangdang.ddframe.job.reg.zookeeper.ZookeeperElectionServiceTest
+Running com.dangdang.ddframe.job.reg.zookeeper.ZookeeperConfigurationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.reg.zookeeper.ZookeeperConfigurationTest
+Running com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterForAuthTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.56 sec - in com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterForAuthTest
+Running com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterMiscellaneousTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.527 sec - in com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterMiscellaneousTest
+Running com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterQueryWithoutCacheTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.561 sec - in com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenterQueryWithoutCacheTest
+Running com.dangdang.ddframe.job.reg.exception.RegExceptionHandlerTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.004 sec - in com.dangdang.ddframe.job.reg.exception.RegExceptionHandlerTest
+Running com.dangdang.ddframe.job.statistics.rdb.StatisticRdbRepositoryTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.666 sec - in com.dangdang.ddframe.job.statistics.rdb.StatisticRdbRepositoryTest
+Running com.dangdang.ddframe.job.event.rdb.JobEventRdbSearchTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.983 sec - in com.dangdang.ddframe.job.event.rdb.JobEventRdbSearchTest
+Running com.dangdang.ddframe.job.event.rdb.JobEventRdbStorageTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.157 sec - in com.dangdang.ddframe.job.event.rdb.JobEventRdbStorageTest
+Running com.dangdang.ddframe.job.event.rdb.JobEventRdbIdentityTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.event.rdb.JobEventRdbIdentityTest
+Running com.dangdang.ddframe.job.event.rdb.JobEventRdbListenerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 sec - in com.dangdang.ddframe.job.event.rdb.JobEventRdbListenerTest
+Running com.dangdang.ddframe.job.event.rdb.JobEventRdbConfigurationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.dangdang.ddframe.job.event.rdb.JobEventRdbConfigurationTest
+Running com.dangdang.ddframe.job.event.JobEventBusTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 sec - in com.dangdang.ddframe.job.event.JobEventBusTest
+Running com.dangdang.ddframe.job.event.JobExecutionEventTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.dangdang.ddframe.job.event.JobExecutionEventTest
+Running com.dangdang.ddframe.job.executor.handler.ExecutorServiceHandlerRegistryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 sec - in com.dangdang.ddframe.job.executor.handler.ExecutorServiceHandlerRegistryTest
+Running com.dangdang.ddframe.job.executor.handler.JobPropertiesTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec - in com.dangdang.ddframe.job.executor.handler.JobPropertiesTest
+Running com.dangdang.ddframe.job.executor.handler.impl.DefaultJobExceptionHandlerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.dangdang.ddframe.job.executor.handler.impl.DefaultJobExceptionHandlerTest
+Running com.dangdang.ddframe.job.executor.type.ScriptJobExecutorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.136 sec - in com.dangdang.ddframe.job.executor.type.ScriptJobExecutorTest
+Running com.dangdang.ddframe.job.executor.type.WrongJobExecutorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in com.dangdang.ddframe.job.executor.type.WrongJobExecutorTest
+Running com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest
+Tests run: 8, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.166 sec <<< FAILURE! - in com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest
+assertExecuteWhenFetchDataIsNotEmptyAndProcessFailureWithExceptionForStreamingProcess(com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest)  Time elapsed: 0.055 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@1ecee32c
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@4372b9b6
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@232a7d73
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@4b41e4dd
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{1=java.lang.IllegalStateException
+	at com.dangdang.ddframe.job.fixture.job.TestDataflowJob.processData(TestDataflowJob.java:39)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.processData(DataflowJobExecutor.java:75)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:55)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.process(DataflowJobExecutor.java:46)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:195)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.access$000(AbstractElasticJobExecutor.java:47)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor$1.run(AbstractElasticJobExecutor.java:174)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest.tearDown(DataflowJobExecutorTest.java:57)
+
+assertExecuteWhenFetchDataIsNullAndEmpty(com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest)  Time elapsed: 0.011 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@56113384
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@5669c5fb
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@373ebf74
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@5f9678e1
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest.tearDown(DataflowJobExecutorTest.java:57)
+
+assertExecuteWhenFetchDataIsNotEmptyForUnStreamingProcessAndMultipleShardingItems(com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest)  Time elapsed: 0.013 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@112f364d
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@5ccbeb64
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@6d9f7a80
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@59252cb6
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{1=java.lang.IllegalStateException
+	at com.dangdang.ddframe.job.fixture.job.TestDataflowJob.processData(TestDataflowJob.java:39)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.processData(DataflowJobExecutor.java:75)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.oneOffExecute(DataflowJobExecutor.java:66)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.process(DataflowJobExecutor.java:48)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:195)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.access$000(AbstractElasticJobExecutor.java:47)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor$1.run(AbstractElasticJobExecutor.java:174)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest.tearDown(DataflowJobExecutorTest.java:57)
+
+assertExecuteWhenFetchDataIsNotEmptyForStreamingProcessAndMultipleShardingItems(com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest)  Time elapsed: 0.017 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@626c44e7
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@4dc8caa7
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@1d730606
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@3bcbb589
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest.tearDown(DataflowJobExecutorTest.java:57)
+
+assertExecuteWhenFetchDataIsNotEmptyForUnStreamingProcessAndSingleShardingItem(com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest)  Time elapsed: 0.011 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@53d102a2
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@6c45ee6e
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{0=java.lang.IllegalStateException
+	at com.dangdang.ddframe.job.fixture.job.TestDataflowJob.fetchData(TestDataflowJob.java:33)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.fetchData(DataflowJobExecutor.java:71)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.oneOffExecute(DataflowJobExecutor.java:64)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.process(DataflowJobExecutor.java:48)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:195)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:160)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:139)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:115)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest.assertExecuteWhenFetchDataIsNotEmptyForUnStreamingProcessAndSingleShardingItem(DataflowJobExecutorTest.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.mockito.internal.runners.JUnit45AndHigherRunnerImpl.run(JUnit45AndHigherRunnerImpl.java:37)
+	at org.mockito.runners.MockitoJUnitRunner.run(MockitoJUnitRunner.java:62)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest.tearDown(DataflowJobExecutorTest.java:57)
+
+assertExecuteWhenFetchDataIsNotEmptyForStreamingProcessAndSingleShardingItem(com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest)  Time elapsed: 0.007 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@1338fb5
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@42463763
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest.tearDown(DataflowJobExecutorTest.java:57)
+
+assertExecuteWhenFetchDataIsNotEmptyAndIsNotEligibleForJobRunningForStreamingProcess(com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest)  Time elapsed: 0.023 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@67c2e933
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@41dd05a
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@613a8ee1
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@178213b
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{1=java.lang.IllegalStateException
+	at com.dangdang.ddframe.job.fixture.job.TestDataflowJob.processData(TestDataflowJob.java:39)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.processData(DataflowJobExecutor.java:75)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:55)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.process(DataflowJobExecutor.java:46)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:195)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.access$000(AbstractElasticJobExecutor.java:47)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor$1.run(AbstractElasticJobExecutor.java:174)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest.tearDown(DataflowJobExecutorTest.java:57)
+
+assertExecuteWhenFetchDataIsNotEmptyAndIsEligibleForJobRunningForStreamingProcess(com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest)  Time elapsed: 0.018 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@18920cc
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@2807bdeb
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@72c28d64
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@6492fab5
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{1=java.lang.IllegalStateException
+	at com.dangdang.ddframe.job.fixture.job.TestDataflowJob.processData(TestDataflowJob.java:39)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.processData(DataflowJobExecutor.java:75)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:55)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.process(DataflowJobExecutor.java:46)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:195)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.access$000(AbstractElasticJobExecutor.java:47)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor$1.run(AbstractElasticJobExecutor.java:174)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest.tearDown(DataflowJobExecutorTest.java:57)
+
+Running com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest
+Tests run: 13, Failures: 8, Errors: 1, Skipped: 0, Time elapsed: 0.119 sec <<< FAILURE! - in com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest
+assertExecuteWhenRunOnceWithMisfireIsEmpty(com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest)  Time elapsed: 0 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@2002348
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@5911e990
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@31000e60
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@1d470d0
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceWithMisfireIsEmpty(SimpleJobExecutorTest.java:175)
+
+assertExecuteWhenRunOnceWithMisfireIsNotEmptyButIsNotEligibleForJobRunning(com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest)  Time elapsed: 0.018 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@2d1dee39
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@48d5f34e
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@fc258b1
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@6ff65192
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceWithMisfireIsNotEmptyButIsNotEligibleForJobRunning(SimpleJobExecutorTest.java:186)
+
+assertExecuteWhenRunOnceWithMisfire(com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest)  Time elapsed: 0.008 sec  <<< FAILURE!
+org.mockito.exceptions.verification.TooLittleActualInvocations: 
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+Wanted 2 times:
+-> at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceWithMisfire(SimpleJobExecutorTest.java:200)
+But was 1 time:
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceWithMisfire(SimpleJobExecutorTest.java:200)
+
+assertExecuteWhenRunOnceSuccessForMultipleShardingItems(com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest)  Time elapsed: 0.018 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@3e821657
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@1d131e1b
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@71cf1b07
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@615091b8
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceSuccess(SimpleJobExecutorTest.java:165)
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceSuccessForMultipleShardingItems(SimpleJobExecutorTest.java:157)
+
+assertExecuteWhenRunOnceAndThrowExceptionForMultipleShardingItems(com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest)  Time elapsed: 0.025 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceAndThrowException(SimpleJobExecutorTest.java:143)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@19648c40
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@12bd8a64
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@61e94def
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@3300f4fd
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{0=java.lang.RuntimeException
+, 1=java.lang.RuntimeException
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceAndThrowException(SimpleJobExecutorTest.java:143)
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceAndThrowExceptionForMultipleShardingItems(SimpleJobExecutorTest.java:122)
+
+assertExecuteWhenPreviousJobStillRunning(com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest)  Time elapsed: 0.018 sec  <<< FAILURE!
+org.mockito.exceptions.verification.junit.ArgumentsAreDifferent: 
+
+Argument(s) are different! Wanted:
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    "Previous job 'test_job' - shardingItems '[]' is still running, misfired job will start after previous job completed."
+);
+-> at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenPreviousJobStillRunning(SimpleJobExecutorTest.java:94)
+Actual invocation has different arguments:
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    "Sharding item for job 'test_job' is empty."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:129)
+
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenPreviousJobStillRunning(SimpleJobExecutorTest.java:94)
+
+assertExecuteWhenShardingItemsIsEmpty(com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest)  Time elapsed: 0 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([]);
+-> at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenShardingItemsIsEmpty(SimpleJobExecutorTest.java:111)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=10, jobParameter=, shardingItemParameters={}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    "Sharding item for job 'test_job' is empty."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:129)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=10, jobParameter=, shardingItemParameters={}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenShardingItemsIsEmpty(SimpleJobExecutorTest.java:111)
+
+assertExecuteWhenRunOnceAndThrowExceptionForSingleShardingItem(com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<com.dangdang.ddframe.job.exception.JobSystemException> but was<org.mockito.exceptions.verification.WantedButNotInvoked>
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceAndThrowException(SimpleJobExecutorTest.java:143)
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceAndThrowExceptionForSingleShardingItem(SimpleJobExecutorTest.java:117)
+
+assertExecuteWhenRunOnceSuccessForSingleShardingItems(com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest)  Time elapsed: 0.006 sec  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@7a560583
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@4d722ac9
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceSuccess(SimpleJobExecutorTest.java:165)
+	at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceSuccessForSingleShardingItems(SimpleJobExecutorTest.java:152)
+
+Running com.dangdang.ddframe.job.executor.JobExecutorFactoryTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.dangdang.ddframe.job.executor.JobExecutorFactoryTest
+Running com.dangdang.ddframe.job.exception.ExceptionUtilTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.exception.ExceptionUtilTest
+Running com.dangdang.ddframe.job.exception.JobConfigurationExceptionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.exception.JobConfigurationExceptionTest
+Running com.dangdang.ddframe.job.exception.JobStatisticExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.exception.JobStatisticExceptionTest
+Running com.dangdang.ddframe.job.exception.JobExecutionEnvironmentExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.exception.JobExecutionEnvironmentExceptionTest
+Running com.dangdang.ddframe.job.exception.JobSystemExceptionTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.exception.JobSystemExceptionTest
+Running com.dangdang.ddframe.job.util.env.LocalHostServiceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.util.env.LocalHostServiceTest
+Running com.dangdang.ddframe.job.util.env.TimeServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.util.env.TimeServiceTest
+Running com.dangdang.ddframe.job.util.env.HostExceptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.util.env.HostExceptionTest
+Running com.dangdang.ddframe.job.util.config.ShardingItemParametersTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.dangdang.ddframe.job.util.config.ShardingItemParametersTest
+Running com.dangdang.ddframe.job.util.config.ShardingItemsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.util.config.ShardingItemsTest
+Running com.dangdang.ddframe.job.util.json.GsonFactoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.util.json.GsonFactoryTest
+Running com.dangdang.ddframe.job.util.json.JobConfigurationGsonTypeAdapterTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.util.json.JobConfigurationGsonTypeAdapterTest
+Running com.dangdang.ddframe.job.util.concurrent.ExecutorServiceObjectTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 sec - in com.dangdang.ddframe.job.util.concurrent.ExecutorServiceObjectTest
+Running com.dangdang.ddframe.job.util.digest.EncryptionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.dangdang.ddframe.job.util.digest.EncryptionTest
+Running com.dangdang.ddframe.job.config.JobCoreConfigurationTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.config.JobCoreConfigurationTest
+Running com.dangdang.ddframe.job.api.ShardingContextTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.dangdang.ddframe.job.api.ShardingContextTest
+Running com.dangdang.ddframe.job.context.TaskContextTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.dangdang.ddframe.job.context.TaskContextTest
+
+Results :
+
+Failed tests: 
+  DataflowJobExecutorTest.tearDown:57 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@18920cc
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@2807bdeb
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@72c28d64
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@6492fab5
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{1=java.lang.IllegalStateException
+	at com.dangdang.ddframe.job.fixture.job.TestDataflowJob.processData(TestDataflowJob.java:39)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.processData(DataflowJobExecutor.java:75)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:55)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.process(DataflowJobExecutor.java:46)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:195)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.access$000(AbstractElasticJobExecutor.java:47)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor$1.run(AbstractElasticJobExecutor.java:174)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  DataflowJobExecutorTest.tearDown:57 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@67c2e933
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@41dd05a
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@613a8ee1
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@178213b
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{1=java.lang.IllegalStateException
+	at com.dangdang.ddframe.job.fixture.job.TestDataflowJob.processData(TestDataflowJob.java:39)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.processData(DataflowJobExecutor.java:75)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:55)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.process(DataflowJobExecutor.java:46)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:195)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.access$000(AbstractElasticJobExecutor.java:47)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor$1.run(AbstractElasticJobExecutor.java:174)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  DataflowJobExecutorTest.tearDown:57 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@1ecee32c
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@4372b9b6
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@232a7d73
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@4b41e4dd
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{1=java.lang.IllegalStateException
+	at com.dangdang.ddframe.job.fixture.job.TestDataflowJob.processData(TestDataflowJob.java:39)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.processData(DataflowJobExecutor.java:75)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:55)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.process(DataflowJobExecutor.java:46)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:195)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.access$000(AbstractElasticJobExecutor.java:47)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor$1.run(AbstractElasticJobExecutor.java:174)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  DataflowJobExecutorTest.tearDown:57 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@626c44e7
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@4dc8caa7
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@1d730606
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@3bcbb589
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  DataflowJobExecutorTest.tearDown:57 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@1338fb5
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.isEligibleForJobRunning();
+-> at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.streamingExecute(DataflowJobExecutor.java:56)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@42463763
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  DataflowJobExecutorTest.tearDown:57 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@112f364d
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@5ccbeb64
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@6d9f7a80
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@59252cb6
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{1=java.lang.IllegalStateException
+	at com.dangdang.ddframe.job.fixture.job.TestDataflowJob.processData(TestDataflowJob.java:39)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.processData(DataflowJobExecutor.java:75)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.oneOffExecute(DataflowJobExecutor.java:66)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.process(DataflowJobExecutor.java:48)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:195)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.access$000(AbstractElasticJobExecutor.java:47)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor$1.run(AbstractElasticJobExecutor.java:174)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  DataflowJobExecutorTest.tearDown:57 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@53d102a2
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@6c45ee6e
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{0=java.lang.IllegalStateException
+	at com.dangdang.ddframe.job.fixture.job.TestDataflowJob.fetchData(TestDataflowJob.java:33)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.fetchData(DataflowJobExecutor.java:71)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.oneOffExecute(DataflowJobExecutor.java:64)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutor.process(DataflowJobExecutor.java:48)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:195)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:160)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:139)
+	at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:115)
+	at com.dangdang.ddframe.job.executor.type.DataflowJobExecutorTest.assertExecuteWhenFetchDataIsNotEmptyForUnStreamingProcessAndSingleShardingItem(DataflowJobExecutorTest.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.mockito.internal.runners.JUnit45AndHigherRunnerImpl.run(JUnit45AndHigherRunnerImpl.java:37)
+	at org.mockito.runners.MockitoJUnitRunner.run(MockitoJUnitRunner.java:62)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  DataflowJobExecutorTest.tearDown:57 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@56113384
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@5669c5fb
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@373ebf74
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@5f9678e1
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  SimpleJobExecutorTest.assertExecuteWhenPreviousJobStillRunning:94 
+Argument(s) are different! Wanted:
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    "Previous job 'test_job' - shardingItems '[]' is still running, misfired job will start after previous job completed."
+);
+-> at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenPreviousJobStillRunning(SimpleJobExecutorTest.java:94)
+Actual invocation has different arguments:
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    "Sharding item for job 'test_job' is empty."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:129)
+
+  SimpleJobExecutorTest.assertExecuteWhenRunOnceAndThrowExceptionForMultipleShardingItems:122->assertExecuteWhenRunOnceAndThrowException:143 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceAndThrowException(SimpleJobExecutorTest.java:143)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@19648c40
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@12bd8a64
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@61e94def
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@3300f4fd
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_ERROR,
+    "{0=java.lang.RuntimeException
+, 1=java.lang.RuntimeException
+}"
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:149)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  SimpleJobExecutorTest.assertExecuteWhenRunOnceSuccessForMultipleShardingItems:157->assertExecuteWhenRunOnceSuccess:165 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@3e821657
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@1d131e1b
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@71cf1b07
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@615091b8
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  SimpleJobExecutorTest.assertExecuteWhenRunOnceSuccessForSingleShardingItems:152->assertExecuteWhenRunOnceSuccess:165 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@7a560583
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@4d722ac9
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=1, jobParameter=, shardingItemParameters={0=A}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  SimpleJobExecutorTest.assertExecuteWhenRunOnceWithMisfire:200 
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+Wanted 2 times:
+-> at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenRunOnceWithMisfire(SimpleJobExecutorTest.java:200)
+But was 1 time:
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+  SimpleJobExecutorTest.assertExecuteWhenRunOnceWithMisfireIsEmpty:175 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@2002348
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@5911e990
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@31000e60
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@1d470d0
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  SimpleJobExecutorTest.assertExecuteWhenRunOnceWithMisfireIsNotEmptyButIsNotEligibleForJobRunning:186 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([0, 1]);
+-> at com.dangdang.ddframe.job.executor.type.ElasticJobVerify.verifyForIsNotMisfire(ElasticJobVerify.java:47)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.registerJobBegin(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:133)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_RUNNING,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:136)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@2d1dee39
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@48d5f34e
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@fc258b1
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:190)
+
+jobFacade.postJobExecutionEvent(
+    com.dangdang.ddframe.job.event.type.JobExecutionEvent@6ff65192
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.process(AbstractElasticJobExecutor.java:206)
+
+jobFacade.registerJobCompleted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:142)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    ""
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:145)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=2, jobParameter=, shardingItemParameters={0=A, 1=B}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+  SimpleJobExecutorTest.assertExecuteWhenShardingItemsIsEmpty:111 
+Wanted but not invoked:
+jobFacade.misfireIfNecessary([]);
+-> at com.dangdang.ddframe.job.executor.type.SimpleJobExecutorTest.assertExecuteWhenShardingItemsIsEmpty(SimpleJobExecutorTest.java:111)
+
+However, there were other interactions with this mock:
+jobFacade.loadJobRootConfiguration(true);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.<init>(AbstractElasticJobExecutor.java:65)
+
+jobFacade.checkJobExecutionEnvironment();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:99)
+
+jobFacade.getShardingContexts();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:103)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_STAGING,
+    "Job 'test_job' execute begin."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:105)
+
+jobFacade.cleanPreviousExecutionInfo();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:107)
+
+jobFacade.beforeJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=10, jobParameter=, shardingItemParameters={}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:109)
+
+jobFacade.postJobStatusTraceEvent(
+    "fake_task_id",
+    TASK_FINISHED,
+    "Sharding item for job 'test_job' is empty."
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:129)
+
+jobFacade.failoverIfNecessary();
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:116)
+
+jobFacade.afterJobExecuted(
+    ShardingContexts(taskId=fake_task_id, jobName=test_job, shardingTotalCount=10, jobParameter=, shardingItemParameters={}, jobEventSamplingCount=0, currentJobEventSamplingCount=0, allowSendJobEvent=true)
+);
+-> at com.dangdang.ddframe.job.executor.AbstractElasticJobExecutor.execute(AbstractElasticJobExecutor.java:118)
+
+
+Tests in error: 
+  SimpleJobExecutorTest.assertExecuteWhenRunOnceAndThrowExceptionForSingleShardingItem » 
+
+Tests run: 187, Failures: 16, Errors: 1, Skipped: 1
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] elastic-job ........................................ SUCCESS [  0.959 s]
+[INFO] elastic-job-common ................................. SUCCESS [  0.004 s]
+[INFO] elastic-job-common-core ............................ FAILURE [ 22.230 s]
+[INFO] elastic-job-common-restful ......................... SKIPPED
+[INFO] elastic-job-lite ................................... SKIPPED
+[INFO] elastic-job-lite-core .............................. SKIPPED
+[INFO] elastic-job-lite-lifecycle ......................... SKIPPED
+[INFO] elastic-job-lite-spring ............................ SKIPPED
+[INFO] elastic-job-lite-console ........................... SKIPPED
+[INFO] elastic-job-cloud .................................. SKIPPED
+[INFO] elastic-job-cloud-executor ......................... SKIPPED
+[INFO] elastic-job-cloud-scheduler ........................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 23.568 s
+[INFO] Finished at: 2018-01-25T18:55:29+01:00
+[INFO] Final Memory: 26M/950M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project elastic-job-common-core: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/elasticjob/elastic-job-lite/207694348/elastic-job-common/elastic-job-common-core/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :elastic-job-common-core
