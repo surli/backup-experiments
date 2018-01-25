@@ -1,0 +1,1668 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] io.druid:druid
+[INFO] java-util
+[INFO] druid-api
+[INFO] druid-common
+[INFO] druid-hll
+[INFO] extendedset
+[INFO] bytebuffer-collections
+[INFO] druid-processing
+[INFO] druid-aws-common
+[INFO] druid-server
+[INFO] druid-examples
+[INFO] druid-indexing-hadoop
+[INFO] druid-indexing-service
+[INFO] druid-sql
+[INFO] druid-services
+[INFO] druid-s3-extensions
+[INFO] druid-datasketches
+[INFO] druid-kafka-eight
+[INFO] druid-histogram
+[INFO] mysql-metadata-storage
+[INFO] druid-kafka-indexing-service
+[INFO] druid-integration-tests
+[INFO] druid-benchmarks
+[INFO] druid-avro-extensions
+[INFO] druid-caffeine-cache
+[INFO] druid-kerberos
+[INFO] druid-hdfs-storage
+[INFO] druid-stats
+[INFO] druid-lookups-cached-global
+[INFO] druid-kafka-extraction-namespace
+[INFO] postgresql-metadata-storage
+[INFO] druid-lookups-cached-single
+[INFO] druid-azure-extensions
+[INFO] druid-cassandra-storage
+[INFO] druid-rocketmq
+[INFO] druid-cloudfiles-extensions
+[INFO] graphite-emitter
+[INFO] druid-kafka-eight-simple-consumer
+[INFO] druid-rabbitmq
+[INFO] druid-distinctcount
+[INFO] druid-parquet-extensions
+[INFO] statsd-emitter
+[INFO] druid-orc-extensions
+[INFO] druid-time-min-max
+[INFO] druid-google-extensions
+[INFO] druid-virtual-columns
+[INFO] druid-thrift-extensions
+[INFO] ambari-metrics-emitter
+[INFO] scan-query
+[INFO] sqlserver-metadata-storage
+[INFO] distribution
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building io.druid:druid 0.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ druid ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ druid ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (check-java-api) @ druid ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building java-util 0.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ java-util ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ java-util ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- antlr4-maven-plugin:4.5.1:antlr4 (default) @ java-util ---
+[INFO] No ANTLR 4 grammars to compile in /root/workspace/druid-io/druid/210761639/java-util/src/main/antlr4
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ java-util ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/java-util/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ java-util ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ java-util ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ java-util ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ java-util ---
+[WARNING] The system property user.timezone is configured twice! The property appears in <argLine/> and any of <systemPropertyVariables/>, <systemProperties/> or user property.
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.pom (4 KB at 11.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.19.1/surefire-providers-2.19.1.pom (3 KB at 75.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.19.1/surefire-junit4-2.19.1.jar (74 KB at 1389.6 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.druid.java.util.common.parsers.JSONPathParserTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.33 sec - in io.druid.java.util.common.parsers.JSONPathParserTest
+Running io.druid.java.util.common.parsers.RegexParserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.java.util.common.parsers.RegexParserTest
+Running io.druid.java.util.common.parsers.JSONParserTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in io.druid.java.util.common.parsers.JSONParserTest
+Running io.druid.java.util.common.parsers.TimestampParserTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec - in io.druid.java.util.common.parsers.TimestampParserTest
+Running io.druid.java.util.common.parsers.CSVParserTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.java.util.common.parsers.CSVParserTest
+Running io.druid.java.util.common.parsers.JavaScriptParserTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.146 sec - in io.druid.java.util.common.parsers.JavaScriptParserTest
+Running io.druid.java.util.common.parsers.DelimitedParserTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.java.util.common.parsers.DelimitedParserTest
+Running io.druid.java.util.common.guava.MergeSequenceTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec - in io.druid.java.util.common.guava.MergeSequenceTest
+Running io.druid.java.util.common.guava.ConcatSequenceTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in io.druid.java.util.common.guava.ConcatSequenceTest
+Running io.druid.java.util.common.guava.nary.SortedMergeIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.java.util.common.guava.nary.SortedMergeIteratorTest
+Running io.druid.java.util.common.guava.MappedSequenceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.java.util.common.guava.MappedSequenceTest
+Running io.druid.java.util.common.guava.ComparatorsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in io.druid.java.util.common.guava.ComparatorsTest
+Running io.druid.java.util.common.guava.MergeIteratorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.java.util.common.guava.MergeIteratorTest
+Running io.druid.java.util.common.guava.FunctionalIteratorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.druid.java.util.common.guava.FunctionalIteratorTest
+Running io.druid.java.util.common.guava.WrappingSequenceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.java.util.common.guava.WrappingSequenceTest
+Running io.druid.java.util.common.guava.LimitedSequenceTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.java.util.common.guava.LimitedSequenceTest
+Running io.druid.java.util.common.guava.WithEffectSequenceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.druid.java.util.common.guava.WithEffectSequenceTest
+Running io.druid.java.util.common.guava.FilteredSequenceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.java.util.common.guava.FilteredSequenceTest
+Running io.druid.java.util.common.guava.FunctionalIterableTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.java.util.common.guava.FunctionalIterableTest
+Running io.druid.java.util.common.guava.BaseSequenceTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.java.util.common.guava.BaseSequenceTest
+Running io.druid.java.util.common.RetryUtilsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.947 sec - in io.druid.java.util.common.RetryUtilsTest
+Running io.druid.java.util.common.logger.LoggerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.java.util.common.logger.LoggerTest
+Running io.druid.java.util.common.StringUtilsTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.java.util.common.StringUtilsTest
+Running io.druid.java.util.common.FileUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in io.druid.java.util.common.FileUtilsTest
+Running io.druid.java.util.common.lifecycle.LifecycleTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.536 sec - in io.druid.java.util.common.lifecycle.LifecycleTest
+Running io.druid.java.util.common.GranularityTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 sec - in io.druid.java.util.common.GranularityTest
+Running io.druid.java.util.common.ByteBufferUtilsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.java.util.common.ByteBufferUtilsTest
+Running io.druid.java.util.common.StreamUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.211 sec - in io.druid.java.util.common.StreamUtilsTest
+Running io.druid.java.util.common.CompressionUtilsTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.042 sec - in io.druid.java.util.common.CompressionUtilsTest
+Running io.druid.java.util.common.io.smoosh.SmooshedFileMapperTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec - in io.druid.java.util.common.io.smoosh.SmooshedFileMapperTest
+
+Results :
+
+Tests run: 147, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (check-java-api) @ java-util ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building druid-api 0.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ druid-api ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ druid-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ druid-api ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ druid-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ druid-api ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ druid-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ druid-api ---
+[WARNING] The system property user.timezone is configured twice! The property appears in <argLine/> and any of <systemPropertyVariables/>, <systemProperties/> or user property.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.druid.data.input.impl.TimestampSpecTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 sec - in io.druid.data.input.impl.TimestampSpecTest
+Running io.druid.data.input.impl.TimeAndDimsParseSpecTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.439 sec - in io.druid.data.input.impl.TimeAndDimsParseSpecTest
+Running io.druid.data.input.impl.JSONLowercaseParseSpecTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in io.druid.data.input.impl.JSONLowercaseParseSpecTest
+Running io.druid.data.input.impl.DelimitedParseSpecTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in io.druid.data.input.impl.DelimitedParseSpecTest
+Running io.druid.data.input.impl.FileIteratingFirehoseTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec - in io.druid.data.input.impl.FileIteratingFirehoseTest
+Running io.druid.data.input.impl.DimensionsSpecSerdeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec - in io.druid.data.input.impl.DimensionsSpecSerdeTest
+Running io.druid.data.input.impl.NoopInputRowParserTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec - in io.druid.data.input.impl.NoopInputRowParserTest
+Running io.druid.data.input.impl.InputRowParserSerdeTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.405 sec - in io.druid.data.input.impl.InputRowParserSerdeTest
+Running io.druid.data.input.impl.JavaScriptParseSpecTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.233 sec - in io.druid.data.input.impl.JavaScriptParseSpecTest
+Running io.druid.data.input.impl.JSONPathSpecTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.data.input.impl.JSONPathSpecTest
+Running io.druid.data.input.impl.CSVParseSpecTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.data.input.impl.CSVParseSpecTest
+Running io.druid.data.input.impl.ParseSpecTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.data.input.impl.ParseSpecTest
+Running io.druid.data.input.impl.JSONParseSpecTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in io.druid.data.input.impl.JSONParseSpecTest
+Running io.druid.data.input.impl.RegexParseSpecTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.data.input.impl.RegexParseSpecTest
+Running io.druid.data.input.MapBasedRowTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.data.input.MapBasedRowTest
+Running io.druid.timeline.partition.NoneShardSpecTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in io.druid.timeline.partition.NoneShardSpecTest
+Running io.druid.timeline.DataSegmentTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.515 sec - in io.druid.timeline.DataSegmentTest
+Running io.druid.timeline.DataSegmentUtilsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in io.druid.timeline.DataSegmentUtilsTest
+Running io.druid.segment.loading.DataSegmentPusherUtilTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.segment.loading.DataSegmentPusherUtilTest
+Running io.druid.guice.PolyBindTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.547 sec - in io.druid.guice.PolyBindTest
+Running io.druid.guice.ConditionalMultibindTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec - in io.druid.guice.ConditionalMultibindTest
+Running io.druid.guice.JsonConfiguratorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in io.druid.guice.JsonConfiguratorTest
+Running io.druid.js.JavaScriptConfigTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.js.JavaScriptConfigTest
+
+Results :
+
+Tests run: 62, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (check-java-api) @ druid-api ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building druid-common 0.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ druid-common ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ druid-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- antlr4-maven-plugin:4.5.1:antlr4 (default) @ druid-common ---
+[INFO] ANTLR 4: Processing source directory /root/workspace/druid-io/druid/210761639/common/src/main/antlr4
+[INFO] Processing grammar: io/druid/math/expr/antlr/Expr.g4
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ druid-common ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ druid-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 80 source files to /root/workspace/druid-io/druid/210761639/common/target/classes
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/ReferenceCountingResourceHolder.java:[25,16] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/StupidPool.java:[27,16] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/ReferenceCountingResourceHolder.java:[25,16] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/StupidPool.java:[27,16] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/ReferenceCountingResourceHolder.java:[25,16] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/StupidPool.java:[27,16] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/ReferenceCountingResourceHolder.java:[49,17] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/ReferenceCountingResourceHolder.java:[55,20] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/StupidPool.java:[116,55] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/StupidPool.java:[130,61] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/StupidPool.java:[156,68] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/StupidPool.java:[175,13] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[WARNING] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/collections/StupidPool.java:[181,15] sun.misc.Cleaner is internal proprietary API and may be removed in a future release
+[INFO] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/common/guava/GuavaUtils.java: Some input files use or override a deprecated API.
+[INFO] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/common/guava/GuavaUtils.java: Recompile with -Xlint:deprecation for details.
+[INFO] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/timeline/partition/PartitionHolder.java: Some input files use unchecked or unsafe operations.
+[INFO] /root/workspace/druid-io/druid/210761639/common/src/main/java/io/druid/timeline/partition/PartitionHolder.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ druid-common ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/common/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ druid-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ druid-common ---
+[WARNING] The system property user.timezone is configured twice! The property appears in <argLine/> and any of <systemPropertyVariables/>, <systemProperties/> or user property.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.druid.collections.SerializablePairTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.408 sec - in io.druid.collections.SerializablePairTest
+Running io.druid.collections.OrderedMergeSequenceTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.409 sec - in io.druid.collections.OrderedMergeSequenceTest
+Running io.druid.collections.ReferenceCountingResourceHolderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.943 sec - in io.druid.collections.ReferenceCountingResourceHolderTest
+Running io.druid.collections.CombiningIterableTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in io.druid.collections.CombiningIterableTest
+Running io.druid.collections.BlockingPoolTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.32 sec - in io.druid.collections.BlockingPoolTest
+Running io.druid.collections.StupidPoolTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 sec - in io.druid.collections.StupidPoolTest
+Running io.druid.collections.StupidResourceHolderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.collections.StupidResourceHolderTest
+Running io.druid.collections.CombiningIteratorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in io.druid.collections.CombiningIteratorTest
+Running io.druid.collections.CountingMapTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in io.druid.collections.CountingMapTest
+Running io.druid.collections.IntListTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.collections.IntListTest
+Running io.druid.collections.OrderedMergeIteratorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in io.druid.collections.OrderedMergeIteratorTest
+Running io.druid.common.utils.JodaUtilsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 sec - in io.druid.common.utils.JodaUtilsTest
+Running io.druid.common.utils.ServletResourceUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.common.utils.ServletResourceUtilsTest
+Running io.druid.common.utils.StringUtilsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.common.utils.StringUtilsTest
+Running io.druid.common.utils.VMUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.common.utils.VMUtilsTest
+Running io.druid.common.utils.SerializerUtilsTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in io.druid.common.utils.SerializerUtilsTest
+Running io.druid.common.utils.LogTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.003 sec - in io.druid.common.utils.LogTest
+Running io.druid.common.utils.PropUtilsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.common.utils.PropUtilsTest
+Running io.druid.common.utils.SocketUtilTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.common.utils.SocketUtilTest
+Running io.druid.common.utils.UUIDUtilsTest
+Tests run: 72, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec - in io.druid.common.utils.UUIDUtilsTest
+Running io.druid.common.guava.CombiningSequenceTest
+Tests run: 42, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec - in io.druid.common.guava.CombiningSequenceTest
+Running io.druid.common.guava.ComplexSequenceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.common.guava.ComplexSequenceTest
+Running io.druid.common.guava.GuavaUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.common.guava.GuavaUtilsTest
+Running io.druid.guice.LifecycleScopeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.276 sec - in io.druid.guice.LifecycleScopeTest
+Running io.druid.timeline.partition.IntegerPartitionChunkTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.timeline.partition.IntegerPartitionChunkTest
+Running io.druid.timeline.partition.StringPartitionChunkTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.timeline.partition.StringPartitionChunkTest
+Running io.druid.timeline.VersionedIntervalTimelineTest
+Tests run: 73, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 sec - in io.druid.timeline.VersionedIntervalTimelineTest
+Running io.druid.math.expr.ParserTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.15 sec - in io.druid.math.expr.ParserTest
+Running io.druid.math.expr.EvalTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in io.druid.math.expr.EvalTest
+Running io.druid.concurrent.LifecycleLockTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.028 sec - in io.druid.concurrent.LifecycleLockTest
+Running io.druid.concurrent.ExecsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.515 sec - in io.druid.concurrent.ExecsTest
+Running io.druid.metadata.DefaultPasswordProviderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in io.druid.metadata.DefaultPasswordProviderTest
+Running io.druid.metadata.MetadataStorageConnectorConfigTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.metadata.MetadataStorageConnectorConfigTest
+Running io.druid.metadata.EnvironmentVariablePasswordProviderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.metadata.EnvironmentVariablePasswordProviderTest
+
+Results :
+
+Tests run: 324, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (check-java-api) @ druid-common ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building druid-hll 0.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ druid-hll ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ druid-hll ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ druid-hll ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/hll/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ druid-hll ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ druid-hll ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/hll/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ druid-hll ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ druid-hll ---
+[WARNING] The system property user.timezone is configured twice! The property appears in <argLine/> and any of <systemPropertyVariables/>, <systemProperties/> or user property.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.druid.hll.HyperLogLogCollectorTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 5, Time elapsed: 1.615 sec - in io.druid.hll.HyperLogLogCollectorTest
+Running io.druid.hll.HyperLogLogSerdeBenchmarkTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in io.druid.hll.HyperLogLogSerdeBenchmarkTest
+
+Results :
+
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 6
+
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (check-java-api) @ druid-hll ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building extendedset 0.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ extendedset ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ extendedset ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ extendedset ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/extendedset/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ extendedset ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ extendedset ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/extendedset/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ extendedset ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ extendedset ---
+[WARNING] The system property user.timezone is configured twice! The property appears in <argLine/> and any of <systemPropertyVariables/>, <systemProperties/> or user property.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.druid.extendedset.intset.ImmutableConciseSetTest
+Tests run: 178, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 44.043 sec - in io.druid.extendedset.intset.ImmutableConciseSetTest
+
+Results :
+
+Tests run: 178, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (check-java-api) @ extendedset ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building bytebuffer-collections 0.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ bytebuffer-collections ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ bytebuffer-collections ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ bytebuffer-collections ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/bytebuffer-collections/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ bytebuffer-collections ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ bytebuffer-collections ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/bytebuffer-collections/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ bytebuffer-collections ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ bytebuffer-collections ---
+[WARNING] The system property user.timezone is configured twice! The property appears in <argLine/> and any of <systemPropertyVariables/>, <systemProperties/> or user property.
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit47/2.19.1/surefire-junit47-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit47/2.19.1/surefire-junit47-2.19.1.pom (7 KB at 304.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit48/2.19.1/common-junit48-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit48/2.19.1/common-junit48-2.19.1.pom (4 KB at 120.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit4/2.19.1/common-junit4-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit4/2.19.1/common-junit4-2.19.1.pom (3 KB at 104.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit3/2.19.1/common-junit3-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit3/2.19.1/common-junit3-2.19.1.pom (2 KB at 77.1 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.pom (3 KB at 145.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.9/maven-shared-utils-0.9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.9/maven-shared-utils-0.9.pom (7 KB at 243.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.pom (3 KB at 98.7 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit47/2.19.1/surefire-junit47-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit3/2.19.1/common-junit3-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit48/2.19.1/common-junit48-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit4/2.19.1/common-junit4-2.19.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit48/2.19.1/common-junit48-2.19.1.jar (23 KB at 375.2 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit3/2.19.1/common-junit3-2.19.1.jar (12 KB at 187.3 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.9/maven-shared-utils-0.9.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit4/2.19.1/common-junit4-2.19.1.jar (26 KB at 389.3 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit47/2.19.1/surefire-junit47-2.19.1.jar (150 KB at 1945.7 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.19.1/surefire-grouper-2.19.1.jar (38 KB at 936.8 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/2.19.1/common-java5-2.19.1.jar (44 KB at 381.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.9/maven-shared-utils-0.9.jar (168 KB at 2328.5 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.druid.collections.bitmap.ConciseBitmapFactoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec - in io.druid.collections.bitmap.ConciseBitmapFactoryTest
+Running io.druid.collections.bitmap.WrappedBitSetBitmapBitSetTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in io.druid.collections.bitmap.WrappedBitSetBitmapBitSetTest
+Running com.google.common.collect.testing.testers.CollectionAddAllTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.google.common.collect.testing.testers.CollectionAddAllTester
+Running com.google.common.collect.testing.testers.CollectionAddTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionAddTester
+Running com.google.common.collect.testing.testers.CollectionClearTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionClearTester
+Running com.google.common.collect.testing.testers.CollectionContainsAllTester
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionContainsAllTester
+Running com.google.common.collect.testing.testers.CollectionContainsTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionContainsTester
+Running com.google.common.collect.testing.testers.CollectionEqualsTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionEqualsTester
+Running com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Running com.google.common.collect.testing.testers.CollectionIteratorTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec - in com.google.common.collect.testing.testers.CollectionIteratorTester
+Running com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Running com.google.common.collect.testing.testers.CollectionRemoveTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRemoveTester
+Running com.google.common.collect.testing.testers.CollectionRetainAllTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRetainAllTester
+Running com.google.common.collect.testing.testers.CollectionSizeTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionSizeTester
+Running com.google.common.collect.testing.testers.CollectionToArrayTester
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.google.common.collect.testing.testers.CollectionToArrayTester
+Running com.google.common.collect.testing.testers.CollectionToStringTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionToStringTester
+Running com.google.common.collect.testing.ExampleIteratorTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.ExampleIteratorTester
+Running com.google.common.collect.testing.testers.CollectionAddAllTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.google.common.collect.testing.testers.CollectionAddAllTester
+Running com.google.common.collect.testing.testers.CollectionAddTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionAddTester
+Running com.google.common.collect.testing.testers.CollectionClearTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionClearTester
+Running com.google.common.collect.testing.testers.CollectionContainsAllTester
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.google.common.collect.testing.testers.CollectionContainsAllTester
+Running com.google.common.collect.testing.testers.CollectionContainsTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionContainsTester
+Running com.google.common.collect.testing.testers.CollectionCreationTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionCreationTester
+Running com.google.common.collect.testing.testers.CollectionEqualsTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionEqualsTester
+Running com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Running com.google.common.collect.testing.testers.CollectionIteratorTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec - in com.google.common.collect.testing.testers.CollectionIteratorTester
+Running com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Running com.google.common.collect.testing.testers.CollectionRemoveTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRemoveTester
+Running com.google.common.collect.testing.testers.CollectionRetainAllTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRetainAllTester
+Running com.google.common.collect.testing.testers.CollectionSizeTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionSizeTester
+Running com.google.common.collect.testing.testers.CollectionToArrayTester
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionToArrayTester
+Running com.google.common.collect.testing.testers.CollectionToStringTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionToStringTester
+Running com.google.common.collect.testing.ExampleIteratorTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.ExampleIteratorTester
+Running com.google.common.collect.testing.testers.CollectionAddAllTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionAddAllTester
+Running com.google.common.collect.testing.testers.CollectionAddTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionAddTester
+Running com.google.common.collect.testing.testers.CollectionClearTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionClearTester
+Running com.google.common.collect.testing.testers.CollectionContainsAllTester
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionContainsAllTester
+Running com.google.common.collect.testing.testers.CollectionContainsTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionContainsTester
+Running com.google.common.collect.testing.testers.CollectionCreationTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionCreationTester
+Running com.google.common.collect.testing.testers.CollectionEqualsTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionEqualsTester
+Running com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Running com.google.common.collect.testing.testers.CollectionIteratorTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 sec - in com.google.common.collect.testing.testers.CollectionIteratorTester
+Running com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Running com.google.common.collect.testing.testers.CollectionRemoveTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionRemoveTester
+Running com.google.common.collect.testing.testers.CollectionRetainAllTester
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRetainAllTester
+Running com.google.common.collect.testing.testers.CollectionSizeTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionSizeTester
+Running com.google.common.collect.testing.testers.CollectionToArrayTester
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionToArrayTester
+Running com.google.common.collect.testing.testers.CollectionToStringTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionToStringTester
+Running com.google.common.collect.testing.ExampleIteratorTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.ExampleIteratorTester
+Running com.google.common.collect.testing.testers.CollectionAddAllTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionAddAllTester
+Running com.google.common.collect.testing.testers.CollectionAddTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionAddTester
+Running com.google.common.collect.testing.testers.CollectionClearTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionClearTester
+Running com.google.common.collect.testing.testers.CollectionContainsAllTester
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionContainsAllTester
+Running com.google.common.collect.testing.testers.CollectionContainsTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionContainsTester
+Running com.google.common.collect.testing.testers.CollectionEqualsTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionEqualsTester
+Running com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Running com.google.common.collect.testing.testers.CollectionIteratorTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec - in com.google.common.collect.testing.testers.CollectionIteratorTester
+Running com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Running com.google.common.collect.testing.testers.CollectionRemoveTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRemoveTester
+Running com.google.common.collect.testing.testers.CollectionRetainAllTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRetainAllTester
+Running com.google.common.collect.testing.testers.CollectionSizeTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionSizeTester
+Running com.google.common.collect.testing.testers.CollectionToArrayTester
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionToArrayTester
+Running com.google.common.collect.testing.testers.CollectionToStringTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionToStringTester
+Running com.google.common.collect.testing.ExampleIteratorTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.ExampleIteratorTester
+Running com.google.common.collect.testing.testers.CollectionAddAllTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionAddAllTester
+Running com.google.common.collect.testing.testers.CollectionAddTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionAddTester
+Running com.google.common.collect.testing.testers.CollectionClearTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionClearTester
+Running com.google.common.collect.testing.testers.CollectionContainsAllTester
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionContainsAllTester
+Running com.google.common.collect.testing.testers.CollectionContainsTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionContainsTester
+Running com.google.common.collect.testing.testers.CollectionCreationTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionCreationTester
+Running com.google.common.collect.testing.testers.CollectionEqualsTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionEqualsTester
+Running com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Running com.google.common.collect.testing.testers.CollectionIteratorTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in com.google.common.collect.testing.testers.CollectionIteratorTester
+Running com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Running com.google.common.collect.testing.testers.CollectionRemoveTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRemoveTester
+Running com.google.common.collect.testing.testers.CollectionRetainAllTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRetainAllTester
+Running com.google.common.collect.testing.testers.CollectionSizeTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionSizeTester
+Running com.google.common.collect.testing.testers.CollectionToArrayTester
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionToArrayTester
+Running com.google.common.collect.testing.testers.CollectionToStringTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionToStringTester
+Running com.google.common.collect.testing.ExampleIteratorTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.ExampleIteratorTester
+Running com.google.common.collect.testing.testers.CollectionAddAllTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionAddAllTester
+Running com.google.common.collect.testing.testers.CollectionAddTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionAddTester
+Running com.google.common.collect.testing.testers.CollectionClearTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionClearTester
+Running com.google.common.collect.testing.testers.CollectionContainsAllTester
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionContainsAllTester
+Running com.google.common.collect.testing.testers.CollectionContainsTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionContainsTester
+Running com.google.common.collect.testing.testers.CollectionCreationTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionCreationTester
+Running com.google.common.collect.testing.testers.CollectionEqualsTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionEqualsTester
+Running com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.google.common.collect.testing.testers.CollectionIsEmptyTester
+Running com.google.common.collect.testing.testers.CollectionIteratorTester
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in com.google.common.collect.testing.testers.CollectionIteratorTester
+Running com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRemoveAllTester
+Running com.google.common.collect.testing.testers.CollectionRemoveTester
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRemoveTester
+Running com.google.common.collect.testing.testers.CollectionRetainAllTester
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionRetainAllTester
+Running com.google.common.collect.testing.testers.CollectionSizeTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionSizeTester
+Running com.google.common.collect.testing.testers.CollectionToArrayTester
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionToArrayTester
+Running com.google.common.collect.testing.testers.CollectionToStringTester
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.testers.CollectionToStringTester
+Running com.google.common.collect.testing.ExampleIteratorTester
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.google.common.collect.testing.ExampleIteratorTester
+Running io.druid.collections.bitmap.RoaringBitmapFactoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.collections.bitmap.RoaringBitmapFactoryTest
+Running io.druid.collections.bitmap.WrappedRoaringBitmapTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.collections.bitmap.WrappedRoaringBitmapTest
+Running io.druid.collections.spatial.ImmutableRTreeTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.347 sec - in io.druid.collections.spatial.ImmutableRTreeTest
+Running io.druid.collections.spatial.search.RadiusBoundTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.collections.spatial.search.RadiusBoundTest
+Running io.druid.collections.spatial.search.PolygonBoundTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.collections.spatial.search.PolygonBoundTest
+Running io.druid.collections.spatial.search.RectangularBoundTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.collections.spatial.search.RectangularBoundTest
+Running io.druid.collections.spatial.RTreeTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.collections.spatial.RTreeTest
+Running io.druid.collections.spatial.split.LinearGutmanSplitStrategyTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.collections.spatial.split.LinearGutmanSplitStrategyTest
+Running io.druid.collections.TestIntegerSet
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.druid.collections.TestIntegerSet
+
+Results :
+
+Tests run: 370, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (check-java-api) @ bytebuffer-collections ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building druid-processing 0.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ druid-processing ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ druid-processing ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ druid-processing ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/processing/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ druid-processing ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ druid-processing ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 20 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ druid-processing ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ druid-processing ---
+[WARNING] The system property user.timezone is configured twice! The property appears in <argLine/> and any of <systemPropertyVariables/>, <systemProperties/> or user property.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.druid.query.lookup.RegisteredLookupExtractionFnTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.884 sec - in io.druid.query.lookup.RegisteredLookupExtractionFnTest
+Running io.druid.query.lookup.LookupExtractorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 sec - in io.druid.query.lookup.LookupExtractorTest
+Running io.druid.query.lookup.LookupExtractionFnTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec - in io.druid.query.lookup.LookupExtractionFnTest
+Running io.druid.query.lookup.LookupExtractionFnExpectationsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.lookup.LookupExtractionFnExpectationsTest
+Running io.druid.query.lookup.LookupConfigTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec - in io.druid.query.lookup.LookupConfigTest
+Running io.druid.query.filter.BoundDimFilterTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.795 sec - in io.druid.query.filter.BoundDimFilterTest
+Running io.druid.query.filter.ExtractionDimFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.filter.ExtractionDimFilterTest
+Running io.druid.query.filter.GetDimensionRangeSetTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.337 sec - in io.druid.query.filter.GetDimensionRangeSetTest
+Running io.druid.query.filter.IntervalDimFilterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec - in io.druid.query.filter.IntervalDimFilterTest
+Running io.druid.query.filter.InDimFilterSerDesrTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 sec - in io.druid.query.filter.InDimFilterSerDesrTest
+Running io.druid.query.filter.SelectorDimFilterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.query.filter.SelectorDimFilterTest
+Running io.druid.query.filter.SearchQueryDimFilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.druid.query.filter.SearchQueryDimFilterTest
+Running io.druid.query.filter.JavaScriptDimFilterTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in io.druid.query.filter.JavaScriptDimFilterTest
+Running io.druid.query.filter.RegexDimFilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.filter.RegexDimFilterTest
+Running io.druid.query.filter.DimFilterUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in io.druid.query.filter.DimFilterUtilsTest
+Running io.druid.query.filter.LikeDimFilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in io.druid.query.filter.LikeDimFilterTest
+Running io.druid.query.aggregation.last.LongLastAggregationTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in io.druid.query.aggregation.last.LongLastAggregationTest
+Running io.druid.query.aggregation.last.DoubleLastAggregationTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in io.druid.query.aggregation.last.DoubleLastAggregationTest
+Running io.druid.query.aggregation.first.DoubleFirstAggregationTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in io.druid.query.aggregation.first.DoubleFirstAggregationTest
+Running io.druid.query.aggregation.first.LongFirstAggregationTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.query.aggregation.first.LongFirstAggregationTest
+Running io.druid.query.aggregation.MetricManipulatorFnsTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec - in io.druid.query.aggregation.MetricManipulatorFnsTest
+Running io.druid.query.aggregation.FilteredAggregatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec - in io.druid.query.aggregation.FilteredAggregatorTest
+Running io.druid.query.aggregation.post.DoubleLeastPostAggregatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.query.aggregation.post.DoubleLeastPostAggregatorTest
+Running io.druid.query.aggregation.post.ArithmeticPostAggregatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.121 sec - in io.druid.query.aggregation.post.ArithmeticPostAggregatorTest
+Running io.druid.query.aggregation.post.FinalizingFieldAccessPostAggregatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.963 sec - in io.druid.query.aggregation.post.FinalizingFieldAccessPostAggregatorTest
+Running io.druid.query.aggregation.post.JavaScriptPostAggregatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in io.druid.query.aggregation.post.JavaScriptPostAggregatorTest
+Running io.druid.query.aggregation.post.LongGreatestPostAggregatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.aggregation.post.LongGreatestPostAggregatorTest
+Running io.druid.query.aggregation.post.DoubleGreatestPostAggregatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.query.aggregation.post.DoubleGreatestPostAggregatorTest
+Running io.druid.query.aggregation.post.LongLeastPostAggregatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.query.aggregation.post.LongLeastPostAggregatorTest
+Running io.druid.query.aggregation.post.FieldAccessPostAggregatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.query.aggregation.post.FieldAccessPostAggregatorTest
+Running io.druid.query.aggregation.post.ConstantPostAggregatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.query.aggregation.post.ConstantPostAggregatorTest
+Running io.druid.query.aggregation.HistogramTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.druid.query.aggregation.HistogramTest
+Running io.druid.query.aggregation.AggregatorFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in io.druid.query.aggregation.AggregatorFactoryTest
+Running io.druid.query.aggregation.cardinality.CardinalityAggregatorTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 sec - in io.druid.query.aggregation.cardinality.CardinalityAggregatorTest
+Running io.druid.query.aggregation.hyperloglog.HyperUniqueFinalizingPostAggregatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.aggregation.hyperloglog.HyperUniqueFinalizingPostAggregatorTest
+Running io.druid.query.aggregation.hyperloglog.HyperUniquesAggregationTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.069 sec - in io.druid.query.aggregation.hyperloglog.HyperUniquesAggregationTest
+Running io.druid.query.aggregation.hyperloglog.HyperUniquesAggregatorFactoryTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.403 sec - in io.druid.query.aggregation.hyperloglog.HyperUniquesAggregatorFactoryTest
+Running io.druid.query.aggregation.AggregatorUtilTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.aggregation.AggregatorUtilTest
+Running io.druid.query.aggregation.HistogramAggregatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.query.aggregation.HistogramAggregatorTest
+Running io.druid.query.aggregation.DoubleMinAggregationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in io.druid.query.aggregation.DoubleMinAggregationTest
+Running io.druid.query.aggregation.DoubleMaxAggregationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.query.aggregation.DoubleMaxAggregationTest
+Running io.druid.query.aggregation.LongSumAggregatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.aggregation.LongSumAggregatorTest
+Running io.druid.query.aggregation.JavaScriptAggregatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in io.druid.query.aggregation.JavaScriptAggregatorTest
+Running io.druid.query.aggregation.DoubleSumAggregatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.query.aggregation.DoubleSumAggregatorTest
+Running io.druid.query.aggregation.CountAggregatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.query.aggregation.CountAggregatorTest
+Running io.druid.query.aggregation.LongMaxAggregationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in io.druid.query.aggregation.LongMaxAggregationTest
+Running io.druid.query.aggregation.LongMinAggregationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.druid.query.aggregation.LongMinAggregationTest
+Running io.druid.query.topn.TopNQueryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 sec - in io.druid.query.topn.TopNQueryTest
+Running io.druid.query.topn.TopNQueryQueryToolChestTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.263 sec - in io.druid.query.topn.TopNQueryQueryToolChestTest
+Running io.druid.query.topn.TopNUnionQueryTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.835 sec - in io.druid.query.topn.TopNUnionQueryTest
+Running io.druid.query.topn.TopNQueryRunnerTest
+Tests run: 840, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.67 sec - in io.druid.query.topn.TopNQueryRunnerTest
+Running io.druid.query.topn.TopNBinaryFnTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.topn.TopNBinaryFnTest
+Running io.druid.query.topn.AlphaNumericTopNMetricSpecTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.topn.AlphaNumericTopNMetricSpecTest
+Running io.druid.query.topn.DimensionTopNMetricSpecTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.topn.DimensionTopNMetricSpecTest
+Running io.druid.query.topn.PooledTopNAlgorithmTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.query.topn.PooledTopNAlgorithmTest
+Running io.druid.query.dimension.ExtractionDimensionSpecTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in io.druid.query.dimension.ExtractionDimensionSpecTest
+Running io.druid.query.dimension.DefaultDimensionSpecTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.druid.query.dimension.DefaultDimensionSpecTest
+Running io.druid.query.dimension.RegexFilteredDimensionSpecTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.query.dimension.RegexFilteredDimensionSpecTest
+Running io.druid.query.dimension.LegacyDimensionSpecTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.query.dimension.LegacyDimensionSpecTest
+Running io.druid.query.dimension.ListFilteredDimensionSpecTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.query.dimension.ListFilteredDimensionSpecTest
+Running io.druid.query.select.SelectQueryConfigTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.query.select.SelectQueryConfigTest
+Running io.druid.query.select.SelectQueryRunnerTest
+Tests run: 120, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.625 sec - in io.druid.query.select.SelectQueryRunnerTest
+Running io.druid.query.select.SelectBinaryFnTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in io.druid.query.select.SelectBinaryFnTest
+Running io.druid.query.select.SelectQuerySpecTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in io.druid.query.select.SelectQuerySpecTest
+Running io.druid.query.select.MultiSegmentSelectQueryTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 sec - in io.druid.query.select.MultiSegmentSelectQueryTest
+Running io.druid.query.select.PagingOffsetTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.select.PagingOffsetTest
+Running io.druid.query.search.SearchQueryRunnerTest
+Tests run: 135, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.018 sec - in io.druid.query.search.SearchQueryRunnerTest
+Running io.druid.query.search.SearchSortSpecTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.search.SearchSortSpecTest
+Running io.druid.query.search.SearchQueryRunnerWithCaseTest
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.176 sec - in io.druid.query.search.SearchQueryRunnerWithCaseTest
+Running io.druid.query.search.SearchBinaryFnTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.druid.query.search.SearchBinaryFnTest
+Running io.druid.query.search.RegexSearchQueryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.query.search.RegexSearchQueryTest
+Running io.druid.query.search.SearchQueryQueryToolChestTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.druid.query.search.SearchQueryQueryToolChestTest
+Running io.druid.query.search.SearchQueryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in io.druid.query.search.SearchQueryTest
+Running io.druid.query.DataSourceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in io.druid.query.DataSourceTest
+Running io.druid.query.DruidProcessingConfigTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.175 sec - in io.druid.query.DruidProcessingConfigTest
+Running io.druid.query.metadata.metadata.ColumnAnalysisTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in io.druid.query.metadata.metadata.ColumnAnalysisTest
+Running io.druid.query.metadata.SegmentMetadataUnionQueryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 sec - in io.druid.query.metadata.SegmentMetadataUnionQueryTest
+Running io.druid.query.metadata.SegmentMetadataQueryQueryToolChestTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in io.druid.query.metadata.SegmentMetadataQueryQueryToolChestTest
+Running io.druid.query.metadata.SegmentMetadataQueryTest
+Tests run: 96, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.249 sec - in io.druid.query.metadata.SegmentMetadataQueryTest
+Running io.druid.query.metadata.SegmentAnalyzerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.query.metadata.SegmentAnalyzerTest
+Running io.druid.query.groupby.GroupByQueryRunnerTest
+Tests run: 2850, Failures: 0, Errors: 0, Skipped: 50, Time elapsed: 23.723 sec - in io.druid.query.groupby.GroupByQueryRunnerTest
+Running io.druid.query.groupby.orderby.TopNSequenceTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.query.groupby.orderby.TopNSequenceTest
+Running io.druid.query.groupby.orderby.DefaultLimitSpecTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.groupby.orderby.DefaultLimitSpecTest
+Running io.druid.query.groupby.GroupByTimeseriesQueryRunnerTest
+Tests run: 230, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.26 sec - in io.druid.query.groupby.GroupByTimeseriesQueryRunnerTest
+Running io.druid.query.groupby.having.HavingSpecTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in io.druid.query.groupby.having.HavingSpecTest
+Running io.druid.query.groupby.having.HavingSpecMetricComparatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.groupby.having.HavingSpecMetricComparatorTest
+Running io.druid.query.groupby.having.DimFilterHavingSpecTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.004 sec - in io.druid.query.groupby.having.DimFilterHavingSpecTest
+Running io.druid.query.groupby.having.DimensionSelectorHavingSpecTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.query.groupby.having.DimensionSelectorHavingSpecTest
+Running io.druid.query.groupby.GroupByQueryRunnerFailureTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.176 sec - in io.druid.query.groupby.GroupByQueryRunnerFailureTest
+Running io.druid.query.groupby.epinephelinae.ConcurrentGrouperTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in io.druid.query.groupby.epinephelinae.ConcurrentGrouperTest
+Running io.druid.query.groupby.epinephelinae.BufferGrouperTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in io.druid.query.groupby.epinephelinae.BufferGrouperTest
+Running io.druid.query.groupby.GroupByQueryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in io.druid.query.groupby.GroupByQueryTest
+Running io.druid.query.groupby.GroupByQueryConfigTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.druid.query.groupby.GroupByQueryConfigTest
+Running io.druid.query.groupby.GroupByQueryMergeBufferTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 sec - in io.druid.query.groupby.GroupByQueryMergeBufferTest
+Running io.druid.query.groupby.GroupByQueryRunnerFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec - in io.druid.query.groupby.GroupByQueryRunnerFactoryTest
+Running io.druid.query.timeseries.TimeSeriesUnionQueryRunnerTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in io.druid.query.timeseries.TimeSeriesUnionQueryRunnerTest
+Running io.druid.query.timeseries.TimeseriesQueryRunnerTest
+Tests run: 460, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.332 sec - in io.druid.query.timeseries.TimeseriesQueryRunnerTest
+Running io.druid.query.timeseries.TimeseriesQueryRunnerBonusTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.query.timeseries.TimeseriesQueryRunnerBonusTest
+Running io.druid.query.timeseries.TimeseriesQueryQueryToolChestTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.druid.query.timeseries.TimeseriesQueryQueryToolChestTest
+Running io.druid.query.timeseries.TimeseriesQueryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in io.druid.query.timeseries.TimeseriesQueryTest
+Running io.druid.query.timeseries.TimeseriesBinaryFnTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.timeseries.TimeseriesBinaryFnTest
+Running io.druid.query.extraction.SearchQuerySpecDimExtractionFnTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.query.extraction.SearchQuerySpecDimExtractionFnTest
+Running io.druid.query.extraction.MatchingDimExtractionFnTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.query.extraction.MatchingDimExtractionFnTest
+Running io.druid.query.extraction.UpperExtractionFnTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.extraction.UpperExtractionFnTest
+Running io.druid.query.extraction.StringFormatExtractionFnTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.query.extraction.StringFormatExtractionFnTest
+Running io.druid.query.extraction.MapLookupExtractionFnSerDeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in io.druid.query.extraction.MapLookupExtractionFnSerDeTest
+Running io.druid.query.extraction.SubstringDimExtractionFnTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.query.extraction.SubstringDimExtractionFnTest
+Running io.druid.query.extraction.BucketExtractionFnTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.query.extraction.BucketExtractionFnTest
+Running io.druid.query.extraction.LowerExtractionFnTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.extraction.LowerExtractionFnTest
+Running io.druid.query.extraction.TimeDimExtractionFnTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.17 sec - in io.druid.query.extraction.TimeDimExtractionFnTest
+Running io.druid.query.extraction.TimeFormatExtractionFnTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in io.druid.query.extraction.TimeFormatExtractionFnTest
+Running io.druid.query.extraction.StrlenExtractionFnTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.query.extraction.StrlenExtractionFnTest
+Running io.druid.query.extraction.MapLookupExtractorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.query.extraction.MapLookupExtractorTest
+Running io.druid.query.extraction.CascadeExtractionFnTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in io.druid.query.extraction.CascadeExtractionFnTest
+Running io.druid.query.extraction.RegexDimExtractionFnTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.query.extraction.RegexDimExtractionFnTest
+Running io.druid.query.extraction.FunctionalExtractionTest
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.druid.query.extraction.FunctionalExtractionTest
+Running io.druid.query.extraction.JavaScriptExtractionFnTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 sec - in io.druid.query.extraction.JavaScriptExtractionFnTest
+Running io.druid.query.QueryInterruptedExceptionTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.query.QueryInterruptedExceptionTest
+Running io.druid.query.AsyncQueryRunnerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in io.druid.query.AsyncQueryRunnerTest
+Running io.druid.query.spec.QuerySegmentSpecTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.query.spec.QuerySegmentSpecTest
+Running io.druid.query.spec.SpecificSegmentQueryRunnerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in io.druid.query.spec.SpecificSegmentQueryRunnerTest
+Running io.druid.query.PrioritizedExecutorServiceTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.175 sec - in io.druid.query.PrioritizedExecutorServiceTest
+Running io.druid.query.cache.CacheKeyBuilderTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.query.cache.CacheKeyBuilderTest
+Running io.druid.query.UnionQueryRunnerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.query.UnionQueryRunnerTest
+Running io.druid.query.TimewarpOperatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.query.TimewarpOperatorTest
+Running io.druid.query.timeboundary.TimeBoundaryQueryQueryToolChestTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.druid.query.timeboundary.TimeBoundaryQueryQueryToolChestTest
+Running io.druid.query.timeboundary.TimeBoundaryQueryRunnerTest
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in io.druid.query.timeboundary.TimeBoundaryQueryRunnerTest
+Running io.druid.query.timeboundary.TimeBoundaryQueryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in io.druid.query.timeboundary.TimeBoundaryQueryTest
+Running io.druid.query.MultiValuedDimensionTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.986 sec - in io.druid.query.MultiValuedDimensionTest
+Running io.druid.query.ordering.StringComparatorsTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.query.ordering.StringComparatorsTest
+Running io.druid.query.RetryQueryRunnerTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in io.druid.query.RetryQueryRunnerTest
+Running io.druid.query.ChainedExecutionQueryRunnerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 sec - in io.druid.query.ChainedExecutionQueryRunnerTest
+Running io.druid.query.ResultGranularTimestampComparatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.query.ResultGranularTimestampComparatorTest
+Running io.druid.query.QueriesTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.query.QueriesTest
+Running io.druid.query.IntervalChunkingQueryRunnerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in io.druid.query.IntervalChunkingQueryRunnerTest
+Running io.druid.query.SchemaEvolutionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.266 sec - in io.druid.query.SchemaEvolutionTest
+Running io.druid.query.datasourcemetadata.DataSourceMetadataQueryTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in io.druid.query.datasourcemetadata.DataSourceMetadataQueryTest
+Running io.druid.segment.filter.RegexFilterTest
+Tests run: 288, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.294 sec - in io.druid.segment.filter.RegexFilterTest
+Running io.druid.segment.filter.LongFilteringTest
+Tests run: 192, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.411 sec - in io.druid.segment.filter.LongFilteringTest
+Running io.druid.segment.filter.JavaScriptFilterTest
+Tests run: 288, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.876 sec - in io.druid.segment.filter.JavaScriptFilterTest
+Running io.druid.segment.filter.InvalidFilteringTest
+Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.182 sec - in io.druid.segment.filter.InvalidFilteringTest
+Running io.druid.segment.filter.NotFilterTest
+Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.613 sec - in io.druid.segment.filter.NotFilterTest
+Running io.druid.segment.filter.AndFilterTest
+Tests run: 96, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.96 sec - in io.druid.segment.filter.AndFilterTest
+Running io.druid.segment.filter.SpatialFilterTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.835 sec - in io.druid.segment.filter.SpatialFilterTest
+Running io.druid.segment.filter.InFilterTest
+Tests run: 288, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.69 sec - in io.druid.segment.filter.InFilterTest
+Running io.druid.segment.filter.RowboatTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.filter.RowboatTest
+Running io.druid.segment.filter.LikeFilterTest
+Tests run: 672, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.28 sec - in io.druid.segment.filter.LikeFilterTest
+Running io.druid.segment.filter.BoundFilterTest
+Tests run: 1200, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.22 sec - in io.druid.segment.filter.BoundFilterTest
+Running io.druid.segment.filter.SearchQueryFilterTest
+Tests run: 288, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.898 sec - in io.druid.segment.filter.SearchQueryFilterTest
+Running io.druid.segment.filter.SpatialFilterBonusTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.712 sec - in io.druid.segment.filter.SpatialFilterBonusTest
+Running io.druid.segment.filter.FilterPartitionTest
+Tests run: 384, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.368 sec - in io.druid.segment.filter.FilterPartitionTest
+Running io.druid.segment.filter.SelectorFilterTest
+Tests run: 336, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.897 sec - in io.druid.segment.filter.SelectorFilterTest
+Running io.druid.segment.filter.TimeFilteringTest
+Tests run: 240, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.886 sec - in io.druid.segment.filter.TimeFilteringTest
+Running io.druid.segment.filter.FloatFilteringTest
+Tests run: 192, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.904 sec - in io.druid.segment.filter.FloatFilteringTest
+Running io.druid.segment.filter.FiltersTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.filter.FiltersTest
+Running io.druid.segment.filter.ExtractionDimFilterTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in io.druid.segment.filter.ExtractionDimFilterTest
+Running io.druid.segment.data.CompressedFloatsSerdeTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.773 sec - in io.druid.segment.data.CompressedFloatsSerdeTest
+Running io.druid.segment.data.IncrementalIndexTest
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.179 sec - in io.druid.segment.data.IncrementalIndexTest
+Running io.druid.segment.data.CompressionStrategyTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.005 sec - in io.druid.segment.data.CompressionStrategyTest
+Running io.druid.segment.data.CompressedVSizeIndexedSupplierTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.segment.data.CompressedVSizeIndexedSupplierTest
+Running io.druid.segment.data.VSizeIndexedTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.segment.data.VSizeIndexedTest
+Running io.druid.segment.data.CompressedIntsIndexedSupplierTest
+Tests run: 42, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.964 sec - in io.druid.segment.data.CompressedIntsIndexedSupplierTest
+Running io.druid.segment.data.CompressedLongsSerdeTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.88 sec - in io.druid.segment.data.CompressedLongsSerdeTest
+Running io.druid.segment.data.VSizeLongSerdeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.157 sec - in io.druid.segment.data.VSizeLongSerdeTest
+Running io.druid.segment.data.CompressedVSizeIntsIndexedSupplierTest
+Tests run: 66, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.689 sec - in io.druid.segment.data.CompressedVSizeIntsIndexedSupplierTest
+Running io.druid.segment.data.UnioningOffsetTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.data.UnioningOffsetTest
+Running io.druid.segment.data.CompressedIntsIndexedWriterTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.897 sec - in io.druid.segment.data.CompressedIntsIndexedWriterTest
+Running io.druid.segment.data.VSizeIndexedIntsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.data.VSizeIndexedIntsTest
+Running io.druid.segment.data.VSizeIndexedIntsWriterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.segment.data.VSizeIndexedIntsWriterTest
+Running io.druid.segment.data.IntersectingOffsetTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.data.IntersectingOffsetTest
+Running io.druid.segment.data.IndexedIntsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.data.IndexedIntsTest
+Running io.druid.segment.data.BitmapSerdeFactoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.segment.data.BitmapSerdeFactoryTest
+Running io.druid.segment.data.CompressedVSizeIntsIndexedWriterTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.437 sec - in io.druid.segment.data.CompressedVSizeIntsIndexedWriterTest
+Running io.druid.segment.data.CompressedVSizeIndexedV3WriterTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 112.776 sec - in io.druid.segment.data.CompressedVSizeIndexedV3WriterTest
+Running io.druid.segment.data.GenericIndexedTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.segment.data.GenericIndexedTest
+Running io.druid.segment.virtual.ExpressionObjectSelectorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.segment.virtual.ExpressionObjectSelectorTest
+Running io.druid.segment.virtual.VirtualColumnsTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec - in io.druid.segment.virtual.VirtualColumnsTest
+Running io.druid.segment.virtual.ExpressionVirtualColumnTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.segment.virtual.ExpressionVirtualColumnTest
+Running io.druid.segment.MetadataTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in io.druid.segment.MetadataTest
+Running io.druid.segment.IndexMergerV9WithSpatialIndexTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.47 sec - in io.druid.segment.IndexMergerV9WithSpatialIndexTest
+Running io.druid.segment.SchemalessTestSimpleTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 sec - in io.druid.segment.SchemalessTestSimpleTest
+Running io.druid.segment.IntListUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.segment.IntListUtilsTest
+Running io.druid.segment.DictionaryMergeIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.DictionaryMergeIteratorTest
+Running io.druid.segment.incremental.OnheapIncrementalIndexTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.602 sec - in io.druid.segment.incremental.OnheapIncrementalIndexTest
+Running io.druid.segment.incremental.IncrementalIndexTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in io.druid.segment.incremental.IncrementalIndexTest
+Running io.druid.segment.incremental.IncrementalIndexStorageAdapterTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in io.druid.segment.incremental.IncrementalIndexStorageAdapterTest
+Running io.druid.segment.incremental.TimeAndDimsCompTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.incremental.TimeAndDimsCompTest
+Running io.druid.segment.incremental.IncrementalIndexAdapterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.segment.incremental.IncrementalIndexAdapterTest
+Running io.druid.segment.incremental.IncrementalIndexMultiValueSpecTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.incremental.IncrementalIndexMultiValueSpecTest
+Running io.druid.segment.CompressedVSizeIndexedV3SupplierTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.segment.CompressedVSizeIndexedV3SupplierTest
+Running io.druid.segment.serde.DictionaryEncodedColumnPartSerdeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.serde.DictionaryEncodedColumnPartSerdeTest
+Running io.druid.segment.serde.LargeColumnSupportedComplexColumnSerializerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.567 sec - in io.druid.segment.serde.LargeColumnSupportedComplexColumnSerializerTest
+Running io.druid.segment.IndexIOTest
+Tests run: 5925, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.928 sec - in io.druid.segment.IndexIOTest
+Running io.druid.segment.AppendTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in io.druid.segment.AppendTest
+Running io.druid.segment.QueryableIndexIndexableAdapterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in io.druid.segment.QueryableIndexIndexableAdapterTest
+Running io.druid.segment.IndexSpecTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.segment.IndexSpecTest
+Running io.druid.segment.IndexMergerV9CompatibilityTest
+Tests run: 50, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.036 sec - in io.druid.segment.IndexMergerV9CompatibilityTest
+Running io.druid.segment.MergeIntIteratorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 sec - in io.druid.segment.MergeIntIteratorTest
+Running io.druid.segment.BitmapOffsetTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in io.druid.segment.BitmapOffsetTest
+Running io.druid.segment.EmptyIndexTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in io.druid.segment.EmptyIndexTest
+Running io.druid.segment.SchemalessTestFullTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.911 sec - in io.druid.segment.SchemalessTestFullTest
+Running io.druid.segment.CloserRuleTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in io.druid.segment.CloserRuleTest
+Running io.druid.segment.StringDimensionHandlerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.StringDimensionHandlerTest
+Running io.druid.segment.NullDimensionSelectorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.NullDimensionSelectorTest
+Running io.druid.segment.loading.SegmentizerFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.segment.loading.SegmentizerFactoryTest
+Running io.druid.segment.IntIteratorUtilsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.IntIteratorUtilsTest
+Running io.druid.segment.ReferenceCountingSegmentTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in io.druid.segment.ReferenceCountingSegmentTest
+Running io.druid.segment.IndexMergerTest
+Tests run: 2592, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 72.752 sec - in io.druid.segment.IndexMergerTest
+Running io.druid.guice.GuiceInjectorsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.guice.GuiceInjectorsTest
+Running io.druid.guice.MetadataStorageTablesConfigTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.guice.MetadataStorageTablesConfigTest
+Running io.druid.guice.ExtensionsConfigTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.guice.ExtensionsConfigTest
+Running io.druid.jackson.DefaultObjectMapperTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.jackson.DefaultObjectMapperTest
+Running io.druid.data.input.ProtoBufInputRowParserTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.21 sec - in io.druid.data.input.ProtoBufInputRowParserTest
+Running io.druid.granularity.QueryGranularityTest
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.468 sec - in io.druid.granularity.QueryGranularityTest
+Running io.druid.collections.CombiningIterableTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.collections.CombiningIterableTest
+
+Results :
+
+Tests run: 19101, Failures: 0, Errors: 0, Skipped: 52
+
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (check-java-api) @ druid-processing ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building druid-aws-common 0.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ druid-aws-common ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ druid-aws-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ druid-aws-common ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/aws-common/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ druid-aws-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ druid-aws-common ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/druid-io/druid/210761639/aws-common/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ druid-aws-common ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ druid-aws-common ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (check-java-api) @ druid-aws-common ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building druid-server 0.10.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:2.17:check (validate) @ druid-server ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-banned-dependencies) @ druid-server ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ druid-server ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 49 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ druid-server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ druid-server ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ druid-server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ druid-server ---
+[WARNING] The system property user.timezone is configured twice! The property appears in <argLine/> and any of <systemPropertyVariables/>, <systemProperties/> or user property.
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running io.druid.server.coordinator.rules.LoadRuleTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.107 sec - in io.druid.server.coordinator.rules.LoadRuleTest
+Running io.druid.server.coordinator.rules.IntervalLoadRuleTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.17 sec - in io.druid.server.coordinator.rules.IntervalLoadRuleTest
+Running io.druid.server.coordinator.rules.ForeverLoadRuleTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in io.druid.server.coordinator.rules.ForeverLoadRuleTest
+Running io.druid.server.coordinator.rules.PeriodLoadRuleTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in io.druid.server.coordinator.rules.PeriodLoadRuleTest
+Running io.druid.server.coordinator.rules.PeriodDropRuleTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.server.coordinator.rules.PeriodDropRuleTest
+Running io.druid.server.coordinator.DruidCoordinatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.778 sec - in io.druid.server.coordinator.DruidCoordinatorTest
+Running io.druid.server.coordinator.LoadQueuePeonTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.268 sec - in io.druid.server.coordinator.LoadQueuePeonTest
+Running io.druid.server.coordinator.DiskNormalizedCostBalancerStrategyTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec - in io.druid.server.coordinator.DiskNormalizedCostBalancerStrategyTest
+Running io.druid.server.coordinator.ReservoirSegmentSamplerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 sec - in io.druid.server.coordinator.ReservoirSegmentSamplerTest
+Running io.druid.server.coordinator.DruidCoordinatorConfigTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 sec - in io.druid.server.coordinator.DruidCoordinatorConfigTest
+Running io.druid.server.coordinator.helper.DruidCoordinatorCleanupOvershadowedTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in io.druid.server.coordinator.helper.DruidCoordinatorCleanupOvershadowedTest
+Running io.druid.server.coordinator.helper.DruidCoordinatorSegmentKillerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in io.druid.server.coordinator.helper.DruidCoordinatorSegmentKillerTest
+Running io.druid.server.coordinator.DruidCoordinatorBalancerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in io.druid.server.coordinator.DruidCoordinatorBalancerTest
+Running io.druid.server.coordinator.CostBalancerStrategyTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in io.druid.server.coordinator.CostBalancerStrategyTest
+Running io.druid.server.coordinator.DruidCoordinatorSegmentMergerTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 sec - in io.druid.server.coordinator.DruidCoordinatorSegmentMergerTest
+Running io.druid.server.coordinator.DruidCoordinatorRuleRunnerTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 sec - in io.druid.server.coordinator.DruidCoordinatorRuleRunnerTest
+Running io.druid.server.http.CoordinatorRedirectInfoTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.server.http.CoordinatorRedirectInfoTest
+Running io.druid.server.http.security.SecurityResourceFilterTest
+Tests run: 120, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.462 sec - in io.druid.server.http.security.SecurityResourceFilterTest
+Running io.druid.server.http.RulesResourceTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.server.http.RulesResourceTest
+Running io.druid.server.http.DatasourcesResourceTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in io.druid.server.http.DatasourcesResourceTest
+Running io.druid.server.http.LookupCoordinatorResourceTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 sec - in io.druid.server.http.LookupCoordinatorResourceTest
+Running io.druid.server.http.ServersResourceTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec - in io.druid.server.http.ServersResourceTest
+Running io.druid.server.http.CoordinatorDynamicConfigTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in io.druid.server.http.CoordinatorDynamicConfigTest
+Running io.druid.server.http.IntervalsResourceTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.server.http.IntervalsResourceTest
+Running io.druid.server.http.OverlordProxyServletTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in io.druid.server.http.OverlordProxyServletTest
+Running io.druid.server.shard.SingleDimensionShardSpecTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.server.shard.SingleDimensionShardSpecTest
+Running io.druid.server.shard.NumberedShardSpecTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.druid.server.shard.NumberedShardSpecTest
+Running io.druid.server.listener.announcer.ListenerResourceAnnouncerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.108 sec - in io.druid.server.listener.announcer.ListenerResourceAnnouncerTest
+Running io.druid.server.listener.announcer.ListenerDiscovererTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.079 sec - in io.druid.server.listener.announcer.ListenerDiscovererTest
+Running io.druid.server.listener.resource.ListenerResourceTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in io.druid.server.listener.resource.ListenerResourceTest
+Running io.druid.server.listener.resource.AbstractListenerHandlerTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec - in io.druid.server.listener.resource.AbstractListenerHandlerTest
+Running io.druid.server.QueryResourceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.208 sec - in io.druid.server.QueryResourceTest
+Running io.druid.server.router.TieredBrokerHostSelectorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in io.druid.server.router.TieredBrokerHostSelectorTest
+Running io.druid.server.router.QueryHostFinderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.server.router.QueryHostFinderTest
+Running io.druid.server.router.JavaScriptTieredBrokerSelectorStrategyTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.912 sec - in io.druid.server.router.JavaScriptTieredBrokerSelectorStrategyTest
+Running io.druid.server.ClientInfoResourceTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec - in io.druid.server.ClientInfoResourceTest
+Running io.druid.server.log.LoggingRequestLoggerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 sec - in io.druid.server.log.LoggingRequestLoggerTest
+Running io.druid.server.log.FilteredRequestLoggerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.server.log.FilteredRequestLoggerTest
+Running io.druid.server.log.LoggingRequestLoggerProviderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.6 sec - in io.druid.server.log.LoggingRequestLoggerProviderTest
+Running io.druid.server.log.FileRequestLoggerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in io.druid.server.log.FileRequestLoggerTest
+Running io.druid.server.lookup.cache.LookupCoordinatorManagerTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 sec - in io.druid.server.lookup.cache.LookupCoordinatorManagerTest
+Running io.druid.server.lookup.cache.LookupCoordinatorManagerConfigTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in io.druid.server.lookup.cache.LookupCoordinatorManagerConfigTest
+Running io.druid.server.initialization.JettyQosTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 54.962 sec - in io.druid.server.initialization.JettyQosTest
+Running io.druid.server.initialization.JettyTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 1.19 sec - in io.druid.server.initialization.JettyTest
+Running io.druid.server.metrics.HistoricalMetricsMonitorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec - in io.druid.server.metrics.HistoricalMetricsMonitorTest
+Running io.druid.server.metrics.MetricsModuleTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.21 sec - in io.druid.server.metrics.MetricsModuleTest
+Running io.druid.server.coordination.coordination.BatchDataSegmentAnnouncerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.903 sec - in io.druid.server.coordination.coordination.BatchDataSegmentAnnouncerTest
+Running io.druid.server.coordination.SegmentChangeRequestDropTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in io.druid.server.coordination.SegmentChangeRequestDropTest
+Running io.druid.server.coordination.ZkCoordinatorTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.262 sec - in io.druid.server.coordination.ZkCoordinatorTest
+Running io.druid.server.coordination.SegmentChangeRequestLoadTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in io.druid.server.coordination.SegmentChangeRequestLoadTest
+Running io.druid.server.coordination.ServerManagerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec - in io.druid.server.coordination.ServerManagerTest
+Running io.druid.server.AsyncQueryForwardingServletTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.483 sec - in io.druid.server.AsyncQueryForwardingServletTest
+Running io.druid.server.StatusResourceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.server.StatusResourceTest
+Running io.druid.server.audit.SQLAuditManagerTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.03 sec - in io.druid.server.audit.SQLAuditManagerTest
+Running io.druid.server.DruidNodeTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.server.DruidNodeTest
+Running io.druid.segment.indexing.granularity.ArbitraryGranularityTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in io.druid.segment.indexing.granularity.ArbitraryGranularityTest
+Running io.druid.segment.indexing.granularity.UniformGranularityTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec - in io.druid.segment.indexing.granularity.UniformGranularityTest
+Running io.druid.segment.indexing.RealtimeTuningConfigTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec - in io.druid.segment.indexing.RealtimeTuningConfigTest
+Running io.druid.segment.indexing.DataSchemaTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 sec - in io.druid.segment.indexing.DataSchemaTest
+Running io.druid.segment.realtime.appenderator.AppenderatorPlumberTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.315 sec - in io.druid.segment.realtime.appenderator.AppenderatorPlumberTest
+Running io.druid.segment.realtime.appenderator.SegmentIdentifierTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.realtime.appenderator.SegmentIdentifierTest
+Running io.druid.segment.realtime.appenderator.FiniteAppenderatorDriverTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.745 sec - in io.druid.segment.realtime.appenderator.FiniteAppenderatorDriverTest
+Running io.druid.segment.realtime.appenderator.AppenderatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.762 sec - in io.druid.segment.realtime.appenderator.AppenderatorTest
+Running io.druid.segment.realtime.appenderator.DefaultOfflineAppenderatorFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.122 sec - in io.druid.segment.realtime.appenderator.DefaultOfflineAppenderatorFactoryTest
+Running io.druid.segment.realtime.appenderator.CommittedTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.druid.segment.realtime.appenderator.CommittedTest
+Running io.druid.segment.realtime.plumber.CoordinatorBasedSegmentHandoffNotifierTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in io.druid.segment.realtime.plumber.CoordinatorBasedSegmentHandoffNotifierTest
+Running io.druid.segment.realtime.plumber.IntervalStartVersioningPolicyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.realtime.plumber.IntervalStartVersioningPolicyTest
+Running io.druid.segment.realtime.plumber.ServerTimeRejectionPolicyFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.segment.realtime.plumber.ServerTimeRejectionPolicyFactoryTest
+Running io.druid.segment.realtime.plumber.RealtimePlumberSchoolTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.695 sec - in io.druid.segment.realtime.plumber.RealtimePlumberSchoolTest
+Running io.druid.segment.realtime.plumber.MessageTimeRejectionPolicyFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.realtime.plumber.MessageTimeRejectionPolicyFactoryTest
+Running io.druid.segment.realtime.plumber.SinkTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.realtime.plumber.SinkTest
+Running io.druid.segment.realtime.firehose.ServiceAnnouncingChatHandlerProviderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in io.druid.segment.realtime.firehose.ServiceAnnouncingChatHandlerProviderTest
+Running io.druid.segment.realtime.firehose.IngestSegmentFirehoseTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.112 sec - in io.druid.segment.realtime.firehose.IngestSegmentFirehoseTest
+Running io.druid.segment.realtime.firehose.EventReceiverFirehoseTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.187 sec - in io.druid.segment.realtime.firehose.EventReceiverFirehoseTest
+Running io.druid.segment.realtime.FireDepartmentTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in io.druid.segment.realtime.FireDepartmentTest
+Running io.druid.segment.realtime.RealtimeManagerTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.601 sec - in io.druid.segment.realtime.RealtimeManagerTest
+Running io.druid.segment.loading.LocalDataSegmentKillerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in io.druid.segment.loading.LocalDataSegmentKillerTest
+Running io.druid.segment.loading.LoadSpecTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in io.druid.segment.loading.LoadSpecTest
+Running io.druid.segment.loading.LocalDataSegmentFinderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec - in io.druid.segment.loading.LocalDataSegmentFinderTest
+Running io.druid.segment.loading.LocalFileTimestampVersionFinderTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.013 sec - in io.druid.segment.loading.LocalFileTimestampVersionFinderTest
+Running io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec <<< FAILURE! - in io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest
+testRetryAllFail(io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest)  Time elapsed: 0.015 sec  <<< FAILURE!
+java.lang.AssertionError
+	at io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest.testRetryAllFail(SegmentLoaderLocalCacheManagerTest.java:289)
+
+testRetrySuccessAtSecondLocation(io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+java.lang.AssertionError
+	at io.druid.segment.loading.SegmentLoaderLocalCacheManagerTest.testRetrySuccessAtSecondLocation(SegmentLoaderLocalCacheManagerTest.java:234)
+
+Running io.druid.segment.loading.StorageLocationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.loading.StorageLocationTest
+Running io.druid.segment.loading.LocalDataSegmentPusherTest
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec <<< FAILURE! - in io.druid.segment.loading.LocalDataSegmentPusherTest
+testPushCannotCreateDirectory(io.druid.segment.loading.LocalDataSegmentPusherTest)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.AssertionError: Expected test to throw (an instance of java.io.IOException and exception with message a string containing "Unable to create directory")
+
+Running io.druid.segment.loading.LocalDataSegmentPullerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.segment.loading.LocalDataSegmentPullerTest
+Running io.druid.query.lookup.LookupIntrospectionResourceImplTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.248 sec - in io.druid.query.lookup.LookupIntrospectionResourceImplTest
+Running io.druid.query.lookup.LookupSnapshotTakerTest
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec <<< FAILURE! - in io.druid.query.lookup.LookupSnapshotTakerTest
+testIOExceptionDuringLookupPersist(io.druid.query.lookup.LookupSnapshotTakerTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+java.lang.AssertionError: Expected exception: io.druid.java.util.common.ISE
+
+Running io.druid.query.lookup.LookupListeningAnnouncerConfigTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.438 sec - in io.druid.query.lookup.LookupListeningAnnouncerConfigTest
+Running io.druid.query.lookup.LookupIntrospectionResourceTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.005 sec - in io.druid.query.lookup.LookupIntrospectionResourceTest
+Running io.druid.query.lookup.LookupReferencesManagerTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.765 sec - in io.druid.query.lookup.LookupReferencesManagerTest
+Running io.druid.query.lookup.MapLookupExtractorFactoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.query.lookup.MapLookupExtractorFactoryTest
+Running io.druid.query.LocatedSegmentDescriptorSerdeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.query.LocatedSegmentDescriptorSerdeTest
+Running io.druid.query.dimension.LookupDimensionSpecTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec - in io.druid.query.dimension.LookupDimensionSpecTest
+Running io.druid.curator.ExhibitorConfigTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.237 sec - in io.druid.curator.ExhibitorConfigTest
+Running io.druid.curator.discovery.ServerDiscoverySelectorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in io.druid.curator.discovery.ServerDiscoverySelectorTest
+Running io.druid.curator.discovery.ServiceAnnouncerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.056 sec - in io.druid.curator.discovery.ServiceAnnouncerTest
+Running io.druid.curator.inventory.CuratorInventoryManagerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.518 sec - in io.druid.curator.inventory.CuratorInventoryManagerTest
+Running io.druid.curator.announcement.AnnouncerTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.21 sec - in io.druid.curator.announcement.AnnouncerTest
+Running io.druid.curator.CuratorConfigTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 sec - in io.druid.curator.CuratorConfigTest
+Running io.druid.curator.CuratorModuleTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 sec - in io.druid.curator.CuratorModuleTest
+Running io.druid.curator.CuratorUtilsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.695 sec - in io.druid.curator.CuratorUtilsTest
+Running io.druid.guice.JsonConfigTesterBaseTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.316 sec - in io.druid.guice.JsonConfigTesterBaseTest
+Running io.druid.guice.DruidProcessingModuleTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.guice.DruidProcessingModuleTest
+Running io.druid.guice.JavaScriptModuleTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in io.druid.guice.JavaScriptModuleTest
+Running io.druid.client.BrokerSegmentWatcherConfigTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in io.druid.client.BrokerSegmentWatcherConfigTest
+Running io.druid.client.cache.ByteCountingLRUMapTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.client.cache.ByteCountingLRUMapTest
+Running io.druid.client.cache.MemcacheClientPoolTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.496 sec - in io.druid.client.cache.MemcacheClientPoolTest
+Running io.druid.client.cache.CacheDistributionTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 74.738 sec - in io.druid.client.cache.CacheDistributionTest
+Running io.druid.client.cache.CacheConfigTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec - in io.druid.client.cache.CacheConfigTest
+Running io.druid.client.cache.CacheMonitorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 sec - in io.druid.client.cache.CacheMonitorTest
+Running io.druid.client.cache.HybridCacheTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.153 sec - in io.druid.client.cache.HybridCacheTest
+Running io.druid.client.cache.MapCacheTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.client.cache.MapCacheTest
+Running io.druid.client.cache.BytesBoundedLinkedQueueTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.206 sec - in io.druid.client.cache.BytesBoundedLinkedQueueTest
+Running io.druid.client.cache.MemcachedCacheTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.225 sec - in io.druid.client.cache.MemcachedCacheTest
+Running io.druid.client.DirectDruidClientTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec - in io.druid.client.DirectDruidClientTest
+Running io.druid.client.indexing.ClientAppendQueryTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.client.indexing.ClientAppendQueryTest
+Running io.druid.client.indexing.ClientMergeQueryTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.client.indexing.ClientMergeQueryTest
+Running io.druid.client.indexing.ClientKillQueryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.client.indexing.ClientKillQueryTest
+Running io.druid.client.indexing.ClientConversionQueryTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.client.indexing.ClientConversionQueryTest
+Running io.druid.client.BrokerServerViewTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.298 sec - in io.druid.client.BrokerServerViewTest
+Running io.druid.client.CachingClusteredClientFunctionalityTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in io.druid.client.CachingClusteredClientFunctionalityTest
+Running io.druid.client.client.BatchServerInventoryViewTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.711 sec - in io.druid.client.client.BatchServerInventoryViewTest
+Running io.druid.client.client.ImmutableSegmentLoadInfoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in io.druid.client.client.ImmutableSegmentLoadInfoTest
+Running io.druid.client.CachingClusteredClientTest
+Tests run: 220, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.957 sec - in io.druid.client.CachingClusteredClientTest
+Running io.druid.client.selector.TierSelectorStrategyTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.client.selector.TierSelectorStrategyTest
+Running io.druid.client.selector.ServerSelectorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in io.druid.client.selector.ServerSelectorTest
+Running io.druid.client.CachingQueryRunnerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.141 sec - in io.druid.client.CachingQueryRunnerTest
+Running io.druid.client.DataSegmentTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in io.druid.client.DataSegmentTest
+Running io.druid.client.CoordinatorServerViewTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.379 sec - in io.druid.client.CoordinatorServerViewTest
+Running io.druid.realtime.firehose.ReplayableFirehoseFactoryTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 sec - in io.druid.realtime.firehose.ReplayableFirehoseFactoryTest
+Running io.druid.realtime.firehose.CombiningFirehoseFactoryTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in io.druid.realtime.firehose.CombiningFirehoseFactoryTest
+Running io.druid.metadata.MetadataSegmentManagerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.25 sec - in io.druid.metadata.MetadataSegmentManagerTest
+Running io.druid.metadata.SQLMetadataConnectorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.31 sec - in io.druid.metadata.SQLMetadataConnectorTest
+Running io.druid.metadata.SQLMetadataRuleManagerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.954 sec - in io.druid.metadata.SQLMetadataRuleManagerTest
+Running io.druid.metadata.SQLMetadataStorageActionHandlerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.641 sec - in io.druid.metadata.SQLMetadataStorageActionHandlerTest
+Running io.druid.metadata.IndexerSQLMetadataStorageCoordinatorTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.916 sec - in io.druid.metadata.IndexerSQLMetadataStorageCoordinatorTest
+Running io.druid.metadata.SQLMetadataSupervisorManagerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.615 sec - in io.druid.metadata.SQLMetadataSupervisorManagerTest
+Running io.druid.timeline.partition.HashBasedNumberedShardSpecTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in io.druid.timeline.partition.HashBasedNumberedShardSpecTest
+Running io.druid.initialization.InitializationTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 sec - in io.druid.initialization.InitializationTest
+Running io.druid.initialization.ZkPathsConfigTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.192 sec - in io.druid.initialization.ZkPathsConfigTest
+Running io.druid.initialization.ComposingEmitterModuleTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in io.druid.initialization.ComposingEmitterModuleTest
+
+Results :
+
+Failed tests: 
+  LookupSnapshotTakerTest.testIOExceptionDuringLookupPersist Expected exception: io.druid.java.util.common.ISE
+  LocalDataSegmentPusherTest.testPushCannotCreateDirectory Expected test to throw (an instance of java.io.IOException and exception with message a string containing "Unable to create directory")
+  SegmentLoaderLocalCacheManagerTest.testRetryAllFail:289
+  SegmentLoaderLocalCacheManagerTest.testRetrySuccessAtSecondLocation:234
+
+Tests run: 984, Failures: 4, Errors: 0, Skipped: 3
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] io.druid:druid ..................................... SUCCESS [  2.205 s]
+[INFO] java-util .......................................... SUCCESS [  8.806 s]
+[INFO] druid-api .......................................... SUCCESS [  4.279 s]
+[INFO] druid-common ....................................... SUCCESS [ 14.305 s]
+[INFO] druid-hll .......................................... SUCCESS [  2.676 s]
+[INFO] extendedset ........................................ SUCCESS [ 45.056 s]
+[INFO] bytebuffer-collections ............................. SUCCESS [  4.086 s]
+[INFO] druid-processing ................................... SUCCESS [06:09 min]
+[INFO] druid-aws-common ................................... SUCCESS [  1.789 s]
+[INFO] druid-server ....................................... FAILURE [04:22 min]
+[INFO] druid-examples ..................................... SKIPPED
+[INFO] druid-indexing-hadoop .............................. SKIPPED
+[INFO] druid-indexing-service ............................. SKIPPED
+[INFO] druid-sql .......................................... SKIPPED
+[INFO] druid-services ..................................... SKIPPED
+[INFO] druid-s3-extensions ................................ SKIPPED
+[INFO] druid-datasketches ................................. SKIPPED
+[INFO] druid-kafka-eight .................................. SKIPPED
+[INFO] druid-histogram .................................... SKIPPED
+[INFO] mysql-metadata-storage ............................. SKIPPED
+[INFO] druid-kafka-indexing-service ....................... SKIPPED
+[INFO] druid-integration-tests ............................ SKIPPED
+[INFO] druid-benchmarks ................................... SKIPPED
+[INFO] druid-avro-extensions .............................. SKIPPED
+[INFO] druid-caffeine-cache ............................... SKIPPED
+[INFO] druid-kerberos ..................................... SKIPPED
+[INFO] druid-hdfs-storage ................................. SKIPPED
+[INFO] druid-stats ........................................ SKIPPED
+[INFO] druid-lookups-cached-global ........................ SKIPPED
+[INFO] druid-kafka-extraction-namespace ................... SKIPPED
+[INFO] postgresql-metadata-storage ........................ SKIPPED
+[INFO] druid-lookups-cached-single ........................ SKIPPED
+[INFO] druid-azure-extensions ............................. SKIPPED
+[INFO] druid-cassandra-storage ............................ SKIPPED
+[INFO] druid-rocketmq ..................................... SKIPPED
+[INFO] druid-cloudfiles-extensions ........................ SKIPPED
+[INFO] graphite-emitter ................................... SKIPPED
+[INFO] druid-kafka-eight-simple-consumer .................. SKIPPED
+[INFO] druid-rabbitmq ..................................... SKIPPED
+[INFO] druid-distinctcount ................................ SKIPPED
+[INFO] druid-parquet-extensions ........................... SKIPPED
+[INFO] statsd-emitter ..................................... SKIPPED
+[INFO] druid-orc-extensions ............................... SKIPPED
+[INFO] druid-time-min-max ................................. SKIPPED
+[INFO] druid-google-extensions ............................ SKIPPED
+[INFO] druid-virtual-columns .............................. SKIPPED
+[INFO] druid-thrift-extensions ............................ SKIPPED
+[INFO] ambari-metrics-emitter ............................. SKIPPED
+[INFO] scan-query ......................................... SKIPPED
+[INFO] sqlserver-metadata-storage ......................... SKIPPED
+[INFO] distribution ....................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 11:57 min
+[INFO] Finished at: 2018-01-25T21:07:30+01:00
+[INFO] Final Memory: 57M/1722M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project druid-server: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/druid-io/druid/210761639/server/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :druid-server
