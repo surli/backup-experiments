@@ -1,0 +1,1010 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] sharding-jdbc
+[INFO] sharding-jdbc-core
+[INFO] sharding-jdbc-config-parent
+[INFO] sharding-jdbc-config-common
+[INFO] sharding-jdbc-config-yaml
+[INFO] sharding-jdbc-config-spring
+[INFO] sharding-jdbc-transaction-parent
+[INFO] sharding-jdbc-transaction-storage
+[INFO] sharding-jdbc-transaction
+[INFO] sharding-jdbc-transaction-async-job
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sharding-jdbc 1.5.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ sharding-jdbc ---
+[INFO] Skipping Rule Enforcement.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sharding-jdbc-core 1.5.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ sharding-jdbc-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ sharding-jdbc-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/shardingjdbc/sharding-jdbc/266223945/sharding-jdbc-core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ sharding-jdbc-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ sharding-jdbc-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 508 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ sharding-jdbc-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ sharding-jdbc-core ---
+[INFO] Surefire report directory: /root/workspace/shardingjdbc/sharding-jdbc/266223945/sharding-jdbc-core/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.pom (3 KB at 5.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (3 KB at 74.0 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.4/surefire-junit4-2.12.4.jar (37 KB at 801.3 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+Running com.dangdang.ddframe.rdb.sharding.parsing.lexer.LexerTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.lexer.dialect.sqlserver.SQLServerLexerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.lexer.dialect.mysql.MySQLLexerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.lexer.dialect.oracle.OracleLexerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.lexer.dialect.postgresql.PostgreSQLLexerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.lexer.analyzer.TokenizerTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.UpdateStatementParserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.001 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.DeleteStatementParserTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.InsertStatementParserTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.SelectStatementTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.parser.context.condition.ConditionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngineTest
+Tests run: 540, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.868 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.UnsupportedSQLParsingEngineTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.parsing.SQLJudgeEngineTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.adapter.ResultSetAdapterTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.471 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.adapter.ResultSetGetterAdapterTest
+Tests run: 52, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.472 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.adapter.invocation.SetParameterMethodInvocationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.adapter.invocation.JdbcMethodInvocationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.adapter.ConnectionAdapterTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.225 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.adapter.DataSourceAdapterTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.253 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.adapter.PreparedStatementAdapterTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.51 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.adapter.StatementAdapterTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.667 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingStatementTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.237 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatementTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.364 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.core.resultset.GeneratedKeysResultSetTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.core.resultset.GeneratedKeysResultSetMetaDataTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.core.resultset.ShardingResultSetTest
+Tests run: 54, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.334 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.core.datasource.MasterSlaveDataSourceTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.core.datasource.ShardingDataSourceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.core.connection.ShardingConnectionTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.unsupported.UnsupportedOperationPreparedStatementTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.192 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.unsupported.UnsupportedOperationDataSourceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.unsupported.UnsupportedOperationConnectionTest
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.52 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.unsupported.UnsupportedOperationResultSetTest
+Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.796 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.unsupported.UnsupportedOperationStatementTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.unsupported.UnsupportedUpdateOperationResultSetTest
+Tests run: 82, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.461 sec
+Running com.dangdang.ddframe.rdb.sharding.jdbc.unsupported.UnsupportedGeneratedKeysResultSetTest
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.dangdang.ddframe.rdb.sharding.util.EventBusInstanceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.util.SQLUtilTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.util.NumberUtilTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.dangdang.ddframe.rdb.sharding.util.StringUtilTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.common.StreamResultSetMergerTest
+Tests run: 57, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.common.DecoratorResultSetMergerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.common.MemoryResultSetRowTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.common.MemoryResultSetMergerTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.groupby.aggregation.AverageAggregationUnitTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.groupby.aggregation.ComparableAggregationUnitTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.groupby.aggregation.AccumulationAggregationUnitTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.groupby.aggregation.AggregationUnitFactoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.groupby.GroupByMemoryResultSetMergerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.groupby.GroupByValueTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.groupby.GroupByRowComparatorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.groupby.GroupByStreamResultSetMergerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.orderby.OrderByValueTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.orderby.OrderByStreamResultSetMergerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.util.ResultSetUtilTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.MergeEngineTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.iterator.IteratorStreamResultSetMergerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.merger.limit.LimitDecoratorResultSetMergerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.dangdang.ddframe.rdb.sharding.api.strategy.common.ShardingStrategyTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithmTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.api.strategy.table.TableShardingStrategyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithmTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.api.strategy.database.DatabaseShardingStrategyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.api.strategy.slave.RoundRobinSlaveLoadBalanceStrategyTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.api.rule.BindingTableRuleTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running com.dangdang.ddframe.rdb.sharding.api.rule.DataSourceRuleTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.api.rule.DataNodeTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.api.rule.DynamicDataNodeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.api.rule.ShardingRuleTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.dangdang.ddframe.rdb.sharding.api.rule.TableRuleTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.006 sec
+Running com.dangdang.ddframe.rdb.sharding.api.HintManagerTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.api.MasterSlaveDataSourceFactoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.api.ShardingValueTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.api.ShardingDataSourceFactoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.rewrite.SQLBuilderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.rewrite.SQLRewriteEngineTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.dangdang.ddframe.rdb.sharding.config.ShardingPropertiesTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.config.ShardingPropertiesConstantTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.metrics.MetricsContextTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Running com.dangdang.ddframe.rdb.sharding.executor.type.StatementExecutorTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 sec
+Running com.dangdang.ddframe.rdb.sharding.executor.type.BatchPreparedStatementExecutorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 sec
+Running com.dangdang.ddframe.rdb.sharding.executor.type.PreparedStatementExecutorTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
+Running com.dangdang.ddframe.rdb.sharding.executor.threadlocal.ExecutorExceptionHandlerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.constant.DatabaseTypeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running com.dangdang.ddframe.rdb.sharding.routing.SelectSingleTableTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.01 sec
+Running com.dangdang.ddframe.rdb.sharding.routing.DatabaseTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.dangdang.ddframe.rdb.sharding.routing.SelectBindingTableTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.routing.SelectMixedTablesTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.dangdang.ddframe.rdb.sharding.routing.DMLTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.dangdang.ddframe.rdb.sharding.keygen.DefaultKeyGeneratorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec
+Running com.dangdang.ddframe.rdb.sharding.keygen.KeyGeneratorFactoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.dangdang.ddframe.rdb.sharding.hint.HintManagerHolderTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.dangdang.ddframe.rdb.integrate.type.hint.type.RoutingDatabaseOnlyWithHintForDMLTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.571 sec
+Running com.dangdang.ddframe.rdb.integrate.type.hint.type.ShardingDatabaseOnlyWithHintForSelectTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.167 sec
+Running com.dangdang.ddframe.rdb.integrate.type.hint.type.ShardingDatabaseOnlyWithHintForDMLTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.418 sec
+Running com.dangdang.ddframe.rdb.integrate.type.hint.type.RoutingDatabaseOnlyWithHintForSelectTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec
+Running com.dangdang.ddframe.rdb.integrate.type.ShardingDatabaseOnlyTest
+Tests run: 432, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.338 sec
+Running com.dangdang.ddframe.rdb.integrate.type.ShardingMasterSlaveTest
+Tests run: 432, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 45.682 sec
+Running com.dangdang.ddframe.rdb.integrate.type.NullableShardingTableOnlyTest
+Tests run: 50, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.206 sec
+Running com.dangdang.ddframe.rdb.integrate.type.ShardingTableOnlyTest
+Tests run: 432, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.375 sec
+Running com.dangdang.ddframe.rdb.integrate.type.ShardingDatabaseAndTableTest
+Tests run: 432, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.949 sec
+Running com.dangdang.ddframe.rdb.integrate.type.ShardingDatabaseAndTableDynamicTest
+Tests run: 432, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.002 sec
+
+Results :
+
+Tests run: 3706, Failures: 0, Errors: 0, Skipped: 4
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sharding-jdbc-config-parent 1.5.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ sharding-jdbc-config-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sharding-jdbc-config-common 1.5.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ sharding-jdbc-config-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ sharding-jdbc-config-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/shardingjdbc/sharding-jdbc/266223945/sharding-jdbc-config-parent/sharding-jdbc-config-common/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ sharding-jdbc-config-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ sharding-jdbc-config-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ sharding-jdbc-config-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ sharding-jdbc-config-common ---
+[INFO] Surefire report directory: /root/workspace/shardingjdbc/sharding-jdbc/266223945/sharding-jdbc-config-parent/sharding-jdbc-config-common/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+Running com.dangdang.ddframe.rdb.sharding.config.common.internal.algorithm.ClosureTableShardingAlgorithmTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.019 sec
+Running com.dangdang.ddframe.rdb.sharding.config.common.internal.algorithm.ClosureDatabaseShardingAlgorithmTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 sec
+Running com.dangdang.ddframe.rdb.sharding.config.common.internal.algorithm.ShardingValueWrapperTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec
+Running com.dangdang.ddframe.rdb.sharding.config.common.internal.parser.InlineParserTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.153 sec
+Running com.dangdang.ddframe.rdb.sharding.config.common.api.ShardingRuleBuilderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.399 sec
+
+Results :
+
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sharding-jdbc-config-yaml 1.5.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ sharding-jdbc-config-yaml ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ sharding-jdbc-config-yaml ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /root/workspace/shardingjdbc/sharding-jdbc/266223945/sharding-jdbc-config-parent/sharding-jdbc-config-yaml/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ sharding-jdbc-config-yaml ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ sharding-jdbc-config-yaml ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 12 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ sharding-jdbc-config-yaml ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ sharding-jdbc-config-yaml ---
+[INFO] Surefire report directory: /root/workspace/shardingjdbc/sharding-jdbc/266223945/sharding-jdbc-config-parent/sharding-jdbc-config-yaml/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+Running com.dangdang.ddframe.rdb.sharding.config.yaml.YamlShardingDataSourceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.885 sec
+Running com.dangdang.ddframe.rdb.sharding.config.yaml.YamlIntegratedTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.319 sec
+
+Results :
+
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sharding-jdbc-config-spring 1.5.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ sharding-jdbc-config-spring ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ sharding-jdbc-config-spring ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ sharding-jdbc-config-spring ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ sharding-jdbc-config-spring ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 25 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ sharding-jdbc-config-spring ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ sharding-jdbc-config-spring ---
+[INFO] Surefire report directory: /root/workspace/shardingjdbc/sharding-jdbc/266223945/sharding-jdbc-config-parent/sharding-jdbc-config-spring/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmExpressionTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.341 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmExpressionTest)  Time elapsed: 0.357 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceForMasterSlaveTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.134 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceForMasterSlaveTest)  Time elapsed: 0.134 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmClassAndPropsTest
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.76 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmClassAndPropsTest)  Time elapsed: 0.079 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceForIndicatedDataSourceNamesTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.471 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceForIndicatedDataSourceNamesTest)  Time elapsed: 0.044 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmExpressionForDynamicTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.205 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmExpressionForDynamicTest)  Time elapsed: 0.038 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceDifferentTablesTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.23 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceDifferentTablesTest)  Time elapsed: 0.044 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceDefaultStrategyTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.195 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceDefaultStrategyTest)  Time elapsed: 0.031 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmClassTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.111 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmClassTest)  Time elapsed: 0.022 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceBindingTablesTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.204 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceBindingTablesTest)  Time elapsed: 0.023 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.WithoutNamespaceDefaultStrategyTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.157 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.WithoutNamespaceDefaultStrategyTest)  Time elapsed: 0.022 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.cases.WithoutNamespaceTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.155 sec <<< FAILURE!
+testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.WithoutNamespaceTest)  Time elapsed: 0.054 sec  <<< ERROR!
+java.lang.IllegalArgumentException
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:108)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.context.table.Tables.getSingleTableName(Tables.java:72)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parseColumns(AbstractInsertParser.java:124)
+	at com.dangdang.ddframe.rdb.sharding.parsing.parser.statement.dml.insert.AbstractInsertParser.parse(AbstractInsertParser.java:77)
+	at com.dangdang.ddframe.rdb.sharding.parsing.SQLParsingEngine.parse(SQLParsingEngine.java:67)
+	at com.dangdang.ddframe.rdb.sharding.routing.router.ParsingSQLRouter.parse(ParsingSQLRouter.java:74)
+	at com.dangdang.ddframe.rdb.sharding.routing.PreparedStatementRoutingEngine.route(PreparedStatementRoutingEngine.java:54)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.route(ShardingPreparedStatement.java:122)
+	at com.dangdang.ddframe.rdb.sharding.jdbc.core.statement.ShardingPreparedStatement.execute(ShardingPreparedStatement.java:112)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.insertData(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:72)
+	at com.dangdang.ddframe.rdb.sharding.spring.AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.testWithAllPlaceholders(AbstractShardingBothDataBasesAndTablesSpringDBUnitTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running com.dangdang.ddframe.rdb.sharding.spring.GenerateKeyDBUnitTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.146 sec
+
+Results :
+
+Tests in error: 
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmExpressionTest)
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceForMasterSlaveTest)
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmClassAndPropsTest)
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceForIndicatedDataSourceNamesTest)
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmExpressionForDynamicTest)
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceDifferentTablesTest)
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceDefaultStrategyTest)
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceAlgorithmClassTest)
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.namespace.WithNamespaceBindingTablesTest)
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.WithoutNamespaceDefaultStrategyTest)
+  testWithAllPlaceholders(com.dangdang.ddframe.rdb.sharding.spring.cases.WithoutNamespaceTest)
+
+Tests run: 13, Failures: 0, Errors: 11, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] sharding-jdbc ...................................... SUCCESS [  0.698 s]
+[INFO] sharding-jdbc-core ................................. SUCCESS [01:57 min]
+[INFO] sharding-jdbc-config-parent ........................ SUCCESS [  0.006 s]
+[INFO] sharding-jdbc-config-common ........................ SUCCESS [  2.030 s]
+[INFO] sharding-jdbc-config-yaml .......................... SUCCESS [  3.668 s]
+[INFO] sharding-jdbc-config-spring ........................ FAILURE [  8.252 s]
+[INFO] sharding-jdbc-transaction-parent ................... SKIPPED
+[INFO] sharding-jdbc-transaction-storage .................. SKIPPED
+[INFO] sharding-jdbc-transaction .......................... SKIPPED
+[INFO] sharding-jdbc-transaction-async-job ................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:12 min
+[INFO] Finished at: 2018-01-29T15:24:44+01:00
+[INFO] Final Memory: 26M/939M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project sharding-jdbc-config-spring: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/shardingjdbc/sharding-jdbc/266223945/sharding-jdbc-config-parent/sharding-jdbc-config-spring/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :sharding-jdbc-config-spring
