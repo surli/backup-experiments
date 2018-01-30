@@ -1,0 +1,49 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "avojak/aws-p2-maven-plugin",
+  "failingModule": "/root/workspace/avojak/aws-p2-maven-plugin/335391948",
+  "hostname": "spirals-librepair",
+  "totalNumberFailingTests": 4,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 111,
+  "failing-test-cases": [
+    {
+      "className": "com.avojak.mojo.aws.p2.maven.plugin.s3.repository.impl.S3BucketRepositoryImplTest",
+      "failingMethods": [
+        "com.avojak.mojo.aws.p2.maven.plugin.s3.repository.impl.S3BucketRepositoryImplTest#testUploadDirectory_EmptyDirectory",
+        "com.avojak.mojo.aws.p2.maven.plugin.s3.repository.impl.S3BucketRepositoryImplTest#testUploadDirectory_DirectoryNotADirectory",
+        "com.avojak.mojo.aws.p2.maven.plugin.s3.repository.impl.S3BucketRepositoryImplTest#testUploadDirectory_DeleteExistingDirectory",
+        "com.avojak.mojo.aws.p2.maven.plugin.s3.repository.impl.S3BucketRepositoryImplTest#testUploadDirectory_DirectoryNotAccessible"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": " Expected: is \u003c[LoggingEvent[level\u003dWARN,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dDirectory is not accessible: {},arguments\u003d[mock7182571422605448804]]]\u003e      but: was \u003c[LoggingEvent[level\u003dDEBUG,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dDetermined trie prefix: null,arguments\u003d[]], LoggingEvent[level\u003dWARN,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dDirectory is not accessible: {},arguments\u003d[mock7182571422605448804]]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": " Expected: is \u003c[LoggingEvent[level\u003dDEBUG,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dSkipping upload of empty directory: {},arguments\u003d[mock1162526423021772075]]]\u003e      but: was \u003c[LoggingEvent[level\u003dDEBUG,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dDetermined trie prefix: null,arguments\u003d[]], LoggingEvent[level\u003dDEBUG,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dSkipping upload of empty directory: {},arguments\u003d[mock1162526423021772075]]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": " Expected: is \u003c[LoggingEvent[level\u003dWARN,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dDirectory is not accessible: {},arguments\u003d[mock5301907242852909845.tmp]]]\u003e      but: was \u003c[LoggingEvent[level\u003dDEBUG,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dDetermined trie prefix: null,arguments\u003d[]], LoggingEvent[level\u003dWARN,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dDirectory is not accessible: {},arguments\u003d[mock5301907242852909845.tmp]]]\u003e",
+          "isError": false
+        },
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": " Expected: is \u003c[LoggingEvent[level\u003dDEBUG,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dSkipping upload of empty directory: {},arguments\u003d[mock2762893632045399192]]]\u003e      but: was \u003c[LoggingEvent[level\u003dDEBUG,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dDetermined trie prefix: null,arguments\u003d[]], LoggingEvent[level\u003dDEBUG,mdc\u003d{},marker\u003dOptional.absent(),throwable\u003dOptional.absent(),message\u003dSkipping upload of empty directory: {},arguments\u003d[mock2762893632045399192]]]\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 4,
+      "nbErrors": 0
+    }
+  ]
+}
