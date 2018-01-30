@@ -1,0 +1,297 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.geoserver.web:gs-web-sec-core:jar:2.13-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.geoserver.web:gs-web-core:jar:tests -> duplicate declaration of version ${project.version} @ line 50, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] GeoServer
+[INFO] Core Platform Module
+[INFO] Open Web Service Module
+[INFO] Main Module
+[INFO] GeoServer Security Modules
+[INFO] GeoServer Security Tests Module
+[INFO] GeoServer JDBC Security Module
+[INFO] GeoServer LDAP Security Module
+[INFO] Web Coverage Service Module
+[INFO] Web Coverage Service 1.0 Module
+[INFO] Web Coverage Service 1.1 Module
+[INFO] Web Coverage Service 2.0 Module
+[INFO] Web Feature Service Module
+[INFO] Web Map Service Module
+[INFO] KML support for GeoServer
+[INFO] gs-rest
+[INFO] GeoWebCache (GWC) Module
+[INFO] gs-restconfig
+[INFO] gs-restconfig-wcs
+[INFO] gs-restconfig-wfs
+[INFO] gs-restconfig-wms
+[INFO] GeoServer Web Modules
+[INFO] Core UI Module
+[INFO] WMS UI Module
+[INFO] GWC UI Module
+[INFO] WFS UI Module
+[INFO] Demos Module
+[INFO] WCS UI Module
+[INFO] Security UI Modules
+[INFO] Security UI Core Module
+[INFO] Security UI JDBC Module
+[INFO] Security UI LDAP Module
+[INFO] REST UI Module
+[INFO] GeoServer Web Application
+[INFO] Community Space
+[INFO] GeoServer Extensions
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GeoServer 2.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.1.15:revision (default) @ geoserver ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Core Platform Module 2.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.1.15:revision (default) @ gs-platform ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gs-platform ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] skip non existing resourceDirectory /root/workspace/geoserver/geoserver/304883305/src/platform/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ gs-platform ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gs-platform ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] skip non existing resourceDirectory /root/workspace/geoserver/geoserver/304883305/src/platform/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ gs-platform ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.3:test (default-test) @ gs-platform ---
+[INFO] Surefire report directory: /root/workspace/geoserver/geoserver/304883305/src/platform/target/surefire-reports
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.3/surefire-junit4-2.12.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.3/surefire-junit4-2.12.3.pom (3 KB at 7.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.3/surefire-providers-2.12.3.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.3/surefire-providers-2.12.3.pom (3 KB at 114.6 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.3/surefire-junit4-2.12.3.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit4/2.12.3/surefire-junit4-2.12.3.jar (36 KB at 945.5 KB/sec)
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.geoserver.platform.AdvancedDispatchFilterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec
+Running org.geoserver.platform.GeoServerEnvironmentTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.458 sec
+Running org.geoserver.platform.GeoServerExtensionsTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running org.geoserver.platform.GeoServerResourceLoaderTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec
+Running org.geoserver.platform.ModuleStatusTest
+test
+default
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.geoserver.platform.RenderingEngineStatusTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.geoserver.platform.SystemEnvironmentTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.geoserver.platform.SystemPropertiesStatusTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.geoserver.platform.exception.ExceptionLocalizeTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running org.geoserver.platform.exception.GeoServerExceptionsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.geoserver.platform.resource.FileSystemResourceStoreTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running org.geoserver.platform.resource.FileSystemResourceTheoryTest
+Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.547 sec
+Running org.geoserver.platform.resource.FileWrapperResourceTheoryTest
+Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.278 sec
+Running org.geoserver.platform.resource.PathsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.geoserver.platform.resource.ResourcesTest
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.202 sec
+Running org.geoserver.platform.resource.SimpleResourceNotificationDispatcherTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running org.geoserver.platform.util.GeoServerPropertyFactoryBeanTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running org.geoserver.util.IOUtilsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running org.geoserver.util.LoggerRuleTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec
+
+Results :
+
+Tests run: 172, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Open Web Service Module 2.13-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- git-commit-id-plugin:2.1.15:revision (default) @ gs-ows ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gs-ows ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] skip non existing resourceDirectory /root/workspace/geoserver/geoserver/304883305/src/ows/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ gs-ows ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gs-ows ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] skip non existing resourceDirectory /root/workspace/geoserver/geoserver/304883305/src/ows/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ gs-ows ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.3:test (default-test) @ gs-ows ---
+[INFO] Surefire report directory: /root/workspace/geoserver/geoserver/304883305/src/ows/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.geoserver.ows.DefaultServiceExceptionHandlerTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.557 sec
+Running org.geoserver.ows.DispatcherTest
+Tests run: 29, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.659 sec <<< FAILURE!
+testErrorThrowingResponse(org.geoserver.ows.DispatcherTest)  Time elapsed: 31 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: a string starting with "<ows:Exception"
+     but: was "<?xml version="1.0" encoding="UTF-8"?>
+<ows:ExceptionReport xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ows="http://www.opengis.net/ows" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0.0" xsi:schemaLocation="http://www.opengis.net/ows http://localhost:8080/geoserver/schemas/ows/1.0.0/owsExceptionReport.xsd">
+<ows:Exception exceptionCode="NoApplicableCode">
+<ows:ExceptionText>Whoops, something gone wrong!</ows:ExceptionText>
+</ows:Exception>
+</ows:ExceptionReport>
+"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:865)
+	at org.junit.Assert.assertThat(Assert.java:832)
+	at org.geoserver.ows.DispatcherTest.testErrorThrowingResponse(DispatcherTest.java:979)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:84)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+Running org.geoserver.ows.FilePublisherTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec
+Running org.geoserver.ows.XmlObjectEncodingResponseTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running org.geoserver.ows.kvp.CharsetKvpParserTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running org.geoserver.ows.kvp.ElevationKvpParserTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running org.geoserver.ows.kvp.FormatOptionsKvpParserTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running org.geoserver.ows.kvp.KvpUtilsTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.geoserver.ows.kvp.TimeKvpParserTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec
+Running org.geoserver.ows.util.CaseInsensitiveMapTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.geoserver.ows.util.KvpMapTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.geoserver.ows.util.OwsUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running org.geoserver.ows.util.RequestUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.geoserver.ows.xml.v1_0.ExceptionReportBindingTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
+
+Results :
+
+Failed tests:   testErrorThrowingResponse(org.geoserver.ows.DispatcherTest): (..)
+
+Tests run: 80, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] GeoServer .......................................... SUCCESS [  2.921 s]
+[INFO] Core Platform Module ............................... SUCCESS [  8.231 s]
+[INFO] Open Web Service Module ............................ FAILURE [  2.793 s]
+[INFO] Main Module ........................................ SKIPPED
+[INFO] GeoServer Security Modules ......................... SKIPPED
+[INFO] GeoServer Security Tests Module .................... SKIPPED
+[INFO] GeoServer JDBC Security Module ..................... SKIPPED
+[INFO] GeoServer LDAP Security Module ..................... SKIPPED
+[INFO] Web Coverage Service Module ........................ SKIPPED
+[INFO] Web Coverage Service 1.0 Module .................... SKIPPED
+[INFO] Web Coverage Service 1.1 Module .................... SKIPPED
+[INFO] Web Coverage Service 2.0 Module .................... SKIPPED
+[INFO] Web Feature Service Module ......................... SKIPPED
+[INFO] Web Map Service Module ............................. SKIPPED
+[INFO] KML support for GeoServer .......................... SKIPPED
+[INFO] gs-rest ............................................ SKIPPED
+[INFO] GeoWebCache (GWC) Module ........................... SKIPPED
+[INFO] gs-restconfig ...................................... SKIPPED
+[INFO] gs-restconfig-wcs .................................. SKIPPED
+[INFO] gs-restconfig-wfs .................................. SKIPPED
+[INFO] gs-restconfig-wms .................................. SKIPPED
+[INFO] GeoServer Web Modules .............................. SKIPPED
+[INFO] Core UI Module ..................................... SKIPPED
+[INFO] WMS UI Module ...................................... SKIPPED
+[INFO] GWC UI Module ...................................... SKIPPED
+[INFO] WFS UI Module ...................................... SKIPPED
+[INFO] Demos Module ....................................... SKIPPED
+[INFO] WCS UI Module ...................................... SKIPPED
+[INFO] Security UI Modules ................................ SKIPPED
+[INFO] Security UI Core Module ............................ SKIPPED
+[INFO] Security UI JDBC Module ............................ SKIPPED
+[INFO] Security UI LDAP Module ............................ SKIPPED
+[INFO] REST UI Module ..................................... SKIPPED
+[INFO] GeoServer Web Application .......................... SKIPPED
+[INFO] Community Space .................................... SKIPPED
+[INFO] GeoServer Extensions ............................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 14.728 s
+[INFO] Finished at: 2018-01-30T20:28:52+01:00
+[INFO] Final Memory: 89M/1258M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.3:test (default-test) on project gs-ows: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /root/workspace/geoserver/geoserver/304883305/src/ows/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :gs-ows

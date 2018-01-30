@@ -1,0 +1,31 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "geoserver/geoserver",
+  "failingModule": "/root/workspace/geoserver/geoserver/304883305/src/ows",
+  "hostname": "spirals-vortex.lille.inria.fr",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 252,
+  "failing-test-cases": [
+    {
+      "className": "org.geoserver.ows.DispatcherTest",
+      "failingMethods": [
+        "org.geoserver.ows.DispatcherTest#testErrorThrowingResponse"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": " Expected: a string starting with \"\u003cows:Exception\"      but: was \"\u003c?xml version\u003d\"1.0\" encoding\u003d\"UTF-8\"?\u003e \u003cows:ExceptionReport xmlns:xs\u003d\"http://www.w3.org/2001/XMLSchema\" xmlns:ows\u003d\"http://www.opengis.net/ows\" xmlns:xsi\u003d\"http://www.w3.org/2001/XMLSchema-instance\" version\u003d\"1.0.0\" xsi:schemaLocation\u003d\"http://www.opengis.net/ows http://localhost:8080/geoserver/schemas/ows/1.0.0/owsExceptionReport.xsd\"\u003e \u003cows:Exception exceptionCode\u003d\"NoApplicableCode\"\u003e \u003cows:ExceptionText\u003eWhoops, something gone wrong!\u003c/ows:ExceptionText\u003e \u003c/ows:Exception\u003e \u003c/ows:ExceptionReport\u003e \"",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
