@@ -1,0 +1,1 @@
+### Hi! This content was moved to https://zalando.github.io/zalenium/#usage and https://zalando.github.io/zalenium/#docker
