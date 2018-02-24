@@ -1,0 +1,53 @@
+{
+  "totalNumberSkippingTests": 5,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 3,
+  "repo": "srdo/storm",
+  "bugCommit": "https://github.com/srdo/storm/commit/5ba4885da4bc",
+  "failingModule": "/root/workspace/srdo/storm/345637424/flux/flux-core",
+  "hostname": "spirals-vortex.lille.inria.fr",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "java.io.IOException",
+    "java.lang.reflect.InvocationTargetException"
+  ],
+  "totalNumberRunningTests": 687,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.storm.flux.TCKTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.storm.flux.TCKTest#testKafkaSpoutConfig",
+        "org.apache.storm.flux.TCKTest#testLoadFromResource"
+      ],
+      "failures": [
+        {
+          "failureName": "java.lang.reflect.InvocationTargetException",
+          "isError": true
+        },
+        {
+          "failureName": "java.lang.reflect.InvocationTargetException",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    },
+    {
+      "className": "org.apache.storm.flux.multilang.MultilangEnvironmentTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "org.apache.storm.flux.multilang.MultilangEnvironmentTest#testInvokeNode"
+      ],
+      "failures": [
+        {
+          "failureName": "java.io.IOException",
+          "failureDetail": "Cannot run program \"node\": error\u003d2, No such file or directory",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    }
+  ]
+}
