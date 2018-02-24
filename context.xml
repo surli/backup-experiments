@@ -1,0 +1,54 @@
+<!--staging 的tomcat部署描述符,生产线上的描述符应该与其类似-->
+<Context>
+    <Resource name="jdbc/shoppingbeauty" maxWaitMillis="5000" maxTotal="20"
+              url="jdbc:mysql://mysql:3306/sb?useUnicode=true&amp;characterEncoding=utf8&amp;useServerPrepStmts=false&amp;autoReconnect=true"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver" maxIdle="10"
+              username="sb" password="sb" validationQuery="select 1"/>
+
+    <!--我本地玩玩的-->
+    <!--<Resource name="jdbc/shoppingbeauty"-->
+    <!--type="javax.sql.DataSource"-->
+    <!--username=""-->
+    <!--password=""-->
+    <!--driverClassName="org.h2.Driver"-->
+    <!--url="jdbc:h2:mem:piwik;DB_CLOSE_DELAY=-1"-->
+    <!--maxTotal="8"-->
+    <!--maxIdle="4"/>-->
+    <Parameter name="me.jiangcai.lib.sys.uri" value="/_managerSystemString"/>
+
+    <Parameter name="spring.profiles.active" value="container,staging"/>
+    <Parameter name="me.jiangcai.lib.resource.home" value="/data/resources"/>
+    <Parameter name="me.jiangcai.lib.resource.http.uri" value="http://res.server.staging.sb.lmjia.cn/"/>
+    <!--系统的可访问URL-->
+    <Parameter name="shopping.url" value="http://staging.sb.lmjia.cn"/>
+    <Parameter name="shopping.mobile.url" value="http://front.staging.sb.lmjia.cn"/>
+    <Parameter name="shopping.desktop.url" value="http://manager.staging.sb.lmjia.cn"/>
+
+    <!--微信相关-->
+    <Parameter name="huotao.weixin.appId" value="wx198ba167229080c1"/>
+    <Parameter name="huotao.weixin.appSecret" value="e3b05e7dc329c53dc781469ec1784792"/>
+    <Parameter name="huotao.weixin.mchId" value="1498570872"/>
+    <Parameter name="huotao.weixin.apiKey" value="1sapeoif78366vbcxbzjs8ew8182838d"/>
+    <Parameter name="huotao.weixin.url" value="11"/>
+    <Parameter name="huotao.weixin.token" value="11"/>
+
+    <!--SMS-->
+    <!--创蓝？ 可以通过com.huotu.notice.supplier 调整为阿里云-->
+    <Parameter name="com.huotu.sms.cl.account" value=""/>
+    <Parameter name="com.huotu.sms.cl.password" value=""/>
+    <Parameter name="com.huotu.notice.supplier" value="me.jiangcai.lib.notice.ZjyNoticeSupplier"/>
+    <Parameter name="me.jiangcai.zjy.username" value="meiyueyzm"/>
+    <Parameter name="me.jiangcai.zjy.password" value="meiyue6629"/>
+    <Parameter name="me.jiangcai.zyj.cid" value="445"/>
+    <Parameter name="me.jiangcai.zyj.key" value="d7f3cb7dcd0e4c9ab58075619eaa2689"/>
+
+    <!--邮件通知-->
+    <Parameter name="me.jiangcai.lib.notice.email.smtp.host" value="smtp.mxhichina.com"/>
+    <Parameter name="me.jiangcai.lib.notice.email.smtp.sslPort" value="465"/>
+    <Parameter name="me.jiangcai.lib.notice.email.smtp.username" value="shopping-beauty-staging@mingshz.com"/>
+    <Parameter name="me.jiangcai.lib.notice.email.smtp.password" value="ILoveShopping@@@@1234"/>
+    <Parameter name="me.jiangcai.lib.notice.email.from.email" value="shopping-beauty-staging@mingshz.com"/>
+    <Parameter name="me.jiangcai.lib.notice.email.from.name" value="锋尚来美！这是演习！"/>
+
+</Context>

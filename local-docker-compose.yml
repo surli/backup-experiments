@@ -1,0 +1,71 @@
+#docker 综合服务描述符 用以本地测试
+#通过 docker stack deploy --compose-file local-docker-compose-test.yml sb
+#即可开启完整的应用程序
+version: "3"
+services:
+
+  mysqlAdmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_HOST=mysql
+      - TZ=Asia/Shanghai
+    ports:
+      - 8033:80
+    depends_on:
+      - mysql
+
+  mysql:
+    image: registry.cn-shanghai.aliyuncs.com/mingshz/mysql-alirds
+    environment:
+      - MYSQL_PASSWORD=sb
+      - MYSQL_DATABASE=sb
+      - MYSQL_USER=sb
+    volumes:
+      - database:/var/lib/mysql
+
+#    服务端管理的资源服务器
+  resource:
+    image: nginx
+    volumes:
+      - server_rs:/usr/share/nginx/html
+
+  server:
+    image: mingshz/shopping-beauty-server
+#    开启调试模式，若无需该模式则关闭之
+    environment:
+      - JPDA_ENABLE=1
+      - JPDA_ADDRESS=8989
+      - JPDA_TRANSPORT=dt_socket
+    volumes:
+      - server_rs:/data/resources
+      - ./logs:/usr/local/tomcat/logs
+#      - ./context.xml:/usr/local/tomcat/conf/Catalina/localhost/context.xml.default
+    ports:
+      - 8080:8080
+      - 8989:8989
+    depends_on:
+      - mysql
+#
+#  front:
+#    image: registry-internal.cn-shanghai.aliyuncs.com/mingshz/shopping-beauty-client
+#
+#  manager:
+#    image: registry-internal.cn-shanghai.aliyuncs.com/mingshz/shopping-beauty-manager
+#
+#  proxy:
+#    image: shopping-beauty-proxy
+#    volumes:
+#      - ./default.conf:/etc/nginx/conf.d/default.conf
+#    ports:
+#      - 81:80
+#    depends_on:
+#      - server
+#      - editor
+#      - manager
+#      - front
+#      - resource
+
+volumes:
+  database: #  数据库区域
+  server_rs: # 服务端资源
+

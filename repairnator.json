@@ -1,0 +1,70 @@
+{
+  "totalNumberSkippingTests": 0,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 4,
+  "repo": "mingshz/ShoppingBeauty",
+  "bugCommit": "https://github.com/mingshz/ShoppingBeauty/compare/4d3be87fa999...4bc2ffd95571",
+  "failingModule": "/root/workspace/mingshz/ShoppingBeauty/345588361/service",
+  "hostname": "spirals-vortex.lille.inria.fr",
+  "totalNumberFailingTests": 0,
+  "error-types": [
+    "org.springframework.web.util.NestedServletException"
+  ],
+  "totalNumberRunningTests": 8,
+  "failing-test-cases": [
+    {
+      "className": "com.ming.shopping.beauty.service.service.MainOrderServiceTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.ming.shopping.beauty.service.service.MainOrderServiceTest#go"
+      ],
+      "failures": [
+        {
+          "failureName": "org.springframework.web.util.NestedServletException",
+          "failureDetail": "Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.6.2.v20151217-774c696): org.eclipse.persistence.exceptions.DatabaseException Internal Exception: org.h2.jdbc.JdbcSQLException: Table \"STANDARDWEIXINUSER\" not found; SQL statement: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?) [42102-175] Error Code: 42102 Call: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)  bind \u003d\u003e [b8ef6e04d48e41b6873c699bf835a2] Query: ReadAllQuery(referenceClass\u003dStandardWeixinUser sql\u003d\"SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)\"); nested exception is javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.6.2.v20151217-774c696): org.eclipse.persistence.exceptions.DatabaseException Internal Exception: org.h2.jdbc.JdbcSQLException: Table \"STANDARDWEIXINUSER\" not found; SQL statement: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?) [42102-175] Error Code: 42102 Call: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)  bind \u003d\u003e [b8ef6e04d48e41b6873c699bf835a2] Query: ReadAllQuery(referenceClass\u003dStandardWeixinUser sql\u003d\"SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)\")",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.ming.shopping.beauty.service.service.LoginServiceTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.ming.shopping.beauty.service.service.LoginServiceTest#getLogin"
+      ],
+      "failures": [
+        {
+          "failureName": "org.springframework.web.util.NestedServletException",
+          "failureDetail": "Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.6.2.v20151217-774c696): org.eclipse.persistence.exceptions.DatabaseException Internal Exception: org.h2.jdbc.JdbcSQLException: Table \"STANDARDWEIXINUSER\" not found; SQL statement: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?) [42102-175] Error Code: 42102 Call: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)  bind \u003d\u003e [c206f30cdbb847e88e3eb995887219] Query: ReadAllQuery(referenceClass\u003dStandardWeixinUser sql\u003d\"SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)\"); nested exception is javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.6.2.v20151217-774c696): org.eclipse.persistence.exceptions.DatabaseException Internal Exception: org.h2.jdbc.JdbcSQLException: Table \"STANDARDWEIXINUSER\" not found; SQL statement: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?) [42102-175] Error Code: 42102 Call: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)  bind \u003d\u003e [c206f30cdbb847e88e3eb995887219] Query: ReadAllQuery(referenceClass\u003dStandardWeixinUser sql\u003d\"SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)\")",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 1
+    },
+    {
+      "className": "com.ming.shopping.beauty.service.service.MerchantServiceTest",
+      "failingMethods": [],
+      "erroringMethods": [
+        "com.ming.shopping.beauty.service.service.MerchantServiceTest#addMerchant",
+        "com.ming.shopping.beauty.service.service.MerchantServiceTest#freezeOrEnable"
+      ],
+      "failures": [
+        {
+          "failureName": "org.springframework.web.util.NestedServletException",
+          "failureDetail": "Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.6.2.v20151217-774c696): org.eclipse.persistence.exceptions.DatabaseException Internal Exception: org.h2.jdbc.JdbcSQLException: Table \"STANDARDWEIXINUSER\" not found; SQL statement: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?) [42102-175] Error Code: 42102 Call: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)  bind \u003d\u003e [403e71aec2c2488593200e443865d2] Query: ReadAllQuery(referenceClass\u003dStandardWeixinUser sql\u003d\"SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)\"); nested exception is javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.6.2.v20151217-774c696): org.eclipse.persistence.exceptions.DatabaseException Internal Exception: org.h2.jdbc.JdbcSQLException: Table \"STANDARDWEIXINUSER\" not found; SQL statement: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?) [42102-175] Error Code: 42102 Call: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)  bind \u003d\u003e [403e71aec2c2488593200e443865d2] Query: ReadAllQuery(referenceClass\u003dStandardWeixinUser sql\u003d\"SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)\")",
+          "isError": true
+        },
+        {
+          "failureName": "org.springframework.web.util.NestedServletException",
+          "failureDetail": "Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.6.2.v20151217-774c696): org.eclipse.persistence.exceptions.DatabaseException Internal Exception: org.h2.jdbc.JdbcSQLException: Table \"STANDARDWEIXINUSER\" not found; SQL statement: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?) [42102-175] Error Code: 42102 Call: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)  bind \u003d\u003e [1538f312ea3745a587688f4525daa5] Query: ReadAllQuery(referenceClass\u003dStandardWeixinUser sql\u003d\"SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)\"); nested exception is javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.6.2.v20151217-774c696): org.eclipse.persistence.exceptions.DatabaseException Internal Exception: org.h2.jdbc.JdbcSQLException: Table \"STANDARDWEIXINUSER\" not found; SQL statement: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?) [42102-175] Error Code: 42102 Call: SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)  bind \u003d\u003e [1538f312ea3745a587688f4525daa5] Query: ReadAllQuery(referenceClass\u003dStandardWeixinUser sql\u003d\"SELECT OPENID, APPID, ACCESSTIMETOEXPIRE, ACCESSTOKEN, CITY, COUNTRY, GENDER, HEADIMAGEURL, LASTREFRESHDETAILTIME, LOCALE, NICKNAME, PRIVILEGE, PROVINCE, REFRESHTOKEN, TOKENSCOPES, UNIONID FROM STANDARDWEIXINUSER WHERE (OPENID \u003d ?)\")",
+          "isError": true
+        }
+      ],
+      "nbFailures": 0,
+      "nbErrors": 2
+    }
+  ]
+}

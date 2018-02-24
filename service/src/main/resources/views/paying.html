@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>微信支付</title>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<script th:inline="javascript">
+    _wxPay={};
+    _wxPay.request = JSON.parse(/*[[${payRequestParam}]]*/ "{}") ;
+    var successRedirectUrl = /*[[${successUri}]]*/ "";
+    var failureRedirectUrl = /*[[${failureRedirectUrl}]]*/ "";
+
+
+    _wxPay.paySuccess = function(){
+        window.location.replace(successRedirectUrl);
+    }
+    _wxPay.payError = function(){
+        window.location.replace(encodeURI(failureRedirectUrl));
+    }
+</script>
+<script src="//cdn.kuanyes.com/weixin-pay-js-1.0.js"></script>
+</body>
+</html>

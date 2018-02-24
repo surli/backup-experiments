@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作失败</title>
+    <link href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="weui-msg">
+    <div class="weui-msg__icon-area">
+        <!--失败-->
+        <i class="weui-icon-warn weui-icon_msg"></i>
+    </div>
+    <div class="weui-msg__text-area">
+        <h2 class="weui-msg__title" th:text="${status}">500</h2>
+        <p class="weui-msg__desc" th:text="${message}">内容详情，可根据实际需要安排，如果换行则不超过规定长度，居中展现<a href="javascript:void(0);">文字链接</a>
+        </p>
+    </div>
+    <div class="weui-msg__extra-area">
+        <div class="weui-footer">
+            <p class="weui-footer__text">Copyright © 2018-2023 杭州名顺信息科技有限公司 </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

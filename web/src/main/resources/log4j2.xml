@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+    <appenders>
+        <RollingFile name="file" filename="logs/app.log"
+                     filePattern="logs/app/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.log">
+            <PatternLayout>
+                <charset>UTF-8</charset>
+                <pattern>%d{yyyy/MM/dd HH:mm:ss} [%t] %c{1.} %L %M - %msg%xEx%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="24" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="250 MB"/>
+            </Policies>
+        </RollingFile>
+
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %c{1.} - %msg%n"/>
+        </Console>
+        <!--这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+    </appenders>
+    <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
+    <loggers>
+        <logger name="com.ming.shopping" level="debug"/>
+
+        <logger name="me.jiangcai.crud.row.RowDefinitionHandler" level="info"/>
+        <logger name="me.jiangcai.payment" level="debug"/>
+
+        <!--可调试微信的响应数据-->
+        <logger name="me.jiangcai.wx.protocol.impl.handler" level="debug"/>
+        <logger name="me.jiangcai.wx.web.mvc" level="trace"/>
+        <logger name="me.jiangcai.wx.pay.controller" level="trace"/>
+        <!--<logger name="com.paymax" level="debug"/>-->
+        <!--<logger name="me.jiangcai" level="debug"/>-->
+        <!--建立一个默认的root的logger-->
+        <root level="info">
+            <appender-ref ref="file"/>
+            <appender-ref ref="Console"/>
+        </root>
+
+    </loggers>
+</configuration>

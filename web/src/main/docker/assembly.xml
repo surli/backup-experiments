@@ -1,0 +1,23 @@
+<assembly xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+    <!--https://gist.github.com/welshstew/9c2436b41c3e7ca278edaa10edf6f789-->
+    <id>artifact</id>
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <includes>
+                <include>${project.groupId}:${project.artifactId}</include>
+            </includes>
+            <outputDirectory>.</outputDirectory>
+            <outputFileNameMapping>ROOT.war</outputFileNameMapping>
+        </dependencySet>
+    </dependencySets>
+    <files>
+        <file>
+            <outputDirectory>.</outputDirectory>
+            <source>../context.xml</source>
+            <destName>context.xml</destName>
+        </file>
+    </files>
+</assembly>
