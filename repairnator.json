@@ -1,0 +1,32 @@
+{
+  "totalNumberSkippingTests": 216,
+  "bugType": "only_fail",
+  "totalNumberErroringTests": 0,
+  "repo": "apache/jackrabbit-oak",
+  "bugCommit": "https://github.com/apache/jackrabbit-oak/compare/0ed27e4947dd...9daefc23ba27",
+  "failingModule": "/root/workspace/apache/jackrabbit-oak/349866388/oak-lucene",
+  "hostname": "spirals-vortex.lille.inria.fr",
+  "totalNumberFailingTests": 1,
+  "error-types": [
+    "java.lang.AssertionError"
+  ],
+  "totalNumberRunningTests": 8881,
+  "failing-test-cases": [
+    {
+      "className": "org.apache.jackrabbit.oak.plugins.index.lucene.directory.ActiveDeletedBlobCollectorTest",
+      "failingMethods": [
+        "org.apache.jackrabbit.oak.plugins.index.lucene.directory.ActiveDeletedBlobCollectorTest#inaccessibleWorkDirGivesNoop"
+      ],
+      "erroringMethods": [],
+      "failures": [
+        {
+          "failureName": "java.lang.AssertionError",
+          "failureDetail": "Unwritable existing root folder must have NOOP active blob collector expected:\u003corg.apache.jackrabbit.oak.plugins.index.lucene.directory.ActiveDeletedBlobCollectorFactory$1@6c25e6c4\u003e but was:\u003corg.apache.jackrabbit.oak.plugins.index.lucene.directory.ActiveDeletedBlobCollectorFactory$ActiveDeletedBlobCollectorImpl@85e6769\u003e",
+          "isError": false
+        }
+      ],
+      "nbFailures": 1,
+      "nbErrors": 0
+    }
+  ]
+}
